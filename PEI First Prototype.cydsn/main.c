@@ -21,6 +21,21 @@ typedef enum {
     BMS_TEMPERATURES = 0x389
 } CAN_ID;
 
+// --------------------need to revise later according to PEI pins-------------
+// CAN variables
+PDO1			equals	User1  
+PDO2			equals	User2
+PDO3			equals	User3
+    
+pdoSend equals can1
+pdoRecv equals can2
+debug   equals can3
+pdoAck	equals can4
+eStop   equals can5
+    
+// State machine
+State			equals	User4
+
 void Clear_interlock() {
     //TODO
 }
@@ -48,18 +63,7 @@ int main(void)
     int Count_High = 0
     int flashing_L = 0
     int flashing_H = 0
-    
-    //---------------- CAN Variables -----------------------------
-    // need to revise later according to PEI pins?
-    pdoSend equals can1
-    pdoRecv equals can2
-    debug   equals can3
-    pdoAck	equals can4
-    eStop   equals can5
 
-    
-    // shutdown flags
-    
     for(;;)
     {
         if (state == 0) {
