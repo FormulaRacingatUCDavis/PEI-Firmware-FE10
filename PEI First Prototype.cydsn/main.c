@@ -41,7 +41,22 @@ int main(void)
     int throttle_high = 0;
     int throttle_low = 0;
     int VCL_Throttle = 0;
+    int VCL_Brake = 0
     int status3 = 0;
+    int DisplayState = 1
+    int Count_Low = 0
+    int Count_High = 0
+    int flashing_L = 0
+    int flashing_H = 0
+    
+    //---------------- CAN Variables -----------------------------
+    // need to revise later according to PEI pins?
+    pdoSend equals can1
+    pdoRecv equals can2
+    debug   equals can3
+    pdoAck	equals can4
+    eStop   equals can5
+
     
     // shutdown flags
     
