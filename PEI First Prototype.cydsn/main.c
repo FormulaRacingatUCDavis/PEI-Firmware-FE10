@@ -43,6 +43,8 @@ int main(void)
     int VCL_Throttle = 0;
     int status3 = 0;
     
+    // shutdown flags
+    
     for(;;)
     {
         if (state == 0) {
