@@ -28,6 +28,8 @@ int main(void)
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     int state = 0;
     
+    // shutdown flags
+    
     for(;;)
     {
         if (state == 0) {
