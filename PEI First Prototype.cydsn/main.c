@@ -21,22 +21,70 @@ typedef enum {
     BMS_TEMPERATURES = 0x389
 } CAN_ID;
 
+void Clear_interlock() {
+    //TODO
+}
+
+void Set_Interlock() {
+    //TODO   
+}
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     int state = 0;
+    int setInterlock = 0;
+    int e_stop_check = 0;
+    int e_stop = 0;
+    int throttle_high = 0;
+    int throttle_low = 0;
+    int VCL_Throttle = 0;
+    int status3 = 0;
     
     for(;;)
     {
         if (state == 0) {
+            Clear_interlock();
+            //TODO: put PWM2 to 0
+            
+            if (setInterlock > 0 && e_stop_check == 0) {
+                state = 1;
+            }
         }
         else if (state == 1) {
+            Set_Interlock();
+            
+            if (throttle_high*255 + throttle_low < 0 or throttle_high*255 + throttle_low > 32767) {
+                VCL_Throttle = 0;
+            }
+            else {
+                VCL_Throttle = (throttle_high * 255) + throttle_low;
+            }
+            
+            if (setInterlock == 0) {
+                state = 0;   
+            }
+            
+            if (status3 == 36) {
+                state = 3;
+                e_stop = 1;
+            }
+            else if (status3 > 0) {
+                state = 2;   
+            }
         }
         else if (state == 2) {
+            Clear_interlock();
+            //put PWM2 to 0
         }
         else if (state == 3) {
+            if (e_stop_check == 1) {
+                state = 0;
+                e_stop = 0;
+                //send_mailbox(eStop);
+            }
         }
             
     }
