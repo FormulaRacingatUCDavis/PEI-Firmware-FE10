@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_VCU_Example\Design01\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_VCU_Example\Design01\Design01.cydwr\Pins">
 <ExpandedNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
@@ -132,7 +132,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="527, 263" SelectedTabbedMdiWindow="4e0ddbd9-6429-4946-bd3c-3b079ccc4962"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4b84822f-bd12-4b1b-91d5-ace919cae5fc" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PSoC Creator\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="4e0ddbd9-6429-4946-bd3c-3b079ccc4962" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PSoC Creator\PSOC_VCU_Example\Design01.cydsn\Design01.cydwr" Guid="d7167a83-7334-46b0-aa57-5288b2c722f2" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1278, 574" SelectedTabbedMdiWindow="641238a1-caad-471d-b2ef-8654bc8e6504"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4b84822f-bd12-4b1b-91d5-ace919cae5fc" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PSoC Creator\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="57ef204f-8b00-4768-9513-a12b97f2642d" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PSoC Creator\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cydwr" Guid="641238a1-caad-471d-b2ef-8654bc8e6504" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
