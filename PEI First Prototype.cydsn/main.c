@@ -20,18 +20,6 @@ typedef enum {
     BMS_VOLTAGES = 0x388,
     BMS_TEMPERATURES = 0x389
 } CAN_ID;
-
-// --------------------need to revise later according to PEI pins-------------
-// CAN variables
-PDO1			equals	User1  
-PDO2			equals	User2
-PDO3			equals	User3
-    
-pdoSend equals can1
-pdoRecv equals can2
-debug   equals can3
-pdoAck	equals can4
-eStop   equals can5
     
 // State machine
 State			equals	User4
@@ -48,21 +36,34 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    //The car is not moving yet
     int state = 0;
+    
+    //At first, there is no driver, so there shouldn't be any voltage moving the wheel.
     int setInterlock = 0;
+    int VCL_Throttle = 0;
+    
+    //Why is the brake set to 0?
+    int VCL_Brake = 0;
+    
     int e_stop_check = 0;
     int e_stop = 0;
-    int throttle_high = 0;
-    int throttle_low = 0;
-    int VCL_Throttle = 0;
-    int VCL_Brake = 0
+    
+    //The 16-bit throttle is split across two 8-bit values
+    //throttle = throttle_high * 255 + throttle_low
+    int throttle_high = 0; //
+    int throttle_low = 0; //
+    
     int status3 = 0;
-    int DisplayState = 1
+    int DisplayState = 1;
+    
+    /* Initialized to 0 in the VCL code, not sure if they will be of use here.
     int Count_Low = 0
     int Count_High = 0
+    
     int flashing_L = 0
     int flashing_H = 0
+    */
 
     for(;;)
     {
