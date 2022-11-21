@@ -26,6 +26,7 @@ State			equals	User4
 
 void Clear_interlock() {
     //TODO
+    // trial
 }
 
 void Set_Interlock() {
