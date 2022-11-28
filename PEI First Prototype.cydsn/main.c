@@ -54,11 +54,13 @@ int main(void)
     // create a class similar to data type uCAN_MSG from FE9
     uCAN_MSG canCurrentData;
     // TODO: create the uCAN_MSG restruct it
-
+    // might do the comparison for data0,1,2
     canCurrentData.frame.data0 = current >> 8; // upper bits
     canCurrentData.frame.data1 = current & 0xFF; // lower bits
     canCurrentData.frame.data2 = shutdown_flags;
-    CAN_transmit(&can_current_data);
+    // TODO: create the function CAN_transmit, pass in the 
+    // address of canCurrentData
+    CAN_transmit(&canCurrentData);
 
     CyGlobalIntEnable; /* Enable global interrupts. */
 
