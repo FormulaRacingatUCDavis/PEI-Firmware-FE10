@@ -9,7 +9,21 @@
  *
  * ========================================
 */
-# include"project.h"
+#include "canInitialize.h"
+// first put it inside the main, put that into a source file in the future
+
+
+typedef struct{
+    double data0;
+    double data1;
+    double data2;
+}frame;
+
+typedef struct 
+{
+    frame frame1;
+} canMsg;
+
 
 typedef enum {
     VEHICLE_STATE = 0x0c0,
@@ -52,12 +66,12 @@ int main(void)
 {
     initialization();
     // create a class similar to data type uCAN_MSG from FE9
-    uCAN_MSG canCurrentData;
+    canMsg canCurrentData;
     // TODO: create the uCAN_MSG restruct it
     // might do the comparison for data0,1,2
-    canCurrentData.frame.data0 = current >> 8; // upper bits
-    canCurrentData.frame.data1 = current & 0xFF; // lower bits
-    canCurrentData.frame.data2 = shutdown_flags;
+    canCurrentData.frame1.data0 = current >> 8; // upper bits
+    canCurrentData.frame1.data1 = current & 0xFF; // lower bits
+    canCurrentData.frame1.data2 = shutdown_flags;
     // TODO: create the function CAN_transmit, pass in the 
     // address of canCurrentData
     CAN_transmit(&canCurrentData);
