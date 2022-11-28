@@ -9,7 +9,7 @@
  *
  * ========================================
 */
-#include "project.h"
+# include"project.h"
 
 typedef enum {
     VEHICLE_STATE = 0x0c0,
@@ -27,14 +27,29 @@ State			equals	User4
 void Clear_interlock() {
     //TODO
     // trial
+    // make change
 }
 
 void Set_Interlock() {
     //TODO   
 }
-
+// try to first initalize the state using Andrey publish in his VCL code
+void initialization() {
+    int SetInterlock = 0;
+    int VCL_Throttle = 0;
+    int VCL_Brake = 0;
+    int state = 0;
+    int DisplayState = 1;
+    int Count_Low = 0
+    int Count_High = 0
+    int flashing_L = 0
+    int flashing_H = 0
+    int e_stop = 0
+    int e_stop_check = 0
+}
 int main(void)
 {
+    initialization();
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     //The car is not moving yet
