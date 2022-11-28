@@ -47,9 +47,19 @@ void initialization() {
     int e_stop = 0
     int e_stop_check = 0
 }
+
 int main(void)
 {
     initialization();
+    // create a class similar to data type uCAN_MSG from FE9
+    uCAN_MSG canCurrentData;
+    // TODO: create the uCAN_MSG restruct it
+
+    canCurrentData.frame.data0 = current >> 8; // upper bits
+    canCurrentData.frame.data1 = current & 0xFF; // lower bits
+    canCurrentData.frame.data2 = shutdown_flags;
+    CAN_transmit(&can_current_data);
+
     CyGlobalIntEnable; /* Enable global interrupts. */
 
     //The car is not moving yet
