@@ -97,6 +97,19 @@
 <v>PEI First Prototype-000\PEI First Prototype\CortexM3</v>
 <v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541</v>
 <v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 <v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.elf</v>
 <v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.hex</v>
 <v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.map</v>
@@ -107,13 +120,6 @@
 <VisibleNodeIds>
 <v>PEI First Prototype-000</v>
 <v>PEI First Prototype-000\PEI First Prototype</v>
-<v>PEI First Prototype-000\PEI First Prototype\CortexM3</v>
-<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541</v>
-<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug</v>
-<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.elf</v>
-<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.hex</v>
-<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.map</v>
-<v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype.gpdsc</v>
 <v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype.rpt</v>
 <v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype_timing.html</v>
 </VisibleNodeIds>

@@ -61,7 +61,7 @@ int main(void)
     
     //CAN_transmit(&canCurrentData);
 
-    CyGlobalIntEnable; /* Enable global interrupts. */
+    //CyGlobalIntEnable; /* Enable global interrupts. */
 
     //The car is not moving yet
     int state = 0;
@@ -105,7 +105,7 @@ int main(void)
         else if (state == 1) {
             Set_Interlock();
             
-            if (throttle_high*255 + throttle_low < 0 or throttle_high*255 + throttle_low > 32767) {
+            if (throttle_high*255 + throttle_low < 0 || throttle_high*255 + throttle_low > 32767) {
                 VCL_Throttle = 0;
             }
             else {

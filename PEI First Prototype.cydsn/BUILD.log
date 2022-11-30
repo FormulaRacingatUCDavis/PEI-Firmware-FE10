@@ -1,87 +1,41 @@
---------------- Build Started: 11/29/2022 19:31:22 Project: PEI First Prototype, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\Justin Chang\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\Justin Chang\PEI-Firmware-FE10\PEI First Prototype.cydsn\PEI First Prototype.cyprj" -d CY8C5868AXI-LP035 -s "C:\Users\Justin Chang\PEI-Firmware-FE10\PEI First Prototype.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
-Elaborating Design...
-HDL Generation...
-Synthesis...
-Tech Mapping...
-Analog Placement...
-Analog Routing...
-Analog Code Generation...
-Digital Placement...
-Digital Routing...
-Bitstream Generation...
-Bitstream Verification...
-Static timing analysis...
-API Generation...
-Dependency Generation...
-Cleanup...
+--------------- Build Started: 11/29/2022 19:35:08 Project: PEI First Prototype, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
-main.c:39:1: error: unknown type name 'State'
- State   equals User4
- ^
-main.c:39:16: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'User4'
- State   equals User4
-                ^
-main.c: In function 'initialization':
-main.c:58:5: error: expected ',' or ';' before 'int'
-     int Count_High = 0
-     ^
-main.c:65:5: warning: 'main' is normally a non-static function [-Wmain]
- int main(void)
-     ^
 main.c: In function 'main':
-main.c:72:35: error: 'current' undeclared (first use in this function)
-     canCurrentData.frame1.data0 = current >> 8; // upper bits
-                                   ^
-main.c:72:35: note: each undeclared identifier is reported only once for each function it appears in
-main.c:74:35: error: 'shutdown_flags' undeclared (first use in this function)
-     canCurrentData.frame1.data2 = shutdown_flags;
-                                   ^
-main.c:77:5: warning: implicit declaration of function 'CAN_transmit' [-Wimplicit-function-declaration]
-     CAN_transmit(&canCurrentData);
-     ^
-main.c:79:5: error: 'CyGlobalIntEnable' undeclared (first use in this function)
-     CyGlobalIntEnable; /* Enable global interrupts. */
-     ^
-main.c:113:13: warning: implicit declaration of function 'Clear_interlock' [-Wimplicit-function-declaration]
-             Clear_interlock();
-             ^
-main.c:123:54: error: expected ')' before 'or'
-             if (throttle_high*255 + throttle_low < 0 or throttle_high*255 + throttle_low > 32767) {
-                                                      ^
-main.c:100:9: warning: unused variable 'DisplayState' [-Wunused-variable]
+main.c:85:9: warning: unused variable 'DisplayState' [-Wunused-variable]
      int DisplayState = 1;
          ^
-main.c:92:9: warning: variable 'e_stop' set but not used [-Wunused-but-set-variable]
+main.c:77:9: warning: variable 'e_stop' set but not used [-Wunused-but-set-variable]
      int e_stop = 0;
          ^
-main.c:89:9: warning: unused variable 'VCL_Brake' [-Wunused-variable]
+main.c:74:9: warning: unused variable 'VCL_Brake' [-Wunused-variable]
      int VCL_Brake = 0;
          ^
-main.c:86:9: warning: variable 'VCL_Throttle' set but not used [-Wunused-but-set-variable]
+main.c:71:9: warning: variable 'VCL_Throttle' set but not used [-Wunused-but-set-variable]
      int VCL_Throttle = 0;
          ^
-main.c: In function 'initialization':
-main.c:155:1: error: expected declaration or statement at end of input
- }
- ^
-main.c:57:9: warning: unused variable 'Count_Low' [-Wunused-variable]
-     int Count_Low = 0
-         ^
-main.c:56:9: warning: unused variable 'DisplayState' [-Wunused-variable]
-     int DisplayState = 1;
-         ^
-main.c:55:9: warning: unused variable 'state' [-Wunused-variable]
-     int state = 0;
-         ^
-main.c:54:9: warning: unused variable 'VCL_Brake' [-Wunused-variable]
-     int VCL_Brake = 0;
-         ^
-main.c:53:9: warning: unused variable 'VCL_Throttle' [-Wunused-variable]
-     int VCL_Throttle = 0;
-         ^
-main.c:52:9: warning: unused variable 'SetInterlock' [-Wunused-variable]
-     int SetInterlock = 0;
-         ^
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Build Failed: 11/29/2022 19:31:37 ---------------
+main.c:51:12: warning: unused variable 'canCurrentData' [-Wunused-variable]
+     canMsg canCurrentData;
+            ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Cm3Start.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyDmac.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyFlash.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyLib.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_541\Debug\CyLib.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyPm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_541\Debug\cyPm.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CySpc.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_541\Debug\CySpc.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyutils.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_541\Debug\cyutils.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cy_em_eeprom.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cy_em_eeprom.c -o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o
+arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
+arm-none-eabi-ar.exe -rs ".\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.a" .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\Justin Chang\PEI-Firmware-FE10\PEI First Prototype.cydsn\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o ".\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.a" "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 "-Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/PEI First Prototype.map" -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "C:\Users\Justin Chang\PEI-Firmware-FE10\PEI First Prototype.cydsn\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+No ELF section .cychecksum found, creating one
+Application checksum calculated and stored in ELF section .cychecksum
+Checksum calculated and stored in ELF section .cymeta
+cyelftool.exe -S "C:\Users\Justin Chang\PEI-Firmware-FE10\PEI First Prototype.cydsn\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.elf"
+Flash used: 1094 of 262144 bytes (0.4%).
+SRAM used: 2505 of 65536 bytes (3.8%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 11/29/2022 19:35:12 ---------------
