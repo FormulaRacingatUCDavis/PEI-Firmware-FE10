@@ -10,6 +10,7 @@
  * ========================================
 */
 #include "project.h"
+#include "CAN.h"
 
 int main(void)
 {
