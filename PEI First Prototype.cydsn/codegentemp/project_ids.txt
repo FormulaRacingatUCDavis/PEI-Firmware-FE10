@@ -1,0 +1,6 @@
+C:\Users\Justin Chang\PEI-Firmware-FE10\PEI First Prototype.cydsn\PEI First Prototype.cyprj|475df995-f9cf-4b33-bcbf-be7f5ca78bfd
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2adb6f05-c234-410c-ac87-10ad5b1b111e
+C:\Users\Justin Chang\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|17ee35f3-931f-4cf8-9932-342e65f2978c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|e3072a31-4b68-4cae-971a-e70f7455639c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|408cf38f-de8b-4dfd-b4fd-63a0dbfbb32f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|1b95dcf0-792c-46a4-9078-047ca3607c2c

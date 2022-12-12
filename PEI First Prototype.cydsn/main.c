@@ -34,9 +34,6 @@ typedef enum {
     BMS_VOLTAGES = 0x388,
     BMS_TEMPERATURES = 0x389
 } CAN_ID;
-    
-// State machine
-State			equals	User4
 
 void Clear_interlock() {
     //TODO
@@ -47,36 +44,24 @@ void Clear_interlock() {
 void Set_Interlock() {
     //TODO   
 }
-// try to first initalize the state using Andrey publish in his VCL code
-void initialization() {
-    int SetInterlock = 0;
-    int VCL_Throttle = 0;
-    int VCL_Brake = 0;
-    int state = 0;
-    int DisplayState = 1;
-    int Count_Low = 0
-    int Count_High = 0
-    int flashing_L = 0
-    int flashing_H = 0
-    int e_stop = 0
-    int e_stop_check = 0
-}
 
 int main(void)
 {
-    initialization();
     // create a class similar to data type uCAN_MSG from FE9
     canMsg canCurrentData;
     // TODO: create the uCAN_MSG restruct it
     // might do the comparison for data0,1,2
+    /* Template from VCL.\
     canCurrentData.frame1.data0 = current >> 8; // upper bits
     canCurrentData.frame1.data1 = current & 0xFF; // lower bits
     canCurrentData.frame1.data2 = shutdown_flags;
+    */
     // TODO: create the function CAN_transmit, pass in the 
     // address of canCurrentData
-    CAN_transmit(&canCurrentData);
+    
+    //CAN_transmit(&canCurrentData);
 
-    CyGlobalIntEnable; /* Enable global interrupts. */
+    //CyGlobalIntEnable; /* Enable global interrupts. */
 
     //The car is not moving yet
     int state = 0;
@@ -120,7 +105,7 @@ int main(void)
         else if (state == 1) {
             Set_Interlock();
             
-            if (throttle_high*255 + throttle_low < 0 or throttle_high*255 + throttle_low > 32767) {
+            if (throttle_high*255 + throttle_low < 0 || throttle_high*255 + throttle_low > 32767) {
                 VCL_Throttle = 0;
             }
             else {
