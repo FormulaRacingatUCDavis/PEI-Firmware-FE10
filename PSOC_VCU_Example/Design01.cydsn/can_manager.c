@@ -24,7 +24,7 @@ extern volatile uint16_t CURRENT;
 //extern volatile int ERROR_IDX;
 extern volatile uint8_t soc;
 extern volatile uint32_t voltage;
-extern volatile BMS_STATUS bms_status;
+//extern volatile BMS_STATUS bms_status;
 extern volatile uint8_t shutdown_flags;
 
 // info from MC and motor
@@ -88,6 +88,24 @@ uint8_t getABSMotorRPM()
     return ABS_MOTOR_RPM;
 }
 
+//Return the ESTOP state from the VCU.
+uint8_t get_ESTOP_Check()
+{
+    return E_STOP_CHECK;  
+}
+
+//Return the hv_requested state from the VCU.
+uint8_t get_HV_Requested()
+{
+    return HV_REQUEST;   
+}
+
+//Return the vehicle state message
+uint8_t get_Vehicle_State()
+{
+    return VEHICLE_STATE_MESSAGE;
+}
+
 // called from CAN_TX_RX_func.c in the generic RX func
 // tldr: part of an interrupt service routine
 void can_receive(uint8_t *msg, int ID)
@@ -126,8 +144,8 @@ void can_receive(uint8_t *msg, int ID)
             break;
         case BMS_STATUS_MSG:
             soc = msg[CAN_DATA_BYTE_2];
-            bms_status = msg[CAN_DATA_BYTE_3] << 8;    // bms error flags
-            bms_status |= msg[CAN_DATA_BYTE_4];        // bms error flags
+            //bms_status = msg[CAN_DATA_BYTE_3] << 8;    // bms error flags
+            //bms_status |= msg[CAN_DATA_BYTE_4];        // bms error flags
             break;
         case BMS_TEMPERATURES:
             PACK_TEMP = msg[CAN_DATA_BYTE_8];

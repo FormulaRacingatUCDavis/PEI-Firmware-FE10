@@ -1,0 +1,3183 @@
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"can_manager.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.getCapacitorVoltage,"ax",%progbits
+  20              		.align	2
+  21              		.global	getCapacitorVoltage
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	getCapacitorVoltage, %function
+  25              	getCapacitorVoltage:
+  26              	.LFB63:
+  27              		.file 1 "can_manager.c"
+   1:can_manager.c **** /* ========================================
+   2:can_manager.c ****  * Can API for FRUCD
+   3:can_manager.c ****  * Schuyler Alschuler 2016 - 2017
+   4:can_manager.c ****  * ========================================
+   5:can_manager.c **** */
+   6:can_manager.c **** 
+   7:can_manager.c **** /*******************************************
+   8:can_manager.c ****  * Used to interface dashboard with CAN bus
+   9:can_manager.c ****  * some functinality can be found in CAN_TX_RX_func.c
+  10:can_manager.c ****  * which is a generated source file
+  11:can_manager.c ****  * see the can component of the top design for specific mailboxes
+  12:can_manager.c ****  ******************************************/
+  13:can_manager.c **** 
+  14:can_manager.c **** #include "can_manager.h"
+  15:can_manager.c **** #include "CAN.h"
+  16:can_manager.c **** #include "Precharge.h"
+  17:can_manager.c **** 
+  18:can_manager.c **** extern volatile vcu_state state;
+  19:can_manager.c **** extern volatile uint32_t pedalOK;
+  20:can_manager.c **** extern volatile uint8_t PACK_TEMP;
+  21:can_manager.c **** extern volatile uint8_t BSPD_CATCH;
+  22:can_manager.c **** extern volatile uint16_t CURRENT;
+  23:can_manager.c **** //extern volatile int ERROR_NODE;
+  24:can_manager.c **** //extern volatile int ERROR_IDX;
+  25:can_manager.c **** extern volatile uint8_t soc;
+  26:can_manager.c **** extern volatile uint32_t voltage;
+  27:can_manager.c **** //extern volatile BMS_STATUS bms_status;
+  28:can_manager.c **** extern volatile uint8_t shutdown_flags;
+  29:can_manager.c **** 
+  30:can_manager.c **** // info from MC and motor
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 2
+
+
+  31:can_manager.c **** extern volatile uint16_t mc_temp;
+  32:can_manager.c **** extern volatile uint16_t motor_temp;
+  33:can_manager.c **** 
+  34:can_manager.c **** volatile uint8_t CAPACITOR_VOLT = 0;
+  35:can_manager.c **** volatile uint8_t CURTIS_FAULT_CHECK = 0;
+  36:can_manager.c **** volatile uint8_t CURTIS_HEART_BEAT_CHECK = 0;
+  37:can_manager.c **** volatile uint8_t ACK_RX = 0;
+  38:can_manager.c **** volatile uint8_t ERROR_TOLERANCE = 0;
+  39:can_manager.c **** volatile uint8_t ABS_MOTOR_RPM = 0;
+  40:can_manager.c **** volatile uint8_t THROTTLE_HIGH = 0;
+  41:can_manager.c **** volatile uint8_t THROTTLE_LOW = 0;
+  42:can_manager.c **** 
+  43:can_manager.c **** //volatile uint8_t ESTOP; //Tehya test
+  44:can_manager.c **** //VCU Data
+  45:can_manager.c **** volatile uint8_t HV_REQUEST = 0;
+  46:can_manager.c **** volatile uint8_t E_STOP_CHECK = 0;
+  47:can_manager.c **** volatile uint8_t VEHICLE_STATE_MESSAGE = 0;
+  48:can_manager.c **** 
+  49:can_manager.c **** 
+  50:can_manager.c **** uint8 current_bytes[4] = {0};
+  51:can_manager.c **** 
+  52:can_manager.c **** // returns voltage of capacitor from motor controller
+  53:can_manager.c **** uint8_t getCapacitorVoltage()
+  54:can_manager.c **** {
+  28              		.loc 1 54 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  55:can_manager.c ****     return CAPACITOR_VOLT;
+  33              		.loc 1 55 0
+  34 0000 014B     		ldr	r3, .L2
+  35 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  56:can_manager.c **** }
+  36              		.loc 1 56 0
+  37 0004 7047     		bx	lr
+  38              	.L3:
+  39 0006 00BF     		.align	2
+  40              	.L2:
+  41 0008 00000000 		.word	.LANCHOR0
+  42              		.cfi_endproc
+  43              	.LFE63:
+  44              		.size	getCapacitorVoltage, .-getCapacitorVoltage
+  45              		.section	.text.getCurtisFaultCheck,"ax",%progbits
+  46              		.align	2
+  47              		.global	getCurtisFaultCheck
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	getCurtisFaultCheck, %function
+  51              	getCurtisFaultCheck:
+  52              	.LFB64:
+  57:can_manager.c **** 
+  58:can_manager.c **** // returns true if there is a fault in motor controller
+  59:can_manager.c **** uint8_t getCurtisFaultCheck()
+  60:can_manager.c **** {
+  53              		.loc 1 60 0
+  54              		.cfi_startproc
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 3
+
+
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+  61:can_manager.c ****     return CURTIS_FAULT_CHECK;
+  58              		.loc 1 61 0
+  59 0000 014B     		ldr	r3, .L5
+  60 0002 5878     		ldrb	r0, [r3, #1]	@ zero_extendqisi2
+  62:can_manager.c **** }
+  61              		.loc 1 62 0
+  62 0004 7047     		bx	lr
+  63              	.L6:
+  64 0006 00BF     		.align	2
+  65              	.L5:
+  66 0008 00000000 		.word	.LANCHOR0
+  67              		.cfi_endproc
+  68              	.LFE64:
+  69              		.size	getCurtisFaultCheck, .-getCurtisFaultCheck
+  70              		.section	.text.getCurtisHeartBeatCheck,"ax",%progbits
+  71              		.align	2
+  72              		.global	getCurtisHeartBeatCheck
+  73              		.thumb
+  74              		.thumb_func
+  75              		.type	getCurtisHeartBeatCheck, %function
+  76              	getCurtisHeartBeatCheck:
+  77              	.LFB65:
+  63:can_manager.c **** 
+  64:can_manager.c **** // returns true if motor controller node is still active
+  65:can_manager.c **** // if node is in active check the fault code using 1314
+  66:can_manager.c **** uint8_t getCurtisHeartBeatCheck()
+  67:can_manager.c **** {
+  78              		.loc 1 67 0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  68:can_manager.c ****     return CURTIS_HEART_BEAT_CHECK;
+  83              		.loc 1 68 0
+  84 0000 014B     		ldr	r3, .L8
+  85 0002 9878     		ldrb	r0, [r3, #2]	@ zero_extendqisi2
+  69:can_manager.c **** }
+  86              		.loc 1 69 0
+  87 0004 7047     		bx	lr
+  88              	.L9:
+  89 0006 00BF     		.align	2
+  90              	.L8:
+  91 0008 00000000 		.word	.LANCHOR0
+  92              		.cfi_endproc
+  93              	.LFE65:
+  94              		.size	getCurtisHeartBeatCheck, .-getCurtisHeartBeatCheck
+  95              		.section	.text.getAckRx,"ax",%progbits
+  96              		.align	2
+  97              		.global	getAckRx
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.type	getAckRx, %function
+ 101              	getAckRx:
+ 102              	.LFB66:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 4
+
+
+  70:can_manager.c **** 
+  71:can_manager.c **** // returns 1 always... not sure whats up in the motor controller
+  72:can_manager.c **** uint8_t getAckRx()
+  73:can_manager.c **** {
+ 103              		.loc 1 73 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+  74:can_manager.c ****     return ACK_RX;
+ 108              		.loc 1 74 0
+ 109 0000 014B     		ldr	r3, .L11
+ 110 0002 D878     		ldrb	r0, [r3, #3]	@ zero_extendqisi2
+  75:can_manager.c **** }
+ 111              		.loc 1 75 0
+ 112 0004 7047     		bx	lr
+ 113              	.L12:
+ 114 0006 00BF     		.align	2
+ 115              	.L11:
+ 116 0008 00000000 		.word	.LANCHOR0
+ 117              		.cfi_endproc
+ 118              	.LFE66:
+ 119              		.size	getAckRx, .-getAckRx
+ 120              		.section	.text.getErrorTolerance,"ax",%progbits
+ 121              		.align	2
+ 122              		.global	getErrorTolerance
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	getErrorTolerance, %function
+ 126              	getErrorTolerance:
+ 127              	.LFB67:
+  76:can_manager.c **** 
+  77:can_manager.c **** // true if break depressed more than 10%
+  78:can_manager.c **** // this value typically used for drive request
+  79:can_manager.c **** uint8_t getErrorTolerance()
+  80:can_manager.c **** {
+ 128              		.loc 1 80 0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132              		@ link register save eliminated.
+  81:can_manager.c ****     return ERROR_TOLERANCE;
+ 133              		.loc 1 81 0
+ 134 0000 014B     		ldr	r3, .L14
+ 135 0002 1879     		ldrb	r0, [r3, #4]	@ zero_extendqisi2
+  82:can_manager.c **** }
+ 136              		.loc 1 82 0
+ 137 0004 7047     		bx	lr
+ 138              	.L15:
+ 139 0006 00BF     		.align	2
+ 140              	.L14:
+ 141 0008 00000000 		.word	.LANCHOR0
+ 142              		.cfi_endproc
+ 143              	.LFE67:
+ 144              		.size	getErrorTolerance, .-getErrorTolerance
+ 145              		.section	.text.getABSMotorRPM,"ax",%progbits
+ 146              		.align	2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 5
+
+
+ 147              		.global	getABSMotorRPM
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.type	getABSMotorRPM, %function
+ 151              	getABSMotorRPM:
+ 152              	.LFB68:
+  83:can_manager.c **** 
+  84:can_manager.c **** // from motor controller
+  85:can_manager.c **** // look this one up in 1239E manual, im not super sure
+  86:can_manager.c **** uint8_t getABSMotorRPM()
+  87:can_manager.c **** {
+ 153              		.loc 1 87 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              		@ link register save eliminated.
+  88:can_manager.c ****     return ABS_MOTOR_RPM;
+ 158              		.loc 1 88 0
+ 159 0000 014B     		ldr	r3, .L17
+ 160 0002 5879     		ldrb	r0, [r3, #5]	@ zero_extendqisi2
+  89:can_manager.c **** }
+ 161              		.loc 1 89 0
+ 162 0004 7047     		bx	lr
+ 163              	.L18:
+ 164 0006 00BF     		.align	2
+ 165              	.L17:
+ 166 0008 00000000 		.word	.LANCHOR0
+ 167              		.cfi_endproc
+ 168              	.LFE68:
+ 169              		.size	getABSMotorRPM, .-getABSMotorRPM
+ 170              		.section	.text.get_ESTOP_Check,"ax",%progbits
+ 171              		.align	2
+ 172              		.global	get_ESTOP_Check
+ 173              		.thumb
+ 174              		.thumb_func
+ 175              		.type	get_ESTOP_Check, %function
+ 176              	get_ESTOP_Check:
+ 177              	.LFB69:
+  90:can_manager.c **** 
+  91:can_manager.c **** //Return the ESTOP state from the VCU.
+  92:can_manager.c **** uint8_t get_ESTOP_Check()
+  93:can_manager.c **** {
+ 178              		.loc 1 93 0
+ 179              		.cfi_startproc
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182              		@ link register save eliminated.
+  94:can_manager.c ****     return E_STOP_CHECK;  
+ 183              		.loc 1 94 0
+ 184 0000 014B     		ldr	r3, .L20
+ 185 0002 9879     		ldrb	r0, [r3, #6]	@ zero_extendqisi2
+  95:can_manager.c **** }
+ 186              		.loc 1 95 0
+ 187 0004 7047     		bx	lr
+ 188              	.L21:
+ 189 0006 00BF     		.align	2
+ 190              	.L20:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 6
+
+
+ 191 0008 00000000 		.word	.LANCHOR0
+ 192              		.cfi_endproc
+ 193              	.LFE69:
+ 194              		.size	get_ESTOP_Check, .-get_ESTOP_Check
+ 195              		.section	.text.get_HV_Requested,"ax",%progbits
+ 196              		.align	2
+ 197              		.global	get_HV_Requested
+ 198              		.thumb
+ 199              		.thumb_func
+ 200              		.type	get_HV_Requested, %function
+ 201              	get_HV_Requested:
+ 202              	.LFB70:
+  96:can_manager.c **** 
+  97:can_manager.c **** //Return the hv_requested state from the VCU.
+  98:can_manager.c **** uint8_t get_HV_Requested()
+  99:can_manager.c **** {
+ 203              		.loc 1 99 0
+ 204              		.cfi_startproc
+ 205              		@ args = 0, pretend = 0, frame = 0
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207              		@ link register save eliminated.
+ 100:can_manager.c ****     return HV_REQUEST;   
+ 208              		.loc 1 100 0
+ 209 0000 014B     		ldr	r3, .L23
+ 210 0002 D879     		ldrb	r0, [r3, #7]	@ zero_extendqisi2
+ 101:can_manager.c **** }
+ 211              		.loc 1 101 0
+ 212 0004 7047     		bx	lr
+ 213              	.L24:
+ 214 0006 00BF     		.align	2
+ 215              	.L23:
+ 216 0008 00000000 		.word	.LANCHOR0
+ 217              		.cfi_endproc
+ 218              	.LFE70:
+ 219              		.size	get_HV_Requested, .-get_HV_Requested
+ 220              		.section	.text.get_Vehicle_State,"ax",%progbits
+ 221              		.align	2
+ 222              		.global	get_Vehicle_State
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.type	get_Vehicle_State, %function
+ 226              	get_Vehicle_State:
+ 227              	.LFB71:
+ 102:can_manager.c **** 
+ 103:can_manager.c **** //Return the vehicle state message
+ 104:can_manager.c **** uint8_t get_Vehicle_State()
+ 105:can_manager.c **** {
+ 228              		.loc 1 105 0
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232              		@ link register save eliminated.
+ 106:can_manager.c ****     return VEHICLE_STATE_MESSAGE;
+ 233              		.loc 1 106 0
+ 234 0000 014B     		ldr	r3, .L26
+ 235 0002 187A     		ldrb	r0, [r3, #8]	@ zero_extendqisi2
+ 107:can_manager.c **** }
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 7
+
+
+ 236              		.loc 1 107 0
+ 237 0004 7047     		bx	lr
+ 238              	.L27:
+ 239 0006 00BF     		.align	2
+ 240              	.L26:
+ 241 0008 00000000 		.word	.LANCHOR0
+ 242              		.cfi_endproc
+ 243              	.LFE71:
+ 244              		.size	get_Vehicle_State, .-get_Vehicle_State
+ 245              		.section	.text.can_receive,"ax",%progbits
+ 246              		.align	2
+ 247              		.global	can_receive
+ 248              		.thumb
+ 249              		.thumb_func
+ 250              		.type	can_receive, %function
+ 251              	can_receive:
+ 252              	.LFB72:
+ 108:can_manager.c **** 
+ 109:can_manager.c **** // called from CAN_TX_RX_func.c in the generic RX func
+ 110:can_manager.c **** // tldr: part of an interrupt service routine
+ 111:can_manager.c **** void can_receive(uint8_t *msg, int ID)
+ 112:can_manager.c **** {
+ 253              		.loc 1 112 0
+ 254              		.cfi_startproc
+ 255              		@ args = 0, pretend = 0, frame = 0
+ 256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 257              	.LVL0:
+ 258 0000 38B5     		push	{r3, r4, r5, lr}
+ 259              		.cfi_def_cfa_offset 16
+ 260              		.cfi_offset 3, -16
+ 261              		.cfi_offset 4, -12
+ 262              		.cfi_offset 5, -8
+ 263              		.cfi_offset 14, -4
+ 264 0002 0546     		mov	r5, r0
+ 265 0004 0C46     		mov	r4, r1
+ 113:can_manager.c ****     uint8 InterruptState = CyEnterCriticalSection();
+ 266              		.loc 1 113 0
+ 267 0006 FFF7FEFF 		bl	CyEnterCriticalSection
+ 268              	.LVL1:
+ 114:can_manager.c ****     
+ 115:can_manager.c ****     switch (ID) 
+ 269              		.loc 1 115 0
+ 270 000a 40F28933 		movw	r3, #905
+ 271 000e 9C42     		cmp	r4, r3
+ 272 0010 65D0     		beq	.L30
+ 273 0012 0EDC     		bgt	.L31
+ 274 0014 B4F5607F 		cmp	r4, #896
+ 275 0018 5DD0     		beq	.L32
+ 276 001a 02DC     		bgt	.L33
+ 277 001c A62C     		cmp	r4, #166
+ 278 001e 3FD0     		beq	.L34
+ 279 0020 6DE0     		b	.L29
+ 280              	.L33:
+ 281 0022 40F28733 		movw	r3, #903
+ 282 0026 9C42     		cmp	r4, r3
+ 283 0028 5DD0     		beq	.L35
+ 284 002a B4F5627F 		cmp	r4, #904
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 8
+
+
+ 285 002e 3FD0     		beq	.L36
+ 286 0030 65E0     		b	.L29
+ 287              	.L31:
+ 288 0032 40F26663 		movw	r3, #1638
+ 289 0036 9C42     		cmp	r4, r3
+ 290 0038 25D0     		beq	.L37
+ 291 003a 04DC     		bgt	.L38
+ 292 003c 40F26653 		movw	r3, #1382
+ 293 0040 9C42     		cmp	r4, r3
+ 294 0042 10D0     		beq	.L39
+ 295 0044 5BE0     		b	.L29
+ 296              	.L38:
+ 297 0046 40F22673 		movw	r3, #1830
+ 298 004a 9C42     		cmp	r4, r3
+ 299 004c 2CD0     		beq	.L40
+ 300 004e 40F26673 		movw	r3, #1894
+ 301 0052 9C42     		cmp	r4, r3
+ 302 0054 53D1     		bne	.L29
+ 116:can_manager.c ****     {
+ 117:can_manager.c ****         case TORQUE_REQUEST_COMMAND:
+ 118:can_manager.c ****             HV_REQUEST = msg[CAN_DATA_BYTE_1];
+ 303              		.loc 1 118 0
+ 304 0056 EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 305 0058 2A4B     		ldr	r3, .L43
+ 306 005a DA71     		strb	r2, [r3, #7]
+ 119:can_manager.c ****             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
+ 307              		.loc 1 119 0
+ 308 005c 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 309 005e 9A71     		strb	r2, [r3, #6]
+ 120:can_manager.c ****             VEHICLE_STATE_MESSAGE = msg[CAN_DATA_BYTE_6];
+ 310              		.loc 1 120 0
+ 311 0060 AA79     		ldrb	r2, [r5, #6]	@ zero_extendqisi2
+ 312 0062 1A72     		strb	r2, [r3, #8]
+ 121:can_manager.c ****             break;
+ 313              		.loc 1 121 0
+ 314 0064 4BE0     		b	.L29
+ 315              	.L39:
+ 122:can_manager.c ****         case MC_PDO_SEND:
+ 123:can_manager.c ****             CAPACITOR_VOLT = msg[CAN_DATA_BYTE_1];
+ 316              		.loc 1 123 0
+ 317 0066 EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 318 0068 264B     		ldr	r3, .L43
+ 319 006a 1A70     		strb	r2, [r3]
+ 124:can_manager.c ****             ABS_MOTOR_RPM = msg[CAN_DATA_BYTE_3];
+ 320              		.loc 1 124 0
+ 321 006c 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
+ 322 006e 5A71     		strb	r2, [r3, #5]
+ 125:can_manager.c ****             mc_temp = msg[CAN_DATA_BYTE_7] << 8;
+ 323              		.loc 1 125 0
+ 324 0070 6B79     		ldrb	r3, [r5, #5]	@ zero_extendqisi2
+ 325 0072 1B02     		lsls	r3, r3, #8
+ 326 0074 2449     		ldr	r1, .L43+4
+ 327 0076 0B80     		strh	r3, [r1]	@ movhi
+ 126:can_manager.c ****             mc_temp += msg[CAN_DATA_BYTE_8];
+ 328              		.loc 1 126 0
+ 329 0078 2A79     		ldrb	r2, [r5, #4]	@ zero_extendqisi2
+ 330 007a 0B88     		ldrh	r3, [r1]
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 9
+
+
+ 331 007c 9BB2     		uxth	r3, r3
+ 332 007e 1344     		add	r3, r3, r2
+ 333 0080 9BB2     		uxth	r3, r3
+ 334 0082 0B80     		strh	r3, [r1]	@ movhi
+ 127:can_manager.c ****             break;
+ 335              		.loc 1 127 0
+ 336 0084 3BE0     		b	.L29
+ 337              	.L37:
+ 128:can_manager.c ****         case MC_PDO_ACK:
+ 129:can_manager.c ****             ACK_RX = msg[CAN_DATA_BYTE_1];
+ 338              		.loc 1 129 0
+ 339 0086 EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 340 0088 1E4B     		ldr	r3, .L43
+ 341 008a DA70     		strb	r2, [r3, #3]
+ 130:can_manager.c ****             motor_temp = msg[CAN_DATA_BYTE_5] << 8;
+ 342              		.loc 1 130 0
+ 343 008c EA79     		ldrb	r2, [r5, #7]	@ zero_extendqisi2
+ 344 008e 1202     		lsls	r2, r2, #8
+ 345 0090 1E4B     		ldr	r3, .L43+8
+ 346 0092 1A80     		strh	r2, [r3]	@ movhi
+ 131:can_manager.c ****             motor_temp |= msg[CAN_DATA_BYTE_6];
+ 347              		.loc 1 131 0
+ 348 0094 A979     		ldrb	r1, [r5, #6]	@ zero_extendqisi2
+ 349 0096 1A88     		ldrh	r2, [r3]
+ 350 0098 92B2     		uxth	r2, r2
+ 351 009a 0A43     		orrs	r2, r2, r1
+ 352 009c 1A80     		strh	r2, [r3]	@ movhi
+ 132:can_manager.c ****             break;
+ 353              		.loc 1 132 0
+ 354 009e 2EE0     		b	.L29
+ 355              	.L34:
+ 133:can_manager.c ****         case 0xA6:  // errors sent from MC node
+ 134:can_manager.c ****             CURTIS_FAULT_CHECK = 0x1;
+ 356              		.loc 1 134 0
+ 357 00a0 0122     		movs	r2, #1
+ 358 00a2 184B     		ldr	r3, .L43
+ 359 00a4 5A70     		strb	r2, [r3, #1]
+ 135:can_manager.c ****             break;
+ 360              		.loc 1 135 0
+ 361 00a6 2AE0     		b	.L29
+ 362              	.L40:
+ 136:can_manager.c ****         case 0x726:     // from motor controller to confirm that node is still active
+ 137:can_manager.c ****             CURTIS_HEART_BEAT_CHECK = 0x1;
+ 363              		.loc 1 137 0
+ 364 00a8 0122     		movs	r2, #1
+ 365 00aa 164B     		ldr	r3, .L43
+ 366 00ac 9A70     		strb	r2, [r3, #2]
+ 138:can_manager.c ****             break;
+ 367              		.loc 1 138 0
+ 368 00ae 26E0     		b	.L29
+ 369              	.L36:
+ 139:can_manager.c ****         case BMS_VOLTAGES:
+ 140:can_manager.c ****             voltage = msg[CAN_DATA_BYTE_5] << 24;
+ 370              		.loc 1 140 0
+ 371 00b0 EA79     		ldrb	r2, [r5, #7]	@ zero_extendqisi2
+ 372 00b2 1206     		lsls	r2, r2, #24
+ 373 00b4 164B     		ldr	r3, .L43+12
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 10
+
+
+ 374 00b6 1A60     		str	r2, [r3]
+ 141:can_manager.c ****             voltage |= msg[CAN_DATA_BYTE_6] << 16;
+ 375              		.loc 1 141 0
+ 376 00b8 A979     		ldrb	r1, [r5, #6]	@ zero_extendqisi2
+ 377 00ba 1A68     		ldr	r2, [r3]
+ 378 00bc 42EA0142 		orr	r2, r2, r1, lsl #16
+ 379 00c0 1A60     		str	r2, [r3]
+ 142:can_manager.c ****             voltage |= msg[CAN_DATA_BYTE_7] << 8;
+ 380              		.loc 1 142 0
+ 381 00c2 6979     		ldrb	r1, [r5, #5]	@ zero_extendqisi2
+ 382 00c4 1A68     		ldr	r2, [r3]
+ 383 00c6 42EA0122 		orr	r2, r2, r1, lsl #8
+ 384 00ca 1A60     		str	r2, [r3]
+ 143:can_manager.c ****             voltage |= msg[CAN_DATA_BYTE_8];
+ 385              		.loc 1 143 0
+ 386 00cc 2979     		ldrb	r1, [r5, #4]	@ zero_extendqisi2
+ 387 00ce 1A68     		ldr	r2, [r3]
+ 388 00d0 0A43     		orrs	r2, r2, r1
+ 389 00d2 1A60     		str	r2, [r3]
+ 144:can_manager.c ****             break;
+ 390              		.loc 1 144 0
+ 391 00d4 13E0     		b	.L29
+ 392              	.L32:
+ 145:can_manager.c ****         case BMS_STATUS_MSG:
+ 146:can_manager.c ****             soc = msg[CAN_DATA_BYTE_2];
+ 393              		.loc 1 146 0
+ 394 00d6 AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
+ 395 00d8 0E4B     		ldr	r3, .L43+16
+ 396 00da 1A70     		strb	r2, [r3]
+ 147:can_manager.c ****             //bms_status = msg[CAN_DATA_BYTE_3] << 8;    // bms error flags
+ 148:can_manager.c ****             //bms_status |= msg[CAN_DATA_BYTE_4];        // bms error flags
+ 149:can_manager.c ****             break;
+ 397              		.loc 1 149 0
+ 398 00dc 0FE0     		b	.L29
+ 399              	.L30:
+ 150:can_manager.c ****         case BMS_TEMPERATURES:
+ 151:can_manager.c ****             PACK_TEMP = msg[CAN_DATA_BYTE_8];
+ 400              		.loc 1 151 0
+ 401 00de 2A79     		ldrb	r2, [r5, #4]	@ zero_extendqisi2
+ 402 00e0 0D4B     		ldr	r3, .L43+20
+ 403 00e2 1A70     		strb	r2, [r3]
+ 152:can_manager.c ****             break;
+ 404              		.loc 1 152 0
+ 405 00e4 0BE0     		b	.L29
+ 406              	.L35:
+ 153:can_manager.c ****         case PEI_CURRENT:
+ 154:can_manager.c ****             CURRENT = msg[CAN_DATA_BYTE_1] << 8;
+ 407              		.loc 1 154 0
+ 408 00e6 EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 409 00e8 1202     		lsls	r2, r2, #8
+ 410 00ea 0C4B     		ldr	r3, .L43+24
+ 411 00ec 1A80     		strh	r2, [r3]	@ movhi
+ 155:can_manager.c ****             CURRENT |= msg[CAN_DATA_BYTE_2];
+ 412              		.loc 1 155 0
+ 413 00ee A978     		ldrb	r1, [r5, #2]	@ zero_extendqisi2
+ 414 00f0 1A88     		ldrh	r2, [r3]
+ 415 00f2 92B2     		uxth	r2, r2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 11
+
+
+ 416 00f4 0A43     		orrs	r2, r2, r1
+ 417 00f6 1A80     		strh	r2, [r3]	@ movhi
+ 156:can_manager.c ****             shutdown_flags = msg[CAN_DATA_BYTE_3];
+ 418              		.loc 1 156 0
+ 419 00f8 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
+ 420 00fa 094B     		ldr	r3, .L43+28
+ 421 00fc 1A70     		strb	r2, [r3]
+ 422              	.L29:
+ 157:can_manager.c ****             break;
+ 158:can_manager.c ****         case 0x366: //Tehya test
+ 159:can_manager.c ****             //ESTOP = msg[CAN_DATA_BYTE_1];
+ 160:can_manager.c ****             break;
+ 161:can_manager.c ****     }
+ 162:can_manager.c ****     
+ 163:can_manager.c ****     CyExitCriticalSection(InterruptState);
+ 423              		.loc 1 163 0
+ 424 00fe FFF7FEFF 		bl	CyExitCriticalSection
+ 425              	.LVL2:
+ 426 0102 38BD     		pop	{r3, r4, r5, pc}
+ 427              	.LVL3:
+ 428              	.L44:
+ 429              		.align	2
+ 430              	.L43:
+ 431 0104 00000000 		.word	.LANCHOR0
+ 432 0108 00000000 		.word	mc_temp
+ 433 010c 00000000 		.word	motor_temp
+ 434 0110 00000000 		.word	voltage
+ 435 0114 00000000 		.word	soc
+ 436 0118 00000000 		.word	PACK_TEMP
+ 437 011c 00000000 		.word	CURRENT
+ 438 0120 00000000 		.word	shutdown_flags
+ 439              		.cfi_endproc
+ 440              	.LFE72:
+ 441              		.size	can_receive, .-can_receive
+ 442              		.section	.text.can_test_send,"ax",%progbits
+ 443              		.align	2
+ 444              		.global	can_test_send
+ 445              		.thumb
+ 446              		.thumb_func
+ 447              		.type	can_test_send, %function
+ 448              	can_test_send:
+ 449              	.LFB73:
+ 164:can_manager.c **** }
+ 165:can_manager.c **** 
+ 166:can_manager.c **** void can_test_send()
+ 167:can_manager.c **** {
+ 450              		.loc 1 167 0
+ 451              		.cfi_startproc
+ 452              		@ args = 0, pretend = 0, frame = 16
+ 453              		@ frame_needed = 0, uses_anonymous_args = 0
+ 454 0000 00B5     		push	{lr}
+ 455              		.cfi_def_cfa_offset 4
+ 456              		.cfi_offset 14, -4
+ 457 0002 85B0     		sub	sp, sp, #20
+ 458              		.cfi_def_cfa_offset 24
+ 168:can_manager.c ****     //CAN_1_DATA_BYTES_MSG msg;
+ 169:can_manager.c ****     CAN_TX_MSG HeartB;
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 12
+
+
+ 170:can_manager.c ****     
+ 171:can_manager.c ****     HeartB.id = 0x300;
+ 459              		.loc 1 171 0
+ 460 0004 4FF44073 		mov	r3, #768
+ 461 0008 0193     		str	r3, [sp, #4]
+ 172:can_manager.c ****     HeartB.rtr = 0;
+ 462              		.loc 1 172 0
+ 463 000a 0022     		movs	r2, #0
+ 464 000c 8DF80820 		strb	r2, [sp, #8]
+ 173:can_manager.c ****     HeartB.ide = 0;
+ 465              		.loc 1 173 0
+ 466 0010 8DF80920 		strb	r2, [sp, #9]
+ 174:can_manager.c ****     HeartB.dlc = 1;
+ 467              		.loc 1 174 0
+ 468 0014 0123     		movs	r3, #1
+ 469 0016 8DF80A30 		strb	r3, [sp, #10]
+ 175:can_manager.c ****     
+ 176:can_manager.c ****     HeartB.irq = 0;
+ 470              		.loc 1 176 0
+ 471 001a 8DF80B20 		strb	r2, [sp, #11]
+ 177:can_manager.c ****     
+ 178:can_manager.c ****     HeartB.msg->byte[0] = (uint8) 1;
+ 472              		.loc 1 178 0
+ 473 001e 039A     		ldr	r2, [sp, #12]
+ 474 0020 1370     		strb	r3, [r2]
+ 179:can_manager.c ****     HeartB.msg->byte[1] = (uint8) 1;
+ 475              		.loc 1 179 0
+ 476 0022 039A     		ldr	r2, [sp, #12]
+ 477 0024 5370     		strb	r3, [r2, #1]
+ 180:can_manager.c ****     HeartB.msg->byte[2] = (uint8) 1;
+ 478              		.loc 1 180 0
+ 479 0026 039A     		ldr	r2, [sp, #12]
+ 480 0028 9370     		strb	r3, [r2, #2]
+ 181:can_manager.c ****     HeartB.msg->byte[3] = (uint8) 1;
+ 481              		.loc 1 181 0
+ 482 002a 039A     		ldr	r2, [sp, #12]
+ 483 002c D370     		strb	r3, [r2, #3]
+ 182:can_manager.c ****     HeartB.msg->byte[4] = (uint8) 1;
+ 484              		.loc 1 182 0
+ 485 002e 039A     		ldr	r2, [sp, #12]
+ 486 0030 1371     		strb	r3, [r2, #4]
+ 183:can_manager.c ****     HeartB.msg->byte[5] = (uint8) 1;
+ 487              		.loc 1 183 0
+ 488 0032 039A     		ldr	r2, [sp, #12]
+ 489 0034 5371     		strb	r3, [r2, #5]
+ 184:can_manager.c ****     HeartB.msg->byte[6] = (uint8) 1;
+ 490              		.loc 1 184 0
+ 491 0036 039A     		ldr	r2, [sp, #12]
+ 492 0038 9371     		strb	r3, [r2, #6]
+ 185:can_manager.c ****     HeartB.msg->byte[7] = (uint8) 1;
+ 493              		.loc 1 185 0
+ 494 003a 039A     		ldr	r2, [sp, #12]
+ 495 003c D371     		strb	r3, [r2, #7]
+ 186:can_manager.c ****     
+ 187:can_manager.c ****     CAN_SendMsg(&HeartB);
+ 496              		.loc 1 187 0
+ 497 003e 01A8     		add	r0, sp, #4
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 13
+
+
+ 498 0040 FFF7FEFF 		bl	CAN_SendMsg
+ 499              	.LVL4:
+ 188:can_manager.c **** }
+ 500              		.loc 1 188 0
+ 501 0044 05B0     		add	sp, sp, #20
+ 502              		.cfi_def_cfa_offset 4
+ 503              		@ sp needed
+ 504 0046 5DF804FB 		ldr	pc, [sp], #4
+ 505              		.cfi_endproc
+ 506              	.LFE73:
+ 507              		.size	can_test_send, .-can_test_send
+ 508 004a 00BF     		.section	.text.can_send,"ax",%progbits
+ 509              		.align	2
+ 510              		.global	can_send
+ 511              		.thumb
+ 512              		.thumb_func
+ 513              		.type	can_send, %function
+ 514              	can_send:
+ 515              	.LFB74:
+ 189:can_manager.c **** 
+ 190:can_manager.c **** void can_send(uint8_t data[8], uint32_t ID)
+ 191:can_manager.c **** {
+ 516              		.loc 1 191 0
+ 517              		.cfi_startproc
+ 518              		@ args = 0, pretend = 0, frame = 24
+ 519              		@ frame_needed = 0, uses_anonymous_args = 0
+ 520              	.LVL5:
+ 521 0000 00B5     		push	{lr}
+ 522              		.cfi_def_cfa_offset 4
+ 523              		.cfi_offset 14, -4
+ 524 0002 87B0     		sub	sp, sp, #28
+ 525              		.cfi_def_cfa_offset 32
+ 192:can_manager.c ****     uint8_t i;
+ 193:can_manager.c **** 	CAN_TX_MSG message;
+ 194:can_manager.c **** 	CAN_DATA_BYTES_MSG payload;
+ 195:can_manager.c **** 	message.id = ID; 
+ 526              		.loc 1 195 0
+ 527 0004 0391     		str	r1, [sp, #12]
+ 196:can_manager.c **** 	message.rtr = 0;
+ 528              		.loc 1 196 0
+ 529 0006 0023     		movs	r3, #0
+ 530 0008 8DF81030 		strb	r3, [sp, #16]
+ 197:can_manager.c **** 	message.ide = 0;
+ 531              		.loc 1 197 0
+ 532 000c 8DF81130 		strb	r3, [sp, #17]
+ 198:can_manager.c **** 	message.dlc = 0x08;
+ 533              		.loc 1 198 0
+ 534 0010 0822     		movs	r2, #8
+ 535 0012 8DF81220 		strb	r2, [sp, #18]
+ 199:can_manager.c **** 	message.irq = 0;
+ 536              		.loc 1 199 0
+ 537 0016 8DF81330 		strb	r3, [sp, #19]
+ 200:can_manager.c **** 	message.msg = &payload;
+ 538              		.loc 1 200 0
+ 539 001a 01AA     		add	r2, sp, #4
+ 540 001c 0592     		str	r2, [sp, #20]
+ 541              	.LVL6:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 14
+
+
+ 201:can_manager.c **** 	for(i=0;i<8;i++)
+ 542              		.loc 1 201 0
+ 543 001e 06E0     		b	.L48
+ 544              	.LVL7:
+ 545              	.L49:
+ 202:can_manager.c **** 		payload.byte[i] = data[i];
+ 546              		.loc 1 202 0 discriminator 3
+ 547 0020 C15C     		ldrb	r1, [r0, r3]	@ zero_extendqisi2
+ 548 0022 06AA     		add	r2, sp, #24
+ 549 0024 1A44     		add	r2, r2, r3
+ 550 0026 02F8141C 		strb	r1, [r2, #-20]
+ 201:can_manager.c **** 	for(i=0;i<8;i++)
+ 551              		.loc 1 201 0 discriminator 3
+ 552 002a 0133     		adds	r3, r3, #1
+ 553              	.LVL8:
+ 554 002c DBB2     		uxtb	r3, r3
+ 555              	.LVL9:
+ 556              	.L48:
+ 201:can_manager.c **** 	for(i=0;i<8;i++)
+ 557              		.loc 1 201 0 is_stmt 0 discriminator 1
+ 558 002e 072B     		cmp	r3, #7
+ 559 0030 F6D9     		bls	.L49
+ 203:can_manager.c **** 	CAN_SendMsg(&message); 
+ 560              		.loc 1 203 0 is_stmt 1
+ 561 0032 03A8     		add	r0, sp, #12
+ 562              	.LVL10:
+ 563 0034 FFF7FEFF 		bl	CAN_SendMsg
+ 564              	.LVL11:
+ 204:can_manager.c **** }
+ 565              		.loc 1 204 0
+ 566 0038 07B0     		add	sp, sp, #28
+ 567              		.cfi_def_cfa_offset 4
+ 568              		@ sp needed
+ 569 003a 5DF804FB 		ldr	pc, [sp], #4
+ 570              		.cfi_endproc
+ 571              	.LFE74:
+ 572              		.size	can_send, .-can_send
+ 573 003e 00BF     		.section	.text.can_send_switches,"ax",%progbits
+ 574              		.align	2
+ 575              		.global	can_send_switches
+ 576              		.thumb
+ 577              		.thumb_func
+ 578              		.type	can_send_switches, %function
+ 579              	can_send_switches:
+ 580              	.LFB75:
+ 205:can_manager.c **** 
+ 206:can_manager.c **** void can_send_switches(
+ 207:can_manager.c ****     uint8_t sw_status)
+ 208:can_manager.c **** {
+ 581              		.loc 1 208 0
+ 582              		.cfi_startproc
+ 583              		@ args = 0, pretend = 0, frame = 0
+ 584              		@ frame_needed = 0, uses_anonymous_args = 0
+ 585              		@ link register save eliminated.
+ 586              	.LVL12:
+ 587 0000 7047     		bx	lr
+ 588              		.cfi_endproc
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 15
+
+
+ 589              	.LFE75:
+ 590              		.size	can_send_switches, .-can_send_switches
+ 591 0002 00BF     		.section	.text.can_send_cmd,"ax",%progbits
+ 592              		.align	2
+ 593              		.global	can_send_cmd
+ 594              		.thumb
+ 595              		.thumb_func
+ 596              		.type	can_send_cmd, %function
+ 597              	can_send_cmd:
+ 598              	.LFB76:
+ 209:can_manager.c ****         //CAN_TX_DATA_BYTE1(CAN_TX_MAILBOX_DRIVER_SWITCHES) = sw_status; 
+ 210:can_manager.c ****         //CAN_SendMsgDRIVER_SWITCHES(); 
+ 211:can_manager.c ****     
+ 212:can_manager.c ****         /*
+ 213:can_manager.c ****         uint8_t data[8];
+ 214:can_manager.c ****         
+ 215:can_manager.c ****         data[0] = sw_status;
+ 216:can_manager.c ****         data[1] = 0;
+ 217:can_manager.c ****         
+ 218:can_manager.c ****         data[2] = 0;
+ 219:can_manager.c ****         data[3] = 0;
+ 220:can_manager.c ****         
+ 221:can_manager.c ****         data[4] = 0;
+ 222:can_manager.c ****         data[5] = 0;
+ 223:can_manager.c ****         data[6] = 0;
+ 224:can_manager.c ****         data[7] = 0;
+ 225:can_manager.c **** 
+ 226:can_manager.c ****         can_send(data, DRIVER_SWITCHES);
+ 227:can_manager.c **** */
+ 228:can_manager.c ****         
+ 229:can_manager.c **** } // can_send_status()
+ 230:can_manager.c **** 
+ 231:can_manager.c **** void can_send_cmd(
+ 232:can_manager.c ****     uint8_t SetInterlock,
+ 233:can_manager.c ****     uint16_t VCL_Throttle_High,
+ 234:can_manager.c ****     uint16_t VCL_Throttle_Low,
+ 235:can_manager.c ****     uint8_t E_Stop_Check
+ 236:can_manager.c **** )
+ 237:can_manager.c **** {
+ 599              		.loc 1 237 0
+ 600              		.cfi_startproc
+ 601              		@ args = 0, pretend = 0, frame = 8
+ 602              		@ frame_needed = 0, uses_anonymous_args = 0
+ 603              	.LVL13:
+ 604              		.loc 1 237 0
+ 605 0000 00B5     		push	{lr}
+ 606              		.cfi_def_cfa_offset 4
+ 607              		.cfi_offset 14, -4
+ 608 0002 83B0     		sub	sp, sp, #12
+ 609              		.cfi_def_cfa_offset 16
+ 238:can_manager.c ****     //max and min voltage means the voltage of single cell
+ 239:can_manager.c ****         
+ 240:can_manager.c ****         uint8_t data[8];
+ 241:can_manager.c ****         
+ 242:can_manager.c ****         data[0] = SetInterlock;
+ 610              		.loc 1 242 0
+ 611 0004 8DF80000 		strb	r0, [sp]
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 16
+
+
+ 243:can_manager.c ****         
+ 244:can_manager.c ****         data[1] = VCL_Throttle_High;
+ 612              		.loc 1 244 0
+ 613 0008 8DF80110 		strb	r1, [sp, #1]
+ 245:can_manager.c ****         data[2] = VCL_Throttle_Low;
+ 614              		.loc 1 245 0
+ 615 000c 8DF80220 		strb	r2, [sp, #2]
+ 246:can_manager.c ****         
+ 247:can_manager.c ****         data[3] = 0;
+ 616              		.loc 1 247 0
+ 617 0010 0022     		movs	r2, #0
+ 618              	.LVL14:
+ 619 0012 8DF80320 		strb	r2, [sp, #3]
+ 248:can_manager.c ****         data[4] = E_Stop_Check;
+ 620              		.loc 1 248 0
+ 621 0016 8DF80430 		strb	r3, [sp, #4]
+ 249:can_manager.c ****         
+ 250:can_manager.c ****         data[5] = 0;
+ 622              		.loc 1 250 0
+ 623 001a 8DF80520 		strb	r2, [sp, #5]
+ 251:can_manager.c ****         data[6] = 0;
+ 624              		.loc 1 251 0
+ 625 001e 8DF80620 		strb	r2, [sp, #6]
+ 252:can_manager.c ****         data[7] = 0;
+ 626              		.loc 1 252 0
+ 627 0022 8DF80720 		strb	r2, [sp, #7]
+ 253:can_manager.c **** 
+ 254:can_manager.c ****         can_send(data, 0x766);
+ 628              		.loc 1 254 0
+ 629 0026 40F26671 		movw	r1, #1894
+ 630              	.LVL15:
+ 631 002a 6846     		mov	r0, sp
+ 632              	.LVL16:
+ 633 002c FFF7FEFF 		bl	can_send
+ 634              	.LVL17:
+ 255:can_manager.c ****         CyDelay(1); // Wtf is this shit?
+ 635              		.loc 1 255 0
+ 636 0030 0120     		movs	r0, #1
+ 637 0032 FFF7FEFF 		bl	CyDelay
+ 638              	.LVL18:
+ 256:can_manager.c **** 
+ 257:can_manager.c **** } // can_send_cmd()
+ 639              		.loc 1 257 0
+ 640 0036 03B0     		add	sp, sp, #12
+ 641              		.cfi_def_cfa_offset 4
+ 642              		@ sp needed
+ 643 0038 5DF804FB 		ldr	pc, [sp], #4
+ 644              		.cfi_endproc
+ 645              	.LFE76:
+ 646              		.size	can_send_cmd, .-can_send_cmd
+ 647              		.section	.text.can_send_charge,"ax",%progbits
+ 648              		.align	2
+ 649              		.global	can_send_charge
+ 650              		.thumb
+ 651              		.thumb_func
+ 652              		.type	can_send_charge, %function
+ 653              	can_send_charge:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 17
+
+
+ 654              	.LFB77:
+ 258:can_manager.c **** 
+ 259:can_manager.c **** void can_send_charge(uint8_t charge, uint8_t save_soc) {
+ 655              		.loc 1 259 0
+ 656              		.cfi_startproc
+ 657              		@ args = 0, pretend = 0, frame = 8
+ 658              		@ frame_needed = 0, uses_anonymous_args = 0
+ 659              	.LVL19:
+ 660 0000 00B5     		push	{lr}
+ 661              		.cfi_def_cfa_offset 4
+ 662              		.cfi_offset 14, -4
+ 663 0002 83B0     		sub	sp, sp, #12
+ 664              		.cfi_def_cfa_offset 16
+ 260:can_manager.c ****     uint8_t data[8] = {0};
+ 665              		.loc 1 260 0
+ 666 0004 0023     		movs	r3, #0
+ 667 0006 0093     		str	r3, [sp]
+ 668 0008 0193     		str	r3, [sp, #4]
+ 261:can_manager.c ****     data[0] = charge;
+ 669              		.loc 1 261 0
+ 670 000a 8DF80000 		strb	r0, [sp]
+ 262:can_manager.c ****     data[1] = save_soc;
+ 671              		.loc 1 262 0
+ 672 000e 8DF80110 		strb	r1, [sp, #1]
+ 263:can_manager.c ****     
+ 264:can_manager.c ****     can_send(data, 0x389);
+ 673              		.loc 1 264 0
+ 674 0012 40F28931 		movw	r1, #905
+ 675              	.LVL20:
+ 676 0016 6846     		mov	r0, sp
+ 677              	.LVL21:
+ 678 0018 FFF7FEFF 		bl	can_send
+ 679              	.LVL22:
+ 265:can_manager.c **** }...
+ 680              		.loc 1 265 0
+ 681 001c 03B0     		add	sp, sp, #12
+ 682              		.cfi_def_cfa_offset 4
+ 683              		@ sp needed
+ 684 001e 5DF804FB 		ldr	pc, [sp], #4
+ 685              		.cfi_endproc
+ 686              	.LFE77:
+ 687              		.size	can_send_charge, .-can_send_charge
+ 688              		.global	current_bytes
+ 689              		.global	VEHICLE_STATE_MESSAGE
+ 690              		.global	E_STOP_CHECK
+ 691              		.global	HV_REQUEST
+ 692              		.global	THROTTLE_LOW
+ 693              		.global	THROTTLE_HIGH
+ 694              		.global	ABS_MOTOR_RPM
+ 695              		.global	ERROR_TOLERANCE
+ 696              		.global	ACK_RX
+ 697              		.global	CURTIS_HEART_BEAT_CHECK
+ 698              		.global	CURTIS_FAULT_CHECK
+ 699              		.global	CAPACITOR_VOLT
+ 700 0022 00BF     		.bss
+ 701              		.align	2
+ 702              		.set	.LANCHOR0,. + 0
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 18
+
+
+ 703              		.type	CAPACITOR_VOLT, %object
+ 704              		.size	CAPACITOR_VOLT, 1
+ 705              	CAPACITOR_VOLT:
+ 706 0000 00       		.space	1
+ 707              		.type	CURTIS_FAULT_CHECK, %object
+ 708              		.size	CURTIS_FAULT_CHECK, 1
+ 709              	CURTIS_FAULT_CHECK:
+ 710 0001 00       		.space	1
+ 711              		.type	CURTIS_HEART_BEAT_CHECK, %object
+ 712              		.size	CURTIS_HEART_BEAT_CHECK, 1
+ 713              	CURTIS_HEART_BEAT_CHECK:
+ 714 0002 00       		.space	1
+ 715              		.type	ACK_RX, %object
+ 716              		.size	ACK_RX, 1
+ 717              	ACK_RX:
+ 718 0003 00       		.space	1
+ 719              		.type	ERROR_TOLERANCE, %object
+ 720              		.size	ERROR_TOLERANCE, 1
+ 721              	ERROR_TOLERANCE:
+ 722 0004 00       		.space	1
+ 723              		.type	ABS_MOTOR_RPM, %object
+ 724              		.size	ABS_MOTOR_RPM, 1
+ 725              	ABS_MOTOR_RPM:
+ 726 0005 00       		.space	1
+ 727              		.type	E_STOP_CHECK, %object
+ 728              		.size	E_STOP_CHECK, 1
+ 729              	E_STOP_CHECK:
+ 730 0006 00       		.space	1
+ 731              		.type	HV_REQUEST, %object
+ 732              		.size	HV_REQUEST, 1
+ 733              	HV_REQUEST:
+ 734 0007 00       		.space	1
+ 735              		.type	VEHICLE_STATE_MESSAGE, %object
+ 736              		.size	VEHICLE_STATE_MESSAGE, 1
+ 737              	VEHICLE_STATE_MESSAGE:
+ 738 0008 00       		.space	1
+ 739 0009 000000   		.space	3
+ 740              		.type	current_bytes, %object
+ 741              		.size	current_bytes, 4
+ 742              	current_bytes:
+ 743 000c 00000000 		.space	4
+ 744              		.type	THROTTLE_LOW, %object
+ 745              		.size	THROTTLE_LOW, 1
+ 746              	THROTTLE_LOW:
+ 747 0010 00       		.space	1
+ 748              		.type	THROTTLE_HIGH, %object
+ 749              		.size	THROTTLE_HIGH, 1
+ 750              	THROTTLE_HIGH:
+ 751 0011 00       		.space	1
+ 752              		.text
+ 753              	.Letext0:
+ 754              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 755              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 756              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 757              		.file 5 "Generated_Source\\PSoC5/CAN.h"
+ 758              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 759              		.file 7 "Generated_Source\\PSoC5/CyLib.h"
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 19
+
+
+ 760              		.file 8 "can_manager.h"
+ 761              		.section	.debug_info,"",%progbits
+ 762              	.Ldebug_info0:
+ 763 0000 2B060000 		.4byte	0x62b
+ 764 0004 0400     		.2byte	0x4
+ 765 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 766 000a 04       		.byte	0x4
+ 767 000b 01       		.uleb128 0x1
+ 768 000c 3A040000 		.4byte	.LASF87
+ 769 0010 0C       		.byte	0xc
+ 770 0011 07020000 		.4byte	.LASF88
+ 771 0015 C8040000 		.4byte	.LASF89
+ 772 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 773 001d 00000000 		.4byte	0
+ 774 0021 00000000 		.4byte	.Ldebug_line0
+ 775 0025 02       		.uleb128 0x2
+ 776 0026 01       		.byte	0x1
+ 777 0027 06       		.byte	0x6
+ 778 0028 4E020000 		.4byte	.LASF0
+ 779 002c 03       		.uleb128 0x3
+ 780 002d D5010000 		.4byte	.LASF3
+ 781 0031 02       		.byte	0x2
+ 782 0032 1D       		.byte	0x1d
+ 783 0033 37000000 		.4byte	0x37
+ 784 0037 02       		.uleb128 0x2
+ 785 0038 01       		.byte	0x1
+ 786 0039 08       		.byte	0x8
+ 787 003a 37020000 		.4byte	.LASF1
+ 788 003e 02       		.uleb128 0x2
+ 789 003f 02       		.byte	0x2
+ 790 0040 05       		.byte	0x5
+ 791 0041 60000000 		.4byte	.LASF2
+ 792 0045 03       		.uleb128 0x3
+ 793 0046 CB000000 		.4byte	.LASF4
+ 794 004a 02       		.byte	0x2
+ 795 004b 2B       		.byte	0x2b
+ 796 004c 50000000 		.4byte	0x50
+ 797 0050 02       		.uleb128 0x2
+ 798 0051 02       		.byte	0x2
+ 799 0052 07       		.byte	0x7
+ 800 0053 EA020000 		.4byte	.LASF5
+ 801 0057 03       		.uleb128 0x3
+ 802 0058 B7030000 		.4byte	.LASF6
+ 803 005c 02       		.byte	0x2
+ 804 005d 3F       		.byte	0x3f
+ 805 005e 62000000 		.4byte	0x62
+ 806 0062 02       		.uleb128 0x2
+ 807 0063 04       		.byte	0x4
+ 808 0064 05       		.byte	0x5
+ 809 0065 A3010000 		.4byte	.LASF7
+ 810 0069 03       		.uleb128 0x3
+ 811 006a 97030000 		.4byte	.LASF8
+ 812 006e 02       		.byte	0x2
+ 813 006f 41       		.byte	0x41
+ 814 0070 74000000 		.4byte	0x74
+ 815 0074 02       		.uleb128 0x2
+ 816 0075 04       		.byte	0x4
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 20
+
+
+ 817 0076 07       		.byte	0x7
+ 818 0077 C3010000 		.4byte	.LASF9
+ 819 007b 02       		.uleb128 0x2
+ 820 007c 08       		.byte	0x8
+ 821 007d 05       		.byte	0x5
+ 822 007e 83010000 		.4byte	.LASF10
+ 823 0082 02       		.uleb128 0x2
+ 824 0083 08       		.byte	0x8
+ 825 0084 07       		.byte	0x7
+ 826 0085 5A020000 		.4byte	.LASF11
+ 827 0089 04       		.uleb128 0x4
+ 828 008a 04       		.byte	0x4
+ 829 008b 05       		.byte	0x5
+ 830 008c 696E7400 		.ascii	"int\000"
+ 831 0090 02       		.uleb128 0x2
+ 832 0091 04       		.byte	0x4
+ 833 0092 07       		.byte	0x7
+ 834 0093 85020000 		.4byte	.LASF12
+ 835 0097 03       		.uleb128 0x3
+ 836 0098 21010000 		.4byte	.LASF13
+ 837 009c 03       		.byte	0x3
+ 838 009d 18       		.byte	0x18
+ 839 009e 2C000000 		.4byte	0x2c
+ 840 00a2 03       		.uleb128 0x3
+ 841 00a3 92020000 		.4byte	.LASF14
+ 842 00a7 03       		.byte	0x3
+ 843 00a8 24       		.byte	0x24
+ 844 00a9 45000000 		.4byte	0x45
+ 845 00ad 03       		.uleb128 0x3
+ 846 00ae 1B030000 		.4byte	.LASF15
+ 847 00b2 03       		.byte	0x3
+ 848 00b3 2C       		.byte	0x2c
+ 849 00b4 57000000 		.4byte	0x57
+ 850 00b8 03       		.uleb128 0x3
+ 851 00b9 7C020000 		.4byte	.LASF16
+ 852 00bd 03       		.byte	0x3
+ 853 00be 30       		.byte	0x30
+ 854 00bf 69000000 		.4byte	0x69
+ 855 00c3 05       		.uleb128 0x5
+ 856 00c4 48010000 		.4byte	.LASF17
+ 857 00c8 04       		.byte	0x4
+ 858 00c9 E801     		.2byte	0x1e8
+ 859 00cb 37000000 		.4byte	0x37
+ 860 00cf 05       		.uleb128 0x5
+ 861 00d0 50030000 		.4byte	.LASF18
+ 862 00d4 04       		.byte	0x4
+ 863 00d5 EA01     		.2byte	0x1ea
+ 864 00d7 74000000 		.4byte	0x74
+ 865 00db 02       		.uleb128 0x2
+ 866 00dc 04       		.byte	0x4
+ 867 00dd 04       		.byte	0x4
+ 868 00de 76010000 		.4byte	.LASF19
+ 869 00e2 02       		.uleb128 0x2
+ 870 00e3 08       		.byte	0x8
+ 871 00e4 04       		.byte	0x4
+ 872 00e5 7C010000 		.4byte	.LASF20
+ 873 00e9 02       		.uleb128 0x2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 21
+
+
+ 874 00ea 01       		.byte	0x1
+ 875 00eb 08       		.byte	0x8
+ 876 00ec 91010000 		.4byte	.LASF21
+ 877 00f0 02       		.uleb128 0x2
+ 878 00f1 08       		.byte	0x8
+ 879 00f2 04       		.byte	0x4
+ 880 00f3 24020000 		.4byte	.LASF22
+ 881 00f7 02       		.uleb128 0x2
+ 882 00f8 04       		.byte	0x4
+ 883 00f9 07       		.byte	0x7
+ 884 00fa 89000000 		.4byte	.LASF23
+ 885 00fe 06       		.uleb128 0x6
+ 886 00ff 08       		.byte	0x8
+ 887 0100 05       		.byte	0x5
+ 888 0101 6F       		.byte	0x6f
+ 889 0102 13010000 		.4byte	0x113
+ 890 0106 07       		.uleb128 0x7
+ 891 0107 D6000000 		.4byte	.LASF25
+ 892 010b 05       		.byte	0x5
+ 893 010c 71       		.byte	0x71
+ 894 010d 13010000 		.4byte	0x113
+ 895 0111 00       		.byte	0
+ 896 0112 00       		.byte	0
+ 897 0113 08       		.uleb128 0x8
+ 898 0114 C3000000 		.4byte	0xc3
+ 899 0118 23010000 		.4byte	0x123
+ 900 011c 09       		.uleb128 0x9
+ 901 011d F7000000 		.4byte	0xf7
+ 902 0121 07       		.byte	0x7
+ 903 0122 00       		.byte	0
+ 904 0123 03       		.uleb128 0x3
+ 905 0124 AB020000 		.4byte	.LASF24
+ 906 0128 05       		.byte	0x5
+ 907 0129 72       		.byte	0x72
+ 908 012a FE000000 		.4byte	0xfe
+ 909 012e 06       		.uleb128 0x6
+ 910 012f 0C       		.byte	0xc
+ 911 0130 05       		.byte	0x5
+ 912 0131 81       		.byte	0x81
+ 913 0132 7E010000 		.4byte	0x17e
+ 914 0136 0A       		.uleb128 0xa
+ 915 0137 696400   		.ascii	"id\000"
+ 916 013a 05       		.byte	0x5
+ 917 013b 83       		.byte	0x83
+ 918 013c CF000000 		.4byte	0xcf
+ 919 0140 00       		.byte	0
+ 920 0141 0A       		.uleb128 0xa
+ 921 0142 72747200 		.ascii	"rtr\000"
+ 922 0146 05       		.byte	0x5
+ 923 0147 84       		.byte	0x84
+ 924 0148 C3000000 		.4byte	0xc3
+ 925 014c 04       		.byte	0x4
+ 926 014d 0A       		.uleb128 0xa
+ 927 014e 69646500 		.ascii	"ide\000"
+ 928 0152 05       		.byte	0x5
+ 929 0153 85       		.byte	0x85
+ 930 0154 C3000000 		.4byte	0xc3
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 22
+
+
+ 931 0158 05       		.byte	0x5
+ 932 0159 0A       		.uleb128 0xa
+ 933 015a 646C6300 		.ascii	"dlc\000"
+ 934 015e 05       		.byte	0x5
+ 935 015f 86       		.byte	0x86
+ 936 0160 C3000000 		.4byte	0xc3
+ 937 0164 06       		.byte	0x6
+ 938 0165 0A       		.uleb128 0xa
+ 939 0166 69727100 		.ascii	"irq\000"
+ 940 016a 05       		.byte	0x5
+ 941 016b 87       		.byte	0x87
+ 942 016c C3000000 		.4byte	0xc3
+ 943 0170 07       		.byte	0x7
+ 944 0171 0A       		.uleb128 0xa
+ 945 0172 6D736700 		.ascii	"msg\000"
+ 946 0176 05       		.byte	0x5
+ 947 0177 8B       		.byte	0x8b
+ 948 0178 7E010000 		.4byte	0x17e
+ 949 017c 08       		.byte	0x8
+ 950 017d 00       		.byte	0
+ 951 017e 0B       		.uleb128 0xb
+ 952 017f 04       		.byte	0x4
+ 953 0180 23010000 		.4byte	0x123
+ 954 0184 03       		.uleb128 0x3
+ 955 0185 5F030000 		.4byte	.LASF26
+ 956 0189 05       		.byte	0x5
+ 957 018a 8C       		.byte	0x8c
+ 958 018b 2E010000 		.4byte	0x12e
+ 959 018f 0C       		.uleb128 0xc
+ 960 0190 B8000000 		.4byte	0xb8
+ 961 0194 0C       		.uleb128 0xc
+ 962 0195 97000000 		.4byte	0x97
+ 963 0199 0C       		.uleb128 0xc
+ 964 019a A2000000 		.4byte	0xa2
+ 965 019e 08       		.uleb128 0x8
+ 966 019f 97000000 		.4byte	0x97
+ 967 01a3 AE010000 		.4byte	0x1ae
+ 968 01a7 09       		.uleb128 0x9
+ 969 01a8 F7000000 		.4byte	0xf7
+ 970 01ac 07       		.byte	0x7
+ 971 01ad 00       		.byte	0
+ 972 01ae 0D       		.uleb128 0xd
+ 973 01af 02       		.byte	0x2
+ 974 01b0 50000000 		.4byte	0x50
+ 975 01b4 08       		.byte	0x8
+ 976 01b5 12       		.byte	0x12
+ 977 01b6 06020000 		.4byte	0x206
+ 978 01ba 0E       		.uleb128 0xe
+ 979 01bb E8000000 		.4byte	.LASF27
+ 980 01bf C0       		.byte	0xc0
+ 981 01c0 0E       		.uleb128 0xe
+ 982 01c1 9B020000 		.4byte	.LASF28
+ 983 01c5 D0       		.byte	0xd0
+ 984 01c6 0F       		.uleb128 0xf
+ 985 01c7 EF030000 		.4byte	.LASF29
+ 986 01cb 6607     		.2byte	0x766
+ 987 01cd 0F       		.uleb128 0xf
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 23
+
+
+ 988 01ce 9F000000 		.4byte	.LASF30
+ 989 01d2 8003     		.2byte	0x380
+ 990 01d4 0F       		.uleb128 0xf
+ 991 01d5 6A010000 		.4byte	.LASF31
+ 992 01d9 8703     		.2byte	0x387
+ 993 01db 0F       		.uleb128 0xf
+ 994 01dc 6A000000 		.4byte	.LASF32
+ 995 01e0 8803     		.2byte	0x388
+ 996 01e2 0F       		.uleb128 0xf
+ 997 01e3 18050000 		.4byte	.LASF33
+ 998 01e7 8903     		.2byte	0x389
+ 999 01e9 0F       		.uleb128 0xf
+ 1000 01ea A2030000 		.4byte	.LASF34
+ 1001 01ee 6603     		.2byte	0x366
+ 1002 01f0 0F       		.uleb128 0xf
+ 1003 01f1 14040000 		.4byte	.LASF35
+ 1004 01f5 6604     		.2byte	0x466
+ 1005 01f7 0F       		.uleb128 0xf
+ 1006 01f8 AB030000 		.4byte	.LASF36
+ 1007 01fc 6605     		.2byte	0x566
+ 1008 01fe 0F       		.uleb128 0xf
+ 1009 01ff AE000000 		.4byte	.LASF37
+ 1010 0203 6606     		.2byte	0x666
+ 1011 0205 00       		.byte	0
+ 1012 0206 10       		.uleb128 0x10
+ 1013 0207 BE020000 		.4byte	.LASF38
+ 1014 020b 01       		.byte	0x1
+ 1015 020c 35       		.byte	0x35
+ 1016 020d 97000000 		.4byte	0x97
+ 1017 0211 00000000 		.4byte	.LFB63
+ 1018 0215 0C000000 		.4byte	.LFE63-.LFB63
+ 1019 0219 01       		.uleb128 0x1
+ 1020 021a 9C       		.byte	0x9c
+ 1021 021b 10       		.uleb128 0x10
+ 1022 021c 07030000 		.4byte	.LASF39
+ 1023 0220 01       		.byte	0x1
+ 1024 0221 3B       		.byte	0x3b
+ 1025 0222 97000000 		.4byte	0x97
+ 1026 0226 00000000 		.4byte	.LFB64
+ 1027 022a 0C000000 		.4byte	.LFE64-.LFB64
+ 1028 022e 01       		.uleb128 0x1
+ 1029 022f 9C       		.byte	0x9c
+ 1030 0230 10       		.uleb128 0x10
+ 1031 0231 7F030000 		.4byte	.LASF40
+ 1032 0235 01       		.byte	0x1
+ 1033 0236 42       		.byte	0x42
+ 1034 0237 97000000 		.4byte	0x97
+ 1035 023b 00000000 		.4byte	.LFB65
+ 1036 023f 0C000000 		.4byte	.LFE65-.LFB65
+ 1037 0243 01       		.uleb128 0x1
+ 1038 0244 9C       		.byte	0x9c
+ 1039 0245 10       		.uleb128 0x10
+ 1040 0246 45020000 		.4byte	.LASF41
+ 1041 024a 01       		.byte	0x1
+ 1042 024b 48       		.byte	0x48
+ 1043 024c 97000000 		.4byte	0x97
+ 1044 0250 00000000 		.4byte	.LFB66
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 24
+
+
+ 1045 0254 0C000000 		.4byte	.LFE66-.LFB66
+ 1046 0258 01       		.uleb128 0x1
+ 1047 0259 9C       		.byte	0x9c
+ 1048 025a 10       		.uleb128 0x10
+ 1049 025b F5010000 		.4byte	.LASF42
+ 1050 025f 01       		.byte	0x1
+ 1051 0260 4F       		.byte	0x4f
+ 1052 0261 97000000 		.4byte	0x97
+ 1053 0265 00000000 		.4byte	.LFB67
+ 1054 0269 0C000000 		.4byte	.LFE67-.LFB67
+ 1055 026d 01       		.uleb128 0x1
+ 1056 026e 9C       		.byte	0x9c
+ 1057 026f 10       		.uleb128 0x10
+ 1058 0270 29010000 		.4byte	.LASF43
+ 1059 0274 01       		.byte	0x1
+ 1060 0275 56       		.byte	0x56
+ 1061 0276 97000000 		.4byte	0x97
+ 1062 027a 00000000 		.4byte	.LFB68
+ 1063 027e 0C000000 		.4byte	.LFE68-.LFB68
+ 1064 0282 01       		.uleb128 0x1
+ 1065 0283 9C       		.byte	0x9c
+ 1066 0284 10       		.uleb128 0x10
+ 1067 0285 38010000 		.4byte	.LASF44
+ 1068 0289 01       		.byte	0x1
+ 1069 028a 5C       		.byte	0x5c
+ 1070 028b 97000000 		.4byte	0x97
+ 1071 028f 00000000 		.4byte	.LFB69
+ 1072 0293 0C000000 		.4byte	.LFE69-.LFB69
+ 1073 0297 01       		.uleb128 0x1
+ 1074 0298 9C       		.byte	0x9c
+ 1075 0299 10       		.uleb128 0x10
+ 1076 029a 10010000 		.4byte	.LASF45
+ 1077 029e 01       		.byte	0x1
+ 1078 029f 62       		.byte	0x62
+ 1079 02a0 97000000 		.4byte	0x97
+ 1080 02a4 00000000 		.4byte	.LFB70
+ 1081 02a8 0C000000 		.4byte	.LFE70-.LFB70
+ 1082 02ac 01       		.uleb128 0x1
+ 1083 02ad 9C       		.byte	0x9c
+ 1084 02ae 10       		.uleb128 0x10
+ 1085 02af B9000000 		.4byte	.LASF46
+ 1086 02b3 01       		.byte	0x1
+ 1087 02b4 68       		.byte	0x68
+ 1088 02b5 97000000 		.4byte	0x97
+ 1089 02b9 00000000 		.4byte	.LFB71
+ 1090 02bd 0C000000 		.4byte	.LFE71-.LFB71
+ 1091 02c1 01       		.uleb128 0x1
+ 1092 02c2 9C       		.byte	0x9c
+ 1093 02c3 11       		.uleb128 0x11
+ 1094 02c4 00000000 		.4byte	.LASF49
+ 1095 02c8 01       		.byte	0x1
+ 1096 02c9 6F       		.byte	0x6f
+ 1097 02ca 00000000 		.4byte	.LFB72
+ 1098 02ce 24010000 		.4byte	.LFE72-.LFB72
+ 1099 02d2 01       		.uleb128 0x1
+ 1100 02d3 9C       		.byte	0x9c
+ 1101 02d4 17030000 		.4byte	0x317
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 25
+
+
+ 1102 02d8 12       		.uleb128 0x12
+ 1103 02d9 6D736700 		.ascii	"msg\000"
+ 1104 02dd 01       		.byte	0x1
+ 1105 02de 6F       		.byte	0x6f
+ 1106 02df 17030000 		.4byte	0x317
+ 1107 02e3 00000000 		.4byte	.LLST0
+ 1108 02e7 12       		.uleb128 0x12
+ 1109 02e8 494400   		.ascii	"ID\000"
+ 1110 02eb 01       		.byte	0x1
+ 1111 02ec 6F       		.byte	0x6f
+ 1112 02ed 89000000 		.4byte	0x89
+ 1113 02f1 2C000000 		.4byte	.LLST1
+ 1114 02f5 13       		.uleb128 0x13
+ 1115 02f6 B4010000 		.4byte	.LASF47
+ 1116 02fa 01       		.byte	0x1
+ 1117 02fb 71       		.byte	0x71
+ 1118 02fc C3000000 		.4byte	0xc3
+ 1119 0300 58000000 		.4byte	.LLST2
+ 1120 0304 14       		.uleb128 0x14
+ 1121 0305 0A000000 		.4byte	.LVL1
+ 1122 0309 01060000 		.4byte	0x601
+ 1123 030d 14       		.uleb128 0x14
+ 1124 030e 02010000 		.4byte	.LVL2
+ 1125 0312 0C060000 		.4byte	0x60c
+ 1126 0316 00       		.byte	0
+ 1127 0317 0B       		.uleb128 0xb
+ 1128 0318 04       		.byte	0x4
+ 1129 0319 97000000 		.4byte	0x97
+ 1130 031d 15       		.uleb128 0x15
+ 1131 031e 45000000 		.4byte	.LASF90
+ 1132 0322 01       		.byte	0x1
+ 1133 0323 A6       		.byte	0xa6
+ 1134 0324 00000000 		.4byte	.LFB73
+ 1135 0328 4A000000 		.4byte	.LFE73-.LFB73
+ 1136 032c 01       		.uleb128 0x1
+ 1137 032d 9C       		.byte	0x9c
+ 1138 032e 51030000 		.4byte	0x351
+ 1139 0332 16       		.uleb128 0x16
+ 1140 0333 DF010000 		.4byte	.LASF48
+ 1141 0337 01       		.byte	0x1
+ 1142 0338 A9       		.byte	0xa9
+ 1143 0339 84010000 		.4byte	0x184
+ 1144 033d 02       		.uleb128 0x2
+ 1145 033e 91       		.byte	0x91
+ 1146 033f 6C       		.sleb128 -20
+ 1147 0340 17       		.uleb128 0x17
+ 1148 0341 44000000 		.4byte	.LVL4
+ 1149 0345 17060000 		.4byte	0x617
+ 1150 0349 18       		.uleb128 0x18
+ 1151 034a 01       		.uleb128 0x1
+ 1152 034b 50       		.byte	0x50
+ 1153 034c 02       		.uleb128 0x2
+ 1154 034d 91       		.byte	0x91
+ 1155 034e 6C       		.sleb128 -20
+ 1156 034f 00       		.byte	0
+ 1157 0350 00       		.byte	0
+ 1158 0351 11       		.uleb128 0x11
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 26
+
+
+ 1159 0352 0C000000 		.4byte	.LASF50
+ 1160 0356 01       		.byte	0x1
+ 1161 0357 BE       		.byte	0xbe
+ 1162 0358 00000000 		.4byte	.LFB74
+ 1163 035c 3E000000 		.4byte	.LFE74-.LFB74
+ 1164 0360 01       		.uleb128 0x1
+ 1165 0361 9C       		.byte	0x9c
+ 1166 0362 BD030000 		.4byte	0x3bd
+ 1167 0366 19       		.uleb128 0x19
+ 1168 0367 3A030000 		.4byte	.LASF51
+ 1169 036b 01       		.byte	0x1
+ 1170 036c BE       		.byte	0xbe
+ 1171 036d 17030000 		.4byte	0x317
+ 1172 0371 6B000000 		.4byte	.LLST3
+ 1173 0375 12       		.uleb128 0x12
+ 1174 0376 494400   		.ascii	"ID\000"
+ 1175 0379 01       		.byte	0x1
+ 1176 037a BE       		.byte	0xbe
+ 1177 037b B8000000 		.4byte	0xb8
+ 1178 037f 8C000000 		.4byte	.LLST4
+ 1179 0383 1A       		.uleb128 0x1a
+ 1180 0384 6900     		.ascii	"i\000"
+ 1181 0386 01       		.byte	0x1
+ 1182 0387 C0       		.byte	0xc0
+ 1183 0388 97000000 		.4byte	0x97
+ 1184 038c C5000000 		.4byte	.LLST5
+ 1185 0390 16       		.uleb128 0x16
+ 1186 0391 57030000 		.4byte	.LASF52
+ 1187 0395 01       		.byte	0x1
+ 1188 0396 C1       		.byte	0xc1
+ 1189 0397 84010000 		.4byte	0x184
+ 1190 039b 02       		.uleb128 0x2
+ 1191 039c 91       		.byte	0x91
+ 1192 039d 6C       		.sleb128 -20
+ 1193 039e 16       		.uleb128 0x16
+ 1194 039f 41050000 		.4byte	.LASF53
+ 1195 03a3 01       		.byte	0x1
+ 1196 03a4 C2       		.byte	0xc2
+ 1197 03a5 23010000 		.4byte	0x123
+ 1198 03a9 02       		.uleb128 0x2
+ 1199 03aa 91       		.byte	0x91
+ 1200 03ab 64       		.sleb128 -28
+ 1201 03ac 17       		.uleb128 0x17
+ 1202 03ad 38000000 		.4byte	.LVL11
+ 1203 03b1 17060000 		.4byte	0x617
+ 1204 03b5 18       		.uleb128 0x18
+ 1205 03b6 01       		.uleb128 0x1
+ 1206 03b7 50       		.byte	0x50
+ 1207 03b8 02       		.uleb128 0x2
+ 1208 03b9 91       		.byte	0x91
+ 1209 03ba 6C       		.sleb128 -20
+ 1210 03bb 00       		.byte	0
+ 1211 03bc 00       		.byte	0
+ 1212 03bd 11       		.uleb128 0x11
+ 1213 03be 77000000 		.4byte	.LASF54
+ 1214 03c2 01       		.byte	0x1
+ 1215 03c3 CE       		.byte	0xce
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 27
+
+
+ 1216 03c4 00000000 		.4byte	.LFB75
+ 1217 03c8 02000000 		.4byte	.LFE75-.LFB75
+ 1218 03cc 01       		.uleb128 0x1
+ 1219 03cd 9C       		.byte	0x9c
+ 1220 03ce E0030000 		.4byte	0x3e0
+ 1221 03d2 1B       		.uleb128 0x1b
+ 1222 03d3 49050000 		.4byte	.LASF55
+ 1223 03d7 01       		.byte	0x1
+ 1224 03d8 CF       		.byte	0xcf
+ 1225 03d9 97000000 		.4byte	0x97
+ 1226 03dd 01       		.uleb128 0x1
+ 1227 03de 50       		.byte	0x50
+ 1228 03df 00       		.byte	0
+ 1229 03e0 11       		.uleb128 0x11
+ 1230 03e1 DB000000 		.4byte	.LASF56
+ 1231 03e5 01       		.byte	0x1
+ 1232 03e6 E7       		.byte	0xe7
+ 1233 03e7 00000000 		.4byte	.LFB76
+ 1234 03eb 3C000000 		.4byte	.LFE76-.LFB76
+ 1235 03ef 01       		.uleb128 0x1
+ 1236 03f0 9C       		.byte	0x9c
+ 1237 03f1 6A040000 		.4byte	0x46a
+ 1238 03f5 19       		.uleb128 0x19
+ 1239 03f6 92000000 		.4byte	.LASF57
+ 1240 03fa 01       		.byte	0x1
+ 1241 03fb E8       		.byte	0xe8
+ 1242 03fc 97000000 		.4byte	0x97
+ 1243 0400 EF000000 		.4byte	.LLST6
+ 1244 0404 19       		.uleb128 0x19
+ 1245 0405 F6000000 		.4byte	.LASF58
+ 1246 0409 01       		.byte	0x1
+ 1247 040a E9       		.byte	0xe9
+ 1248 040b A2000000 		.4byte	0xa2
+ 1249 040f 1C010000 		.4byte	.LLST7
+ 1250 0413 19       		.uleb128 0x19
+ 1251 0414 3F030000 		.4byte	.LASF59
+ 1252 0418 01       		.byte	0x1
+ 1253 0419 EA       		.byte	0xea
+ 1254 041a A2000000 		.4byte	0xa2
+ 1255 041e 3D010000 		.4byte	.LLST8
+ 1256 0422 19       		.uleb128 0x19
+ 1257 0423 CC030000 		.4byte	.LASF60
+ 1258 0427 01       		.byte	0x1
+ 1259 0428 EB       		.byte	0xeb
+ 1260 0429 97000000 		.4byte	0x97
+ 1261 042d 5E010000 		.4byte	.LLST9
+ 1262 0431 16       		.uleb128 0x16
+ 1263 0432 3A030000 		.4byte	.LASF51
+ 1264 0436 01       		.byte	0x1
+ 1265 0437 F0       		.byte	0xf0
+ 1266 0438 9E010000 		.4byte	0x19e
+ 1267 043c 02       		.uleb128 0x2
+ 1268 043d 91       		.byte	0x91
+ 1269 043e 70       		.sleb128 -16
+ 1270 043f 1C       		.uleb128 0x1c
+ 1271 0440 30000000 		.4byte	.LVL17
+ 1272 0444 51030000 		.4byte	0x351
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 28
+
+
+ 1273 0448 5A040000 		.4byte	0x45a
+ 1274 044c 18       		.uleb128 0x18
+ 1275 044d 01       		.uleb128 0x1
+ 1276 044e 50       		.byte	0x50
+ 1277 044f 02       		.uleb128 0x2
+ 1278 0450 7D       		.byte	0x7d
+ 1279 0451 00       		.sleb128 0
+ 1280 0452 18       		.uleb128 0x18
+ 1281 0453 01       		.uleb128 0x1
+ 1282 0454 51       		.byte	0x51
+ 1283 0455 03       		.uleb128 0x3
+ 1284 0456 0A       		.byte	0xa
+ 1285 0457 6607     		.2byte	0x766
+ 1286 0459 00       		.byte	0
+ 1287 045a 17       		.uleb128 0x17
+ 1288 045b 36000000 		.4byte	.LVL18
+ 1289 045f 23060000 		.4byte	0x623
+ 1290 0463 18       		.uleb128 0x18
+ 1291 0464 01       		.uleb128 0x1
+ 1292 0465 50       		.byte	0x50
+ 1293 0466 01       		.uleb128 0x1
+ 1294 0467 31       		.byte	0x31
+ 1295 0468 00       		.byte	0
+ 1296 0469 00       		.byte	0
+ 1297 046a 1D       		.uleb128 0x1d
+ 1298 046b 29050000 		.4byte	.LASF61
+ 1299 046f 01       		.byte	0x1
+ 1300 0470 0301     		.2byte	0x103
+ 1301 0472 00000000 		.4byte	.LFB77
+ 1302 0476 22000000 		.4byte	.LFE77-.LFB77
+ 1303 047a 01       		.uleb128 0x1
+ 1304 047b 9C       		.byte	0x9c
+ 1305 047c C7040000 		.4byte	0x4c7
+ 1306 0480 1E       		.uleb128 0x1e
+ 1307 0481 30020000 		.4byte	.LASF62
+ 1308 0485 01       		.byte	0x1
+ 1309 0486 0301     		.2byte	0x103
+ 1310 0488 97000000 		.4byte	0x97
+ 1311 048c 7F010000 		.4byte	.LLST10
+ 1312 0490 1E       		.uleb128 0x1e
+ 1313 0491 76030000 		.4byte	.LASF63
+ 1314 0495 01       		.byte	0x1
+ 1315 0496 0301     		.2byte	0x103
+ 1316 0498 97000000 		.4byte	0x97
+ 1317 049c AC010000 		.4byte	.LLST11
+ 1318 04a0 1F       		.uleb128 0x1f
+ 1319 04a1 3A030000 		.4byte	.LASF51
+ 1320 04a5 01       		.byte	0x1
+ 1321 04a6 0401     		.2byte	0x104
+ 1322 04a8 9E010000 		.4byte	0x19e
+ 1323 04ac 02       		.uleb128 0x2
+ 1324 04ad 91       		.byte	0x91
+ 1325 04ae 70       		.sleb128 -16
+ 1326 04af 17       		.uleb128 0x17
+ 1327 04b0 1C000000 		.4byte	.LVL22
+ 1328 04b4 51030000 		.4byte	0x351
+ 1329 04b8 18       		.uleb128 0x18
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 29
+
+
+ 1330 04b9 01       		.uleb128 0x1
+ 1331 04ba 50       		.byte	0x50
+ 1332 04bb 02       		.uleb128 0x2
+ 1333 04bc 7D       		.byte	0x7d
+ 1334 04bd 00       		.sleb128 0
+ 1335 04be 18       		.uleb128 0x18
+ 1336 04bf 01       		.uleb128 0x1
+ 1337 04c0 51       		.byte	0x51
+ 1338 04c1 03       		.uleb128 0x3
+ 1339 04c2 0A       		.byte	0xa
+ 1340 04c3 8903     		.2byte	0x389
+ 1341 04c5 00       		.byte	0
+ 1342 04c6 00       		.byte	0
+ 1343 04c7 20       		.uleb128 0x20
+ 1344 04c8 2D040000 		.4byte	.LASF64
+ 1345 04cc 06       		.byte	0x6
+ 1346 04cd 1207     		.2byte	0x712
+ 1347 04cf D3040000 		.4byte	0x4d3
+ 1348 04d3 0C       		.uleb128 0xc
+ 1349 04d4 AD000000 		.4byte	0xad
+ 1350 04d8 21       		.uleb128 0x21
+ 1351 04d9 FD020000 		.4byte	.LASF65
+ 1352 04dd 01       		.byte	0x1
+ 1353 04de 14       		.byte	0x14
+ 1354 04df 94010000 		.4byte	0x194
+ 1355 04e3 21       		.uleb128 0x21
+ 1356 04e4 39050000 		.4byte	.LASF66
+ 1357 04e8 01       		.byte	0x1
+ 1358 04e9 16       		.byte	0x16
+ 1359 04ea 99010000 		.4byte	0x199
+ 1360 04ee 22       		.uleb128 0x22
+ 1361 04ef 736F6300 		.ascii	"soc\000"
+ 1362 04f3 01       		.byte	0x1
+ 1363 04f4 19       		.byte	0x19
+ 1364 04f5 94010000 		.4byte	0x194
+ 1365 04f9 21       		.uleb128 0x21
+ 1366 04fa AC010000 		.4byte	.LASF67
+ 1367 04fe 01       		.byte	0x1
+ 1368 04ff 1A       		.byte	0x1a
+ 1369 0500 8F010000 		.4byte	0x18f
+ 1370 0504 21       		.uleb128 0x21
+ 1371 0505 15020000 		.4byte	.LASF68
+ 1372 0509 01       		.byte	0x1
+ 1373 050a 1C       		.byte	0x1c
+ 1374 050b 94010000 		.4byte	0x194
+ 1375 050f 21       		.uleb128 0x21
+ 1376 0510 08010000 		.4byte	.LASF69
+ 1377 0514 01       		.byte	0x1
+ 1378 0515 1F       		.byte	0x1f
+ 1379 0516 99010000 		.4byte	0x199
+ 1380 051a 21       		.uleb128 0x21
+ 1381 051b 71020000 		.4byte	.LASF70
+ 1382 051f 01       		.byte	0x1
+ 1383 0520 20       		.byte	0x20
+ 1384 0521 99010000 		.4byte	0x199
+ 1385 0525 23       		.uleb128 0x23
+ 1386 0526 E6010000 		.4byte	.LASF71
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 30
+
+
+ 1387 052a 01       		.byte	0x1
+ 1388 052b 22       		.byte	0x22
+ 1389 052c 94010000 		.4byte	0x194
+ 1390 0530 05       		.uleb128 0x5
+ 1391 0531 03       		.byte	0x3
+ 1392 0532 00000000 		.4byte	CAPACITOR_VOLT
+ 1393 0536 23       		.uleb128 0x23
+ 1394 0537 1C000000 		.4byte	.LASF72
+ 1395 053b 01       		.byte	0x1
+ 1396 053c 23       		.byte	0x23
+ 1397 053d 94010000 		.4byte	0x194
+ 1398 0541 05       		.uleb128 0x5
+ 1399 0542 03       		.byte	0x3
+ 1400 0543 00000000 		.4byte	CURTIS_FAULT_CHECK
+ 1401 0547 23       		.uleb128 0x23
+ 1402 0548 D2020000 		.4byte	.LASF73
+ 1403 054c 01       		.byte	0x1
+ 1404 054d 24       		.byte	0x24
+ 1405 054e 94010000 		.4byte	0x194
+ 1406 0552 05       		.uleb128 0x5
+ 1407 0553 03       		.byte	0x3
+ 1408 0554 00000000 		.4byte	CURTIS_HEART_BEAT_CHECK
+ 1409 0558 23       		.uleb128 0x23
+ 1410 0559 15000000 		.4byte	.LASF74
+ 1411 055d 01       		.byte	0x1
+ 1412 055e 25       		.byte	0x25
+ 1413 055f 94010000 		.4byte	0x194
+ 1414 0563 05       		.uleb128 0x5
+ 1415 0564 03       		.byte	0x3
+ 1416 0565 00000000 		.4byte	ACK_RX
+ 1417 0569 23       		.uleb128 0x23
+ 1418 056a 1D040000 		.4byte	.LASF75
+ 1419 056e 01       		.byte	0x1
+ 1420 056f 26       		.byte	0x26
+ 1421 0570 94010000 		.4byte	0x194
+ 1422 0574 05       		.uleb128 0x5
+ 1423 0575 03       		.byte	0x3
+ 1424 0576 00000000 		.4byte	ERROR_TOLERANCE
+ 1425 057a 23       		.uleb128 0x23
+ 1426 057b 06040000 		.4byte	.LASF76
+ 1427 057f 01       		.byte	0x1
+ 1428 0580 27       		.byte	0x27
+ 1429 0581 94010000 		.4byte	0x194
+ 1430 0585 05       		.uleb128 0x5
+ 1431 0586 03       		.byte	0x3
+ 1432 0587 00000000 		.4byte	ABS_MOTOR_RPM
+ 1433 058b 23       		.uleb128 0x23
+ 1434 058c 4E010000 		.4byte	.LASF77
+ 1435 0590 01       		.byte	0x1
+ 1436 0591 28       		.byte	0x28
+ 1437 0592 94010000 		.4byte	0x194
+ 1438 0596 05       		.uleb128 0x5
+ 1439 0597 03       		.byte	0x3
+ 1440 0598 00000000 		.4byte	THROTTLE_HIGH
+ 1441 059c 23       		.uleb128 0x23
+ 1442 059d 96010000 		.4byte	.LASF78
+ 1443 05a1 01       		.byte	0x1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 31
+
+
+ 1444 05a2 29       		.byte	0x29
+ 1445 05a3 94010000 		.4byte	0x194
+ 1446 05a7 05       		.uleb128 0x5
+ 1447 05a8 03       		.byte	0x3
+ 1448 05a9 00000000 		.4byte	THROTTLE_LOW
+ 1449 05ad 23       		.uleb128 0x23
+ 1450 05ae C1030000 		.4byte	.LASF79
+ 1451 05b2 01       		.byte	0x1
+ 1452 05b3 2D       		.byte	0x2d
+ 1453 05b4 94010000 		.4byte	0x194
+ 1454 05b8 05       		.uleb128 0x5
+ 1455 05b9 03       		.byte	0x3
+ 1456 05ba 00000000 		.4byte	HV_REQUEST
+ 1457 05be 23       		.uleb128 0x23
+ 1458 05bf 53000000 		.4byte	.LASF80
+ 1459 05c3 01       		.byte	0x1
+ 1460 05c4 2E       		.byte	0x2e
+ 1461 05c5 94010000 		.4byte	0x194
+ 1462 05c9 05       		.uleb128 0x5
+ 1463 05ca 03       		.byte	0x3
+ 1464 05cb 00000000 		.4byte	E_STOP_CHECK
+ 1465 05cf 23       		.uleb128 0x23
+ 1466 05d0 D9030000 		.4byte	.LASF81
+ 1467 05d4 01       		.byte	0x1
+ 1468 05d5 2F       		.byte	0x2f
+ 1469 05d6 94010000 		.4byte	0x194
+ 1470 05da 05       		.uleb128 0x5
+ 1471 05db 03       		.byte	0x3
+ 1472 05dc 00000000 		.4byte	VEHICLE_STATE_MESSAGE
+ 1473 05e0 08       		.uleb128 0x8
+ 1474 05e1 C3000000 		.4byte	0xc3
+ 1475 05e5 F0050000 		.4byte	0x5f0
+ 1476 05e9 09       		.uleb128 0x9
+ 1477 05ea F7000000 		.4byte	0xf7
+ 1478 05ee 03       		.byte	0x3
+ 1479 05ef 00       		.byte	0
+ 1480 05f0 23       		.uleb128 0x23
+ 1481 05f1 5C010000 		.4byte	.LASF82
+ 1482 05f5 01       		.byte	0x1
+ 1483 05f6 32       		.byte	0x32
+ 1484 05f7 E0050000 		.4byte	0x5e0
+ 1485 05fb 05       		.uleb128 0x5
+ 1486 05fc 03       		.byte	0x3
+ 1487 05fd 00000000 		.4byte	current_bytes
+ 1488 0601 24       		.uleb128 0x24
+ 1489 0602 23030000 		.4byte	.LASF83
+ 1490 0606 23030000 		.4byte	.LASF83
+ 1491 060a 07       		.byte	0x7
+ 1492 060b 7D       		.byte	0x7d
+ 1493 060c 24       		.uleb128 0x24
+ 1494 060d 2F000000 		.4byte	.LASF84
+ 1495 0611 2F000000 		.4byte	.LASF84
+ 1496 0615 07       		.byte	0x7
+ 1497 0616 7E       		.byte	0x7e
+ 1498 0617 25       		.uleb128 0x25
+ 1499 0618 6A030000 		.4byte	.LASF85
+ 1500 061c 6A030000 		.4byte	.LASF85
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 32
+
+
+ 1501 0620 05       		.byte	0x5
+ 1502 0621 1801     		.2byte	0x118
+ 1503 0623 24       		.uleb128 0x24
+ 1504 0624 10050000 		.4byte	.LASF86
+ 1505 0628 10050000 		.4byte	.LASF86
+ 1506 062c 07       		.byte	0x7
+ 1507 062d 76       		.byte	0x76
+ 1508 062e 00       		.byte	0
+ 1509              		.section	.debug_abbrev,"",%progbits
+ 1510              	.Ldebug_abbrev0:
+ 1511 0000 01       		.uleb128 0x1
+ 1512 0001 11       		.uleb128 0x11
+ 1513 0002 01       		.byte	0x1
+ 1514 0003 25       		.uleb128 0x25
+ 1515 0004 0E       		.uleb128 0xe
+ 1516 0005 13       		.uleb128 0x13
+ 1517 0006 0B       		.uleb128 0xb
+ 1518 0007 03       		.uleb128 0x3
+ 1519 0008 0E       		.uleb128 0xe
+ 1520 0009 1B       		.uleb128 0x1b
+ 1521 000a 0E       		.uleb128 0xe
+ 1522 000b 55       		.uleb128 0x55
+ 1523 000c 17       		.uleb128 0x17
+ 1524 000d 11       		.uleb128 0x11
+ 1525 000e 01       		.uleb128 0x1
+ 1526 000f 10       		.uleb128 0x10
+ 1527 0010 17       		.uleb128 0x17
+ 1528 0011 00       		.byte	0
+ 1529 0012 00       		.byte	0
+ 1530 0013 02       		.uleb128 0x2
+ 1531 0014 24       		.uleb128 0x24
+ 1532 0015 00       		.byte	0
+ 1533 0016 0B       		.uleb128 0xb
+ 1534 0017 0B       		.uleb128 0xb
+ 1535 0018 3E       		.uleb128 0x3e
+ 1536 0019 0B       		.uleb128 0xb
+ 1537 001a 03       		.uleb128 0x3
+ 1538 001b 0E       		.uleb128 0xe
+ 1539 001c 00       		.byte	0
+ 1540 001d 00       		.byte	0
+ 1541 001e 03       		.uleb128 0x3
+ 1542 001f 16       		.uleb128 0x16
+ 1543 0020 00       		.byte	0
+ 1544 0021 03       		.uleb128 0x3
+ 1545 0022 0E       		.uleb128 0xe
+ 1546 0023 3A       		.uleb128 0x3a
+ 1547 0024 0B       		.uleb128 0xb
+ 1548 0025 3B       		.uleb128 0x3b
+ 1549 0026 0B       		.uleb128 0xb
+ 1550 0027 49       		.uleb128 0x49
+ 1551 0028 13       		.uleb128 0x13
+ 1552 0029 00       		.byte	0
+ 1553 002a 00       		.byte	0
+ 1554 002b 04       		.uleb128 0x4
+ 1555 002c 24       		.uleb128 0x24
+ 1556 002d 00       		.byte	0
+ 1557 002e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 33
+
+
+ 1558 002f 0B       		.uleb128 0xb
+ 1559 0030 3E       		.uleb128 0x3e
+ 1560 0031 0B       		.uleb128 0xb
+ 1561 0032 03       		.uleb128 0x3
+ 1562 0033 08       		.uleb128 0x8
+ 1563 0034 00       		.byte	0
+ 1564 0035 00       		.byte	0
+ 1565 0036 05       		.uleb128 0x5
+ 1566 0037 16       		.uleb128 0x16
+ 1567 0038 00       		.byte	0
+ 1568 0039 03       		.uleb128 0x3
+ 1569 003a 0E       		.uleb128 0xe
+ 1570 003b 3A       		.uleb128 0x3a
+ 1571 003c 0B       		.uleb128 0xb
+ 1572 003d 3B       		.uleb128 0x3b
+ 1573 003e 05       		.uleb128 0x5
+ 1574 003f 49       		.uleb128 0x49
+ 1575 0040 13       		.uleb128 0x13
+ 1576 0041 00       		.byte	0
+ 1577 0042 00       		.byte	0
+ 1578 0043 06       		.uleb128 0x6
+ 1579 0044 13       		.uleb128 0x13
+ 1580 0045 01       		.byte	0x1
+ 1581 0046 0B       		.uleb128 0xb
+ 1582 0047 0B       		.uleb128 0xb
+ 1583 0048 3A       		.uleb128 0x3a
+ 1584 0049 0B       		.uleb128 0xb
+ 1585 004a 3B       		.uleb128 0x3b
+ 1586 004b 0B       		.uleb128 0xb
+ 1587 004c 01       		.uleb128 0x1
+ 1588 004d 13       		.uleb128 0x13
+ 1589 004e 00       		.byte	0
+ 1590 004f 00       		.byte	0
+ 1591 0050 07       		.uleb128 0x7
+ 1592 0051 0D       		.uleb128 0xd
+ 1593 0052 00       		.byte	0
+ 1594 0053 03       		.uleb128 0x3
+ 1595 0054 0E       		.uleb128 0xe
+ 1596 0055 3A       		.uleb128 0x3a
+ 1597 0056 0B       		.uleb128 0xb
+ 1598 0057 3B       		.uleb128 0x3b
+ 1599 0058 0B       		.uleb128 0xb
+ 1600 0059 49       		.uleb128 0x49
+ 1601 005a 13       		.uleb128 0x13
+ 1602 005b 38       		.uleb128 0x38
+ 1603 005c 0B       		.uleb128 0xb
+ 1604 005d 00       		.byte	0
+ 1605 005e 00       		.byte	0
+ 1606 005f 08       		.uleb128 0x8
+ 1607 0060 01       		.uleb128 0x1
+ 1608 0061 01       		.byte	0x1
+ 1609 0062 49       		.uleb128 0x49
+ 1610 0063 13       		.uleb128 0x13
+ 1611 0064 01       		.uleb128 0x1
+ 1612 0065 13       		.uleb128 0x13
+ 1613 0066 00       		.byte	0
+ 1614 0067 00       		.byte	0
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 34
+
+
+ 1615 0068 09       		.uleb128 0x9
+ 1616 0069 21       		.uleb128 0x21
+ 1617 006a 00       		.byte	0
+ 1618 006b 49       		.uleb128 0x49
+ 1619 006c 13       		.uleb128 0x13
+ 1620 006d 2F       		.uleb128 0x2f
+ 1621 006e 0B       		.uleb128 0xb
+ 1622 006f 00       		.byte	0
+ 1623 0070 00       		.byte	0
+ 1624 0071 0A       		.uleb128 0xa
+ 1625 0072 0D       		.uleb128 0xd
+ 1626 0073 00       		.byte	0
+ 1627 0074 03       		.uleb128 0x3
+ 1628 0075 08       		.uleb128 0x8
+ 1629 0076 3A       		.uleb128 0x3a
+ 1630 0077 0B       		.uleb128 0xb
+ 1631 0078 3B       		.uleb128 0x3b
+ 1632 0079 0B       		.uleb128 0xb
+ 1633 007a 49       		.uleb128 0x49
+ 1634 007b 13       		.uleb128 0x13
+ 1635 007c 38       		.uleb128 0x38
+ 1636 007d 0B       		.uleb128 0xb
+ 1637 007e 00       		.byte	0
+ 1638 007f 00       		.byte	0
+ 1639 0080 0B       		.uleb128 0xb
+ 1640 0081 0F       		.uleb128 0xf
+ 1641 0082 00       		.byte	0
+ 1642 0083 0B       		.uleb128 0xb
+ 1643 0084 0B       		.uleb128 0xb
+ 1644 0085 49       		.uleb128 0x49
+ 1645 0086 13       		.uleb128 0x13
+ 1646 0087 00       		.byte	0
+ 1647 0088 00       		.byte	0
+ 1648 0089 0C       		.uleb128 0xc
+ 1649 008a 35       		.uleb128 0x35
+ 1650 008b 00       		.byte	0
+ 1651 008c 49       		.uleb128 0x49
+ 1652 008d 13       		.uleb128 0x13
+ 1653 008e 00       		.byte	0
+ 1654 008f 00       		.byte	0
+ 1655 0090 0D       		.uleb128 0xd
+ 1656 0091 04       		.uleb128 0x4
+ 1657 0092 01       		.byte	0x1
+ 1658 0093 0B       		.uleb128 0xb
+ 1659 0094 0B       		.uleb128 0xb
+ 1660 0095 49       		.uleb128 0x49
+ 1661 0096 13       		.uleb128 0x13
+ 1662 0097 3A       		.uleb128 0x3a
+ 1663 0098 0B       		.uleb128 0xb
+ 1664 0099 3B       		.uleb128 0x3b
+ 1665 009a 0B       		.uleb128 0xb
+ 1666 009b 01       		.uleb128 0x1
+ 1667 009c 13       		.uleb128 0x13
+ 1668 009d 00       		.byte	0
+ 1669 009e 00       		.byte	0
+ 1670 009f 0E       		.uleb128 0xe
+ 1671 00a0 28       		.uleb128 0x28
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 35
+
+
+ 1672 00a1 00       		.byte	0
+ 1673 00a2 03       		.uleb128 0x3
+ 1674 00a3 0E       		.uleb128 0xe
+ 1675 00a4 1C       		.uleb128 0x1c
+ 1676 00a5 0B       		.uleb128 0xb
+ 1677 00a6 00       		.byte	0
+ 1678 00a7 00       		.byte	0
+ 1679 00a8 0F       		.uleb128 0xf
+ 1680 00a9 28       		.uleb128 0x28
+ 1681 00aa 00       		.byte	0
+ 1682 00ab 03       		.uleb128 0x3
+ 1683 00ac 0E       		.uleb128 0xe
+ 1684 00ad 1C       		.uleb128 0x1c
+ 1685 00ae 05       		.uleb128 0x5
+ 1686 00af 00       		.byte	0
+ 1687 00b0 00       		.byte	0
+ 1688 00b1 10       		.uleb128 0x10
+ 1689 00b2 2E       		.uleb128 0x2e
+ 1690 00b3 00       		.byte	0
+ 1691 00b4 3F       		.uleb128 0x3f
+ 1692 00b5 19       		.uleb128 0x19
+ 1693 00b6 03       		.uleb128 0x3
+ 1694 00b7 0E       		.uleb128 0xe
+ 1695 00b8 3A       		.uleb128 0x3a
+ 1696 00b9 0B       		.uleb128 0xb
+ 1697 00ba 3B       		.uleb128 0x3b
+ 1698 00bb 0B       		.uleb128 0xb
+ 1699 00bc 49       		.uleb128 0x49
+ 1700 00bd 13       		.uleb128 0x13
+ 1701 00be 11       		.uleb128 0x11
+ 1702 00bf 01       		.uleb128 0x1
+ 1703 00c0 12       		.uleb128 0x12
+ 1704 00c1 06       		.uleb128 0x6
+ 1705 00c2 40       		.uleb128 0x40
+ 1706 00c3 18       		.uleb128 0x18
+ 1707 00c4 9742     		.uleb128 0x2117
+ 1708 00c6 19       		.uleb128 0x19
+ 1709 00c7 00       		.byte	0
+ 1710 00c8 00       		.byte	0
+ 1711 00c9 11       		.uleb128 0x11
+ 1712 00ca 2E       		.uleb128 0x2e
+ 1713 00cb 01       		.byte	0x1
+ 1714 00cc 3F       		.uleb128 0x3f
+ 1715 00cd 19       		.uleb128 0x19
+ 1716 00ce 03       		.uleb128 0x3
+ 1717 00cf 0E       		.uleb128 0xe
+ 1718 00d0 3A       		.uleb128 0x3a
+ 1719 00d1 0B       		.uleb128 0xb
+ 1720 00d2 3B       		.uleb128 0x3b
+ 1721 00d3 0B       		.uleb128 0xb
+ 1722 00d4 27       		.uleb128 0x27
+ 1723 00d5 19       		.uleb128 0x19
+ 1724 00d6 11       		.uleb128 0x11
+ 1725 00d7 01       		.uleb128 0x1
+ 1726 00d8 12       		.uleb128 0x12
+ 1727 00d9 06       		.uleb128 0x6
+ 1728 00da 40       		.uleb128 0x40
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 36
+
+
+ 1729 00db 18       		.uleb128 0x18
+ 1730 00dc 9742     		.uleb128 0x2117
+ 1731 00de 19       		.uleb128 0x19
+ 1732 00df 01       		.uleb128 0x1
+ 1733 00e0 13       		.uleb128 0x13
+ 1734 00e1 00       		.byte	0
+ 1735 00e2 00       		.byte	0
+ 1736 00e3 12       		.uleb128 0x12
+ 1737 00e4 05       		.uleb128 0x5
+ 1738 00e5 00       		.byte	0
+ 1739 00e6 03       		.uleb128 0x3
+ 1740 00e7 08       		.uleb128 0x8
+ 1741 00e8 3A       		.uleb128 0x3a
+ 1742 00e9 0B       		.uleb128 0xb
+ 1743 00ea 3B       		.uleb128 0x3b
+ 1744 00eb 0B       		.uleb128 0xb
+ 1745 00ec 49       		.uleb128 0x49
+ 1746 00ed 13       		.uleb128 0x13
+ 1747 00ee 02       		.uleb128 0x2
+ 1748 00ef 17       		.uleb128 0x17
+ 1749 00f0 00       		.byte	0
+ 1750 00f1 00       		.byte	0
+ 1751 00f2 13       		.uleb128 0x13
+ 1752 00f3 34       		.uleb128 0x34
+ 1753 00f4 00       		.byte	0
+ 1754 00f5 03       		.uleb128 0x3
+ 1755 00f6 0E       		.uleb128 0xe
+ 1756 00f7 3A       		.uleb128 0x3a
+ 1757 00f8 0B       		.uleb128 0xb
+ 1758 00f9 3B       		.uleb128 0x3b
+ 1759 00fa 0B       		.uleb128 0xb
+ 1760 00fb 49       		.uleb128 0x49
+ 1761 00fc 13       		.uleb128 0x13
+ 1762 00fd 02       		.uleb128 0x2
+ 1763 00fe 17       		.uleb128 0x17
+ 1764 00ff 00       		.byte	0
+ 1765 0100 00       		.byte	0
+ 1766 0101 14       		.uleb128 0x14
+ 1767 0102 898201   		.uleb128 0x4109
+ 1768 0105 00       		.byte	0
+ 1769 0106 11       		.uleb128 0x11
+ 1770 0107 01       		.uleb128 0x1
+ 1771 0108 31       		.uleb128 0x31
+ 1772 0109 13       		.uleb128 0x13
+ 1773 010a 00       		.byte	0
+ 1774 010b 00       		.byte	0
+ 1775 010c 15       		.uleb128 0x15
+ 1776 010d 2E       		.uleb128 0x2e
+ 1777 010e 01       		.byte	0x1
+ 1778 010f 3F       		.uleb128 0x3f
+ 1779 0110 19       		.uleb128 0x19
+ 1780 0111 03       		.uleb128 0x3
+ 1781 0112 0E       		.uleb128 0xe
+ 1782 0113 3A       		.uleb128 0x3a
+ 1783 0114 0B       		.uleb128 0xb
+ 1784 0115 3B       		.uleb128 0x3b
+ 1785 0116 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 37
+
+
+ 1786 0117 11       		.uleb128 0x11
+ 1787 0118 01       		.uleb128 0x1
+ 1788 0119 12       		.uleb128 0x12
+ 1789 011a 06       		.uleb128 0x6
+ 1790 011b 40       		.uleb128 0x40
+ 1791 011c 18       		.uleb128 0x18
+ 1792 011d 9742     		.uleb128 0x2117
+ 1793 011f 19       		.uleb128 0x19
+ 1794 0120 01       		.uleb128 0x1
+ 1795 0121 13       		.uleb128 0x13
+ 1796 0122 00       		.byte	0
+ 1797 0123 00       		.byte	0
+ 1798 0124 16       		.uleb128 0x16
+ 1799 0125 34       		.uleb128 0x34
+ 1800 0126 00       		.byte	0
+ 1801 0127 03       		.uleb128 0x3
+ 1802 0128 0E       		.uleb128 0xe
+ 1803 0129 3A       		.uleb128 0x3a
+ 1804 012a 0B       		.uleb128 0xb
+ 1805 012b 3B       		.uleb128 0x3b
+ 1806 012c 0B       		.uleb128 0xb
+ 1807 012d 49       		.uleb128 0x49
+ 1808 012e 13       		.uleb128 0x13
+ 1809 012f 02       		.uleb128 0x2
+ 1810 0130 18       		.uleb128 0x18
+ 1811 0131 00       		.byte	0
+ 1812 0132 00       		.byte	0
+ 1813 0133 17       		.uleb128 0x17
+ 1814 0134 898201   		.uleb128 0x4109
+ 1815 0137 01       		.byte	0x1
+ 1816 0138 11       		.uleb128 0x11
+ 1817 0139 01       		.uleb128 0x1
+ 1818 013a 31       		.uleb128 0x31
+ 1819 013b 13       		.uleb128 0x13
+ 1820 013c 00       		.byte	0
+ 1821 013d 00       		.byte	0
+ 1822 013e 18       		.uleb128 0x18
+ 1823 013f 8A8201   		.uleb128 0x410a
+ 1824 0142 00       		.byte	0
+ 1825 0143 02       		.uleb128 0x2
+ 1826 0144 18       		.uleb128 0x18
+ 1827 0145 9142     		.uleb128 0x2111
+ 1828 0147 18       		.uleb128 0x18
+ 1829 0148 00       		.byte	0
+ 1830 0149 00       		.byte	0
+ 1831 014a 19       		.uleb128 0x19
+ 1832 014b 05       		.uleb128 0x5
+ 1833 014c 00       		.byte	0
+ 1834 014d 03       		.uleb128 0x3
+ 1835 014e 0E       		.uleb128 0xe
+ 1836 014f 3A       		.uleb128 0x3a
+ 1837 0150 0B       		.uleb128 0xb
+ 1838 0151 3B       		.uleb128 0x3b
+ 1839 0152 0B       		.uleb128 0xb
+ 1840 0153 49       		.uleb128 0x49
+ 1841 0154 13       		.uleb128 0x13
+ 1842 0155 02       		.uleb128 0x2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 38
+
+
+ 1843 0156 17       		.uleb128 0x17
+ 1844 0157 00       		.byte	0
+ 1845 0158 00       		.byte	0
+ 1846 0159 1A       		.uleb128 0x1a
+ 1847 015a 34       		.uleb128 0x34
+ 1848 015b 00       		.byte	0
+ 1849 015c 03       		.uleb128 0x3
+ 1850 015d 08       		.uleb128 0x8
+ 1851 015e 3A       		.uleb128 0x3a
+ 1852 015f 0B       		.uleb128 0xb
+ 1853 0160 3B       		.uleb128 0x3b
+ 1854 0161 0B       		.uleb128 0xb
+ 1855 0162 49       		.uleb128 0x49
+ 1856 0163 13       		.uleb128 0x13
+ 1857 0164 02       		.uleb128 0x2
+ 1858 0165 17       		.uleb128 0x17
+ 1859 0166 00       		.byte	0
+ 1860 0167 00       		.byte	0
+ 1861 0168 1B       		.uleb128 0x1b
+ 1862 0169 05       		.uleb128 0x5
+ 1863 016a 00       		.byte	0
+ 1864 016b 03       		.uleb128 0x3
+ 1865 016c 0E       		.uleb128 0xe
+ 1866 016d 3A       		.uleb128 0x3a
+ 1867 016e 0B       		.uleb128 0xb
+ 1868 016f 3B       		.uleb128 0x3b
+ 1869 0170 0B       		.uleb128 0xb
+ 1870 0171 49       		.uleb128 0x49
+ 1871 0172 13       		.uleb128 0x13
+ 1872 0173 02       		.uleb128 0x2
+ 1873 0174 18       		.uleb128 0x18
+ 1874 0175 00       		.byte	0
+ 1875 0176 00       		.byte	0
+ 1876 0177 1C       		.uleb128 0x1c
+ 1877 0178 898201   		.uleb128 0x4109
+ 1878 017b 01       		.byte	0x1
+ 1879 017c 11       		.uleb128 0x11
+ 1880 017d 01       		.uleb128 0x1
+ 1881 017e 31       		.uleb128 0x31
+ 1882 017f 13       		.uleb128 0x13
+ 1883 0180 01       		.uleb128 0x1
+ 1884 0181 13       		.uleb128 0x13
+ 1885 0182 00       		.byte	0
+ 1886 0183 00       		.byte	0
+ 1887 0184 1D       		.uleb128 0x1d
+ 1888 0185 2E       		.uleb128 0x2e
+ 1889 0186 01       		.byte	0x1
+ 1890 0187 3F       		.uleb128 0x3f
+ 1891 0188 19       		.uleb128 0x19
+ 1892 0189 03       		.uleb128 0x3
+ 1893 018a 0E       		.uleb128 0xe
+ 1894 018b 3A       		.uleb128 0x3a
+ 1895 018c 0B       		.uleb128 0xb
+ 1896 018d 3B       		.uleb128 0x3b
+ 1897 018e 05       		.uleb128 0x5
+ 1898 018f 27       		.uleb128 0x27
+ 1899 0190 19       		.uleb128 0x19
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 39
+
+
+ 1900 0191 11       		.uleb128 0x11
+ 1901 0192 01       		.uleb128 0x1
+ 1902 0193 12       		.uleb128 0x12
+ 1903 0194 06       		.uleb128 0x6
+ 1904 0195 40       		.uleb128 0x40
+ 1905 0196 18       		.uleb128 0x18
+ 1906 0197 9742     		.uleb128 0x2117
+ 1907 0199 19       		.uleb128 0x19
+ 1908 019a 01       		.uleb128 0x1
+ 1909 019b 13       		.uleb128 0x13
+ 1910 019c 00       		.byte	0
+ 1911 019d 00       		.byte	0
+ 1912 019e 1E       		.uleb128 0x1e
+ 1913 019f 05       		.uleb128 0x5
+ 1914 01a0 00       		.byte	0
+ 1915 01a1 03       		.uleb128 0x3
+ 1916 01a2 0E       		.uleb128 0xe
+ 1917 01a3 3A       		.uleb128 0x3a
+ 1918 01a4 0B       		.uleb128 0xb
+ 1919 01a5 3B       		.uleb128 0x3b
+ 1920 01a6 05       		.uleb128 0x5
+ 1921 01a7 49       		.uleb128 0x49
+ 1922 01a8 13       		.uleb128 0x13
+ 1923 01a9 02       		.uleb128 0x2
+ 1924 01aa 17       		.uleb128 0x17
+ 1925 01ab 00       		.byte	0
+ 1926 01ac 00       		.byte	0
+ 1927 01ad 1F       		.uleb128 0x1f
+ 1928 01ae 34       		.uleb128 0x34
+ 1929 01af 00       		.byte	0
+ 1930 01b0 03       		.uleb128 0x3
+ 1931 01b1 0E       		.uleb128 0xe
+ 1932 01b2 3A       		.uleb128 0x3a
+ 1933 01b3 0B       		.uleb128 0xb
+ 1934 01b4 3B       		.uleb128 0x3b
+ 1935 01b5 05       		.uleb128 0x5
+ 1936 01b6 49       		.uleb128 0x49
+ 1937 01b7 13       		.uleb128 0x13
+ 1938 01b8 02       		.uleb128 0x2
+ 1939 01b9 18       		.uleb128 0x18
+ 1940 01ba 00       		.byte	0
+ 1941 01bb 00       		.byte	0
+ 1942 01bc 20       		.uleb128 0x20
+ 1943 01bd 34       		.uleb128 0x34
+ 1944 01be 00       		.byte	0
+ 1945 01bf 03       		.uleb128 0x3
+ 1946 01c0 0E       		.uleb128 0xe
+ 1947 01c1 3A       		.uleb128 0x3a
+ 1948 01c2 0B       		.uleb128 0xb
+ 1949 01c3 3B       		.uleb128 0x3b
+ 1950 01c4 05       		.uleb128 0x5
+ 1951 01c5 49       		.uleb128 0x49
+ 1952 01c6 13       		.uleb128 0x13
+ 1953 01c7 3F       		.uleb128 0x3f
+ 1954 01c8 19       		.uleb128 0x19
+ 1955 01c9 3C       		.uleb128 0x3c
+ 1956 01ca 19       		.uleb128 0x19
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 40
+
+
+ 1957 01cb 00       		.byte	0
+ 1958 01cc 00       		.byte	0
+ 1959 01cd 21       		.uleb128 0x21
+ 1960 01ce 34       		.uleb128 0x34
+ 1961 01cf 00       		.byte	0
+ 1962 01d0 03       		.uleb128 0x3
+ 1963 01d1 0E       		.uleb128 0xe
+ 1964 01d2 3A       		.uleb128 0x3a
+ 1965 01d3 0B       		.uleb128 0xb
+ 1966 01d4 3B       		.uleb128 0x3b
+ 1967 01d5 0B       		.uleb128 0xb
+ 1968 01d6 49       		.uleb128 0x49
+ 1969 01d7 13       		.uleb128 0x13
+ 1970 01d8 3F       		.uleb128 0x3f
+ 1971 01d9 19       		.uleb128 0x19
+ 1972 01da 3C       		.uleb128 0x3c
+ 1973 01db 19       		.uleb128 0x19
+ 1974 01dc 00       		.byte	0
+ 1975 01dd 00       		.byte	0
+ 1976 01de 22       		.uleb128 0x22
+ 1977 01df 34       		.uleb128 0x34
+ 1978 01e0 00       		.byte	0
+ 1979 01e1 03       		.uleb128 0x3
+ 1980 01e2 08       		.uleb128 0x8
+ 1981 01e3 3A       		.uleb128 0x3a
+ 1982 01e4 0B       		.uleb128 0xb
+ 1983 01e5 3B       		.uleb128 0x3b
+ 1984 01e6 0B       		.uleb128 0xb
+ 1985 01e7 49       		.uleb128 0x49
+ 1986 01e8 13       		.uleb128 0x13
+ 1987 01e9 3F       		.uleb128 0x3f
+ 1988 01ea 19       		.uleb128 0x19
+ 1989 01eb 3C       		.uleb128 0x3c
+ 1990 01ec 19       		.uleb128 0x19
+ 1991 01ed 00       		.byte	0
+ 1992 01ee 00       		.byte	0
+ 1993 01ef 23       		.uleb128 0x23
+ 1994 01f0 34       		.uleb128 0x34
+ 1995 01f1 00       		.byte	0
+ 1996 01f2 03       		.uleb128 0x3
+ 1997 01f3 0E       		.uleb128 0xe
+ 1998 01f4 3A       		.uleb128 0x3a
+ 1999 01f5 0B       		.uleb128 0xb
+ 2000 01f6 3B       		.uleb128 0x3b
+ 2001 01f7 0B       		.uleb128 0xb
+ 2002 01f8 49       		.uleb128 0x49
+ 2003 01f9 13       		.uleb128 0x13
+ 2004 01fa 3F       		.uleb128 0x3f
+ 2005 01fb 19       		.uleb128 0x19
+ 2006 01fc 02       		.uleb128 0x2
+ 2007 01fd 18       		.uleb128 0x18
+ 2008 01fe 00       		.byte	0
+ 2009 01ff 00       		.byte	0
+ 2010 0200 24       		.uleb128 0x24
+ 2011 0201 2E       		.uleb128 0x2e
+ 2012 0202 00       		.byte	0
+ 2013 0203 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 41
+
+
+ 2014 0204 19       		.uleb128 0x19
+ 2015 0205 3C       		.uleb128 0x3c
+ 2016 0206 19       		.uleb128 0x19
+ 2017 0207 6E       		.uleb128 0x6e
+ 2018 0208 0E       		.uleb128 0xe
+ 2019 0209 03       		.uleb128 0x3
+ 2020 020a 0E       		.uleb128 0xe
+ 2021 020b 3A       		.uleb128 0x3a
+ 2022 020c 0B       		.uleb128 0xb
+ 2023 020d 3B       		.uleb128 0x3b
+ 2024 020e 0B       		.uleb128 0xb
+ 2025 020f 00       		.byte	0
+ 2026 0210 00       		.byte	0
+ 2027 0211 25       		.uleb128 0x25
+ 2028 0212 2E       		.uleb128 0x2e
+ 2029 0213 00       		.byte	0
+ 2030 0214 3F       		.uleb128 0x3f
+ 2031 0215 19       		.uleb128 0x19
+ 2032 0216 3C       		.uleb128 0x3c
+ 2033 0217 19       		.uleb128 0x19
+ 2034 0218 6E       		.uleb128 0x6e
+ 2035 0219 0E       		.uleb128 0xe
+ 2036 021a 03       		.uleb128 0x3
+ 2037 021b 0E       		.uleb128 0xe
+ 2038 021c 3A       		.uleb128 0x3a
+ 2039 021d 0B       		.uleb128 0xb
+ 2040 021e 3B       		.uleb128 0x3b
+ 2041 021f 05       		.uleb128 0x5
+ 2042 0220 00       		.byte	0
+ 2043 0221 00       		.byte	0
+ 2044 0222 00       		.byte	0
+ 2045              		.section	.debug_loc,"",%progbits
+ 2046              	.Ldebug_loc0:
+ 2047              	.LLST0:
+ 2048 0000 00000000 		.4byte	.LVL0
+ 2049 0004 09000000 		.4byte	.LVL1-1
+ 2050 0008 0100     		.2byte	0x1
+ 2051 000a 50       		.byte	0x50
+ 2052 000b 09000000 		.4byte	.LVL1-1
+ 2053 000f 04010000 		.4byte	.LVL3
+ 2054 0013 0100     		.2byte	0x1
+ 2055 0015 55       		.byte	0x55
+ 2056 0016 04010000 		.4byte	.LVL3
+ 2057 001a 24010000 		.4byte	.LFE72
+ 2058 001e 0400     		.2byte	0x4
+ 2059 0020 F3       		.byte	0xf3
+ 2060 0021 01       		.uleb128 0x1
+ 2061 0022 50       		.byte	0x50
+ 2062 0023 9F       		.byte	0x9f
+ 2063 0024 00000000 		.4byte	0
+ 2064 0028 00000000 		.4byte	0
+ 2065              	.LLST1:
+ 2066 002c 00000000 		.4byte	.LVL0
+ 2067 0030 09000000 		.4byte	.LVL1-1
+ 2068 0034 0100     		.2byte	0x1
+ 2069 0036 51       		.byte	0x51
+ 2070 0037 09000000 		.4byte	.LVL1-1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 42
+
+
+ 2071 003b 04010000 		.4byte	.LVL3
+ 2072 003f 0100     		.2byte	0x1
+ 2073 0041 54       		.byte	0x54
+ 2074 0042 04010000 		.4byte	.LVL3
+ 2075 0046 24010000 		.4byte	.LFE72
+ 2076 004a 0400     		.2byte	0x4
+ 2077 004c F3       		.byte	0xf3
+ 2078 004d 01       		.uleb128 0x1
+ 2079 004e 51       		.byte	0x51
+ 2080 004f 9F       		.byte	0x9f
+ 2081 0050 00000000 		.4byte	0
+ 2082 0054 00000000 		.4byte	0
+ 2083              	.LLST2:
+ 2084 0058 0A000000 		.4byte	.LVL1
+ 2085 005c 01010000 		.4byte	.LVL2-1
+ 2086 0060 0100     		.2byte	0x1
+ 2087 0062 50       		.byte	0x50
+ 2088 0063 00000000 		.4byte	0
+ 2089 0067 00000000 		.4byte	0
+ 2090              	.LLST3:
+ 2091 006b 00000000 		.4byte	.LVL5
+ 2092 006f 34000000 		.4byte	.LVL10
+ 2093 0073 0100     		.2byte	0x1
+ 2094 0075 50       		.byte	0x50
+ 2095 0076 34000000 		.4byte	.LVL10
+ 2096 007a 3E000000 		.4byte	.LFE74
+ 2097 007e 0400     		.2byte	0x4
+ 2098 0080 F3       		.byte	0xf3
+ 2099 0081 01       		.uleb128 0x1
+ 2100 0082 50       		.byte	0x50
+ 2101 0083 9F       		.byte	0x9f
+ 2102 0084 00000000 		.4byte	0
+ 2103 0088 00000000 		.4byte	0
+ 2104              	.LLST4:
+ 2105 008c 00000000 		.4byte	.LVL5
+ 2106 0090 20000000 		.4byte	.LVL7
+ 2107 0094 0100     		.2byte	0x1
+ 2108 0096 51       		.byte	0x51
+ 2109 0097 20000000 		.4byte	.LVL7
+ 2110 009b 34000000 		.4byte	.LVL10
+ 2111 009f 0200     		.2byte	0x2
+ 2112 00a1 91       		.byte	0x91
+ 2113 00a2 6C       		.sleb128 -20
+ 2114 00a3 34000000 		.4byte	.LVL10
+ 2115 00a7 37000000 		.4byte	.LVL11-1
+ 2116 00ab 0200     		.2byte	0x2
+ 2117 00ad 70       		.byte	0x70
+ 2118 00ae 00       		.sleb128 0
+ 2119 00af 37000000 		.4byte	.LVL11-1
+ 2120 00b3 3E000000 		.4byte	.LFE74
+ 2121 00b7 0400     		.2byte	0x4
+ 2122 00b9 F3       		.byte	0xf3
+ 2123 00ba 01       		.uleb128 0x1
+ 2124 00bb 51       		.byte	0x51
+ 2125 00bc 9F       		.byte	0x9f
+ 2126 00bd 00000000 		.4byte	0
+ 2127 00c1 00000000 		.4byte	0
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 43
+
+
+ 2128              	.LLST5:
+ 2129 00c5 1E000000 		.4byte	.LVL6
+ 2130 00c9 20000000 		.4byte	.LVL7
+ 2131 00cd 0200     		.2byte	0x2
+ 2132 00cf 30       		.byte	0x30
+ 2133 00d0 9F       		.byte	0x9f
+ 2134 00d1 20000000 		.4byte	.LVL7
+ 2135 00d5 2C000000 		.4byte	.LVL8
+ 2136 00d9 0100     		.2byte	0x1
+ 2137 00db 53       		.byte	0x53
+ 2138 00dc 2E000000 		.4byte	.LVL9
+ 2139 00e0 37000000 		.4byte	.LVL11-1
+ 2140 00e4 0100     		.2byte	0x1
+ 2141 00e6 53       		.byte	0x53
+ 2142 00e7 00000000 		.4byte	0
+ 2143 00eb 00000000 		.4byte	0
+ 2144              	.LLST6:
+ 2145 00ef 00000000 		.4byte	.LVL13
+ 2146 00f3 2C000000 		.4byte	.LVL16
+ 2147 00f7 0100     		.2byte	0x1
+ 2148 00f9 50       		.byte	0x50
+ 2149 00fa 2C000000 		.4byte	.LVL16
+ 2150 00fe 2F000000 		.4byte	.LVL17-1
+ 2151 0102 0200     		.2byte	0x2
+ 2152 0104 70       		.byte	0x70
+ 2153 0105 00       		.sleb128 0
+ 2154 0106 2F000000 		.4byte	.LVL17-1
+ 2155 010a 3C000000 		.4byte	.LFE76
+ 2156 010e 0400     		.2byte	0x4
+ 2157 0110 F3       		.byte	0xf3
+ 2158 0111 01       		.uleb128 0x1
+ 2159 0112 50       		.byte	0x50
+ 2160 0113 9F       		.byte	0x9f
+ 2161 0114 00000000 		.4byte	0
+ 2162 0118 00000000 		.4byte	0
+ 2163              	.LLST7:
+ 2164 011c 00000000 		.4byte	.LVL13
+ 2165 0120 2A000000 		.4byte	.LVL15
+ 2166 0124 0100     		.2byte	0x1
+ 2167 0126 51       		.byte	0x51
+ 2168 0127 2A000000 		.4byte	.LVL15
+ 2169 012b 3C000000 		.4byte	.LFE76
+ 2170 012f 0400     		.2byte	0x4
+ 2171 0131 F3       		.byte	0xf3
+ 2172 0132 01       		.uleb128 0x1
+ 2173 0133 51       		.byte	0x51
+ 2174 0134 9F       		.byte	0x9f
+ 2175 0135 00000000 		.4byte	0
+ 2176 0139 00000000 		.4byte	0
+ 2177              	.LLST8:
+ 2178 013d 00000000 		.4byte	.LVL13
+ 2179 0141 12000000 		.4byte	.LVL14
+ 2180 0145 0100     		.2byte	0x1
+ 2181 0147 52       		.byte	0x52
+ 2182 0148 12000000 		.4byte	.LVL14
+ 2183 014c 3C000000 		.4byte	.LFE76
+ 2184 0150 0400     		.2byte	0x4
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 44
+
+
+ 2185 0152 F3       		.byte	0xf3
+ 2186 0153 01       		.uleb128 0x1
+ 2187 0154 52       		.byte	0x52
+ 2188 0155 9F       		.byte	0x9f
+ 2189 0156 00000000 		.4byte	0
+ 2190 015a 00000000 		.4byte	0
+ 2191              	.LLST9:
+ 2192 015e 00000000 		.4byte	.LVL13
+ 2193 0162 2F000000 		.4byte	.LVL17-1
+ 2194 0166 0100     		.2byte	0x1
+ 2195 0168 53       		.byte	0x53
+ 2196 0169 2F000000 		.4byte	.LVL17-1
+ 2197 016d 3C000000 		.4byte	.LFE76
+ 2198 0171 0400     		.2byte	0x4
+ 2199 0173 F3       		.byte	0xf3
+ 2200 0174 01       		.uleb128 0x1
+ 2201 0175 53       		.byte	0x53
+ 2202 0176 9F       		.byte	0x9f
+ 2203 0177 00000000 		.4byte	0
+ 2204 017b 00000000 		.4byte	0
+ 2205              	.LLST10:
+ 2206 017f 00000000 		.4byte	.LVL19
+ 2207 0183 18000000 		.4byte	.LVL21
+ 2208 0187 0100     		.2byte	0x1
+ 2209 0189 50       		.byte	0x50
+ 2210 018a 18000000 		.4byte	.LVL21
+ 2211 018e 1B000000 		.4byte	.LVL22-1
+ 2212 0192 0200     		.2byte	0x2
+ 2213 0194 70       		.byte	0x70
+ 2214 0195 00       		.sleb128 0
+ 2215 0196 1B000000 		.4byte	.LVL22-1
+ 2216 019a 22000000 		.4byte	.LFE77
+ 2217 019e 0400     		.2byte	0x4
+ 2218 01a0 F3       		.byte	0xf3
+ 2219 01a1 01       		.uleb128 0x1
+ 2220 01a2 50       		.byte	0x50
+ 2221 01a3 9F       		.byte	0x9f
+ 2222 01a4 00000000 		.4byte	0
+ 2223 01a8 00000000 		.4byte	0
+ 2224              	.LLST11:
+ 2225 01ac 00000000 		.4byte	.LVL19
+ 2226 01b0 16000000 		.4byte	.LVL20
+ 2227 01b4 0100     		.2byte	0x1
+ 2228 01b6 51       		.byte	0x51
+ 2229 01b7 16000000 		.4byte	.LVL20
+ 2230 01bb 1B000000 		.4byte	.LVL22-1
+ 2231 01bf 0200     		.2byte	0x2
+ 2232 01c1 91       		.byte	0x91
+ 2233 01c2 71       		.sleb128 -15
+ 2234 01c3 1B000000 		.4byte	.LVL22-1
+ 2235 01c7 22000000 		.4byte	.LFE77
+ 2236 01cb 0400     		.2byte	0x4
+ 2237 01cd F3       		.byte	0xf3
+ 2238 01ce 01       		.uleb128 0x1
+ 2239 01cf 51       		.byte	0x51
+ 2240 01d0 9F       		.byte	0x9f
+ 2241 01d1 00000000 		.4byte	0
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 45
+
+
+ 2242 01d5 00000000 		.4byte	0
+ 2243              		.section	.debug_aranges,"",%progbits
+ 2244 0000 8C000000 		.4byte	0x8c
+ 2245 0004 0200     		.2byte	0x2
+ 2246 0006 00000000 		.4byte	.Ldebug_info0
+ 2247 000a 04       		.byte	0x4
+ 2248 000b 00       		.byte	0
+ 2249 000c 0000     		.2byte	0
+ 2250 000e 0000     		.2byte	0
+ 2251 0010 00000000 		.4byte	.LFB63
+ 2252 0014 0C000000 		.4byte	.LFE63-.LFB63
+ 2253 0018 00000000 		.4byte	.LFB64
+ 2254 001c 0C000000 		.4byte	.LFE64-.LFB64
+ 2255 0020 00000000 		.4byte	.LFB65
+ 2256 0024 0C000000 		.4byte	.LFE65-.LFB65
+ 2257 0028 00000000 		.4byte	.LFB66
+ 2258 002c 0C000000 		.4byte	.LFE66-.LFB66
+ 2259 0030 00000000 		.4byte	.LFB67
+ 2260 0034 0C000000 		.4byte	.LFE67-.LFB67
+ 2261 0038 00000000 		.4byte	.LFB68
+ 2262 003c 0C000000 		.4byte	.LFE68-.LFB68
+ 2263 0040 00000000 		.4byte	.LFB69
+ 2264 0044 0C000000 		.4byte	.LFE69-.LFB69
+ 2265 0048 00000000 		.4byte	.LFB70
+ 2266 004c 0C000000 		.4byte	.LFE70-.LFB70
+ 2267 0050 00000000 		.4byte	.LFB71
+ 2268 0054 0C000000 		.4byte	.LFE71-.LFB71
+ 2269 0058 00000000 		.4byte	.LFB72
+ 2270 005c 24010000 		.4byte	.LFE72-.LFB72
+ 2271 0060 00000000 		.4byte	.LFB73
+ 2272 0064 4A000000 		.4byte	.LFE73-.LFB73
+ 2273 0068 00000000 		.4byte	.LFB74
+ 2274 006c 3E000000 		.4byte	.LFE74-.LFB74
+ 2275 0070 00000000 		.4byte	.LFB75
+ 2276 0074 02000000 		.4byte	.LFE75-.LFB75
+ 2277 0078 00000000 		.4byte	.LFB76
+ 2278 007c 3C000000 		.4byte	.LFE76-.LFB76
+ 2279 0080 00000000 		.4byte	.LFB77
+ 2280 0084 22000000 		.4byte	.LFE77-.LFB77
+ 2281 0088 00000000 		.4byte	0
+ 2282 008c 00000000 		.4byte	0
+ 2283              		.section	.debug_ranges,"",%progbits
+ 2284              	.Ldebug_ranges0:
+ 2285 0000 00000000 		.4byte	.LFB63
+ 2286 0004 0C000000 		.4byte	.LFE63
+ 2287 0008 00000000 		.4byte	.LFB64
+ 2288 000c 0C000000 		.4byte	.LFE64
+ 2289 0010 00000000 		.4byte	.LFB65
+ 2290 0014 0C000000 		.4byte	.LFE65
+ 2291 0018 00000000 		.4byte	.LFB66
+ 2292 001c 0C000000 		.4byte	.LFE66
+ 2293 0020 00000000 		.4byte	.LFB67
+ 2294 0024 0C000000 		.4byte	.LFE67
+ 2295 0028 00000000 		.4byte	.LFB68
+ 2296 002c 0C000000 		.4byte	.LFE68
+ 2297 0030 00000000 		.4byte	.LFB69
+ 2298 0034 0C000000 		.4byte	.LFE69
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 46
+
+
+ 2299 0038 00000000 		.4byte	.LFB70
+ 2300 003c 0C000000 		.4byte	.LFE70
+ 2301 0040 00000000 		.4byte	.LFB71
+ 2302 0044 0C000000 		.4byte	.LFE71
+ 2303 0048 00000000 		.4byte	.LFB72
+ 2304 004c 24010000 		.4byte	.LFE72
+ 2305 0050 00000000 		.4byte	.LFB73
+ 2306 0054 4A000000 		.4byte	.LFE73
+ 2307 0058 00000000 		.4byte	.LFB74
+ 2308 005c 3E000000 		.4byte	.LFE74
+ 2309 0060 00000000 		.4byte	.LFB75
+ 2310 0064 02000000 		.4byte	.LFE75
+ 2311 0068 00000000 		.4byte	.LFB76
+ 2312 006c 3C000000 		.4byte	.LFE76
+ 2313 0070 00000000 		.4byte	.LFB77
+ 2314 0074 22000000 		.4byte	.LFE77
+ 2315 0078 00000000 		.4byte	0
+ 2316 007c 00000000 		.4byte	0
+ 2317              		.section	.debug_line,"",%progbits
+ 2318              	.Ldebug_line0:
+ 2319 0000 DA020000 		.section	.debug_str,"MS",%progbits,1
+ 2319      02007801 
+ 2319      00000201 
+ 2319      FB0E0D00 
+ 2319      01010101 
+ 2320              	.LASF49:
+ 2321 0000 63616E5F 		.ascii	"can_receive\000"
+ 2321      72656365 
+ 2321      69766500 
+ 2322              	.LASF50:
+ 2323 000c 63616E5F 		.ascii	"can_send\000"
+ 2323      73656E64 
+ 2323      00
+ 2324              	.LASF74:
+ 2325 0015 41434B5F 		.ascii	"ACK_RX\000"
+ 2325      525800
+ 2326              	.LASF72:
+ 2327 001c 43555254 		.ascii	"CURTIS_FAULT_CHECK\000"
+ 2327      49535F46 
+ 2327      41554C54 
+ 2327      5F434845 
+ 2327      434B00
+ 2328              	.LASF84:
+ 2329 002f 43794578 		.ascii	"CyExitCriticalSection\000"
+ 2329      69744372 
+ 2329      69746963 
+ 2329      616C5365 
+ 2329      6374696F 
+ 2330              	.LASF90:
+ 2331 0045 63616E5F 		.ascii	"can_test_send\000"
+ 2331      74657374 
+ 2331      5F73656E 
+ 2331      6400
+ 2332              	.LASF80:
+ 2333 0053 455F5354 		.ascii	"E_STOP_CHECK\000"
+ 2333      4F505F43 
+ 2333      4845434B 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 47
+
+
+ 2333      00
+ 2334              	.LASF2:
+ 2335 0060 73686F72 		.ascii	"short int\000"
+ 2335      7420696E 
+ 2335      7400
+ 2336              	.LASF32:
+ 2337 006a 424D535F 		.ascii	"BMS_VOLTAGES\000"
+ 2337      564F4C54 
+ 2337      41474553 
+ 2337      00
+ 2338              	.LASF54:
+ 2339 0077 63616E5F 		.ascii	"can_send_switches\000"
+ 2339      73656E64 
+ 2339      5F737769 
+ 2339      74636865 
+ 2339      7300
+ 2340              	.LASF23:
+ 2341 0089 73697A65 		.ascii	"sizetype\000"
+ 2341      74797065 
+ 2341      00
+ 2342              	.LASF57:
+ 2343 0092 53657449 		.ascii	"SetInterlock\000"
+ 2343      6E746572 
+ 2343      6C6F636B 
+ 2343      00
+ 2344              	.LASF30:
+ 2345 009f 424D535F 		.ascii	"BMS_STATUS_MSG\000"
+ 2345      53544154 
+ 2345      55535F4D 
+ 2345      534700
+ 2346              	.LASF37:
+ 2347 00ae 4D435F50 		.ascii	"MC_PDO_ACK\000"
+ 2347      444F5F41 
+ 2347      434B00
+ 2348              	.LASF46:
+ 2349 00b9 6765745F 		.ascii	"get_Vehicle_State\000"
+ 2349      56656869 
+ 2349      636C655F 
+ 2349      53746174 
+ 2349      6500
+ 2350              	.LASF4:
+ 2351 00cb 5F5F7569 		.ascii	"__uint16_t\000"
+ 2351      6E743136 
+ 2351      5F7400
+ 2352              	.LASF25:
+ 2353 00d6 62797465 		.ascii	"byte\000"
+ 2353      00
+ 2354              	.LASF56:
+ 2355 00db 63616E5F 		.ascii	"can_send_cmd\000"
+ 2355      73656E64 
+ 2355      5F636D64 
+ 2355      00
+ 2356              	.LASF27:
+ 2357 00e8 56454849 		.ascii	"VEHICLE_STATE\000"
+ 2357      434C455F 
+ 2357      53544154 
+ 2357      4500
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 48
+
+
+ 2358              	.LASF58:
+ 2359 00f6 56434C5F 		.ascii	"VCL_Throttle_High\000"
+ 2359      5468726F 
+ 2359      74746C65 
+ 2359      5F486967 
+ 2359      6800
+ 2360              	.LASF69:
+ 2361 0108 6D635F74 		.ascii	"mc_temp\000"
+ 2361      656D7000 
+ 2362              	.LASF45:
+ 2363 0110 6765745F 		.ascii	"get_HV_Requested\000"
+ 2363      48565F52 
+ 2363      65717565 
+ 2363      73746564 
+ 2363      00
+ 2364              	.LASF13:
+ 2365 0121 75696E74 		.ascii	"uint8_t\000"
+ 2365      385F7400 
+ 2366              	.LASF43:
+ 2367 0129 67657441 		.ascii	"getABSMotorRPM\000"
+ 2367      42534D6F 
+ 2367      746F7252 
+ 2367      504D00
+ 2368              	.LASF44:
+ 2369 0138 6765745F 		.ascii	"get_ESTOP_Check\000"
+ 2369      4553544F 
+ 2369      505F4368 
+ 2369      65636B00 
+ 2370              	.LASF17:
+ 2371 0148 75696E74 		.ascii	"uint8\000"
+ 2371      3800
+ 2372              	.LASF77:
+ 2373 014e 5448524F 		.ascii	"THROTTLE_HIGH\000"
+ 2373      54544C45 
+ 2373      5F484947 
+ 2373      4800
+ 2374              	.LASF82:
+ 2375 015c 63757272 		.ascii	"current_bytes\000"
+ 2375      656E745F 
+ 2375      62797465 
+ 2375      7300
+ 2376              	.LASF31:
+ 2377 016a 5045495F 		.ascii	"PEI_CURRENT\000"
+ 2377      43555252 
+ 2377      454E5400 
+ 2378              	.LASF19:
+ 2379 0176 666C6F61 		.ascii	"float\000"
+ 2379      7400
+ 2380              	.LASF20:
+ 2381 017c 646F7562 		.ascii	"double\000"
+ 2381      6C6500
+ 2382              	.LASF10:
+ 2383 0183 6C6F6E67 		.ascii	"long long int\000"
+ 2383      206C6F6E 
+ 2383      6720696E 
+ 2383      7400
+ 2384              	.LASF21:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 49
+
+
+ 2385 0191 63686172 		.ascii	"char\000"
+ 2385      00
+ 2386              	.LASF78:
+ 2387 0196 5448524F 		.ascii	"THROTTLE_LOW\000"
+ 2387      54544C45 
+ 2387      5F4C4F57 
+ 2387      00
+ 2388              	.LASF7:
+ 2389 01a3 6C6F6E67 		.ascii	"long int\000"
+ 2389      20696E74 
+ 2389      00
+ 2390              	.LASF67:
+ 2391 01ac 766F6C74 		.ascii	"voltage\000"
+ 2391      61676500 
+ 2392              	.LASF47:
+ 2393 01b4 496E7465 		.ascii	"InterruptState\000"
+ 2393      72727570 
+ 2393      74537461 
+ 2393      746500
+ 2394              	.LASF9:
+ 2395 01c3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2395      20756E73 
+ 2395      69676E65 
+ 2395      6420696E 
+ 2395      7400
+ 2396              	.LASF3:
+ 2397 01d5 5F5F7569 		.ascii	"__uint8_t\000"
+ 2397      6E74385F 
+ 2397      7400
+ 2398              	.LASF48:
+ 2399 01df 48656172 		.ascii	"HeartB\000"
+ 2399      744200
+ 2400              	.LASF71:
+ 2401 01e6 43415041 		.ascii	"CAPACITOR_VOLT\000"
+ 2401      4349544F 
+ 2401      525F564F 
+ 2401      4C5400
+ 2402              	.LASF42:
+ 2403 01f5 67657445 		.ascii	"getErrorTolerance\000"
+ 2403      72726F72 
+ 2403      546F6C65 
+ 2403      72616E63 
+ 2403      6500
+ 2404              	.LASF88:
+ 2405 0207 63616E5F 		.ascii	"can_manager.c\000"
+ 2405      6D616E61 
+ 2405      6765722E 
+ 2405      6300
+ 2406              	.LASF68:
+ 2407 0215 73687574 		.ascii	"shutdown_flags\000"
+ 2407      646F776E 
+ 2407      5F666C61 
+ 2407      677300
+ 2408              	.LASF22:
+ 2409 0224 6C6F6E67 		.ascii	"long double\000"
+ 2409      20646F75 
+ 2409      626C6500 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 50
+
+
+ 2410              	.LASF62:
+ 2411 0230 63686172 		.ascii	"charge\000"
+ 2411      676500
+ 2412              	.LASF1:
+ 2413 0237 756E7369 		.ascii	"unsigned char\000"
+ 2413      676E6564 
+ 2413      20636861 
+ 2413      7200
+ 2414              	.LASF41:
+ 2415 0245 67657441 		.ascii	"getAckRx\000"
+ 2415      636B5278 
+ 2415      00
+ 2416              	.LASF0:
+ 2417 024e 7369676E 		.ascii	"signed char\000"
+ 2417      65642063 
+ 2417      68617200 
+ 2418              	.LASF11:
+ 2419 025a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2419      206C6F6E 
+ 2419      6720756E 
+ 2419      7369676E 
+ 2419      65642069 
+ 2420              	.LASF70:
+ 2421 0271 6D6F746F 		.ascii	"motor_temp\000"
+ 2421      725F7465 
+ 2421      6D7000
+ 2422              	.LASF16:
+ 2423 027c 75696E74 		.ascii	"uint32_t\000"
+ 2423      33325F74 
+ 2423      00
+ 2424              	.LASF12:
+ 2425 0285 756E7369 		.ascii	"unsigned int\000"
+ 2425      676E6564 
+ 2425      20696E74 
+ 2425      00
+ 2426              	.LASF14:
+ 2427 0292 75696E74 		.ascii	"uint16_t\000"
+ 2427      31365F74 
+ 2427      00
+ 2428              	.LASF28:
+ 2429 029b 44524956 		.ascii	"DRIVER_SWITCHES\000"
+ 2429      45525F53 
+ 2429      57495443 
+ 2429      48455300 
+ 2430              	.LASF24:
+ 2431 02ab 43414E5F 		.ascii	"CAN_DATA_BYTES_MSG\000"
+ 2431      44415441 
+ 2431      5F425954 
+ 2431      45535F4D 
+ 2431      534700
+ 2432              	.LASF38:
+ 2433 02be 67657443 		.ascii	"getCapacitorVoltage\000"
+ 2433      61706163 
+ 2433      69746F72 
+ 2433      566F6C74 
+ 2433      61676500 
+ 2434              	.LASF73:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 51
+
+
+ 2435 02d2 43555254 		.ascii	"CURTIS_HEART_BEAT_CHECK\000"
+ 2435      49535F48 
+ 2435      45415254 
+ 2435      5F424541 
+ 2435      545F4348 
+ 2436              	.LASF5:
+ 2437 02ea 73686F72 		.ascii	"short unsigned int\000"
+ 2437      7420756E 
+ 2437      7369676E 
+ 2437      65642069 
+ 2437      6E7400
+ 2438              	.LASF65:
+ 2439 02fd 5041434B 		.ascii	"PACK_TEMP\000"
+ 2439      5F54454D 
+ 2439      5000
+ 2440              	.LASF39:
+ 2441 0307 67657443 		.ascii	"getCurtisFaultCheck\000"
+ 2441      75727469 
+ 2441      73466175 
+ 2441      6C744368 
+ 2441      65636B00 
+ 2442              	.LASF15:
+ 2443 031b 696E7433 		.ascii	"int32_t\000"
+ 2443      325F7400 
+ 2444              	.LASF83:
+ 2445 0323 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2445      74657243 
+ 2445      72697469 
+ 2445      63616C53 
+ 2445      65637469 
+ 2446              	.LASF51:
+ 2447 033a 64617461 		.ascii	"data\000"
+ 2447      00
+ 2448              	.LASF59:
+ 2449 033f 56434C5F 		.ascii	"VCL_Throttle_Low\000"
+ 2449      5468726F 
+ 2449      74746C65 
+ 2449      5F4C6F77 
+ 2449      00
+ 2450              	.LASF18:
+ 2451 0350 75696E74 		.ascii	"uint32\000"
+ 2451      333200
+ 2452              	.LASF52:
+ 2453 0357 6D657373 		.ascii	"message\000"
+ 2453      61676500 
+ 2454              	.LASF26:
+ 2455 035f 43414E5F 		.ascii	"CAN_TX_MSG\000"
+ 2455      54585F4D 
+ 2455      534700
+ 2456              	.LASF85:
+ 2457 036a 43414E5F 		.ascii	"CAN_SendMsg\000"
+ 2457      53656E64 
+ 2457      4D736700 
+ 2458              	.LASF63:
+ 2459 0376 73617665 		.ascii	"save_soc\000"
+ 2459      5F736F63 
+ 2459      00
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 52
+
+
+ 2460              	.LASF40:
+ 2461 037f 67657443 		.ascii	"getCurtisHeartBeatCheck\000"
+ 2461      75727469 
+ 2461      73486561 
+ 2461      72744265 
+ 2461      61744368 
+ 2462              	.LASF8:
+ 2463 0397 5F5F7569 		.ascii	"__uint32_t\000"
+ 2463      6E743332 
+ 2463      5F7400
+ 2464              	.LASF34:
+ 2465 03a2 4D435F45 		.ascii	"MC_ESTOP\000"
+ 2465      53544F50 
+ 2465      00
+ 2466              	.LASF36:
+ 2467 03ab 4D435F50 		.ascii	"MC_PDO_SEND\000"
+ 2467      444F5F53 
+ 2467      454E4400 
+ 2468              	.LASF6:
+ 2469 03b7 5F5F696E 		.ascii	"__int32_t\000"
+ 2469      7433325F 
+ 2469      7400
+ 2470              	.LASF79:
+ 2471 03c1 48565F52 		.ascii	"HV_REQUEST\000"
+ 2471      45515545 
+ 2471      535400
+ 2472              	.LASF60:
+ 2473 03cc 455F5374 		.ascii	"E_Stop_Check\000"
+ 2473      6F705F43 
+ 2473      6865636B 
+ 2473      00
+ 2474              	.LASF81:
+ 2475 03d9 56454849 		.ascii	"VEHICLE_STATE_MESSAGE\000"
+ 2475      434C455F 
+ 2475      53544154 
+ 2475      455F4D45 
+ 2475      53534147 
+ 2476              	.LASF29:
+ 2477 03ef 544F5251 		.ascii	"TORQUE_REQUEST_COMMAND\000"
+ 2477      55455F52 
+ 2477      45515545 
+ 2477      53545F43 
+ 2477      4F4D4D41 
+ 2478              	.LASF76:
+ 2479 0406 4142535F 		.ascii	"ABS_MOTOR_RPM\000"
+ 2479      4D4F544F 
+ 2479      525F5250 
+ 2479      4D00
+ 2480              	.LASF35:
+ 2481 0414 4D435F44 		.ascii	"MC_DEBUG\000"
+ 2481      45425547 
+ 2481      00
+ 2482              	.LASF75:
+ 2483 041d 4552524F 		.ascii	"ERROR_TOLERANCE\000"
+ 2483      525F544F 
+ 2483      4C455241 
+ 2483      4E434500 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 53
+
+
+ 2484              	.LASF64:
+ 2485 042d 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2485      52784275 
+ 2485      66666572 
+ 2485      00
+ 2486              	.LASF87:
+ 2487 043a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2487      43313120 
+ 2487      352E342E 
+ 2487      31203230 
+ 2487      31363036 
+ 2488 046d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2488      20726576 
+ 2488      6973696F 
+ 2488      6E203233 
+ 2488      37373135 
+ 2489 04a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2489      66756E63 
+ 2489      74696F6E 
+ 2489      2D736563 
+ 2489      74696F6E 
+ 2490              	.LASF89:
+ 2491 04c8 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
+ 2491      73657273 
+ 2491      5C4A7573 
+ 2491      74696E20 
+ 2491      4368616E 
+ 2492 04f7 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
+ 2492      616D706C 
+ 2492      655C4465 
+ 2492      7369676E 
+ 2492      30312E63 
+ 2493              	.LASF86:
+ 2494 0510 43794465 		.ascii	"CyDelay\000"
+ 2494      6C617900 
+ 2495              	.LASF33:
+ 2496 0518 424D535F 		.ascii	"BMS_TEMPERATURES\000"
+ 2496      54454D50 
+ 2496      45524154 
+ 2496      55524553 
+ 2496      00
+ 2497              	.LASF61:
+ 2498 0529 63616E5F 		.ascii	"can_send_charge\000"
+ 2498      73656E64 
+ 2498      5F636861 
+ 2498      72676500 
+ 2499              	.LASF66:
+ 2500 0539 43555252 		.ascii	"CURRENT\000"
+ 2500      454E5400 
+ 2501              	.LASF53:
+ 2502 0541 7061796C 		.ascii	"payload\000"
+ 2502      6F616400 
+ 2503              	.LASF55:
+ 2504 0549 73775F73 		.ascii	"sw_status\000"
+ 2504      74617475 
+ 2504      7300
+ 2505              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccEC3RoT.s 			page 54
+
+

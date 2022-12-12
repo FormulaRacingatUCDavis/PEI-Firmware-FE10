@@ -40,6 +40,11 @@ void can_send_cmd(uint8_t SetInterlock, uint16_t VCL_Throttle_High, uint16_t VCL
 void can_send_switches(uint8_t sw_status);
 void can_send_charge(uint8_t charge, uint8_t save_soc);
 
+//VCU state functions
+uint8_t get_ESTOP_Check();
+uint8_t get_HV_Requested();
+uint8_t get_Vehicle_State();
+
 /* Not necessary at the moment
 uint8_t getCapacitorVoltage();
 uint8_t getCurtisFaultCheck();
