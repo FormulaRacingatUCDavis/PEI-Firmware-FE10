@@ -39,11 +39,21 @@ void can_send(uint8_t data[8], uint32_t ID);
 void can_send_cmd(uint8_t SetInterlock, uint16_t VCL_Throttle_High, uint16_t VCL_Throttle_Low, uint8_t E_Stop_Check);
 void can_send_switches(uint8_t sw_status);
 void can_send_charge(uint8_t charge, uint8_t save_soc);
+void can_send_state(uint8_t state);
+void can_send_VCL(uint8_t vcl_throttle);
+void can_send_ESTOP(uint8_t estop);
 
 //VCU state functions
 uint8_t get_ESTOP_Check();
 uint8_t get_HV_Requested();
 uint8_t get_Vehicle_State();
+
+//Throttle(HIGH/LOW), VCL_THROTTLE
+uint8_t get_THROTTLE_HIGH();
+uint8_t get_THROTTLE_LOW();
+uint8_t get_VCL_THROTTLE();
+//Interlock states
+uint8_t get_Set_Interlock();
 
 /* Not necessary at the moment
 uint8_t getCapacitorVoltage();

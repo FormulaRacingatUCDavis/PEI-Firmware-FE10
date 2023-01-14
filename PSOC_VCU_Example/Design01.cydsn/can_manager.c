@@ -39,13 +39,16 @@ volatile uint8_t ERROR_TOLERANCE = 0;
 volatile uint8_t ABS_MOTOR_RPM = 0;
 volatile uint8_t THROTTLE_HIGH = 0;
 volatile uint8_t THROTTLE_LOW = 0;
+volatile uint8_t VCL_THROTTLE = 0;
 
-//volatile uint8_t ESTOP; //Tehya test
+volatile uint8_t ESTOP;
 //VCU Data
 volatile uint8_t HV_REQUEST = 0;
 volatile uint8_t E_STOP_CHECK = 0;
 volatile uint8_t VEHICLE_STATE_MESSAGE = 0;
 
+//Interlock States
+volatile uint8_t SET_INTERLOCK = 0;
 
 uint8 current_bytes[4] = {0};
 
@@ -105,7 +108,26 @@ uint8_t get_Vehicle_State()
 {
     return VEHICLE_STATE_MESSAGE;
 }
-
+// returns setInterlock
+uint8_t get_Set_Interlock()
+{
+    return SET_INTERLOCK;
+}
+//returns THROTTLE_HIGH
+uint8_t get_THROTTLE_HIGH()
+{
+    return THROTTLE_HIGH;
+}
+//returns THROTTLE_LOW
+uint8_t get_THROTTLE_LOW()
+{
+    return THROTTLE_LOW;
+}
+//returns VCL_THROTTLE
+uint8_t get_VCL_THROTTLE()
+{
+    return VCL_THROTTLE;
+}
 // called from CAN_TX_RX_func.c in the generic RX func
 // tldr: part of an interrupt service routine
 void can_receive(uint8_t *msg, int ID)
@@ -155,8 +177,12 @@ void can_receive(uint8_t *msg, int ID)
             CURRENT |= msg[CAN_DATA_BYTE_2];
             shutdown_flags = msg[CAN_DATA_BYTE_3];
             break;
-        case 0x366: //Tehya test
-            //ESTOP = msg[CAN_DATA_BYTE_1];
+        case MC_DEBUG:
+            SET_INTERLOCK = msg[CAN_DATA_BYTE_1];
+            VCL_THROTTLE = msg[CAN_DATA_BYTE_7];
+            break;
+        case 0x366:
+            ESTOP = msg[CAN_DATA_BYTE_1];
             break;
     }
     
@@ -255,7 +281,22 @@ void can_send_cmd(
         CyDelay(1); // Wtf is this shit?
 
 } // can_send_cmd()
-
+void can_send_state(uint8_t state) {
+    uint8_t data[8] = {0};
+    data[2] = state;
+    
+    can_send(data, 0x466);
+}
+void can_send_VCL(uint8_t vcl_throttle) {
+    uint8_t data[8] = {0};
+    data[6] = vcl_throttle;
+    can_send(data, 0x466);
+}
+void can_send_ESTOP(uint8_t estop) {
+    uint8_t data[8] = {0};
+    data[0] = estop;
+    can_send(data, 0x366);
+}
 void can_send_charge(uint8_t charge, uint8_t save_soc) {
     uint8_t data[8] = {0};
     data[0] = charge;

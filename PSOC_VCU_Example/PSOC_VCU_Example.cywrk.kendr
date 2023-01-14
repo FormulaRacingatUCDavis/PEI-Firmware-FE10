@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_VCU_Example\Design01\Design01.cydwr\Pins">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_VCU_Example\Design01\Source Files\can_manager.h">
 <ExpandedNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
@@ -50,7 +50,11 @@
 <v>PSOC_VCU_Example\Design01\Header Files</v>
 <v>PSOC_VCU_Example\Design01\Header Files\cyapicallbacks.h</v>
 <v>PSOC_VCU_Example\Design01\Source Files</v>
+<v>PSOC_VCU_Example\Design01\Source Files\can_manager.c</v>
+<v>PSOC_VCU_Example\Design01\Source Files\can_manager.h</v>
+<v>PSOC_VCU_Example\Design01\Source Files\data.h</v>
 <v>PSOC_VCU_Example\Design01\Source Files\main.c</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -71,6 +75,49 @@
 <ExpandedNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
+<v>PSOC_VCU_Example\Design01\CortexM3</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\can_manager.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Analog.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO1_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO2_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO3_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO4_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GraphicLCDIntf.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GraphicLCDIntf_PM.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\IMD_Fault.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Precharge.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Rx.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_ACC_OUT.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_FINAL.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_IN.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_OUT.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Tx.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Design01.elf</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Design01.hex</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Design01.map</v>
 <v>PSOC_VCU_Example\Design01\Design01.gpdsc</v>
 <v>PSOC_VCU_Example\Design01\Design01.rpt</v>
 <v>PSOC_VCU_Example\Design01\Design01_timing.html</v>
@@ -78,9 +125,45 @@
 <VisibleNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
-<v>PSOC_VCU_Example\Design01\Design01.gpdsc</v>
-<v>PSOC_VCU_Example\Design01\Design01.rpt</v>
-<v>PSOC_VCU_Example\Design01\Design01_timing.html</v>
+<v>PSOC_VCU_Example\Design01\CortexM3</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\can_manager.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Analog.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO1_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO2_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO3_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO4_ESD.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GraphicLCDIntf.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GraphicLCDIntf_PM.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\IMD_Fault.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Precharge.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Rx.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_ACC_OUT.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_FINAL.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_IN.lst</v>
+<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SD_OUT.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -123,8 +206,9 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Design01.cydsn\Design01.cydwr" />
+<name v=".\Design01.cydsn\can_manager.h" />
+<name v=".\Design01.cydsn\main.c" />
+<name v=".\Design01.cydsn\can_manager.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -132,7 +216,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1278, 574" SelectedTabbedMdiWindow="641238a1-caad-471d-b2ef-8654bc8e6504"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4b84822f-bd12-4b1b-91d5-ace919cae5fc" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PSoC Creator\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="57ef204f-8b00-4768-9513-a12b97f2642d" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PSoC Creator\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cydwr" Guid="641238a1-caad-471d-b2ef-8654bc8e6504" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1098, 583" SelectedTabbedMdiWindow="931ea270-b059-4bad-88da-935c1e5d93ef"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4b84822f-bd12-4b1b-91d5-ace919cae5fc" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="931ea270-b059-4bad-88da-935c1e5d93ef" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="34981d13-6f38-42ba-8a3a-fce015de7ccf" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="c2df4eb2-28ac-4fdb-a181-6ed8b69ded35" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
