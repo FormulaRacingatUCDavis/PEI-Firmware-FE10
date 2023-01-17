@@ -304,3 +304,12 @@ void can_send_charge(uint8_t charge, uint8_t save_soc) {
     
     can_send(data, 0x389);
 }
+//temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
+void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
+{
+    uint8_t data[8] = {0};
+    data[3] = air_neg;
+    data[4] = air_pos;
+    
+    can_send(data, 0x387); 
+}

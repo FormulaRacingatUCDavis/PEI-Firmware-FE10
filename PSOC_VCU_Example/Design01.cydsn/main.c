@@ -15,6 +15,8 @@
 
 //The state starts at 0
 volatile uint32_t state = 0;
+void set_interlock();
+void clear_interlock();
 
 int main(void)
 {
@@ -28,7 +30,7 @@ int main(void)
     {
         //Interlock state machine
         if (state == 0) {
-            Clear_interlock(); //send a message to open AIRs
+            clear_interlock(); //send a message to open AIRs
             if((get_Set_Interlock() > 0) && (get_ESTOP_Check() == 0)) {
                 //TODO: Set the state to 1;
                 
@@ -36,7 +38,7 @@ int main(void)
             }
         }
         else if (state == 1) {
-            Set_interlock(); //?????
+            set_interlock();
             if(((get_THROTTLE_HIGH()*255 + get_THROTTLE_LOW()) < 0) || ((get_THROTTLE_HIGH()*255 + get_THROTTLE_LOW()) > 32767)){
                 can_send_VCL(0);
             }
@@ -72,7 +74,7 @@ int main(void)
         else if(state == 2)	// Trap state. No exit conditions. DO NOT TOUCH!!!!!!!
 	    // is entered when there are more errors than just estop (Status3 > 0). 
 	    {
-		Clear_interlock();
+		clear_interlock();
 		// set EM Brake = 0
 		
 	     } 
@@ -87,5 +89,16 @@ int main(void)
         can_send_state(state);    
     }
 }
-
+void set_interlock()
+{
+    AIR_NEG_Write(1);
+    AIR_POS_Write(1);
+    can_send_interlock(1,1);
+}    
+void clear_interlock()
+{
+    AIR_NEG_Write(0);
+    AIR_POS_Write(0);
+    can_send_interlock(0,0);
+}
 /* [] END OF FILE */

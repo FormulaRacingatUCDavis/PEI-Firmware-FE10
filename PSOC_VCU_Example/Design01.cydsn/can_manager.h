@@ -42,6 +42,7 @@ void can_send_charge(uint8_t charge, uint8_t save_soc);
 void can_send_state(uint8_t state);
 void can_send_VCL(uint8_t vcl_throttle);
 void can_send_ESTOP(uint8_t estop);
+void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
 
 //VCU state functions
 uint8_t get_ESTOP_Check();
