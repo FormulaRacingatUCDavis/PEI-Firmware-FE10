@@ -48,9 +48,7 @@ uint8_t get_THROTTLE();
 //Interlock functionality
 void set_interlock();
 void clear_interlock();
-void interlock(uint8 mode);
 void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
-uint8_t get_Set_Interlock();
 
 /* Not necessary at the moment
 uint8_t getEStop(); //Tehya test
