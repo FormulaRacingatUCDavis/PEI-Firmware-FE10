@@ -68,11 +68,12 @@ int main(void)
     		}
                */
         }
-        else if(state == 2)	// Trap state. No exit conditions. DO NOT TOUCH!!!!!!!
-	    // is entered when there are more errors than just estop (Status3 > 0). 
+        //Trap state
+        // is entered when there are more errors than just estop (Status3 > 0). 
+        else if(state == 2)
 	    {
-		interlock(0); // clears interlock, send a message to open AIRs
-		// set EM Brake = 0
+		    interlock(0); // clears interlock, send a message to open AIRs
+		    // set EM Brake = 0
 		
 	     } 
         else if (state == 3) {

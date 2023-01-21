@@ -127,31 +127,6 @@ void can_send(uint8_t data[8], uint32_t ID)
 	CAN_SendMsg(&message); 
 }
 
-void can_send_switches(
-    uint8_t sw_status)
-{
-        //CAN_TX_DATA_BYTE1(CAN_TX_MAILBOX_DRIVER_SWITCHES) = sw_status; 
-        //CAN_SendMsgDRIVER_SWITCHES(); 
-    
-        /*
-        uint8_t data[8];
-        
-        data[0] = sw_status;
-        data[1] = 0;
-        
-        data[2] = 0;
-        data[3] = 0;
-        
-        data[4] = 0;
-        data[5] = 0;
-        data[6] = 0;
-        data[7] = 0;
-
-        can_send(data, DRIVER_SWITCHES);
-*/
-        
-} // can_send_status()
-
 void can_send_cmd(
     uint8_t SetInterlock,
     uint16_t Throttle_High,
@@ -179,6 +154,7 @@ void can_send_cmd(
         CyDelay(1); // Wtf is this shit?
 
 } // can_send_cmd()
+
 void can_send_state(uint8_t state) {
     uint8_t data[8] = {0};
     data[2] = state;

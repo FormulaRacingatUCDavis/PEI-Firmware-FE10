@@ -32,7 +32,6 @@ void can_send(uint8_t data[8], uint32_t ID);
 
 // Advanced CAN functionality
 void can_send_cmd(uint8_t SetInterlock, uint16_t Throttle_High, uint16_t Throttle_Low, uint8_t E_Stop_Check);
-void can_send_switches(uint8_t sw_status);
 void can_send_state(uint8_t state);
 void can_send_throttle(uint8_t throttle);
 void can_send_ESTOP(uint8_t estop);
