@@ -27,25 +27,20 @@ extern volatile uint32_t voltage;
 //extern volatile BMS_STATUS bms_status;
 extern volatile uint8_t shutdown_flags;
 
-// info from MC and motor
-extern volatile uint16_t mc_temp;
-extern volatile uint16_t motor_temp;
 
 volatile uint8_t CAPACITOR_VOLT = 0;
-volatile uint8_t CURTIS_FAULT_CHECK = 0;
-volatile uint8_t CURTIS_HEART_BEAT_CHECK = 0;
 volatile uint8_t ACK_RX = 0;
 volatile uint8_t ERROR_TOLERANCE = 0;
 volatile uint8_t ABS_MOTOR_RPM = 0;
 volatile uint8_t THROTTLE_HIGH = 0;
 volatile uint8_t THROTTLE_LOW = 0;
-volatile uint8_t VCL_THROTTLE = 0;
+volatile uint8_t THROTTLE = 0;
 
 volatile uint8_t ESTOP;
 //VCU Data
 volatile uint8_t HV_REQUEST = 0;
 volatile uint8_t E_STOP_CHECK = 0;
-volatile uint8_t VEHICLE_STATE_MESSAGE = 0;
+
 
 //Interlock States
 volatile uint8_t SET_INTERLOCK = 0;
@@ -56,19 +51,6 @@ uint8 current_bytes[4] = {0};
 uint8_t getCapacitorVoltage()
 {
     return CAPACITOR_VOLT;
-}
-
-// returns true if there is a fault in motor controller
-uint8_t getCurtisFaultCheck()
-{
-    return CURTIS_FAULT_CHECK;
-}
-
-// returns true if motor controller node is still active
-// if node is in active check the fault code using 1314
-uint8_t getCurtisHeartBeatCheck()
-{
-    return CURTIS_HEART_BEAT_CHECK;
 }
 
 // returns 1 always... not sure whats up in the motor controller
@@ -103,11 +85,6 @@ uint8_t get_HV_Requested()
     return HV_REQUEST;   
 }
 
-//Return the vehicle state message
-uint8_t get_Vehicle_State()
-{
-    return VEHICLE_STATE_MESSAGE;
-}
 // returns setInterlock
 uint8_t get_Set_Interlock()
 {
@@ -123,10 +100,10 @@ uint8_t get_THROTTLE_LOW()
 {
     return THROTTLE_LOW;
 }
-//returns VCL_THROTTLE
-uint8_t get_VCL_THROTTLE()
+//returns THROTTLE
+uint8_t get_THROTTLE()
 {
-    return VCL_THROTTLE;
+    return THROTTLE;
 }
 // called from CAN_TX_RX_func.c in the generic RX func
 // tldr: part of an interrupt service routine
@@ -139,24 +116,13 @@ void can_receive(uint8_t *msg, int ID)
         case TORQUE_REQUEST_COMMAND:
             HV_REQUEST = msg[CAN_DATA_BYTE_1];
             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
-            VEHICLE_STATE_MESSAGE = msg[CAN_DATA_BYTE_6];
             break;
         case MC_PDO_SEND:
             CAPACITOR_VOLT = msg[CAN_DATA_BYTE_1];
             ABS_MOTOR_RPM = msg[CAN_DATA_BYTE_3];
-            mc_temp = msg[CAN_DATA_BYTE_7] << 8;
-            mc_temp += msg[CAN_DATA_BYTE_8];
             break;
         case MC_PDO_ACK:
             ACK_RX = msg[CAN_DATA_BYTE_1];
-            motor_temp = msg[CAN_DATA_BYTE_5] << 8;
-            motor_temp |= msg[CAN_DATA_BYTE_6];
-            break;
-        case 0xA6:  // errors sent from MC node
-            CURTIS_FAULT_CHECK = 0x1;
-            break;
-        case 0x726:     // from motor controller to confirm that node is still active
-            CURTIS_HEART_BEAT_CHECK = 0x1;
             break;
         case BMS_VOLTAGES:
             voltage = msg[CAN_DATA_BYTE_5] << 24;
@@ -179,7 +145,7 @@ void can_receive(uint8_t *msg, int ID)
             break;
         case MC_DEBUG:
             SET_INTERLOCK = msg[CAN_DATA_BYTE_1];
-            VCL_THROTTLE = msg[CAN_DATA_BYTE_7];
+            THROTTLE = msg[CAN_DATA_BYTE_7];
             break;
         case 0x366:
             ESTOP = msg[CAN_DATA_BYTE_1];
@@ -256,8 +222,8 @@ void can_send_switches(
 
 void can_send_cmd(
     uint8_t SetInterlock,
-    uint16_t VCL_Throttle_High,
-    uint16_t VCL_Throttle_Low,
+    uint16_t Throttle_High,
+    uint16_t Throttle_Low,
     uint8_t E_Stop_Check
 )
 {
@@ -267,8 +233,8 @@ void can_send_cmd(
         
         data[0] = SetInterlock;
         
-        data[1] = VCL_Throttle_High;
-        data[2] = VCL_Throttle_Low;
+        data[1] = Throttle_High;
+        data[2] = Throttle_Low;
         
         data[3] = 0;
         data[4] = E_Stop_Check;
@@ -287,22 +253,15 @@ void can_send_state(uint8_t state) {
     
     can_send(data, 0x466);
 }
-void can_send_VCL(uint8_t vcl_throttle) {
+void can_send_throttle(uint8_t throttle) {
     uint8_t data[8] = {0};
-    data[6] = vcl_throttle;
+    data[6] = throttle;
     can_send(data, 0x466);
 }
 void can_send_ESTOP(uint8_t estop) {
     uint8_t data[8] = {0};
     data[0] = estop;
     can_send(data, 0x366);
-}
-void can_send_charge(uint8_t charge, uint8_t save_soc) {
-    uint8_t data[8] = {0};
-    data[0] = charge;
-    data[1] = save_soc;
-    
-    can_send(data, 0x389);
 }
 //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
 void can_send_interlock(uint8_t air_neg, uint8_t air_pos)

@@ -25,7 +25,6 @@ typedef enum {
     BRAKE_IMPLAUSIBLE,
     ESTOP
 } vcu_fault;
-
 typedef enum{
     NO_ERROR = 0x0000,
     CHARGEMODE = 0x0001,
