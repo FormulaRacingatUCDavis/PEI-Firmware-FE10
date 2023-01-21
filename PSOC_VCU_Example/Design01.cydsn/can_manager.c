@@ -16,22 +16,7 @@
 #include "Precharge.h"
 
 extern volatile vcu_state state;
-extern volatile uint32_t pedalOK;
-extern volatile uint8_t PACK_TEMP;
-extern volatile uint8_t BSPD_CATCH;
-extern volatile uint16_t CURRENT;
-//extern volatile int ERROR_NODE;
-//extern volatile int ERROR_IDX;
-extern volatile uint8_t soc;
-extern volatile uint32_t voltage;
-//extern volatile BMS_STATUS bms_status;
-extern volatile uint8_t shutdown_flags;
 
-
-volatile uint8_t CAPACITOR_VOLT = 0;
-volatile uint8_t ACK_RX = 0;
-volatile uint8_t ERROR_TOLERANCE = 0;
-volatile uint8_t ABS_MOTOR_RPM = 0;
 volatile uint8_t THROTTLE_HIGH = 0;
 volatile uint8_t THROTTLE_LOW = 0;
 volatile uint8_t THROTTLE = 0;
@@ -45,33 +30,6 @@ volatile uint8_t E_STOP_CHECK = 0;
 //Interlock States
 volatile uint8_t SET_INTERLOCK = 0;
 
-uint8 current_bytes[4] = {0};
-
-// returns voltage of capacitor from motor controller
-uint8_t getCapacitorVoltage()
-{
-    return CAPACITOR_VOLT;
-}
-
-// returns 1 always... not sure whats up in the motor controller
-uint8_t getAckRx()
-{
-    return ACK_RX;
-}
-
-// true if break depressed more than 10%
-// this value typically used for drive request
-uint8_t getErrorTolerance()
-{
-    return ERROR_TOLERANCE;
-}
-
-// from motor controller
-// look this one up in 1239E manual, im not super sure
-uint8_t getABSMotorRPM()
-{
-    return ABS_MOTOR_RPM;
-}
 
 //Return the ESTOP state from the VCU.
 uint8_t get_ESTOP_Check()
@@ -117,37 +75,11 @@ void can_receive(uint8_t *msg, int ID)
             HV_REQUEST = msg[CAN_DATA_BYTE_1];
             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
             break;
-        case MC_PDO_SEND:
-            CAPACITOR_VOLT = msg[CAN_DATA_BYTE_1];
-            ABS_MOTOR_RPM = msg[CAN_DATA_BYTE_3];
-            break;
-        case MC_PDO_ACK:
-            ACK_RX = msg[CAN_DATA_BYTE_1];
-            break;
-        case BMS_VOLTAGES:
-            voltage = msg[CAN_DATA_BYTE_5] << 24;
-            voltage |= msg[CAN_DATA_BYTE_6] << 16;
-            voltage |= msg[CAN_DATA_BYTE_7] << 8;
-            voltage |= msg[CAN_DATA_BYTE_8];
-            break;
-        case BMS_STATUS_MSG:
-            soc = msg[CAN_DATA_BYTE_2];
-            //bms_status = msg[CAN_DATA_BYTE_3] << 8;    // bms error flags
-            //bms_status |= msg[CAN_DATA_BYTE_4];        // bms error flags
-            break;
-        case BMS_TEMPERATURES:
-            PACK_TEMP = msg[CAN_DATA_BYTE_8];
-            break;
-        case PEI_CURRENT:
-            CURRENT = msg[CAN_DATA_BYTE_1] << 8;
-            CURRENT |= msg[CAN_DATA_BYTE_2];
-            shutdown_flags = msg[CAN_DATA_BYTE_3];
-            break;
         case MC_DEBUG:
             SET_INTERLOCK = msg[CAN_DATA_BYTE_1];
             THROTTLE = msg[CAN_DATA_BYTE_7];
             break;
-        case 0x366:
+        case MC_ESTOP:
             ESTOP = msg[CAN_DATA_BYTE_1];
             break;
     }

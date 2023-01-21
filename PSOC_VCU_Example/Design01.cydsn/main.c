@@ -102,6 +102,6 @@ void interlock(uint8_t mode)
 {
     AIR_NEG_Write(mode);
     AIR_POS_Write(mode);
-    can_send_interlock(mode,mode);
+    can_send_interlock(mode, mode);
 }
 /* [] END OF FILE */
