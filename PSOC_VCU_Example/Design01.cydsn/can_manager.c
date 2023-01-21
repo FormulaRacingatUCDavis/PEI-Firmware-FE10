@@ -161,16 +161,38 @@ void can_send_state(uint8_t state) {
     
     can_send(data, 0x466);
 }
+
 void can_send_throttle(uint8_t throttle) {
     uint8_t data[8] = {0};
     data[6] = throttle;
     can_send(data, 0x466);
 }
+
 void can_send_ESTOP(uint8_t estop) {
     uint8_t data[8] = {0};
     data[0] = estop;
     can_send(data, 0x366);
 }
+
+void set_interlock()
+{
+    AIR_NEG_Write(1);
+    AIR_POS_Write(1);
+    can_send_interlock(1,1);
+}    
+void clear_interlock()
+{
+    AIR_NEG_Write(0);
+    AIR_POS_Write(0);
+    can_send_interlock(0,0);
+}
+void interlock(uint8_t mode)
+{
+    AIR_NEG_Write(mode);
+    AIR_POS_Write(mode);
+    can_send_interlock(mode, mode);
+}
+
 //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
 void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
 {

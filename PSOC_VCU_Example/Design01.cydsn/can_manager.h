@@ -35,7 +35,6 @@ void can_send_cmd(uint8_t SetInterlock, uint16_t Throttle_High, uint16_t Throttl
 void can_send_state(uint8_t state);
 void can_send_throttle(uint8_t throttle);
 void can_send_ESTOP(uint8_t estop);
-void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
 
 //VCU state functions
 uint8_t get_ESTOP_Check();
@@ -45,7 +44,12 @@ uint8_t get_HV_Requested();
 uint8_t get_THROTTLE_HIGH();
 uint8_t get_THROTTLE_LOW();
 uint8_t get_THROTTLE();
-//Interlock states
+
+//Interlock functionality
+void set_interlock();
+void clear_interlock();
+void interlock(uint8 mode);
+void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
 uint8_t get_Set_Interlock();
 
 /* Not necessary at the moment
