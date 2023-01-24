@@ -18,6 +18,11 @@ volatile uint32_t state = 0;
 
 int main(void)
 {
+    ///
+    
+    
+    //
+    
     CyGlobalIntEnable; /* Enable global interrupts. */
     
     //Initialize and start CAN
@@ -26,11 +31,50 @@ int main(void)
     
     for(;;)
     {
+        //PEI board PICDUINO
+        // get current sensor data (RA6/RC0 ???)
+        // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
+        uint16_t current = ADCC_GetSingleConversion(Current_Analog_Read());
+        
+        
+        
+        
+        
+        // shutdown flags, current
+        uint8_t shutdown_flags = 0;
+        uint8_t current_upper = 0;
+        uint8_t current_lower = 0;
+        
+        if (IMD_Fault_Read()) { shutdown_flags |= (1 << 5); }
+        else { shutdown_flags &= (0b011111); }
+        
+        if (BMS_Fault_Read()) { shutdown_flags |= (1 << 4); }
+        else { shutdown_flags &= (0b101111); }
+        
+        if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
+        else { shutdown_flags &= (0b110111); }
+        
+        if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
+        else { shutdown_flags &= (0b111011); }
+        
+        if (AIR_NEG_Read()) { shutdown_flags |= (1 << 1); }
+        else { shutdown_flags &= (0b111101); }
+        
+        if (Precharge_Read()) { shutdown_flags |= (1 << 0); }
+        else { shutdown_flags &= (0b111110); }
+
+        // send data via PCAN to BMS main
+        // note: uses 2's complement
+        current_upper = current >> 8; // upper bits
+        current_lower = current & 0xFF; // lower bits
+        can_send_current(current_upper, current_lower);
+        can_send_shutdown_flags(shutdown_flags);
+        
         //Interlock state machine
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs
             
-            if((get_Set_Interlock() > 0) && (get_ESTOP_Check() == 0)) {
+            if((get_HV_Requested() > 0) && (get_ESTOP_Check() == 0)) {
                 state =1;
             }
         }

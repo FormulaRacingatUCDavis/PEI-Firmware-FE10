@@ -180,17 +180,12 @@ void set_interlock()
     AIR_POS_Write(1);
     can_send_interlock(1,1);
 }    
+
 void clear_interlock()
 {
     AIR_NEG_Write(0);
     AIR_POS_Write(0);
     can_send_interlock(0,0);
-}
-void interlock(uint8_t mode)
-{
-    AIR_NEG_Write(mode);
-    AIR_POS_Write(mode);
-    can_send_interlock(mode, mode);
 }
 
 //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
@@ -199,6 +194,20 @@ void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
     uint8_t data[8] = {0};
     data[3] = air_neg;
     data[4] = air_pos;
-    
+    can_send(data, 0x387); 
+}
+
+void can_send_shutdown_flags(uint8_t shutdown_flags)
+{
+    uint8_t data[8] = {0};
+    data[2] = shutdown_flags;
+    can_send(data, 0x387); 
+}
+
+void can_send_current(uint8_t current_upper, uint8_t current_lower)
+{
+    uint8_t data[8] = {0};
+    data[0] = current_upper;
+    data[1] = current_lower;
     can_send(data, 0x387); 
 }
