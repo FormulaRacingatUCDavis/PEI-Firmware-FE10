@@ -1,5 +1,5 @@
 -- Project:   Design01
--- Generated: 12/11/2022 18:42:58
+-- Generated: 01/28/2023 11:49:03
 -- PSoC Creator  4.4
 
 ENTITY Design01 IS
@@ -30,8 +30,7 @@ ENTITY Design01 IS
         GPIO3_ESD(0)_PAD : INOUT std_ulogic;
         GPIO4_ESD(0)_PAD : INOUT std_ulogic;
         IMD_Fault(0)_PAD : IN std_ulogic;
-        BMS_Fault(0)_PAD : IN std_ulogic;
-        Current_Analog(0)_PAD : INOUT std_ulogic);
+        BMS_Fault(0)_PAD : IN std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 5e0;
     ATTRIBUTE voltage_VUSB OF __DEFAULT__ : ENTITY IS 5e0;
@@ -88,6 +87,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL Net_17 : bit;
     SIGNAL Net_18 : bit;
     SIGNAL Net_19 : bit;
+    SIGNAL Net_269 : bit;
     SIGNAL Net_86_0 : bit;
     SIGNAL Net_86_1 : bit;
     SIGNAL Net_86_2 : bit;
@@ -103,6 +103,28 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL SD_IN(0)__PA : bit;
     SIGNAL SD_OUT(0)__PA : bit;
     SIGNAL Tx(0)__PA : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_0\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_1\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_2\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_3\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_4\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_5\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_6\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_245_7\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_488\ : bit;
+    ATTRIBUTE global_signal OF \ADC_DelSig_1:Net_488\ : SIGNAL IS true;
+    SIGNAL \ADC_DelSig_1:Net_488_adig\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_488_adig_local\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_488_local\ : bit;
+    SIGNAL \ADC_DelSig_1:Net_93\ : bit;
+    ATTRIBUTE global_signal OF \ADC_DelSig_1:Net_93\ : SIGNAL IS true;
+    SIGNAL \ADC_DelSig_1:Net_93_local\ : bit;
+    SIGNAL \ADC_DelSig_1:aclock\ : bit;
+    SIGNAL \ADC_DelSig_1:mod_dat_0\ : bit;
+    SIGNAL \ADC_DelSig_1:mod_dat_1\ : bit;
+    SIGNAL \ADC_DelSig_1:mod_dat_2\ : bit;
+    SIGNAL \ADC_DelSig_1:mod_dat_3\ : bit;
+    SIGNAL \ADC_DelSig_1:mod_reset\ : bit;
     SIGNAL \GraphicLCDIntf:cmd_empty\ : bit;
     SIGNAL \GraphicLCDIntf:cmd_not_full\ : bit;
     SIGNAL \GraphicLCDIntf:data_empty\ : bit;
@@ -133,6 +155,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
     SIGNAL \ClockBlock.clk_bus_glb_ff__sig\ : bit;
+    SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
     ATTRIBUTE lib_model OF SD_IN(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF SD_IN(0) : LABEL IS "P1[2]";
     ATTRIBUTE lib_model OF SD_OUT(0) : LABEL IS "iocell2";
@@ -183,18 +206,20 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF Current_Analog(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF \GraphicLCDIntf:full\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF \GraphicLCDIntf:status_1\ : LABEL IS "macrocell2";
+    ATTRIBUTE lib_model OF __ONE__ : LABEL IS "macrocell3";
     ATTRIBUTE lib_model OF \GraphicLCDIntf:StsReg\ : LABEL IS "statuscell1";
     ATTRIBUTE lib_model OF \GraphicLCDIntf:LsbReg\ : LABEL IS "statuscell2";
     ATTRIBUTE lib_model OF \GraphicLCDIntf:GraphLcd8:Lsb\ : LABEL IS "datapathcell1";
-    ATTRIBUTE lib_model OF Net_131 : LABEL IS "macrocell3";
-    ATTRIBUTE lib_model OF Net_130 : LABEL IS "macrocell4";
-    ATTRIBUTE lib_model OF Net_129 : LABEL IS "macrocell5";
-    ATTRIBUTE lib_model OF Net_132 : LABEL IS "macrocell6";
-    ATTRIBUTE lib_model OF tmpOE__d_net_7 : LABEL IS "macrocell7";
-    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_3\ : LABEL IS "macrocell8";
-    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_2\ : LABEL IS "macrocell9";
-    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_1\ : LABEL IS "macrocell10";
-    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_0\ : LABEL IS "macrocell11";
+    ATTRIBUTE Location OF \ADC_DelSig_1:DSM\ : LABEL IS "F(DSM,0)";
+    ATTRIBUTE lib_model OF Net_131 : LABEL IS "macrocell4";
+    ATTRIBUTE lib_model OF Net_130 : LABEL IS "macrocell5";
+    ATTRIBUTE lib_model OF Net_129 : LABEL IS "macrocell6";
+    ATTRIBUTE lib_model OF Net_132 : LABEL IS "macrocell7";
+    ATTRIBUTE lib_model OF tmpOE__d_net_7 : LABEL IS "macrocell8";
+    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_3\ : LABEL IS "macrocell9";
+    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_2\ : LABEL IS "macrocell10";
+    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_1\ : LABEL IS "macrocell11";
+    ATTRIBUTE lib_model OF \GraphicLCDIntf:state_0\ : LABEL IS "macrocell12";
     COMPONENT cancell
         PORT (
             clock : IN std_ulogic;
@@ -383,6 +408,39 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE udb_chain OF datapathcell : COMPONENT IS "ce0i,ce0,cl0i,cl0,z0i,z0,ff0i,ff0,ce1i,ce1,cl1i,cl1,z1i,z1,ff1i,ff1,cap0i,cap0,cap1i,cap1,ci,co_msb,sir,sol_msb,cfbi,cfbo,sil,sor,cmsbi,cmsbo";
     ATTRIBUTE chain_lsb OF datapathcell : COMPONENT IS "ce0i,cl0i,z0i,ff0i,ce1i,cl1i,z1i,ff1i,cap0i,cap1i,ci,sir,cfbi,sor,cmsbo";
     ATTRIBUTE chain_msb OF datapathcell : COMPONENT IS "ce0,cl0,z0,ff0,ce1,cl1,z1,ff1,cap0,cap1,co_msb,sol_msb,cfbo,sil,cmsbi";
+    COMPONENT decimatorcell
+        PORT (
+            aclock : IN std_ulogic;
+            mod_dat_0 : IN std_ulogic;
+            mod_dat_1 : IN std_ulogic;
+            mod_dat_2 : IN std_ulogic;
+            mod_dat_3 : IN std_ulogic;
+            ext_start : IN std_ulogic;
+            modrst : OUT std_ulogic;
+            interrupt : OUT std_ulogic);
+    END COMPONENT;
+    COMPONENT dsmodcell
+        PORT (
+            aclock : IN std_ulogic;
+            modbitin_udb : IN std_ulogic;
+            reset_udb : IN std_ulogic;
+            reset_dec : IN std_ulogic;
+            dec_clock : OUT std_ulogic;
+            mod_dat_0 : OUT std_ulogic;
+            mod_dat_1 : OUT std_ulogic;
+            mod_dat_2 : OUT std_ulogic;
+            mod_dat_3 : OUT std_ulogic;
+            dout_udb_0 : OUT std_ulogic;
+            dout_udb_1 : OUT std_ulogic;
+            dout_udb_2 : OUT std_ulogic;
+            dout_udb_3 : OUT std_ulogic;
+            dout_udb_4 : OUT std_ulogic;
+            dout_udb_5 : OUT std_ulogic;
+            dout_udb_6 : OUT std_ulogic;
+            dout_udb_7 : OUT std_ulogic;
+            extclk_cp_udb : IN std_ulogic;
+            clk_udb : IN std_ulogic);
+    END COMPONENT;
     COMPONENT interrupt
         PORT (
             interrupt : IN std_ulogic;
@@ -504,9 +562,16 @@ BEGIN
             clk_bus => ClockBlock_BUS_CLK_local,
             dsi_clkin_div => open,
             dsi_glb_div => open,
-            dclk_glb_0 => Net_12,
-            dclk_0 => Net_12_local,
-            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\);
+            dclk_glb_0 => \ADC_DelSig_1:Net_93\,
+            dclk_0 => \ADC_DelSig_1:Net_93_local\,
+            dclk_glb_1 => Net_12,
+            dclk_1 => Net_12_local,
+            aclk_glb_0 => \ADC_DelSig_1:Net_488\,
+            aclk_0 => \ADC_DelSig_1:Net_488_local\,
+            clk_a_dig_glb_0 => \ADC_DelSig_1:Net_488_adig\,
+            clk_a_dig_0 => \ADC_DelSig_1:Net_488_adig_local\,
+            clk_bus_glb_ff => \ClockBlock.clk_bus_glb_ff__sig\,
+            aclk_glb_ff_0 => \ClockBlock.aclk_glb_ff_0__sig\);
 
     SD_IN:logicalport
         GENERIC MAP(
@@ -2558,7 +2623,6 @@ BEGIN
         PORT MAP(
             pa_out => Current_Analog(0)__PA,
             oe => open,
-            pad_in => Current_Analog(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -2588,6 +2652,14 @@ BEGIN
             main_2 => \GraphicLCDIntf:state_1\,
             main_3 => \GraphicLCDIntf:state_0\,
             main_4 => \GraphicLCDIntf:z0_detect\);
+
+    __ONE__:macrocell
+        GENERIC MAP(
+            eqn_main => "1'b0",
+            regmode => 0,
+            clken_mode => 1)
+        PORT MAP(
+            q => __ONE__);
 
     \GraphicLCDIntf:StsReg\:statuscell
         GENERIC MAP(
@@ -2690,6 +2762,51 @@ BEGIN
         PORT MAP(
             interrupt => Net_18,
             clock => ClockBlock_BUS_CLK);
+
+    \ADC_DelSig_1:DSM\:dsmodcell
+        GENERIC MAP(
+            cy_registers => "",
+            resolution => 16)
+        PORT MAP(
+            aclock => \ClockBlock.aclk_glb_ff_0__sig\,
+            modbitin_udb => open,
+            reset_udb => open,
+            reset_dec => \ADC_DelSig_1:mod_reset\,
+            extclk_cp_udb => \ADC_DelSig_1:Net_93_local\,
+            dec_clock => \ADC_DelSig_1:aclock\,
+            mod_dat_3 => \ADC_DelSig_1:mod_dat_3\,
+            mod_dat_2 => \ADC_DelSig_1:mod_dat_2\,
+            mod_dat_1 => \ADC_DelSig_1:mod_dat_1\,
+            mod_dat_0 => \ADC_DelSig_1:mod_dat_0\,
+            dout_udb_7 => \ADC_DelSig_1:Net_245_7\,
+            dout_udb_6 => \ADC_DelSig_1:Net_245_6\,
+            dout_udb_5 => \ADC_DelSig_1:Net_245_5\,
+            dout_udb_4 => \ADC_DelSig_1:Net_245_4\,
+            dout_udb_3 => \ADC_DelSig_1:Net_245_3\,
+            dout_udb_2 => \ADC_DelSig_1:Net_245_2\,
+            dout_udb_1 => \ADC_DelSig_1:Net_245_1\,
+            dout_udb_0 => \ADC_DelSig_1:Net_245_0\);
+
+    \ADC_DelSig_1:IRQ\:interrupt
+        GENERIC MAP(
+            int_type => "10",
+            is_nmi => 0)
+        PORT MAP(
+            interrupt => Net_269,
+            clock => ClockBlock_BUS_CLK);
+
+    \ADC_DelSig_1:DEC\:decimatorcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            aclock => \ADC_DelSig_1:aclock\,
+            mod_dat_3 => \ADC_DelSig_1:mod_dat_3\,
+            mod_dat_2 => \ADC_DelSig_1:mod_dat_2\,
+            mod_dat_1 => \ADC_DelSig_1:mod_dat_1\,
+            mod_dat_0 => \ADC_DelSig_1:mod_dat_0\,
+            ext_start => __ONE__,
+            modrst => \ADC_DelSig_1:mod_reset\,
+            interrupt => Net_269);
 
     Net_131:macrocell
         GENERIC MAP(
