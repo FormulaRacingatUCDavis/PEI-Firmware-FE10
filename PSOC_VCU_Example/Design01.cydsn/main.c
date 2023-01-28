@@ -34,7 +34,7 @@ int main(void)
         //PEI board PICDUINO
         // get current sensor data (RA6/RC0 ???)
         // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
-        uint16_t current = ADCC_GetSingleConversion(Current_Analog_Read());
+        //uint16_t current = ADCC_GetSingleConversion(Current_Analog_Read());
         
         
         
@@ -65,10 +65,9 @@ int main(void)
 
         // send data via PCAN to BMS main
         // note: uses 2's complement
-        current_upper = current >> 8; // upper bits
-        current_lower = current & 0xFF; // lower bits
-        can_send_current(current_upper, current_lower);
-        can_send_shutdown_flags(shutdown_flags);
+        //current_upper = current >> 8; // upper bits
+        //current_lower = current & 0xFF; // lower bits
+        //can_send_PEI(current_upper, current_lower, shutdown_flags);
         
         //Interlock state machine
         if (state == 0) {

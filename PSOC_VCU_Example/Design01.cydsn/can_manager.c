@@ -187,17 +187,12 @@ void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
     can_send(data, 0x387); 
 }
 
-void can_send_shutdown_flags(uint8_t shutdown_flags)
+void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags)
 {
     uint8_t data[8] = {0};
-    data[2] = shutdown_flags;
-    can_send(data, 0x387); 
-}
 
-void can_send_current(uint8_t current_upper, uint8_t current_lower)
-{
-    uint8_t data[8] = {0};
     data[0] = current_upper;
     data[1] = current_lower;
+    data[2] = shutdown_flags;
     can_send(data, 0x387); 
 }

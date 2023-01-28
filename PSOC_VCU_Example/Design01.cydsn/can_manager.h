@@ -56,11 +56,11 @@ void set_interlock();
 void clear_interlock();
 void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
 
-//Shutdown circuit
-void can_send_shutdown_flags(uint8_t shutdown_flags);
+//Current flags, shutdown circuit
+void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags);
 
-//Current bits: upper and lower
-void can_send_current(uint8_t current_upper, uint8_t current_lower);
+
+
 
 /* Not necessary at the moment
 uint8_t getEStop(); //Tehya test
