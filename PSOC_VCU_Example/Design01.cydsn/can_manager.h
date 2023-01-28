@@ -11,12 +11,18 @@
 //#include "T6963C.h"
 //#include "graphic.h"
     
-
 typedef enum {
+    VEHICLE_STATE = 0x0c0,
+    SWITCHES = 0x0d0,
     TORQUE_REQUEST_COMMAND = 0x766,
+    BMS_STATUS = 0x380,
+    PEI_CURRENT = 0x387,
+    BMS_VOLTAGES = 0x388,
+    BMS_TEMPERATURES = 0x389,
     MC_ESTOP = 0x366,
     MC_DEBUG = 0x466,
-} CAN_ID;
+}CAN_ID;
+
 typedef enum {
     LV,
     PRECHARGING,
@@ -49,6 +55,12 @@ uint8_t get_THROTTLE();
 void set_interlock();
 void clear_interlock();
 void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
+
+//Shutdown circuit
+void can_send_shutdown_flags(uint8_t shutdown_flags);
+
+//Current bits: upper and lower
+void can_send_current(uint8_t current_upper, uint8_t current_lower);
 
 /* Not necessary at the moment
 uint8_t getEStop(); //Tehya test
