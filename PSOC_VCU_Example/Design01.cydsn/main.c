@@ -30,8 +30,8 @@ int main(void)
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs
             
-            if((get_Set_Interlock() > 0) && (get_ESTOP_Check() == 0)) {
-                state =1;
+            if((get_HV_Requested() > 0) && (get_ESTOP_Check() == 0)) {
+                state = 1;
             }
         }
         else if (state == 1) {
@@ -43,7 +43,7 @@ int main(void)
                 can_send_throttle(0);
             }
             else {
-    			can_send_throttle(get_THROTTLE_HIGH()*255 + get_THROTTLE_LOW());
+    			can_send_throttle(throttle_high * 255 + throttle_low);
     			//the throttle signal is in bounds and is between 0 and 32767
 	  	    }
             
@@ -82,6 +82,7 @@ int main(void)
                 can_send_ESTOP(0);
             }
         }
+        
         can_send_state(state);    
     }
 }

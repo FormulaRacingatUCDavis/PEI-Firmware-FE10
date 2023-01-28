@@ -227,7 +227,6 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\can_manager.c" />
 <name v=".\Design01.cydsn\can_manager.h" />
 </OpenDocs>
@@ -237,7 +236,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1098, 547" SelectedTabbedMdiWindow="fd3d8c5c-06f9-4628-95b8-9284c8b2d895"><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="fd3d8c5c-06f9-4628-95b8-9284c8b2d895" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="38712a36-00fc-4678-8d0c-10b55c8fa457" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="42a38fec-a172-4c13-9f4a-8f1249b8ad5c" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="ec906c0f-641c-4d7a-acf1-39a10119b305" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1100, 547" SelectedTabbedMdiWindow="42a38fec-a172-4c13-9f4a-8f1249b8ad5c"><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="fd3d8c5c-06f9-4628-95b8-9284c8b2d895" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="42a38fec-a172-4c13-9f4a-8f1249b8ad5c" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="ec906c0f-641c-4d7a-acf1-39a10119b305" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d561c289-2a72-4829-9f00-e318d968c7c3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

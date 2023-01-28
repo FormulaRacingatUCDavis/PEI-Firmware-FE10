@@ -27,10 +27,6 @@ volatile uint8_t HV_REQUEST = 0;
 volatile uint8_t E_STOP_CHECK = 0;
 
 
-//Interlock States
-volatile uint8_t SET_INTERLOCK = 0;
-
-
 //Return the ESTOP state from the VCU.
 uint8_t get_ESTOP_Check()
 {
@@ -43,11 +39,6 @@ uint8_t get_HV_Requested()
     return HV_REQUEST;   
 }
 
-// returns setInterlock
-uint8_t get_Set_Interlock()
-{
-    return SET_INTERLOCK;
-}
 //returns THROTTLE_HIGH
 uint8_t get_THROTTLE_HIGH()
 {
@@ -76,7 +67,6 @@ void can_receive(uint8_t *msg, int ID)
             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
             break;
         case MC_DEBUG:
-            SET_INTERLOCK = msg[CAN_DATA_BYTE_1];
             THROTTLE = msg[CAN_DATA_BYTE_7];
             break;
         case MC_ESTOP:
