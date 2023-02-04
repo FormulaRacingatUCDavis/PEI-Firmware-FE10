@@ -46,7 +46,7 @@ extern uint8 CAN_initVar;
 #define CAN_ACK_ERR                        (0u)
 #define CAN_FORM_ERR                       (0u)
 #define CAN_CRC_ERR                        (0u)
-#define CAN_BUS_OFF                        (1u)
+#define CAN_BUS_OFF                        (0u)
 #define CAN_RX_MSG_LOST                    (0u)
 #define CAN_TX_MESSAGE                     (0u)
 #define CAN_RX_MESSAGE                     (1u)
@@ -72,13 +72,13 @@ extern uint8 CAN_initVar;
     #define CAN_SST_FAILURE_USE_HELPER     (1u)
 #endif /* (!(CY_PSOC3 || CY_PSOC5)) */
 
-#define CAN_ADVANCED_INTERRUPT_CFG         (0u)
+#define CAN_ADVANCED_INTERRUPT_CFG         (1u)
 
 /* TX/RX Function Enable */
-#define CAN_TX0_FUNC_ENABLE            (0u)
-#define CAN_TX1_FUNC_ENABLE            (0u)
-#define CAN_TX2_FUNC_ENABLE            (0u)
-#define CAN_TX3_FUNC_ENABLE            (0u)
+#define CAN_TX0_FUNC_ENABLE            (1u)
+#define CAN_TX1_FUNC_ENABLE            (1u)
+#define CAN_TX2_FUNC_ENABLE            (1u)
+#define CAN_TX3_FUNC_ENABLE            (1u)
 #define CAN_TX4_FUNC_ENABLE            (0u)
 #define CAN_TX5_FUNC_ENABLE            (0u)
 #define CAN_TX6_FUNC_ENABLE            (0u)
@@ -100,7 +100,7 @@ extern uint8 CAN_initVar;
 #define CAN_RX14_FUNC_ENABLE           (0u)
 #define CAN_RX15_FUNC_ENABLE           (0u)
 #define CAN_RX_MAILBOX_TYPE            (0x1u)
-#define CAN_TX_MAILBOX_TYPE            (0x0u)
+#define CAN_TX_MAILBOX_TYPE            (0xFu)
 
 
 /***************************************
@@ -282,16 +282,16 @@ void  CAN_TxCancel(uint8 bufferId) ;
 void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 
 #if (CAN_TX0_FUNC_ENABLE)
-    uint8 CAN_SendMsg0(void) ;
+    uint8 CAN_SendMsgTORQUE_REQUEST_COMMAND(void) ;
 #endif /* CAN_TX0_FUNC_ENABLE */
 #if (CAN_TX1_FUNC_ENABLE)
-    uint8 CAN_SendMsg1(void) ;
+    uint8 CAN_SendMsgPEI_CURRENT(void) ;
 #endif /* CAN_TX1_FUNC_ENABLE */
 #if (CAN_TX2_FUNC_ENABLE)
-    uint8 CAN_SendMsg2(void) ;
+    uint8 CAN_SendMsgMC_ESTOP(void) ;
 #endif /* CAN_TX2_FUNC_ENABLE */
 #if (CAN_TX3_FUNC_ENABLE)
-    uint8 CAN_SendMsg3(void) ;
+    uint8 CAN_SendMsgMC_DEBUG(void) ;
 #endif /* CAN_TX3_FUNC_ENABLE */
 #if (CAN_TX4_FUNC_ENABLE)
     uint8 CAN_SendMsg4(void) ;
@@ -411,10 +411,10 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 #endif /* (!(CY_PSOC3 || CY_PSOC5)) */
 
 /* TX Defines to link mailbox names with mailbox numbers */
-#define CAN_TX_MAILBOX_0               (0u)
-#define CAN_TX_MAILBOX_1               (1u)
-#define CAN_TX_MAILBOX_2               (2u)
-#define CAN_TX_MAILBOX_3               (3u)
+#define CAN_TX_MAILBOX_TORQUE_REQUEST_COMMAND (0u)
+#define CAN_TX_MAILBOX_PEI_CURRENT     (1u)
+#define CAN_TX_MAILBOX_MC_ESTOP        (2u)
+#define CAN_TX_MAILBOX_MC_DEBUG        (3u)
 #define CAN_TX_MAILBOX_4               (4u)
 #define CAN_TX_MAILBOX_5               (5u)
 #define CAN_TX_MAILBOX_6               (6u)
@@ -444,13 +444,13 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 ***************************************/
 
 /* General */
-#define CAN_BITRATE                   (2u)
-#define CAN_CFG_REG_TSEG1             (10u - 1u)
-#define CAN_CFG_REG_TSEG2             (5u - 1u)
+#define CAN_BITRATE                   (18u)
+#define CAN_CFG_REG_TSEG1             (5u - 1u)
+#define CAN_CFG_REG_TSEG2             (4u - 1u)
 #define CAN_CFG_REG_SJW               (4u - 1u)
 #define CAN_SAMPLING_MODE             (0u)
 #define CAN_ARBITER                   (0u)
-#define CAN_RESET_TYPE                (0u)
+#define CAN_RESET_TYPE                (1u)
 #define CAN_SYNC_EDGE                 (0u)
 
 #if (!(CY_PSOC3 || CY_PSOC5))

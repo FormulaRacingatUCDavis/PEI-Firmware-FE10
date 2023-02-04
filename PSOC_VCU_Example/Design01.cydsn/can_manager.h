@@ -12,13 +12,8 @@
 //#include "graphic.h"
     
 typedef enum {
-    VEHICLE_STATE = 0x0c0,
-    SWITCHES = 0x0d0,
     TORQUE_REQUEST_COMMAND = 0x766,
-    BMS_STATUS = 0x380,
     PEI_CURRENT = 0x387,
-    BMS_VOLTAGES = 0x388,
-    BMS_TEMPERATURES = 0x389,
     MC_ESTOP = 0x366,
     MC_DEBUG = 0x466,
 }CAN_ID;

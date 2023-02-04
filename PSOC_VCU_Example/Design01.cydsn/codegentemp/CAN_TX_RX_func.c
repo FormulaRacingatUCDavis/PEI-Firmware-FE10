@@ -186,7 +186,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX0_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsg0
+    * FUNCTION NAME:   CAN_SendMsgTORQUE_REQUEST_COMMAND
     ********************************************************************************
     *
     * Summary:
@@ -205,7 +205,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsg0(void) 
+    uint8 CAN_SendMsgTORQUE_REQUEST_COMMAND(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -219,13 +219,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_0_TRASMITTED` */
+                /* `#START MESSAGE_TORQUE_REQUEST_COMMAND_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_0_CALLBACK
-                    CAN_SendMsg_0_Callback();
-                #endif /* CAN_SEND_MSG_0_CALLBACK */
+                #ifdef CAN_SEND_MSG_TORQUE_REQUEST_COMMAND_CALLBACK
+                    CAN_SendMsg_TORQUE_REQUEST_COMMAND_Callback();
+                #endif /* CAN_SEND_MSG_TORQUE_REQUEST_COMMAND_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(0u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(0u)) | CAN_SEND_MESSAGE);
@@ -238,7 +238,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX1_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsg1
+    * FUNCTION NAME:   CAN_SendMsgPEI_CURRENT
     ********************************************************************************
     *
     * Summary:
@@ -257,7 +257,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsg1(void) 
+    uint8 CAN_SendMsgPEI_CURRENT(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -271,13 +271,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_1_TRASMITTED` */
+                /* `#START MESSAGE_PEI_CURRENT_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_1_CALLBACK
-                    CAN_SendMsg_1_Callback();
-                #endif /* CAN_SEND_MSG_1_CALLBACK */
+                #ifdef CAN_SEND_MSG_PEI_CURRENT_CALLBACK
+                    CAN_SendMsg_PEI_CURRENT_Callback();
+                #endif /* CAN_SEND_MSG_PEI_CURRENT_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(1u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(1u)) | CAN_SEND_MESSAGE);
@@ -290,7 +290,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsg2
+    * FUNCTION NAME:   CAN_SendMsgMC_ESTOP
     ********************************************************************************
     *
     * Summary:
@@ -309,7 +309,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsg2(void) 
+    uint8 CAN_SendMsgMC_ESTOP(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -323,13 +323,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_2_TRASMITTED` */
+                /* `#START MESSAGE_MC_ESTOP_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_2_CALLBACK
-                    CAN_SendMsg_2_Callback();
-                #endif /* CAN_SEND_MSG_2_CALLBACK */
+                #ifdef CAN_SEND_MSG_MC_ESTOP_CALLBACK
+                    CAN_SendMsg_MC_ESTOP_Callback();
+                #endif /* CAN_SEND_MSG_MC_ESTOP_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(2u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(2u)) | CAN_SEND_MESSAGE);
@@ -342,7 +342,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsg3
+    * FUNCTION NAME:   CAN_SendMsgMC_DEBUG
     ********************************************************************************
     *
     * Summary:
@@ -361,7 +361,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsg3(void) 
+    uint8 CAN_SendMsgMC_DEBUG(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -375,13 +375,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_3_TRASMITTED` */
+                /* `#START MESSAGE_MC_DEBUG_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_3_CALLBACK
-                    CAN_SendMsg_3_Callback();
-                #endif /* CAN_SEND_MSG_3_CALLBACK */
+                #ifdef CAN_SEND_MSG_MC_DEBUG_CALLBACK
+                    CAN_SendMsg_MC_DEBUG_Callback();
+                #endif /* CAN_SEND_MSG_MC_DEBUG_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(3u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(3u)) | CAN_SEND_MESSAGE);

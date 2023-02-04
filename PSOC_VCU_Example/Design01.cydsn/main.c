@@ -27,6 +27,7 @@ int main(void)
     
     //Initialize and start CAN
     CAN_GlobalIntEnable();
+    CAN_Init();
     CAN_Start();
     
     for(;;)
@@ -36,7 +37,7 @@ int main(void)
         // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
         uint32_t current = (int32_t)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read16());
         
-        
+       
         
         
         
@@ -69,15 +70,19 @@ int main(void)
         current_lower = current & 0xFF; // lower bits
         can_send_PEI(current_upper, current_lower, shutdown_flags);
         
+        state =3;
         //Interlock state machine
         if (state == 0) {
-            clear_interlock(); // clears interlock, send a message to open AIRs
-            
+            clear_interlock(); // clears interlock, send a message to open AIRs          
             if((get_HV_Requested() > 0) && (get_ESTOP_Check() == 0)) {
                 state = 1;
             }
         }
+        
+        
         else if (state == 1) {
+            
+            
             set_interlock(); //sets interlock, sends a message to close AIRs
             uint8 throttle_high = get_THROTTLE_HIGH();
             uint8 throttle_low = get_THROTTLE_LOW();
@@ -105,21 +110,28 @@ int main(void)
     			; sends CAN message saying that estop should activate
     			send_mailbox(eStop)
     		}
+        
+        
             else if(Status3 > 0) 
     		{
     			; trap state
     			state = 2
     		}
+            
             */
         }
+        
+    
         //Trap state
         // is entered when there are more errors than just estop (Status3 > 0). 
         else if(state == 2) {
+
 		    clear_interlock(); // clears interlock, send a message to open AIRs
 		    // set EM Brake = 0
 		
 	    }
         else if (state == 3) {
+            
             if (get_ESTOP_Check() == 1) {
                 state = 0;
                 can_send_ESTOP(0);
@@ -127,6 +139,8 @@ int main(void)
         }
         
         can_send_state(state);    
+        
+        CyDelay(1000);
     }
 }
 /* [] END OF FILE */
