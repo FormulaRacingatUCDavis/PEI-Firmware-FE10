@@ -29,6 +29,7 @@ int main(void)
     CAN_GlobalIntEnable();
     CAN_Init();
     CAN_Start();
+    ADC_DelSig_1_Start();
     
     for(;;)
     {
@@ -38,7 +39,7 @@ int main(void)
         uint32_t current = (int32_t)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read16());
         
        
-        
+        Precharge_Write(1);
         
         
         // shutdown flags, current
@@ -54,7 +55,7 @@ int main(void)
         
         if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
         else { shutdown_flags &= (0b110111); }
-        
+        /* For debug purposes
         if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
         else { shutdown_flags &= (0b111011); }
         
@@ -63,7 +64,8 @@ int main(void)
         
         if (Precharge_Read()) { shutdown_flags |= (1 << 0); }
         else { shutdown_flags &= (0b111110); }
-
+        */
+        
         // send data via PCAN to BMS main
         // note: uses 2's complement
         current_upper = current >> 8; // upper bits
