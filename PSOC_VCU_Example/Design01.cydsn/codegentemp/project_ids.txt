@@ -1,6 +1,6 @@
-C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cyprj|ac228e3c-6fad-429f-9871-c7ed118441f5
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|fbc3d08a-fae4-4f83-a78d-c6c7ac5e20b2
-C:\Users\kendr\OneDrive\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|bf25f896-ae67-4137-8f03-c47b6c621045
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b69aea46-56ea-400c-95f5-7e1bc630dd21
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8eb54517-f433-4148-a135-57b19ecd17e4
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e91ad682-ea01-4297-bb95-96f0636ecc99
+C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cyprj|dcb99a13-fd80-40ca-a7fc-5a746d2ea87b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|b869fcaa-4178-42b6-90dd-d21b61bc746c
+C:\Users\kendr\OneDrive\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2942c3fd-1a2a-450c-820c-7cff263d1f4e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7696147c-6d4d-41f4-a2f8-fb65a3638dbb
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e76cbaa8-6540-419a-8a0e-908e92c3cbe8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|d4e1ff82-86e4-4dc7-a085-7d465924ddf9

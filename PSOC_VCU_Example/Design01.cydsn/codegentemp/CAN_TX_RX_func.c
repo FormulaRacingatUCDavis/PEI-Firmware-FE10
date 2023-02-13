@@ -681,7 +681,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX1_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:    CAN_ReceiveMsg1
+    * FUNCTION NAME:    CAN_ReceiveMsgMC_Debug
     ********************************************************************************
     *
     * Summary:
@@ -699,15 +699,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg1(void) 
+    void CAN_ReceiveMsgMC_Debug(void) 
     {
-        /* `#START MESSAGE_1_RECEIVED` */
+        /* `#START MESSAGE_MC_Debug_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_1_CALLBACK
-            CAN_ReceiveMsg_1_Callback();
-        #endif /* CAN_RECEIVE_MSG_1_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_Debug_CALLBACK
+            CAN_ReceiveMsg_MC_Debug_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_Debug_CALLBACK */
 
         CAN_RX[1u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -1205,3 +1205,9 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 
 /* [] END OF FILE */
+#if 0 /* begin disabled code */
+`#start MESSAGE_1_RECEIVED` -- section removed from template
+        state = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_1) << 8;
+`#end`
+
+#endif /* end disabled code */

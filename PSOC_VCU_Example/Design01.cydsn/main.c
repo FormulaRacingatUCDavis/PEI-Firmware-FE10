@@ -33,13 +33,15 @@ int main(void)
     
     for(;;)
     {
+        state = get_STATE();
+        
         //PEI board PICDUINO
         // get current sensor data (RA6/RC0 ???)
         // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
         uint32_t current = (int32_t)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read16());
         
        
-        Precharge_Write(1);
+        
         
         
         // shutdown flags, current
@@ -55,6 +57,8 @@ int main(void)
         
         if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
         else { shutdown_flags &= (0b110111); }
+        
+        
         /* For debug purposes
         if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
         else { shutdown_flags &= (0b111011); }
@@ -72,7 +76,7 @@ int main(void)
         current_lower = current & 0xFF; // lower bits
         can_send_PEI(current_upper, current_lower, shutdown_flags);
         
-        state =3;
+        
         //Interlock state machine
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          

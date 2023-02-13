@@ -25,7 +25,8 @@ volatile uint8_t ESTOP;
 //VCU Data
 volatile uint8_t HV_REQUEST = 0;
 volatile uint8_t E_STOP_CHECK = 0;
-
+//state
+volatile uint8_t STATE = 0;
 
 //Return the ESTOP state from the VCU.
 uint8_t get_ESTOP_Check()
@@ -54,6 +55,11 @@ uint8_t get_THROTTLE()
 {
     return THROTTLE;
 }
+//returns state
+uint8_t get_STATE()
+{
+    return STATE;
+}
 // called from CAN_TX_RX_func.c in the generic RX func
 // tldr: part of an interrupt service routine
 void can_receive(uint8_t *msg, int ID)
@@ -68,6 +74,8 @@ void can_receive(uint8_t *msg, int ID)
             break;
         case MC_DEBUG:
             THROTTLE = msg[CAN_DATA_BYTE_7];
+            STATE = msg[CAN_DATA_BYTE_3];
+            
             break;
         case MC_ESTOP:
             ESTOP = msg[CAN_DATA_BYTE_1];

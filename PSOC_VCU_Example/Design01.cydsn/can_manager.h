@@ -46,6 +46,8 @@ uint8_t get_THROTTLE_HIGH();
 uint8_t get_THROTTLE_LOW();
 uint8_t get_THROTTLE();
 
+uint8_t get_STATE();
+
 //Interlock functionality
 void set_interlock();
 void clear_interlock();

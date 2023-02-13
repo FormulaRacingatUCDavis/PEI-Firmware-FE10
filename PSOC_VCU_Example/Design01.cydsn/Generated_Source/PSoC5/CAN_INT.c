@@ -430,6 +430,8 @@
                         {
                             case 0u : CAN_ReceiveMsgTorque_Request_Command();
                             break;
+                            case 1u : CAN_ReceiveMsgMC_Debug();
+                            break;
                             default:
                             break;
                         }
