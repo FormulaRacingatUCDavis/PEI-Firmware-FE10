@@ -432,6 +432,8 @@
                             break;
                             case 1u : CAN_ReceiveMsgMC_Debug();
                             break;
+                            case 2u : CAN_ReceiveMsgMC_ESTOP();
+                            break;
                             default:
                             break;
                         }

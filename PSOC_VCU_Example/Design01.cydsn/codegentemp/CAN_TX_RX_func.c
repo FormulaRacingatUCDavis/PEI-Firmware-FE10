@@ -25,7 +25,13 @@
 #include "cyapicallbacks.h"
 
 /* `#START TX_RX_FUNCTION` */
+extern volatile uint8_t SET_INTERLOCK;
+extern volatile uint8_t HV_REQUEST_MC;
+extern volatile uint8_t STATE;
+extern volatile uint8_t THROTTLE;
 
+extern volatile uint8_t HV_REQUEST_TR;
+extern volatile uint8_t E_STOP_CHECK;
 /* `#END` */
 
 
@@ -667,7 +673,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgTorque_Request_Command(void) 
     {
         /* `#START MESSAGE_Torque_Request_Command_RECEIVED` */
-
+        HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
+        E_STOP_CHECK = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_Torque_Request_Command);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_Torque_Request_Command_CALLBACK
@@ -702,7 +709,10 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_Debug(void) 
     {
         /* `#START MESSAGE_MC_Debug_RECEIVED` */
-
+        SET_INTERLOCK = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Debug);
+        HV_REQUEST_MC = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Debug);
+        STATE = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Debug);
+        THROTTLE = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Debug);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_Debug_CALLBACK
@@ -716,7 +726,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg2
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_ESTOP
     ********************************************************************************
     *
     * Summary:
@@ -734,15 +744,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg2(void) 
+    void CAN_ReceiveMsgMC_ESTOP(void) 
     {
-        /* `#START MESSAGE_2_RECEIVED` */
+        /* `#START MESSAGE_MC_ESTOP_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_2_CALLBACK
-            CAN_ReceiveMsg_2_Callback();
-        #endif /* CAN_RECEIVE_MSG_2_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_ESTOP_CALLBACK
+            CAN_ReceiveMsg_MC_ESTOP_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_ESTOP_CALLBACK */
 
         CAN_RX[2u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
