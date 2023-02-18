@@ -19,14 +19,17 @@ extern volatile vcu_state state;
 
 volatile uint8_t THROTTLE_HIGH = 0;
 volatile uint8_t THROTTLE_LOW = 0;
-volatile uint8_t THROTTLE = 0;
 
-volatile uint8_t ESTOP;
+volatile uint8_t ESTOP_MC = 0;
 //VCU Data
-volatile uint8_t HV_REQUEST = 0;
+volatile uint8_t HV_REQUEST_TR = 0;
 volatile uint8_t E_STOP_CHECK = 0;
-//state
+
+//MC_DEBG
+volatile uint8_t THROTTLE = 0;
+volatile uint8_t SET_INTERLOCK = 0;
 volatile uint8_t STATE = 0;
+volatile uint8_t HV_REQUEST_MC = 0;
 
 //Return the ESTOP state from the VCU.
 uint8_t get_ESTOP_Check()
@@ -37,7 +40,7 @@ uint8_t get_ESTOP_Check()
 //Return the hv_requested state from the VCU.
 uint8_t get_HV_Requested()
 {
-    return HV_REQUEST;   
+    return HV_REQUEST_TR;   
 }
 
 //returns THROTTLE_HIGH
@@ -69,16 +72,17 @@ void can_receive(uint8_t *msg, int ID)
     switch (ID) 
     {
         case TORQUE_REQUEST_COMMAND:
-            HV_REQUEST = msg[CAN_DATA_BYTE_1];
+            HV_REQUEST_TR = msg[CAN_DATA_BYTE_1];
             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
             break;
         case MC_DEBUG:
             THROTTLE = msg[CAN_DATA_BYTE_7];
             STATE = msg[CAN_DATA_BYTE_3];
-            
+            SET_INTERLOCK = msg[CAN_DATA_BYTE_1];
+            HV_REQUEST_MC = msg[CAN_DATA_BYTE_2];
             break;
         case MC_ESTOP:
-            ESTOP = msg[CAN_DATA_BYTE_1];
+            ESTOP_MC = msg[CAN_DATA_BYTE_1];
             break;
     }
     

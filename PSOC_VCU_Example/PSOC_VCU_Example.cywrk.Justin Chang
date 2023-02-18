@@ -154,41 +154,6 @@
 <VisibleNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
-<v>PSOC_VCU_Example\Design01\CortexM3</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\can_manager.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Analog.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO1_ESD.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO2_ESD.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO3_ESD.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

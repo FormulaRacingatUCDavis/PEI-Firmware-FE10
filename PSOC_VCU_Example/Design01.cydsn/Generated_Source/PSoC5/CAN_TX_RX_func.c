@@ -32,6 +32,8 @@ extern volatile uint8_t THROTTLE;
 
 extern volatile uint8_t HV_REQUEST_TR;
 extern volatile uint8_t E_STOP_CHECK;
+
+extern volatile uint8_t ESTOP_MC;
 /* `#END` */
 
 
@@ -747,7 +749,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_ESTOP(void) 
     {
         /* `#START MESSAGE_MC_ESTOP_RECEIVED` */
-        MC_ESTOP = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_ESTOP);
+        ESTOP_MC = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_ESTOP);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_ESTOP_CALLBACK
