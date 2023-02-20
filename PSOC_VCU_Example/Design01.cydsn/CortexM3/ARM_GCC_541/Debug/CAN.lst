@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
   28:Generated_Source\PSoC5/CAN.c **** *
   29:Generated_Source\PSoC5/CAN.c **** * Summary:
   30:Generated_Source\PSoC5/CAN.c **** *  Inits/Restores default CAN Rx and Tx Buffers control registers configuration
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 2
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 2
 
 
   31:Generated_Source\PSoC5/CAN.c **** *  provided by the customizer.
@@ -102,10 +102,10 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
   69:Generated_Source\PSoC5/CAN.c **** 
   70:Generated_Source\PSoC5/CAN.c ****     static const CAN_TX_CFG CYCODE CAN_TXConfigStruct[] =
   71:Generated_Source\PSoC5/CAN.c ****     {
-  72:Generated_Source\PSoC5/CAN.c ****         { 0u, 0x80000u, 0xECC00000u },
-  73:Generated_Source\PSoC5/CAN.c ****         { 1u, 0x80000u, 0x70E00000u },
-  74:Generated_Source\PSoC5/CAN.c ****         { 2u, 0x80000u, 0x6CC00000u },
-  75:Generated_Source\PSoC5/CAN.c ****         { 3u, 0x80000u, 0x8CC00000u },
+  72:Generated_Source\PSoC5/CAN.c ****         { 0u, 0x80000u, 0xEC600000u },
+  73:Generated_Source\PSoC5/CAN.c ****         { 1u, 0x80000u, 0x70600000u },
+  74:Generated_Source\PSoC5/CAN.c ****         { 2u, 0x80000u, 0x6C600000u },
+  75:Generated_Source\PSoC5/CAN.c ****         { 3u, 0x80000u, 0x8C600000u },
   76:Generated_Source\PSoC5/CAN.c ****         { 4u, 0x880008u, 0x0u },
   77:Generated_Source\PSoC5/CAN.c ****         { 5u, 0x880008u, 0x0u },
   78:Generated_Source\PSoC5/CAN.c ****         { 6u, 0x880008u, 0x0u },
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
   85:Generated_Source\PSoC5/CAN.c ****     /* Initialize TX mailboxes */
   86:Generated_Source\PSoC5/CAN.c ****     for (i = 0u; i < CAN_NUMBER_OF_TX_MAILBOXES; i++)
   87:Generated_Source\PSoC5/CAN.c ****     {
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 3
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 3
 
 
   88:Generated_Source\PSoC5/CAN.c ****         if (CAN_TxBufConfig((const CAN_TX_CFG *)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  142:Generated_Source\PSoC5/CAN.c **** 
  143:Generated_Source\PSoC5/CAN.c ****     #if (CY_PSOC3 || CY_PSOC5)
  144:Generated_Source\PSoC5/CAN.c ****         uint8 enableInterrupts;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 4
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 4
 
 
  145:Generated_Source\PSoC5/CAN.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  199:Generated_Source\PSoC5/CAN.c ****                                     if (CAN_SetEdgeMode(CAN_SYNC_EDGE) == CYRET_SUCCESS)
  200:Generated_Source\PSoC5/CAN.c ****                                     {
  201:Generated_Source\PSoC5/CAN.c ****                                         localResult = CYRET_SUCCESS;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 5
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 5
 
 
  202:Generated_Source\PSoC5/CAN.c ****                                     }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  256:Generated_Source\PSoC5/CAN.c ****     uint32 timeout = CAN_MODE_STATE_RUN_TIMEOUT;
  257:Generated_Source\PSoC5/CAN.c ****     uint8 result = CAN_FAIL;
  258:Generated_Source\PSoC5/CAN.c **** 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 6
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 6
 
 
  259:Generated_Source\PSoC5/CAN.c ****     #if (CY_PSOC3 || CY_PSOC5)
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  313:Generated_Source\PSoC5/CAN.c **** *    CAN_FAIL              The function failed
  314:Generated_Source\PSoC5/CAN.c **** *
  315:Generated_Source\PSoC5/CAN.c **** * Global variables:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 7
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 7
 
 
  316:Generated_Source\PSoC5/CAN.c **** *  CAN_initVar - used to check the initial configuration, modified
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 8
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 8
 
 
   33              		.cfi_def_cfa_offset 8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  389:Generated_Source\PSoC5/CAN.c **** 
  390:Generated_Source\PSoC5/CAN.c ****         /* Disable isr */
  391:Generated_Source\PSoC5/CAN.c ****     CyIntDisable(CAN_ISR_NUMBER);
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 9
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 9
 
 
   63              		.loc 1 391 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
   99 0054 80E100E0 		.word	-536813184
  100 0058 A6430040 		.word	1073759142
  101              		.cfi_endproc
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 10
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 10
 
 
  102              	.LFE4:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  127              		.loc 1 429 0
  128 0012 0120     		movs	r0, #1
  129 0014 7047     		bx	lr
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 11
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 11
 
 
  130              	.L12:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  167 000e 1370     		strb	r3, [r2]
  268:Generated_Source\PSoC5/CAN.c **** 
  168              		.loc 1 268 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 12
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 12
 
 
  169 0010 1032     		adds	r2, r2, #16
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  257:Generated_Source\PSoC5/CAN.c **** 
  212              		.loc 1 257 0
  213 0052 0120     		movs	r0, #1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 13
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 13
 
 
  214 0054 08BD     		pop	{r3, pc}
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  245              		@ link register save eliminated.
  246              	.LVL21:
  471:Generated_Source\PSoC5/CAN.c ****     uint8 result = CAN_FAIL;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 14
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 14
 
 
  472:Generated_Source\PSoC5/CAN.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  279              	.LFB7:
  493:Generated_Source\PSoC5/CAN.c **** 
  494:Generated_Source\PSoC5/CAN.c **** 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 15
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 15
 
 
  495:Generated_Source\PSoC5/CAN.c **** /*******************************************************************************
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  296 000e 9842     		cmp	r0, r3
  297 0010 03D0     		beq	.L32
  525:Generated_Source\PSoC5/CAN.c **** 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 16
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 16
 
 
  298              		.loc 1 525 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  554:Generated_Source\PSoC5/CAN.c **** /*******************************************************************************
  555:Generated_Source\PSoC5/CAN.c **** * FUNCTION NAME:   CAN_SetArbiter
  556:Generated_Source\PSoC5/CAN.c **** ********************************************************************************
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 17
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 17
 
 
  557:Generated_Source\PSoC5/CAN.c **** *
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  587:Generated_Source\PSoC5/CAN.c ****                 result = CYRET_SUCCESS;
  588:Generated_Source\PSoC5/CAN.c ****             }
  589:Generated_Source\PSoC5/CAN.c ****         }
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 18
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 18
 
 
  590:Generated_Source\PSoC5/CAN.c ****         else    /* Fixed Priority */
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  618:Generated_Source\PSoC5/CAN.c ****                 result = CYRET_SUCCESS;
  619:Generated_Source\PSoC5/CAN.c ****             }
  620:Generated_Source\PSoC5/CAN.c ****         }
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 19
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 19
 
 
  621:Generated_Source\PSoC5/CAN.c ****     #endif /* CY_PSOC3 || CY_PSOC5 */
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  397              		@ frame_needed = 0, uses_anonymous_args = 0
  398              		@ link register save eliminated.
  399              	.LVL38:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 20
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 20
 
 
  400 0000 30B4     		push	{r4, r5}
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  437              	.LVL42:
  672:Generated_Source\PSoC5/CAN.c ****                     cfgTemp |= cfgTseg1;
  438              		.loc 1 672 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 21
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 21
 
 
  439 002c 2043     		orrs	r0, r0, r4
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  473 004e 1370     		strb	r3, [r2]
  691:Generated_Source\PSoC5/CAN.c **** 
  692:Generated_Source\PSoC5/CAN.c ****                         /* Verify 1st byte of CAN_CFG_REG register */
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 22
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 22
 
 
  693:Generated_Source\PSoC5/CAN.c ****                         if (CAN_CFG_REG.byte[0u] == cfgTemp)
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  522 0078 0020     		movs	r0, #0
  523              	.LVL64:
  524              	.L43:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 23
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 23
 
 
  696:Generated_Source\PSoC5/CAN.c ****                         }
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  533              	.L56:
  534 0080 14A00040 		.word	1073782804
  535              		.cfi_endproc
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 24
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 24
 
 
  536              	.LFE9:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  555 0002 0D4B     		ldr	r3, .L63
  556 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  557 0006 02F0EF02 		and	r2, r2, #239
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 25
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 25
 
 
  558 000a 1A70     		strb	r2, [r3]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  793:Generated_Source\PSoC5/CAN.c ****         }
  794:Generated_Source\PSoC5/CAN.c ****     #else  /* CY_PSOC4 */
  795:Generated_Source\PSoC5/CAN.c ****         if (reset == CAN_MANUAL_RESTART)
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 26
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 26
 
 
  796:Generated_Source\PSoC5/CAN.c ****         {
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  833:Generated_Source\PSoC5/CAN.c **** *                                       synchronization
  834:Generated_Source\PSoC5/CAN.c **** *    CAN_BOTH_EDGES        Both edges are used
  835:Generated_Source\PSoC5/CAN.c **** *
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 27
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 27
 
 
  836:Generated_Source\PSoC5/CAN.c **** * Return:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  636 001c 42F00102 		orr	r2, r2, #1
  637 0020 1A70     		strb	r2, [r3]
  863:Generated_Source\PSoC5/CAN.c **** 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 28
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 28
 
 
  864:Generated_Source\PSoC5/CAN.c ****             /* Verify that bit is set */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  657              		.loc 1 896 0
  658 0034 7047     		bx	lr
  659              	.L71:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 29
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 29
 
 
  660 0036 00BF     		.align	2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  937:Generated_Source\PSoC5/CAN.c **** *******************************************************************************/
  938:Generated_Source\PSoC5/CAN.c **** uint8 CAN_SetOpMode(uint8 opMode) 
  939:Generated_Source\PSoC5/CAN.c **** {
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 30
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 30
 
 
  674              		.loc 1 939 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  709 0020 47F2C063 		movw	r3, #30400
  710 0024 00E0     		b	.L74
  711              	.LVL85:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 31
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 31
 
 
  712              	.L76:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  973:Generated_Source\PSoC5/CAN.c ****             }
  974:Generated_Source\PSoC5/CAN.c **** 
  975:Generated_Source\PSoC5/CAN.c ****             if (runState == CAN_ACTIVE_RUN_MODE)
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 32
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 32
 
 
  748              		.loc 1 975 0
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  997:Generated_Source\PSoC5/CAN.c ****         }
  998:Generated_Source\PSoC5/CAN.c **** 
  999:Generated_Source\PSoC5/CAN.c ****         /* Sets CAN Component into the Stop mode */
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 33
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 33
 
 
 1000:Generated_Source\PSoC5/CAN.c ****         if (CAN_Stop() == CYRET_SUCCESS)
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1031:Generated_Source\PSoC5/CAN.c **** /*******************************************************************************
 1032:Generated_Source\PSoC5/CAN.c **** * FUNCTION NAME:   CAN_RXRegisterInit
 1033:Generated_Source\PSoC5/CAN.c **** ********************************************************************************
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 34
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 34
 
 
 1034:Generated_Source\PSoC5/CAN.c **** *
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1066:Generated_Source\PSoC5/CAN.c ****     /* Disable isr */
 1067:Generated_Source\PSoC5/CAN.c ****     CyIntDisable(CAN_ISR_NUMBER);
  823              		.loc 1 1067 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 35
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 35
 
 
  824 0018 4FF48033 		mov	r3, #65536
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  852 0040 1360     		str	r3, [r2]
 1093:Generated_Source\PSoC5/CAN.c **** 
 1094:Generated_Source\PSoC5/CAN.c ****             /* Verify register */
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 36
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 36
 
 
 1095:Generated_Source\PSoC5/CAN.c ****             if (CY_GET_REG32(regAddr) == config)
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1104:Generated_Source\PSoC5/CAN.c **** 
 1105:Generated_Source\PSoC5/CAN.c **** 
 1106:Generated_Source\PSoC5/CAN.c **** /*******************************************************************************
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 37
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 37
 
 
 1107:Generated_Source\PSoC5/CAN.c **** * FUNCTION NAME:   CAN_SetIrqMask
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  904              		.loc 1 1151 0
  905 0004 1B88     		ldrh	r3, [r3]
  906 0006 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 38
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 38
 
 
  907 0008 9842     		cmp	r0, r3
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1177:Generated_Source\PSoC5/CAN.c **** *
 1178:Generated_Source\PSoC5/CAN.c **** * Parameters:
 1179:Generated_Source\PSoC5/CAN.c **** *  None.
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 39
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 39
 
 
 1180:Generated_Source\PSoC5/CAN.c **** *
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1204:Generated_Source\PSoC5/CAN.c **** * Summary:
 1205:Generated_Source\PSoC5/CAN.c **** *  This function returns the bit that indicates if the number of RX errors
 1206:Generated_Source\PSoC5/CAN.c **** *  exceeds 0x60.
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 40
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 40
 
 
 1207:Generated_Source\PSoC5/CAN.c **** *
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1231:Generated_Source\PSoC5/CAN.c **** * FUNCTION NAME:   CAN_GetTXErrorCount
 1232:Generated_Source\PSoC5/CAN.c **** ********************************************************************************
 1233:Generated_Source\PSoC5/CAN.c **** *
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 41
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 41
 
 
 1234:Generated_Source\PSoC5/CAN.c **** * Summary:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1263:Generated_Source\PSoC5/CAN.c **** * Parameters:
 1264:Generated_Source\PSoC5/CAN.c **** *  None.
 1265:Generated_Source\PSoC5/CAN.c **** *
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 42
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 42
 
 
 1266:Generated_Source\PSoC5/CAN.c **** * Return:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1295:Generated_Source\PSoC5/CAN.c **** *
 1296:Generated_Source\PSoC5/CAN.c **** *******************************************************************************/
 1297:Generated_Source\PSoC5/CAN.c **** uint8 CAN_GetErrorState(void) 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 43
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 43
 
 
 1298:Generated_Source\PSoC5/CAN.c **** {
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1326:Generated_Source\PSoC5/CAN.c **** *
 1327:Generated_Source\PSoC5/CAN.c **** *******************************************************************************/
 1328:Generated_Source\PSoC5/CAN.c **** uint8 CAN_RxBufConfig(const CAN_RX_CFG *rxConfig)
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 44
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 44
 
 
 1329:Generated_Source\PSoC5/CAN.c ****                                    
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1108 0038 C268     		ldr	r2, [r0, #12]
  1109 003a 5A61     		str	r2, [r3, #20]
 1345:Generated_Source\PSoC5/CAN.c ****             if (CY_GET_REG32((reg32 *) (&CAN_RX[rxConfig->rxmailbox].rxacr)) == rxConfig->rxacr)
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 45
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 45
 
 
  1110              		.loc 1 1345 0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1155 0080 7047     		bx	lr
  1156              	.LVL120:
  1157              	.L125:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 46
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 46
 
 
  1158 0082 0120     		movs	r0, #1
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
 1383:Generated_Source\PSoC5/CAN.c **** *
 1384:Generated_Source\PSoC5/CAN.c **** *******************************************************************************/
 1385:Generated_Source\PSoC5/CAN.c **** uint8 CAN_TxBufConfig(const CAN_TX_CFG *txConfig)
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 47
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 47
 
 
 1386:Generated_Source\PSoC5/CAN.c ****                                    
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1223 0040 0120     		movs	r0, #1
  1224              	.LVL125:
  1225 0042 7047     		bx	lr
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 48
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 48
 
 
  1226              	.LVL126:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1270              		.loc 1 88 0
  1271 0006 04EB4402 		add	r2, r4, r4, lsl #1
  1272 000a 9300     		lsls	r3, r2, #2
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 49
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 49
 
 
  1273 000c 0E48     		ldr	r0, .L146
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1319              	.L144:
  104:Generated_Source\PSoC5/CAN.c ****                 break;
  1320              		.loc 1 104 0 is_stmt 1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 50
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 50
 
 
  1321 0042 0125     		movs	r5, #1
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  154:Generated_Source\PSoC5/CAN.c **** 
  1369              		.loc 1 154 0
  1370 001e 2D4A     		ldr	r2, .L165+4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 51
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 51
 
 
  1371 0020 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  187:Generated_Source\PSoC5/CAN.c ****                 {
  1415              		.loc 1 187 0
  1416 0060 FFF7FEFF 		bl	CAN_SetArbiter
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 52
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 52
 
 
  1417              	.LVL151:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1463 00a0 41F20100 		movw	r0, #4097
  1464 00a4 FFF7FEFF 		bl	CAN_SetIrqMask
  1465              	.LVL157:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 53
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 53
 
 
  1466 00a8 70B9     		cbnz	r0, .L162
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1515              	CAN_Start:
  1516              	.LFB3:
  324:Generated_Source\PSoC5/CAN.c ****     uint8 result = CYRET_SUCCESS;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 54
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 54
 
 
  1517              		.loc 1 324 0
@@ -3238,24 +3238,24 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1564              		.size	CAN_TXConfigStruct.5065, 96
  1565              	CAN_TXConfigStruct.5065:
  1566 0000 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 55
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 55
 
 
  1567 0001 000000   		.space	3
  1568 0004 00000800 		.word	524288
- 1569 0008 0000C0EC 		.word	-322961408
+ 1569 0008 000060EC 		.word	-329252864
  1570 000c 01       		.byte	1
  1571 000d 000000   		.space	3
  1572 0010 00000800 		.word	524288
- 1573 0014 0000E070 		.word	1893728256
+ 1573 0014 00006070 		.word	1885339648
  1574 0018 02       		.byte	2
  1575 0019 000000   		.space	3
  1576 001c 00000800 		.word	524288
- 1577 0020 0000C06C 		.word	1824522240
+ 1577 0020 0000606C 		.word	1818230784
  1578 0024 03       		.byte	3
  1579 0025 000000   		.space	3
  1580 0028 00000800 		.word	524288
- 1581 002c 0000C08C 		.word	-1933574144
+ 1581 002c 0000608C 		.word	-1939865600
  1582 0030 04       		.byte	4
  1583 0031 000000   		.space	3
  1584 0034 08008800 		.word	8912904
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1621 00a0 04       		.byte	4
  1622 00a1 000000   		.space	3
  1623 00a4 00000000 		.word	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 56
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 56
 
 
  1624 00a8 00000000 		.word	0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1678 0154 00000000 		.word	0
  1679 0158 00000000 		.word	0
  1680 015c 00000000 		.word	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 57
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 57
 
 
  1681              		.bss
@@ -3379,10 +3379,10 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1696 0006 00000000 		.4byte	.Ldebug_abbrev0
  1697 000a 04       		.byte	0x4
  1698 000b 01       		.uleb128 0x1
- 1699 000c 4B030000 		.4byte	.LASF85
+ 1699 000c 1C030000 		.4byte	.LASF85
  1700 0010 0C       		.byte	0xc
- 1701 0011 2E030000 		.4byte	.LASF86
- 1702 0015 31010000 		.4byte	.LASF87
+ 1701 0011 FF020000 		.4byte	.LASF86
+ 1702 0015 F3030000 		.4byte	.LASF87
  1703 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1704 001d 00000000 		.4byte	0
  1705 0021 00000000 		.4byte	.Ldebug_line0
@@ -3393,15 +3393,15 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1710 002c 02       		.uleb128 0x2
  1711 002d 01       		.byte	0x1
  1712 002e 08       		.byte	0x8
- 1713 002f EA020000 		.4byte	.LASF1
+ 1713 002f BB020000 		.4byte	.LASF1
  1714 0033 02       		.uleb128 0x2
  1715 0034 02       		.byte	0x2
  1716 0035 05       		.byte	0x5
- 1717 0036 F8020000 		.4byte	.LASF2
+ 1717 0036 C9020000 		.4byte	.LASF2
  1718 003a 02       		.uleb128 0x2
  1719 003b 02       		.byte	0x2
  1720 003c 07       		.byte	0x7
- 1721 003d BF010000 		.4byte	.LASF3
+ 1721 003d 7D010000 		.4byte	.LASF3
  1722 0041 02       		.uleb128 0x2
  1723 0042 04       		.byte	0x4
  1724 0043 05       		.byte	0x5
@@ -3409,7 +3409,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1726 0048 02       		.uleb128 0x2
  1727 0049 04       		.byte	0x4
  1728 004a 07       		.byte	0x7
- 1729 004b 80010000 		.4byte	.LASF5
+ 1729 004b 3E010000 		.4byte	.LASF5
  1730 004f 02       		.uleb128 0x2
  1731 0050 08       		.byte	0x8
  1732 0051 05       		.byte	0x5
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1735 0057 08       		.byte	0x8
  1736 0058 07       		.byte	0x7
  1737 0059 65000000 		.4byte	.LASF7
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 58
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 58
 
 
  1738 005d 03       		.uleb128 0x3
@@ -3428,7 +3428,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1742 0064 02       		.uleb128 0x2
  1743 0065 04       		.byte	0x4
  1744 0066 07       		.byte	0x7
- 1745 0067 FF030000 		.4byte	.LASF8
+ 1745 0067 31010000 		.4byte	.LASF8
  1746 006b 04       		.uleb128 0x4
  1747 006c EB000000 		.4byte	.LASF9
  1748 0070 02       		.byte	0x2
@@ -3447,7 +3447,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1761 008f 02       		.uleb128 0x2
  1762 0090 04       		.byte	0x4
  1763 0091 04       		.byte	0x4
- 1764 0092 DF020000 		.4byte	.LASF12
+ 1764 0092 B0020000 		.4byte	.LASF12
  1765 0096 02       		.uleb128 0x2
  1766 0097 08       		.byte	0x8
  1767 0098 04       		.byte	0x4
@@ -3455,9 +3455,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1769 009d 02       		.uleb128 0x2
  1770 009e 01       		.byte	0x1
  1771 009f 08       		.byte	0x8
- 1772 00a0 EA030000 		.4byte	.LASF14
+ 1772 00a0 BB030000 		.4byte	.LASF14
  1773 00a4 04       		.uleb128 0x4
- 1774 00a5 E5020000 		.4byte	.LASF15
+ 1774 00a5 B6020000 		.4byte	.LASF15
  1775 00a9 02       		.byte	0x2
  1776 00aa 9202     		.2byte	0x292
  1777 00ac B0000000 		.4byte	0xb0
@@ -3471,23 +3471,23 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1785 00c1 05       		.uleb128 0x5
  1786 00c2 77000000 		.4byte	0x77
  1787 00c6 04       		.uleb128 0x4
- 1788 00c7 5B020000 		.4byte	.LASF17
+ 1788 00c7 19020000 		.4byte	.LASF17
  1789 00cb 02       		.byte	0x2
  1790 00cc 9402     		.2byte	0x294
  1791 00ce D2000000 		.4byte	0xd2
  1792 00d2 05       		.uleb128 0x5
  1793 00d3 83000000 		.4byte	0x83
  1794 00d7 02       		.uleb128 0x2
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 59
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 59
 
 
  1795 00d8 08       		.byte	0x8
  1796 00d9 04       		.byte	0x4
- 1797 00da 98020000 		.4byte	.LASF18
+ 1797 00da 56020000 		.4byte	.LASF18
  1798 00de 02       		.uleb128 0x2
  1799 00df 04       		.byte	0x4
  1800 00e0 07       		.byte	0x7
- 1801 00e1 8F020000 		.4byte	.LASF19
+ 1801 00e1 4D020000 		.4byte	.LASF19
  1802 00e5 06       		.uleb128 0x6
  1803 00e6 08       		.byte	0x8
  1804 00e7 03       		.byte	0x3
@@ -3510,7 +3510,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1821 010a 05       		.uleb128 0x5
  1822 010b FA000000 		.4byte	0xfa
  1823 010f 0A       		.uleb128 0xa
- 1824 0110 3B040000 		.4byte	.LASF20
+ 1824 0110 47040000 		.4byte	.LASF20
  1825 0114 03       		.byte	0x3
  1826 0115 78       		.byte	0x78
  1827 0116 E5000000 		.4byte	0xe5
@@ -3536,9 +3536,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1847 013f 05       		.uleb128 0x5
  1848 0140 2F010000 		.4byte	0x12f
  1849 0144 0A       		.uleb128 0xa
- 1850 0145 84020000 		.4byte	.LASF22
+ 1850 0145 42020000 		.4byte	.LASF22
  1851 0149 03       		.byte	0x3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 60
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 60
 
 
  1852 014a 7E       		.byte	0x7e
@@ -3549,13 +3549,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1857 0152 8F       		.byte	0x8f
  1858 0153 88010000 		.4byte	0x188
  1859 0157 07       		.uleb128 0x7
- 1860 0158 7A020000 		.4byte	.LASF23
+ 1860 0158 38020000 		.4byte	.LASF23
  1861 015c 03       		.byte	0x3
  1862 015d 91       		.byte	0x91
  1863 015e 6B000000 		.4byte	0x6b
  1864 0162 00       		.byte	0
  1865 0163 07       		.uleb128 0x7
- 1866 0164 78040000 		.4byte	.LASF24
+ 1866 0164 84040000 		.4byte	.LASF24
  1867 0168 03       		.byte	0x3
  1868 0169 92       		.byte	0x92
  1869 016a 83000000 		.4byte	0x83
@@ -3567,14 +3567,14 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1875 0176 83000000 		.4byte	0x83
  1876 017a 08       		.byte	0x8
  1877 017b 07       		.uleb128 0x7
- 1878 017c AD040000 		.4byte	.LASF26
+ 1878 017c B9040000 		.4byte	.LASF26
  1879 0180 03       		.byte	0x3
  1880 0181 94       		.byte	0x94
  1881 0182 83000000 		.4byte	0x83
  1882 0186 0C       		.byte	0xc
  1883 0187 00       		.byte	0
  1884 0188 0A       		.uleb128 0xa
- 1885 0189 16020000 		.4byte	.LASF27
+ 1885 0189 D4010000 		.4byte	.LASF27
  1886 018d 03       		.byte	0x3
  1887 018e 95       		.byte	0x95
  1888 018f 4F010000 		.4byte	0x14f
@@ -3584,7 +3584,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1892 0196 98       		.byte	0x98
  1893 0197 C0010000 		.4byte	0x1c0
  1894 019b 07       		.uleb128 0x7
- 1895 019c 4A040000 		.4byte	.LASF28
+ 1895 019c 56040000 		.4byte	.LASF28
  1896 01a0 03       		.byte	0x3
  1897 01a1 9A       		.byte	0x9a
  1898 01a2 6B000000 		.4byte	0x6b
@@ -3596,9 +3596,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1904 01ae 83000000 		.4byte	0x83
  1905 01b2 04       		.byte	0x4
  1906 01b3 07       		.uleb128 0x7
- 1907 01b4 A8040000 		.4byte	.LASF30
+ 1907 01b4 B4040000 		.4byte	.LASF30
  1908 01b8 03       		.byte	0x3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 61
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 61
 
 
  1909 01b9 9C       		.byte	0x9c
@@ -3606,7 +3606,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1911 01be 08       		.byte	0x8
  1912 01bf 00       		.byte	0
  1913 01c0 0A       		.uleb128 0xa
- 1914 01c1 C2040000 		.4byte	.LASF31
+ 1914 01c1 CE040000 		.4byte	.LASF31
  1915 01c5 03       		.byte	0x3
  1916 01c6 9D       		.byte	0x9d
  1917 01c7 93010000 		.4byte	0x193
@@ -3616,13 +3616,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1921 01ce A0       		.byte	0xa0
  1922 01cf 28020000 		.4byte	0x228
  1923 01d3 07       		.uleb128 0x7
- 1924 01d4 78040000 		.4byte	.LASF24
+ 1924 01d4 84040000 		.4byte	.LASF24
  1925 01d8 03       		.byte	0x3
  1926 01d9 A2       		.byte	0xa2
  1927 01da 44010000 		.4byte	0x144
  1928 01de 00       		.byte	0
  1929 01df 07       		.uleb128 0x7
- 1930 01e0 B6020000 		.4byte	.LASF32
+ 1930 01e0 87020000 		.4byte	.LASF32
  1931 01e4 03       		.byte	0x3
  1932 01e5 A3       		.byte	0xa3
  1933 01e6 44010000 		.4byte	0x144
@@ -3640,7 +3640,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1945 01fe 44010000 		.4byte	0x144
  1946 0202 10       		.byte	0x10
  1947 0203 07       		.uleb128 0x7
- 1948 0204 AD040000 		.4byte	.LASF26
+ 1948 0204 B9040000 		.4byte	.LASF26
  1949 0208 03       		.byte	0x3
  1950 0209 A6       		.byte	0xa6
  1951 020a 44010000 		.4byte	0x144
@@ -3652,17 +3652,17 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1957 0216 44010000 		.4byte	0x144
  1958 021a 18       		.byte	0x18
  1959 021b 07       		.uleb128 0x7
- 1960 021c BB040000 		.4byte	.LASF35
+ 1960 021c C7040000 		.4byte	.LASF35
  1961 0220 03       		.byte	0x3
  1962 0221 A8       		.byte	0xa8
  1963 0222 44010000 		.4byte	0x144
  1964 0226 1C       		.byte	0x1c
  1965 0227 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 62
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 62
 
 
  1966 0228 0A       		.uleb128 0xa
- 1967 0229 D2010000 		.4byte	.LASF36
+ 1967 0229 90010000 		.4byte	.LASF36
  1968 022d 03       		.byte	0x3
  1969 022e A9       		.byte	0xa9
  1970 022f CB010000 		.4byte	0x1cb
@@ -3678,20 +3678,20 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  1980 0242 44010000 		.4byte	0x144
  1981 0246 00       		.byte	0
  1982 0247 07       		.uleb128 0x7
- 1983 0248 A8040000 		.4byte	.LASF30
+ 1983 0248 B4040000 		.4byte	.LASF30
  1984 024c 03       		.byte	0x3
  1985 024d AF       		.byte	0xaf
  1986 024e 44010000 		.4byte	0x144
  1987 0252 04       		.byte	0x4
  1988 0253 07       		.uleb128 0x7
- 1989 0254 54020000 		.4byte	.LASF37
+ 1989 0254 12020000 		.4byte	.LASF37
  1990 0258 03       		.byte	0x3
  1991 0259 B0       		.byte	0xb0
  1992 025a 0F010000 		.4byte	0x10f
  1993 025e 08       		.byte	0x8
  1994 025f 00       		.byte	0
  1995 0260 0A       		.uleb128 0xa
- 1996 0261 20030000 		.4byte	.LASF38
+ 1996 0261 F1020000 		.4byte	.LASF38
  1997 0265 03       		.byte	0x3
  1998 0266 B1       		.byte	0xb1
  1999 0267 33020000 		.4byte	0x233
@@ -3706,22 +3706,22 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2008 0280 9C       		.byte	0x9c
  2009 0281 C8020000 		.4byte	0x2c8
  2010 0285 0C       		.uleb128 0xc
- 2011 0286 92010000 		.4byte	.LASF39
+ 2011 0286 50010000 		.4byte	.LASF39
  2012 028a 01       		.byte	0x1
  2013 028b 7001     		.2byte	0x170
  2014 028d 83000000 		.4byte	0x83
  2015 0291 00000000 		.4byte	.LLST0
  2016 0295 0C       		.uleb128 0xc
- 2017 0296 CD040000 		.4byte	.LASF40
+ 2017 0296 D9040000 		.4byte	.LASF40
  2018 029a 01       		.byte	0x1
  2019 029b 7101     		.2byte	0x171
  2020 029d 6B000000 		.4byte	0x6b
  2021 02a1 2C000000 		.4byte	.LLST1
  2022 02a5 0C       		.uleb128 0xc
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 63
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 63
 
 
- 2023 02a6 87040000 		.4byte	.LASF41
+ 2023 02a6 93040000 		.4byte	.LASF41
  2024 02aa 01       		.byte	0x1
  2025 02ab 7401     		.2byte	0x174
  2026 02ad 6B000000 		.4byte	0x6b
@@ -3734,7 +3734,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2033 02c3 E3080000 		.4byte	0x8e3
  2034 02c7 00       		.byte	0
  2035 02c8 0B       		.uleb128 0xb
- 2036 02c9 F3010000 		.4byte	.LASF43
+ 2036 02c9 B1010000 		.4byte	.LASF43
  2037 02cd 01       		.byte	0x1
  2038 02ce AB01     		.2byte	0x1ab
  2039 02d0 6B000000 		.4byte	0x6b
@@ -3744,14 +3744,14 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2043 02dd 9C       		.byte	0x9c
  2044 02de F3020000 		.4byte	0x2f3
  2045 02e2 0C       		.uleb128 0xc
- 2046 02e3 CD040000 		.4byte	.LASF40
+ 2046 02e3 D9040000 		.4byte	.LASF40
  2047 02e7 01       		.byte	0x1
  2048 02e8 AD01     		.2byte	0x1ad
  2049 02ea 6B000000 		.4byte	0x6b
  2050 02ee 76000000 		.4byte	.LLST3
  2051 02f2 00       		.byte	0
  2052 02f3 0E       		.uleb128 0xe
- 2053 02f4 15030000 		.4byte	.LASF44
+ 2053 02f4 E6020000 		.4byte	.LASF44
  2054 02f8 01       		.byte	0x1
  2055 02f9 FE       		.byte	0xfe
  2056 02fa 6B000000 		.4byte	0x6b
@@ -3761,24 +3761,24 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2060 0307 9C       		.byte	0x9c
  2061 0308 58030000 		.4byte	0x358
  2062 030c 0C       		.uleb128 0xc
- 2063 030d 92010000 		.4byte	.LASF39
+ 2063 030d 50010000 		.4byte	.LASF39
  2064 0311 01       		.byte	0x1
  2065 0312 0001     		.2byte	0x100
  2066 0314 83000000 		.4byte	0x83
  2067 0318 95000000 		.4byte	.LLST4
  2068 031c 0C       		.uleb128 0xc
- 2069 031d CD040000 		.4byte	.LASF40
+ 2069 031d D9040000 		.4byte	.LASF40
  2070 0321 01       		.byte	0x1
  2071 0322 0101     		.2byte	0x101
  2072 0324 6B000000 		.4byte	0x6b
  2073 0328 B6000000 		.4byte	.LLST5
  2074 032c 0C       		.uleb128 0xc
- 2075 032d 87040000 		.4byte	.LASF41
+ 2075 032d 93040000 		.4byte	.LASF41
  2076 0331 01       		.byte	0x1
  2077 0332 0401     		.2byte	0x104
  2078 0334 6B000000 		.4byte	0x6b
  2079 0338 D5000000 		.4byte	.LLST6
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 64
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 64
 
 
  2080 033c 0D       		.uleb128 0xd
@@ -3802,14 +3802,14 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2098 036d 9C       		.byte	0x9c
  2099 036e 83030000 		.4byte	0x383
  2100 0372 0C       		.uleb128 0xc
- 2101 0373 CD040000 		.4byte	.LASF40
+ 2101 0373 D9040000 		.4byte	.LASF40
  2102 0377 01       		.byte	0x1
  2103 0378 D701     		.2byte	0x1d7
  2104 037a 6B000000 		.4byte	0x6b
  2105 037e E8000000 		.4byte	.LLST7
  2106 0382 00       		.byte	0
  2107 0383 0B       		.uleb128 0xb
- 2108 0384 D9030000 		.4byte	.LASF46
+ 2108 0384 AA030000 		.4byte	.LASF46
  2109 0388 01       		.byte	0x1
  2110 0389 0702     		.2byte	0x207
  2111 038b 6B000000 		.4byte	0x6b
@@ -3825,40 +3825,40 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2121 03a5 77000000 		.4byte	0x77
  2122 03a9 07010000 		.4byte	.LLST8
  2123 03ad 0C       		.uleb128 0xc
- 2124 03ae CD040000 		.4byte	.LASF40
+ 2124 03ae D9040000 		.4byte	.LASF40
  2125 03b2 01       		.byte	0x1
  2126 03b3 0902     		.2byte	0x209
  2127 03b5 6B000000 		.4byte	0x6b
  2128 03b9 5C010000 		.4byte	.LLST9
  2129 03bd 00       		.byte	0
  2130 03be 0B       		.uleb128 0xb
- 2131 03bf 28020000 		.4byte	.LASF47
+ 2131 03bf E6010000 		.4byte	.LASF47
  2132 03c3 01       		.byte	0x1
  2133 03c4 3F02     		.2byte	0x23f
  2134 03c6 6B000000 		.4byte	0x6b
  2135 03ca 00000000 		.4byte	.LFB8
  2136 03ce 3C000000 		.4byte	.LFE8-.LFB8
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 65
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 65
 
 
  2137 03d2 01       		.uleb128 0x1
  2138 03d3 9C       		.byte	0x9c
  2139 03d4 F9030000 		.4byte	0x3f9
  2140 03d8 0F       		.uleb128 0xf
- 2141 03d9 B3040000 		.4byte	.LASF49
+ 2141 03d9 BF040000 		.4byte	.LASF49
  2142 03dd 01       		.byte	0x1
  2143 03de 3F02     		.2byte	0x23f
  2144 03e0 6B000000 		.4byte	0x6b
  2145 03e4 9F010000 		.4byte	.LLST10
  2146 03e8 0C       		.uleb128 0xc
- 2147 03e9 CD040000 		.4byte	.LASF40
+ 2147 03e9 D9040000 		.4byte	.LASF40
  2148 03ed 01       		.byte	0x1
  2149 03ee 4102     		.2byte	0x241
  2150 03f0 6B000000 		.4byte	0x6b
  2151 03f4 0B020000 		.4byte	.LLST11
  2152 03f8 00       		.byte	0
  2153 03f9 0B       		.uleb128 0xb
- 2154 03fa 66040000 		.4byte	.LASF50
+ 2154 03fa 72040000 		.4byte	.LASF50
  2155 03fe 01       		.byte	0x1
  2156 03ff 8C02     		.2byte	0x28c
  2157 0401 6B000000 		.4byte	0x6b
@@ -3868,13 +3868,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2161 040e 9C       		.byte	0x9c
  2162 040f 71040000 		.4byte	0x471
  2163 0413 0F       		.uleb128 0xf
- 2164 0414 54040000 		.4byte	.LASF51
+ 2164 0414 60040000 		.4byte	.LASF51
  2165 0418 01       		.byte	0x1
  2166 0419 8C02     		.2byte	0x28c
  2167 041b 6B000000 		.4byte	0x6b
  2168 041f 2A020000 		.4byte	.LLST12
  2169 0423 10       		.uleb128 0x10
- 2170 0424 5D040000 		.4byte	.LASF52
+ 2170 0424 69040000 		.4byte	.LASF52
  2171 0428 01       		.byte	0x1
  2172 0429 8C02     		.2byte	0x28c
  2173 042b 6B000000 		.4byte	0x6b
@@ -3893,23 +3893,23 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2186 0448 6B000000 		.4byte	0x6b
  2187 044c 1B030000 		.4byte	.LLST14
  2188 0450 0C       		.uleb128 0xc
- 2189 0451 CD040000 		.4byte	.LASF40
+ 2189 0451 D9040000 		.4byte	.LASF40
  2190 0455 01       		.byte	0x1
  2191 0456 8F02     		.2byte	0x28f
  2192 0458 6B000000 		.4byte	0x6b
  2193 045c 55030000 		.4byte	.LLST15
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 66
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 66
 
 
  2194 0460 0C       		.uleb128 0xc
- 2195 0461 72020000 		.4byte	.LASF53
+ 2195 0461 30020000 		.4byte	.LASF53
  2196 0465 01       		.byte	0x1
  2197 0466 9002     		.2byte	0x290
  2198 0468 6B000000 		.4byte	0x6b
  2199 046c 98030000 		.4byte	.LLST16
  2200 0470 00       		.byte	0
  2201 0471 0B       		.uleb128 0xb
- 2202 0472 D4040000 		.4byte	.LASF54
+ 2202 0472 E0040000 		.4byte	.LASF54
  2203 0476 01       		.byte	0x1
  2204 0477 0103     		.2byte	0x301
  2205 0479 6B000000 		.4byte	0x6b
@@ -3925,14 +3925,14 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2215 0493 6B000000 		.4byte	0x6b
  2216 0497 FA030000 		.4byte	.LLST17
  2217 049b 0C       		.uleb128 0xc
- 2218 049c CD040000 		.4byte	.LASF40
+ 2218 049c D9040000 		.4byte	.LASF40
  2219 04a0 01       		.byte	0x1
  2220 04a1 0303     		.2byte	0x303
  2221 04a3 6B000000 		.4byte	0x6b
  2222 04a7 66040000 		.4byte	.LLST18
  2223 04ab 00       		.byte	0
  2224 04ac 0B       		.uleb128 0xb
- 2225 04ad EF030000 		.4byte	.LASF56
+ 2225 04ad C0030000 		.4byte	.LASF56
  2226 04b1 01       		.byte	0x1
  2227 04b2 4B03     		.2byte	0x34b
  2228 04b4 6B000000 		.4byte	0x6b
@@ -3948,17 +3948,17 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2238 04ce 6B000000 		.4byte	0x6b
  2239 04d2 85040000 		.4byte	.LLST19
  2240 04d6 0C       		.uleb128 0xc
- 2241 04d7 CD040000 		.4byte	.LASF40
+ 2241 04d7 D9040000 		.4byte	.LASF40
  2242 04db 01       		.byte	0x1
  2243 04dc 4D03     		.2byte	0x34d
  2244 04de 6B000000 		.4byte	0x6b
  2245 04e2 F1040000 		.4byte	.LLST20
  2246 04e6 00       		.byte	0
  2247 04e7 0B       		.uleb128 0xb
- 2248 04e8 9A010000 		.4byte	.LASF58
+ 2248 04e8 58010000 		.4byte	.LASF58
  2249 04ec 01       		.byte	0x1
  2250 04ed AA03     		.2byte	0x3aa
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 67
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 67
 
 
  2251 04ef 6B000000 		.4byte	0x6b
@@ -3968,19 +3968,19 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2255 04fc 9C       		.byte	0x9c
  2256 04fd 42050000 		.4byte	0x542
  2257 0501 0F       		.uleb128 0xf
- 2258 0502 21020000 		.4byte	.LASF59
+ 2258 0502 DF010000 		.4byte	.LASF59
  2259 0506 01       		.byte	0x1
  2260 0507 AA03     		.2byte	0x3aa
  2261 0509 6B000000 		.4byte	0x6b
  2262 050d 10050000 		.4byte	.LLST21
  2263 0511 0C       		.uleb128 0xc
- 2264 0512 92010000 		.4byte	.LASF39
+ 2264 0512 50010000 		.4byte	.LASF39
  2265 0516 01       		.byte	0x1
  2266 0517 AD03     		.2byte	0x3ad
  2267 0519 83000000 		.4byte	0x83
  2268 051d 31050000 		.4byte	.LLST22
  2269 0521 0C       		.uleb128 0xc
- 2270 0522 CD040000 		.4byte	.LASF40
+ 2270 0522 D9040000 		.4byte	.LASF40
  2271 0526 01       		.byte	0x1
  2272 0527 AF03     		.2byte	0x3af
  2273 0529 6B000000 		.4byte	0x6b
@@ -3993,7 +3993,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2280 053d 8A050000 		.4byte	.LLST24
  2281 0541 00       		.byte	0
  2282 0542 0B       		.uleb128 0xb
- 2283 0543 CC020000 		.4byte	.LASF61
+ 2283 0543 9D020000 		.4byte	.LASF61
  2284 0547 01       		.byte	0x1
  2285 0548 1A04     		.2byte	0x41a
  2286 054a 6B000000 		.4byte	0x6b
@@ -4003,22 +4003,22 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2290 0557 9C       		.byte	0x9c
  2291 0558 8D050000 		.4byte	0x58d
  2292 055c 0F       		.uleb128 0xf
- 2293 055d 6A020000 		.4byte	.LASF62
+ 2293 055d 28020000 		.4byte	.LASF62
  2294 0561 01       		.byte	0x1
  2295 0562 1A04     		.2byte	0x41a
  2296 0564 8D050000 		.4byte	0x58d
  2297 0568 A9050000 		.4byte	.LLST25
  2298 056c 0F       		.uleb128 0xf
- 2299 056d 79010000 		.4byte	.LASF63
+ 2299 056d D0030000 		.4byte	.LASF63
  2300 0571 01       		.byte	0x1
  2301 0572 1A04     		.2byte	0x41a
  2302 0574 83000000 		.4byte	0x83
  2303 0578 2E060000 		.4byte	.LLST26
  2304 057c 0C       		.uleb128 0xc
- 2305 057d CD040000 		.4byte	.LASF40
+ 2305 057d D9040000 		.4byte	.LASF40
  2306 0581 01       		.byte	0x1
  2307 0582 1D04     		.2byte	0x41d
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 68
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 68
 
 
  2308 0584 6B000000 		.4byte	0x6b
@@ -4044,14 +4044,14 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2328 05b5 77000000 		.4byte	0x77
  2329 05b9 CD060000 		.4byte	.LLST28
  2330 05bd 0C       		.uleb128 0xc
- 2331 05be CD040000 		.4byte	.LASF40
+ 2331 05be D9040000 		.4byte	.LASF40
  2332 05c2 01       		.byte	0x1
  2333 05c3 7804     		.2byte	0x478
  2334 05c5 6B000000 		.4byte	0x6b
  2335 05c9 09070000 		.4byte	.LLST29
  2336 05cd 00       		.byte	0
  2337 05ce 13       		.uleb128 0x13
- 2338 05cf 02030000 		.4byte	.LASF66
+ 2338 05cf D3020000 		.4byte	.LASF66
  2339 05d3 01       		.byte	0x1
  2340 05d4 A104     		.2byte	0x4a1
  2341 05d6 6B000000 		.4byte	0x6b
@@ -4069,7 +4069,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2353 05f8 01       		.uleb128 0x1
  2354 05f9 9C       		.byte	0x9c
  2355 05fa 13       		.uleb128 0x13
- 2356 05fb 37020000 		.4byte	.LASF68
+ 2356 05fb F5010000 		.4byte	.LASF68
  2357 05ff 01       		.byte	0x1
  2358 0600 DC04     		.2byte	0x4dc
  2359 0602 6B000000 		.4byte	0x6b
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2362 060e 01       		.uleb128 0x1
  2363 060f 9C       		.byte	0x9c
  2364 0610 13       		.uleb128 0x13
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 69
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 69
 
 
  2365 0611 00000000 		.4byte	.LASF69
@@ -4090,7 +4090,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2371 0624 01       		.uleb128 0x1
  2372 0625 9C       		.byte	0x9c
  2373 0626 13       		.uleb128 0x13
- 2374 0627 A4020000 		.4byte	.LASF70
+ 2374 0627 62020000 		.4byte	.LASF70
  2375 062b 01       		.byte	0x1
  2376 062c 1105     		.2byte	0x511
  2377 062e 6B000000 		.4byte	0x6b
@@ -4099,7 +4099,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2380 063a 01       		.uleb128 0x1
  2381 063b 9C       		.byte	0x9c
  2382 063c 0B       		.uleb128 0xb
- 2383 063d 98040000 		.4byte	.LASF71
+ 2383 063d A4040000 		.4byte	.LASF71
  2384 0641 01       		.byte	0x1
  2385 0642 3005     		.2byte	0x530
  2386 0644 6B000000 		.4byte	0x6b
@@ -4109,13 +4109,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2390 0651 9C       		.byte	0x9c
  2391 0652 77060000 		.4byte	0x677
  2392 0656 0F       		.uleb128 0xf
- 2393 0657 4B020000 		.4byte	.LASF72
+ 2393 0657 09020000 		.4byte	.LASF72
  2394 065b 01       		.byte	0x1
  2395 065c 3005     		.2byte	0x530
  2396 065e 77060000 		.4byte	0x677
  2397 0662 28070000 		.4byte	.LLST30
  2398 0666 0C       		.uleb128 0xc
- 2399 0667 CD040000 		.4byte	.LASF40
+ 2399 0667 D9040000 		.4byte	.LASF40
  2400 066b 01       		.byte	0x1
  2401 066c 3305     		.2byte	0x533
  2402 066e 6B000000 		.4byte	0x6b
@@ -4127,7 +4127,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2408 067d 14       		.uleb128 0x14
  2409 067e 88010000 		.4byte	0x188
  2410 0682 0B       		.uleb128 0xb
- 2411 0683 0C040000 		.4byte	.LASF73
+ 2411 0683 D7030000 		.4byte	.LASF73
  2412 0687 01       		.byte	0x1
  2413 0688 6905     		.2byte	0x569
  2414 068a 6B000000 		.4byte	0x6b
@@ -4137,8 +4137,8 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2418 0697 9C       		.byte	0x9c
  2419 0698 BD060000 		.4byte	0x6bd
  2420 069c 0F       		.uleb128 0xf
- 2421 069d 7E040000 		.4byte	.LASF74
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 70
+ 2421 069d 8A040000 		.4byte	.LASF74
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 70
 
 
  2422 06a1 01       		.byte	0x1
@@ -4146,7 +4146,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2424 06a4 BD060000 		.4byte	0x6bd
  2425 06a8 E5070000 		.4byte	.LLST32
  2426 06ac 0C       		.uleb128 0xc
- 2427 06ad CD040000 		.4byte	.LASF40
+ 2427 06ad D9040000 		.4byte	.LASF40
  2428 06b1 01       		.byte	0x1
  2429 06b2 6C05     		.2byte	0x56c
  2430 06b4 6B000000 		.4byte	0x6b
@@ -4168,7 +4168,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2446 06dc 9C       		.byte	0x9c
  2447 06dd 59070000 		.4byte	0x759
  2448 06e1 15       		.uleb128 0x15
- 2449 06e2 E0010000 		.4byte	.LASF76
+ 2449 06e2 9E010000 		.4byte	.LASF76
  2450 06e6 01       		.byte	0x1
  2451 06e7 32       		.byte	0x32
  2452 06e8 69070000 		.4byte	0x769
@@ -4176,7 +4176,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2454 06ed 03       		.byte	0x3
  2455 06ee 60000000 		.4byte	CAN_RXConfigStruct.5064
  2456 06f2 15       		.uleb128 0x15
- 2457 06f3 28040000 		.4byte	.LASF77
+ 2457 06f3 74020000 		.4byte	.LASF77
  2458 06f7 01       		.byte	0x1
  2459 06f8 46       		.byte	0x46
  2460 06f9 7E070000 		.4byte	0x77e
@@ -4184,7 +4184,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2462 06fe 03       		.byte	0x3
  2463 06ff 00000000 		.4byte	CAN_TXConfigStruct.5065
  2464 0703 16       		.uleb128 0x16
- 2465 0704 CD040000 		.4byte	.LASF40
+ 2465 0704 D9040000 		.4byte	.LASF40
  2466 0708 01       		.byte	0x1
  2467 0709 52       		.byte	0x52
  2468 070a 6B000000 		.4byte	0x6b
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2476 071f 18       		.uleb128 0x18
  2477 0720 14000000 		.4byte	.LVL132
  2478 0724 82060000 		.4byte	0x682
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 71
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 71
 
 
  2479 0728 40070000 		.4byte	0x740
@@ -4254,11 +4254,11 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2529 077e 14       		.uleb128 0x14
  2530 077f 6E070000 		.4byte	0x76e
  2531 0783 0E       		.uleb128 0xe
- 2532 0784 61020000 		.4byte	.LASF78
+ 2532 0784 1F020000 		.4byte	.LASF78
  2533 0788 01       		.byte	0x1
  2534 0789 89       		.byte	0x89
  2535 078a 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 72
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 72
 
 
  2536 078e 00000000 		.4byte	.LFB1
@@ -4267,25 +4267,25 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2539 0797 9C       		.byte	0x9c
  2540 0798 8A080000 		.4byte	0x88a
  2541 079c 16       		.uleb128 0x16
- 2542 079d 92010000 		.4byte	.LASF39
+ 2542 079d 50010000 		.4byte	.LASF39
  2543 07a1 01       		.byte	0x1
  2544 07a2 8B       		.byte	0x8b
  2545 07a3 83000000 		.4byte	0x83
  2546 07a7 AB080000 		.4byte	.LLST36
  2547 07ab 16       		.uleb128 0x16
- 2548 07ac CD040000 		.4byte	.LASF40
+ 2548 07ac D9040000 		.4byte	.LASF40
  2549 07b0 01       		.byte	0x1
  2550 07b1 8C       		.byte	0x8c
  2551 07b2 6B000000 		.4byte	0x6b
  2552 07b6 D7080000 		.4byte	.LLST37
  2553 07ba 16       		.uleb128 0x16
- 2554 07bb 1C040000 		.4byte	.LASF79
+ 2554 07bb E7030000 		.4byte	.LASF79
  2555 07bf 01       		.byte	0x1
  2556 07c0 8D       		.byte	0x8d
  2557 07c1 6B000000 		.4byte	0x6b
  2558 07c5 F6080000 		.4byte	.LLST38
  2559 07c9 16       		.uleb128 0x16
- 2560 07ca 87040000 		.4byte	.LASF41
+ 2560 07ca 93040000 		.4byte	.LASF41
  2561 07ce 01       		.byte	0x1
  2562 07cf 90       		.byte	0x90
  2563 07d0 6B000000 		.4byte	0x6b
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2590 080f 19       		.uleb128 0x19
  2591 0810 01       		.uleb128 0x1
  2592 0811 51       		.byte	0x51
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 73
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 73
 
 
  2593 0812 01       		.uleb128 0x1
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2647 086f 0D       		.uleb128 0xd
  2648 0870 9E000000 		.4byte	.LVL156
  2649 0874 C8060000 		.4byte	0x6c8
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 74
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 74
 
 
  2650 0878 1A       		.uleb128 0x1a
@@ -4403,7 +4403,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2669 089f 9C       		.byte	0x9c
  2670 08a0 C7080000 		.4byte	0x8c7
  2671 08a4 0C       		.uleb128 0xc
- 2672 08a5 CD040000 		.4byte	.LASF40
+ 2672 08a5 D9040000 		.4byte	.LASF40
  2673 08a9 01       		.byte	0x1
  2674 08aa 4501     		.2byte	0x145
  2675 08ac 6B000000 		.4byte	0x6b
@@ -4424,8 +4424,8 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2690 08d3 03       		.byte	0x3
  2691 08d4 00000000 		.4byte	CAN_initVar
  2692 08d8 1C       		.uleb128 0x1c
- 2693 08d9 A8010000 		.4byte	.LASF81
- 2694 08dd A8010000 		.4byte	.LASF81
+ 2693 08d9 66010000 		.4byte	.LASF81
+ 2694 08dd 66010000 		.4byte	.LASF81
  2695 08e1 04       		.byte	0x4
  2696 08e2 7D       		.byte	0x7d
  2697 08e3 1C       		.uleb128 0x1c
@@ -4434,16 +4434,16 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2700 08ec 04       		.byte	0x4
  2701 08ed 7E       		.byte	0x7e
  2702 08ee 1C       		.uleb128 0x1c
- 2703 08ef 07020000 		.4byte	.LASF83
- 2704 08f3 07020000 		.4byte	.LASF83
+ 2703 08ef C5010000 		.4byte	.LASF83
+ 2704 08f3 C5010000 		.4byte	.LASF83
  2705 08f7 04       		.byte	0x4
  2706 08f8 88       		.byte	0x88
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 75
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 75
 
 
  2707 08f9 1C       		.uleb128 0x1c
- 2708 08fa BB020000 		.4byte	.LASF84
- 2709 08fe BB020000 		.4byte	.LASF84
+ 2708 08fa 8C020000 		.4byte	.LASF84
+ 2709 08fe 8C020000 		.4byte	.LASF84
  2710 0902 04       		.byte	0x4
  2711 0903 8B       		.byte	0x8b
  2712 0904 00       		.byte	0
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2761 002e 3A       		.uleb128 0x3a
  2762 002f 0B       		.uleb128 0xb
  2763 0030 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 76
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 76
 
 
  2764 0031 05       		.uleb128 0x5
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2818 0067 2F       		.uleb128 0x2f
  2819 0068 0B       		.uleb128 0xb
  2820 0069 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 77
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 77
 
 
  2821 006a 00       		.byte	0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2875 00a1 00       		.byte	0
  2876 00a2 00       		.byte	0
  2877 00a3 0D       		.uleb128 0xd
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 78
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 78
 
 
  2878 00a4 898201   		.uleb128 0x4109
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2932 00dd 0E       		.uleb128 0xe
  2933 00de 3A       		.uleb128 0x3a
  2934 00df 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 79
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 79
 
 
  2935 00e0 3B       		.uleb128 0x3b
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  2989 0117 19       		.uleb128 0x19
  2990 0118 00       		.byte	0
  2991 0119 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 80
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 80
 
 
  2992 011a 14       		.uleb128 0x14
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3046 0152 01       		.byte	0x1
  3047 0153 11       		.uleb128 0x11
  3048 0154 01       		.uleb128 0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 81
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 81
 
 
  3049 0155 31       		.uleb128 0x31
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3103 0190 3B       		.uleb128 0x3b
  3104 0191 0B       		.uleb128 0xb
  3105 0192 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 82
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 82
 
 
  3106 0193 00       		.byte	0
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3160 0080 31       		.byte	0x31
  3161 0081 9F       		.byte	0x9f
  3162 0082 18000000 		.4byte	.LVL11
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 83
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 83
 
 
  3163 0086 20000000 		.4byte	.LFE5
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3217 0112 14000000 		.4byte	.LVL25
  3218 0116 16000000 		.4byte	.LVL26
  3219 011a 0500     		.2byte	0x5
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 84
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 84
 
 
  3220 011c 0C       		.byte	0xc
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3274 01a7 0100     		.2byte	0x1
  3275 01a9 50       		.byte	0x50
  3276 01aa 16000000 		.4byte	.LVL31
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 85
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 85
 
 
  3277 01ae 18000000 		.4byte	.LVL32
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3331 022a 00000000 		.4byte	.LVL38
  3332 022e 2E000000 		.4byte	.LVL43
  3333 0232 0100     		.2byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 86
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 86
 
 
  3334 0234 50       		.byte	0x50
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3388 02af 0100     		.2byte	0x1
  3389 02b1 50       		.byte	0x50
  3390 02b2 6E000000 		.4byte	.LVL58
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 87
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 87
 
 
  3391 02b6 70000000 		.4byte	.LVL59
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3445 0332 53       		.byte	0x53
  3446 0333 9F       		.byte	0x9f
  3447 0334 5C000000 		.4byte	.LVL49
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 88
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 88
 
 
  3448 0338 78000000 		.4byte	.LVL63
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3502 03be 4C000000 		.4byte	.LVL48
  3503 03c2 0100     		.2byte	0x1
  3504 03c4 50       		.byte	0x50
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 89
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 89
 
 
  3505 03c5 4C000000 		.4byte	.LVL48
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3559 0449 34000000 		.4byte	.LVL72
  3560 044d 0100     		.2byte	0x1
  3561 044f 50       		.byte	0x50
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 90
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 90
 
 
  3562 0450 34000000 		.4byte	.LVL72
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3616 04cf 9F       		.byte	0x9f
  3617 04d0 32000000 		.4byte	.LVL79
  3618 04d4 34000000 		.4byte	.LVL80
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 91
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 91
 
 
  3619 04d8 0100     		.2byte	0x1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3673 0558 5C000000 		.4byte	.LVL90
  3674 055c 6E000000 		.4byte	.LVL92
  3675 0560 0100     		.2byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 92
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 92
 
 
  3676 0562 53       		.byte	0x53
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3730 05e6 4E000000 		.4byte	.LVL103
  3731 05ea 50000000 		.4byte	.LVL104
  3732 05ee 0400     		.2byte	0x4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 93
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 93
 
 
  3733 05f0 F3       		.byte	0xf3
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3787 066d F3       		.byte	0xf3
  3788 066e 01       		.uleb128 0x1
  3789 066f 51       		.byte	0x51
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 94
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 94
 
 
  3790 0670 0C       		.byte	0xc
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3844 06fc 0C       		.byte	0xc
  3845 06fd 04A00040 		.4byte	0x4000a004
  3846 0701 00000000 		.4byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 95
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 95
 
 
  3847 0705 00000000 		.4byte	0
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3901 0788 F3       		.byte	0xf3
  3902 0789 01       		.uleb128 0x1
  3903 078a 50       		.byte	0x50
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 96
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 96
 
 
  3904 078b 9F       		.byte	0x9f
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  3958 080d 48000000 		.4byte	.LVL128
  3959 0811 0400     		.2byte	0x4
  3960 0813 F3       		.byte	0xf3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 97
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 97
 
 
  3961 0814 01       		.uleb128 0x1
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4015 0898 38000000 		.4byte	.LVL138
  4016 089c 48000000 		.4byte	.LVL141
  4017 08a0 0100     		.2byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 98
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 98
 
 
  4018 08a2 54       		.byte	0x54
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4072 092c 06000000 		.4byte	.LVL143
  4073 0930 1D000000 		.4byte	.LVL144-1
  4074 0934 0100     		.2byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 99
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 99
 
 
  4075 0936 50       		.byte	0x50
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4129 0058 00000000 		.4byte	.LFB12
  4130 005c 78000000 		.4byte	.LFE12-.LFB12
  4131 0060 00000000 		.4byte	.LFB13
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 100
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 100
 
 
  4132 0064 5C000000 		.4byte	.LFE13-.LFB13
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4186 006c 18000000 		.4byte	.LFE16
  4187 0070 00000000 		.4byte	.LFB17
  4188 0074 0C000000 		.4byte	.LFE17
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 101
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 101
 
 
  4189 0078 00000000 		.4byte	.LFB18
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4222              	.LASF42:
  4223 005c 43414E5F 		.ascii	"CAN_Stop\000"
  4223      53746F70 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 102
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 102
 
 
  4223      00
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4251      7200
  4252              	.LASF13:
  4253 00f7 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 103
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 103
 
 
  4253      6C6500
@@ -6142,306 +6142,306 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 1
  4263      53657449 
  4263      72714D61 
  4263      736B00
- 4264              	.LASF87:
- 4265 0131 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
- 4265      73657273 
- 4265      5C4A7573 
- 4265      74696E20 
- 4265      4368616E 
- 4266 0160 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
- 4266      616D706C 
- 4266      655C4465 
- 4266      7369676E 
- 4266      30312E63 
- 4267              	.LASF63:
- 4268 0179 636F6E66 		.ascii	"config\000"
- 4268      696700
- 4269              	.LASF5:
- 4270 0180 6C6F6E67 		.ascii	"long unsigned int\000"
- 4270      20756E73 
- 4270      69676E65 
- 4270      6420696E 
- 4270      7400
- 4271              	.LASF39:
- 4272 0192 74696D65 		.ascii	"timeout\000"
- 4272      6F757400 
- 4273              	.LASF58:
- 4274 019a 43414E5F 		.ascii	"CAN_SetOpMode\000"
- 4274      5365744F 
- 4274      704D6F64 
- 4274      6500
- 4275              	.LASF81:
- 4276 01a8 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 4276      74657243 
- 4276      72697469 
- 4276      63616C53 
- 4276      65637469 
- 4277              	.LASF3:
- 4278 01bf 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 104
+ 4264              	.LASF8:
+ 4265 0131 756E7369 		.ascii	"unsigned int\000"
+ 4265      676E6564 
+ 4265      20696E74 
+ 4265      00
+ 4266              	.LASF5:
+ 4267 013e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4267      20756E73 
+ 4267      69676E65 
+ 4267      6420696E 
+ 4267      7400
+ 4268              	.LASF39:
+ 4269 0150 74696D65 		.ascii	"timeout\000"
+ 4269      6F757400 
+ 4270              	.LASF58:
+ 4271 0158 43414E5F 		.ascii	"CAN_SetOpMode\000"
+ 4271      5365744F 
+ 4271      704D6F64 
+ 4271      6500
+ 4272              	.LASF81:
+ 4273 0166 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 4273      74657243 
+ 4273      72697469 
+ 4273      63616C53 
+ 4273      65637469 
+ 4274              	.LASF3:
+ 4275 017d 73686F72 		.ascii	"short unsigned int\000"
+ 4275      7420756E 
+ 4275      7369676E 
+ 4275      65642069 
+ 4275      6E7400
+ 4276              	.LASF36:
+ 4277 0190 43414E5F 		.ascii	"CAN_RX_STRUCT\000"
+ 4277      52585F53 
+ 4277      54525543 
+ 4277      5400
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 104
 
 
- 4278      7420756E 
- 4278      7369676E 
- 4278      65642069 
- 4278      6E7400
- 4279              	.LASF36:
- 4280 01d2 43414E5F 		.ascii	"CAN_RX_STRUCT\000"
- 4280      52585F53 
- 4280      54525543 
- 4280      5400
- 4281              	.LASF76:
- 4282 01e0 43414E5F 		.ascii	"CAN_RXConfigStruct\000"
- 4282      5258436F 
- 4282      6E666967 
- 4282      53747275 
- 4282      637400
- 4283              	.LASF43:
- 4284 01f3 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
- 4284      476C6F62 
- 4284      616C496E 
- 4284      74456E61 
- 4284      626C6500 
- 4285              	.LASF83:
- 4286 0207 4379496E 		.ascii	"CyIntSetVector\000"
- 4286      74536574 
- 4286      56656374 
- 4286      6F7200
- 4287              	.LASF27:
- 4288 0216 43414E5F 		.ascii	"CAN_RX_CFG\000"
- 4288      52585F43 
- 4288      464700
- 4289              	.LASF59:
- 4290 0221 6F704D6F 		.ascii	"opMode\000"
- 4290      646500
- 4291              	.LASF47:
- 4292 0228 43414E5F 		.ascii	"CAN_SetArbiter\000"
- 4292      53657441 
- 4292      72626974 
- 4292      657200
- 4293              	.LASF68:
- 4294 0237 43414E5F 		.ascii	"CAN_GetTXErrorCount\000"
- 4294      47657454 
- 4294      58457272 
- 4294      6F72436F 
- 4294      756E7400 
- 4295              	.LASF72:
- 4296 024b 7278436F 		.ascii	"rxConfig\000"
- 4296      6E666967 
- 4296      00
- 4297              	.LASF37:
- 4298 0254 74786461 		.ascii	"txdata\000"
- 4298      746100
- 4299              	.LASF17:
- 4300 025b 72656733 		.ascii	"reg32\000"
- 4300      3200
- 4301              	.LASF78:
- 4302 0261 43414E5F 		.ascii	"CAN_Init\000"
- 4302      496E6974 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 105
+ 4278              	.LASF76:
+ 4279 019e 43414E5F 		.ascii	"CAN_RXConfigStruct\000"
+ 4279      5258436F 
+ 4279      6E666967 
+ 4279      53747275 
+ 4279      637400
+ 4280              	.LASF43:
+ 4281 01b1 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
+ 4281      476C6F62 
+ 4281      616C496E 
+ 4281      74456E61 
+ 4281      626C6500 
+ 4282              	.LASF83:
+ 4283 01c5 4379496E 		.ascii	"CyIntSetVector\000"
+ 4283      74536574 
+ 4283      56656374 
+ 4283      6F7200
+ 4284              	.LASF27:
+ 4285 01d4 43414E5F 		.ascii	"CAN_RX_CFG\000"
+ 4285      52585F43 
+ 4285      464700
+ 4286              	.LASF59:
+ 4287 01df 6F704D6F 		.ascii	"opMode\000"
+ 4287      646500
+ 4288              	.LASF47:
+ 4289 01e6 43414E5F 		.ascii	"CAN_SetArbiter\000"
+ 4289      53657441 
+ 4289      72626974 
+ 4289      657200
+ 4290              	.LASF68:
+ 4291 01f5 43414E5F 		.ascii	"CAN_GetTXErrorCount\000"
+ 4291      47657454 
+ 4291      58457272 
+ 4291      6F72436F 
+ 4291      756E7400 
+ 4292              	.LASF72:
+ 4293 0209 7278436F 		.ascii	"rxConfig\000"
+ 4293      6E666967 
+ 4293      00
+ 4294              	.LASF37:
+ 4295 0212 74786461 		.ascii	"txdata\000"
+ 4295      746100
+ 4296              	.LASF17:
+ 4297 0219 72656733 		.ascii	"reg32\000"
+ 4297      3200
+ 4298              	.LASF78:
+ 4299 021f 43414E5F 		.ascii	"CAN_Init\000"
+ 4299      496E6974 
+ 4299      00
+ 4300              	.LASF62:
+ 4301 0228 72656741 		.ascii	"regAddr\000"
+ 4301      64647200 
+ 4302              	.LASF53:
+ 4303 0230 63666754 		.ascii	"cfgTemp\000"
+ 4303      656D7000 
+ 4304              	.LASF23:
+ 4305 0238 72786D61 		.ascii	"rxmailbox\000"
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 105
 
 
- 4302      00
- 4303              	.LASF62:
- 4304 026a 72656741 		.ascii	"regAddr\000"
- 4304      64647200 
- 4305              	.LASF53:
- 4306 0272 63666754 		.ascii	"cfgTemp\000"
- 4306      656D7000 
- 4307              	.LASF23:
- 4308 027a 72786D61 		.ascii	"rxmailbox\000"
- 4308      696C626F 
- 4308      7800
- 4309              	.LASF22:
- 4310 0284 43414E5F 		.ascii	"CAN_REG_32\000"
- 4310      5245475F 
- 4310      333200
- 4311              	.LASF19:
- 4312 028f 73697A65 		.ascii	"sizetype\000"
- 4312      74797065 
- 4312      00
- 4313              	.LASF18:
- 4314 0298 6C6F6E67 		.ascii	"long double\000"
- 4314      20646F75 
- 4314      626C6500 
- 4315              	.LASF70:
- 4316 02a4 43414E5F 		.ascii	"CAN_GetErrorState\000"
- 4316      47657445 
- 4316      72726F72 
- 4316      53746174 
- 4316      6500
- 4317              	.LASF32:
- 4318 02b6 72786964 		.ascii	"rxid\000"
- 4318      00
- 4319              	.LASF84:
- 4320 02bb 4379496E 		.ascii	"CyIntSetPriority\000"
- 4320      74536574 
- 4320      5072696F 
- 4320      72697479 
- 4320      00
- 4321              	.LASF61:
- 4322 02cc 43414E5F 		.ascii	"CAN_RXRegisterInit\000"
- 4322      52585265 
- 4322      67697374 
- 4322      6572496E 
- 4322      697400
- 4323              	.LASF12:
- 4324 02df 666C6F61 		.ascii	"float\000"
- 4324      7400
- 4325              	.LASF15:
- 4326 02e5 72656738 		.ascii	"reg8\000"
- 4326      00
- 4327              	.LASF1:
- 4328 02ea 756E7369 		.ascii	"unsigned char\000"
- 4328      676E6564 
- 4328      20636861 
- 4328      7200
- 4329              	.LASF2:
- 4330 02f8 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 106
+ 4305      696C626F 
+ 4305      7800
+ 4306              	.LASF22:
+ 4307 0242 43414E5F 		.ascii	"CAN_REG_32\000"
+ 4307      5245475F 
+ 4307      333200
+ 4308              	.LASF19:
+ 4309 024d 73697A65 		.ascii	"sizetype\000"
+ 4309      74797065 
+ 4309      00
+ 4310              	.LASF18:
+ 4311 0256 6C6F6E67 		.ascii	"long double\000"
+ 4311      20646F75 
+ 4311      626C6500 
+ 4312              	.LASF70:
+ 4313 0262 43414E5F 		.ascii	"CAN_GetErrorState\000"
+ 4313      47657445 
+ 4313      72726F72 
+ 4313      53746174 
+ 4313      6500
+ 4314              	.LASF77:
+ 4315 0274 43414E5F 		.ascii	"CAN_TXConfigStruct\000"
+ 4315      5458436F 
+ 4315      6E666967 
+ 4315      53747275 
+ 4315      637400
+ 4316              	.LASF32:
+ 4317 0287 72786964 		.ascii	"rxid\000"
+ 4317      00
+ 4318              	.LASF84:
+ 4319 028c 4379496E 		.ascii	"CyIntSetPriority\000"
+ 4319      74536574 
+ 4319      5072696F 
+ 4319      72697479 
+ 4319      00
+ 4320              	.LASF61:
+ 4321 029d 43414E5F 		.ascii	"CAN_RXRegisterInit\000"
+ 4321      52585265 
+ 4321      67697374 
+ 4321      6572496E 
+ 4321      697400
+ 4322              	.LASF12:
+ 4323 02b0 666C6F61 		.ascii	"float\000"
+ 4323      7400
+ 4324              	.LASF15:
+ 4325 02b6 72656738 		.ascii	"reg8\000"
+ 4325      00
+ 4326              	.LASF1:
+ 4327 02bb 756E7369 		.ascii	"unsigned char\000"
+ 4327      676E6564 
+ 4327      20636861 
+ 4327      7200
+ 4328              	.LASF2:
+ 4329 02c9 73686F72 		.ascii	"short int\000"
+ 4329      7420696E 
+ 4329      7400
+ 4330              	.LASF66:
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 106
 
 
- 4330      7420696E 
- 4330      7400
- 4331              	.LASF66:
- 4332 0302 43414E5F 		.ascii	"CAN_GetTXErrorFlag\000"
- 4332      47657454 
- 4332      58457272 
- 4332      6F72466C 
- 4332      616700
- 4333              	.LASF44:
- 4334 0315 43414E5F 		.ascii	"CAN_Enable\000"
- 4334      456E6162 
- 4334      6C6500
- 4335              	.LASF38:
- 4336 0320 43414E5F 		.ascii	"CAN_TX_STRUCT\000"
- 4336      54585F53 
- 4336      54525543 
- 4336      5400
- 4337              	.LASF86:
- 4338 032e 47656E65 		.ascii	"Generated_Source\\PSoC5\\CAN.c\000"
- 4338      72617465 
- 4338      645F536F 
- 4338      75726365 
- 4338      5C50536F 
- 4339              	.LASF85:
- 4340 034b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 4340      43313120 
- 4340      352E342E 
- 4340      31203230 
- 4340      31363036 
- 4341 037e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 4341      20726576 
- 4341      6973696F 
- 4341      6E203233 
- 4341      37373135 
- 4342 03b1 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 4342      66756E63 
- 4342      74696F6E 
- 4342      2D736563 
- 4342      74696F6E 
- 4343              	.LASF46:
- 4344 03d9 43414E5F 		.ascii	"CAN_SetPreScaler\000"
- 4344      53657450 
- 4344      72655363 
- 4344      616C6572 
- 4344      00
- 4345              	.LASF14:
- 4346 03ea 63686172 		.ascii	"char\000"
- 4346      00
- 4347              	.LASF56:
- 4348 03ef 43414E5F 		.ascii	"CAN_SetEdgeMode\000"
- 4348      53657445 
- 4348      6467654D 
- 4348      6F646500 
- 4349              	.LASF8:
- 4350 03ff 756E7369 		.ascii	"unsigned int\000"
- 4350      676E6564 
- 4350      20696E74 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 107
+ 4331 02d3 43414E5F 		.ascii	"CAN_GetTXErrorFlag\000"
+ 4331      47657454 
+ 4331      58457272 
+ 4331      6F72466C 
+ 4331      616700
+ 4332              	.LASF44:
+ 4333 02e6 43414E5F 		.ascii	"CAN_Enable\000"
+ 4333      456E6162 
+ 4333      6C6500
+ 4334              	.LASF38:
+ 4335 02f1 43414E5F 		.ascii	"CAN_TX_STRUCT\000"
+ 4335      54585F53 
+ 4335      54525543 
+ 4335      5400
+ 4336              	.LASF86:
+ 4337 02ff 47656E65 		.ascii	"Generated_Source\\PSoC5\\CAN.c\000"
+ 4337      72617465 
+ 4337      645F536F 
+ 4337      75726365 
+ 4337      5C50536F 
+ 4338              	.LASF85:
+ 4339 031c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 4339      43313120 
+ 4339      352E342E 
+ 4339      31203230 
+ 4339      31363036 
+ 4340 034f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 4340      20726576 
+ 4340      6973696F 
+ 4340      6E203233 
+ 4340      37373135 
+ 4341 0382 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 4341      66756E63 
+ 4341      74696F6E 
+ 4341      2D736563 
+ 4341      74696F6E 
+ 4342              	.LASF46:
+ 4343 03aa 43414E5F 		.ascii	"CAN_SetPreScaler\000"
+ 4343      53657450 
+ 4343      72655363 
+ 4343      616C6572 
+ 4343      00
+ 4344              	.LASF14:
+ 4345 03bb 63686172 		.ascii	"char\000"
+ 4345      00
+ 4346              	.LASF56:
+ 4347 03c0 43414E5F 		.ascii	"CAN_SetEdgeMode\000"
+ 4347      53657445 
+ 4347      6467654D 
+ 4347      6F646500 
+ 4348              	.LASF63:
+ 4349 03d0 636F6E66 		.ascii	"config\000"
+ 4349      696700
+ 4350              	.LASF73:
+ 4351 03d7 43414E5F 		.ascii	"CAN_TxBufConfig\000"
+ 4351      54784275 
+ 4351      66436F6E 
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 107
 
 
- 4350      00
- 4351              	.LASF73:
- 4352 040c 43414E5F 		.ascii	"CAN_TxBufConfig\000"
- 4352      54784275 
- 4352      66436F6E 
- 4352      66696700 
- 4353              	.LASF79:
- 4354 041c 6C6F6361 		.ascii	"localResult\000"
- 4354      6C526573 
- 4354      756C7400 
- 4355              	.LASF77:
- 4356 0428 43414E5F 		.ascii	"CAN_TXConfigStruct\000"
- 4356      5458436F 
- 4356      6E666967 
- 4356      53747275 
- 4356      637400
+ 4351      66696700 
+ 4352              	.LASF79:
+ 4353 03e7 6C6F6361 		.ascii	"localResult\000"
+ 4353      6C526573 
+ 4353      756C7400 
+ 4354              	.LASF87:
+ 4355 03f3 433A5C55 		.ascii	"C:\\Users\\kendr\\OneDrive\\Documents\\PEI-Firmware"
+ 4355      73657273 
+ 4355      5C6B656E 
+ 4355      64725C4F 
+ 4355      6E654472 
+ 4356 0421 2D464531 		.ascii	"-FE10\\PSOC_VCU_Example\\Design01.cydsn\000"
+ 4356      305C5053 
+ 4356      4F435F56 
+ 4356      43555F45 
+ 4356      78616D70 
  4357              	.LASF20:
- 4358 043b 43414E5F 		.ascii	"CAN_DATA_BYTES\000"
+ 4358 0447 43414E5F 		.ascii	"CAN_DATA_BYTES\000"
  4358      44415441 
  4358      5F425954 
  4358      455300
  4359              	.LASF28:
- 4360 044a 74786D61 		.ascii	"txmailbox\000"
+ 4360 0456 74786D61 		.ascii	"txmailbox\000"
  4360      696C626F 
  4360      7800
  4361              	.LASF51:
- 4362 0454 63666754 		.ascii	"cfgTseg1\000"
+ 4362 0460 63666754 		.ascii	"cfgTseg1\000"
  4362      73656731 
  4362      00
  4363              	.LASF52:
- 4364 045d 63666754 		.ascii	"cfgTseg2\000"
+ 4364 0469 63666754 		.ascii	"cfgTseg2\000"
  4364      73656732 
  4364      00
  4365              	.LASF50:
- 4366 0466 43414E5F 		.ascii	"CAN_SetTsegSample\000"
+ 4366 0472 43414E5F 		.ascii	"CAN_SetTsegSample\000"
  4366      53657454 
  4366      73656753 
  4366      616D706C 
  4366      6500
  4367              	.LASF24:
- 4368 0478 7278636D 		.ascii	"rxcmd\000"
+ 4368 0484 7278636D 		.ascii	"rxcmd\000"
  4368      6400
  4369              	.LASF74:
- 4370 047e 7478436F 		.ascii	"txConfig\000"
+ 4370 048a 7478436F 		.ascii	"txConfig\000"
  4370      6E666967 
  4370      00
  4371              	.LASF41:
- 4372 0487 656E6162 		.ascii	"enableInterrupts\000"
+ 4372 0493 656E6162 		.ascii	"enableInterrupts\000"
  4372      6C65496E 
  4372      74657272 
  4372      75707473 
  4372      00
  4373              	.LASF71:
- 4374 0498 43414E5F 		.ascii	"CAN_RxBufConfig\000"
+ 4374 04a4 43414E5F 		.ascii	"CAN_RxBufConfig\000"
  4374      52784275 
  4374      66436F6E 
  4374      66696700 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccehEeUh.s 			page 108
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccjoS1R7.s 			page 108
 
 
  4375              	.LASF30:
- 4376 04a8 74786964 		.ascii	"txid\000"
+ 4376 04b4 74786964 		.ascii	"txid\000"
  4376      00
  4377              	.LASF26:
- 4378 04ad 72786163 		.ascii	"rxacr\000"
+ 4378 04b9 72786163 		.ascii	"rxacr\000"
  4378      7200
  4379              	.LASF49:
- 4380 04b3 61726269 		.ascii	"arbiter\000"
+ 4380 04bf 61726269 		.ascii	"arbiter\000"
  4380      74657200 
  4381              	.LASF35:
- 4382 04bb 72786163 		.ascii	"rxacrd\000"
+ 4382 04c7 72786163 		.ascii	"rxacrd\000"
  4382      726400
  4383              	.LASF31:
- 4384 04c2 43414E5F 		.ascii	"CAN_TX_CFG\000"
+ 4384 04ce 43414E5F 		.ascii	"CAN_TX_CFG\000"
  4384      54585F43 
  4384      464700
  4385              	.LASF40:
- 4386 04cd 72657375 		.ascii	"result\000"
+ 4386 04d9 72657375 		.ascii	"result\000"
  4386      6C7400
  4387              	.LASF54:
- 4388 04d4 43414E5F 		.ascii	"CAN_SetRestartType\000"
+ 4388 04e0 43414E5F 		.ascii	"CAN_SetRestartType\000"
  4388      53657452 
  4388      65737461 
  4388      72745479 

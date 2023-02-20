@@ -42,8 +42,6 @@ int main(void)
         
        
         
-        
-        
         // shutdown flags, current
         uint8_t shutdown_flags = 0;
         uint8_t current_upper = 0;

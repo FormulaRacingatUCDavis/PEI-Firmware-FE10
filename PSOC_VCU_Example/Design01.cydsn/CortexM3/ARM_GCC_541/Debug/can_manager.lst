@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
   28:can_manager.c **** //MC_DEBG
   29:can_manager.c **** volatile uint8_t THROTTLE = 0;
   30:can_manager.c **** volatile uint8_t SET_INTERLOCK = 0;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 2
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 2
 
 
   31:can_manager.c **** volatile uint8_t STATE = 0;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
   68              	.LFE64:
   69              		.size	get_HV_Requested, .-get_HV_Requested
   70              		.section	.text.get_THROTTLE_HIGH,"ax",%progbits
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 3
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 3
 
 
   71              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  114 0006 00BF     		.align	2
  115              	.L11:
  116 0008 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 4
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 4
 
 
  117              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  161              		.loc 1 65 0
  162 0004 7047     		bx	lr
  163              	.L18:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 5
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 5
 
 
  164 0006 00BF     		.align	2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  208 0026 0A4B     		ldr	r3, .L25
  209 0028 5A70     		strb	r2, [r3, #1]
   76:can_manager.c ****             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 6
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 6
 
 
  210              		.loc 1 76 0
@@ -338,10 +338,11 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  235 0048 1A72     		strb	r2, [r3, #8]
  236              	.L20:
   86:can_manager.c ****             break;
-  87:can_manager.c ****     }
-  88:can_manager.c ****     
-  89:can_manager.c ****     CyExitCriticalSection(InterruptState);
- 237              		.loc 1 89 0
+  87:can_manager.c ****         
+  88:can_manager.c ****     }
+  89:can_manager.c ****     
+  90:can_manager.c ****     CyExitCriticalSection(InterruptState);
+ 237              		.loc 1 90 0
  238 004a FFF7FEFF 		bl	CyExitCriticalSection
  239              	.LVL2:
  240 004e 38BD     		pop	{r3, r4, r5, pc}
@@ -357,18 +358,18 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  250              		.align	2
  251              		.global	can_test_send
  252              		.thumb
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 7
+
+
  253              		.thumb_func
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 7
-
-
  254              		.type	can_test_send, %function
  255              	can_test_send:
  256              	.LFB70:
-  90:can_manager.c **** }
-  91:can_manager.c **** 
-  92:can_manager.c **** void can_test_send()
-  93:can_manager.c **** {
- 257              		.loc 1 93 0
+  91:can_manager.c **** }
+  92:can_manager.c **** 
+  93:can_manager.c **** void can_test_send()
+  94:can_manager.c **** {
+ 257              		.loc 1 94 0
  258              		.cfi_startproc
  259              		@ args = 0, pretend = 0, frame = 16
  260              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -377,72 +378,72 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  263              		.cfi_offset 14, -4
  264 0002 85B0     		sub	sp, sp, #20
  265              		.cfi_def_cfa_offset 24
-  94:can_manager.c ****     //CAN_1_DATA_BYTES_MSG msg;
-  95:can_manager.c ****     CAN_TX_MSG HeartB;
-  96:can_manager.c ****     
-  97:can_manager.c ****     HeartB.id = 0x300;
- 266              		.loc 1 97 0
+  95:can_manager.c ****     //CAN_1_DATA_BYTES_MSG msg;
+  96:can_manager.c ****     CAN_TX_MSG HeartB;
+  97:can_manager.c ****     
+  98:can_manager.c ****     HeartB.id = 0x300;
+ 266              		.loc 1 98 0
  267 0004 4FF44073 		mov	r3, #768
  268 0008 0193     		str	r3, [sp, #4]
-  98:can_manager.c ****     HeartB.rtr = 0;
- 269              		.loc 1 98 0
+  99:can_manager.c ****     HeartB.rtr = 0;
+ 269              		.loc 1 99 0
  270 000a 0022     		movs	r2, #0
  271 000c 8DF80820 		strb	r2, [sp, #8]
-  99:can_manager.c ****     HeartB.ide = 0;
- 272              		.loc 1 99 0
+ 100:can_manager.c ****     HeartB.ide = 0;
+ 272              		.loc 1 100 0
  273 0010 8DF80920 		strb	r2, [sp, #9]
- 100:can_manager.c ****     HeartB.dlc = 1;
- 274              		.loc 1 100 0
+ 101:can_manager.c ****     HeartB.dlc = 1;
+ 274              		.loc 1 101 0
  275 0014 0123     		movs	r3, #1
  276 0016 8DF80A30 		strb	r3, [sp, #10]
- 101:can_manager.c ****     
- 102:can_manager.c ****     HeartB.irq = 0;
- 277              		.loc 1 102 0
+ 102:can_manager.c ****     
+ 103:can_manager.c ****     HeartB.irq = 0;
+ 277              		.loc 1 103 0
  278 001a 8DF80B20 		strb	r2, [sp, #11]
- 103:can_manager.c ****     
- 104:can_manager.c ****     HeartB.msg->byte[0] = (uint8) 1;
- 279              		.loc 1 104 0
+ 104:can_manager.c ****     
+ 105:can_manager.c ****     HeartB.msg->byte[0] = (uint8) 1;
+ 279              		.loc 1 105 0
  280 001e 039A     		ldr	r2, [sp, #12]
  281 0020 1370     		strb	r3, [r2]
- 105:can_manager.c ****     HeartB.msg->byte[1] = (uint8) 1;
- 282              		.loc 1 105 0
+ 106:can_manager.c ****     HeartB.msg->byte[1] = (uint8) 1;
+ 282              		.loc 1 106 0
  283 0022 039A     		ldr	r2, [sp, #12]
  284 0024 5370     		strb	r3, [r2, #1]
- 106:can_manager.c ****     HeartB.msg->byte[2] = (uint8) 1;
- 285              		.loc 1 106 0
+ 107:can_manager.c ****     HeartB.msg->byte[2] = (uint8) 1;
+ 285              		.loc 1 107 0
  286 0026 039A     		ldr	r2, [sp, #12]
  287 0028 9370     		strb	r3, [r2, #2]
- 107:can_manager.c ****     HeartB.msg->byte[3] = (uint8) 1;
- 288              		.loc 1 107 0
+ 108:can_manager.c ****     HeartB.msg->byte[3] = (uint8) 1;
+ 288              		.loc 1 108 0
  289 002a 039A     		ldr	r2, [sp, #12]
  290 002c D370     		strb	r3, [r2, #3]
- 108:can_manager.c ****     HeartB.msg->byte[4] = (uint8) 1;
- 291              		.loc 1 108 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 8
+ 109:can_manager.c ****     HeartB.msg->byte[4] = (uint8) 1;
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 8
 
 
+ 291              		.loc 1 109 0
  292 002e 039A     		ldr	r2, [sp, #12]
  293 0030 1371     		strb	r3, [r2, #4]
- 109:can_manager.c ****     HeartB.msg->byte[5] = (uint8) 1;
- 294              		.loc 1 109 0
+ 110:can_manager.c ****     HeartB.msg->byte[5] = (uint8) 1;
+ 294              		.loc 1 110 0
  295 0032 039A     		ldr	r2, [sp, #12]
  296 0034 5371     		strb	r3, [r2, #5]
- 110:can_manager.c ****     HeartB.msg->byte[6] = (uint8) 1;
- 297              		.loc 1 110 0
+ 111:can_manager.c ****     HeartB.msg->byte[6] = (uint8) 1;
+ 297              		.loc 1 111 0
  298 0036 039A     		ldr	r2, [sp, #12]
  299 0038 9371     		strb	r3, [r2, #6]
- 111:can_manager.c ****     HeartB.msg->byte[7] = (uint8) 1;
- 300              		.loc 1 111 0
+ 112:can_manager.c ****     HeartB.msg->byte[7] = (uint8) 1;
+ 300              		.loc 1 112 0
  301 003a 039A     		ldr	r2, [sp, #12]
  302 003c D371     		strb	r3, [r2, #7]
- 112:can_manager.c ****     
- 113:can_manager.c ****     CAN_SendMsg(&HeartB);
- 303              		.loc 1 113 0
+ 113:can_manager.c ****     
+ 114:can_manager.c ****     CAN_SendMsg(&HeartB);
+ 303              		.loc 1 114 0
  304 003e 01A8     		add	r0, sp, #4
  305 0040 FFF7FEFF 		bl	CAN_SendMsg
  306              	.LVL4:
- 114:can_manager.c **** }
- 307              		.loc 1 114 0
+ 115:can_manager.c **** }
+ 307              		.loc 1 115 0
  308 0044 05B0     		add	sp, sp, #20
  309              		.cfi_def_cfa_offset 4
  310              		@ sp needed
@@ -458,10 +459,10 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  320              		.type	can_send, %function
  321              	can_send:
  322              	.LFB71:
- 115:can_manager.c **** 
- 116:can_manager.c **** void can_send(uint8_t data[8], uint32_t ID)
- 117:can_manager.c **** {
- 323              		.loc 1 117 0
+ 116:can_manager.c **** 
+ 117:can_manager.c **** void can_send(uint8_t data[8], uint32_t ID)
+ 118:can_manager.c **** {
+ 323              		.loc 1 118 0
  324              		.cfi_startproc
  325              		@ args = 0, pretend = 0, frame = 24
  326              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -471,64 +472,64 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  330              		.cfi_offset 14, -4
  331 0002 87B0     		sub	sp, sp, #28
  332              		.cfi_def_cfa_offset 32
- 118:can_manager.c ****     uint8_t i;
- 119:can_manager.c **** 	CAN_TX_MSG message;
- 120:can_manager.c **** 	CAN_DATA_BYTES_MSG payload;
- 121:can_manager.c **** 	message.id = ID; 
- 333              		.loc 1 121 0
+ 119:can_manager.c ****     uint8_t i;
+ 120:can_manager.c **** 	CAN_TX_MSG message;
+ 121:can_manager.c **** 	CAN_DATA_BYTES_MSG payload;
+ 122:can_manager.c **** 	message.id = ID; 
+ 333              		.loc 1 122 0
  334 0004 0391     		str	r1, [sp, #12]
- 122:can_manager.c **** 	message.rtr = 0;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 9
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 9
 
 
- 335              		.loc 1 122 0
+ 123:can_manager.c **** 	message.rtr = 0;
+ 335              		.loc 1 123 0
  336 0006 0023     		movs	r3, #0
  337 0008 8DF81030 		strb	r3, [sp, #16]
- 123:can_manager.c **** 	message.ide = 0;
- 338              		.loc 1 123 0
+ 124:can_manager.c **** 	message.ide = 0;
+ 338              		.loc 1 124 0
  339 000c 8DF81130 		strb	r3, [sp, #17]
- 124:can_manager.c **** 	message.dlc = 0x08;
- 340              		.loc 1 124 0
+ 125:can_manager.c **** 	message.dlc = 0x08;
+ 340              		.loc 1 125 0
  341 0010 0822     		movs	r2, #8
  342 0012 8DF81220 		strb	r2, [sp, #18]
- 125:can_manager.c **** 	message.irq = 0;
- 343              		.loc 1 125 0
+ 126:can_manager.c **** 	message.irq = 0;
+ 343              		.loc 1 126 0
  344 0016 8DF81330 		strb	r3, [sp, #19]
- 126:can_manager.c **** 	message.msg = &payload;
- 345              		.loc 1 126 0
+ 127:can_manager.c **** 	message.msg = &payload;
+ 345              		.loc 1 127 0
  346 001a 01AA     		add	r2, sp, #4
  347 001c 0592     		str	r2, [sp, #20]
  348              	.LVL6:
- 127:can_manager.c **** 	for(i=0;i<8;i++)
- 349              		.loc 1 127 0
+ 128:can_manager.c **** 	for(i=0;i<8;i++)
+ 349              		.loc 1 128 0
  350 001e 06E0     		b	.L30
  351              	.LVL7:
  352              	.L31:
- 128:can_manager.c **** 		payload.byte[i] = data[i];
- 353              		.loc 1 128 0 discriminator 3
+ 129:can_manager.c **** 		payload.byte[i] = data[i];
+ 353              		.loc 1 129 0 discriminator 3
  354 0020 C15C     		ldrb	r1, [r0, r3]	@ zero_extendqisi2
  355 0022 06AA     		add	r2, sp, #24
  356 0024 1A44     		add	r2, r2, r3
  357 0026 02F8141C 		strb	r1, [r2, #-20]
- 127:can_manager.c **** 	for(i=0;i<8;i++)
- 358              		.loc 1 127 0 discriminator 3
+ 128:can_manager.c **** 	for(i=0;i<8;i++)
+ 358              		.loc 1 128 0 discriminator 3
  359 002a 0133     		adds	r3, r3, #1
  360              	.LVL8:
  361 002c DBB2     		uxtb	r3, r3
  362              	.LVL9:
  363              	.L30:
- 127:can_manager.c **** 	for(i=0;i<8;i++)
- 364              		.loc 1 127 0 is_stmt 0 discriminator 1
+ 128:can_manager.c **** 	for(i=0;i<8;i++)
+ 364              		.loc 1 128 0 is_stmt 0 discriminator 1
  365 002e 072B     		cmp	r3, #7
  366 0030 F6D9     		bls	.L31
- 129:can_manager.c **** 	CAN_SendMsg(&message); 
- 367              		.loc 1 129 0 is_stmt 1
+ 130:can_manager.c **** 	CAN_SendMsg(&message); 
+ 367              		.loc 1 130 0 is_stmt 1
  368 0032 03A8     		add	r0, sp, #12
  369              	.LVL10:
  370 0034 FFF7FEFF 		bl	CAN_SendMsg
  371              	.LVL11:
- 130:can_manager.c **** }
- 372              		.loc 1 130 0
+ 131:can_manager.c **** }
+ 372              		.loc 1 131 0
  373 0038 07B0     		add	sp, sp, #28
  374              		.cfi_def_cfa_offset 4
  375              		@ sp needed
@@ -537,25 +538,25 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  378              	.LFE71:
  379              		.size	can_send, .-can_send
  380 003e 00BF     		.section	.text.can_send_cmd,"ax",%progbits
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 10
+
+
  381              		.align	2
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 10
-
-
  382              		.global	can_send_cmd
  383              		.thumb
  384              		.thumb_func
  385              		.type	can_send_cmd, %function
  386              	can_send_cmd:
  387              	.LFB72:
- 131:can_manager.c **** 
- 132:can_manager.c **** void can_send_cmd(
- 133:can_manager.c ****     uint8_t SetInterlock,
- 134:can_manager.c ****     uint16_t Throttle_High,
- 135:can_manager.c ****     uint16_t Throttle_Low,
- 136:can_manager.c ****     uint8_t E_Stop_Check
- 137:can_manager.c **** )
- 138:can_manager.c **** {
- 388              		.loc 1 138 0
+ 132:can_manager.c **** 
+ 133:can_manager.c **** void can_send_cmd(
+ 134:can_manager.c ****     uint8_t SetInterlock,
+ 135:can_manager.c ****     uint16_t Throttle_High,
+ 136:can_manager.c ****     uint16_t Throttle_Low,
+ 137:can_manager.c ****     uint8_t E_Stop_Check
+ 138:can_manager.c **** )
+ 139:can_manager.c **** {
+ 388              		.loc 1 139 0
  389              		.cfi_startproc
  390              		@ args = 0, pretend = 0, frame = 8
  391              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -565,59 +566,59 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  395              		.cfi_offset 14, -4
  396 0002 83B0     		sub	sp, sp, #12
  397              		.cfi_def_cfa_offset 16
- 139:can_manager.c ****     //max and min voltage means the voltage of single cell
- 140:can_manager.c ****         
- 141:can_manager.c ****         uint8_t data[8];
- 142:can_manager.c ****         
- 143:can_manager.c ****         data[0] = SetInterlock;
- 398              		.loc 1 143 0
+ 140:can_manager.c ****     //max and min voltage means the voltage of single cell
+ 141:can_manager.c ****         
+ 142:can_manager.c ****         uint8_t data[8];
+ 143:can_manager.c ****         
+ 144:can_manager.c ****         data[0] = SetInterlock;
+ 398              		.loc 1 144 0
  399 0004 8DF80000 		strb	r0, [sp]
- 144:can_manager.c ****         
- 145:can_manager.c ****         data[1] = Throttle_High;
- 400              		.loc 1 145 0
+ 145:can_manager.c ****         
+ 146:can_manager.c ****         data[1] = Throttle_High;
+ 400              		.loc 1 146 0
  401 0008 8DF80110 		strb	r1, [sp, #1]
- 146:can_manager.c ****         data[2] = Throttle_Low;
- 402              		.loc 1 146 0
+ 147:can_manager.c ****         data[2] = Throttle_Low;
+ 402              		.loc 1 147 0
  403 000c 8DF80220 		strb	r2, [sp, #2]
- 147:can_manager.c ****         
- 148:can_manager.c ****         data[3] = 0;
- 404              		.loc 1 148 0
+ 148:can_manager.c ****         
+ 149:can_manager.c ****         data[3] = 0;
+ 404              		.loc 1 149 0
  405 0010 0022     		movs	r2, #0
  406              	.LVL13:
  407 0012 8DF80320 		strb	r2, [sp, #3]
- 149:can_manager.c ****         data[4] = E_Stop_Check;
- 408              		.loc 1 149 0
+ 150:can_manager.c ****         data[4] = E_Stop_Check;
+ 408              		.loc 1 150 0
  409 0016 8DF80430 		strb	r3, [sp, #4]
- 150:can_manager.c ****         
- 151:can_manager.c ****         data[5] = 0;
- 410              		.loc 1 151 0
+ 151:can_manager.c ****         
+ 152:can_manager.c ****         data[5] = 0;
+ 410              		.loc 1 152 0
  411 001a 8DF80520 		strb	r2, [sp, #5]
- 152:can_manager.c ****         data[6] = 0;
- 412              		.loc 1 152 0
+ 153:can_manager.c ****         data[6] = 0;
+ 412              		.loc 1 153 0
  413 001e 8DF80620 		strb	r2, [sp, #6]
- 153:can_manager.c ****         data[7] = 0;
- 414              		.loc 1 153 0
+ 154:can_manager.c ****         data[7] = 0;
+ 414              		.loc 1 154 0
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 11
+
+
  415 0022 8DF80720 		strb	r2, [sp, #7]
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 11
-
-
- 154:can_manager.c **** 
- 155:can_manager.c ****         can_send(data, 0x766);
- 416              		.loc 1 155 0
- 417 0026 40F26671 		movw	r1, #1894
+ 155:can_manager.c **** 
+ 156:can_manager.c ****         can_send(data, 0x763);
+ 416              		.loc 1 156 0
+ 417 0026 40F26371 		movw	r1, #1891
  418              	.LVL14:
  419 002a 6846     		mov	r0, sp
  420              	.LVL15:
  421 002c FFF7FEFF 		bl	can_send
  422              	.LVL16:
- 156:can_manager.c ****         CyDelay(1); // Wtf is this shit?
- 423              		.loc 1 156 0
+ 157:can_manager.c ****         CyDelay(1); // Wtf is this shit?
+ 423              		.loc 1 157 0
  424 0030 0120     		movs	r0, #1
  425 0032 FFF7FEFF 		bl	CyDelay
  426              	.LVL17:
- 157:can_manager.c **** 
- 158:can_manager.c **** } // can_send_cmd()
- 427              		.loc 1 158 0
+ 158:can_manager.c **** 
+ 159:can_manager.c **** } // can_send_cmd()
+ 427              		.loc 1 159 0
  428 0036 03B0     		add	sp, sp, #12
  429              		.cfi_def_cfa_offset 4
  430              		@ sp needed
@@ -633,9 +634,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  440              		.type	can_send_state, %function
  441              	can_send_state:
  442              	.LFB73:
- 159:can_manager.c **** 
- 160:can_manager.c **** void can_send_state(uint8_t state) {
- 443              		.loc 1 160 0
+ 160:can_manager.c **** 
+ 161:can_manager.c **** void can_send_state(uint8_t state) {
+ 443              		.loc 1 161 0
  444              		.cfi_startproc
  445              		@ args = 0, pretend = 0, frame = 8
  446              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -645,20 +646,19 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  450              		.cfi_offset 14, -4
  451 0002 83B0     		sub	sp, sp, #12
  452              		.cfi_def_cfa_offset 16
- 161:can_manager.c ****     uint8_t data[8] = {0};
- 453              		.loc 1 161 0
+ 162:can_manager.c ****     uint8_t data[8] = {0};
+ 453              		.loc 1 162 0
  454 0004 0023     		movs	r3, #0
  455 0006 0093     		str	r3, [sp]
  456 0008 0193     		str	r3, [sp, #4]
- 162:can_manager.c ****     data[2] = state;
- 457              		.loc 1 162 0
+ 163:can_manager.c ****     data[2] = state;
+ 457              		.loc 1 163 0
  458 000a 8DF80200 		strb	r0, [sp, #2]
- 163:can_manager.c ****     
- 164:can_manager.c ****     can_send(data, 0x466);
+ 164:can_manager.c ****     can_send(data, 0x463);
  459              		.loc 1 164 0
- 460 000e 40F26641 		movw	r1, #1126
+ 460 000e 40F26341 		movw	r1, #1123
  461 0012 6846     		mov	r0, sp
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 12
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 12
 
 
  462              	.LVL19:
@@ -701,9 +701,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  169:can_manager.c ****     data[6] = throttle;
  495              		.loc 1 169 0
  496 000a 8DF80600 		strb	r0, [sp, #6]
- 170:can_manager.c ****     can_send(data, 0x466);
+ 170:can_manager.c ****     can_send(data, 0x463);
  497              		.loc 1 170 0
- 498 000e 40F26641 		movw	r1, #1126
+ 498 000e 40F26341 		movw	r1, #1123
  499 0012 6846     		mov	r0, sp
  500              	.LVL22:
  501 0014 FFF7FEFF 		bl	can_send
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  509              	.LFE74:
  510              		.size	can_send_throttle, .-can_send_throttle
  511 001e 00BF     		.section	.text.can_send_ESTOP,"ax",%progbits
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 13
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 13
 
 
  512              		.align	2
@@ -748,9 +748,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  175:can_manager.c ****     data[0] = estop;
  533              		.loc 1 175 0
  534 000a 8DF80000 		strb	r0, [sp]
- 176:can_manager.c ****     can_send(data, 0x366);
+ 176:can_manager.c ****     can_send(data, 0x363);
  535              		.loc 1 176 0
- 536 000e 40F26631 		movw	r1, #870
+ 536 000e 40F26331 		movw	r1, #867
  537 0012 6846     		mov	r0, sp
  538              	.LVL25:
  539 0014 FFF7FEFF 		bl	can_send
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  557              		.loc 1 180 0
  558              		.cfi_startproc
  559              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 14
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 14
 
 
  560              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  605              		.section	.text.can_send_PEI,"ax",%progbits
  606              		.align	2
  607              		.global	can_send_PEI
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 15
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 15
 
 
  608              		.thumb
@@ -856,7 +856,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  197:can_manager.c ****     uint8_t data[8] = {0};
  198:can_manager.c ****     data[3] = air_neg;
  199:can_manager.c ****     data[4] = air_pos;
- 200:can_manager.c ****     can_send(data, 0x387); 
+ 200:can_manager.c ****     can_send(data, 0x383); 
  201:can_manager.c **** }
  202:can_manager.c **** */
  203:can_manager.c **** 
@@ -887,9 +887,9 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  210:can_manager.c ****     data[2] = shutdown_flags;
  631              		.loc 1 210 0
  632 0012 8DF80220 		strb	r2, [sp, #2]
- 211:can_manager.c ****     can_send(data, 0x387); 
+ 211:can_manager.c ****     can_send(data, 0x383); 
  633              		.loc 1 211 0
- 634 0016 40F28731 		movw	r1, #903
+ 634 0016 40F28331 		movw	r1, #899
  635              	.LVL32:
  636 001a 6846     		mov	r0, sp
  637              	.LVL33:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  212:can_manager.c **** }
  640              		.loc 1 212 0
  641 0020 03B0     		add	sp, sp, #12
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 16
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 16
 
 
  642              		.cfi_def_cfa_offset 4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  696              	.Letext0:
  697              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  698              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 17
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 17
 
 
  699              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
@@ -975,10 +975,10 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  710 0006 00000000 		.4byte	.Ldebug_abbrev0
  711 000a 04       		.byte	0x4
  712 000b 01       		.uleb128 0x1
- 713 000c 8D030000 		.4byte	.LASF78
+ 713 000c E1030000 		.4byte	.LASF78
  714 0010 0C       		.byte	0xc
  715 0011 AB010000 		.4byte	.LASF79
- 716 0015 1B040000 		.4byte	.LASF80
+ 716 0015 35030000 		.4byte	.LASF80
  717 0019 00000000 		.4byte	.Ldebug_ranges0+0
  718 001d 00000000 		.4byte	0
  719 0021 00000000 		.4byte	.Ldebug_line0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  753 0064 05       		.byte	0x5
  754 0065 89020000 		.4byte	.LASF7
  755 0069 03       		.uleb128 0x3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 18
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 18
 
 
  756 006a 8A000000 		.4byte	.LASF8
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  810 00db 02       		.uleb128 0x2
  811 00dc 04       		.byte	0x4
  812 00dd 04       		.byte	0x4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 19
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 19
 
 
  813 00de 2F010000 		.4byte	.LASF19
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  867 0146 05       		.byte	0x5
  868 0147 84       		.byte	0x84
  869 0148 C3000000 		.4byte	0xc3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 20
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 20
 
 
  870 014c 04       		.byte	0x4
@@ -1184,7 +1184,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  910 019b 0E       		.byte	0xe
  911 019c BD010000 		.4byte	0x1bd
  912 01a0 0E       		.uleb128 0xe
- 913 01a1 35030000 		.4byte	.LASF27
+ 913 01a1 89030000 		.4byte	.LASF27
  914 01a5 6607     		.2byte	0x766
  915 01a7 0E       		.uleb128 0xe
  916 01a8 43010000 		.4byte	.LASF28
@@ -1193,12 +1193,12 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  919 01af F3000000 		.4byte	.LASF29
  920 01b3 6603     		.2byte	0x366
  921 01b5 0E       		.uleb128 0xe
- 922 01b6 63030000 		.4byte	.LASF30
+ 922 01b6 B7030000 		.4byte	.LASF30
  923 01ba 6604     		.2byte	0x466
  924 01bc 00       		.byte	0
  925 01bd 0F       		.uleb128 0xf
  926 01be FC000000 		.4byte	.LASF31
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 21
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 21
 
 
  927 01c2 01       		.byte	0x1
@@ -1254,11 +1254,11 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  977 0239 01       		.uleb128 0x1
  978 023a 9C       		.byte	0x9c
  979 023b 10       		.uleb128 0x10
- 980 023c 6B040000 		.4byte	.LASF39
+ 980 023c 77040000 		.4byte	.LASF39
  981 0240 01       		.byte	0x1
  982 0241 44       		.byte	0x44
  983 0242 00000000 		.4byte	.LFB69
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 22
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 22
 
 
  984 0246 54000000 		.4byte	.LFE69-.LFB69
@@ -1296,7 +1296,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1016 0295 14       		.uleb128 0x14
  1017 0296 49000000 		.4byte	.LASF55
  1018 029a 01       		.byte	0x1
- 1019 029b 5C       		.byte	0x5c
+ 1019 029b 5D       		.byte	0x5d
  1020 029c 00000000 		.4byte	.LFB70
  1021 02a0 4A000000 		.4byte	.LFE70-.LFB70
  1022 02a4 01       		.uleb128 0x1
@@ -1305,7 +1305,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1025 02aa 15       		.uleb128 0x15
  1026 02ab 9F010000 		.4byte	.LASF38
  1027 02af 01       		.byte	0x1
- 1028 02b0 5F       		.byte	0x5f
+ 1028 02b0 60       		.byte	0x60
  1029 02b1 84010000 		.4byte	0x184
  1030 02b5 02       		.uleb128 0x2
  1031 02b6 91       		.byte	0x91
@@ -1318,16 +1318,16 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1038 02c3 50       		.byte	0x50
  1039 02c4 02       		.uleb128 0x2
  1040 02c5 91       		.byte	0x91
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 23
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 23
 
 
  1041 02c6 6C       		.sleb128 -20
  1042 02c7 00       		.byte	0
  1043 02c8 00       		.byte	0
  1044 02c9 10       		.uleb128 0x10
- 1045 02ca 5A030000 		.4byte	.LASF40
+ 1045 02ca AE030000 		.4byte	.LASF40
  1046 02ce 01       		.byte	0x1
- 1047 02cf 74       		.byte	0x74
+ 1047 02cf 75       		.byte	0x75
  1048 02d0 00000000 		.4byte	.LFB71
  1049 02d4 3E000000 		.4byte	.LFE71-.LFB71
  1050 02d8 01       		.uleb128 0x1
@@ -1336,33 +1336,33 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1053 02de 18       		.uleb128 0x18
  1054 02df B3020000 		.4byte	.LASF41
  1055 02e3 01       		.byte	0x1
- 1056 02e4 74       		.byte	0x74
+ 1056 02e4 75       		.byte	0x75
  1057 02e5 8F020000 		.4byte	0x28f
  1058 02e9 6B000000 		.4byte	.LLST3
  1059 02ed 11       		.uleb128 0x11
  1060 02ee 494400   		.ascii	"ID\000"
  1061 02f1 01       		.byte	0x1
- 1062 02f2 74       		.byte	0x74
+ 1062 02f2 75       		.byte	0x75
  1063 02f3 B8000000 		.4byte	0xb8
  1064 02f7 8C000000 		.4byte	.LLST4
  1065 02fb 19       		.uleb128 0x19
  1066 02fc 6900     		.ascii	"i\000"
  1067 02fe 01       		.byte	0x1
- 1068 02ff 76       		.byte	0x76
+ 1068 02ff 77       		.byte	0x77
  1069 0300 97000000 		.4byte	0x97
  1070 0304 C5000000 		.4byte	.LLST5
  1071 0308 15       		.uleb128 0x15
  1072 0309 CC020000 		.4byte	.LASF42
  1073 030d 01       		.byte	0x1
- 1074 030e 77       		.byte	0x77
+ 1074 030e 78       		.byte	0x78
  1075 030f 84010000 		.4byte	0x184
  1076 0313 02       		.uleb128 0x2
  1077 0314 91       		.byte	0x91
  1078 0315 6C       		.sleb128 -20
  1079 0316 15       		.uleb128 0x15
- 1080 0317 89040000 		.4byte	.LASF43
+ 1080 0317 95040000 		.4byte	.LASF43
  1081 031b 01       		.byte	0x1
- 1082 031c 78       		.byte	0x78
+ 1082 031c 79       		.byte	0x79
  1083 031d 23010000 		.4byte	0x123
  1084 0321 02       		.uleb128 0x2
  1085 0322 91       		.byte	0x91
@@ -1378,13 +1378,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1095 0332 6C       		.sleb128 -20
  1096 0333 00       		.byte	0
  1097 0334 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 24
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 24
 
 
  1098 0335 10       		.uleb128 0x10
  1099 0336 BF000000 		.4byte	.LASF44
  1100 033a 01       		.byte	0x1
- 1101 033b 84       		.byte	0x84
+ 1101 033b 85       		.byte	0x85
  1102 033c 00000000 		.4byte	.LFB72
  1103 0340 3C000000 		.4byte	.LFE72-.LFB72
  1104 0344 01       		.uleb128 0x1
@@ -1393,31 +1393,31 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1107 034a 18       		.uleb128 0x18
  1108 034b 7D000000 		.4byte	.LASF45
  1109 034f 01       		.byte	0x1
- 1110 0350 85       		.byte	0x85
+ 1110 0350 86       		.byte	0x86
  1111 0351 97000000 		.4byte	0x97
  1112 0355 EF000000 		.4byte	.LLST6
  1113 0359 18       		.uleb128 0x18
  1114 035a 27030000 		.4byte	.LASF46
  1115 035e 01       		.byte	0x1
- 1116 035f 86       		.byte	0x86
+ 1116 035f 87       		.byte	0x87
  1117 0360 A2000000 		.4byte	0xa2
  1118 0364 1C010000 		.4byte	.LLST7
  1119 0368 18       		.uleb128 0x18
  1120 0369 EB020000 		.4byte	.LASF47
  1121 036d 01       		.byte	0x1
- 1122 036e 87       		.byte	0x87
+ 1122 036e 88       		.byte	0x88
  1123 036f A2000000 		.4byte	0xa2
  1124 0373 3D010000 		.4byte	.LLST8
  1125 0377 18       		.uleb128 0x18
  1126 0378 1A030000 		.4byte	.LASF48
  1127 037c 01       		.byte	0x1
- 1128 037d 88       		.byte	0x88
+ 1128 037d 89       		.byte	0x89
  1129 037e 97000000 		.4byte	0x97
  1130 0382 5E010000 		.4byte	.LLST9
  1131 0386 15       		.uleb128 0x15
  1132 0387 B3020000 		.4byte	.LASF41
  1133 038b 01       		.byte	0x1
- 1134 038c 8D       		.byte	0x8d
+ 1134 038c 8E       		.byte	0x8e
  1135 038d BF030000 		.4byte	0x3bf
  1136 0391 02       		.uleb128 0x2
  1137 0392 91       		.byte	0x91
@@ -1437,8 +1437,8 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1151 03a9 51       		.byte	0x51
  1152 03aa 03       		.uleb128 0x3
  1153 03ab 0A       		.byte	0xa
- 1154 03ac 6607     		.2byte	0x766
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 25
+ 1154 03ac 6307     		.2byte	0x763
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 25
 
 
  1155 03ae 00       		.byte	0
@@ -1462,7 +1462,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1173 03cf 10       		.uleb128 0x10
  1174 03d0 86010000 		.4byte	.LASF49
  1175 03d4 01       		.byte	0x1
- 1176 03d5 A0       		.byte	0xa0
+ 1176 03d5 A1       		.byte	0xa1
  1177 03d6 00000000 		.4byte	.LFB73
  1178 03da 1E000000 		.4byte	.LFE73-.LFB73
  1179 03de 01       		.uleb128 0x1
@@ -1471,13 +1471,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1182 03e4 18       		.uleb128 0x18
  1183 03e5 57000000 		.4byte	.LASF50
  1184 03e9 01       		.byte	0x1
- 1185 03ea A0       		.byte	0xa0
+ 1185 03ea A1       		.byte	0xa1
  1186 03eb 97000000 		.4byte	0x97
  1187 03ef 7F010000 		.4byte	.LLST10
  1188 03f3 15       		.uleb128 0x15
  1189 03f4 B3020000 		.4byte	.LASF41
  1190 03f8 01       		.byte	0x1
- 1191 03f9 A1       		.byte	0xa1
+ 1191 03f9 A2       		.byte	0xa2
  1192 03fa BF030000 		.4byte	0x3bf
  1193 03fe 02       		.uleb128 0x2
  1194 03ff 91       		.byte	0x91
@@ -1496,14 +1496,14 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1207 0412 51       		.byte	0x51
  1208 0413 03       		.uleb128 0x3
  1209 0414 0A       		.byte	0xa
- 1210 0415 6604     		.2byte	0x466
+ 1210 0415 6304     		.2byte	0x463
  1211 0417 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 26
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 26
 
 
  1212 0418 00       		.byte	0
  1213 0419 10       		.uleb128 0x10
- 1214 041a 77040000 		.4byte	.LASF51
+ 1214 041a 83040000 		.4byte	.LASF51
  1215 041e 01       		.byte	0x1
  1216 041f A7       		.byte	0xa7
  1217 0420 00000000 		.4byte	.LFB74
@@ -1512,7 +1512,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1220 0429 9C       		.byte	0x9c
  1221 042a 63040000 		.4byte	0x463
  1222 042e 18       		.uleb128 0x18
- 1223 042f 91040000 		.4byte	.LASF52
+ 1223 042f 9D040000 		.4byte	.LASF52
  1224 0433 01       		.byte	0x1
  1225 0434 A7       		.byte	0xa7
  1226 0435 97000000 		.4byte	0x97
@@ -1539,7 +1539,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1247 045c 51       		.byte	0x51
  1248 045d 03       		.uleb128 0x3
  1249 045e 0A       		.byte	0xa
- 1250 045f 6604     		.2byte	0x466
+ 1250 045f 6304     		.2byte	0x463
  1251 0461 00       		.byte	0
  1252 0462 00       		.byte	0
  1253 0463 10       		.uleb128 0x10
@@ -1552,13 +1552,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1260 0473 9C       		.byte	0x9c
  1261 0474 AD040000 		.4byte	0x4ad
  1262 0478 18       		.uleb128 0x18
- 1263 0479 7A030000 		.4byte	.LASF54
+ 1263 0479 CE030000 		.4byte	.LASF54
  1264 047d 01       		.byte	0x1
  1265 047e AD       		.byte	0xad
  1266 047f 97000000 		.4byte	0x97
  1267 0483 D9010000 		.4byte	.LLST12
  1268 0487 15       		.uleb128 0x15
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 27
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 27
 
 
  1269 0488 B3020000 		.4byte	.LASF41
@@ -1582,7 +1582,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1287 04a6 51       		.byte	0x51
  1288 04a7 03       		.uleb128 0x3
  1289 04a8 0A       		.byte	0xa
- 1290 04a9 6603     		.2byte	0x366
+ 1290 04a9 6303     		.2byte	0x363
  1291 04ab 00       		.byte	0
  1292 04ac 00       		.byte	0
  1293 04ad 14       		.uleb128 0x14
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1323 04e6 00000000 		.4byte	.LASF57
  1324 04ea 01       		.byte	0x1
  1325 04eb BA       		.byte	0xba
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 28
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 28
 
 
  1326 04ec 00000000 		.4byte	.LFB77
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1380 0564 01       		.byte	0x1
  1381 0565 CE       		.byte	0xce
  1382 0566 BF030000 		.4byte	0x3bf
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 29
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 29
 
 
  1383 056a 02       		.uleb128 0x2
@@ -1698,11 +1698,11 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1397 057e 51       		.byte	0x51
  1398 057f 03       		.uleb128 0x3
  1399 0580 0A       		.byte	0xa
- 1400 0581 8703     		.2byte	0x387
+ 1400 0581 8303     		.2byte	0x383
  1401 0583 00       		.byte	0
  1402 0584 00       		.byte	0
  1403 0585 1B       		.uleb128 0x1b
- 1404 0586 80030000 		.4byte	.LASF62
+ 1404 0586 D4030000 		.4byte	.LASF62
  1405 058a 06       		.byte	0x6
  1406 058b 1207     		.2byte	0x712
  1407 058d 91050000 		.4byte	0x591
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1437 05cf 19       		.byte	0x19
  1438 05d0 8F010000 		.4byte	0x18f
  1439 05d4 05       		.uleb128 0x5
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 30
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 30
 
 
  1440 05d5 03       		.byte	0x3
@@ -1798,22 +1798,22 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1494 064a DF020000 		.4byte	.LASF74
  1495 064e 05       		.byte	0x5
  1496 064f 1801     		.2byte	0x118
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 31
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 31
 
 
  1497 0651 1D       		.uleb128 0x1d
- 1498 0652 63040000 		.4byte	.LASF75
- 1499 0656 63040000 		.4byte	.LASF75
+ 1498 0652 6F040000 		.4byte	.LASF75
+ 1499 0656 6F040000 		.4byte	.LASF75
  1500 065a 07       		.byte	0x7
  1501 065b 76       		.byte	0x76
  1502 065c 1D       		.uleb128 0x1d
- 1503 065d 4C030000 		.4byte	.LASF76
- 1504 0661 4C030000 		.4byte	.LASF76
+ 1503 065d A0030000 		.4byte	.LASF76
+ 1504 0661 A0030000 		.4byte	.LASF76
  1505 0665 08       		.byte	0x8
  1506 0666 26       		.byte	0x26
  1507 0667 1D       		.uleb128 0x1d
- 1508 0668 6C030000 		.4byte	.LASF77
- 1509 066c 6C030000 		.4byte	.LASF77
+ 1508 0668 C0030000 		.4byte	.LASF77
+ 1509 066c C0030000 		.4byte	.LASF77
  1510 0670 09       		.byte	0x9
  1511 0671 26       		.byte	0x26
  1512 0672 00       		.byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1551 0024 0B       		.uleb128 0xb
  1552 0025 3B       		.uleb128 0x3b
  1553 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 32
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 32
 
 
  1554 0027 49       		.uleb128 0x49
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1608 005d 00       		.byte	0
  1609 005e 00       		.byte	0
  1610 005f 08       		.uleb128 0x8
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 33
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 33
 
 
  1611 0060 01       		.uleb128 0x1
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1665 0096 13       		.uleb128 0x13
  1666 0097 3A       		.uleb128 0x3a
  1667 0098 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 34
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 34
 
 
  1668 0099 3B       		.uleb128 0x3b
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1722 00d0 06       		.uleb128 0x6
  1723 00d1 40       		.uleb128 0x40
  1724 00d2 18       		.uleb128 0x18
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 35
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 35
 
 
  1725 00d3 9742     		.uleb128 0x2117
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1779 010c 3B       		.uleb128 0x3b
  1780 010d 0B       		.uleb128 0xb
  1781 010e 11       		.uleb128 0x11
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 36
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 36
 
 
  1782 010f 01       		.uleb128 0x1
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1836 014b 13       		.uleb128 0x13
  1837 014c 02       		.uleb128 0x2
  1838 014d 17       		.uleb128 0x17
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 37
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 37
 
 
  1839 014e 00       		.byte	0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1893 0186 49       		.uleb128 0x49
  1894 0187 13       		.uleb128 0x13
  1895 0188 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 38
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 38
 
 
  1896 0189 19       		.uleb128 0x19
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  1950 0020 F3       		.byte	0xf3
  1951 0021 01       		.uleb128 0x1
  1952 0022 50       		.byte	0x50
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 39
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 39
 
 
  1953 0023 9F       		.byte	0x9f
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2007 00ab 0200     		.2byte	0x2
  2008 00ad 70       		.byte	0x70
  2009 00ae 00       		.sleb128 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 40
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 40
 
 
  2010 00af 37000000 		.4byte	.LVL11-1
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2064 0133 51       		.byte	0x51
  2065 0134 9F       		.byte	0x9f
  2066 0135 00000000 		.4byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 41
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 41
 
 
  2067 0139 00000000 		.4byte	0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2121 01bb 17000000 		.4byte	.LVL23-1
  2122 01bf 0200     		.2byte	0x2
  2123 01c1 91       		.byte	0x91
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 42
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 42
 
 
  2124 01c2 76       		.sleb128 -10
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2178 0242 1F000000 		.4byte	.LVL34-1
  2179 0246 0200     		.2byte	0x2
  2180 0248 91       		.byte	0x91
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 43
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 43
 
 
  2181 0249 71       		.sleb128 -15
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2235 0068 00000000 		.4byte	.LFB74
  2236 006c 1E000000 		.4byte	.LFE74-.LFB74
  2237 0070 00000000 		.4byte	.LFB75
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 44
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 44
 
 
  2238 0074 1E000000 		.4byte	.LFE75-.LFB75
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2287      725F696E 
  2287      7465726C 
  2287      6F636B00 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 45
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 45
 
 
  2288              	.LASF56:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2312              	.LASF34:
  2313 00a3 6765745F 		.ascii	"get_THROTTLE_LOW\000"
  2313      5448524F 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 46
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 46
 
 
  2313      54544C45 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2337      6720696E 
  2337      7400
  2338              	.LASF28:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 47
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 47
 
 
  2339 0143 5045495F 		.ascii	"PEI_CURRENT\000"
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2363      74657243 
  2363      72697469 
  2363      63616C53 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 48
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 48
 
 
  2363      65637469 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2385      4300
  2386              	.LASF21:
  2387 0284 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 49
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 49
 
 
  2387      00
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2415 0310 6765745F 		.ascii	"get_STATE\000"
  2415      53544154 
  2415      4500
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 50
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 50
 
 
  2416              	.LASF48:
@@ -2951,86 +2951,86 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 1
  2419      74746C65 
  2419      5F486967 
  2419      6800
- 2420              	.LASF27:
- 2421 0335 544F5251 		.ascii	"TORQUE_REQUEST_COMMAND\000"
- 2421      55455F52 
- 2421      45515545 
- 2421      53545F43 
- 2421      4F4D4D41 
- 2422              	.LASF76:
- 2423 034c 4149525F 		.ascii	"AIR_NEG_Write\000"
- 2423      4E45475F 
- 2423      57726974 
- 2423      6500
- 2424              	.LASF40:
- 2425 035a 63616E5F 		.ascii	"can_send\000"
- 2425      73656E64 
- 2425      00
- 2426              	.LASF30:
- 2427 0363 4D435F44 		.ascii	"MC_DEBUG\000"
- 2427      45425547 
- 2427      00
- 2428              	.LASF77:
- 2429 036c 4149525F 		.ascii	"AIR_POS_Write\000"
- 2429      504F535F 
- 2429      57726974 
- 2429      6500
- 2430              	.LASF54:
- 2431 037a 6573746F 		.ascii	"estop\000"
- 2431      7000
- 2432              	.LASF62:
- 2433 0380 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2433      52784275 
- 2433      66666572 
- 2433      00
- 2434              	.LASF78:
- 2435 038d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2435      43313120 
- 2435      352E342E 
- 2435      31203230 
- 2435      31363036 
- 2436 03c0 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2436      20726576 
- 2436      6973696F 
- 2436      6E203233 
- 2436      37373135 
- 2437 03f3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2437      66756E63 
- 2437      74696F6E 
- 2437      2D736563 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccL0MOUb.s 			page 51
+ 2420              	.LASF80:
+ 2421 0335 433A5C55 		.ascii	"C:\\Users\\kendr\\OneDrive\\Documents\\PEI-Firmware"
+ 2421      73657273 
+ 2421      5C6B656E 
+ 2421      64725C4F 
+ 2421      6E654472 
+ 2422 0363 2D464531 		.ascii	"-FE10\\PSOC_VCU_Example\\Design01.cydsn\000"
+ 2422      305C5053 
+ 2422      4F435F56 
+ 2422      43555F45 
+ 2422      78616D70 
+ 2423              	.LASF27:
+ 2424 0389 544F5251 		.ascii	"TORQUE_REQUEST_COMMAND\000"
+ 2424      55455F52 
+ 2424      45515545 
+ 2424      53545F43 
+ 2424      4F4D4D41 
+ 2425              	.LASF76:
+ 2426 03a0 4149525F 		.ascii	"AIR_NEG_Write\000"
+ 2426      4E45475F 
+ 2426      57726974 
+ 2426      6500
+ 2427              	.LASF40:
+ 2428 03ae 63616E5F 		.ascii	"can_send\000"
+ 2428      73656E64 
+ 2428      00
+ 2429              	.LASF30:
+ 2430 03b7 4D435F44 		.ascii	"MC_DEBUG\000"
+ 2430      45425547 
+ 2430      00
+ 2431              	.LASF77:
+ 2432 03c0 4149525F 		.ascii	"AIR_POS_Write\000"
+ 2432      504F535F 
+ 2432      57726974 
+ 2432      6500
+ 2433              	.LASF54:
+ 2434 03ce 6573746F 		.ascii	"estop\000"
+ 2434      7000
+ 2435              	.LASF62:
+ 2436 03d4 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2436      52784275 
+ 2436      66666572 
+ 2436      00
+ 2437              	.LASF78:
+ 2438 03e1 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2438      43313120 
+ 2438      352E342E 
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccoJqzDY.s 			page 51
 
 
- 2437      74696F6E 
- 2438              	.LASF80:
- 2439 041b 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
- 2439      73657273 
- 2439      5C4A7573 
- 2439      74696E20 
- 2439      4368616E 
- 2440 044a 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
- 2440      616D706C 
- 2440      655C4465 
- 2440      7369676E 
- 2440      30312E63 
+ 2438      31203230 
+ 2438      31363036 
+ 2439 0414 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2439      20726576 
+ 2439      6973696F 
+ 2439      6E203233 
+ 2439      37373135 
+ 2440 0447 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2440      66756E63 
+ 2440      74696F6E 
+ 2440      2D736563 
+ 2440      74696F6E 
  2441              	.LASF75:
- 2442 0463 43794465 		.ascii	"CyDelay\000"
+ 2442 046f 43794465 		.ascii	"CyDelay\000"
  2442      6C617900 
  2443              	.LASF39:
- 2444 046b 63616E5F 		.ascii	"can_receive\000"
+ 2444 0477 63616E5F 		.ascii	"can_receive\000"
  2444      72656365 
  2444      69766500 
  2445              	.LASF51:
- 2446 0477 63616E5F 		.ascii	"can_send_throttle\000"
+ 2446 0483 63616E5F 		.ascii	"can_send_throttle\000"
  2446      73656E64 
  2446      5F746872 
  2446      6F74746C 
  2446      6500
  2447              	.LASF43:
- 2448 0489 7061796C 		.ascii	"payload\000"
+ 2448 0495 7061796C 		.ascii	"payload\000"
  2448      6F616400 
  2449              	.LASF52:
- 2450 0491 7468726F 		.ascii	"throttle\000"
+ 2450 049d 7468726F 		.ascii	"throttle\000"
  2450      74746C65 
  2450      00
  2451              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

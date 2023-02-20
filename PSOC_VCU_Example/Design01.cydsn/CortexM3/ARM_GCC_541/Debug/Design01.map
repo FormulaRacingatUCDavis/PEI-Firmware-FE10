@@ -1173,7 +1173,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x68c0
+.debug_info     0x00000000     0x68cc
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x38f .\CortexM3\ARM_GCC_541\Debug\main.o
  .debug_info    0x0000038f      0x673 .\CortexM3\ARM_GCC_541\Debug\can_manager.o
@@ -1195,9 +1195,9 @@ END GROUP
  .debug_info    0x000055e1      0x165 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_AMux.o)
  .debug_info    0x00005746      0x283 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_Ext_CP_Clk.o)
  .debug_info    0x000059c9      0x2c4 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_theACLK.o)
- .debug_info    0x00005c8d       0x96 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyBootAsmGnu.o)
- .debug_info    0x00005d23      0x64d .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyFlash.o)
- .debug_info    0x00006370      0x550 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CySpc.o)
+ .debug_info    0x00005c8d       0xa2 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyBootAsmGnu.o)
+ .debug_info    0x00005d2f      0x64d .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyFlash.o)
+ .debug_info    0x0000637c      0x550 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CySpc.o)
 
 .debug_abbrev   0x00000000     0x1a4a
  *(.debug_abbrev)
@@ -1280,52 +1280,52 @@ END GROUP
  .debug_frame   0x000019b4       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
  .debug_frame   0x000019dc       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x2538
+.debug_str      0x00000000     0x258c
  *(.debug_str)
- .debug_str     0x00000000      0x315 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x374 (size before relaxing)
- .debug_str     0x00000315      0x176 .\CortexM3\ARM_GCC_541\Debug\can_manager.o
-                                0x49a (size before relaxing)
- .debug_str     0x0000048b      0x21f .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                                0x3ba (size before relaxing)
- .debug_str     0x000006aa       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-                                0x1ea (size before relaxing)
- .debug_str     0x0000071f      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                                0x310 (size before relaxing)
- .debug_str     0x00000863       0x6c .\CortexM3\ARM_GCC_541\Debug\Design01.a(SD_FINAL.o)
-                                0x1f7 (size before relaxing)
- .debug_str     0x000008cf      0x2e0 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CAN.o)
-                                0x4e7 (size before relaxing)
- .debug_str     0x00000baf       0xac .\CortexM3\ARM_GCC_541\Debug\Design01.a(CAN_INT.o)
-                                0x29e (size before relaxing)
- .debug_str     0x00000c5b       0xb7 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CAN_TX_RX_func.o)
-                                0x3cb (size before relaxing)
- .debug_str     0x00000d12       0x57 .\CortexM3\ARM_GCC_541\Debug\Design01.a(AIR_NEG.o)
-                                0x1f2 (size before relaxing)
- .debug_str     0x00000d69       0x57 .\CortexM3\ARM_GCC_541\Debug\Design01.a(AIR_POS.o)
-                                0x1f2 (size before relaxing)
- .debug_str     0x00000dc0       0x60 .\CortexM3\ARM_GCC_541\Debug\Design01.a(IMD_Fault.o)
-                                0x1fc (size before relaxing)
- .debug_str     0x00000e20       0x60 .\CortexM3\ARM_GCC_541\Debug\Design01.a(BMS_Fault.o)
-                                0x1fc (size before relaxing)
- .debug_str     0x00000e80      0x7e1 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyLib.o)
-                                0xa4d (size before relaxing)
- .debug_str     0x00001661      0x365 .\CortexM3\ARM_GCC_541\Debug\Design01.a(cyPm.o)
-                                0x739 (size before relaxing)
- .debug_str     0x000019c6      0x494 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1.o)
-                                0x740 (size before relaxing)
- .debug_str     0x00001e5a       0x72 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_INT.o)
-                                0x1f3 (size before relaxing)
- .debug_str     0x00001ecc       0x83 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_AMux.o)
-                                0x244 (size before relaxing)
- .debug_str     0x00001f4f      0x1c7 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_Ext_CP_Clk.o)
-                                0x3b4 (size before relaxing)
- .debug_str     0x00002116      0x1bb .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_theACLK.o)
-                                0x3e5 (size before relaxing)
- .debug_str     0x000022d1      0x1bb .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyFlash.o)
+ .debug_str     0x00000000      0x321 .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x380 (size before relaxing)
+ .debug_str     0x00000321      0x176 .\CortexM3\ARM_GCC_541\Debug\can_manager.o
+                                0x4a6 (size before relaxing)
+ .debug_str     0x00000497      0x21f .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x3c6 (size before relaxing)
- .debug_str     0x0000248c       0xac .\CortexM3\ARM_GCC_541\Debug\Design01.a(CySpc.o)
-                                0x33e (size before relaxing)
+ .debug_str     0x000006b6       0xbd .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+                                0x1ea (size before relaxing)
+ .debug_str     0x00000773      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                                0x31c (size before relaxing)
+ .debug_str     0x000008b7       0x6c .\CortexM3\ARM_GCC_541\Debug\Design01.a(SD_FINAL.o)
+                                0x203 (size before relaxing)
+ .debug_str     0x00000923      0x2e0 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CAN.o)
+                                0x4f3 (size before relaxing)
+ .debug_str     0x00000c03       0xac .\CortexM3\ARM_GCC_541\Debug\Design01.a(CAN_INT.o)
+                                0x2aa (size before relaxing)
+ .debug_str     0x00000caf       0xb7 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CAN_TX_RX_func.o)
+                                0x3d7 (size before relaxing)
+ .debug_str     0x00000d66       0x57 .\CortexM3\ARM_GCC_541\Debug\Design01.a(AIR_NEG.o)
+                                0x1fe (size before relaxing)
+ .debug_str     0x00000dbd       0x57 .\CortexM3\ARM_GCC_541\Debug\Design01.a(AIR_POS.o)
+                                0x1fe (size before relaxing)
+ .debug_str     0x00000e14       0x60 .\CortexM3\ARM_GCC_541\Debug\Design01.a(IMD_Fault.o)
+                                0x208 (size before relaxing)
+ .debug_str     0x00000e74       0x60 .\CortexM3\ARM_GCC_541\Debug\Design01.a(BMS_Fault.o)
+                                0x208 (size before relaxing)
+ .debug_str     0x00000ed4      0x7e1 .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyLib.o)
+                                0xa59 (size before relaxing)
+ .debug_str     0x000016b5      0x365 .\CortexM3\ARM_GCC_541\Debug\Design01.a(cyPm.o)
+                                0x745 (size before relaxing)
+ .debug_str     0x00001a1a      0x494 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1.o)
+                                0x74c (size before relaxing)
+ .debug_str     0x00001eae       0x72 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_INT.o)
+                                0x1ff (size before relaxing)
+ .debug_str     0x00001f20       0x83 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_AMux.o)
+                                0x250 (size before relaxing)
+ .debug_str     0x00001fa3      0x1c7 .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_Ext_CP_Clk.o)
+                                0x3c0 (size before relaxing)
+ .debug_str     0x0000216a      0x1bb .\CortexM3\ARM_GCC_541\Debug\Design01.a(ADC_DelSig_1_theACLK.o)
+                                0x3f1 (size before relaxing)
+ .debug_str     0x00002325      0x1bb .\CortexM3\ARM_GCC_541\Debug\Design01.a(CyFlash.o)
+                                0x3d2 (size before relaxing)
+ .debug_str     0x000024e0       0xac .\CortexM3\ARM_GCC_541\Debug\Design01.a(CySpc.o)
+                                0x34a (size before relaxing)
 
 .debug_loc      0x00000000     0x3461
  *(.debug_loc)
@@ -1501,4 +1501,4 @@ END GROUP
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf elf32-littlearm)
+OUTPUT(C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf elf32-littlearm)

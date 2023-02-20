@@ -84,6 +84,7 @@ void can_receive(uint8_t *msg, int ID)
         case MC_ESTOP:
             ESTOP_MC = msg[CAN_DATA_BYTE_1];
             break;
+        
     }
     
     CyExitCriticalSection(InterruptState);
@@ -152,7 +153,7 @@ void can_send_cmd(
         data[6] = 0;
         data[7] = 0;
 
-        can_send(data, 0x766);
+        can_send(data, 0x763);
         CyDelay(1); // Wtf is this shit?
 
 } // can_send_cmd()
@@ -160,20 +161,19 @@ void can_send_cmd(
 void can_send_state(uint8_t state) {
     uint8_t data[8] = {0};
     data[2] = state;
-    
-    can_send(data, 0x466);
+    can_send(data, 0x463);
 }
 
 void can_send_throttle(uint8_t throttle) {
     uint8_t data[8] = {0};
     data[6] = throttle;
-    can_send(data, 0x466);
+    can_send(data, 0x463);
 }
 
 void can_send_ESTOP(uint8_t estop) {
     uint8_t data[8] = {0};
     data[0] = estop;
-    can_send(data, 0x366);
+    can_send(data, 0x363);
 }
 
 void set_interlock()
@@ -197,7 +197,7 @@ void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
     uint8_t data[8] = {0};
     data[3] = air_neg;
     data[4] = air_pos;
-    can_send(data, 0x387); 
+    can_send(data, 0x383); 
 }
 */
 
@@ -208,5 +208,5 @@ void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown
     data[0] = current_upper;
     data[1] = current_lower;
     data[2] = shutdown_flags;
-    can_send(data, 0x387); 
+    can_send(data, 0x383); 
 }
