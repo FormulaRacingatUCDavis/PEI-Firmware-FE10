@@ -32,9 +32,7 @@ int main(void)
     ADC_DelSig_1_Start();
     
     for(;;)
-    {
-        state = get_STATE();
-        
+    {   
         //PEI board PICDUINO
         // get current sensor data (RA6/RC0 ???)
         // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
