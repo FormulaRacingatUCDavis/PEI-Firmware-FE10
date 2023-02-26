@@ -24,6 +24,7 @@ volatile uint8_t ESTOP_MC = 0;
 //VCU Data
 volatile uint8_t HV_REQUEST_TR = 0;
 volatile uint8_t E_STOP_CHECK = 0;
+volatile uint8_t VEHICLE_STATE = 0;
 
 //MC_DEBG
 volatile uint8_t THROTTLE = 0;
@@ -41,6 +42,12 @@ uint8_t get_ESTOP_Check()
 uint8_t get_HV_Requested()
 {
     return HV_REQUEST_TR;   
+}
+
+//Returs the vehicle state from torque request CAN (different from state interlock machine)
+uint8_t get_VEHICLE_STATE()
+{
+    return VEHICLE_STATE;   
 }
 
 //returns THROTTLE_HIGH
@@ -74,6 +81,7 @@ void can_receive(uint8_t *msg, int ID)
         case TORQUE_REQUEST_COMMAND:
             HV_REQUEST_TR = msg[CAN_DATA_BYTE_1];
             E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
+            VEHICLE_STATE = msg[CAN_DATA_BYTE_5];
             break;
         case MC_DEBUG:
             THROTTLE = msg[CAN_DATA_BYTE_7];
@@ -161,13 +169,13 @@ void can_send_cmd(
 void can_send_state(uint8_t state) {
     uint8_t data[8] = {0};
     data[2] = state;
-    can_send(data, 0x463);
+    can_send(data, MC_DEBUG);
 }
 
 void can_send_throttle(uint8_t throttle) {
     uint8_t data[8] = {0};
     data[6] = throttle;
-    can_send(data, 0x463);
+    can_send(data, MC_DEBUG);
 }
 
 void can_send_ESTOP(uint8_t estop) {

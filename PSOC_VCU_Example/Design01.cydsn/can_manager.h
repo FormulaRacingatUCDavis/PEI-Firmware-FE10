@@ -40,6 +40,7 @@ void can_send_ESTOP(uint8_t estop);
 //VCU state functions
 uint8_t get_ESTOP_Check();
 uint8_t get_HV_Requested();
+uint8_t get_VEHICLE_STATE();
 
 //Throttle(HIGH/LOW), THROTTLE
 uint8_t get_THROTTLE_HIGH();

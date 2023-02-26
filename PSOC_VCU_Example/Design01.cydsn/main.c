@@ -78,15 +78,11 @@ int main(void)
         //Interlock state machine
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          
-            if((get_HV_Requested() > 0) && (get_ESTOP_Check() == 0)) {
+            if((get_HV_Requested() == 1) && (get_ESTOP_Check() == 0)) {
                 state = 1;
             }
         }
-        
-        
-        else if (state == 1) {
-            
-            
+        else if (state == 1) { 
             set_interlock(); //sets interlock, sends a message to close AIRs
             uint8 throttle_high = get_THROTTLE_HIGH();
             uint8 throttle_low = get_THROTTLE_LOW();
@@ -99,8 +95,16 @@ int main(void)
     			//the throttle signal is in bounds and is between 0 and 32767
 	  	    }
             
+            //Changing states
             if(get_HV_Requested() == 0) {
                 state = 0;
+            }
+            else if (get_ESTOP_Check() == 1) {
+                state = 3;   
+            }
+            //All error flags sent over the torque request command CAN bus start with 0x8(x)
+            else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
+                state = 2;   
             }
             
             /*May or may not need to check status 3
@@ -124,19 +128,14 @@ int main(void)
             
             */
         }
-        
-    
         //Trap state
         // is entered when there are more errors than just estop (Status3 > 0). 
         else if(state == 2) {
-
 		    clear_interlock(); // clears interlock, send a message to open AIRs
 		    // set EM Brake = 0
-		
 	    }
         else if (state == 3) {
-            
-            if (get_ESTOP_Check() == 1) {
+            if (get_HV_Requested() == 0) {
                 state = 0;
                 can_send_ESTOP(0);
             }

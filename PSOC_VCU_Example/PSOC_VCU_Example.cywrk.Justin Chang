@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_VCU_Example\Design01\Generated_Source\PSoC5\CAN\CAN_TX_RX_func.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PSOC_VCU_Example\Design01\Source Files\can_manager.h">
 <ExpandedNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
@@ -39,9 +39,6 @@
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\CAN</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Directives</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Flash Security</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\EEPROM</v>
 <v>PSOC_VCU_Example\Design01\Header Files</v>
 <v>PSOC_VCU_Example\Design01\Header Files\cyapicallbacks.h</v>
 <v>PSOC_VCU_Example\Design01\Source Files</v>
@@ -77,6 +74,9 @@
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Precharge</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Rx</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_ACC_OUT</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_FINAL</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_IN</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_OUT</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -234,15 +234,8 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Design01.cydsn\Design01.cydwr" />
 <name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\CAN.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\CAN.h" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\IMD_Fault.c" />
 <name v=".\Design01.cydsn\can_manager.c" />
-<name v=".\Design01.cydsn\can_manager.h" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -250,7 +243,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1177, 547" SelectedTabbedMdiWindow="b4b7b439-5e2a-4aa6-8270-cd638e7c80fc"><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="aff5234d-c751-4fcf-8913-961362497901" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cydwr" Guid="8d69602c-5e83-4de7-94d0-f56f4ed43524" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="018ce639-f499-4a2f-9c87-7c734c07e10f" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d561c289-2a72-4829-9f00-e318d968c7c3" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\CAN.c" Guid="26072784-58d3-4ebf-b0ad-a352f867e7a5" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\CAN.h" Guid="ce5c93f3-c288-4a32-bcb4-cb6cf8dbeebe" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\IMD_Fault.c" Guid="ec243723-ed12-42f4-a839-aaee3a303271" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="f0c82bf2-45e5-4980-a8be-950629670287" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="3b1a1695-a7bf-4a20-9b75-d59f7458a966" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="b4b7b439-5e2a-4aa6-8270-cd638e7c80fc" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1117, 547" SelectedTabbedMdiWindow="5109d269-48d6-4638-a3d0-85b71ac8d2f7"><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="5109d269-48d6-4638-a3d0-85b71ac8d2f7" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="41ce7dff-18e8-4fdf-be7d-59e3d8782d20" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
