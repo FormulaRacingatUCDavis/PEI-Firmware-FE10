@@ -31,7 +31,6 @@ extern volatile uint8_t STATE;
 extern volatile uint8_t THROTTLE;
 
 extern volatile uint8_t HV_REQUEST_TR;
-extern volatile uint8_t E_STOP_CHECK;
 extern volatile uint8_t VEHICLE_STATE;
 
 extern volatile uint8_t ESTOP_MC;
@@ -677,7 +676,6 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     {
         /* `#START MESSAGE_Torque_Request_Command_RECEIVED` */
         HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
-        E_STOP_CHECK = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_Torque_Request_Command);
         VEHICLE_STATE = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_Torque_Request_Command);
         /* `#END` */
 

@@ -15,14 +15,10 @@
 
 //The state starts at 0
 volatile uint32_t state = 0;
+volatile uint8_t e_stop;
 
 int main(void)
 {
-    ///
-    
-    
-    //
-    
     CyGlobalIntEnable; /* Enable global interrupts. */
     
     //Initialize and start CAN
@@ -33,12 +29,14 @@ int main(void)
     
     for(;;)
     {   
+        //We need read the e_stop status in from the Shutdown_IN pin.
+        //If e_stop is hit, should be equal to 0.
+        e_stop = SD_IN_Read();
+        
         //PEI board PICDUINO
         // get current sensor data (RA6/RC0 ???)
         // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
         uint32_t current = (int32_t)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read16());
-        
-       
         
         // shutdown flags, current
         uint8_t shutdown_flags = 0;
@@ -76,7 +74,7 @@ int main(void)
         //Interlock state machine
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          
-            if((get_HV_Requested() == 1) && (get_ESTOP_Check() == 0)) {
+            if((get_HV_Requested() == 1) && (e_stop != 0)) {
                 state = 1;
             }
         }
@@ -97,10 +95,10 @@ int main(void)
             if(get_HV_Requested() == 0) {
                 state = 0;
             }
-            else if (get_ESTOP_Check() == 1) {
+            else if (e_stop == 0) {
                 state = 3;   
             }
-            //All error flags sent over the torque request command CAN bus start with 0x8(x)
+            //TODO: We need to get into state 2 if there's an error, but what error we check for is unknown atm.
             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
                 state = 2;   
             }
@@ -135,10 +133,11 @@ int main(void)
         else if (state == 3) {
             if (get_HV_Requested() == 0) {
                 state = 0;
-                can_send_ESTOP(0);
+                //can_send_ESTOP(0); why is this here?
             }
         }
         
+        can_send_ESTOP(e_stop);
         can_send_state(state);    
         
         CyDelay(1000);

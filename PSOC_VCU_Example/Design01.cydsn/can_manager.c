@@ -23,7 +23,6 @@ volatile uint8_t THROTTLE_LOW = 0;
 volatile uint8_t ESTOP_MC = 0;
 //VCU Data
 volatile uint8_t HV_REQUEST_TR = 0;
-volatile uint8_t E_STOP_CHECK = 0;
 volatile uint8_t VEHICLE_STATE = 0;
 
 //MC_DEBG
@@ -31,12 +30,6 @@ volatile uint8_t THROTTLE = 0;
 volatile uint8_t SET_INTERLOCK = 0;
 volatile uint8_t STATE = 0;
 volatile uint8_t HV_REQUEST_MC = 0;
-
-//Return the ESTOP state from the VCU.
-uint8_t get_ESTOP_Check()
-{
-    return E_STOP_CHECK;  
-}
 
 //Return the hv_requested state from the VCU.
 uint8_t get_HV_Requested()
@@ -80,7 +73,6 @@ void can_receive(uint8_t *msg, int ID)
     {
         case TORQUE_REQUEST_COMMAND:
             HV_REQUEST_TR = msg[CAN_DATA_BYTE_1];
-            E_STOP_CHECK = msg[CAN_DATA_BYTE_4];
             VEHICLE_STATE = msg[CAN_DATA_BYTE_5];
             break;
         case MC_DEBUG:
@@ -169,13 +161,13 @@ void can_send_cmd(
 void can_send_state(uint8_t state) {
     uint8_t data[8] = {0};
     data[2] = state;
-    can_send(data, MC_DEBUG);
+    can_send(data, MC_DEBUG_SEND);
 }
 
 void can_send_throttle(uint8_t throttle) {
     uint8_t data[8] = {0};
     data[6] = throttle;
-    can_send(data, MC_DEBUG);
+    can_send(data, MC_DEBUG_SEND);
 }
 
 void can_send_ESTOP(uint8_t estop) {

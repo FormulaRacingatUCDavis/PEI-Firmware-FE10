@@ -16,7 +16,14 @@ typedef enum {
     PEI_CURRENT = 0x387,
     MC_ESTOP = 0x366,
     MC_DEBUG = 0x466,
-}CAN_ID;
+} CAN_ID; //RECEIVE
+
+typedef enum {
+    TORQUE_REQUEST_SEND = 0x763,
+    PEI_CURRENT_SEND = 0x383,
+    MC_ESTOP_SEND = 0x363,
+    MC_DEBUG_SEND = 0x463,
+} CAN_ID_SEND;
 
 typedef enum {
     LV,
@@ -38,7 +45,6 @@ void can_send_throttle(uint8_t throttle);
 void can_send_ESTOP(uint8_t estop);
 
 //VCU state functions
-uint8_t get_ESTOP_Check();
 uint8_t get_HV_Requested();
 uint8_t get_VEHICLE_STATE();
 
