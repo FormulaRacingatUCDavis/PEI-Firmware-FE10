@@ -33,10 +33,7 @@ int main(void)
         //If e_stop is hit, should be equal to 0.
         e_stop = SD_IN_Read();
         
-        //PEI board PICDUINO
-        // get current sensor data (RA6/RC0 ???)
-        // TODO: acquiring this conversion will need to change for current sensor; need 2 ADC channels
-        uint32_t current = (int32_t)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read16());
+        uint16_t current = (uint16_t) ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
         
         // shutdown flags, current
         uint8_t shutdown_flags = 0;
