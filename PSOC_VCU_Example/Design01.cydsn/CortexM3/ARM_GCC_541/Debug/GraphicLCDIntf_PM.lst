@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
   28:Generated_Source\PSoC5/GraphicLCDIntf_PM.c **** {   
   28              		.loc 1 28 0
   29              		.cfi_startproc
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 2
 
 
   30              		@ args = 0, pretend = 0, frame = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
   51:Generated_Source\PSoC5/GraphicLCDIntf_PM.c **** * Summary:
   52:Generated_Source\PSoC5/GraphicLCDIntf_PM.c **** *  Disables block's operation and saves its configuration. Should be called 
   53:Generated_Source\PSoC5/GraphicLCDIntf_PM.c **** *  prior to entering Sleep.
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 3
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 3
 
 
   54:Generated_Source\PSoC5/GraphicLCDIntf_PM.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
   96              	.LVL1:
   97 0006 08BD     		pop	{r3, pc}
   98              		.cfi_endproc
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 4
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 4
 
 
   99              	.LFE3:
@@ -193,56 +193,56 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  108 0006 00000000 		.4byte	.Ldebug_abbrev0
  109 000a 04       		.byte	0x4
  110 000b 01       		.uleb128 0x1
- 111 000c 3E000000 		.4byte	.LASF18
+ 111 000c 78000000 		.4byte	.LASF18
  112 0010 0C       		.byte	0xc
- 113 0011 BD010000 		.4byte	.LASF19
- 114 0015 69010000 		.4byte	.LASF20
+ 113 0011 B1010000 		.4byte	.LASF19
+ 114 0015 30000000 		.4byte	.LASF20
  115 0019 00000000 		.4byte	.Ldebug_ranges0+0
  116 001d 00000000 		.4byte	0
  117 0021 00000000 		.4byte	.Ldebug_line0
  118 0025 02       		.uleb128 0x2
  119 0026 01       		.byte	0x1
  120 0027 06       		.byte	0x6
- 121 0028 06020000 		.4byte	.LASF0
+ 121 0028 FA010000 		.4byte	.LASF0
  122 002c 02       		.uleb128 0x2
  123 002d 01       		.byte	0x1
  124 002e 08       		.byte	0x8
- 125 002f 30000000 		.4byte	.LASF1
+ 125 002f 45010000 		.4byte	.LASF1
  126 0033 02       		.uleb128 0x2
  127 0034 02       		.byte	0x2
  128 0035 05       		.byte	0x5
- 129 0036 5F010000 		.4byte	.LASF2
+ 129 0036 A7010000 		.4byte	.LASF2
  130 003a 02       		.uleb128 0x2
  131 003b 02       		.byte	0x2
  132 003c 07       		.byte	0x7
- 133 003d F8000000 		.4byte	.LASF3
+ 133 003d 32010000 		.4byte	.LASF3
  134 0041 02       		.uleb128 0x2
  135 0042 04       		.byte	0x4
  136 0043 05       		.byte	0x5
- 137 0044 FD010000 		.4byte	.LASF4
+ 137 0044 F1010000 		.4byte	.LASF4
  138 0048 02       		.uleb128 0x2
  139 0049 04       		.byte	0x4
  140 004a 07       		.byte	0x7
- 141 004b E6000000 		.4byte	.LASF5
+ 141 004b 20010000 		.4byte	.LASF5
  142 004f 02       		.uleb128 0x2
  143 0050 08       		.byte	0x8
  144 0051 05       		.byte	0x5
- 145 0052 4C010000 		.4byte	.LASF6
+ 145 0052 94010000 		.4byte	.LASF6
  146 0056 02       		.uleb128 0x2
  147 0057 08       		.byte	0x8
  148 0058 07       		.byte	0x7
- 149 0059 1F010000 		.4byte	.LASF7
+ 149 0059 67010000 		.4byte	.LASF7
  150 005d 03       		.uleb128 0x3
  151 005e 04       		.byte	0x4
  152 005f 05       		.byte	0x5
  153 0060 696E7400 		.ascii	"int\000"
  154 0064 02       		.uleb128 0x2
  155 0065 04       		.byte	0x4
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 5
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 5
 
 
  156 0066 07       		.byte	0x7
- 157 0067 12010000 		.4byte	.LASF8
+ 157 0067 5A010000 		.4byte	.LASF8
  158 006b 02       		.uleb128 0x2
  159 006c 04       		.byte	0x4
  160 006d 04       		.byte	0x4
@@ -250,13 +250,13 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  162 0072 02       		.uleb128 0x2
  163 0073 08       		.byte	0x8
  164 0074 04       		.byte	0x4
- 165 0075 0B010000 		.4byte	.LASF10
+ 165 0075 53010000 		.4byte	.LASF10
  166 0079 02       		.uleb128 0x2
  167 007a 01       		.byte	0x1
  168 007b 08       		.byte	0x8
- 169 007c 5A010000 		.4byte	.LASF11
+ 169 007c A2010000 		.4byte	.LASF11
  170 0080 04       		.uleb128 0x4
- 171 0081 CC000000 		.4byte	.LASF12
+ 171 0081 06010000 		.4byte	.LASF12
  172 0085 01       		.byte	0x1
  173 0086 1B       		.byte	0x1b
  174 0087 00000000 		.4byte	.LFB0
@@ -264,7 +264,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  176 008f 01       		.uleb128 0x1
  177 0090 9C       		.byte	0x9c
  178 0091 04       		.uleb128 0x4
- 179 0092 12020000 		.4byte	.LASF13
+ 179 0092 06020000 		.4byte	.LASF13
  180 0096 01       		.byte	0x1
  181 0097 29       		.byte	0x29
  182 0098 00000000 		.4byte	.LFB1
@@ -272,7 +272,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  184 00a0 01       		.uleb128 0x1
  185 00a1 9C       		.byte	0x9c
  186 00a2 05       		.uleb128 0x5
- 187 00a3 E8010000 		.4byte	.LASF14
+ 187 00a3 DC010000 		.4byte	.LASF14
  188 00a7 01       		.byte	0x1
  189 00a8 38       		.byte	0x38
  190 00a9 00000000 		.4byte	.LFB2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  210 00db EB000000 		.4byte	0xeb
  211 00df 00       		.byte	0
  212 00e0 07       		.uleb128 0x7
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 6
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 6
 
 
  213 00e1 00000000 		.4byte	.LASF16
@@ -306,8 +306,8 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  215 00e9 02       		.byte	0x2
  216 00ea 28       		.byte	0x28
  217 00eb 07       		.uleb128 0x7
- 218 00ec 36010000 		.4byte	.LASF17
- 219 00f0 36010000 		.4byte	.LASF17
+ 218 00ec 7E010000 		.4byte	.LASF17
+ 219 00f0 7E010000 		.4byte	.LASF17
  220 00f4 02       		.byte	0x2
  221 00f5 3A       		.byte	0x3a
  222 00f6 00       		.byte	0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  267 002a 2E       		.uleb128 0x2e
  268 002b 00       		.byte	0
  269 002c 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 7
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 7
 
 
  270 002d 19       		.uleb128 0x19
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  324 0067 2E       		.uleb128 0x2e
  325 0068 00       		.byte	0
  326 0069 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 8
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 8
 
 
  327 006a 19       		.uleb128 0x19
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  375      4344496E 
  375      74665F53 
  375      746F7000 
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 9
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 9
 
 
  376              	.LASF9:
@@ -490,115 +490,115 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 1
  379      4344496E 
  379      74665F57 
  379      616B6575 
- 380              	.LASF1:
- 381 0030 756E7369 		.ascii	"unsigned char\000"
- 381      676E6564 
- 381      20636861 
- 381      7200
- 382              	.LASF18:
- 383 003e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 383      43313120 
- 383      352E342E 
- 383      31203230 
- 383      31363036 
- 384 0071 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 384      20726576 
- 384      6973696F 
- 384      6E203233 
- 384      37373135 
- 385 00a4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 385      66756E63 
- 385      74696F6E 
- 385      2D736563 
- 385      74696F6E 
- 386              	.LASF12:
- 387 00cc 47726170 		.ascii	"GraphicLCDIntf_SaveConfig\000"
- 387      6869634C 
- 387      4344496E 
- 387      74665F53 
- 387      61766543 
- 388              	.LASF5:
- 389 00e6 6C6F6E67 		.ascii	"long unsigned int\000"
- 389      20756E73 
- 389      69676E65 
- 389      6420696E 
- 389      7400
- 390              	.LASF3:
- 391 00f8 73686F72 		.ascii	"short unsigned int\000"
- 391      7420756E 
- 391      7369676E 
- 391      65642069 
- 391      6E7400
- 392              	.LASF10:
- 393 010b 646F7562 		.ascii	"double\000"
- 393      6C6500
- 394              	.LASF8:
- 395 0112 756E7369 		.ascii	"unsigned int\000"
- 395      676E6564 
- 395      20696E74 
- 395      00
- 396              	.LASF7:
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 10
+ 380              	.LASF20:
+ 381 0030 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
+ 381      73657273 
+ 381      5C4A7573 
+ 381      74696E20 
+ 381      4368616E 
+ 382 005f 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
+ 382      616D706C 
+ 382      655C4465 
+ 382      7369676E 
+ 382      30312E63 
+ 383              	.LASF18:
+ 384 0078 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 384      43313120 
+ 384      352E342E 
+ 384      31203230 
+ 384      31363036 
+ 385 00ab 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 385      20726576 
+ 385      6973696F 
+ 385      6E203233 
+ 385      37373135 
+ 386 00de 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 386      66756E63 
+ 386      74696F6E 
+ 386      2D736563 
+ 386      74696F6E 
+ 387              	.LASF12:
+ 388 0106 47726170 		.ascii	"GraphicLCDIntf_SaveConfig\000"
+ 388      6869634C 
+ 388      4344496E 
+ 388      74665F53 
+ 388      61766543 
+ 389              	.LASF5:
+ 390 0120 6C6F6E67 		.ascii	"long unsigned int\000"
+ 390      20756E73 
+ 390      69676E65 
+ 390      6420696E 
+ 390      7400
+ 391              	.LASF3:
+ 392 0132 73686F72 		.ascii	"short unsigned int\000"
+ 392      7420756E 
+ 392      7369676E 
+ 392      65642069 
+ 392      6E7400
+ 393              	.LASF1:
+ 394 0145 756E7369 		.ascii	"unsigned char\000"
+ 394      676E6564 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 10
 
 
- 397 011f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 397      206C6F6E 
- 397      6720756E 
- 397      7369676E 
- 397      65642069 
- 398              	.LASF17:
- 399 0136 47726170 		.ascii	"GraphicLCDIntf_Enable\000"
- 399      6869634C 
- 399      4344496E 
- 399      74665F45 
- 399      6E61626C 
- 400              	.LASF6:
- 401 014c 6C6F6E67 		.ascii	"long long int\000"
- 401      206C6F6E 
- 401      6720696E 
- 401      7400
- 402              	.LASF11:
- 403 015a 63686172 		.ascii	"char\000"
- 403      00
- 404              	.LASF2:
- 405 015f 73686F72 		.ascii	"short int\000"
- 405      7420696E 
- 405      7400
- 406              	.LASF20:
- 407 0169 433A5C55 		.ascii	"C:\\Users\\kendr\\OneDrive\\Documents\\PEI-Firmware"
- 407      73657273 
- 407      5C6B656E 
- 407      64725C4F 
- 407      6E654472 
- 408 0197 2D464531 		.ascii	"-FE10\\PSOC_VCU_Example\\Design01.cydsn\000"
- 408      305C5053 
- 408      4F435F56 
- 408      43555F45 
- 408      78616D70 
+ 394      20636861 
+ 394      7200
+ 395              	.LASF10:
+ 396 0153 646F7562 		.ascii	"double\000"
+ 396      6C6500
+ 397              	.LASF8:
+ 398 015a 756E7369 		.ascii	"unsigned int\000"
+ 398      676E6564 
+ 398      20696E74 
+ 398      00
+ 399              	.LASF7:
+ 400 0167 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 400      206C6F6E 
+ 400      6720756E 
+ 400      7369676E 
+ 400      65642069 
+ 401              	.LASF17:
+ 402 017e 47726170 		.ascii	"GraphicLCDIntf_Enable\000"
+ 402      6869634C 
+ 402      4344496E 
+ 402      74665F45 
+ 402      6E61626C 
+ 403              	.LASF6:
+ 404 0194 6C6F6E67 		.ascii	"long long int\000"
+ 404      206C6F6E 
+ 404      6720696E 
+ 404      7400
+ 405              	.LASF11:
+ 406 01a2 63686172 		.ascii	"char\000"
+ 406      00
+ 407              	.LASF2:
+ 408 01a7 73686F72 		.ascii	"short int\000"
+ 408      7420696E 
+ 408      7400
  409              	.LASF19:
- 410 01bd 47656E65 		.ascii	"Generated_Source\\PSoC5\\GraphicLCDIntf_PM.c\000"
+ 410 01b1 47656E65 		.ascii	"Generated_Source\\PSoC5\\GraphicLCDIntf_PM.c\000"
  410      72617465 
  410      645F536F 
  410      75726365 
  410      5C50536F 
  411              	.LASF14:
- 412 01e8 47726170 		.ascii	"GraphicLCDIntf_Sleep\000"
+ 412 01dc 47726170 		.ascii	"GraphicLCDIntf_Sleep\000"
  412      6869634C 
  412      4344496E 
  412      74665F53 
  412      6C656570 
  413              	.LASF4:
- 414 01fd 6C6F6E67 		.ascii	"long int\000"
+ 414 01f1 6C6F6E67 		.ascii	"long int\000"
  414      20696E74 
  414      00
  415              	.LASF0:
- 416 0206 7369676E 		.ascii	"signed char\000"
+ 416 01fa 7369676E 		.ascii	"signed char\000"
  416      65642063 
  416      68617200 
  417              	.LASF13:
- 418 0212 47726170 		.ascii	"GraphicLCDIntf_RestoreConfig\000"
+ 418 0206 47726170 		.ascii	"GraphicLCDIntf_RestoreConfig\000"
  418      6869634C 
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cchFNduX.s 			page 11
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccoepCrr.s 			page 11
 
 
  418      4344496E 

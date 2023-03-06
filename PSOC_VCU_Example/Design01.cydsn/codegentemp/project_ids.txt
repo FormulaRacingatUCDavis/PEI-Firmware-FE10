@@ -1,6 +1,6 @@
-C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cyprj|bcdb2ca4-1285-4479-9cb8-c3002da006e6
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|9434b0ad-541f-4852-ad18-496361dd90d7
-C:\Users\Justin Chang\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|d5436834-1f53-423d-abab-d553a4ccbb54
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|25288aff-448b-4f49-9d8b-d83a11ec280c
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|caba4e2b-ea84-4b31-b074-7b527bc8f664
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9a6150ee-0a0d-4e64-b075-507efe11c72e
+C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cyprj|8b1a6091-cfba-4c05-851c-7ba0c52bfc5f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|7086ddee-6988-4a0d-9641-c2fa4062b211
+C:\Users\Justin Chang\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|116dfae0-e9a4-490a-8576-6948728c3e22
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|13360460-54ba-4759-a77f-f80b0c6e4dd9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|82239151-ef25-4387-b0eb-89b5e75b28f7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|7a77145f-943c-453d-944a-2c0732053340

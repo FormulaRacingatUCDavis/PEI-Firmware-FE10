@@ -13,9 +13,10 @@
 #include "CAN.h"
 #include "can_manager.h"
 
-//The state starts at 0
-volatile uint32_t state = 0;
+//TODO: The state starts at 0
+volatile uint32_t state = 1;
 volatile uint8_t e_stop;
+uint8 throttle_total = 0;
 
 int main(void)
 {
@@ -81,14 +82,14 @@ int main(void)
             uint8 throttle_low = get_THROTTLE_LOW();
             
             if(((throttle_high * 255 + throttle_low) < 0) || ((throttle_high * 255 + throttle_low) > 32767)){
-                can_send_throttle(0);
+                throttle_total = 0;
             }
             else {
-    			can_send_throttle(throttle_high * 255 + throttle_low);
-    			//the throttle signal is in bounds and is between 0 and 32767
-	  	    }
+                throttle_total = throttle_high * 255 + throttle_low;   
+            }
             
             //Changing states
+            /*
             if(get_HV_Requested() == 0) {
                 state = 0;
             }
@@ -98,7 +99,7 @@ int main(void)
             //TODO: We need to get into state 2 if there's an error, but what error we check for is unknown atm.
             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
                 state = 2;   
-            }
+            }*/
             
             /*May or may not need to check status 3
             if(Status3 = 36) ; an OS defined variable that has info on driver faults
@@ -135,7 +136,7 @@ int main(void)
         }
         
         can_send_ESTOP(e_stop);
-        can_send_state(state);    
+        can_send_state_and_throttle(state, throttle_total);    
         
         CyDelay(1000);
     }

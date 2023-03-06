@@ -34,6 +34,9 @@ extern volatile uint8_t HV_REQUEST_TR;
 extern volatile uint8_t VEHICLE_STATE;
 
 extern volatile uint8_t ESTOP_MC;
+
+extern volatile uint8_t THROTTLE_HIGH;
+extern volatile uint8_t THROTTLE_LOW;
 /* `#END` */
 
 
@@ -763,7 +766,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg3
+    * FUNCTION NAME:   CAN_ReceiveMsgBSPD_Flags
     ********************************************************************************
     *
     * Summary:
@@ -781,15 +784,16 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg3(void) 
+    void CAN_ReceiveMsgBSPD_Flags(void) 
     {
-        /* `#START MESSAGE_3_RECEIVED` */
-
+        /* `#START MESSAGE_BSPD_Flags_RECEIVED` */
+        THROTTLE_HIGH = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BSPD_Flags);
+        THROTTLE_LOW = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BSPD_Flags);
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_3_CALLBACK
-            CAN_ReceiveMsg_3_Callback();
-        #endif /* CAN_RECEIVE_MSG_3_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BSPD_Flags_CALLBACK
+            CAN_ReceiveMsg_BSPD_Flags_Callback();
+        #endif /* CAN_RECEIVE_MSG_BSPD_Flags_CALLBACK */
 
         CAN_RX[3u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }

@@ -84,7 +84,10 @@ void can_receive(uint8_t *msg, int ID)
         case MC_ESTOP:
             ESTOP_MC = msg[CAN_DATA_BYTE_1];
             break;
-        
+        case BSPD_FLAGS:
+            THROTTLE_HIGH = msg[CAN_DATA_BYTE_2];
+            THROTTLE_LOW = msg[CAN_DATA_BYTE_3];
+            break;
     }
     
     CyExitCriticalSection(InterruptState);
@@ -158,14 +161,9 @@ void can_send_cmd(
 
 } // can_send_cmd()
 
-void can_send_state(uint8_t state) {
+void can_send_state_and_throttle(uint8_t state, uint8_t throttle) {
     uint8_t data[8] = {0};
     data[2] = state;
-    can_send(data, MC_DEBUG_SEND);
-}
-
-void can_send_throttle(uint8_t throttle) {
-    uint8_t data[8] = {0};
     data[6] = throttle;
     can_send(data, MC_DEBUG_SEND);
 }

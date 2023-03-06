@@ -86,7 +86,7 @@ extern uint8 CAN_initVar;
 #define CAN_RX0_FUNC_ENABLE            (1u)
 #define CAN_RX1_FUNC_ENABLE            (1u)
 #define CAN_RX2_FUNC_ENABLE            (1u)
-#define CAN_RX3_FUNC_ENABLE            (0u)
+#define CAN_RX3_FUNC_ENABLE            (1u)
 #define CAN_RX4_FUNC_ENABLE            (0u)
 #define CAN_RX5_FUNC_ENABLE            (0u)
 #define CAN_RX6_FUNC_ENABLE            (0u)
@@ -99,7 +99,7 @@ extern uint8 CAN_initVar;
 #define CAN_RX13_FUNC_ENABLE           (0u)
 #define CAN_RX14_FUNC_ENABLE           (0u)
 #define CAN_RX15_FUNC_ENABLE           (0u)
-#define CAN_RX_MAILBOX_TYPE            (0x7u)
+#define CAN_RX_MAILBOX_TYPE            (0xFu)
 #define CAN_TX_MAILBOX_TYPE            (0xFu)
 
 
@@ -315,7 +315,7 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
     void CAN_ReceiveMsgMC_ESTOP(void) ;
 #endif /* CAN_RX2_FUNC_ENABLE */
 #if (CAN_RX3_FUNC_ENABLE)
-    void CAN_ReceiveMsg3(void) ;
+    void CAN_ReceiveMsgBSPD_Flags(void) ;
 #endif /* CAN_RX3_FUNC_ENABLE */
 #if (CAN_RX4_FUNC_ENABLE)
     void CAN_ReceiveMsg4(void) ;
@@ -424,7 +424,7 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 #define CAN_RX_MAILBOX_Torque_Request_Command (0u)
 #define CAN_RX_MAILBOX_MC_Debug        (1u)
 #define CAN_RX_MAILBOX_MC_ESTOP        (2u)
-#define CAN_RX_MAILBOX_3               (3u)
+#define CAN_RX_MAILBOX_BSPD_Flags      (3u)
 #define CAN_RX_MAILBOX_4               (4u)
 #define CAN_RX_MAILBOX_5               (5u)
 #define CAN_RX_MAILBOX_6               (6u)
