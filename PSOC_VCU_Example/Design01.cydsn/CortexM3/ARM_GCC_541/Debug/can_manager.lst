@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
   28:can_manager.c **** //MC_DEBG
   29:can_manager.c **** volatile uint8_t THROTTLE = 0;
   30:can_manager.c **** volatile uint8_t SET_INTERLOCK = 0;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 2
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 2
 
 
   31:can_manager.c **** volatile uint8_t STATE = 0;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
   68              	.LFE64:
   69              		.size	get_VEHICLE_STATE, .-get_VEHICLE_STATE
   70              		.section	.text.get_THROTTLE_HIGH,"ax",%progbits
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 3
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 3
 
 
   71              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  114 0006 00BF     		.align	2
  115              	.L11:
  116 0008 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 4
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 4
 
 
  117              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  161              		.loc 1 65 0
  162 0004 7047     		bx	lr
  163              	.L18:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 5
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 5
 
 
  164 0006 00BF     		.align	2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
   75:can_manager.c ****             HV_REQUEST_TR = msg[CAN_DATA_BYTE_1];
  209              		.loc 1 75 0
  210 002a EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 6
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 6
 
 
  211 002c 0D4B     		ldr	r3, .L27
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
   91:can_manager.c ****     }
   92:can_manager.c ****     
   93:can_manager.c ****     CyExitCriticalSection(InterruptState);
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 7
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 7
 
 
  250              		.loc 1 93 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  291 001a 8DF80B20 		strb	r2, [sp, #11]
  107:can_manager.c ****     
  108:can_manager.c ****     HeartB.msg->byte[0] = (uint8) 1;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 8
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 8
 
 
  292              		.loc 1 108 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  119:can_manager.c **** 
  120:can_manager.c **** void can_send(uint8_t data[8], uint32_t ID)
  121:can_manager.c **** {
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 9
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 9
 
 
  336              		.loc 1 121 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  377              		.loc 1 131 0 is_stmt 0 discriminator 1
  378 002e 072B     		cmp	r3, #7
  379 0030 F6D9     		bls	.L33
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 10
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 10
 
 
  133:can_manager.c **** 	CAN_SendMsg(&message); 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  416 000c 8DF80220 		strb	r2, [sp, #2]
  151:can_manager.c ****         
  152:can_manager.c ****         data[3] = 0;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 11
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 11
 
 
  417              		.loc 1 152 0
@@ -642,23 +642,23 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  445              		.cfi_endproc
  446              	.LFE72:
  447              		.size	can_send_cmd, .-can_send_cmd
- 448              		.section	.text.can_send_state,"ax",%progbits
+ 448              		.section	.text.can_send_state_and_throttle,"ax",%progbits
  449              		.align	2
- 450              		.global	can_send_state
+ 450              		.global	can_send_state_and_throttle
  451              		.thumb
  452              		.thumb_func
- 453              		.type	can_send_state, %function
- 454              	can_send_state:
+ 453              		.type	can_send_state_and_throttle, %function
+ 454              	can_send_state_and_throttle:
  455              	.LFB73:
  163:can_manager.c **** 
- 164:can_manager.c **** void can_send_state(uint8_t state) {
+ 164:can_manager.c **** void can_send_state_and_throttle(uint8_t state, uint8_t throttle_upper, uint8_t throttle_lower) {
  456              		.loc 1 164 0
  457              		.cfi_startproc
  458              		@ args = 0, pretend = 0, frame = 8
  459              		@ frame_needed = 0, uses_anonymous_args = 0
  460              	.LVL18:
  461 0000 00B5     		push	{lr}
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 12
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 12
 
 
  462              		.cfi_def_cfa_offset 4
@@ -673,2437 +673,2385 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 1
  166:can_manager.c ****     data[2] = state;
  470              		.loc 1 166 0
  471 000a 8DF80200 		strb	r0, [sp, #2]
- 167:can_manager.c ****     can_send(data, MC_DEBUG_SEND);
+ 167:can_manager.c ****     data[5] = throttle_upper;
  472              		.loc 1 167 0
- 473 000e 40F26341 		movw	r1, #1123
- 474 0012 6846     		mov	r0, sp
- 475              	.LVL19:
- 476 0014 FFF7FEFF 		bl	can_send
- 477              	.LVL20:
- 168:can_manager.c **** }
- 478              		.loc 1 168 0
- 479 0018 03B0     		add	sp, sp, #12
- 480              		.cfi_def_cfa_offset 4
- 481              		@ sp needed
- 482 001a 5DF804FB 		ldr	pc, [sp], #4
- 483              		.cfi_endproc
- 484              	.LFE73:
- 485              		.size	can_send_state, .-can_send_state
- 486 001e 00BF     		.section	.text.can_send_throttle,"ax",%progbits
- 487              		.align	2
- 488              		.global	can_send_throttle
- 489              		.thumb
- 490              		.thumb_func
- 491              		.type	can_send_throttle, %function
- 492              	can_send_throttle:
- 493              	.LFB74:
- 169:can_manager.c **** 
- 170:can_manager.c **** void can_send_throttle(uint8_t throttle) {
- 494              		.loc 1 170 0
- 495              		.cfi_startproc
- 496              		@ args = 0, pretend = 0, frame = 8
- 497              		@ frame_needed = 0, uses_anonymous_args = 0
- 498              	.LVL21:
- 499 0000 00B5     		push	{lr}
- 500              		.cfi_def_cfa_offset 4
- 501              		.cfi_offset 14, -4
- 502 0002 83B0     		sub	sp, sp, #12
- 503              		.cfi_def_cfa_offset 16
- 171:can_manager.c ****     uint8_t data[8] = {0};
- 504              		.loc 1 171 0
- 505 0004 0023     		movs	r3, #0
- 506 0006 0093     		str	r3, [sp]
- 507 0008 0193     		str	r3, [sp, #4]
- 172:can_manager.c ****     data[6] = 5; //TODO: Change back to throttle
- 508              		.loc 1 172 0
- 509 000a 0523     		movs	r3, #5
- 510 000c 8DF80630 		strb	r3, [sp, #6]
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 13
-
-
- 173:can_manager.c ****     can_send(data, MC_DEBUG_SEND);
- 511              		.loc 1 173 0
- 512 0010 40F26341 		movw	r1, #1123
- 513 0014 6846     		mov	r0, sp
- 514              	.LVL22:
- 515 0016 FFF7FEFF 		bl	can_send
- 516              	.LVL23:
- 174:can_manager.c **** }
- 517              		.loc 1 174 0
- 518 001a 03B0     		add	sp, sp, #12
- 519              		.cfi_def_cfa_offset 4
- 520              		@ sp needed
- 521 001c 5DF804FB 		ldr	pc, [sp], #4
- 522              		.cfi_endproc
- 523              	.LFE74:
- 524              		.size	can_send_throttle, .-can_send_throttle
- 525              		.section	.text.can_send_ESTOP,"ax",%progbits
- 526              		.align	2
- 527              		.global	can_send_ESTOP
- 528              		.thumb
- 529              		.thumb_func
- 530              		.type	can_send_ESTOP, %function
- 531              	can_send_ESTOP:
- 532              	.LFB75:
- 175:can_manager.c **** 
- 176:can_manager.c **** void can_send_ESTOP(uint8_t estop) {
- 533              		.loc 1 176 0
- 534              		.cfi_startproc
- 535              		@ args = 0, pretend = 0, frame = 8
- 536              		@ frame_needed = 0, uses_anonymous_args = 0
- 537              	.LVL24:
- 538 0000 00B5     		push	{lr}
- 539              		.cfi_def_cfa_offset 4
- 540              		.cfi_offset 14, -4
- 541 0002 83B0     		sub	sp, sp, #12
- 542              		.cfi_def_cfa_offset 16
- 177:can_manager.c ****     uint8_t data[8] = {0};
- 543              		.loc 1 177 0
- 544 0004 0023     		movs	r3, #0
- 545 0006 0093     		str	r3, [sp]
- 546 0008 0193     		str	r3, [sp, #4]
- 178:can_manager.c ****     data[0] = estop;
- 547              		.loc 1 178 0
- 548 000a 8DF80000 		strb	r0, [sp]
- 179:can_manager.c ****     can_send(data, 0x363);
- 549              		.loc 1 179 0
- 550 000e 40F26331 		movw	r1, #867
- 551 0012 6846     		mov	r0, sp
- 552              	.LVL25:
- 553 0014 FFF7FEFF 		bl	can_send
- 554              	.LVL26:
- 180:can_manager.c **** }
- 555              		.loc 1 180 0
- 556 0018 03B0     		add	sp, sp, #12
- 557              		.cfi_def_cfa_offset 4
- 558              		@ sp needed
- 559 001a 5DF804FB 		ldr	pc, [sp], #4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 14
-
-
- 560              		.cfi_endproc
- 561              	.LFE75:
- 562              		.size	can_send_ESTOP, .-can_send_ESTOP
- 563 001e 00BF     		.section	.text.set_interlock,"ax",%progbits
- 564              		.align	2
- 565              		.global	set_interlock
- 566              		.thumb
- 567              		.thumb_func
- 568              		.type	set_interlock, %function
- 569              	set_interlock:
- 570              	.LFB76:
- 181:can_manager.c **** 
- 182:can_manager.c **** void set_interlock()
- 183:can_manager.c **** {
- 571              		.loc 1 183 0
- 572              		.cfi_startproc
- 573              		@ args = 0, pretend = 0, frame = 0
- 574              		@ frame_needed = 0, uses_anonymous_args = 0
- 575 0000 08B5     		push	{r3, lr}
- 576              		.cfi_def_cfa_offset 8
- 577              		.cfi_offset 3, -8
- 578              		.cfi_offset 14, -4
- 184:can_manager.c ****     AIR_NEG_Write(1);
- 579              		.loc 1 184 0
- 580 0002 0120     		movs	r0, #1
- 581 0004 FFF7FEFF 		bl	AIR_NEG_Write
- 582              	.LVL27:
- 185:can_manager.c ****     AIR_POS_Write(1);
- 583              		.loc 1 185 0
- 584 0008 0120     		movs	r0, #1
- 585 000a FFF7FEFF 		bl	AIR_POS_Write
- 586              	.LVL28:
- 587 000e 08BD     		pop	{r3, pc}
- 588              		.cfi_endproc
- 589              	.LFE76:
- 590              		.size	set_interlock, .-set_interlock
- 591              		.section	.text.clear_interlock,"ax",%progbits
- 592              		.align	2
- 593              		.global	clear_interlock
- 594              		.thumb
- 595              		.thumb_func
- 596              		.type	clear_interlock, %function
- 597              	clear_interlock:
- 598              	.LFB77:
- 186:can_manager.c ****     //can_send_interlock(1,1);
- 187:can_manager.c **** }    
- 188:can_manager.c **** 
- 189:can_manager.c **** void clear_interlock()
- 190:can_manager.c **** {
- 599              		.loc 1 190 0
- 600              		.cfi_startproc
- 601              		@ args = 0, pretend = 0, frame = 0
- 602              		@ frame_needed = 0, uses_anonymous_args = 0
- 603 0000 08B5     		push	{r3, lr}
- 604              		.cfi_def_cfa_offset 8
- 605              		.cfi_offset 3, -8
- 606              		.cfi_offset 14, -4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 15
-
-
- 191:can_manager.c ****     AIR_NEG_Write(0);
- 607              		.loc 1 191 0
- 608 0002 0020     		movs	r0, #0
- 609 0004 FFF7FEFF 		bl	AIR_NEG_Write
- 610              	.LVL29:
- 192:can_manager.c ****     AIR_POS_Write(0);
- 611              		.loc 1 192 0
- 612 0008 0020     		movs	r0, #0
- 613 000a FFF7FEFF 		bl	AIR_POS_Write
- 614              	.LVL30:
- 615 000e 08BD     		pop	{r3, pc}
- 616              		.cfi_endproc
- 617              	.LFE77:
- 618              		.size	clear_interlock, .-clear_interlock
- 619              		.section	.text.can_send_PEI,"ax",%progbits
- 620              		.align	2
- 621              		.global	can_send_PEI
- 622              		.thumb
- 623              		.thumb_func
- 624              		.type	can_send_PEI, %function
- 625              	can_send_PEI:
- 626              	.LFB78:
- 193:can_manager.c ****     //can_send_interlock(0,0);
- 194:can_manager.c **** }
- 195:can_manager.c **** 
- 196:can_manager.c **** //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
- 197:can_manager.c **** /* Used for debug purposes
- 198:can_manager.c **** void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
- 199:can_manager.c **** {
- 200:can_manager.c ****     uint8_t data[8] = {0};
- 201:can_manager.c ****     data[3] = air_neg;
- 202:can_manager.c ****     data[4] = air_pos;
- 203:can_manager.c ****     can_send(data, 0x383); 
- 204:can_manager.c **** }
- 205:can_manager.c **** */
- 206:can_manager.c **** 
- 207:can_manager.c **** void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags)
- 208:can_manager.c **** {
- 627              		.loc 1 208 0
- 628              		.cfi_startproc
- 629              		@ args = 0, pretend = 0, frame = 8
- 630              		@ frame_needed = 0, uses_anonymous_args = 0
- 631              	.LVL31:
- 632 0000 00B5     		push	{lr}
- 633              		.cfi_def_cfa_offset 4
- 634              		.cfi_offset 14, -4
- 635 0002 83B0     		sub	sp, sp, #12
- 636              		.cfi_def_cfa_offset 16
- 209:can_manager.c ****     uint8_t data[8] = {0};
- 637              		.loc 1 209 0
- 638 0004 0023     		movs	r3, #0
- 639 0006 0093     		str	r3, [sp]
- 640 0008 0193     		str	r3, [sp, #4]
- 210:can_manager.c **** 
- 211:can_manager.c ****     data[0] = current_upper;
- 641              		.loc 1 211 0
- 642 000a 8DF80000 		strb	r0, [sp]
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 16
-
-
- 212:can_manager.c ****     data[1] = current_lower;
- 643              		.loc 1 212 0
- 644 000e 8DF80110 		strb	r1, [sp, #1]
- 213:can_manager.c ****     data[2] = shutdown_flags;
- 645              		.loc 1 213 0
- 646 0012 8DF80220 		strb	r2, [sp, #2]
- 214:can_manager.c ****     can_send(data, 0x383); 
- 647              		.loc 1 214 0
- 648 0016 40F28331 		movw	r1, #899
- 649              	.LVL32:
- 650 001a 6846     		mov	r0, sp
- 651              	.LVL33:
- 652 001c FFF7FEFF 		bl	can_send
- 653              	.LVL34:
- 215:can_manager.c **** }
- 654              		.loc 1 215 0
- 655 0020 03B0     		add	sp, sp, #12
- 656              		.cfi_def_cfa_offset 4
- 657              		@ sp needed
- 658 0022 5DF804FB 		ldr	pc, [sp], #4
- 659              		.cfi_endproc
- 660              	.LFE78:
- 661              		.size	can_send_PEI, .-can_send_PEI
- 662              		.global	HV_REQUEST_MC
- 663              		.global	STATE
- 664              		.global	SET_INTERLOCK
- 665              		.global	THROTTLE
- 666              		.global	VEHICLE_STATE
- 667              		.global	HV_REQUEST_TR
- 668              		.global	ESTOP_MC
- 669              		.global	THROTTLE_LOW
- 670              		.global	THROTTLE_HIGH
- 671 0026 00BF     		.bss
- 672              		.set	.LANCHOR0,. + 0
- 673              		.type	HV_REQUEST_TR, %object
- 674              		.size	HV_REQUEST_TR, 1
- 675              	HV_REQUEST_TR:
- 676 0000 00       		.space	1
- 677              		.type	VEHICLE_STATE, %object
- 678              		.size	VEHICLE_STATE, 1
- 679              	VEHICLE_STATE:
- 680 0001 00       		.space	1
- 681              		.type	THROTTLE_HIGH, %object
- 682              		.size	THROTTLE_HIGH, 1
- 683              	THROTTLE_HIGH:
- 684 0002 00       		.space	1
- 685              		.type	THROTTLE_LOW, %object
- 686              		.size	THROTTLE_LOW, 1
- 687              	THROTTLE_LOW:
- 688 0003 00       		.space	1
- 689              		.type	THROTTLE, %object
- 690              		.size	THROTTLE, 1
- 691              	THROTTLE:
- 692 0004 00       		.space	1
- 693              		.type	STATE, %object
- 694              		.size	STATE, 1
- 695              	STATE:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 17
-
-
- 696 0005 00       		.space	1
- 697              		.type	SET_INTERLOCK, %object
- 698              		.size	SET_INTERLOCK, 1
- 699              	SET_INTERLOCK:
- 700 0006 00       		.space	1
- 701              		.type	HV_REQUEST_MC, %object
- 702              		.size	HV_REQUEST_MC, 1
- 703              	HV_REQUEST_MC:
- 704 0007 00       		.space	1
- 705              		.type	ESTOP_MC, %object
- 706              		.size	ESTOP_MC, 1
- 707              	ESTOP_MC:
- 708 0008 00       		.space	1
- 709              		.text
- 710              	.Letext0:
- 711              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 712              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 713              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 714              		.file 5 "Generated_Source\\PSoC5/CAN.h"
- 715              		.file 6 "can_manager.h"
- 716              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
- 717              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
- 718              		.file 9 "Generated_Source\\PSoC5/AIR_NEG.h"
- 719              		.file 10 "Generated_Source\\PSoC5/AIR_POS.h"
- 720              		.section	.debug_info,"",%progbits
- 721              	.Ldebug_info0:
- 722 0000 9E060000 		.4byte	0x69e
- 723 0004 0400     		.2byte	0x4
- 724 0006 00000000 		.4byte	.Ldebug_abbrev0
- 725 000a 04       		.byte	0x4
- 726 000b 01       		.uleb128 0x1
- 727 000c C8030000 		.4byte	.LASF83
- 728 0010 0C       		.byte	0xc
- 729 0011 B4010000 		.4byte	.LASF84
- 730 0015 56040000 		.4byte	.LASF85
- 731 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 732 001d 00000000 		.4byte	0
- 733 0021 00000000 		.4byte	.Ldebug_line0
- 734 0025 02       		.uleb128 0x2
- 735 0026 01       		.byte	0x1
- 736 0027 06       		.byte	0x6
- 737 0028 F6010000 		.4byte	.LASF0
- 738 002c 03       		.uleb128 0x3
- 739 002d 9E010000 		.4byte	.LASF3
- 740 0031 02       		.byte	0x2
- 741 0032 1D       		.byte	0x1d
- 742 0033 37000000 		.4byte	0x37
- 743 0037 02       		.uleb128 0x2
- 744 0038 01       		.byte	0x1
- 745 0039 08       		.byte	0x8
- 746 003a E8010000 		.4byte	.LASF1
- 747 003e 02       		.uleb128 0x2
- 748 003f 02       		.byte	0x2
- 749 0040 05       		.byte	0x5
- 750 0041 74000000 		.4byte	.LASF2
- 751 0045 03       		.uleb128 0x3
- 752 0046 BE000000 		.4byte	.LASF4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 18
-
-
- 753 004a 02       		.byte	0x2
- 754 004b 2B       		.byte	0x2b
- 755 004c 50000000 		.4byte	0x50
- 756 0050 02       		.uleb128 0x2
- 757 0051 02       		.byte	0x2
- 758 0052 07       		.byte	0x7
- 759 0053 CE020000 		.4byte	.LASF5
- 760 0057 03       		.uleb128 0x3
- 761 0058 33030000 		.4byte	.LASF6
- 762 005c 02       		.byte	0x2
- 763 005d 3F       		.byte	0x3f
- 764 005e 62000000 		.4byte	0x62
- 765 0062 02       		.uleb128 0x2
- 766 0063 04       		.byte	0x4
- 767 0064 05       		.byte	0x5
- 768 0065 A6020000 		.4byte	.LASF7
- 769 0069 03       		.uleb128 0x3
- 770 006a 94000000 		.4byte	.LASF8
- 771 006e 02       		.byte	0x2
- 772 006f 41       		.byte	0x41
- 773 0070 74000000 		.4byte	0x74
- 774 0074 02       		.uleb128 0x2
- 775 0075 04       		.byte	0x4
- 776 0076 07       		.byte	0x7
- 777 0077 7D010000 		.4byte	.LASF9
- 778 007b 02       		.uleb128 0x2
- 779 007c 08       		.byte	0x8
- 780 007d 05       		.byte	0x5
- 781 007e 3D010000 		.4byte	.LASF10
- 782 0082 02       		.uleb128 0x2
- 783 0083 08       		.byte	0x8
- 784 0084 07       		.byte	0x7
- 785 0085 02020000 		.4byte	.LASF11
- 786 0089 04       		.uleb128 0x4
- 787 008a 04       		.byte	0x4
- 788 008b 05       		.byte	0x5
- 789 008c 696E7400 		.ascii	"int\000"
- 790 0090 02       		.uleb128 0x2
- 791 0091 04       		.byte	0x4
- 792 0092 07       		.byte	0x7
- 793 0093 22020000 		.4byte	.LASF12
- 794 0097 03       		.uleb128 0x3
- 795 0098 03010000 		.4byte	.LASF13
- 796 009c 03       		.byte	0x3
- 797 009d 18       		.byte	0x18
- 798 009e 2C000000 		.4byte	0x2c
- 799 00a2 03       		.uleb128 0x3
- 800 00a3 41020000 		.4byte	.LASF14
- 801 00a7 03       		.byte	0x3
- 802 00a8 24       		.byte	0x24
- 803 00a9 45000000 		.4byte	0x45
- 804 00ad 03       		.uleb128 0x3
- 805 00ae AF020000 		.4byte	.LASF15
- 806 00b2 03       		.byte	0x3
- 807 00b3 2C       		.byte	0x2c
- 808 00b4 57000000 		.4byte	0x57
- 809 00b8 03       		.uleb128 0x3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 19
-
-
- 810 00b9 19020000 		.4byte	.LASF16
- 811 00bd 03       		.byte	0x3
- 812 00be 30       		.byte	0x30
- 813 00bf 69000000 		.4byte	0x69
- 814 00c3 05       		.uleb128 0x5
- 815 00c4 14010000 		.4byte	.LASF17
- 816 00c8 04       		.byte	0x4
- 817 00c9 E801     		.2byte	0x1e8
- 818 00cb 37000000 		.4byte	0x37
- 819 00cf 05       		.uleb128 0x5
- 820 00d0 E6020000 		.4byte	.LASF18
- 821 00d4 04       		.byte	0x4
- 822 00d5 EA01     		.2byte	0x1ea
- 823 00d7 74000000 		.4byte	0x74
- 824 00db 02       		.uleb128 0x2
- 825 00dc 04       		.byte	0x4
- 826 00dd 04       		.byte	0x4
- 827 00de 37010000 		.4byte	.LASF19
- 828 00e2 02       		.uleb128 0x2
- 829 00e3 08       		.byte	0x8
- 830 00e4 04       		.byte	0x4
- 831 00e5 2F000000 		.4byte	.LASF20
- 832 00e9 02       		.uleb128 0x2
- 833 00ea 01       		.byte	0x1
- 834 00eb 08       		.byte	0x8
- 835 00ec A1020000 		.4byte	.LASF21
- 836 00f0 02       		.uleb128 0x2
- 837 00f1 08       		.byte	0x8
- 838 00f2 04       		.byte	0x4
- 839 00f3 D1010000 		.4byte	.LASF22
- 840 00f7 02       		.uleb128 0x2
- 841 00f8 04       		.byte	0x4
- 842 00f9 07       		.byte	0x7
- 843 00fa 7E000000 		.4byte	.LASF23
- 844 00fe 06       		.uleb128 0x6
- 845 00ff 08       		.byte	0x8
- 846 0100 05       		.byte	0x5
- 847 0101 6F       		.byte	0x6f
- 848 0102 13010000 		.4byte	0x113
- 849 0106 07       		.uleb128 0x7
- 850 0107 AF010000 		.4byte	.LASF25
- 851 010b 05       		.byte	0x5
- 852 010c 71       		.byte	0x71
- 853 010d 13010000 		.4byte	0x113
- 854 0111 00       		.byte	0
- 855 0112 00       		.byte	0
- 856 0113 08       		.uleb128 0x8
- 857 0114 C3000000 		.4byte	0xc3
- 858 0118 23010000 		.4byte	0x123
- 859 011c 09       		.uleb128 0x9
- 860 011d F7000000 		.4byte	0xf7
- 861 0121 07       		.byte	0x7
- 862 0122 00       		.byte	0
- 863 0123 03       		.uleb128 0x3
- 864 0124 4A020000 		.4byte	.LASF24
- 865 0128 05       		.byte	0x5
- 866 0129 72       		.byte	0x72
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 20
-
-
- 867 012a FE000000 		.4byte	0xfe
- 868 012e 06       		.uleb128 0x6
- 869 012f 0C       		.byte	0xc
- 870 0130 05       		.byte	0x5
- 871 0131 81       		.byte	0x81
- 872 0132 7E010000 		.4byte	0x17e
- 873 0136 0A       		.uleb128 0xa
- 874 0137 696400   		.ascii	"id\000"
- 875 013a 05       		.byte	0x5
- 876 013b 83       		.byte	0x83
- 877 013c CF000000 		.4byte	0xcf
- 878 0140 00       		.byte	0
- 879 0141 0A       		.uleb128 0xa
- 880 0142 72747200 		.ascii	"rtr\000"
- 881 0146 05       		.byte	0x5
- 882 0147 84       		.byte	0x84
- 883 0148 C3000000 		.4byte	0xc3
- 884 014c 04       		.byte	0x4
- 885 014d 0A       		.uleb128 0xa
- 886 014e 69646500 		.ascii	"ide\000"
- 887 0152 05       		.byte	0x5
- 888 0153 85       		.byte	0x85
- 889 0154 C3000000 		.4byte	0xc3
- 890 0158 05       		.byte	0x5
- 891 0159 0A       		.uleb128 0xa
- 892 015a 646C6300 		.ascii	"dlc\000"
- 893 015e 05       		.byte	0x5
- 894 015f 86       		.byte	0x86
- 895 0160 C3000000 		.4byte	0xc3
- 896 0164 06       		.byte	0x6
- 897 0165 0A       		.uleb128 0xa
- 898 0166 69727100 		.ascii	"irq\000"
- 899 016a 05       		.byte	0x5
- 900 016b 87       		.byte	0x87
- 901 016c C3000000 		.4byte	0xc3
- 902 0170 07       		.byte	0x7
- 903 0171 0A       		.uleb128 0xa
- 904 0172 6D736700 		.ascii	"msg\000"
- 905 0176 05       		.byte	0x5
- 906 0177 8B       		.byte	0x8b
- 907 0178 7E010000 		.4byte	0x17e
- 908 017c 08       		.byte	0x8
- 909 017d 00       		.byte	0
- 910 017e 0B       		.uleb128 0xb
- 911 017f 04       		.byte	0x4
- 912 0180 23010000 		.4byte	0x123
- 913 0184 03       		.uleb128 0x3
- 914 0185 0F030000 		.4byte	.LASF26
- 915 0189 05       		.byte	0x5
- 916 018a 8C       		.byte	0x8c
- 917 018b 2E010000 		.4byte	0x12e
- 918 018f 0C       		.uleb128 0xc
- 919 0190 97000000 		.4byte	0x97
- 920 0194 0D       		.uleb128 0xd
- 921 0195 02       		.byte	0x2
- 922 0196 50000000 		.4byte	0x50
- 923 019a 06       		.byte	0x6
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 21
-
-
- 924 019b 0E       		.byte	0xe
- 925 019c C3010000 		.4byte	0x1c3
- 926 01a0 0E       		.uleb128 0xe
- 927 01a1 70030000 		.4byte	.LASF27
- 928 01a5 6607     		.2byte	0x766
- 929 01a7 0E       		.uleb128 0xe
- 930 01a8 4B010000 		.4byte	.LASF28
- 931 01ac 8703     		.2byte	0x387
- 932 01ae 0E       		.uleb128 0xe
- 933 01af 0B010000 		.4byte	.LASF29
- 934 01b3 6603     		.2byte	0x366
- 935 01b5 0E       		.uleb128 0xe
- 936 01b6 9E030000 		.4byte	.LASF30
- 937 01ba 6604     		.2byte	0x466
- 938 01bc 0F       		.uleb128 0xf
- 939 01bd DD010000 		.4byte	.LASF31
- 940 01c1 C1       		.byte	0xc1
- 941 01c2 00       		.byte	0
- 942 01c3 0D       		.uleb128 0xd
- 943 01c4 02       		.byte	0x2
- 944 01c5 50000000 		.4byte	0x50
- 945 01c9 06       		.byte	0x6
- 946 01ca 16       		.byte	0x16
- 947 01cb EC010000 		.4byte	0x1ec
- 948 01cf 0E       		.uleb128 0xe
- 949 01d0 CC040000 		.4byte	.LASF32
- 950 01d4 6307     		.2byte	0x763
- 951 01d6 0E       		.uleb128 0xe
- 952 01d7 1E000000 		.4byte	.LASF33
- 953 01db 8303     		.2byte	0x383
- 954 01dd 0E       		.uleb128 0xe
- 955 01de 93020000 		.4byte	.LASF34
- 956 01e2 6303     		.2byte	0x363
- 957 01e4 0E       		.uleb128 0xe
- 958 01e5 57010000 		.4byte	.LASF35
- 959 01e9 6304     		.2byte	0x463
- 960 01eb 00       		.byte	0
- 961 01ec 10       		.uleb128 0x10
- 962 01ed F2000000 		.4byte	.LASF36
- 963 01f1 01       		.byte	0x1
- 964 01f2 23       		.byte	0x23
- 965 01f3 97000000 		.4byte	0x97
- 966 01f7 00000000 		.4byte	.LFB63
- 967 01fb 0C000000 		.4byte	.LFE63-.LFB63
- 968 01ff 01       		.uleb128 0x1
- 969 0200 9C       		.byte	0x9c
- 970 0201 10       		.uleb128 0x10
- 971 0202 2F020000 		.4byte	.LASF37
- 972 0206 01       		.byte	0x1
- 973 0207 29       		.byte	0x29
- 974 0208 97000000 		.4byte	0x97
- 975 020c 00000000 		.4byte	.LFB64
- 976 0210 0C000000 		.4byte	.LFE64-.LFB64
- 977 0214 01       		.uleb128 0x1
- 978 0215 9C       		.byte	0x9c
- 979 0216 10       		.uleb128 0x10
- 980 0217 73020000 		.4byte	.LASF38
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 22
-
-
- 981 021b 01       		.byte	0x1
- 982 021c 2F       		.byte	0x2f
- 983 021d 97000000 		.4byte	0x97
- 984 0221 00000000 		.4byte	.LFB65
- 985 0225 0C000000 		.4byte	.LFE65-.LFB65
- 986 0229 01       		.uleb128 0x1
- 987 022a 9C       		.byte	0x9c
- 988 022b 10       		.uleb128 0x10
- 989 022c AD000000 		.4byte	.LASF39
- 990 0230 01       		.byte	0x1
- 991 0231 34       		.byte	0x34
- 992 0232 97000000 		.4byte	0x97
- 993 0236 00000000 		.4byte	.LFB66
- 994 023a 0C000000 		.4byte	.LFE66-.LFB66
- 995 023e 01       		.uleb128 0x1
- 996 023f 9C       		.byte	0x9c
- 997 0240 10       		.uleb128 0x10
- 998 0241 ED020000 		.4byte	.LASF40
- 999 0245 01       		.byte	0x1
- 1000 0246 39       		.byte	0x39
- 1001 0247 97000000 		.4byte	0x97
- 1002 024b 00000000 		.4byte	.LFB67
- 1003 024f 0C000000 		.4byte	.LFE67-.LFB67
- 1004 0253 01       		.uleb128 0x1
- 1005 0254 9C       		.byte	0x9c
- 1006 0255 10       		.uleb128 0x10
- 1007 0256 4B030000 		.4byte	.LASF41
- 1008 025a 01       		.byte	0x1
- 1009 025b 3E       		.byte	0x3e
- 1010 025c 97000000 		.4byte	0x97
- 1011 0260 00000000 		.4byte	.LFB68
- 1012 0264 0C000000 		.4byte	.LFE68-.LFB68
- 1013 0268 01       		.uleb128 0x1
- 1014 0269 9C       		.byte	0x9c
- 1015 026a 11       		.uleb128 0x11
- 1016 026b A6040000 		.4byte	.LASF44
- 1017 026f 01       		.byte	0x1
- 1018 0270 44       		.byte	0x44
- 1019 0271 00000000 		.4byte	.LFB69
- 1020 0275 68000000 		.4byte	.LFE69-.LFB69
- 1021 0279 01       		.uleb128 0x1
- 1022 027a 9C       		.byte	0x9c
- 1023 027b BE020000 		.4byte	0x2be
- 1024 027f 12       		.uleb128 0x12
- 1025 0280 6D736700 		.ascii	"msg\000"
- 1026 0284 01       		.byte	0x1
- 1027 0285 44       		.byte	0x44
- 1028 0286 BE020000 		.4byte	0x2be
- 1029 028a 00000000 		.4byte	.LLST0
- 1030 028e 12       		.uleb128 0x12
- 1031 028f 494400   		.ascii	"ID\000"
- 1032 0292 01       		.byte	0x1
- 1033 0293 44       		.byte	0x44
- 1034 0294 89000000 		.4byte	0x89
- 1035 0298 2C000000 		.4byte	.LLST1
- 1036 029c 13       		.uleb128 0x13
- 1037 029d 6E010000 		.4byte	.LASF42
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 23
-
-
- 1038 02a1 01       		.byte	0x1
- 1039 02a2 46       		.byte	0x46
- 1040 02a3 C3000000 		.4byte	0xc3
- 1041 02a7 58000000 		.4byte	.LLST2
- 1042 02ab 14       		.uleb128 0x14
- 1043 02ac 0A000000 		.4byte	.LVL1
- 1044 02b0 5E060000 		.4byte	0x65e
- 1045 02b4 14       		.uleb128 0x14
- 1046 02b5 60000000 		.4byte	.LVL2
- 1047 02b9 69060000 		.4byte	0x669
- 1048 02bd 00       		.byte	0
- 1049 02be 0B       		.uleb128 0xb
- 1050 02bf 04       		.byte	0x4
- 1051 02c0 97000000 		.4byte	0x97
- 1052 02c4 15       		.uleb128 0x15
- 1053 02c5 5A000000 		.4byte	.LASF60
- 1054 02c9 01       		.byte	0x1
- 1055 02ca 60       		.byte	0x60
- 1056 02cb 00000000 		.4byte	.LFB70
- 1057 02cf 4A000000 		.4byte	.LFE70-.LFB70
- 1058 02d3 01       		.uleb128 0x1
- 1059 02d4 9C       		.byte	0x9c
- 1060 02d5 F8020000 		.4byte	0x2f8
- 1061 02d9 16       		.uleb128 0x16
- 1062 02da A8010000 		.4byte	.LASF43
- 1063 02de 01       		.byte	0x1
- 1064 02df 63       		.byte	0x63
- 1065 02e0 84010000 		.4byte	0x184
- 1066 02e4 02       		.uleb128 0x2
- 1067 02e5 91       		.byte	0x91
- 1068 02e6 6C       		.sleb128 -20
- 1069 02e7 17       		.uleb128 0x17
- 1070 02e8 44000000 		.4byte	.LVL4
- 1071 02ec 74060000 		.4byte	0x674
- 1072 02f0 18       		.uleb128 0x18
- 1073 02f1 01       		.uleb128 0x1
- 1074 02f2 50       		.byte	0x50
- 1075 02f3 02       		.uleb128 0x2
- 1076 02f4 91       		.byte	0x91
- 1077 02f5 6C       		.sleb128 -20
- 1078 02f6 00       		.byte	0
- 1079 02f7 00       		.byte	0
- 1080 02f8 11       		.uleb128 0x11
- 1081 02f9 95030000 		.4byte	.LASF45
- 1082 02fd 01       		.byte	0x1
- 1083 02fe 78       		.byte	0x78
- 1084 02ff 00000000 		.4byte	.LFB71
- 1085 0303 3E000000 		.4byte	.LFE71-.LFB71
- 1086 0307 01       		.uleb128 0x1
- 1087 0308 9C       		.byte	0x9c
- 1088 0309 64030000 		.4byte	0x364
- 1089 030d 19       		.uleb128 0x19
- 1090 030e E1020000 		.4byte	.LASF46
- 1091 0312 01       		.byte	0x1
- 1092 0313 78       		.byte	0x78
- 1093 0314 BE020000 		.4byte	0x2be
- 1094 0318 6B000000 		.4byte	.LLST3
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 24
-
-
- 1095 031c 12       		.uleb128 0x12
- 1096 031d 494400   		.ascii	"ID\000"
- 1097 0320 01       		.byte	0x1
- 1098 0321 78       		.byte	0x78
- 1099 0322 B8000000 		.4byte	0xb8
- 1100 0326 8C000000 		.4byte	.LLST4
- 1101 032a 1A       		.uleb128 0x1a
- 1102 032b 6900     		.ascii	"i\000"
- 1103 032d 01       		.byte	0x1
- 1104 032e 7A       		.byte	0x7a
- 1105 032f 97000000 		.4byte	0x97
- 1106 0333 C5000000 		.4byte	.LLST5
- 1107 0337 16       		.uleb128 0x16
- 1108 0338 FA020000 		.4byte	.LASF47
- 1109 033c 01       		.byte	0x1
- 1110 033d 7B       		.byte	0x7b
- 1111 033e 84010000 		.4byte	0x184
- 1112 0342 02       		.uleb128 0x2
- 1113 0343 91       		.byte	0x91
- 1114 0344 6C       		.sleb128 -20
- 1115 0345 16       		.uleb128 0x16
- 1116 0346 C4040000 		.4byte	.LASF48
- 1117 034a 01       		.byte	0x1
- 1118 034b 7C       		.byte	0x7c
- 1119 034c 23010000 		.4byte	0x123
- 1120 0350 02       		.uleb128 0x2
- 1121 0351 91       		.byte	0x91
- 1122 0352 64       		.sleb128 -28
- 1123 0353 17       		.uleb128 0x17
- 1124 0354 38000000 		.4byte	.LVL11
- 1125 0358 74060000 		.4byte	0x674
- 1126 035c 18       		.uleb128 0x18
- 1127 035d 01       		.uleb128 0x1
- 1128 035e 50       		.byte	0x50
- 1129 035f 02       		.uleb128 0x2
- 1130 0360 91       		.byte	0x91
- 1131 0361 6C       		.sleb128 -20
- 1132 0362 00       		.byte	0
- 1133 0363 00       		.byte	0
- 1134 0364 11       		.uleb128 0x11
- 1135 0365 C9000000 		.4byte	.LASF49
- 1136 0369 01       		.byte	0x1
- 1137 036a 88       		.byte	0x88
- 1138 036b 00000000 		.4byte	.LFB72
- 1139 036f 3C000000 		.4byte	.LFE72-.LFB72
- 1140 0373 01       		.uleb128 0x1
- 1141 0374 9C       		.byte	0x9c
- 1142 0375 EE030000 		.4byte	0x3ee
- 1143 0379 19       		.uleb128 0x19
- 1144 037a 87000000 		.4byte	.LASF50
- 1145 037e 01       		.byte	0x1
- 1146 037f 89       		.byte	0x89
- 1147 0380 97000000 		.4byte	0x97
- 1148 0384 EF000000 		.4byte	.LLST6
- 1149 0388 19       		.uleb128 0x19
- 1150 0389 62030000 		.4byte	.LASF51
- 1151 038d 01       		.byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 25
-
-
- 1152 038e 8A       		.byte	0x8a
- 1153 038f A2000000 		.4byte	0xa2
- 1154 0393 1C010000 		.4byte	.LLST7
- 1155 0397 19       		.uleb128 0x19
- 1156 0398 26030000 		.4byte	.LASF52
- 1157 039c 01       		.byte	0x1
- 1158 039d 8B       		.byte	0x8b
- 1159 039e A2000000 		.4byte	0xa2
- 1160 03a2 3D010000 		.4byte	.LLST8
- 1161 03a6 19       		.uleb128 0x19
- 1162 03a7 55030000 		.4byte	.LASF53
- 1163 03ab 01       		.byte	0x1
- 1164 03ac 8C       		.byte	0x8c
- 1165 03ad 97000000 		.4byte	0x97
- 1166 03b1 5E010000 		.4byte	.LLST9
- 1167 03b5 16       		.uleb128 0x16
- 1168 03b6 E1020000 		.4byte	.LASF46
- 1169 03ba 01       		.byte	0x1
- 1170 03bb 91       		.byte	0x91
- 1171 03bc EE030000 		.4byte	0x3ee
- 1172 03c0 02       		.uleb128 0x2
- 1173 03c1 91       		.byte	0x91
- 1174 03c2 70       		.sleb128 -16
- 1175 03c3 1B       		.uleb128 0x1b
- 1176 03c4 30000000 		.4byte	.LVL16
- 1177 03c8 F8020000 		.4byte	0x2f8
- 1178 03cc DE030000 		.4byte	0x3de
- 1179 03d0 18       		.uleb128 0x18
- 1180 03d1 01       		.uleb128 0x1
- 1181 03d2 50       		.byte	0x50
- 1182 03d3 02       		.uleb128 0x2
- 1183 03d4 7D       		.byte	0x7d
- 1184 03d5 00       		.sleb128 0
- 1185 03d6 18       		.uleb128 0x18
- 1186 03d7 01       		.uleb128 0x1
- 1187 03d8 51       		.byte	0x51
- 1188 03d9 03       		.uleb128 0x3
- 1189 03da 0A       		.byte	0xa
- 1190 03db 6307     		.2byte	0x763
- 1191 03dd 00       		.byte	0
- 1192 03de 17       		.uleb128 0x17
- 1193 03df 36000000 		.4byte	.LVL17
- 1194 03e3 80060000 		.4byte	0x680
- 1195 03e7 18       		.uleb128 0x18
- 1196 03e8 01       		.uleb128 0x1
- 1197 03e9 50       		.byte	0x50
- 1198 03ea 01       		.uleb128 0x1
- 1199 03eb 31       		.byte	0x31
- 1200 03ec 00       		.byte	0
- 1201 03ed 00       		.byte	0
- 1202 03ee 08       		.uleb128 0x8
- 1203 03ef 97000000 		.4byte	0x97
- 1204 03f3 FE030000 		.4byte	0x3fe
- 1205 03f7 09       		.uleb128 0x9
- 1206 03f8 F7000000 		.4byte	0xf7
- 1207 03fc 07       		.byte	0x7
- 1208 03fd 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 26
-
-
- 1209 03fe 11       		.uleb128 0x11
- 1210 03ff 8F010000 		.4byte	.LASF54
- 1211 0403 01       		.byte	0x1
- 1212 0404 A4       		.byte	0xa4
- 1213 0405 00000000 		.4byte	.LFB73
- 1214 0409 1E000000 		.4byte	.LFE73-.LFB73
- 1215 040d 01       		.uleb128 0x1
- 1216 040e 9C       		.byte	0x9c
- 1217 040f 48040000 		.4byte	0x448
- 1218 0413 19       		.uleb128 0x19
- 1219 0414 68000000 		.4byte	.LASF55
- 1220 0418 01       		.byte	0x1
- 1221 0419 A4       		.byte	0xa4
- 1222 041a 97000000 		.4byte	0x97
- 1223 041e 7F010000 		.4byte	.LLST10
- 1224 0422 16       		.uleb128 0x16
- 1225 0423 E1020000 		.4byte	.LASF46
- 1226 0427 01       		.byte	0x1
- 1227 0428 A5       		.byte	0xa5
- 1228 0429 EE030000 		.4byte	0x3ee
- 1229 042d 02       		.uleb128 0x2
- 1230 042e 91       		.byte	0x91
- 1231 042f 70       		.sleb128 -16
- 1232 0430 17       		.uleb128 0x17
- 1233 0431 18000000 		.4byte	.LVL20
- 1234 0435 F8020000 		.4byte	0x2f8
- 1235 0439 18       		.uleb128 0x18
- 1236 043a 01       		.uleb128 0x1
- 1237 043b 50       		.byte	0x50
- 1238 043c 02       		.uleb128 0x2
- 1239 043d 7D       		.byte	0x7d
- 1240 043e 00       		.sleb128 0
- 1241 043f 18       		.uleb128 0x18
- 1242 0440 01       		.uleb128 0x1
- 1243 0441 51       		.byte	0x51
- 1244 0442 03       		.uleb128 0x3
- 1245 0443 0A       		.byte	0xa
- 1246 0444 6304     		.2byte	0x463
- 1247 0446 00       		.byte	0
- 1248 0447 00       		.byte	0
- 1249 0448 11       		.uleb128 0x11
- 1250 0449 B2040000 		.4byte	.LASF56
- 1251 044d 01       		.byte	0x1
- 1252 044e AA       		.byte	0xaa
- 1253 044f 00000000 		.4byte	.LFB74
- 1254 0453 20000000 		.4byte	.LFE74-.LFB74
- 1255 0457 01       		.uleb128 0x1
- 1256 0458 9C       		.byte	0x9c
- 1257 0459 92040000 		.4byte	0x492
- 1258 045d 19       		.uleb128 0x19
- 1259 045e E0040000 		.4byte	.LASF57
- 1260 0462 01       		.byte	0x1
- 1261 0463 AA       		.byte	0xaa
- 1262 0464 97000000 		.4byte	0x97
- 1263 0468 AC010000 		.4byte	.LLST11
- 1264 046c 16       		.uleb128 0x16
- 1265 046d E1020000 		.4byte	.LASF46
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 27
-
-
- 1266 0471 01       		.byte	0x1
- 1267 0472 AB       		.byte	0xab
- 1268 0473 EE030000 		.4byte	0x3ee
- 1269 0477 02       		.uleb128 0x2
- 1270 0478 91       		.byte	0x91
- 1271 0479 70       		.sleb128 -16
- 1272 047a 17       		.uleb128 0x17
- 1273 047b 1A000000 		.4byte	.LVL23
- 1274 047f F8020000 		.4byte	0x2f8
- 1275 0483 18       		.uleb128 0x18
- 1276 0484 01       		.uleb128 0x1
- 1277 0485 50       		.byte	0x50
- 1278 0486 02       		.uleb128 0x2
- 1279 0487 7D       		.byte	0x7d
- 1280 0488 00       		.sleb128 0
- 1281 0489 18       		.uleb128 0x18
- 1282 048a 01       		.uleb128 0x1
- 1283 048b 51       		.byte	0x51
- 1284 048c 03       		.uleb128 0x3
- 1285 048d 0A       		.byte	0xa
- 1286 048e 6304     		.2byte	0x463
- 1287 0490 00       		.byte	0
- 1288 0491 00       		.byte	0
- 1289 0492 11       		.uleb128 0x11
- 1290 0493 28010000 		.4byte	.LASF58
- 1291 0497 01       		.byte	0x1
- 1292 0498 B0       		.byte	0xb0
- 1293 0499 00000000 		.4byte	.LFB75
- 1294 049d 1E000000 		.4byte	.LFE75-.LFB75
- 1295 04a1 01       		.uleb128 0x1
- 1296 04a2 9C       		.byte	0x9c
- 1297 04a3 DC040000 		.4byte	0x4dc
- 1298 04a7 19       		.uleb128 0x19
- 1299 04a8 B5030000 		.4byte	.LASF59
- 1300 04ac 01       		.byte	0x1
- 1301 04ad B0       		.byte	0xb0
- 1302 04ae 97000000 		.4byte	0x97
- 1303 04b2 CD010000 		.4byte	.LLST12
- 1304 04b6 16       		.uleb128 0x16
- 1305 04b7 E1020000 		.4byte	.LASF46
- 1306 04bb 01       		.byte	0x1
- 1307 04bc B1       		.byte	0xb1
- 1308 04bd EE030000 		.4byte	0x3ee
- 1309 04c1 02       		.uleb128 0x2
- 1310 04c2 91       		.byte	0x91
- 1311 04c3 70       		.sleb128 -16
- 1312 04c4 17       		.uleb128 0x17
- 1313 04c5 18000000 		.4byte	.LVL26
- 1314 04c9 F8020000 		.4byte	0x2f8
- 1315 04cd 18       		.uleb128 0x18
- 1316 04ce 01       		.uleb128 0x1
- 1317 04cf 50       		.byte	0x50
- 1318 04d0 02       		.uleb128 0x2
- 1319 04d1 7D       		.byte	0x7d
- 1320 04d2 00       		.sleb128 0
- 1321 04d3 18       		.uleb128 0x18
- 1322 04d4 01       		.uleb128 0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 28
-
-
- 1323 04d5 51       		.byte	0x51
- 1324 04d6 03       		.uleb128 0x3
- 1325 04d7 0A       		.byte	0xa
- 1326 04d8 6303     		.2byte	0x363
- 1327 04da 00       		.byte	0
- 1328 04db 00       		.byte	0
- 1329 04dc 15       		.uleb128 0x15
- 1330 04dd 10000000 		.4byte	.LASF61
- 1331 04e1 01       		.byte	0x1
- 1332 04e2 B6       		.byte	0xb6
- 1333 04e3 00000000 		.4byte	.LFB76
- 1334 04e7 10000000 		.4byte	.LFE76-.LFB76
- 1335 04eb 01       		.uleb128 0x1
- 1336 04ec 9C       		.byte	0x9c
- 1337 04ed 14050000 		.4byte	0x514
- 1338 04f1 1B       		.uleb128 0x1b
- 1339 04f2 08000000 		.4byte	.LVL27
- 1340 04f6 8B060000 		.4byte	0x68b
- 1341 04fa 04050000 		.4byte	0x504
- 1342 04fe 18       		.uleb128 0x18
- 1343 04ff 01       		.uleb128 0x1
- 1344 0500 50       		.byte	0x50
- 1345 0501 01       		.uleb128 0x1
- 1346 0502 31       		.byte	0x31
- 1347 0503 00       		.byte	0
- 1348 0504 17       		.uleb128 0x17
- 1349 0505 0E000000 		.4byte	.LVL28
- 1350 0509 96060000 		.4byte	0x696
- 1351 050d 18       		.uleb128 0x18
- 1352 050e 01       		.uleb128 0x1
- 1353 050f 50       		.byte	0x50
- 1354 0510 01       		.uleb128 0x1
- 1355 0511 31       		.byte	0x31
- 1356 0512 00       		.byte	0
- 1357 0513 00       		.byte	0
- 1358 0514 15       		.uleb128 0x15
- 1359 0515 00000000 		.4byte	.LASF62
- 1360 0519 01       		.byte	0x1
- 1361 051a BD       		.byte	0xbd
- 1362 051b 00000000 		.4byte	.LFB77
- 1363 051f 10000000 		.4byte	.LFE77-.LFB77
- 1364 0523 01       		.uleb128 0x1
- 1365 0524 9C       		.byte	0x9c
- 1366 0525 4C050000 		.4byte	0x54c
- 1367 0529 1B       		.uleb128 0x1b
- 1368 052a 08000000 		.4byte	.LVL29
- 1369 052e 8B060000 		.4byte	0x68b
- 1370 0532 3C050000 		.4byte	0x53c
- 1371 0536 18       		.uleb128 0x18
- 1372 0537 01       		.uleb128 0x1
- 1373 0538 50       		.byte	0x50
- 1374 0539 01       		.uleb128 0x1
- 1375 053a 30       		.byte	0x30
- 1376 053b 00       		.byte	0
- 1377 053c 17       		.uleb128 0x17
- 1378 053d 0E000000 		.4byte	.LVL30
- 1379 0541 96060000 		.4byte	0x696
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 29
-
-
- 1380 0545 18       		.uleb128 0x18
- 1381 0546 01       		.uleb128 0x1
- 1382 0547 50       		.byte	0x50
- 1383 0548 01       		.uleb128 0x1
- 1384 0549 30       		.byte	0x30
- 1385 054a 00       		.byte	0
- 1386 054b 00       		.byte	0
- 1387 054c 11       		.uleb128 0x11
- 1388 054d 5D020000 		.4byte	.LASF63
- 1389 0551 01       		.byte	0x1
- 1390 0552 CF       		.byte	0xcf
- 1391 0553 00000000 		.4byte	.LFB78
- 1392 0557 26000000 		.4byte	.LFE78-.LFB78
- 1393 055b 01       		.uleb128 0x1
- 1394 055c 9C       		.byte	0x9c
- 1395 055d B4050000 		.4byte	0x5b4
- 1396 0561 19       		.uleb128 0x19
- 1397 0562 36000000 		.4byte	.LASF64
- 1398 0566 01       		.byte	0x1
- 1399 0567 CF       		.byte	0xcf
- 1400 0568 97000000 		.4byte	0x97
- 1401 056c FA010000 		.4byte	.LLST13
- 1402 0570 19       		.uleb128 0x19
- 1403 0571 3D030000 		.4byte	.LASF65
- 1404 0575 01       		.byte	0x1
- 1405 0576 CF       		.byte	0xcf
- 1406 0577 97000000 		.4byte	0x97
- 1407 057b 27020000 		.4byte	.LLST14
- 1408 057f 19       		.uleb128 0x19
- 1409 0580 C2010000 		.4byte	.LASF66
- 1410 0584 01       		.byte	0x1
- 1411 0585 CF       		.byte	0xcf
- 1412 0586 97000000 		.4byte	0x97
- 1413 058a 54020000 		.4byte	.LLST15
- 1414 058e 16       		.uleb128 0x16
- 1415 058f E1020000 		.4byte	.LASF46
- 1416 0593 01       		.byte	0x1
- 1417 0594 D1       		.byte	0xd1
- 1418 0595 EE030000 		.4byte	0x3ee
- 1419 0599 02       		.uleb128 0x2
- 1420 059a 91       		.byte	0x91
- 1421 059b 70       		.sleb128 -16
- 1422 059c 17       		.uleb128 0x17
- 1423 059d 20000000 		.4byte	.LVL34
- 1424 05a1 F8020000 		.4byte	0x2f8
- 1425 05a5 18       		.uleb128 0x18
- 1426 05a6 01       		.uleb128 0x1
- 1427 05a7 50       		.byte	0x50
- 1428 05a8 02       		.uleb128 0x2
- 1429 05a9 7D       		.byte	0x7d
- 1430 05aa 00       		.sleb128 0
- 1431 05ab 18       		.uleb128 0x18
- 1432 05ac 01       		.uleb128 0x1
- 1433 05ad 51       		.byte	0x51
- 1434 05ae 03       		.uleb128 0x3
- 1435 05af 0A       		.byte	0xa
- 1436 05b0 8303     		.2byte	0x383
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 30
-
-
- 1437 05b2 00       		.byte	0
- 1438 05b3 00       		.byte	0
- 1439 05b4 1C       		.uleb128 0x1c
- 1440 05b5 BB030000 		.4byte	.LASF67
- 1441 05b9 07       		.byte	0x7
- 1442 05ba 1207     		.2byte	0x712
- 1443 05bc C0050000 		.4byte	0x5c0
- 1444 05c0 0C       		.uleb128 0xc
- 1445 05c1 AD000000 		.4byte	0xad
- 1446 05c5 1D       		.uleb128 0x1d
- 1447 05c6 1A010000 		.4byte	.LASF68
- 1448 05ca 01       		.byte	0x1
- 1449 05cb 14       		.byte	0x14
- 1450 05cc 8F010000 		.4byte	0x18f
- 1451 05d0 05       		.uleb128 0x5
- 1452 05d1 03       		.byte	0x3
- 1453 05d2 00000000 		.4byte	THROTTLE_HIGH
- 1454 05d6 1D       		.uleb128 0x1d
- 1455 05d7 02030000 		.4byte	.LASF69
- 1456 05db 01       		.byte	0x1
- 1457 05dc 15       		.byte	0x15
- 1458 05dd 8F010000 		.4byte	0x18f
- 1459 05e1 05       		.uleb128 0x5
- 1460 05e2 03       		.byte	0x3
- 1461 05e3 00000000 		.4byte	THROTTLE_LOW
- 1462 05e7 1D       		.uleb128 0x1d
- 1463 05e8 6A020000 		.4byte	.LASF70
- 1464 05ec 01       		.byte	0x1
- 1465 05ed 17       		.byte	0x17
- 1466 05ee 8F010000 		.4byte	0x18f
- 1467 05f2 05       		.uleb128 0x5
- 1468 05f3 03       		.byte	0x3
- 1469 05f4 00000000 		.4byte	ESTOP_MC
- 1470 05f8 1D       		.uleb128 0x1d
- 1471 05f9 9F000000 		.4byte	.LASF71
- 1472 05fd 01       		.byte	0x1
- 1473 05fe 19       		.byte	0x19
- 1474 05ff 8F010000 		.4byte	0x18f
- 1475 0603 05       		.uleb128 0x5
- 1476 0604 03       		.byte	0x3
- 1477 0605 00000000 		.4byte	HV_REQUEST_TR
- 1478 0609 1D       		.uleb128 0x1d
- 1479 060a D6000000 		.4byte	.LASF72
- 1480 060e 01       		.byte	0x1
- 1481 060f 1A       		.byte	0x1a
- 1482 0610 8F010000 		.4byte	0x18f
- 1483 0614 05       		.uleb128 0x5
- 1484 0615 03       		.byte	0x3
- 1485 0616 00000000 		.4byte	VEHICLE_STATE
- 1486 061a 1D       		.uleb128 0x1d
- 1487 061b 65010000 		.4byte	.LASF73
- 1488 061f 01       		.byte	0x1
- 1489 0620 1D       		.byte	0x1d
- 1490 0621 8F010000 		.4byte	0x18f
- 1491 0625 05       		.uleb128 0x5
- 1492 0626 03       		.byte	0x3
- 1493 0627 00000000 		.4byte	THROTTLE
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 31
-
-
- 1494 062b 1D       		.uleb128 0x1d
- 1495 062c E4000000 		.4byte	.LASF74
- 1496 0630 01       		.byte	0x1
- 1497 0631 1E       		.byte	0x1e
- 1498 0632 8F010000 		.4byte	0x18f
- 1499 0636 05       		.uleb128 0x5
- 1500 0637 03       		.byte	0x3
- 1501 0638 00000000 		.4byte	SET_INTERLOCK
- 1502 063c 1D       		.uleb128 0x1d
- 1503 063d 6E000000 		.4byte	.LASF75
- 1504 0641 01       		.byte	0x1
- 1505 0642 1F       		.byte	0x1f
- 1506 0643 8F010000 		.4byte	0x18f
- 1507 0647 05       		.uleb128 0x5
- 1508 0648 03       		.byte	0x3
- 1509 0649 00000000 		.4byte	STATE
- 1510 064d 1D       		.uleb128 0x1d
- 1511 064e 85020000 		.4byte	.LASF76
- 1512 0652 01       		.byte	0x1
- 1513 0653 20       		.byte	0x20
- 1514 0654 8F010000 		.4byte	0x18f
- 1515 0658 05       		.uleb128 0x5
- 1516 0659 03       		.byte	0x3
- 1517 065a 00000000 		.4byte	HV_REQUEST_MC
- 1518 065e 1E       		.uleb128 0x1e
- 1519 065f B7020000 		.4byte	.LASF77
- 1520 0663 B7020000 		.4byte	.LASF77
- 1521 0667 08       		.byte	0x8
- 1522 0668 7D       		.byte	0x7d
- 1523 0669 1E       		.uleb128 0x1e
- 1524 066a 44000000 		.4byte	.LASF78
- 1525 066e 44000000 		.4byte	.LASF78
- 1526 0672 08       		.byte	0x8
- 1527 0673 7E       		.byte	0x7e
- 1528 0674 1F       		.uleb128 0x1f
- 1529 0675 1A030000 		.4byte	.LASF79
- 1530 0679 1A030000 		.4byte	.LASF79
- 1531 067d 05       		.byte	0x5
- 1532 067e 1801     		.2byte	0x118
- 1533 0680 1E       		.uleb128 0x1e
- 1534 0681 9E040000 		.4byte	.LASF80
- 1535 0685 9E040000 		.4byte	.LASF80
- 1536 0689 08       		.byte	0x8
- 1537 068a 76       		.byte	0x76
- 1538 068b 1E       		.uleb128 0x1e
- 1539 068c 87030000 		.4byte	.LASF81
- 1540 0690 87030000 		.4byte	.LASF81
- 1541 0694 09       		.byte	0x9
- 1542 0695 26       		.byte	0x26
- 1543 0696 1E       		.uleb128 0x1e
- 1544 0697 A7030000 		.4byte	.LASF82
- 1545 069b A7030000 		.4byte	.LASF82
- 1546 069f 0A       		.byte	0xa
- 1547 06a0 26       		.byte	0x26
- 1548 06a1 00       		.byte	0
- 1549              		.section	.debug_abbrev,"",%progbits
- 1550              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 32
-
-
- 1551 0000 01       		.uleb128 0x1
- 1552 0001 11       		.uleb128 0x11
- 1553 0002 01       		.byte	0x1
- 1554 0003 25       		.uleb128 0x25
- 1555 0004 0E       		.uleb128 0xe
- 1556 0005 13       		.uleb128 0x13
- 1557 0006 0B       		.uleb128 0xb
- 1558 0007 03       		.uleb128 0x3
- 1559 0008 0E       		.uleb128 0xe
- 1560 0009 1B       		.uleb128 0x1b
- 1561 000a 0E       		.uleb128 0xe
- 1562 000b 55       		.uleb128 0x55
- 1563 000c 17       		.uleb128 0x17
- 1564 000d 11       		.uleb128 0x11
- 1565 000e 01       		.uleb128 0x1
- 1566 000f 10       		.uleb128 0x10
- 1567 0010 17       		.uleb128 0x17
- 1568 0011 00       		.byte	0
- 1569 0012 00       		.byte	0
- 1570 0013 02       		.uleb128 0x2
- 1571 0014 24       		.uleb128 0x24
- 1572 0015 00       		.byte	0
- 1573 0016 0B       		.uleb128 0xb
- 1574 0017 0B       		.uleb128 0xb
- 1575 0018 3E       		.uleb128 0x3e
- 1576 0019 0B       		.uleb128 0xb
- 1577 001a 03       		.uleb128 0x3
- 1578 001b 0E       		.uleb128 0xe
- 1579 001c 00       		.byte	0
- 1580 001d 00       		.byte	0
- 1581 001e 03       		.uleb128 0x3
- 1582 001f 16       		.uleb128 0x16
- 1583 0020 00       		.byte	0
- 1584 0021 03       		.uleb128 0x3
- 1585 0022 0E       		.uleb128 0xe
- 1586 0023 3A       		.uleb128 0x3a
- 1587 0024 0B       		.uleb128 0xb
- 1588 0025 3B       		.uleb128 0x3b
- 1589 0026 0B       		.uleb128 0xb
- 1590 0027 49       		.uleb128 0x49
- 1591 0028 13       		.uleb128 0x13
- 1592 0029 00       		.byte	0
- 1593 002a 00       		.byte	0
- 1594 002b 04       		.uleb128 0x4
- 1595 002c 24       		.uleb128 0x24
- 1596 002d 00       		.byte	0
- 1597 002e 0B       		.uleb128 0xb
- 1598 002f 0B       		.uleb128 0xb
- 1599 0030 3E       		.uleb128 0x3e
- 1600 0031 0B       		.uleb128 0xb
- 1601 0032 03       		.uleb128 0x3
- 1602 0033 08       		.uleb128 0x8
- 1603 0034 00       		.byte	0
- 1604 0035 00       		.byte	0
- 1605 0036 05       		.uleb128 0x5
- 1606 0037 16       		.uleb128 0x16
- 1607 0038 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 33
-
-
- 1608 0039 03       		.uleb128 0x3
- 1609 003a 0E       		.uleb128 0xe
- 1610 003b 3A       		.uleb128 0x3a
- 1611 003c 0B       		.uleb128 0xb
- 1612 003d 3B       		.uleb128 0x3b
- 1613 003e 05       		.uleb128 0x5
- 1614 003f 49       		.uleb128 0x49
- 1615 0040 13       		.uleb128 0x13
- 1616 0041 00       		.byte	0
- 1617 0042 00       		.byte	0
- 1618 0043 06       		.uleb128 0x6
- 1619 0044 13       		.uleb128 0x13
- 1620 0045 01       		.byte	0x1
- 1621 0046 0B       		.uleb128 0xb
- 1622 0047 0B       		.uleb128 0xb
- 1623 0048 3A       		.uleb128 0x3a
- 1624 0049 0B       		.uleb128 0xb
- 1625 004a 3B       		.uleb128 0x3b
- 1626 004b 0B       		.uleb128 0xb
- 1627 004c 01       		.uleb128 0x1
- 1628 004d 13       		.uleb128 0x13
- 1629 004e 00       		.byte	0
- 1630 004f 00       		.byte	0
- 1631 0050 07       		.uleb128 0x7
- 1632 0051 0D       		.uleb128 0xd
- 1633 0052 00       		.byte	0
- 1634 0053 03       		.uleb128 0x3
- 1635 0054 0E       		.uleb128 0xe
- 1636 0055 3A       		.uleb128 0x3a
- 1637 0056 0B       		.uleb128 0xb
- 1638 0057 3B       		.uleb128 0x3b
- 1639 0058 0B       		.uleb128 0xb
- 1640 0059 49       		.uleb128 0x49
- 1641 005a 13       		.uleb128 0x13
- 1642 005b 38       		.uleb128 0x38
- 1643 005c 0B       		.uleb128 0xb
- 1644 005d 00       		.byte	0
- 1645 005e 00       		.byte	0
- 1646 005f 08       		.uleb128 0x8
- 1647 0060 01       		.uleb128 0x1
- 1648 0061 01       		.byte	0x1
- 1649 0062 49       		.uleb128 0x49
- 1650 0063 13       		.uleb128 0x13
- 1651 0064 01       		.uleb128 0x1
- 1652 0065 13       		.uleb128 0x13
- 1653 0066 00       		.byte	0
- 1654 0067 00       		.byte	0
- 1655 0068 09       		.uleb128 0x9
- 1656 0069 21       		.uleb128 0x21
- 1657 006a 00       		.byte	0
- 1658 006b 49       		.uleb128 0x49
- 1659 006c 13       		.uleb128 0x13
- 1660 006d 2F       		.uleb128 0x2f
- 1661 006e 0B       		.uleb128 0xb
- 1662 006f 00       		.byte	0
- 1663 0070 00       		.byte	0
- 1664 0071 0A       		.uleb128 0xa
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 34
-
-
- 1665 0072 0D       		.uleb128 0xd
- 1666 0073 00       		.byte	0
- 1667 0074 03       		.uleb128 0x3
- 1668 0075 08       		.uleb128 0x8
- 1669 0076 3A       		.uleb128 0x3a
- 1670 0077 0B       		.uleb128 0xb
- 1671 0078 3B       		.uleb128 0x3b
- 1672 0079 0B       		.uleb128 0xb
- 1673 007a 49       		.uleb128 0x49
- 1674 007b 13       		.uleb128 0x13
- 1675 007c 38       		.uleb128 0x38
- 1676 007d 0B       		.uleb128 0xb
- 1677 007e 00       		.byte	0
- 1678 007f 00       		.byte	0
- 1679 0080 0B       		.uleb128 0xb
- 1680 0081 0F       		.uleb128 0xf
- 1681 0082 00       		.byte	0
- 1682 0083 0B       		.uleb128 0xb
- 1683 0084 0B       		.uleb128 0xb
- 1684 0085 49       		.uleb128 0x49
- 1685 0086 13       		.uleb128 0x13
- 1686 0087 00       		.byte	0
- 1687 0088 00       		.byte	0
- 1688 0089 0C       		.uleb128 0xc
- 1689 008a 35       		.uleb128 0x35
- 1690 008b 00       		.byte	0
- 1691 008c 49       		.uleb128 0x49
- 1692 008d 13       		.uleb128 0x13
- 1693 008e 00       		.byte	0
- 1694 008f 00       		.byte	0
- 1695 0090 0D       		.uleb128 0xd
- 1696 0091 04       		.uleb128 0x4
- 1697 0092 01       		.byte	0x1
- 1698 0093 0B       		.uleb128 0xb
- 1699 0094 0B       		.uleb128 0xb
- 1700 0095 49       		.uleb128 0x49
- 1701 0096 13       		.uleb128 0x13
- 1702 0097 3A       		.uleb128 0x3a
- 1703 0098 0B       		.uleb128 0xb
- 1704 0099 3B       		.uleb128 0x3b
- 1705 009a 0B       		.uleb128 0xb
- 1706 009b 01       		.uleb128 0x1
- 1707 009c 13       		.uleb128 0x13
- 1708 009d 00       		.byte	0
- 1709 009e 00       		.byte	0
- 1710 009f 0E       		.uleb128 0xe
- 1711 00a0 28       		.uleb128 0x28
- 1712 00a1 00       		.byte	0
- 1713 00a2 03       		.uleb128 0x3
- 1714 00a3 0E       		.uleb128 0xe
- 1715 00a4 1C       		.uleb128 0x1c
- 1716 00a5 05       		.uleb128 0x5
- 1717 00a6 00       		.byte	0
- 1718 00a7 00       		.byte	0
- 1719 00a8 0F       		.uleb128 0xf
- 1720 00a9 28       		.uleb128 0x28
- 1721 00aa 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 35
-
-
- 1722 00ab 03       		.uleb128 0x3
- 1723 00ac 0E       		.uleb128 0xe
- 1724 00ad 1C       		.uleb128 0x1c
- 1725 00ae 0B       		.uleb128 0xb
- 1726 00af 00       		.byte	0
- 1727 00b0 00       		.byte	0
- 1728 00b1 10       		.uleb128 0x10
- 1729 00b2 2E       		.uleb128 0x2e
- 1730 00b3 00       		.byte	0
- 1731 00b4 3F       		.uleb128 0x3f
- 1732 00b5 19       		.uleb128 0x19
- 1733 00b6 03       		.uleb128 0x3
- 1734 00b7 0E       		.uleb128 0xe
- 1735 00b8 3A       		.uleb128 0x3a
- 1736 00b9 0B       		.uleb128 0xb
- 1737 00ba 3B       		.uleb128 0x3b
- 1738 00bb 0B       		.uleb128 0xb
- 1739 00bc 49       		.uleb128 0x49
- 1740 00bd 13       		.uleb128 0x13
- 1741 00be 11       		.uleb128 0x11
- 1742 00bf 01       		.uleb128 0x1
- 1743 00c0 12       		.uleb128 0x12
- 1744 00c1 06       		.uleb128 0x6
- 1745 00c2 40       		.uleb128 0x40
- 1746 00c3 18       		.uleb128 0x18
- 1747 00c4 9742     		.uleb128 0x2117
- 1748 00c6 19       		.uleb128 0x19
- 1749 00c7 00       		.byte	0
- 1750 00c8 00       		.byte	0
- 1751 00c9 11       		.uleb128 0x11
- 1752 00ca 2E       		.uleb128 0x2e
- 1753 00cb 01       		.byte	0x1
- 1754 00cc 3F       		.uleb128 0x3f
- 1755 00cd 19       		.uleb128 0x19
- 1756 00ce 03       		.uleb128 0x3
- 1757 00cf 0E       		.uleb128 0xe
- 1758 00d0 3A       		.uleb128 0x3a
- 1759 00d1 0B       		.uleb128 0xb
- 1760 00d2 3B       		.uleb128 0x3b
- 1761 00d3 0B       		.uleb128 0xb
- 1762 00d4 27       		.uleb128 0x27
- 1763 00d5 19       		.uleb128 0x19
- 1764 00d6 11       		.uleb128 0x11
- 1765 00d7 01       		.uleb128 0x1
- 1766 00d8 12       		.uleb128 0x12
- 1767 00d9 06       		.uleb128 0x6
- 1768 00da 40       		.uleb128 0x40
- 1769 00db 18       		.uleb128 0x18
- 1770 00dc 9742     		.uleb128 0x2117
- 1771 00de 19       		.uleb128 0x19
- 1772 00df 01       		.uleb128 0x1
- 1773 00e0 13       		.uleb128 0x13
- 1774 00e1 00       		.byte	0
- 1775 00e2 00       		.byte	0
- 1776 00e3 12       		.uleb128 0x12
- 1777 00e4 05       		.uleb128 0x5
- 1778 00e5 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 36
-
-
- 1779 00e6 03       		.uleb128 0x3
- 1780 00e7 08       		.uleb128 0x8
- 1781 00e8 3A       		.uleb128 0x3a
- 1782 00e9 0B       		.uleb128 0xb
- 1783 00ea 3B       		.uleb128 0x3b
- 1784 00eb 0B       		.uleb128 0xb
- 1785 00ec 49       		.uleb128 0x49
- 1786 00ed 13       		.uleb128 0x13
- 1787 00ee 02       		.uleb128 0x2
- 1788 00ef 17       		.uleb128 0x17
- 1789 00f0 00       		.byte	0
- 1790 00f1 00       		.byte	0
- 1791 00f2 13       		.uleb128 0x13
- 1792 00f3 34       		.uleb128 0x34
- 1793 00f4 00       		.byte	0
- 1794 00f5 03       		.uleb128 0x3
- 1795 00f6 0E       		.uleb128 0xe
- 1796 00f7 3A       		.uleb128 0x3a
- 1797 00f8 0B       		.uleb128 0xb
- 1798 00f9 3B       		.uleb128 0x3b
- 1799 00fa 0B       		.uleb128 0xb
- 1800 00fb 49       		.uleb128 0x49
- 1801 00fc 13       		.uleb128 0x13
- 1802 00fd 02       		.uleb128 0x2
- 1803 00fe 17       		.uleb128 0x17
- 1804 00ff 00       		.byte	0
- 1805 0100 00       		.byte	0
- 1806 0101 14       		.uleb128 0x14
- 1807 0102 898201   		.uleb128 0x4109
- 1808 0105 00       		.byte	0
- 1809 0106 11       		.uleb128 0x11
- 1810 0107 01       		.uleb128 0x1
- 1811 0108 31       		.uleb128 0x31
- 1812 0109 13       		.uleb128 0x13
- 1813 010a 00       		.byte	0
- 1814 010b 00       		.byte	0
- 1815 010c 15       		.uleb128 0x15
- 1816 010d 2E       		.uleb128 0x2e
- 1817 010e 01       		.byte	0x1
- 1818 010f 3F       		.uleb128 0x3f
- 1819 0110 19       		.uleb128 0x19
- 1820 0111 03       		.uleb128 0x3
- 1821 0112 0E       		.uleb128 0xe
- 1822 0113 3A       		.uleb128 0x3a
- 1823 0114 0B       		.uleb128 0xb
- 1824 0115 3B       		.uleb128 0x3b
- 1825 0116 0B       		.uleb128 0xb
- 1826 0117 11       		.uleb128 0x11
- 1827 0118 01       		.uleb128 0x1
- 1828 0119 12       		.uleb128 0x12
- 1829 011a 06       		.uleb128 0x6
- 1830 011b 40       		.uleb128 0x40
- 1831 011c 18       		.uleb128 0x18
- 1832 011d 9742     		.uleb128 0x2117
- 1833 011f 19       		.uleb128 0x19
- 1834 0120 01       		.uleb128 0x1
- 1835 0121 13       		.uleb128 0x13
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 37
-
-
- 1836 0122 00       		.byte	0
- 1837 0123 00       		.byte	0
- 1838 0124 16       		.uleb128 0x16
- 1839 0125 34       		.uleb128 0x34
- 1840 0126 00       		.byte	0
- 1841 0127 03       		.uleb128 0x3
- 1842 0128 0E       		.uleb128 0xe
- 1843 0129 3A       		.uleb128 0x3a
- 1844 012a 0B       		.uleb128 0xb
- 1845 012b 3B       		.uleb128 0x3b
- 1846 012c 0B       		.uleb128 0xb
- 1847 012d 49       		.uleb128 0x49
- 1848 012e 13       		.uleb128 0x13
- 1849 012f 02       		.uleb128 0x2
- 1850 0130 18       		.uleb128 0x18
- 1851 0131 00       		.byte	0
- 1852 0132 00       		.byte	0
- 1853 0133 17       		.uleb128 0x17
- 1854 0134 898201   		.uleb128 0x4109
- 1855 0137 01       		.byte	0x1
- 1856 0138 11       		.uleb128 0x11
- 1857 0139 01       		.uleb128 0x1
- 1858 013a 31       		.uleb128 0x31
- 1859 013b 13       		.uleb128 0x13
- 1860 013c 00       		.byte	0
- 1861 013d 00       		.byte	0
- 1862 013e 18       		.uleb128 0x18
- 1863 013f 8A8201   		.uleb128 0x410a
- 1864 0142 00       		.byte	0
- 1865 0143 02       		.uleb128 0x2
- 1866 0144 18       		.uleb128 0x18
- 1867 0145 9142     		.uleb128 0x2111
- 1868 0147 18       		.uleb128 0x18
- 1869 0148 00       		.byte	0
- 1870 0149 00       		.byte	0
- 1871 014a 19       		.uleb128 0x19
- 1872 014b 05       		.uleb128 0x5
- 1873 014c 00       		.byte	0
- 1874 014d 03       		.uleb128 0x3
- 1875 014e 0E       		.uleb128 0xe
- 1876 014f 3A       		.uleb128 0x3a
- 1877 0150 0B       		.uleb128 0xb
- 1878 0151 3B       		.uleb128 0x3b
- 1879 0152 0B       		.uleb128 0xb
- 1880 0153 49       		.uleb128 0x49
- 1881 0154 13       		.uleb128 0x13
- 1882 0155 02       		.uleb128 0x2
- 1883 0156 17       		.uleb128 0x17
- 1884 0157 00       		.byte	0
- 1885 0158 00       		.byte	0
- 1886 0159 1A       		.uleb128 0x1a
- 1887 015a 34       		.uleb128 0x34
- 1888 015b 00       		.byte	0
- 1889 015c 03       		.uleb128 0x3
- 1890 015d 08       		.uleb128 0x8
- 1891 015e 3A       		.uleb128 0x3a
- 1892 015f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 38
-
-
- 1893 0160 3B       		.uleb128 0x3b
- 1894 0161 0B       		.uleb128 0xb
- 1895 0162 49       		.uleb128 0x49
- 1896 0163 13       		.uleb128 0x13
- 1897 0164 02       		.uleb128 0x2
- 1898 0165 17       		.uleb128 0x17
- 1899 0166 00       		.byte	0
- 1900 0167 00       		.byte	0
- 1901 0168 1B       		.uleb128 0x1b
- 1902 0169 898201   		.uleb128 0x4109
- 1903 016c 01       		.byte	0x1
- 1904 016d 11       		.uleb128 0x11
- 1905 016e 01       		.uleb128 0x1
- 1906 016f 31       		.uleb128 0x31
- 1907 0170 13       		.uleb128 0x13
- 1908 0171 01       		.uleb128 0x1
- 1909 0172 13       		.uleb128 0x13
- 1910 0173 00       		.byte	0
- 1911 0174 00       		.byte	0
- 1912 0175 1C       		.uleb128 0x1c
- 1913 0176 34       		.uleb128 0x34
- 1914 0177 00       		.byte	0
- 1915 0178 03       		.uleb128 0x3
- 1916 0179 0E       		.uleb128 0xe
- 1917 017a 3A       		.uleb128 0x3a
- 1918 017b 0B       		.uleb128 0xb
- 1919 017c 3B       		.uleb128 0x3b
- 1920 017d 05       		.uleb128 0x5
- 1921 017e 49       		.uleb128 0x49
- 1922 017f 13       		.uleb128 0x13
- 1923 0180 3F       		.uleb128 0x3f
- 1924 0181 19       		.uleb128 0x19
- 1925 0182 3C       		.uleb128 0x3c
- 1926 0183 19       		.uleb128 0x19
- 1927 0184 00       		.byte	0
- 1928 0185 00       		.byte	0
- 1929 0186 1D       		.uleb128 0x1d
- 1930 0187 34       		.uleb128 0x34
- 1931 0188 00       		.byte	0
- 1932 0189 03       		.uleb128 0x3
- 1933 018a 0E       		.uleb128 0xe
- 1934 018b 3A       		.uleb128 0x3a
- 1935 018c 0B       		.uleb128 0xb
- 1936 018d 3B       		.uleb128 0x3b
- 1937 018e 0B       		.uleb128 0xb
- 1938 018f 49       		.uleb128 0x49
- 1939 0190 13       		.uleb128 0x13
- 1940 0191 3F       		.uleb128 0x3f
- 1941 0192 19       		.uleb128 0x19
- 1942 0193 02       		.uleb128 0x2
- 1943 0194 18       		.uleb128 0x18
- 1944 0195 00       		.byte	0
- 1945 0196 00       		.byte	0
- 1946 0197 1E       		.uleb128 0x1e
- 1947 0198 2E       		.uleb128 0x2e
- 1948 0199 00       		.byte	0
- 1949 019a 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 39
-
-
- 1950 019b 19       		.uleb128 0x19
- 1951 019c 3C       		.uleb128 0x3c
- 1952 019d 19       		.uleb128 0x19
- 1953 019e 6E       		.uleb128 0x6e
- 1954 019f 0E       		.uleb128 0xe
- 1955 01a0 03       		.uleb128 0x3
- 1956 01a1 0E       		.uleb128 0xe
- 1957 01a2 3A       		.uleb128 0x3a
- 1958 01a3 0B       		.uleb128 0xb
- 1959 01a4 3B       		.uleb128 0x3b
- 1960 01a5 0B       		.uleb128 0xb
- 1961 01a6 00       		.byte	0
- 1962 01a7 00       		.byte	0
- 1963 01a8 1F       		.uleb128 0x1f
- 1964 01a9 2E       		.uleb128 0x2e
- 1965 01aa 00       		.byte	0
- 1966 01ab 3F       		.uleb128 0x3f
- 1967 01ac 19       		.uleb128 0x19
- 1968 01ad 3C       		.uleb128 0x3c
- 1969 01ae 19       		.uleb128 0x19
- 1970 01af 6E       		.uleb128 0x6e
- 1971 01b0 0E       		.uleb128 0xe
- 1972 01b1 03       		.uleb128 0x3
- 1973 01b2 0E       		.uleb128 0xe
- 1974 01b3 3A       		.uleb128 0x3a
- 1975 01b4 0B       		.uleb128 0xb
- 1976 01b5 3B       		.uleb128 0x3b
- 1977 01b6 05       		.uleb128 0x5
- 1978 01b7 00       		.byte	0
- 1979 01b8 00       		.byte	0
- 1980 01b9 00       		.byte	0
- 1981              		.section	.debug_loc,"",%progbits
- 1982              	.Ldebug_loc0:
- 1983              	.LLST0:
- 1984 0000 00000000 		.4byte	.LVL0
- 1985 0004 09000000 		.4byte	.LVL1-1
- 1986 0008 0100     		.2byte	0x1
- 1987 000a 50       		.byte	0x50
- 1988 000b 09000000 		.4byte	.LVL1-1
- 1989 000f 62000000 		.4byte	.LVL3
- 1990 0013 0100     		.2byte	0x1
- 1991 0015 55       		.byte	0x55
- 1992 0016 62000000 		.4byte	.LVL3
- 1993 001a 68000000 		.4byte	.LFE69
- 1994 001e 0400     		.2byte	0x4
- 1995 0020 F3       		.byte	0xf3
- 1996 0021 01       		.uleb128 0x1
- 1997 0022 50       		.byte	0x50
- 1998 0023 9F       		.byte	0x9f
- 1999 0024 00000000 		.4byte	0
- 2000 0028 00000000 		.4byte	0
- 2001              	.LLST1:
- 2002 002c 00000000 		.4byte	.LVL0
- 2003 0030 09000000 		.4byte	.LVL1-1
- 2004 0034 0100     		.2byte	0x1
- 2005 0036 51       		.byte	0x51
- 2006 0037 09000000 		.4byte	.LVL1-1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 40
-
-
- 2007 003b 62000000 		.4byte	.LVL3
- 2008 003f 0100     		.2byte	0x1
- 2009 0041 54       		.byte	0x54
- 2010 0042 62000000 		.4byte	.LVL3
- 2011 0046 68000000 		.4byte	.LFE69
- 2012 004a 0400     		.2byte	0x4
- 2013 004c F3       		.byte	0xf3
- 2014 004d 01       		.uleb128 0x1
- 2015 004e 51       		.byte	0x51
- 2016 004f 9F       		.byte	0x9f
- 2017 0050 00000000 		.4byte	0
- 2018 0054 00000000 		.4byte	0
- 2019              	.LLST2:
- 2020 0058 0A000000 		.4byte	.LVL1
- 2021 005c 5F000000 		.4byte	.LVL2-1
- 2022 0060 0100     		.2byte	0x1
- 2023 0062 50       		.byte	0x50
- 2024 0063 00000000 		.4byte	0
- 2025 0067 00000000 		.4byte	0
- 2026              	.LLST3:
- 2027 006b 00000000 		.4byte	.LVL5
- 2028 006f 34000000 		.4byte	.LVL10
- 2029 0073 0100     		.2byte	0x1
- 2030 0075 50       		.byte	0x50
- 2031 0076 34000000 		.4byte	.LVL10
- 2032 007a 3E000000 		.4byte	.LFE71
- 2033 007e 0400     		.2byte	0x4
- 2034 0080 F3       		.byte	0xf3
- 2035 0081 01       		.uleb128 0x1
- 2036 0082 50       		.byte	0x50
- 2037 0083 9F       		.byte	0x9f
- 2038 0084 00000000 		.4byte	0
- 2039 0088 00000000 		.4byte	0
- 2040              	.LLST4:
- 2041 008c 00000000 		.4byte	.LVL5
- 2042 0090 20000000 		.4byte	.LVL7
- 2043 0094 0100     		.2byte	0x1
- 2044 0096 51       		.byte	0x51
- 2045 0097 20000000 		.4byte	.LVL7
- 2046 009b 34000000 		.4byte	.LVL10
- 2047 009f 0200     		.2byte	0x2
- 2048 00a1 91       		.byte	0x91
- 2049 00a2 6C       		.sleb128 -20
- 2050 00a3 34000000 		.4byte	.LVL10
- 2051 00a7 37000000 		.4byte	.LVL11-1
- 2052 00ab 0200     		.2byte	0x2
- 2053 00ad 70       		.byte	0x70
- 2054 00ae 00       		.sleb128 0
- 2055 00af 37000000 		.4byte	.LVL11-1
- 2056 00b3 3E000000 		.4byte	.LFE71
- 2057 00b7 0400     		.2byte	0x4
- 2058 00b9 F3       		.byte	0xf3
- 2059 00ba 01       		.uleb128 0x1
- 2060 00bb 51       		.byte	0x51
- 2061 00bc 9F       		.byte	0x9f
- 2062 00bd 00000000 		.4byte	0
- 2063 00c1 00000000 		.4byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 41
-
-
- 2064              	.LLST5:
- 2065 00c5 1E000000 		.4byte	.LVL6
- 2066 00c9 20000000 		.4byte	.LVL7
- 2067 00cd 0200     		.2byte	0x2
- 2068 00cf 30       		.byte	0x30
- 2069 00d0 9F       		.byte	0x9f
- 2070 00d1 20000000 		.4byte	.LVL7
- 2071 00d5 2C000000 		.4byte	.LVL8
- 2072 00d9 0100     		.2byte	0x1
- 2073 00db 53       		.byte	0x53
- 2074 00dc 2E000000 		.4byte	.LVL9
- 2075 00e0 37000000 		.4byte	.LVL11-1
- 2076 00e4 0100     		.2byte	0x1
- 2077 00e6 53       		.byte	0x53
- 2078 00e7 00000000 		.4byte	0
- 2079 00eb 00000000 		.4byte	0
- 2080              	.LLST6:
- 2081 00ef 00000000 		.4byte	.LVL12
- 2082 00f3 2C000000 		.4byte	.LVL15
- 2083 00f7 0100     		.2byte	0x1
- 2084 00f9 50       		.byte	0x50
- 2085 00fa 2C000000 		.4byte	.LVL15
- 2086 00fe 2F000000 		.4byte	.LVL16-1
- 2087 0102 0200     		.2byte	0x2
- 2088 0104 70       		.byte	0x70
- 2089 0105 00       		.sleb128 0
- 2090 0106 2F000000 		.4byte	.LVL16-1
- 2091 010a 3C000000 		.4byte	.LFE72
- 2092 010e 0400     		.2byte	0x4
- 2093 0110 F3       		.byte	0xf3
- 2094 0111 01       		.uleb128 0x1
- 2095 0112 50       		.byte	0x50
- 2096 0113 9F       		.byte	0x9f
- 2097 0114 00000000 		.4byte	0
- 2098 0118 00000000 		.4byte	0
- 2099              	.LLST7:
- 2100 011c 00000000 		.4byte	.LVL12
- 2101 0120 2A000000 		.4byte	.LVL14
- 2102 0124 0100     		.2byte	0x1
- 2103 0126 51       		.byte	0x51
- 2104 0127 2A000000 		.4byte	.LVL14
- 2105 012b 3C000000 		.4byte	.LFE72
- 2106 012f 0400     		.2byte	0x4
- 2107 0131 F3       		.byte	0xf3
- 2108 0132 01       		.uleb128 0x1
- 2109 0133 51       		.byte	0x51
- 2110 0134 9F       		.byte	0x9f
- 2111 0135 00000000 		.4byte	0
- 2112 0139 00000000 		.4byte	0
- 2113              	.LLST8:
- 2114 013d 00000000 		.4byte	.LVL12
- 2115 0141 12000000 		.4byte	.LVL13
- 2116 0145 0100     		.2byte	0x1
- 2117 0147 52       		.byte	0x52
- 2118 0148 12000000 		.4byte	.LVL13
- 2119 014c 3C000000 		.4byte	.LFE72
- 2120 0150 0400     		.2byte	0x4
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 42
-
-
- 2121 0152 F3       		.byte	0xf3
- 2122 0153 01       		.uleb128 0x1
- 2123 0154 52       		.byte	0x52
- 2124 0155 9F       		.byte	0x9f
- 2125 0156 00000000 		.4byte	0
- 2126 015a 00000000 		.4byte	0
- 2127              	.LLST9:
- 2128 015e 00000000 		.4byte	.LVL12
- 2129 0162 2F000000 		.4byte	.LVL16-1
- 2130 0166 0100     		.2byte	0x1
- 2131 0168 53       		.byte	0x53
- 2132 0169 2F000000 		.4byte	.LVL16-1
- 2133 016d 3C000000 		.4byte	.LFE72
- 2134 0171 0400     		.2byte	0x4
- 2135 0173 F3       		.byte	0xf3
- 2136 0174 01       		.uleb128 0x1
- 2137 0175 53       		.byte	0x53
- 2138 0176 9F       		.byte	0x9f
- 2139 0177 00000000 		.4byte	0
- 2140 017b 00000000 		.4byte	0
- 2141              	.LLST10:
- 2142 017f 00000000 		.4byte	.LVL18
- 2143 0183 14000000 		.4byte	.LVL19
- 2144 0187 0100     		.2byte	0x1
- 2145 0189 50       		.byte	0x50
- 2146 018a 14000000 		.4byte	.LVL19
- 2147 018e 17000000 		.4byte	.LVL20-1
- 2148 0192 0200     		.2byte	0x2
- 2149 0194 91       		.byte	0x91
- 2150 0195 72       		.sleb128 -14
- 2151 0196 17000000 		.4byte	.LVL20-1
- 2152 019a 1E000000 		.4byte	.LFE73
- 2153 019e 0400     		.2byte	0x4
- 2154 01a0 F3       		.byte	0xf3
- 2155 01a1 01       		.uleb128 0x1
- 2156 01a2 50       		.byte	0x50
- 2157 01a3 9F       		.byte	0x9f
- 2158 01a4 00000000 		.4byte	0
- 2159 01a8 00000000 		.4byte	0
- 2160              	.LLST11:
- 2161 01ac 00000000 		.4byte	.LVL21
- 2162 01b0 16000000 		.4byte	.LVL22
- 2163 01b4 0100     		.2byte	0x1
- 2164 01b6 50       		.byte	0x50
- 2165 01b7 16000000 		.4byte	.LVL22
- 2166 01bb 20000000 		.4byte	.LFE74
- 2167 01bf 0400     		.2byte	0x4
- 2168 01c1 F3       		.byte	0xf3
- 2169 01c2 01       		.uleb128 0x1
- 2170 01c3 50       		.byte	0x50
- 2171 01c4 9F       		.byte	0x9f
- 2172 01c5 00000000 		.4byte	0
- 2173 01c9 00000000 		.4byte	0
- 2174              	.LLST12:
- 2175 01cd 00000000 		.4byte	.LVL24
- 2176 01d1 14000000 		.4byte	.LVL25
- 2177 01d5 0100     		.2byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 43
-
-
- 2178 01d7 50       		.byte	0x50
- 2179 01d8 14000000 		.4byte	.LVL25
- 2180 01dc 17000000 		.4byte	.LVL26-1
- 2181 01e0 0200     		.2byte	0x2
- 2182 01e2 70       		.byte	0x70
- 2183 01e3 00       		.sleb128 0
- 2184 01e4 17000000 		.4byte	.LVL26-1
- 2185 01e8 1E000000 		.4byte	.LFE75
- 2186 01ec 0400     		.2byte	0x4
- 2187 01ee F3       		.byte	0xf3
- 2188 01ef 01       		.uleb128 0x1
- 2189 01f0 50       		.byte	0x50
- 2190 01f1 9F       		.byte	0x9f
- 2191 01f2 00000000 		.4byte	0
- 2192 01f6 00000000 		.4byte	0
- 2193              	.LLST13:
- 2194 01fa 00000000 		.4byte	.LVL31
- 2195 01fe 1C000000 		.4byte	.LVL33
- 2196 0202 0100     		.2byte	0x1
- 2197 0204 50       		.byte	0x50
- 2198 0205 1C000000 		.4byte	.LVL33
- 2199 0209 1F000000 		.4byte	.LVL34-1
- 2200 020d 0200     		.2byte	0x2
- 2201 020f 70       		.byte	0x70
- 2202 0210 00       		.sleb128 0
- 2203 0211 1F000000 		.4byte	.LVL34-1
- 2204 0215 26000000 		.4byte	.LFE78
- 2205 0219 0400     		.2byte	0x4
- 2206 021b F3       		.byte	0xf3
- 2207 021c 01       		.uleb128 0x1
- 2208 021d 50       		.byte	0x50
- 2209 021e 9F       		.byte	0x9f
- 2210 021f 00000000 		.4byte	0
- 2211 0223 00000000 		.4byte	0
- 2212              	.LLST14:
- 2213 0227 00000000 		.4byte	.LVL31
- 2214 022b 1A000000 		.4byte	.LVL32
- 2215 022f 0100     		.2byte	0x1
- 2216 0231 51       		.byte	0x51
- 2217 0232 1A000000 		.4byte	.LVL32
- 2218 0236 1F000000 		.4byte	.LVL34-1
- 2219 023a 0200     		.2byte	0x2
- 2220 023c 91       		.byte	0x91
- 2221 023d 71       		.sleb128 -15
- 2222 023e 1F000000 		.4byte	.LVL34-1
- 2223 0242 26000000 		.4byte	.LFE78
- 2224 0246 0400     		.2byte	0x4
- 2225 0248 F3       		.byte	0xf3
- 2226 0249 01       		.uleb128 0x1
- 2227 024a 51       		.byte	0x51
- 2228 024b 9F       		.byte	0x9f
- 2229 024c 00000000 		.4byte	0
- 2230 0250 00000000 		.4byte	0
- 2231              	.LLST15:
- 2232 0254 00000000 		.4byte	.LVL31
- 2233 0258 1F000000 		.4byte	.LVL34-1
- 2234 025c 0100     		.2byte	0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 44
-
-
- 2235 025e 52       		.byte	0x52
- 2236 025f 1F000000 		.4byte	.LVL34-1
- 2237 0263 26000000 		.4byte	.LFE78
- 2238 0267 0400     		.2byte	0x4
- 2239 0269 F3       		.byte	0xf3
- 2240 026a 01       		.uleb128 0x1
- 2241 026b 52       		.byte	0x52
- 2242 026c 9F       		.byte	0x9f
- 2243 026d 00000000 		.4byte	0
- 2244 0271 00000000 		.4byte	0
- 2245              		.section	.debug_aranges,"",%progbits
- 2246 0000 94000000 		.4byte	0x94
- 2247 0004 0200     		.2byte	0x2
- 2248 0006 00000000 		.4byte	.Ldebug_info0
- 2249 000a 04       		.byte	0x4
- 2250 000b 00       		.byte	0
- 2251 000c 0000     		.2byte	0
- 2252 000e 0000     		.2byte	0
- 2253 0010 00000000 		.4byte	.LFB63
- 2254 0014 0C000000 		.4byte	.LFE63-.LFB63
- 2255 0018 00000000 		.4byte	.LFB64
- 2256 001c 0C000000 		.4byte	.LFE64-.LFB64
- 2257 0020 00000000 		.4byte	.LFB65
- 2258 0024 0C000000 		.4byte	.LFE65-.LFB65
- 2259 0028 00000000 		.4byte	.LFB66
- 2260 002c 0C000000 		.4byte	.LFE66-.LFB66
- 2261 0030 00000000 		.4byte	.LFB67
- 2262 0034 0C000000 		.4byte	.LFE67-.LFB67
- 2263 0038 00000000 		.4byte	.LFB68
- 2264 003c 0C000000 		.4byte	.LFE68-.LFB68
- 2265 0040 00000000 		.4byte	.LFB69
- 2266 0044 68000000 		.4byte	.LFE69-.LFB69
- 2267 0048 00000000 		.4byte	.LFB70
- 2268 004c 4A000000 		.4byte	.LFE70-.LFB70
- 2269 0050 00000000 		.4byte	.LFB71
- 2270 0054 3E000000 		.4byte	.LFE71-.LFB71
- 2271 0058 00000000 		.4byte	.LFB72
- 2272 005c 3C000000 		.4byte	.LFE72-.LFB72
- 2273 0060 00000000 		.4byte	.LFB73
- 2274 0064 1E000000 		.4byte	.LFE73-.LFB73
- 2275 0068 00000000 		.4byte	.LFB74
- 2276 006c 20000000 		.4byte	.LFE74-.LFB74
- 2277 0070 00000000 		.4byte	.LFB75
- 2278 0074 1E000000 		.4byte	.LFE75-.LFB75
- 2279 0078 00000000 		.4byte	.LFB76
- 2280 007c 10000000 		.4byte	.LFE76-.LFB76
- 2281 0080 00000000 		.4byte	.LFB77
- 2282 0084 10000000 		.4byte	.LFE77-.LFB77
- 2283 0088 00000000 		.4byte	.LFB78
- 2284 008c 26000000 		.4byte	.LFE78-.LFB78
- 2285 0090 00000000 		.4byte	0
- 2286 0094 00000000 		.4byte	0
- 2287              		.section	.debug_ranges,"",%progbits
- 2288              	.Ldebug_ranges0:
- 2289 0000 00000000 		.4byte	.LFB63
- 2290 0004 0C000000 		.4byte	.LFE63
- 2291 0008 00000000 		.4byte	.LFB64
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 45
-
-
- 2292 000c 0C000000 		.4byte	.LFE64
- 2293 0010 00000000 		.4byte	.LFB65
- 2294 0014 0C000000 		.4byte	.LFE65
- 2295 0018 00000000 		.4byte	.LFB66
- 2296 001c 0C000000 		.4byte	.LFE66
- 2297 0020 00000000 		.4byte	.LFB67
- 2298 0024 0C000000 		.4byte	.LFE67
- 2299 0028 00000000 		.4byte	.LFB68
- 2300 002c 0C000000 		.4byte	.LFE68
- 2301 0030 00000000 		.4byte	.LFB69
- 2302 0034 68000000 		.4byte	.LFE69
- 2303 0038 00000000 		.4byte	.LFB70
- 2304 003c 4A000000 		.4byte	.LFE70
- 2305 0040 00000000 		.4byte	.LFB71
- 2306 0044 3E000000 		.4byte	.LFE71
- 2307 0048 00000000 		.4byte	.LFB72
- 2308 004c 3C000000 		.4byte	.LFE72
- 2309 0050 00000000 		.4byte	.LFB73
- 2310 0054 1E000000 		.4byte	.LFE73
- 2311 0058 00000000 		.4byte	.LFB74
- 2312 005c 20000000 		.4byte	.LFE74
- 2313 0060 00000000 		.4byte	.LFB75
- 2314 0064 1E000000 		.4byte	.LFE75
- 2315 0068 00000000 		.4byte	.LFB76
- 2316 006c 10000000 		.4byte	.LFE76
- 2317 0070 00000000 		.4byte	.LFB77
- 2318 0074 10000000 		.4byte	.LFE77
- 2319 0078 00000000 		.4byte	.LFB78
- 2320 007c 26000000 		.4byte	.LFE78
- 2321 0080 00000000 		.4byte	0
- 2322 0084 00000000 		.4byte	0
- 2323              		.section	.debug_line,"",%progbits
- 2324              	.Ldebug_line0:
- 2325 0000 F7020000 		.section	.debug_str,"MS",%progbits,1
- 2325      02009201 
- 2325      00000201 
- 2325      FB0E0D00 
- 2325      01010101 
- 2326              	.LASF62:
- 2327 0000 636C6561 		.ascii	"clear_interlock\000"
- 2327      725F696E 
- 2327      7465726C 
- 2327      6F636B00 
- 2328              	.LASF61:
- 2329 0010 7365745F 		.ascii	"set_interlock\000"
- 2329      696E7465 
- 2329      726C6F63 
- 2329      6B00
- 2330              	.LASF33:
- 2331 001e 5045495F 		.ascii	"PEI_CURRENT_SEND\000"
- 2331      43555252 
- 2331      454E545F 
- 2331      53454E44 
- 2331      00
- 2332              	.LASF20:
- 2333 002f 646F7562 		.ascii	"double\000"
- 2333      6C6500
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 46
-
-
- 2334              	.LASF64:
- 2335 0036 63757272 		.ascii	"current_upper\000"
- 2335      656E745F 
- 2335      75707065 
- 2335      7200
- 2336              	.LASF78:
- 2337 0044 43794578 		.ascii	"CyExitCriticalSection\000"
- 2337      69744372 
- 2337      69746963 
- 2337      616C5365 
- 2337      6374696F 
- 2338              	.LASF60:
- 2339 005a 63616E5F 		.ascii	"can_test_send\000"
- 2339      74657374 
- 2339      5F73656E 
- 2339      6400
- 2340              	.LASF55:
- 2341 0068 73746174 		.ascii	"state\000"
- 2341      6500
- 2342              	.LASF75:
- 2343 006e 53544154 		.ascii	"STATE\000"
- 2343      4500
- 2344              	.LASF2:
- 2345 0074 73686F72 		.ascii	"short int\000"
- 2345      7420696E 
- 2345      7400
- 2346              	.LASF23:
- 2347 007e 73697A65 		.ascii	"sizetype\000"
- 2347      74797065 
- 2347      00
- 2348              	.LASF50:
- 2349 0087 53657449 		.ascii	"SetInterlock\000"
- 2349      6E746572 
- 2349      6C6F636B 
- 2349      00
- 2350              	.LASF8:
- 2351 0094 5F5F7569 		.ascii	"__uint32_t\000"
- 2351      6E743332 
- 2351      5F7400
- 2352              	.LASF71:
- 2353 009f 48565F52 		.ascii	"HV_REQUEST_TR\000"
- 2353      45515545 
- 2353      53545F54 
- 2353      5200
- 2354              	.LASF39:
- 2355 00ad 6765745F 		.ascii	"get_THROTTLE_LOW\000"
- 2355      5448524F 
- 2355      54544C45 
- 2355      5F4C4F57 
- 2355      00
- 2356              	.LASF4:
- 2357 00be 5F5F7569 		.ascii	"__uint16_t\000"
- 2357      6E743136 
- 2357      5F7400
- 2358              	.LASF49:
- 2359 00c9 63616E5F 		.ascii	"can_send_cmd\000"
- 2359      73656E64 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 47
-
-
- 2359      5F636D64 
- 2359      00
- 2360              	.LASF72:
- 2361 00d6 56454849 		.ascii	"VEHICLE_STATE\000"
- 2361      434C455F 
- 2361      53544154 
- 2361      4500
- 2362              	.LASF74:
- 2363 00e4 5345545F 		.ascii	"SET_INTERLOCK\000"
- 2363      494E5445 
- 2363      524C4F43 
- 2363      4B00
- 2364              	.LASF36:
- 2365 00f2 6765745F 		.ascii	"get_HV_Requested\000"
- 2365      48565F52 
- 2365      65717565 
- 2365      73746564 
- 2365      00
- 2366              	.LASF13:
- 2367 0103 75696E74 		.ascii	"uint8_t\000"
- 2367      385F7400 
- 2368              	.LASF29:
- 2369 010b 4D435F45 		.ascii	"MC_ESTOP\000"
- 2369      53544F50 
- 2369      00
- 2370              	.LASF17:
- 2371 0114 75696E74 		.ascii	"uint8\000"
- 2371      3800
- 2372              	.LASF68:
- 2373 011a 5448524F 		.ascii	"THROTTLE_HIGH\000"
- 2373      54544C45 
- 2373      5F484947 
- 2373      4800
- 2374              	.LASF58:
- 2375 0128 63616E5F 		.ascii	"can_send_ESTOP\000"
- 2375      73656E64 
- 2375      5F455354 
- 2375      4F5000
- 2376              	.LASF19:
- 2377 0137 666C6F61 		.ascii	"float\000"
- 2377      7400
- 2378              	.LASF10:
- 2379 013d 6C6F6E67 		.ascii	"long long int\000"
- 2379      206C6F6E 
- 2379      6720696E 
- 2379      7400
- 2380              	.LASF28:
- 2381 014b 5045495F 		.ascii	"PEI_CURRENT\000"
- 2381      43555252 
- 2381      454E5400 
- 2382              	.LASF35:
- 2383 0157 4D435F44 		.ascii	"MC_DEBUG_SEND\000"
- 2383      45425547 
- 2383      5F53454E 
- 2383      4400
- 2384              	.LASF73:
- 2385 0165 5448524F 		.ascii	"THROTTLE\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 48
-
-
- 2385      54544C45 
- 2385      00
- 2386              	.LASF42:
- 2387 016e 496E7465 		.ascii	"InterruptState\000"
- 2387      72727570 
- 2387      74537461 
- 2387      746500
- 2388              	.LASF9:
- 2389 017d 6C6F6E67 		.ascii	"long unsigned int\000"
- 2389      20756E73 
- 2389      69676E65 
- 2389      6420696E 
- 2389      7400
- 2390              	.LASF54:
- 2391 018f 63616E5F 		.ascii	"can_send_state\000"
- 2391      73656E64 
- 2391      5F737461 
- 2391      746500
- 2392              	.LASF3:
- 2393 019e 5F5F7569 		.ascii	"__uint8_t\000"
- 2393      6E74385F 
- 2393      7400
- 2394              	.LASF43:
- 2395 01a8 48656172 		.ascii	"HeartB\000"
- 2395      744200
- 2396              	.LASF25:
- 2397 01af 62797465 		.ascii	"byte\000"
- 2397      00
- 2398              	.LASF84:
- 2399 01b4 63616E5F 		.ascii	"can_manager.c\000"
- 2399      6D616E61 
- 2399      6765722E 
- 2399      6300
- 2400              	.LASF66:
- 2401 01c2 73687574 		.ascii	"shutdown_flags\000"
- 2401      646F776E 
- 2401      5F666C61 
- 2401      677300
- 2402              	.LASF22:
- 2403 01d1 6C6F6E67 		.ascii	"long double\000"
- 2403      20646F75 
- 2403      626C6500 
- 2404              	.LASF31:
- 2405 01dd 42535044 		.ascii	"BSPD_FLAGS\000"
- 2405      5F464C41 
- 2405      475300
- 2406              	.LASF1:
- 2407 01e8 756E7369 		.ascii	"unsigned char\000"
- 2407      676E6564 
- 2407      20636861 
- 2407      7200
- 2408              	.LASF0:
- 2409 01f6 7369676E 		.ascii	"signed char\000"
- 2409      65642063 
- 2409      68617200 
- 2410              	.LASF11:
- 2411 0202 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 49
-
-
- 2411      206C6F6E 
- 2411      6720756E 
- 2411      7369676E 
- 2411      65642069 
- 2412              	.LASF16:
- 2413 0219 75696E74 		.ascii	"uint32_t\000"
- 2413      33325F74 
- 2413      00
- 2414              	.LASF12:
- 2415 0222 756E7369 		.ascii	"unsigned int\000"
- 2415      676E6564 
- 2415      20696E74 
- 2415      00
- 2416              	.LASF37:
- 2417 022f 6765745F 		.ascii	"get_VEHICLE_STATE\000"
- 2417      56454849 
- 2417      434C455F 
- 2417      53544154 
- 2417      4500
- 2418              	.LASF14:
- 2419 0241 75696E74 		.ascii	"uint16_t\000"
- 2419      31365F74 
- 2419      00
- 2420              	.LASF24:
- 2421 024a 43414E5F 		.ascii	"CAN_DATA_BYTES_MSG\000"
- 2421      44415441 
- 2421      5F425954 
- 2421      45535F4D 
- 2421      534700
- 2422              	.LASF63:
- 2423 025d 63616E5F 		.ascii	"can_send_PEI\000"
- 2423      73656E64 
- 2423      5F504549 
- 2423      00
- 2424              	.LASF70:
- 2425 026a 4553544F 		.ascii	"ESTOP_MC\000"
- 2425      505F4D43 
- 2425      00
- 2426              	.LASF38:
- 2427 0273 6765745F 		.ascii	"get_THROTTLE_HIGH\000"
- 2427      5448524F 
- 2427      54544C45 
- 2427      5F484947 
- 2427      4800
- 2428              	.LASF76:
- 2429 0285 48565F52 		.ascii	"HV_REQUEST_MC\000"
+ 473 000e 8DF80510 		strb	r1, [sp, #5]
+ 168:can_manager.c ****     data[6] = throttle_lower;
+ 474              		.loc 1 168 0
+ 475 0012 8DF80620 		strb	r2, [sp, #6]
+ 169:can_manager.c ****     
+ 170:can_manager.c ****     can_send(data, MC_DEBUG_SEND);
+ 476              		.loc 1 170 0
+ 477 0016 40F26341 		movw	r1, #1123
+ 478              	.LVL19:
+ 479 001a 6846     		mov	r0, sp
+ 480              	.LVL20:
+ 481 001c FFF7FEFF 		bl	can_send
+ 482              	.LVL21:
+ 171:can_manager.c **** }
+ 483              		.loc 1 171 0
+ 484 0020 03B0     		add	sp, sp, #12
+ 485              		.cfi_def_cfa_offset 4
+ 486              		@ sp needed
+ 487 0022 5DF804FB 		ldr	pc, [sp], #4
+ 488              		.cfi_endproc
+ 489              	.LFE73:
+ 490              		.size	can_send_state_and_throttle, .-can_send_state_and_throttle
+ 491 0026 00BF     		.section	.text.can_send_ESTOP,"ax",%progbits
+ 492              		.align	2
+ 493              		.global	can_send_ESTOP
+ 494              		.thumb
+ 495              		.thumb_func
+ 496              		.type	can_send_ESTOP, %function
+ 497              	can_send_ESTOP:
+ 498              	.LFB74:
+ 172:can_manager.c **** 
+ 173:can_manager.c **** void can_send_ESTOP(uint8_t estop) {
+ 499              		.loc 1 173 0
+ 500              		.cfi_startproc
+ 501              		@ args = 0, pretend = 0, frame = 8
+ 502              		@ frame_needed = 0, uses_anonymous_args = 0
+ 503              	.LVL22:
+ 504 0000 00B5     		push	{lr}
+ 505              		.cfi_def_cfa_offset 4
+ 506              		.cfi_offset 14, -4
+ 507 0002 83B0     		sub	sp, sp, #12
+ 508              		.cfi_def_cfa_offset 16
+ 174:can_manager.c ****     uint8_t data[8] = {0};
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 13
+
+
+ 509              		.loc 1 174 0
+ 510 0004 0023     		movs	r3, #0
+ 511 0006 0093     		str	r3, [sp]
+ 512 0008 0193     		str	r3, [sp, #4]
+ 175:can_manager.c ****     data[0] = estop;
+ 513              		.loc 1 175 0
+ 514 000a 8DF80000 		strb	r0, [sp]
+ 176:can_manager.c ****     can_send(data, 0x363);
+ 515              		.loc 1 176 0
+ 516 000e 40F26331 		movw	r1, #867
+ 517 0012 6846     		mov	r0, sp
+ 518              	.LVL23:
+ 519 0014 FFF7FEFF 		bl	can_send
+ 520              	.LVL24:
+ 177:can_manager.c **** }
+ 521              		.loc 1 177 0
+ 522 0018 03B0     		add	sp, sp, #12
+ 523              		.cfi_def_cfa_offset 4
+ 524              		@ sp needed
+ 525 001a 5DF804FB 		ldr	pc, [sp], #4
+ 526              		.cfi_endproc
+ 527              	.LFE74:
+ 528              		.size	can_send_ESTOP, .-can_send_ESTOP
+ 529 001e 00BF     		.section	.text.set_interlock,"ax",%progbits
+ 530              		.align	2
+ 531              		.global	set_interlock
+ 532              		.thumb
+ 533              		.thumb_func
+ 534              		.type	set_interlock, %function
+ 535              	set_interlock:
+ 536              	.LFB75:
+ 178:can_manager.c **** 
+ 179:can_manager.c **** void set_interlock()
+ 180:can_manager.c **** {
+ 537              		.loc 1 180 0
+ 538              		.cfi_startproc
+ 539              		@ args = 0, pretend = 0, frame = 0
+ 540              		@ frame_needed = 0, uses_anonymous_args = 0
+ 541 0000 08B5     		push	{r3, lr}
+ 542              		.cfi_def_cfa_offset 8
+ 543              		.cfi_offset 3, -8
+ 544              		.cfi_offset 14, -4
+ 181:can_manager.c ****     AIR_NEG_Write(1);
+ 545              		.loc 1 181 0
+ 546 0002 0120     		movs	r0, #1
+ 547 0004 FFF7FEFF 		bl	AIR_NEG_Write
+ 548              	.LVL25:
+ 182:can_manager.c ****     AIR_POS_Write(1);
+ 549              		.loc 1 182 0
+ 550 0008 0120     		movs	r0, #1
+ 551 000a FFF7FEFF 		bl	AIR_POS_Write
+ 552              	.LVL26:
+ 553 000e 08BD     		pop	{r3, pc}
+ 554              		.cfi_endproc
+ 555              	.LFE75:
+ 556              		.size	set_interlock, .-set_interlock
+ 557              		.section	.text.clear_interlock,"ax",%progbits
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 14
+
+
+ 558              		.align	2
+ 559              		.global	clear_interlock
+ 560              		.thumb
+ 561              		.thumb_func
+ 562              		.type	clear_interlock, %function
+ 563              	clear_interlock:
+ 564              	.LFB76:
+ 183:can_manager.c ****     //can_send_interlock(1,1);
+ 184:can_manager.c **** }    
+ 185:can_manager.c **** 
+ 186:can_manager.c **** void clear_interlock()
+ 187:can_manager.c **** {
+ 565              		.loc 1 187 0
+ 566              		.cfi_startproc
+ 567              		@ args = 0, pretend = 0, frame = 0
+ 568              		@ frame_needed = 0, uses_anonymous_args = 0
+ 569 0000 08B5     		push	{r3, lr}
+ 570              		.cfi_def_cfa_offset 8
+ 571              		.cfi_offset 3, -8
+ 572              		.cfi_offset 14, -4
+ 188:can_manager.c ****     AIR_NEG_Write(0);
+ 573              		.loc 1 188 0
+ 574 0002 0020     		movs	r0, #0
+ 575 0004 FFF7FEFF 		bl	AIR_NEG_Write
+ 576              	.LVL27:
+ 189:can_manager.c ****     AIR_POS_Write(0);
+ 577              		.loc 1 189 0
+ 578 0008 0020     		movs	r0, #0
+ 579 000a FFF7FEFF 		bl	AIR_POS_Write
+ 580              	.LVL28:
+ 581 000e 08BD     		pop	{r3, pc}
+ 582              		.cfi_endproc
+ 583              	.LFE76:
+ 584              		.size	clear_interlock, .-clear_interlock
+ 585              		.section	.text.can_send_PEI,"ax",%progbits
+ 586              		.align	2
+ 587              		.global	can_send_PEI
+ 588              		.thumb
+ 589              		.thumb_func
+ 590              		.type	can_send_PEI, %function
+ 591              	can_send_PEI:
+ 592              	.LFB77:
+ 190:can_manager.c ****     //can_send_interlock(0,0);
+ 191:can_manager.c **** }
+ 192:can_manager.c **** 
+ 193:can_manager.c **** //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
+ 194:can_manager.c **** /* Used for debug purposes
+ 195:can_manager.c **** void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
+ 196:can_manager.c **** {
+ 197:can_manager.c ****     uint8_t data[8] = {0};
+ 198:can_manager.c ****     data[3] = air_neg;
+ 199:can_manager.c ****     data[4] = air_pos;
+ 200:can_manager.c ****     can_send(data, 0x383); 
+ 201:can_manager.c **** }
+ 202:can_manager.c **** */
+ 203:can_manager.c **** 
+ 204:can_manager.c **** void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags)
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 15
+
+
+ 205:can_manager.c **** {
+ 593              		.loc 1 205 0
+ 594              		.cfi_startproc
+ 595              		@ args = 0, pretend = 0, frame = 8
+ 596              		@ frame_needed = 0, uses_anonymous_args = 0
+ 597              	.LVL29:
+ 598 0000 00B5     		push	{lr}
+ 599              		.cfi_def_cfa_offset 4
+ 600              		.cfi_offset 14, -4
+ 601 0002 83B0     		sub	sp, sp, #12
+ 602              		.cfi_def_cfa_offset 16
+ 206:can_manager.c ****     uint8_t data[8] = {0};
+ 603              		.loc 1 206 0
+ 604 0004 0023     		movs	r3, #0
+ 605 0006 0093     		str	r3, [sp]
+ 606 0008 0193     		str	r3, [sp, #4]
+ 207:can_manager.c **** 
+ 208:can_manager.c ****     data[0] = current_upper;
+ 607              		.loc 1 208 0
+ 608 000a 8DF80000 		strb	r0, [sp]
+ 209:can_manager.c ****     data[1] = current_lower;
+ 609              		.loc 1 209 0
+ 610 000e 8DF80110 		strb	r1, [sp, #1]
+ 210:can_manager.c ****     data[2] = shutdown_flags;
+ 611              		.loc 1 210 0
+ 612 0012 8DF80220 		strb	r2, [sp, #2]
+ 211:can_manager.c ****     can_send(data, 0x383); 
+ 613              		.loc 1 211 0
+ 614 0016 40F28331 		movw	r1, #899
+ 615              	.LVL30:
+ 616 001a 6846     		mov	r0, sp
+ 617              	.LVL31:
+ 618 001c FFF7FEFF 		bl	can_send
+ 619              	.LVL32:
+ 212:can_manager.c **** }
+ 620              		.loc 1 212 0
+ 621 0020 03B0     		add	sp, sp, #12
+ 622              		.cfi_def_cfa_offset 4
+ 623              		@ sp needed
+ 624 0022 5DF804FB 		ldr	pc, [sp], #4
+ 625              		.cfi_endproc
+ 626              	.LFE77:
+ 627              		.size	can_send_PEI, .-can_send_PEI
+ 628              		.global	HV_REQUEST_MC
+ 629              		.global	STATE
+ 630              		.global	SET_INTERLOCK
+ 631              		.global	THROTTLE
+ 632              		.global	VEHICLE_STATE
+ 633              		.global	HV_REQUEST_TR
+ 634              		.global	ESTOP_MC
+ 635              		.global	THROTTLE_LOW
+ 636              		.global	THROTTLE_HIGH
+ 637 0026 00BF     		.bss
+ 638              		.set	.LANCHOR0,. + 0
+ 639              		.type	HV_REQUEST_TR, %object
+ 640              		.size	HV_REQUEST_TR, 1
+ 641              	HV_REQUEST_TR:
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 16
+
+
+ 642 0000 00       		.space	1
+ 643              		.type	VEHICLE_STATE, %object
+ 644              		.size	VEHICLE_STATE, 1
+ 645              	VEHICLE_STATE:
+ 646 0001 00       		.space	1
+ 647              		.type	THROTTLE_HIGH, %object
+ 648              		.size	THROTTLE_HIGH, 1
+ 649              	THROTTLE_HIGH:
+ 650 0002 00       		.space	1
+ 651              		.type	THROTTLE_LOW, %object
+ 652              		.size	THROTTLE_LOW, 1
+ 653              	THROTTLE_LOW:
+ 654 0003 00       		.space	1
+ 655              		.type	THROTTLE, %object
+ 656              		.size	THROTTLE, 1
+ 657              	THROTTLE:
+ 658 0004 00       		.space	1
+ 659              		.type	STATE, %object
+ 660              		.size	STATE, 1
+ 661              	STATE:
+ 662 0005 00       		.space	1
+ 663              		.type	SET_INTERLOCK, %object
+ 664              		.size	SET_INTERLOCK, 1
+ 665              	SET_INTERLOCK:
+ 666 0006 00       		.space	1
+ 667              		.type	HV_REQUEST_MC, %object
+ 668              		.size	HV_REQUEST_MC, 1
+ 669              	HV_REQUEST_MC:
+ 670 0007 00       		.space	1
+ 671              		.type	ESTOP_MC, %object
+ 672              		.size	ESTOP_MC, 1
+ 673              	ESTOP_MC:
+ 674 0008 00       		.space	1
+ 675              		.text
+ 676              	.Letext0:
+ 677              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 678              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 679              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 680              		.file 5 "Generated_Source\\PSoC5/CAN.h"
+ 681              		.file 6 "can_manager.h"
+ 682              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+ 683              		.file 8 "Generated_Source\\PSoC5/CyLib.h"
+ 684              		.file 9 "Generated_Source\\PSoC5/AIR_NEG.h"
+ 685              		.file 10 "Generated_Source\\PSoC5/AIR_POS.h"
+ 686              		.section	.debug_info,"",%progbits
+ 687              	.Ldebug_info0:
+ 688 0000 72060000 		.4byte	0x672
+ 689 0004 0400     		.2byte	0x4
+ 690 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 691 000a 04       		.byte	0x4
+ 692 000b 01       		.uleb128 0x1
+ 693 000c 47040000 		.4byte	.LASF83
+ 694 0010 0C       		.byte	0xc
+ 695 0011 AF010000 		.4byte	.LASF84
+ 696 0015 9B030000 		.4byte	.LASF85
+ 697 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 698 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 17
+
+
+ 699 0021 00000000 		.4byte	.Ldebug_line0
+ 700 0025 02       		.uleb128 0x2
+ 701 0026 01       		.byte	0x1
+ 702 0027 06       		.byte	0x6
+ 703 0028 F1010000 		.4byte	.LASF0
+ 704 002c 03       		.uleb128 0x3
+ 705 002d 8F010000 		.4byte	.LASF3
+ 706 0031 02       		.byte	0x2
+ 707 0032 1D       		.byte	0x1d
+ 708 0033 37000000 		.4byte	0x37
+ 709 0037 02       		.uleb128 0x2
+ 710 0038 01       		.byte	0x1
+ 711 0039 08       		.byte	0x8
+ 712 003a E3010000 		.4byte	.LASF1
+ 713 003e 02       		.uleb128 0x2
+ 714 003f 02       		.byte	0x2
+ 715 0040 05       		.byte	0x5
+ 716 0041 74000000 		.4byte	.LASF2
+ 717 0045 03       		.uleb128 0x3
+ 718 0046 BE000000 		.4byte	.LASF4
+ 719 004a 02       		.byte	0x2
+ 720 004b 2B       		.byte	0x2b
+ 721 004c 50000000 		.4byte	0x50
+ 722 0050 02       		.uleb128 0x2
+ 723 0051 02       		.byte	0x2
+ 724 0052 07       		.byte	0x7
+ 725 0053 D8020000 		.4byte	.LASF5
+ 726 0057 03       		.uleb128 0x3
+ 727 0058 5E030000 		.4byte	.LASF6
+ 728 005c 02       		.byte	0x2
+ 729 005d 3F       		.byte	0x3f
+ 730 005e 62000000 		.4byte	0x62
+ 731 0062 02       		.uleb128 0x2
+ 732 0063 04       		.byte	0x4
+ 733 0064 05       		.byte	0x5
+ 734 0065 A9020000 		.4byte	.LASF7
+ 735 0069 03       		.uleb128 0x3
+ 736 006a 94000000 		.4byte	.LASF8
+ 737 006e 02       		.byte	0x2
+ 738 006f 41       		.byte	0x41
+ 739 0070 74000000 		.4byte	0x74
+ 740 0074 02       		.uleb128 0x2
+ 741 0075 04       		.byte	0x4
+ 742 0076 07       		.byte	0x7
+ 743 0077 7D010000 		.4byte	.LASF9
+ 744 007b 02       		.uleb128 0x2
+ 745 007c 08       		.byte	0x8
+ 746 007d 05       		.byte	0x5
+ 747 007e 3D010000 		.4byte	.LASF10
+ 748 0082 02       		.uleb128 0x2
+ 749 0083 08       		.byte	0x8
+ 750 0084 07       		.byte	0x7
+ 751 0085 05020000 		.4byte	.LASF11
+ 752 0089 04       		.uleb128 0x4
+ 753 008a 04       		.byte	0x4
+ 754 008b 05       		.byte	0x5
+ 755 008c 696E7400 		.ascii	"int\000"
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 18
+
+
+ 756 0090 02       		.uleb128 0x2
+ 757 0091 04       		.byte	0x4
+ 758 0092 07       		.byte	0x7
+ 759 0093 25020000 		.4byte	.LASF12
+ 760 0097 03       		.uleb128 0x3
+ 761 0098 03010000 		.4byte	.LASF13
+ 762 009c 03       		.byte	0x3
+ 763 009d 18       		.byte	0x18
+ 764 009e 2C000000 		.4byte	0x2c
+ 765 00a2 03       		.uleb128 0x3
+ 766 00a3 44020000 		.4byte	.LASF14
+ 767 00a7 03       		.byte	0x3
+ 768 00a8 24       		.byte	0x24
+ 769 00a9 45000000 		.4byte	0x45
+ 770 00ad 03       		.uleb128 0x3
+ 771 00ae FD010000 		.4byte	.LASF15
+ 772 00b2 03       		.byte	0x3
+ 773 00b3 2C       		.byte	0x2c
+ 774 00b4 57000000 		.4byte	0x57
+ 775 00b8 03       		.uleb128 0x3
+ 776 00b9 1C020000 		.4byte	.LASF16
+ 777 00bd 03       		.byte	0x3
+ 778 00be 30       		.byte	0x30
+ 779 00bf 69000000 		.4byte	0x69
+ 780 00c3 05       		.uleb128 0x5
+ 781 00c4 14010000 		.4byte	.LASF17
+ 782 00c8 04       		.byte	0x4
+ 783 00c9 E801     		.2byte	0x1e8
+ 784 00cb 37000000 		.4byte	0x37
+ 785 00cf 05       		.uleb128 0x5
+ 786 00d0 F0020000 		.4byte	.LASF18
+ 787 00d4 04       		.byte	0x4
+ 788 00d5 EA01     		.2byte	0x1ea
+ 789 00d7 74000000 		.4byte	0x74
+ 790 00db 02       		.uleb128 0x2
+ 791 00dc 04       		.byte	0x4
+ 792 00dd 04       		.byte	0x4
+ 793 00de 37010000 		.4byte	.LASF19
+ 794 00e2 02       		.uleb128 0x2
+ 795 00e3 08       		.byte	0x8
+ 796 00e4 04       		.byte	0x4
+ 797 00e5 2F000000 		.4byte	.LASF20
+ 798 00e9 02       		.uleb128 0x2
+ 799 00ea 01       		.byte	0x1
+ 800 00eb 08       		.byte	0x8
+ 801 00ec A4020000 		.4byte	.LASF21
+ 802 00f0 02       		.uleb128 0x2
+ 803 00f1 08       		.byte	0x8
+ 804 00f2 04       		.byte	0x4
+ 805 00f3 CC010000 		.4byte	.LASF22
+ 806 00f7 02       		.uleb128 0x2
+ 807 00f8 04       		.byte	0x4
+ 808 00f9 07       		.byte	0x7
+ 809 00fa 7E000000 		.4byte	.LASF23
+ 810 00fe 06       		.uleb128 0x6
+ 811 00ff 08       		.byte	0x8
+ 812 0100 05       		.byte	0x5
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 19
+
+
+ 813 0101 6F       		.byte	0x6f
+ 814 0102 13010000 		.4byte	0x113
+ 815 0106 07       		.uleb128 0x7
+ 816 0107 59030000 		.4byte	.LASF25
+ 817 010b 05       		.byte	0x5
+ 818 010c 71       		.byte	0x71
+ 819 010d 13010000 		.4byte	0x113
+ 820 0111 00       		.byte	0
+ 821 0112 00       		.byte	0
+ 822 0113 08       		.uleb128 0x8
+ 823 0114 C3000000 		.4byte	0xc3
+ 824 0118 23010000 		.4byte	0x123
+ 825 011c 09       		.uleb128 0x9
+ 826 011d F7000000 		.4byte	0xf7
+ 827 0121 07       		.byte	0x7
+ 828 0122 00       		.byte	0
+ 829 0123 03       		.uleb128 0x3
+ 830 0124 4D020000 		.4byte	.LASF24
+ 831 0128 05       		.byte	0x5
+ 832 0129 72       		.byte	0x72
+ 833 012a FE000000 		.4byte	0xfe
+ 834 012e 06       		.uleb128 0x6
+ 835 012f 0C       		.byte	0xc
+ 836 0130 05       		.byte	0x5
+ 837 0131 81       		.byte	0x81
+ 838 0132 7E010000 		.4byte	0x17e
+ 839 0136 0A       		.uleb128 0xa
+ 840 0137 696400   		.ascii	"id\000"
+ 841 013a 05       		.byte	0x5
+ 842 013b 83       		.byte	0x83
+ 843 013c CF000000 		.4byte	0xcf
+ 844 0140 00       		.byte	0
+ 845 0141 0A       		.uleb128 0xa
+ 846 0142 72747200 		.ascii	"rtr\000"
+ 847 0146 05       		.byte	0x5
+ 848 0147 84       		.byte	0x84
+ 849 0148 C3000000 		.4byte	0xc3
+ 850 014c 04       		.byte	0x4
+ 851 014d 0A       		.uleb128 0xa
+ 852 014e 69646500 		.ascii	"ide\000"
+ 853 0152 05       		.byte	0x5
+ 854 0153 85       		.byte	0x85
+ 855 0154 C3000000 		.4byte	0xc3
+ 856 0158 05       		.byte	0x5
+ 857 0159 0A       		.uleb128 0xa
+ 858 015a 646C6300 		.ascii	"dlc\000"
+ 859 015e 05       		.byte	0x5
+ 860 015f 86       		.byte	0x86
+ 861 0160 C3000000 		.4byte	0xc3
+ 862 0164 06       		.byte	0x6
+ 863 0165 0A       		.uleb128 0xa
+ 864 0166 69727100 		.ascii	"irq\000"
+ 865 016a 05       		.byte	0x5
+ 866 016b 87       		.byte	0x87
+ 867 016c C3000000 		.4byte	0xc3
+ 868 0170 07       		.byte	0x7
+ 869 0171 0A       		.uleb128 0xa
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 20
+
+
+ 870 0172 6D736700 		.ascii	"msg\000"
+ 871 0176 05       		.byte	0x5
+ 872 0177 8B       		.byte	0x8b
+ 873 0178 7E010000 		.4byte	0x17e
+ 874 017c 08       		.byte	0x8
+ 875 017d 00       		.byte	0
+ 876 017e 0B       		.uleb128 0xb
+ 877 017f 04       		.byte	0x4
+ 878 0180 23010000 		.4byte	0x123
+ 879 0184 03       		.uleb128 0x3
+ 880 0185 19030000 		.4byte	.LASF26
+ 881 0189 05       		.byte	0x5
+ 882 018a 8C       		.byte	0x8c
+ 883 018b 2E010000 		.4byte	0x12e
+ 884 018f 0C       		.uleb128 0xc
+ 885 0190 97000000 		.4byte	0x97
+ 886 0194 0D       		.uleb128 0xd
+ 887 0195 02       		.byte	0x2
+ 888 0196 50000000 		.4byte	0x50
+ 889 019a 06       		.byte	0x6
+ 890 019b 0E       		.byte	0xe
+ 891 019c C3010000 		.4byte	0x1c3
+ 892 01a0 0E       		.uleb128 0xe
+ 893 01a1 EF030000 		.4byte	.LASF27
+ 894 01a5 6607     		.2byte	0x766
+ 895 01a7 0E       		.uleb128 0xe
+ 896 01a8 4B010000 		.4byte	.LASF28
+ 897 01ac 8703     		.2byte	0x387
+ 898 01ae 0E       		.uleb128 0xe
+ 899 01af 0B010000 		.4byte	.LASF29
+ 900 01b3 6603     		.2byte	0x366
+ 901 01b5 0E       		.uleb128 0xe
+ 902 01b6 1D040000 		.4byte	.LASF30
+ 903 01ba 6604     		.2byte	0x466
+ 904 01bc 0F       		.uleb128 0xf
+ 905 01bd D8010000 		.4byte	.LASF31
+ 906 01c1 C1       		.byte	0xc1
+ 907 01c2 00       		.byte	0
+ 908 01c3 0D       		.uleb128 0xd
+ 909 01c4 02       		.byte	0x2
+ 910 01c5 50000000 		.4byte	0x50
+ 911 01c9 06       		.byte	0x6
+ 912 01ca 16       		.byte	0x16
+ 913 01cb EC010000 		.4byte	0x1ec
+ 914 01cf 0E       		.uleb128 0xe
+ 915 01d0 F1040000 		.4byte	.LASF32
+ 916 01d4 6307     		.2byte	0x763
+ 917 01d6 0E       		.uleb128 0xe
+ 918 01d7 1E000000 		.4byte	.LASF33
+ 919 01db 8303     		.2byte	0x383
+ 920 01dd 0E       		.uleb128 0xe
+ 921 01de 96020000 		.4byte	.LASF34
+ 922 01e2 6303     		.2byte	0x363
+ 923 01e4 0E       		.uleb128 0xe
+ 924 01e5 57010000 		.4byte	.LASF35
+ 925 01e9 6304     		.2byte	0x463
+ 926 01eb 00       		.byte	0
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 21
+
+
+ 927 01ec 10       		.uleb128 0x10
+ 928 01ed F2000000 		.4byte	.LASF36
+ 929 01f1 01       		.byte	0x1
+ 930 01f2 23       		.byte	0x23
+ 931 01f3 97000000 		.4byte	0x97
+ 932 01f7 00000000 		.4byte	.LFB63
+ 933 01fb 0C000000 		.4byte	.LFE63-.LFB63
+ 934 01ff 01       		.uleb128 0x1
+ 935 0200 9C       		.byte	0x9c
+ 936 0201 10       		.uleb128 0x10
+ 937 0202 32020000 		.4byte	.LASF37
+ 938 0206 01       		.byte	0x1
+ 939 0207 29       		.byte	0x29
+ 940 0208 97000000 		.4byte	0x97
+ 941 020c 00000000 		.4byte	.LFB64
+ 942 0210 0C000000 		.4byte	.LFE64-.LFB64
+ 943 0214 01       		.uleb128 0x1
+ 944 0215 9C       		.byte	0x9c
+ 945 0216 10       		.uleb128 0x10
+ 946 0217 76020000 		.4byte	.LASF38
+ 947 021b 01       		.byte	0x1
+ 948 021c 2F       		.byte	0x2f
+ 949 021d 97000000 		.4byte	0x97
+ 950 0221 00000000 		.4byte	.LFB65
+ 951 0225 0C000000 		.4byte	.LFE65-.LFB65
+ 952 0229 01       		.uleb128 0x1
+ 953 022a 9C       		.byte	0x9c
+ 954 022b 10       		.uleb128 0x10
+ 955 022c AD000000 		.4byte	.LASF39
+ 956 0230 01       		.byte	0x1
+ 957 0231 34       		.byte	0x34
+ 958 0232 97000000 		.4byte	0x97
+ 959 0236 00000000 		.4byte	.LFB66
+ 960 023a 0C000000 		.4byte	.LFE66-.LFB66
+ 961 023e 01       		.uleb128 0x1
+ 962 023f 9C       		.byte	0x9c
+ 963 0240 10       		.uleb128 0x10
+ 964 0241 F7020000 		.4byte	.LASF40
+ 965 0245 01       		.byte	0x1
+ 966 0246 39       		.byte	0x39
+ 967 0247 97000000 		.4byte	0x97
+ 968 024b 00000000 		.4byte	.LFB67
+ 969 024f 0C000000 		.4byte	.LFE67-.LFB67
+ 970 0253 01       		.uleb128 0x1
+ 971 0254 9C       		.byte	0x9c
+ 972 0255 10       		.uleb128 0x10
+ 973 0256 76030000 		.4byte	.LASF41
+ 974 025a 01       		.byte	0x1
+ 975 025b 3E       		.byte	0x3e
+ 976 025c 97000000 		.4byte	0x97
+ 977 0260 00000000 		.4byte	.LFB68
+ 978 0264 0C000000 		.4byte	.LFE68-.LFB68
+ 979 0268 01       		.uleb128 0x1
+ 980 0269 9C       		.byte	0x9c
+ 981 026a 11       		.uleb128 0x11
+ 982 026b DD040000 		.4byte	.LASF44
+ 983 026f 01       		.byte	0x1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 22
+
+
+ 984 0270 44       		.byte	0x44
+ 985 0271 00000000 		.4byte	.LFB69
+ 986 0275 68000000 		.4byte	.LFE69-.LFB69
+ 987 0279 01       		.uleb128 0x1
+ 988 027a 9C       		.byte	0x9c
+ 989 027b BE020000 		.4byte	0x2be
+ 990 027f 12       		.uleb128 0x12
+ 991 0280 6D736700 		.ascii	"msg\000"
+ 992 0284 01       		.byte	0x1
+ 993 0285 44       		.byte	0x44
+ 994 0286 BE020000 		.4byte	0x2be
+ 995 028a 00000000 		.4byte	.LLST0
+ 996 028e 12       		.uleb128 0x12
+ 997 028f 494400   		.ascii	"ID\000"
+ 998 0292 01       		.byte	0x1
+ 999 0293 44       		.byte	0x44
+ 1000 0294 89000000 		.4byte	0x89
+ 1001 0298 2C000000 		.4byte	.LLST1
+ 1002 029c 13       		.uleb128 0x13
+ 1003 029d 6E010000 		.4byte	.LASF42
+ 1004 02a1 01       		.byte	0x1
+ 1005 02a2 46       		.byte	0x46
+ 1006 02a3 C3000000 		.4byte	0xc3
+ 1007 02a7 58000000 		.4byte	.LLST2
+ 1008 02ab 14       		.uleb128 0x14
+ 1009 02ac 0A000000 		.4byte	.LVL1
+ 1010 02b0 32060000 		.4byte	0x632
+ 1011 02b4 14       		.uleb128 0x14
+ 1012 02b5 60000000 		.4byte	.LVL2
+ 1013 02b9 3D060000 		.4byte	0x63d
+ 1014 02bd 00       		.byte	0
+ 1015 02be 0B       		.uleb128 0xb
+ 1016 02bf 04       		.byte	0x4
+ 1017 02c0 97000000 		.4byte	0x97
+ 1018 02c4 15       		.uleb128 0x15
+ 1019 02c5 5A000000 		.4byte	.LASF60
+ 1020 02c9 01       		.byte	0x1
+ 1021 02ca 60       		.byte	0x60
+ 1022 02cb 00000000 		.4byte	.LFB70
+ 1023 02cf 4A000000 		.4byte	.LFE70-.LFB70
+ 1024 02d3 01       		.uleb128 0x1
+ 1025 02d4 9C       		.byte	0x9c
+ 1026 02d5 F8020000 		.4byte	0x2f8
+ 1027 02d9 16       		.uleb128 0x16
+ 1028 02da 99010000 		.4byte	.LASF43
+ 1029 02de 01       		.byte	0x1
+ 1030 02df 63       		.byte	0x63
+ 1031 02e0 84010000 		.4byte	0x184
+ 1032 02e4 02       		.uleb128 0x2
+ 1033 02e5 91       		.byte	0x91
+ 1034 02e6 6C       		.sleb128 -20
+ 1035 02e7 17       		.uleb128 0x17
+ 1036 02e8 44000000 		.4byte	.LVL4
+ 1037 02ec 48060000 		.4byte	0x648
+ 1038 02f0 18       		.uleb128 0x18
+ 1039 02f1 01       		.uleb128 0x1
+ 1040 02f2 50       		.byte	0x50
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 23
+
+
+ 1041 02f3 02       		.uleb128 0x2
+ 1042 02f4 91       		.byte	0x91
+ 1043 02f5 6C       		.sleb128 -20
+ 1044 02f6 00       		.byte	0
+ 1045 02f7 00       		.byte	0
+ 1046 02f8 11       		.uleb128 0x11
+ 1047 02f9 14040000 		.4byte	.LASF45
+ 1048 02fd 01       		.byte	0x1
+ 1049 02fe 78       		.byte	0x78
+ 1050 02ff 00000000 		.4byte	.LFB71
+ 1051 0303 3E000000 		.4byte	.LFE71-.LFB71
+ 1052 0307 01       		.uleb128 0x1
+ 1053 0308 9C       		.byte	0x9c
+ 1054 0309 64030000 		.4byte	0x364
+ 1055 030d 19       		.uleb128 0x19
+ 1056 030e EB020000 		.4byte	.LASF46
+ 1057 0312 01       		.byte	0x1
+ 1058 0313 78       		.byte	0x78
+ 1059 0314 BE020000 		.4byte	0x2be
+ 1060 0318 6B000000 		.4byte	.LLST3
+ 1061 031c 12       		.uleb128 0x12
+ 1062 031d 494400   		.ascii	"ID\000"
+ 1063 0320 01       		.byte	0x1
+ 1064 0321 78       		.byte	0x78
+ 1065 0322 B8000000 		.4byte	0xb8
+ 1066 0326 8C000000 		.4byte	.LLST4
+ 1067 032a 1A       		.uleb128 0x1a
+ 1068 032b 6900     		.ascii	"i\000"
+ 1069 032d 01       		.byte	0x1
+ 1070 032e 7A       		.byte	0x7a
+ 1071 032f 97000000 		.4byte	0x97
+ 1072 0333 C5000000 		.4byte	.LLST5
+ 1073 0337 16       		.uleb128 0x16
+ 1074 0338 04030000 		.4byte	.LASF47
+ 1075 033c 01       		.byte	0x1
+ 1076 033d 7B       		.byte	0x7b
+ 1077 033e 84010000 		.4byte	0x184
+ 1078 0342 02       		.uleb128 0x2
+ 1079 0343 91       		.byte	0x91
+ 1080 0344 6C       		.sleb128 -20
+ 1081 0345 16       		.uleb128 0x16
+ 1082 0346 E9040000 		.4byte	.LASF48
+ 1083 034a 01       		.byte	0x1
+ 1084 034b 7C       		.byte	0x7c
+ 1085 034c 23010000 		.4byte	0x123
+ 1086 0350 02       		.uleb128 0x2
+ 1087 0351 91       		.byte	0x91
+ 1088 0352 64       		.sleb128 -28
+ 1089 0353 17       		.uleb128 0x17
+ 1090 0354 38000000 		.4byte	.LVL11
+ 1091 0358 48060000 		.4byte	0x648
+ 1092 035c 18       		.uleb128 0x18
+ 1093 035d 01       		.uleb128 0x1
+ 1094 035e 50       		.byte	0x50
+ 1095 035f 02       		.uleb128 0x2
+ 1096 0360 91       		.byte	0x91
+ 1097 0361 6C       		.sleb128 -20
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 24
+
+
+ 1098 0362 00       		.byte	0
+ 1099 0363 00       		.byte	0
+ 1100 0364 11       		.uleb128 0x11
+ 1101 0365 C9000000 		.4byte	.LASF49
+ 1102 0369 01       		.byte	0x1
+ 1103 036a 88       		.byte	0x88
+ 1104 036b 00000000 		.4byte	.LFB72
+ 1105 036f 3C000000 		.4byte	.LFE72-.LFB72
+ 1106 0373 01       		.uleb128 0x1
+ 1107 0374 9C       		.byte	0x9c
+ 1108 0375 EE030000 		.4byte	0x3ee
+ 1109 0379 19       		.uleb128 0x19
+ 1110 037a 87000000 		.4byte	.LASF50
+ 1111 037e 01       		.byte	0x1
+ 1112 037f 89       		.byte	0x89
+ 1113 0380 97000000 		.4byte	0x97
+ 1114 0384 EF000000 		.4byte	.LLST6
+ 1115 0388 19       		.uleb128 0x19
+ 1116 0389 8D030000 		.4byte	.LASF51
+ 1117 038d 01       		.byte	0x1
+ 1118 038e 8A       		.byte	0x8a
+ 1119 038f A2000000 		.4byte	0xa2
+ 1120 0393 1C010000 		.4byte	.LLST7
+ 1121 0397 19       		.uleb128 0x19
+ 1122 0398 4C030000 		.4byte	.LASF52
+ 1123 039c 01       		.byte	0x1
+ 1124 039d 8B       		.byte	0x8b
+ 1125 039e A2000000 		.4byte	0xa2
+ 1126 03a2 3D010000 		.4byte	.LLST8
+ 1127 03a6 19       		.uleb128 0x19
+ 1128 03a7 80030000 		.4byte	.LASF53
+ 1129 03ab 01       		.byte	0x1
+ 1130 03ac 8C       		.byte	0x8c
+ 1131 03ad 97000000 		.4byte	0x97
+ 1132 03b1 5E010000 		.4byte	.LLST9
+ 1133 03b5 16       		.uleb128 0x16
+ 1134 03b6 EB020000 		.4byte	.LASF46
+ 1135 03ba 01       		.byte	0x1
+ 1136 03bb 91       		.byte	0x91
+ 1137 03bc EE030000 		.4byte	0x3ee
+ 1138 03c0 02       		.uleb128 0x2
+ 1139 03c1 91       		.byte	0x91
+ 1140 03c2 70       		.sleb128 -16
+ 1141 03c3 1B       		.uleb128 0x1b
+ 1142 03c4 30000000 		.4byte	.LVL16
+ 1143 03c8 F8020000 		.4byte	0x2f8
+ 1144 03cc DE030000 		.4byte	0x3de
+ 1145 03d0 18       		.uleb128 0x18
+ 1146 03d1 01       		.uleb128 0x1
+ 1147 03d2 50       		.byte	0x50
+ 1148 03d3 02       		.uleb128 0x2
+ 1149 03d4 7D       		.byte	0x7d
+ 1150 03d5 00       		.sleb128 0
+ 1151 03d6 18       		.uleb128 0x18
+ 1152 03d7 01       		.uleb128 0x1
+ 1153 03d8 51       		.byte	0x51
+ 1154 03d9 03       		.uleb128 0x3
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 25
+
+
+ 1155 03da 0A       		.byte	0xa
+ 1156 03db 6307     		.2byte	0x763
+ 1157 03dd 00       		.byte	0
+ 1158 03de 17       		.uleb128 0x17
+ 1159 03df 36000000 		.4byte	.LVL17
+ 1160 03e3 54060000 		.4byte	0x654
+ 1161 03e7 18       		.uleb128 0x18
+ 1162 03e8 01       		.uleb128 0x1
+ 1163 03e9 50       		.byte	0x50
+ 1164 03ea 01       		.uleb128 0x1
+ 1165 03eb 31       		.byte	0x31
+ 1166 03ec 00       		.byte	0
+ 1167 03ed 00       		.byte	0
+ 1168 03ee 08       		.uleb128 0x8
+ 1169 03ef 97000000 		.4byte	0x97
+ 1170 03f3 FE030000 		.4byte	0x3fe
+ 1171 03f7 09       		.uleb128 0x9
+ 1172 03f8 F7000000 		.4byte	0xf7
+ 1173 03fc 07       		.byte	0x7
+ 1174 03fd 00       		.byte	0
+ 1175 03fe 11       		.uleb128 0x11
+ 1176 03ff 30030000 		.4byte	.LASF54
+ 1177 0403 01       		.byte	0x1
+ 1178 0404 A4       		.byte	0xa4
+ 1179 0405 00000000 		.4byte	.LFB73
+ 1180 0409 26000000 		.4byte	.LFE73-.LFB73
+ 1181 040d 01       		.uleb128 0x1
+ 1182 040e 9C       		.byte	0x9c
+ 1183 040f 66040000 		.4byte	0x466
+ 1184 0413 19       		.uleb128 0x19
+ 1185 0414 68000000 		.4byte	.LASF55
+ 1186 0418 01       		.byte	0x1
+ 1187 0419 A4       		.byte	0xa4
+ 1188 041a 97000000 		.4byte	0x97
+ 1189 041e 7F010000 		.4byte	.LLST10
+ 1190 0422 19       		.uleb128 0x19
+ 1191 0423 B2020000 		.4byte	.LASF56
+ 1192 0427 01       		.byte	0x1
+ 1193 0428 A4       		.byte	0xa4
+ 1194 0429 97000000 		.4byte	0x97
+ 1195 042d AC010000 		.4byte	.LLST11
+ 1196 0431 19       		.uleb128 0x19
+ 1197 0432 A0010000 		.4byte	.LASF57
+ 1198 0436 01       		.byte	0x1
+ 1199 0437 A4       		.byte	0xa4
+ 1200 0438 97000000 		.4byte	0x97
+ 1201 043c D9010000 		.4byte	.LLST12
+ 1202 0440 16       		.uleb128 0x16
+ 1203 0441 EB020000 		.4byte	.LASF46
+ 1204 0445 01       		.byte	0x1
+ 1205 0446 A5       		.byte	0xa5
+ 1206 0447 EE030000 		.4byte	0x3ee
+ 1207 044b 02       		.uleb128 0x2
+ 1208 044c 91       		.byte	0x91
+ 1209 044d 70       		.sleb128 -16
+ 1210 044e 17       		.uleb128 0x17
+ 1211 044f 20000000 		.4byte	.LVL21
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 26
+
+
+ 1212 0453 F8020000 		.4byte	0x2f8
+ 1213 0457 18       		.uleb128 0x18
+ 1214 0458 01       		.uleb128 0x1
+ 1215 0459 50       		.byte	0x50
+ 1216 045a 02       		.uleb128 0x2
+ 1217 045b 7D       		.byte	0x7d
+ 1218 045c 00       		.sleb128 0
+ 1219 045d 18       		.uleb128 0x18
+ 1220 045e 01       		.uleb128 0x1
+ 1221 045f 51       		.byte	0x51
+ 1222 0460 03       		.uleb128 0x3
+ 1223 0461 0A       		.byte	0xa
+ 1224 0462 6304     		.2byte	0x463
+ 1225 0464 00       		.byte	0
+ 1226 0465 00       		.byte	0
+ 1227 0466 11       		.uleb128 0x11
+ 1228 0467 28010000 		.4byte	.LASF58
+ 1229 046b 01       		.byte	0x1
+ 1230 046c AD       		.byte	0xad
+ 1231 046d 00000000 		.4byte	.LFB74
+ 1232 0471 1E000000 		.4byte	.LFE74-.LFB74
+ 1233 0475 01       		.uleb128 0x1
+ 1234 0476 9C       		.byte	0x9c
+ 1235 0477 B0040000 		.4byte	0x4b0
+ 1236 047b 19       		.uleb128 0x19
+ 1237 047c 34040000 		.4byte	.LASF59
+ 1238 0480 01       		.byte	0x1
+ 1239 0481 AD       		.byte	0xad
+ 1240 0482 97000000 		.4byte	0x97
+ 1241 0486 FA010000 		.4byte	.LLST13
+ 1242 048a 16       		.uleb128 0x16
+ 1243 048b EB020000 		.4byte	.LASF46
+ 1244 048f 01       		.byte	0x1
+ 1245 0490 AE       		.byte	0xae
+ 1246 0491 EE030000 		.4byte	0x3ee
+ 1247 0495 02       		.uleb128 0x2
+ 1248 0496 91       		.byte	0x91
+ 1249 0497 70       		.sleb128 -16
+ 1250 0498 17       		.uleb128 0x17
+ 1251 0499 18000000 		.4byte	.LVL24
+ 1252 049d F8020000 		.4byte	0x2f8
+ 1253 04a1 18       		.uleb128 0x18
+ 1254 04a2 01       		.uleb128 0x1
+ 1255 04a3 50       		.byte	0x50
+ 1256 04a4 02       		.uleb128 0x2
+ 1257 04a5 7D       		.byte	0x7d
+ 1258 04a6 00       		.sleb128 0
+ 1259 04a7 18       		.uleb128 0x18
+ 1260 04a8 01       		.uleb128 0x1
+ 1261 04a9 51       		.byte	0x51
+ 1262 04aa 03       		.uleb128 0x3
+ 1263 04ab 0A       		.byte	0xa
+ 1264 04ac 6303     		.2byte	0x363
+ 1265 04ae 00       		.byte	0
+ 1266 04af 00       		.byte	0
+ 1267 04b0 15       		.uleb128 0x15
+ 1268 04b1 10000000 		.4byte	.LASF61
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 27
+
+
+ 1269 04b5 01       		.byte	0x1
+ 1270 04b6 B3       		.byte	0xb3
+ 1271 04b7 00000000 		.4byte	.LFB75
+ 1272 04bb 10000000 		.4byte	.LFE75-.LFB75
+ 1273 04bf 01       		.uleb128 0x1
+ 1274 04c0 9C       		.byte	0x9c
+ 1275 04c1 E8040000 		.4byte	0x4e8
+ 1276 04c5 1B       		.uleb128 0x1b
+ 1277 04c6 08000000 		.4byte	.LVL25
+ 1278 04ca 5F060000 		.4byte	0x65f
+ 1279 04ce D8040000 		.4byte	0x4d8
+ 1280 04d2 18       		.uleb128 0x18
+ 1281 04d3 01       		.uleb128 0x1
+ 1282 04d4 50       		.byte	0x50
+ 1283 04d5 01       		.uleb128 0x1
+ 1284 04d6 31       		.byte	0x31
+ 1285 04d7 00       		.byte	0
+ 1286 04d8 17       		.uleb128 0x17
+ 1287 04d9 0E000000 		.4byte	.LVL26
+ 1288 04dd 6A060000 		.4byte	0x66a
+ 1289 04e1 18       		.uleb128 0x18
+ 1290 04e2 01       		.uleb128 0x1
+ 1291 04e3 50       		.byte	0x50
+ 1292 04e4 01       		.uleb128 0x1
+ 1293 04e5 31       		.byte	0x31
+ 1294 04e6 00       		.byte	0
+ 1295 04e7 00       		.byte	0
+ 1296 04e8 15       		.uleb128 0x15
+ 1297 04e9 00000000 		.4byte	.LASF62
+ 1298 04ed 01       		.byte	0x1
+ 1299 04ee BA       		.byte	0xba
+ 1300 04ef 00000000 		.4byte	.LFB76
+ 1301 04f3 10000000 		.4byte	.LFE76-.LFB76
+ 1302 04f7 01       		.uleb128 0x1
+ 1303 04f8 9C       		.byte	0x9c
+ 1304 04f9 20050000 		.4byte	0x520
+ 1305 04fd 1B       		.uleb128 0x1b
+ 1306 04fe 08000000 		.4byte	.LVL27
+ 1307 0502 5F060000 		.4byte	0x65f
+ 1308 0506 10050000 		.4byte	0x510
+ 1309 050a 18       		.uleb128 0x18
+ 1310 050b 01       		.uleb128 0x1
+ 1311 050c 50       		.byte	0x50
+ 1312 050d 01       		.uleb128 0x1
+ 1313 050e 30       		.byte	0x30
+ 1314 050f 00       		.byte	0
+ 1315 0510 17       		.uleb128 0x17
+ 1316 0511 0E000000 		.4byte	.LVL28
+ 1317 0515 6A060000 		.4byte	0x66a
+ 1318 0519 18       		.uleb128 0x18
+ 1319 051a 01       		.uleb128 0x1
+ 1320 051b 50       		.byte	0x50
+ 1321 051c 01       		.uleb128 0x1
+ 1322 051d 30       		.byte	0x30
+ 1323 051e 00       		.byte	0
+ 1324 051f 00       		.byte	0
+ 1325 0520 11       		.uleb128 0x11
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 28
+
+
+ 1326 0521 60020000 		.4byte	.LASF63
+ 1327 0525 01       		.byte	0x1
+ 1328 0526 CC       		.byte	0xcc
+ 1329 0527 00000000 		.4byte	.LFB77
+ 1330 052b 26000000 		.4byte	.LFE77-.LFB77
+ 1331 052f 01       		.uleb128 0x1
+ 1332 0530 9C       		.byte	0x9c
+ 1333 0531 88050000 		.4byte	0x588
+ 1334 0535 19       		.uleb128 0x19
+ 1335 0536 36000000 		.4byte	.LASF64
+ 1336 053a 01       		.byte	0x1
+ 1337 053b CC       		.byte	0xcc
+ 1338 053c 97000000 		.4byte	0x97
+ 1339 0540 27020000 		.4byte	.LLST14
+ 1340 0544 19       		.uleb128 0x19
+ 1341 0545 68030000 		.4byte	.LASF65
+ 1342 0549 01       		.byte	0x1
+ 1343 054a CC       		.byte	0xcc
+ 1344 054b 97000000 		.4byte	0x97
+ 1345 054f 54020000 		.4byte	.LLST15
+ 1346 0553 19       		.uleb128 0x19
+ 1347 0554 BD010000 		.4byte	.LASF66
+ 1348 0558 01       		.byte	0x1
+ 1349 0559 CC       		.byte	0xcc
+ 1350 055a 97000000 		.4byte	0x97
+ 1351 055e 81020000 		.4byte	.LLST16
+ 1352 0562 16       		.uleb128 0x16
+ 1353 0563 EB020000 		.4byte	.LASF46
+ 1354 0567 01       		.byte	0x1
+ 1355 0568 CE       		.byte	0xce
+ 1356 0569 EE030000 		.4byte	0x3ee
+ 1357 056d 02       		.uleb128 0x2
+ 1358 056e 91       		.byte	0x91
+ 1359 056f 70       		.sleb128 -16
+ 1360 0570 17       		.uleb128 0x17
+ 1361 0571 20000000 		.4byte	.LVL32
+ 1362 0575 F8020000 		.4byte	0x2f8
+ 1363 0579 18       		.uleb128 0x18
+ 1364 057a 01       		.uleb128 0x1
+ 1365 057b 50       		.byte	0x50
+ 1366 057c 02       		.uleb128 0x2
+ 1367 057d 7D       		.byte	0x7d
+ 1368 057e 00       		.sleb128 0
+ 1369 057f 18       		.uleb128 0x18
+ 1370 0580 01       		.uleb128 0x1
+ 1371 0581 51       		.byte	0x51
+ 1372 0582 03       		.uleb128 0x3
+ 1373 0583 0A       		.byte	0xa
+ 1374 0584 8303     		.2byte	0x383
+ 1375 0586 00       		.byte	0
+ 1376 0587 00       		.byte	0
+ 1377 0588 1C       		.uleb128 0x1c
+ 1378 0589 3A040000 		.4byte	.LASF67
+ 1379 058d 07       		.byte	0x7
+ 1380 058e 1207     		.2byte	0x712
+ 1381 0590 94050000 		.4byte	0x594
+ 1382 0594 0C       		.uleb128 0xc
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 29
+
+
+ 1383 0595 AD000000 		.4byte	0xad
+ 1384 0599 1D       		.uleb128 0x1d
+ 1385 059a 1A010000 		.4byte	.LASF68
+ 1386 059e 01       		.byte	0x1
+ 1387 059f 14       		.byte	0x14
+ 1388 05a0 8F010000 		.4byte	0x18f
+ 1389 05a4 05       		.uleb128 0x5
+ 1390 05a5 03       		.byte	0x3
+ 1391 05a6 00000000 		.4byte	THROTTLE_HIGH
+ 1392 05aa 1D       		.uleb128 0x1d
+ 1393 05ab 0C030000 		.4byte	.LASF69
+ 1394 05af 01       		.byte	0x1
+ 1395 05b0 15       		.byte	0x15
+ 1396 05b1 8F010000 		.4byte	0x18f
+ 1397 05b5 05       		.uleb128 0x5
+ 1398 05b6 03       		.byte	0x3
+ 1399 05b7 00000000 		.4byte	THROTTLE_LOW
+ 1400 05bb 1D       		.uleb128 0x1d
+ 1401 05bc 6D020000 		.4byte	.LASF70
+ 1402 05c0 01       		.byte	0x1
+ 1403 05c1 17       		.byte	0x17
+ 1404 05c2 8F010000 		.4byte	0x18f
+ 1405 05c6 05       		.uleb128 0x5
+ 1406 05c7 03       		.byte	0x3
+ 1407 05c8 00000000 		.4byte	ESTOP_MC
+ 1408 05cc 1D       		.uleb128 0x1d
+ 1409 05cd 9F000000 		.4byte	.LASF71
+ 1410 05d1 01       		.byte	0x1
+ 1411 05d2 19       		.byte	0x19
+ 1412 05d3 8F010000 		.4byte	0x18f
+ 1413 05d7 05       		.uleb128 0x5
+ 1414 05d8 03       		.byte	0x3
+ 1415 05d9 00000000 		.4byte	HV_REQUEST_TR
+ 1416 05dd 1D       		.uleb128 0x1d
+ 1417 05de D6000000 		.4byte	.LASF72
+ 1418 05e2 01       		.byte	0x1
+ 1419 05e3 1A       		.byte	0x1a
+ 1420 05e4 8F010000 		.4byte	0x18f
+ 1421 05e8 05       		.uleb128 0x5
+ 1422 05e9 03       		.byte	0x3
+ 1423 05ea 00000000 		.4byte	VEHICLE_STATE
+ 1424 05ee 1D       		.uleb128 0x1d
+ 1425 05ef 65010000 		.4byte	.LASF73
+ 1426 05f3 01       		.byte	0x1
+ 1427 05f4 1D       		.byte	0x1d
+ 1428 05f5 8F010000 		.4byte	0x18f
+ 1429 05f9 05       		.uleb128 0x5
+ 1430 05fa 03       		.byte	0x3
+ 1431 05fb 00000000 		.4byte	THROTTLE
+ 1432 05ff 1D       		.uleb128 0x1d
+ 1433 0600 E4000000 		.4byte	.LASF74
+ 1434 0604 01       		.byte	0x1
+ 1435 0605 1E       		.byte	0x1e
+ 1436 0606 8F010000 		.4byte	0x18f
+ 1437 060a 05       		.uleb128 0x5
+ 1438 060b 03       		.byte	0x3
+ 1439 060c 00000000 		.4byte	SET_INTERLOCK
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 30
+
+
+ 1440 0610 1D       		.uleb128 0x1d
+ 1441 0611 6E000000 		.4byte	.LASF75
+ 1442 0615 01       		.byte	0x1
+ 1443 0616 1F       		.byte	0x1f
+ 1444 0617 8F010000 		.4byte	0x18f
+ 1445 061b 05       		.uleb128 0x5
+ 1446 061c 03       		.byte	0x3
+ 1447 061d 00000000 		.4byte	STATE
+ 1448 0621 1D       		.uleb128 0x1d
+ 1449 0622 88020000 		.4byte	.LASF76
+ 1450 0626 01       		.byte	0x1
+ 1451 0627 20       		.byte	0x20
+ 1452 0628 8F010000 		.4byte	0x18f
+ 1453 062c 05       		.uleb128 0x5
+ 1454 062d 03       		.byte	0x3
+ 1455 062e 00000000 		.4byte	HV_REQUEST_MC
+ 1456 0632 1E       		.uleb128 0x1e
+ 1457 0633 C1020000 		.4byte	.LASF77
+ 1458 0637 C1020000 		.4byte	.LASF77
+ 1459 063b 08       		.byte	0x8
+ 1460 063c 7D       		.byte	0x7d
+ 1461 063d 1E       		.uleb128 0x1e
+ 1462 063e 44000000 		.4byte	.LASF78
+ 1463 0642 44000000 		.4byte	.LASF78
+ 1464 0646 08       		.byte	0x8
+ 1465 0647 7E       		.byte	0x7e
+ 1466 0648 1F       		.uleb128 0x1f
+ 1467 0649 24030000 		.4byte	.LASF79
+ 1468 064d 24030000 		.4byte	.LASF79
+ 1469 0651 05       		.byte	0x5
+ 1470 0652 1801     		.2byte	0x118
+ 1471 0654 1E       		.uleb128 0x1e
+ 1472 0655 D5040000 		.4byte	.LASF80
+ 1473 0659 D5040000 		.4byte	.LASF80
+ 1474 065d 08       		.byte	0x8
+ 1475 065e 76       		.byte	0x76
+ 1476 065f 1E       		.uleb128 0x1e
+ 1477 0660 06040000 		.4byte	.LASF81
+ 1478 0664 06040000 		.4byte	.LASF81
+ 1479 0668 09       		.byte	0x9
+ 1480 0669 26       		.byte	0x26
+ 1481 066a 1E       		.uleb128 0x1e
+ 1482 066b 26040000 		.4byte	.LASF82
+ 1483 066f 26040000 		.4byte	.LASF82
+ 1484 0673 0A       		.byte	0xa
+ 1485 0674 26       		.byte	0x26
+ 1486 0675 00       		.byte	0
+ 1487              		.section	.debug_abbrev,"",%progbits
+ 1488              	.Ldebug_abbrev0:
+ 1489 0000 01       		.uleb128 0x1
+ 1490 0001 11       		.uleb128 0x11
+ 1491 0002 01       		.byte	0x1
+ 1492 0003 25       		.uleb128 0x25
+ 1493 0004 0E       		.uleb128 0xe
+ 1494 0005 13       		.uleb128 0x13
+ 1495 0006 0B       		.uleb128 0xb
+ 1496 0007 03       		.uleb128 0x3
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 31
+
+
+ 1497 0008 0E       		.uleb128 0xe
+ 1498 0009 1B       		.uleb128 0x1b
+ 1499 000a 0E       		.uleb128 0xe
+ 1500 000b 55       		.uleb128 0x55
+ 1501 000c 17       		.uleb128 0x17
+ 1502 000d 11       		.uleb128 0x11
+ 1503 000e 01       		.uleb128 0x1
+ 1504 000f 10       		.uleb128 0x10
+ 1505 0010 17       		.uleb128 0x17
+ 1506 0011 00       		.byte	0
+ 1507 0012 00       		.byte	0
+ 1508 0013 02       		.uleb128 0x2
+ 1509 0014 24       		.uleb128 0x24
+ 1510 0015 00       		.byte	0
+ 1511 0016 0B       		.uleb128 0xb
+ 1512 0017 0B       		.uleb128 0xb
+ 1513 0018 3E       		.uleb128 0x3e
+ 1514 0019 0B       		.uleb128 0xb
+ 1515 001a 03       		.uleb128 0x3
+ 1516 001b 0E       		.uleb128 0xe
+ 1517 001c 00       		.byte	0
+ 1518 001d 00       		.byte	0
+ 1519 001e 03       		.uleb128 0x3
+ 1520 001f 16       		.uleb128 0x16
+ 1521 0020 00       		.byte	0
+ 1522 0021 03       		.uleb128 0x3
+ 1523 0022 0E       		.uleb128 0xe
+ 1524 0023 3A       		.uleb128 0x3a
+ 1525 0024 0B       		.uleb128 0xb
+ 1526 0025 3B       		.uleb128 0x3b
+ 1527 0026 0B       		.uleb128 0xb
+ 1528 0027 49       		.uleb128 0x49
+ 1529 0028 13       		.uleb128 0x13
+ 1530 0029 00       		.byte	0
+ 1531 002a 00       		.byte	0
+ 1532 002b 04       		.uleb128 0x4
+ 1533 002c 24       		.uleb128 0x24
+ 1534 002d 00       		.byte	0
+ 1535 002e 0B       		.uleb128 0xb
+ 1536 002f 0B       		.uleb128 0xb
+ 1537 0030 3E       		.uleb128 0x3e
+ 1538 0031 0B       		.uleb128 0xb
+ 1539 0032 03       		.uleb128 0x3
+ 1540 0033 08       		.uleb128 0x8
+ 1541 0034 00       		.byte	0
+ 1542 0035 00       		.byte	0
+ 1543 0036 05       		.uleb128 0x5
+ 1544 0037 16       		.uleb128 0x16
+ 1545 0038 00       		.byte	0
+ 1546 0039 03       		.uleb128 0x3
+ 1547 003a 0E       		.uleb128 0xe
+ 1548 003b 3A       		.uleb128 0x3a
+ 1549 003c 0B       		.uleb128 0xb
+ 1550 003d 3B       		.uleb128 0x3b
+ 1551 003e 05       		.uleb128 0x5
+ 1552 003f 49       		.uleb128 0x49
+ 1553 0040 13       		.uleb128 0x13
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 32
+
+
+ 1554 0041 00       		.byte	0
+ 1555 0042 00       		.byte	0
+ 1556 0043 06       		.uleb128 0x6
+ 1557 0044 13       		.uleb128 0x13
+ 1558 0045 01       		.byte	0x1
+ 1559 0046 0B       		.uleb128 0xb
+ 1560 0047 0B       		.uleb128 0xb
+ 1561 0048 3A       		.uleb128 0x3a
+ 1562 0049 0B       		.uleb128 0xb
+ 1563 004a 3B       		.uleb128 0x3b
+ 1564 004b 0B       		.uleb128 0xb
+ 1565 004c 01       		.uleb128 0x1
+ 1566 004d 13       		.uleb128 0x13
+ 1567 004e 00       		.byte	0
+ 1568 004f 00       		.byte	0
+ 1569 0050 07       		.uleb128 0x7
+ 1570 0051 0D       		.uleb128 0xd
+ 1571 0052 00       		.byte	0
+ 1572 0053 03       		.uleb128 0x3
+ 1573 0054 0E       		.uleb128 0xe
+ 1574 0055 3A       		.uleb128 0x3a
+ 1575 0056 0B       		.uleb128 0xb
+ 1576 0057 3B       		.uleb128 0x3b
+ 1577 0058 0B       		.uleb128 0xb
+ 1578 0059 49       		.uleb128 0x49
+ 1579 005a 13       		.uleb128 0x13
+ 1580 005b 38       		.uleb128 0x38
+ 1581 005c 0B       		.uleb128 0xb
+ 1582 005d 00       		.byte	0
+ 1583 005e 00       		.byte	0
+ 1584 005f 08       		.uleb128 0x8
+ 1585 0060 01       		.uleb128 0x1
+ 1586 0061 01       		.byte	0x1
+ 1587 0062 49       		.uleb128 0x49
+ 1588 0063 13       		.uleb128 0x13
+ 1589 0064 01       		.uleb128 0x1
+ 1590 0065 13       		.uleb128 0x13
+ 1591 0066 00       		.byte	0
+ 1592 0067 00       		.byte	0
+ 1593 0068 09       		.uleb128 0x9
+ 1594 0069 21       		.uleb128 0x21
+ 1595 006a 00       		.byte	0
+ 1596 006b 49       		.uleb128 0x49
+ 1597 006c 13       		.uleb128 0x13
+ 1598 006d 2F       		.uleb128 0x2f
+ 1599 006e 0B       		.uleb128 0xb
+ 1600 006f 00       		.byte	0
+ 1601 0070 00       		.byte	0
+ 1602 0071 0A       		.uleb128 0xa
+ 1603 0072 0D       		.uleb128 0xd
+ 1604 0073 00       		.byte	0
+ 1605 0074 03       		.uleb128 0x3
+ 1606 0075 08       		.uleb128 0x8
+ 1607 0076 3A       		.uleb128 0x3a
+ 1608 0077 0B       		.uleb128 0xb
+ 1609 0078 3B       		.uleb128 0x3b
+ 1610 0079 0B       		.uleb128 0xb
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 33
+
+
+ 1611 007a 49       		.uleb128 0x49
+ 1612 007b 13       		.uleb128 0x13
+ 1613 007c 38       		.uleb128 0x38
+ 1614 007d 0B       		.uleb128 0xb
+ 1615 007e 00       		.byte	0
+ 1616 007f 00       		.byte	0
+ 1617 0080 0B       		.uleb128 0xb
+ 1618 0081 0F       		.uleb128 0xf
+ 1619 0082 00       		.byte	0
+ 1620 0083 0B       		.uleb128 0xb
+ 1621 0084 0B       		.uleb128 0xb
+ 1622 0085 49       		.uleb128 0x49
+ 1623 0086 13       		.uleb128 0x13
+ 1624 0087 00       		.byte	0
+ 1625 0088 00       		.byte	0
+ 1626 0089 0C       		.uleb128 0xc
+ 1627 008a 35       		.uleb128 0x35
+ 1628 008b 00       		.byte	0
+ 1629 008c 49       		.uleb128 0x49
+ 1630 008d 13       		.uleb128 0x13
+ 1631 008e 00       		.byte	0
+ 1632 008f 00       		.byte	0
+ 1633 0090 0D       		.uleb128 0xd
+ 1634 0091 04       		.uleb128 0x4
+ 1635 0092 01       		.byte	0x1
+ 1636 0093 0B       		.uleb128 0xb
+ 1637 0094 0B       		.uleb128 0xb
+ 1638 0095 49       		.uleb128 0x49
+ 1639 0096 13       		.uleb128 0x13
+ 1640 0097 3A       		.uleb128 0x3a
+ 1641 0098 0B       		.uleb128 0xb
+ 1642 0099 3B       		.uleb128 0x3b
+ 1643 009a 0B       		.uleb128 0xb
+ 1644 009b 01       		.uleb128 0x1
+ 1645 009c 13       		.uleb128 0x13
+ 1646 009d 00       		.byte	0
+ 1647 009e 00       		.byte	0
+ 1648 009f 0E       		.uleb128 0xe
+ 1649 00a0 28       		.uleb128 0x28
+ 1650 00a1 00       		.byte	0
+ 1651 00a2 03       		.uleb128 0x3
+ 1652 00a3 0E       		.uleb128 0xe
+ 1653 00a4 1C       		.uleb128 0x1c
+ 1654 00a5 05       		.uleb128 0x5
+ 1655 00a6 00       		.byte	0
+ 1656 00a7 00       		.byte	0
+ 1657 00a8 0F       		.uleb128 0xf
+ 1658 00a9 28       		.uleb128 0x28
+ 1659 00aa 00       		.byte	0
+ 1660 00ab 03       		.uleb128 0x3
+ 1661 00ac 0E       		.uleb128 0xe
+ 1662 00ad 1C       		.uleb128 0x1c
+ 1663 00ae 0B       		.uleb128 0xb
+ 1664 00af 00       		.byte	0
+ 1665 00b0 00       		.byte	0
+ 1666 00b1 10       		.uleb128 0x10
+ 1667 00b2 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 34
+
+
+ 1668 00b3 00       		.byte	0
+ 1669 00b4 3F       		.uleb128 0x3f
+ 1670 00b5 19       		.uleb128 0x19
+ 1671 00b6 03       		.uleb128 0x3
+ 1672 00b7 0E       		.uleb128 0xe
+ 1673 00b8 3A       		.uleb128 0x3a
+ 1674 00b9 0B       		.uleb128 0xb
+ 1675 00ba 3B       		.uleb128 0x3b
+ 1676 00bb 0B       		.uleb128 0xb
+ 1677 00bc 49       		.uleb128 0x49
+ 1678 00bd 13       		.uleb128 0x13
+ 1679 00be 11       		.uleb128 0x11
+ 1680 00bf 01       		.uleb128 0x1
+ 1681 00c0 12       		.uleb128 0x12
+ 1682 00c1 06       		.uleb128 0x6
+ 1683 00c2 40       		.uleb128 0x40
+ 1684 00c3 18       		.uleb128 0x18
+ 1685 00c4 9742     		.uleb128 0x2117
+ 1686 00c6 19       		.uleb128 0x19
+ 1687 00c7 00       		.byte	0
+ 1688 00c8 00       		.byte	0
+ 1689 00c9 11       		.uleb128 0x11
+ 1690 00ca 2E       		.uleb128 0x2e
+ 1691 00cb 01       		.byte	0x1
+ 1692 00cc 3F       		.uleb128 0x3f
+ 1693 00cd 19       		.uleb128 0x19
+ 1694 00ce 03       		.uleb128 0x3
+ 1695 00cf 0E       		.uleb128 0xe
+ 1696 00d0 3A       		.uleb128 0x3a
+ 1697 00d1 0B       		.uleb128 0xb
+ 1698 00d2 3B       		.uleb128 0x3b
+ 1699 00d3 0B       		.uleb128 0xb
+ 1700 00d4 27       		.uleb128 0x27
+ 1701 00d5 19       		.uleb128 0x19
+ 1702 00d6 11       		.uleb128 0x11
+ 1703 00d7 01       		.uleb128 0x1
+ 1704 00d8 12       		.uleb128 0x12
+ 1705 00d9 06       		.uleb128 0x6
+ 1706 00da 40       		.uleb128 0x40
+ 1707 00db 18       		.uleb128 0x18
+ 1708 00dc 9742     		.uleb128 0x2117
+ 1709 00de 19       		.uleb128 0x19
+ 1710 00df 01       		.uleb128 0x1
+ 1711 00e0 13       		.uleb128 0x13
+ 1712 00e1 00       		.byte	0
+ 1713 00e2 00       		.byte	0
+ 1714 00e3 12       		.uleb128 0x12
+ 1715 00e4 05       		.uleb128 0x5
+ 1716 00e5 00       		.byte	0
+ 1717 00e6 03       		.uleb128 0x3
+ 1718 00e7 08       		.uleb128 0x8
+ 1719 00e8 3A       		.uleb128 0x3a
+ 1720 00e9 0B       		.uleb128 0xb
+ 1721 00ea 3B       		.uleb128 0x3b
+ 1722 00eb 0B       		.uleb128 0xb
+ 1723 00ec 49       		.uleb128 0x49
+ 1724 00ed 13       		.uleb128 0x13
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 35
+
+
+ 1725 00ee 02       		.uleb128 0x2
+ 1726 00ef 17       		.uleb128 0x17
+ 1727 00f0 00       		.byte	0
+ 1728 00f1 00       		.byte	0
+ 1729 00f2 13       		.uleb128 0x13
+ 1730 00f3 34       		.uleb128 0x34
+ 1731 00f4 00       		.byte	0
+ 1732 00f5 03       		.uleb128 0x3
+ 1733 00f6 0E       		.uleb128 0xe
+ 1734 00f7 3A       		.uleb128 0x3a
+ 1735 00f8 0B       		.uleb128 0xb
+ 1736 00f9 3B       		.uleb128 0x3b
+ 1737 00fa 0B       		.uleb128 0xb
+ 1738 00fb 49       		.uleb128 0x49
+ 1739 00fc 13       		.uleb128 0x13
+ 1740 00fd 02       		.uleb128 0x2
+ 1741 00fe 17       		.uleb128 0x17
+ 1742 00ff 00       		.byte	0
+ 1743 0100 00       		.byte	0
+ 1744 0101 14       		.uleb128 0x14
+ 1745 0102 898201   		.uleb128 0x4109
+ 1746 0105 00       		.byte	0
+ 1747 0106 11       		.uleb128 0x11
+ 1748 0107 01       		.uleb128 0x1
+ 1749 0108 31       		.uleb128 0x31
+ 1750 0109 13       		.uleb128 0x13
+ 1751 010a 00       		.byte	0
+ 1752 010b 00       		.byte	0
+ 1753 010c 15       		.uleb128 0x15
+ 1754 010d 2E       		.uleb128 0x2e
+ 1755 010e 01       		.byte	0x1
+ 1756 010f 3F       		.uleb128 0x3f
+ 1757 0110 19       		.uleb128 0x19
+ 1758 0111 03       		.uleb128 0x3
+ 1759 0112 0E       		.uleb128 0xe
+ 1760 0113 3A       		.uleb128 0x3a
+ 1761 0114 0B       		.uleb128 0xb
+ 1762 0115 3B       		.uleb128 0x3b
+ 1763 0116 0B       		.uleb128 0xb
+ 1764 0117 11       		.uleb128 0x11
+ 1765 0118 01       		.uleb128 0x1
+ 1766 0119 12       		.uleb128 0x12
+ 1767 011a 06       		.uleb128 0x6
+ 1768 011b 40       		.uleb128 0x40
+ 1769 011c 18       		.uleb128 0x18
+ 1770 011d 9742     		.uleb128 0x2117
+ 1771 011f 19       		.uleb128 0x19
+ 1772 0120 01       		.uleb128 0x1
+ 1773 0121 13       		.uleb128 0x13
+ 1774 0122 00       		.byte	0
+ 1775 0123 00       		.byte	0
+ 1776 0124 16       		.uleb128 0x16
+ 1777 0125 34       		.uleb128 0x34
+ 1778 0126 00       		.byte	0
+ 1779 0127 03       		.uleb128 0x3
+ 1780 0128 0E       		.uleb128 0xe
+ 1781 0129 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 36
+
+
+ 1782 012a 0B       		.uleb128 0xb
+ 1783 012b 3B       		.uleb128 0x3b
+ 1784 012c 0B       		.uleb128 0xb
+ 1785 012d 49       		.uleb128 0x49
+ 1786 012e 13       		.uleb128 0x13
+ 1787 012f 02       		.uleb128 0x2
+ 1788 0130 18       		.uleb128 0x18
+ 1789 0131 00       		.byte	0
+ 1790 0132 00       		.byte	0
+ 1791 0133 17       		.uleb128 0x17
+ 1792 0134 898201   		.uleb128 0x4109
+ 1793 0137 01       		.byte	0x1
+ 1794 0138 11       		.uleb128 0x11
+ 1795 0139 01       		.uleb128 0x1
+ 1796 013a 31       		.uleb128 0x31
+ 1797 013b 13       		.uleb128 0x13
+ 1798 013c 00       		.byte	0
+ 1799 013d 00       		.byte	0
+ 1800 013e 18       		.uleb128 0x18
+ 1801 013f 8A8201   		.uleb128 0x410a
+ 1802 0142 00       		.byte	0
+ 1803 0143 02       		.uleb128 0x2
+ 1804 0144 18       		.uleb128 0x18
+ 1805 0145 9142     		.uleb128 0x2111
+ 1806 0147 18       		.uleb128 0x18
+ 1807 0148 00       		.byte	0
+ 1808 0149 00       		.byte	0
+ 1809 014a 19       		.uleb128 0x19
+ 1810 014b 05       		.uleb128 0x5
+ 1811 014c 00       		.byte	0
+ 1812 014d 03       		.uleb128 0x3
+ 1813 014e 0E       		.uleb128 0xe
+ 1814 014f 3A       		.uleb128 0x3a
+ 1815 0150 0B       		.uleb128 0xb
+ 1816 0151 3B       		.uleb128 0x3b
+ 1817 0152 0B       		.uleb128 0xb
+ 1818 0153 49       		.uleb128 0x49
+ 1819 0154 13       		.uleb128 0x13
+ 1820 0155 02       		.uleb128 0x2
+ 1821 0156 17       		.uleb128 0x17
+ 1822 0157 00       		.byte	0
+ 1823 0158 00       		.byte	0
+ 1824 0159 1A       		.uleb128 0x1a
+ 1825 015a 34       		.uleb128 0x34
+ 1826 015b 00       		.byte	0
+ 1827 015c 03       		.uleb128 0x3
+ 1828 015d 08       		.uleb128 0x8
+ 1829 015e 3A       		.uleb128 0x3a
+ 1830 015f 0B       		.uleb128 0xb
+ 1831 0160 3B       		.uleb128 0x3b
+ 1832 0161 0B       		.uleb128 0xb
+ 1833 0162 49       		.uleb128 0x49
+ 1834 0163 13       		.uleb128 0x13
+ 1835 0164 02       		.uleb128 0x2
+ 1836 0165 17       		.uleb128 0x17
+ 1837 0166 00       		.byte	0
+ 1838 0167 00       		.byte	0
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 37
+
+
+ 1839 0168 1B       		.uleb128 0x1b
+ 1840 0169 898201   		.uleb128 0x4109
+ 1841 016c 01       		.byte	0x1
+ 1842 016d 11       		.uleb128 0x11
+ 1843 016e 01       		.uleb128 0x1
+ 1844 016f 31       		.uleb128 0x31
+ 1845 0170 13       		.uleb128 0x13
+ 1846 0171 01       		.uleb128 0x1
+ 1847 0172 13       		.uleb128 0x13
+ 1848 0173 00       		.byte	0
+ 1849 0174 00       		.byte	0
+ 1850 0175 1C       		.uleb128 0x1c
+ 1851 0176 34       		.uleb128 0x34
+ 1852 0177 00       		.byte	0
+ 1853 0178 03       		.uleb128 0x3
+ 1854 0179 0E       		.uleb128 0xe
+ 1855 017a 3A       		.uleb128 0x3a
+ 1856 017b 0B       		.uleb128 0xb
+ 1857 017c 3B       		.uleb128 0x3b
+ 1858 017d 05       		.uleb128 0x5
+ 1859 017e 49       		.uleb128 0x49
+ 1860 017f 13       		.uleb128 0x13
+ 1861 0180 3F       		.uleb128 0x3f
+ 1862 0181 19       		.uleb128 0x19
+ 1863 0182 3C       		.uleb128 0x3c
+ 1864 0183 19       		.uleb128 0x19
+ 1865 0184 00       		.byte	0
+ 1866 0185 00       		.byte	0
+ 1867 0186 1D       		.uleb128 0x1d
+ 1868 0187 34       		.uleb128 0x34
+ 1869 0188 00       		.byte	0
+ 1870 0189 03       		.uleb128 0x3
+ 1871 018a 0E       		.uleb128 0xe
+ 1872 018b 3A       		.uleb128 0x3a
+ 1873 018c 0B       		.uleb128 0xb
+ 1874 018d 3B       		.uleb128 0x3b
+ 1875 018e 0B       		.uleb128 0xb
+ 1876 018f 49       		.uleb128 0x49
+ 1877 0190 13       		.uleb128 0x13
+ 1878 0191 3F       		.uleb128 0x3f
+ 1879 0192 19       		.uleb128 0x19
+ 1880 0193 02       		.uleb128 0x2
+ 1881 0194 18       		.uleb128 0x18
+ 1882 0195 00       		.byte	0
+ 1883 0196 00       		.byte	0
+ 1884 0197 1E       		.uleb128 0x1e
+ 1885 0198 2E       		.uleb128 0x2e
+ 1886 0199 00       		.byte	0
+ 1887 019a 3F       		.uleb128 0x3f
+ 1888 019b 19       		.uleb128 0x19
+ 1889 019c 3C       		.uleb128 0x3c
+ 1890 019d 19       		.uleb128 0x19
+ 1891 019e 6E       		.uleb128 0x6e
+ 1892 019f 0E       		.uleb128 0xe
+ 1893 01a0 03       		.uleb128 0x3
+ 1894 01a1 0E       		.uleb128 0xe
+ 1895 01a2 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 38
+
+
+ 1896 01a3 0B       		.uleb128 0xb
+ 1897 01a4 3B       		.uleb128 0x3b
+ 1898 01a5 0B       		.uleb128 0xb
+ 1899 01a6 00       		.byte	0
+ 1900 01a7 00       		.byte	0
+ 1901 01a8 1F       		.uleb128 0x1f
+ 1902 01a9 2E       		.uleb128 0x2e
+ 1903 01aa 00       		.byte	0
+ 1904 01ab 3F       		.uleb128 0x3f
+ 1905 01ac 19       		.uleb128 0x19
+ 1906 01ad 3C       		.uleb128 0x3c
+ 1907 01ae 19       		.uleb128 0x19
+ 1908 01af 6E       		.uleb128 0x6e
+ 1909 01b0 0E       		.uleb128 0xe
+ 1910 01b1 03       		.uleb128 0x3
+ 1911 01b2 0E       		.uleb128 0xe
+ 1912 01b3 3A       		.uleb128 0x3a
+ 1913 01b4 0B       		.uleb128 0xb
+ 1914 01b5 3B       		.uleb128 0x3b
+ 1915 01b6 05       		.uleb128 0x5
+ 1916 01b7 00       		.byte	0
+ 1917 01b8 00       		.byte	0
+ 1918 01b9 00       		.byte	0
+ 1919              		.section	.debug_loc,"",%progbits
+ 1920              	.Ldebug_loc0:
+ 1921              	.LLST0:
+ 1922 0000 00000000 		.4byte	.LVL0
+ 1923 0004 09000000 		.4byte	.LVL1-1
+ 1924 0008 0100     		.2byte	0x1
+ 1925 000a 50       		.byte	0x50
+ 1926 000b 09000000 		.4byte	.LVL1-1
+ 1927 000f 62000000 		.4byte	.LVL3
+ 1928 0013 0100     		.2byte	0x1
+ 1929 0015 55       		.byte	0x55
+ 1930 0016 62000000 		.4byte	.LVL3
+ 1931 001a 68000000 		.4byte	.LFE69
+ 1932 001e 0400     		.2byte	0x4
+ 1933 0020 F3       		.byte	0xf3
+ 1934 0021 01       		.uleb128 0x1
+ 1935 0022 50       		.byte	0x50
+ 1936 0023 9F       		.byte	0x9f
+ 1937 0024 00000000 		.4byte	0
+ 1938 0028 00000000 		.4byte	0
+ 1939              	.LLST1:
+ 1940 002c 00000000 		.4byte	.LVL0
+ 1941 0030 09000000 		.4byte	.LVL1-1
+ 1942 0034 0100     		.2byte	0x1
+ 1943 0036 51       		.byte	0x51
+ 1944 0037 09000000 		.4byte	.LVL1-1
+ 1945 003b 62000000 		.4byte	.LVL3
+ 1946 003f 0100     		.2byte	0x1
+ 1947 0041 54       		.byte	0x54
+ 1948 0042 62000000 		.4byte	.LVL3
+ 1949 0046 68000000 		.4byte	.LFE69
+ 1950 004a 0400     		.2byte	0x4
+ 1951 004c F3       		.byte	0xf3
+ 1952 004d 01       		.uleb128 0x1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 39
+
+
+ 1953 004e 51       		.byte	0x51
+ 1954 004f 9F       		.byte	0x9f
+ 1955 0050 00000000 		.4byte	0
+ 1956 0054 00000000 		.4byte	0
+ 1957              	.LLST2:
+ 1958 0058 0A000000 		.4byte	.LVL1
+ 1959 005c 5F000000 		.4byte	.LVL2-1
+ 1960 0060 0100     		.2byte	0x1
+ 1961 0062 50       		.byte	0x50
+ 1962 0063 00000000 		.4byte	0
+ 1963 0067 00000000 		.4byte	0
+ 1964              	.LLST3:
+ 1965 006b 00000000 		.4byte	.LVL5
+ 1966 006f 34000000 		.4byte	.LVL10
+ 1967 0073 0100     		.2byte	0x1
+ 1968 0075 50       		.byte	0x50
+ 1969 0076 34000000 		.4byte	.LVL10
+ 1970 007a 3E000000 		.4byte	.LFE71
+ 1971 007e 0400     		.2byte	0x4
+ 1972 0080 F3       		.byte	0xf3
+ 1973 0081 01       		.uleb128 0x1
+ 1974 0082 50       		.byte	0x50
+ 1975 0083 9F       		.byte	0x9f
+ 1976 0084 00000000 		.4byte	0
+ 1977 0088 00000000 		.4byte	0
+ 1978              	.LLST4:
+ 1979 008c 00000000 		.4byte	.LVL5
+ 1980 0090 20000000 		.4byte	.LVL7
+ 1981 0094 0100     		.2byte	0x1
+ 1982 0096 51       		.byte	0x51
+ 1983 0097 20000000 		.4byte	.LVL7
+ 1984 009b 34000000 		.4byte	.LVL10
+ 1985 009f 0200     		.2byte	0x2
+ 1986 00a1 91       		.byte	0x91
+ 1987 00a2 6C       		.sleb128 -20
+ 1988 00a3 34000000 		.4byte	.LVL10
+ 1989 00a7 37000000 		.4byte	.LVL11-1
+ 1990 00ab 0200     		.2byte	0x2
+ 1991 00ad 70       		.byte	0x70
+ 1992 00ae 00       		.sleb128 0
+ 1993 00af 37000000 		.4byte	.LVL11-1
+ 1994 00b3 3E000000 		.4byte	.LFE71
+ 1995 00b7 0400     		.2byte	0x4
+ 1996 00b9 F3       		.byte	0xf3
+ 1997 00ba 01       		.uleb128 0x1
+ 1998 00bb 51       		.byte	0x51
+ 1999 00bc 9F       		.byte	0x9f
+ 2000 00bd 00000000 		.4byte	0
+ 2001 00c1 00000000 		.4byte	0
+ 2002              	.LLST5:
+ 2003 00c5 1E000000 		.4byte	.LVL6
+ 2004 00c9 20000000 		.4byte	.LVL7
+ 2005 00cd 0200     		.2byte	0x2
+ 2006 00cf 30       		.byte	0x30
+ 2007 00d0 9F       		.byte	0x9f
+ 2008 00d1 20000000 		.4byte	.LVL7
+ 2009 00d5 2C000000 		.4byte	.LVL8
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 40
+
+
+ 2010 00d9 0100     		.2byte	0x1
+ 2011 00db 53       		.byte	0x53
+ 2012 00dc 2E000000 		.4byte	.LVL9
+ 2013 00e0 37000000 		.4byte	.LVL11-1
+ 2014 00e4 0100     		.2byte	0x1
+ 2015 00e6 53       		.byte	0x53
+ 2016 00e7 00000000 		.4byte	0
+ 2017 00eb 00000000 		.4byte	0
+ 2018              	.LLST6:
+ 2019 00ef 00000000 		.4byte	.LVL12
+ 2020 00f3 2C000000 		.4byte	.LVL15
+ 2021 00f7 0100     		.2byte	0x1
+ 2022 00f9 50       		.byte	0x50
+ 2023 00fa 2C000000 		.4byte	.LVL15
+ 2024 00fe 2F000000 		.4byte	.LVL16-1
+ 2025 0102 0200     		.2byte	0x2
+ 2026 0104 70       		.byte	0x70
+ 2027 0105 00       		.sleb128 0
+ 2028 0106 2F000000 		.4byte	.LVL16-1
+ 2029 010a 3C000000 		.4byte	.LFE72
+ 2030 010e 0400     		.2byte	0x4
+ 2031 0110 F3       		.byte	0xf3
+ 2032 0111 01       		.uleb128 0x1
+ 2033 0112 50       		.byte	0x50
+ 2034 0113 9F       		.byte	0x9f
+ 2035 0114 00000000 		.4byte	0
+ 2036 0118 00000000 		.4byte	0
+ 2037              	.LLST7:
+ 2038 011c 00000000 		.4byte	.LVL12
+ 2039 0120 2A000000 		.4byte	.LVL14
+ 2040 0124 0100     		.2byte	0x1
+ 2041 0126 51       		.byte	0x51
+ 2042 0127 2A000000 		.4byte	.LVL14
+ 2043 012b 3C000000 		.4byte	.LFE72
+ 2044 012f 0400     		.2byte	0x4
+ 2045 0131 F3       		.byte	0xf3
+ 2046 0132 01       		.uleb128 0x1
+ 2047 0133 51       		.byte	0x51
+ 2048 0134 9F       		.byte	0x9f
+ 2049 0135 00000000 		.4byte	0
+ 2050 0139 00000000 		.4byte	0
+ 2051              	.LLST8:
+ 2052 013d 00000000 		.4byte	.LVL12
+ 2053 0141 12000000 		.4byte	.LVL13
+ 2054 0145 0100     		.2byte	0x1
+ 2055 0147 52       		.byte	0x52
+ 2056 0148 12000000 		.4byte	.LVL13
+ 2057 014c 3C000000 		.4byte	.LFE72
+ 2058 0150 0400     		.2byte	0x4
+ 2059 0152 F3       		.byte	0xf3
+ 2060 0153 01       		.uleb128 0x1
+ 2061 0154 52       		.byte	0x52
+ 2062 0155 9F       		.byte	0x9f
+ 2063 0156 00000000 		.4byte	0
+ 2064 015a 00000000 		.4byte	0
+ 2065              	.LLST9:
+ 2066 015e 00000000 		.4byte	.LVL12
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 41
+
+
+ 2067 0162 2F000000 		.4byte	.LVL16-1
+ 2068 0166 0100     		.2byte	0x1
+ 2069 0168 53       		.byte	0x53
+ 2070 0169 2F000000 		.4byte	.LVL16-1
+ 2071 016d 3C000000 		.4byte	.LFE72
+ 2072 0171 0400     		.2byte	0x4
+ 2073 0173 F3       		.byte	0xf3
+ 2074 0174 01       		.uleb128 0x1
+ 2075 0175 53       		.byte	0x53
+ 2076 0176 9F       		.byte	0x9f
+ 2077 0177 00000000 		.4byte	0
+ 2078 017b 00000000 		.4byte	0
+ 2079              	.LLST10:
+ 2080 017f 00000000 		.4byte	.LVL18
+ 2081 0183 1C000000 		.4byte	.LVL20
+ 2082 0187 0100     		.2byte	0x1
+ 2083 0189 50       		.byte	0x50
+ 2084 018a 1C000000 		.4byte	.LVL20
+ 2085 018e 1F000000 		.4byte	.LVL21-1
+ 2086 0192 0200     		.2byte	0x2
+ 2087 0194 91       		.byte	0x91
+ 2088 0195 72       		.sleb128 -14
+ 2089 0196 1F000000 		.4byte	.LVL21-1
+ 2090 019a 26000000 		.4byte	.LFE73
+ 2091 019e 0400     		.2byte	0x4
+ 2092 01a0 F3       		.byte	0xf3
+ 2093 01a1 01       		.uleb128 0x1
+ 2094 01a2 50       		.byte	0x50
+ 2095 01a3 9F       		.byte	0x9f
+ 2096 01a4 00000000 		.4byte	0
+ 2097 01a8 00000000 		.4byte	0
+ 2098              	.LLST11:
+ 2099 01ac 00000000 		.4byte	.LVL18
+ 2100 01b0 1A000000 		.4byte	.LVL19
+ 2101 01b4 0100     		.2byte	0x1
+ 2102 01b6 51       		.byte	0x51
+ 2103 01b7 1A000000 		.4byte	.LVL19
+ 2104 01bb 1F000000 		.4byte	.LVL21-1
+ 2105 01bf 0200     		.2byte	0x2
+ 2106 01c1 91       		.byte	0x91
+ 2107 01c2 75       		.sleb128 -11
+ 2108 01c3 1F000000 		.4byte	.LVL21-1
+ 2109 01c7 26000000 		.4byte	.LFE73
+ 2110 01cb 0400     		.2byte	0x4
+ 2111 01cd F3       		.byte	0xf3
+ 2112 01ce 01       		.uleb128 0x1
+ 2113 01cf 51       		.byte	0x51
+ 2114 01d0 9F       		.byte	0x9f
+ 2115 01d1 00000000 		.4byte	0
+ 2116 01d5 00000000 		.4byte	0
+ 2117              	.LLST12:
+ 2118 01d9 00000000 		.4byte	.LVL18
+ 2119 01dd 1F000000 		.4byte	.LVL21-1
+ 2120 01e1 0100     		.2byte	0x1
+ 2121 01e3 52       		.byte	0x52
+ 2122 01e4 1F000000 		.4byte	.LVL21-1
+ 2123 01e8 26000000 		.4byte	.LFE73
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 42
+
+
+ 2124 01ec 0400     		.2byte	0x4
+ 2125 01ee F3       		.byte	0xf3
+ 2126 01ef 01       		.uleb128 0x1
+ 2127 01f0 52       		.byte	0x52
+ 2128 01f1 9F       		.byte	0x9f
+ 2129 01f2 00000000 		.4byte	0
+ 2130 01f6 00000000 		.4byte	0
+ 2131              	.LLST13:
+ 2132 01fa 00000000 		.4byte	.LVL22
+ 2133 01fe 14000000 		.4byte	.LVL23
+ 2134 0202 0100     		.2byte	0x1
+ 2135 0204 50       		.byte	0x50
+ 2136 0205 14000000 		.4byte	.LVL23
+ 2137 0209 17000000 		.4byte	.LVL24-1
+ 2138 020d 0200     		.2byte	0x2
+ 2139 020f 70       		.byte	0x70
+ 2140 0210 00       		.sleb128 0
+ 2141 0211 17000000 		.4byte	.LVL24-1
+ 2142 0215 1E000000 		.4byte	.LFE74
+ 2143 0219 0400     		.2byte	0x4
+ 2144 021b F3       		.byte	0xf3
+ 2145 021c 01       		.uleb128 0x1
+ 2146 021d 50       		.byte	0x50
+ 2147 021e 9F       		.byte	0x9f
+ 2148 021f 00000000 		.4byte	0
+ 2149 0223 00000000 		.4byte	0
+ 2150              	.LLST14:
+ 2151 0227 00000000 		.4byte	.LVL29
+ 2152 022b 1C000000 		.4byte	.LVL31
+ 2153 022f 0100     		.2byte	0x1
+ 2154 0231 50       		.byte	0x50
+ 2155 0232 1C000000 		.4byte	.LVL31
+ 2156 0236 1F000000 		.4byte	.LVL32-1
+ 2157 023a 0200     		.2byte	0x2
+ 2158 023c 70       		.byte	0x70
+ 2159 023d 00       		.sleb128 0
+ 2160 023e 1F000000 		.4byte	.LVL32-1
+ 2161 0242 26000000 		.4byte	.LFE77
+ 2162 0246 0400     		.2byte	0x4
+ 2163 0248 F3       		.byte	0xf3
+ 2164 0249 01       		.uleb128 0x1
+ 2165 024a 50       		.byte	0x50
+ 2166 024b 9F       		.byte	0x9f
+ 2167 024c 00000000 		.4byte	0
+ 2168 0250 00000000 		.4byte	0
+ 2169              	.LLST15:
+ 2170 0254 00000000 		.4byte	.LVL29
+ 2171 0258 1A000000 		.4byte	.LVL30
+ 2172 025c 0100     		.2byte	0x1
+ 2173 025e 51       		.byte	0x51
+ 2174 025f 1A000000 		.4byte	.LVL30
+ 2175 0263 1F000000 		.4byte	.LVL32-1
+ 2176 0267 0200     		.2byte	0x2
+ 2177 0269 91       		.byte	0x91
+ 2178 026a 71       		.sleb128 -15
+ 2179 026b 1F000000 		.4byte	.LVL32-1
+ 2180 026f 26000000 		.4byte	.LFE77
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 43
+
+
+ 2181 0273 0400     		.2byte	0x4
+ 2182 0275 F3       		.byte	0xf3
+ 2183 0276 01       		.uleb128 0x1
+ 2184 0277 51       		.byte	0x51
+ 2185 0278 9F       		.byte	0x9f
+ 2186 0279 00000000 		.4byte	0
+ 2187 027d 00000000 		.4byte	0
+ 2188              	.LLST16:
+ 2189 0281 00000000 		.4byte	.LVL29
+ 2190 0285 1F000000 		.4byte	.LVL32-1
+ 2191 0289 0100     		.2byte	0x1
+ 2192 028b 52       		.byte	0x52
+ 2193 028c 1F000000 		.4byte	.LVL32-1
+ 2194 0290 26000000 		.4byte	.LFE77
+ 2195 0294 0400     		.2byte	0x4
+ 2196 0296 F3       		.byte	0xf3
+ 2197 0297 01       		.uleb128 0x1
+ 2198 0298 52       		.byte	0x52
+ 2199 0299 9F       		.byte	0x9f
+ 2200 029a 00000000 		.4byte	0
+ 2201 029e 00000000 		.4byte	0
+ 2202              		.section	.debug_aranges,"",%progbits
+ 2203 0000 8C000000 		.4byte	0x8c
+ 2204 0004 0200     		.2byte	0x2
+ 2205 0006 00000000 		.4byte	.Ldebug_info0
+ 2206 000a 04       		.byte	0x4
+ 2207 000b 00       		.byte	0
+ 2208 000c 0000     		.2byte	0
+ 2209 000e 0000     		.2byte	0
+ 2210 0010 00000000 		.4byte	.LFB63
+ 2211 0014 0C000000 		.4byte	.LFE63-.LFB63
+ 2212 0018 00000000 		.4byte	.LFB64
+ 2213 001c 0C000000 		.4byte	.LFE64-.LFB64
+ 2214 0020 00000000 		.4byte	.LFB65
+ 2215 0024 0C000000 		.4byte	.LFE65-.LFB65
+ 2216 0028 00000000 		.4byte	.LFB66
+ 2217 002c 0C000000 		.4byte	.LFE66-.LFB66
+ 2218 0030 00000000 		.4byte	.LFB67
+ 2219 0034 0C000000 		.4byte	.LFE67-.LFB67
+ 2220 0038 00000000 		.4byte	.LFB68
+ 2221 003c 0C000000 		.4byte	.LFE68-.LFB68
+ 2222 0040 00000000 		.4byte	.LFB69
+ 2223 0044 68000000 		.4byte	.LFE69-.LFB69
+ 2224 0048 00000000 		.4byte	.LFB70
+ 2225 004c 4A000000 		.4byte	.LFE70-.LFB70
+ 2226 0050 00000000 		.4byte	.LFB71
+ 2227 0054 3E000000 		.4byte	.LFE71-.LFB71
+ 2228 0058 00000000 		.4byte	.LFB72
+ 2229 005c 3C000000 		.4byte	.LFE72-.LFB72
+ 2230 0060 00000000 		.4byte	.LFB73
+ 2231 0064 26000000 		.4byte	.LFE73-.LFB73
+ 2232 0068 00000000 		.4byte	.LFB74
+ 2233 006c 1E000000 		.4byte	.LFE74-.LFB74
+ 2234 0070 00000000 		.4byte	.LFB75
+ 2235 0074 10000000 		.4byte	.LFE75-.LFB75
+ 2236 0078 00000000 		.4byte	.LFB76
+ 2237 007c 10000000 		.4byte	.LFE76-.LFB76
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 44
+
+
+ 2238 0080 00000000 		.4byte	.LFB77
+ 2239 0084 26000000 		.4byte	.LFE77-.LFB77
+ 2240 0088 00000000 		.4byte	0
+ 2241 008c 00000000 		.4byte	0
+ 2242              		.section	.debug_ranges,"",%progbits
+ 2243              	.Ldebug_ranges0:
+ 2244 0000 00000000 		.4byte	.LFB63
+ 2245 0004 0C000000 		.4byte	.LFE63
+ 2246 0008 00000000 		.4byte	.LFB64
+ 2247 000c 0C000000 		.4byte	.LFE64
+ 2248 0010 00000000 		.4byte	.LFB65
+ 2249 0014 0C000000 		.4byte	.LFE65
+ 2250 0018 00000000 		.4byte	.LFB66
+ 2251 001c 0C000000 		.4byte	.LFE66
+ 2252 0020 00000000 		.4byte	.LFB67
+ 2253 0024 0C000000 		.4byte	.LFE67
+ 2254 0028 00000000 		.4byte	.LFB68
+ 2255 002c 0C000000 		.4byte	.LFE68
+ 2256 0030 00000000 		.4byte	.LFB69
+ 2257 0034 68000000 		.4byte	.LFE69
+ 2258 0038 00000000 		.4byte	.LFB70
+ 2259 003c 4A000000 		.4byte	.LFE70
+ 2260 0040 00000000 		.4byte	.LFB71
+ 2261 0044 3E000000 		.4byte	.LFE71
+ 2262 0048 00000000 		.4byte	.LFB72
+ 2263 004c 3C000000 		.4byte	.LFE72
+ 2264 0050 00000000 		.4byte	.LFB73
+ 2265 0054 26000000 		.4byte	.LFE73
+ 2266 0058 00000000 		.4byte	.LFB74
+ 2267 005c 1E000000 		.4byte	.LFE74
+ 2268 0060 00000000 		.4byte	.LFB75
+ 2269 0064 10000000 		.4byte	.LFE75
+ 2270 0068 00000000 		.4byte	.LFB76
+ 2271 006c 10000000 		.4byte	.LFE76
+ 2272 0070 00000000 		.4byte	.LFB77
+ 2273 0074 26000000 		.4byte	.LFE77
+ 2274 0078 00000000 		.4byte	0
+ 2275 007c 00000000 		.4byte	0
+ 2276              		.section	.debug_line,"",%progbits
+ 2277              	.Ldebug_line0:
+ 2278 0000 E5020000 		.section	.debug_str,"MS",%progbits,1
+ 2278      02009201 
+ 2278      00000201 
+ 2278      FB0E0D00 
+ 2278      01010101 
+ 2279              	.LASF62:
+ 2280 0000 636C6561 		.ascii	"clear_interlock\000"
+ 2280      725F696E 
+ 2280      7465726C 
+ 2280      6F636B00 
+ 2281              	.LASF61:
+ 2282 0010 7365745F 		.ascii	"set_interlock\000"
+ 2282      696E7465 
+ 2282      726C6F63 
+ 2282      6B00
+ 2283              	.LASF33:
+ 2284 001e 5045495F 		.ascii	"PEI_CURRENT_SEND\000"
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 45
+
+
+ 2284      43555252 
+ 2284      454E545F 
+ 2284      53454E44 
+ 2284      00
+ 2285              	.LASF20:
+ 2286 002f 646F7562 		.ascii	"double\000"
+ 2286      6C6500
+ 2287              	.LASF64:
+ 2288 0036 63757272 		.ascii	"current_upper\000"
+ 2288      656E745F 
+ 2288      75707065 
+ 2288      7200
+ 2289              	.LASF78:
+ 2290 0044 43794578 		.ascii	"CyExitCriticalSection\000"
+ 2290      69744372 
+ 2290      69746963 
+ 2290      616C5365 
+ 2290      6374696F 
+ 2291              	.LASF60:
+ 2292 005a 63616E5F 		.ascii	"can_test_send\000"
+ 2292      74657374 
+ 2292      5F73656E 
+ 2292      6400
+ 2293              	.LASF55:
+ 2294 0068 73746174 		.ascii	"state\000"
+ 2294      6500
+ 2295              	.LASF75:
+ 2296 006e 53544154 		.ascii	"STATE\000"
+ 2296      4500
+ 2297              	.LASF2:
+ 2298 0074 73686F72 		.ascii	"short int\000"
+ 2298      7420696E 
+ 2298      7400
+ 2299              	.LASF23:
+ 2300 007e 73697A65 		.ascii	"sizetype\000"
+ 2300      74797065 
+ 2300      00
+ 2301              	.LASF50:
+ 2302 0087 53657449 		.ascii	"SetInterlock\000"
+ 2302      6E746572 
+ 2302      6C6F636B 
+ 2302      00
+ 2303              	.LASF8:
+ 2304 0094 5F5F7569 		.ascii	"__uint32_t\000"
+ 2304      6E743332 
+ 2304      5F7400
+ 2305              	.LASF71:
+ 2306 009f 48565F52 		.ascii	"HV_REQUEST_TR\000"
+ 2306      45515545 
+ 2306      53545F54 
+ 2306      5200
+ 2307              	.LASF39:
+ 2308 00ad 6765745F 		.ascii	"get_THROTTLE_LOW\000"
+ 2308      5448524F 
+ 2308      54544C45 
+ 2308      5F4C4F57 
+ 2308      00
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 46
+
+
+ 2309              	.LASF4:
+ 2310 00be 5F5F7569 		.ascii	"__uint16_t\000"
+ 2310      6E743136 
+ 2310      5F7400
+ 2311              	.LASF49:
+ 2312 00c9 63616E5F 		.ascii	"can_send_cmd\000"
+ 2312      73656E64 
+ 2312      5F636D64 
+ 2312      00
+ 2313              	.LASF72:
+ 2314 00d6 56454849 		.ascii	"VEHICLE_STATE\000"
+ 2314      434C455F 
+ 2314      53544154 
+ 2314      4500
+ 2315              	.LASF74:
+ 2316 00e4 5345545F 		.ascii	"SET_INTERLOCK\000"
+ 2316      494E5445 
+ 2316      524C4F43 
+ 2316      4B00
+ 2317              	.LASF36:
+ 2318 00f2 6765745F 		.ascii	"get_HV_Requested\000"
+ 2318      48565F52 
+ 2318      65717565 
+ 2318      73746564 
+ 2318      00
+ 2319              	.LASF13:
+ 2320 0103 75696E74 		.ascii	"uint8_t\000"
+ 2320      385F7400 
+ 2321              	.LASF29:
+ 2322 010b 4D435F45 		.ascii	"MC_ESTOP\000"
+ 2322      53544F50 
+ 2322      00
+ 2323              	.LASF17:
+ 2324 0114 75696E74 		.ascii	"uint8\000"
+ 2324      3800
+ 2325              	.LASF68:
+ 2326 011a 5448524F 		.ascii	"THROTTLE_HIGH\000"
+ 2326      54544C45 
+ 2326      5F484947 
+ 2326      4800
+ 2327              	.LASF58:
+ 2328 0128 63616E5F 		.ascii	"can_send_ESTOP\000"
+ 2328      73656E64 
+ 2328      5F455354 
+ 2328      4F5000
+ 2329              	.LASF19:
+ 2330 0137 666C6F61 		.ascii	"float\000"
+ 2330      7400
+ 2331              	.LASF10:
+ 2332 013d 6C6F6E67 		.ascii	"long long int\000"
+ 2332      206C6F6E 
+ 2332      6720696E 
+ 2332      7400
+ 2333              	.LASF28:
+ 2334 014b 5045495F 		.ascii	"PEI_CURRENT\000"
+ 2334      43555252 
+ 2334      454E5400 
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 47
+
+
+ 2335              	.LASF35:
+ 2336 0157 4D435F44 		.ascii	"MC_DEBUG_SEND\000"
+ 2336      45425547 
+ 2336      5F53454E 
+ 2336      4400
+ 2337              	.LASF73:
+ 2338 0165 5448524F 		.ascii	"THROTTLE\000"
+ 2338      54544C45 
+ 2338      00
+ 2339              	.LASF42:
+ 2340 016e 496E7465 		.ascii	"InterruptState\000"
+ 2340      72727570 
+ 2340      74537461 
+ 2340      746500
+ 2341              	.LASF9:
+ 2342 017d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2342      20756E73 
+ 2342      69676E65 
+ 2342      6420696E 
+ 2342      7400
+ 2343              	.LASF3:
+ 2344 018f 5F5F7569 		.ascii	"__uint8_t\000"
+ 2344      6E74385F 
+ 2344      7400
+ 2345              	.LASF43:
+ 2346 0199 48656172 		.ascii	"HeartB\000"
+ 2346      744200
+ 2347              	.LASF57:
+ 2348 01a0 7468726F 		.ascii	"throttle_lower\000"
+ 2348      74746C65 
+ 2348      5F6C6F77 
+ 2348      657200
+ 2349              	.LASF84:
+ 2350 01af 63616E5F 		.ascii	"can_manager.c\000"
+ 2350      6D616E61 
+ 2350      6765722E 
+ 2350      6300
+ 2351              	.LASF66:
+ 2352 01bd 73687574 		.ascii	"shutdown_flags\000"
+ 2352      646F776E 
+ 2352      5F666C61 
+ 2352      677300
+ 2353              	.LASF22:
+ 2354 01cc 6C6F6E67 		.ascii	"long double\000"
+ 2354      20646F75 
+ 2354      626C6500 
+ 2355              	.LASF31:
+ 2356 01d8 42535044 		.ascii	"BSPD_FLAGS\000"
+ 2356      5F464C41 
+ 2356      475300
+ 2357              	.LASF1:
+ 2358 01e3 756E7369 		.ascii	"unsigned char\000"
+ 2358      676E6564 
+ 2358      20636861 
+ 2358      7200
+ 2359              	.LASF0:
+ 2360 01f1 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 48
+
+
+ 2360      65642063 
+ 2360      68617200 
+ 2361              	.LASF15:
+ 2362 01fd 696E7433 		.ascii	"int32_t\000"
+ 2362      325F7400 
+ 2363              	.LASF11:
+ 2364 0205 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2364      206C6F6E 
+ 2364      6720756E 
+ 2364      7369676E 
+ 2364      65642069 
+ 2365              	.LASF16:
+ 2366 021c 75696E74 		.ascii	"uint32_t\000"
+ 2366      33325F74 
+ 2366      00
+ 2367              	.LASF12:
+ 2368 0225 756E7369 		.ascii	"unsigned int\000"
+ 2368      676E6564 
+ 2368      20696E74 
+ 2368      00
+ 2369              	.LASF37:
+ 2370 0232 6765745F 		.ascii	"get_VEHICLE_STATE\000"
+ 2370      56454849 
+ 2370      434C455F 
+ 2370      53544154 
+ 2370      4500
+ 2371              	.LASF14:
+ 2372 0244 75696E74 		.ascii	"uint16_t\000"
+ 2372      31365F74 
+ 2372      00
+ 2373              	.LASF24:
+ 2374 024d 43414E5F 		.ascii	"CAN_DATA_BYTES_MSG\000"
+ 2374      44415441 
+ 2374      5F425954 
+ 2374      45535F4D 
+ 2374      534700
+ 2375              	.LASF63:
+ 2376 0260 63616E5F 		.ascii	"can_send_PEI\000"
+ 2376      73656E64 
+ 2376      5F504549 
+ 2376      00
+ 2377              	.LASF70:
+ 2378 026d 4553544F 		.ascii	"ESTOP_MC\000"
+ 2378      505F4D43 
+ 2378      00
+ 2379              	.LASF38:
+ 2380 0276 6765745F 		.ascii	"get_THROTTLE_HIGH\000"
+ 2380      5448524F 
+ 2380      54544C45 
+ 2380      5F484947 
+ 2380      4800
+ 2381              	.LASF76:
+ 2382 0288 48565F52 		.ascii	"HV_REQUEST_MC\000"
+ 2382      45515545 
+ 2382      53545F4D 
+ 2382      4300
+ 2383              	.LASF34:
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 49
+
+
+ 2384 0296 4D435F45 		.ascii	"MC_ESTOP_SEND\000"
+ 2384      53544F50 
+ 2384      5F53454E 
+ 2384      4400
+ 2385              	.LASF21:
+ 2386 02a4 63686172 		.ascii	"char\000"
+ 2386      00
+ 2387              	.LASF7:
+ 2388 02a9 6C6F6E67 		.ascii	"long int\000"
+ 2388      20696E74 
+ 2388      00
+ 2389              	.LASF56:
+ 2390 02b2 7468726F 		.ascii	"throttle_upper\000"
+ 2390      74746C65 
+ 2390      5F757070 
+ 2390      657200
+ 2391              	.LASF77:
+ 2392 02c1 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2392      74657243 
+ 2392      72697469 
+ 2392      63616C53 
+ 2392      65637469 
+ 2393              	.LASF5:
+ 2394 02d8 73686F72 		.ascii	"short unsigned int\000"
+ 2394      7420756E 
+ 2394      7369676E 
+ 2394      65642069 
+ 2394      6E7400
+ 2395              	.LASF46:
+ 2396 02eb 64617461 		.ascii	"data\000"
+ 2396      00
+ 2397              	.LASF18:
+ 2398 02f0 75696E74 		.ascii	"uint32\000"
+ 2398      333200
+ 2399              	.LASF40:
+ 2400 02f7 6765745F 		.ascii	"get_THROTTLE\000"
+ 2400      5448524F 
+ 2400      54544C45 
+ 2400      00
+ 2401              	.LASF47:
+ 2402 0304 6D657373 		.ascii	"message\000"
+ 2402      61676500 
+ 2403              	.LASF69:
+ 2404 030c 5448524F 		.ascii	"THROTTLE_LOW\000"
+ 2404      54544C45 
+ 2404      5F4C4F57 
+ 2404      00
+ 2405              	.LASF26:
+ 2406 0319 43414E5F 		.ascii	"CAN_TX_MSG\000"
+ 2406      54585F4D 
+ 2406      534700
+ 2407              	.LASF79:
+ 2408 0324 43414E5F 		.ascii	"CAN_SendMsg\000"
+ 2408      53656E64 
+ 2408      4D736700 
+ 2409              	.LASF54:
+ 2410 0330 63616E5F 		.ascii	"can_send_state_and_throttle\000"
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 50
+
+
+ 2410      73656E64 
+ 2410      5F737461 
+ 2410      74655F61 
+ 2410      6E645F74 
+ 2411              	.LASF52:
+ 2412 034c 5468726F 		.ascii	"Throttle_Low\000"
+ 2412      74746C65 
+ 2412      5F4C6F77 
+ 2412      00
+ 2413              	.LASF25:
+ 2414 0359 62797465 		.ascii	"byte\000"
+ 2414      00
+ 2415              	.LASF6:
+ 2416 035e 5F5F696E 		.ascii	"__int32_t\000"
+ 2416      7433325F 
+ 2416      7400
+ 2417              	.LASF65:
+ 2418 0368 63757272 		.ascii	"current_lower\000"
+ 2418      656E745F 
+ 2418      6C6F7765 
+ 2418      7200
+ 2419              	.LASF41:
+ 2420 0376 6765745F 		.ascii	"get_STATE\000"
+ 2420      53544154 
+ 2420      4500
+ 2421              	.LASF53:
+ 2422 0380 455F5374 		.ascii	"E_Stop_Check\000"
+ 2422      6F705F43 
+ 2422      6865636B 
+ 2422      00
+ 2423              	.LASF51:
+ 2424 038d 5468726F 		.ascii	"Throttle_High\000"
+ 2424      74746C65 
+ 2424      5F486967 
+ 2424      6800
+ 2425              	.LASF85:
+ 2426 039b 433A5C55 		.ascii	"C:\\Users\\kendr\\OneDrive\\Documents\\PEI-Firmware"
+ 2426      73657273 
+ 2426      5C6B656E 
+ 2426      64725C4F 
+ 2426      6E654472 
+ 2427 03c9 2D464531 		.ascii	"-FE10\\PSOC_VCU_Example\\Design01.cydsn\000"
+ 2427      305C5053 
+ 2427      4F435F56 
+ 2427      43555F45 
+ 2427      78616D70 
+ 2428              	.LASF27:
+ 2429 03ef 544F5251 		.ascii	"TORQUE_REQUEST_COMMAND\000"
+ 2429      55455F52 
  2429      45515545 
- 2429      53545F4D 
- 2429      4300
- 2430              	.LASF34:
- 2431 0293 4D435F45 		.ascii	"MC_ESTOP_SEND\000"
- 2431      53544F50 
- 2431      5F53454E 
- 2431      4400
- 2432              	.LASF21:
- 2433 02a1 63686172 		.ascii	"char\000"
+ 2429      53545F43 
+ 2429      4F4D4D41 
+ 2430              	.LASF81:
+ 2431 0406 4149525F 		.ascii	"AIR_NEG_Write\000"
+ 2431      4E45475F 
+ 2431      57726974 
+ 2431      6500
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\ccCrgMEg.s 			page 51
+
+
+ 2432              	.LASF45:
+ 2433 0414 63616E5F 		.ascii	"can_send\000"
+ 2433      73656E64 
  2433      00
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 50
-
-
- 2434              	.LASF7:
- 2435 02a6 6C6F6E67 		.ascii	"long int\000"
- 2435      20696E74 
+ 2434              	.LASF30:
+ 2435 041d 4D435F44 		.ascii	"MC_DEBUG\000"
+ 2435      45425547 
  2435      00
- 2436              	.LASF15:
- 2437 02af 696E7433 		.ascii	"int32_t\000"
- 2437      325F7400 
- 2438              	.LASF77:
- 2439 02b7 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 2439      74657243 
- 2439      72697469 
- 2439      63616C53 
- 2439      65637469 
- 2440              	.LASF5:
- 2441 02ce 73686F72 		.ascii	"short unsigned int\000"
- 2441      7420756E 
- 2441      7369676E 
- 2441      65642069 
- 2441      6E7400
- 2442              	.LASF46:
- 2443 02e1 64617461 		.ascii	"data\000"
- 2443      00
- 2444              	.LASF18:
- 2445 02e6 75696E74 		.ascii	"uint32\000"
- 2445      333200
- 2446              	.LASF40:
- 2447 02ed 6765745F 		.ascii	"get_THROTTLE\000"
- 2447      5448524F 
- 2447      54544C45 
- 2447      00
- 2448              	.LASF47:
- 2449 02fa 6D657373 		.ascii	"message\000"
- 2449      61676500 
- 2450              	.LASF69:
- 2451 0302 5448524F 		.ascii	"THROTTLE_LOW\000"
- 2451      54544C45 
- 2451      5F4C4F57 
- 2451      00
- 2452              	.LASF26:
- 2453 030f 43414E5F 		.ascii	"CAN_TX_MSG\000"
- 2453      54585F4D 
- 2453      534700
- 2454              	.LASF79:
- 2455 031a 43414E5F 		.ascii	"CAN_SendMsg\000"
- 2455      53656E64 
- 2455      4D736700 
- 2456              	.LASF52:
- 2457 0326 5468726F 		.ascii	"Throttle_Low\000"
- 2457      74746C65 
- 2457      5F4C6F77 
- 2457      00
- 2458              	.LASF6:
- 2459 0333 5F5F696E 		.ascii	"__int32_t\000"
- 2459      7433325F 
- 2459      7400
- 2460              	.LASF65:
- 2461 033d 63757272 		.ascii	"current_lower\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 51
-
-
- 2461      656E745F 
- 2461      6C6F7765 
- 2461      7200
- 2462              	.LASF41:
- 2463 034b 6765745F 		.ascii	"get_STATE\000"
- 2463      53544154 
- 2463      4500
- 2464              	.LASF53:
- 2465 0355 455F5374 		.ascii	"E_Stop_Check\000"
- 2465      6F705F43 
- 2465      6865636B 
- 2465      00
- 2466              	.LASF51:
- 2467 0362 5468726F 		.ascii	"Throttle_High\000"
- 2467      74746C65 
- 2467      5F486967 
- 2467      6800
- 2468              	.LASF27:
- 2469 0370 544F5251 		.ascii	"TORQUE_REQUEST_COMMAND\000"
- 2469      55455F52 
- 2469      45515545 
- 2469      53545F43 
- 2469      4F4D4D41 
- 2470              	.LASF81:
- 2471 0387 4149525F 		.ascii	"AIR_NEG_Write\000"
- 2471      4E45475F 
- 2471      57726974 
- 2471      6500
- 2472              	.LASF45:
- 2473 0395 63616E5F 		.ascii	"can_send\000"
- 2473      73656E64 
- 2473      00
- 2474              	.LASF30:
- 2475 039e 4D435F44 		.ascii	"MC_DEBUG\000"
- 2475      45425547 
- 2475      00
- 2476              	.LASF82:
- 2477 03a7 4149525F 		.ascii	"AIR_POS_Write\000"
- 2477      504F535F 
- 2477      57726974 
- 2477      6500
- 2478              	.LASF59:
- 2479 03b5 6573746F 		.ascii	"estop\000"
- 2479      7000
- 2480              	.LASF67:
- 2481 03bb 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2481      52784275 
- 2481      66666572 
- 2481      00
- 2482              	.LASF83:
- 2483 03c8 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2483      43313120 
- 2483      352E342E 
- 2483      31203230 
- 2483      31363036 
- 2484 03fb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2484      20726576 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccSEHPRD.s 			page 52
-
-
- 2484      6973696F 
- 2484      6E203233 
- 2484      37373135 
- 2485 042e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2485      66756E63 
- 2485      74696F6E 
- 2485      2D736563 
- 2485      74696F6E 
- 2486              	.LASF85:
- 2487 0456 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
- 2487      73657273 
- 2487      5C4A7573 
- 2487      74696E20 
- 2487      4368616E 
- 2488 0485 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
- 2488      616D706C 
- 2488      655C4465 
- 2488      7369676E 
- 2488      30312E63 
- 2489              	.LASF80:
- 2490 049e 43794465 		.ascii	"CyDelay\000"
- 2490      6C617900 
- 2491              	.LASF44:
- 2492 04a6 63616E5F 		.ascii	"can_receive\000"
- 2492      72656365 
- 2492      69766500 
- 2493              	.LASF56:
- 2494 04b2 63616E5F 		.ascii	"can_send_throttle\000"
- 2494      73656E64 
- 2494      5F746872 
- 2494      6F74746C 
- 2494      6500
- 2495              	.LASF48:
- 2496 04c4 7061796C 		.ascii	"payload\000"
- 2496      6F616400 
- 2497              	.LASF32:
- 2498 04cc 544F5251 		.ascii	"TORQUE_REQUEST_SEND\000"
- 2498      55455F52 
- 2498      45515545 
- 2498      53545F53 
- 2498      454E4400 
- 2499              	.LASF57:
- 2500 04e0 7468726F 		.ascii	"throttle\000"
- 2500      74746C65 
- 2500      00
- 2501              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2436              	.LASF82:
+ 2437 0426 4149525F 		.ascii	"AIR_POS_Write\000"
+ 2437      504F535F 
+ 2437      57726974 
+ 2437      6500
+ 2438              	.LASF59:
+ 2439 0434 6573746F 		.ascii	"estop\000"
+ 2439      7000
+ 2440              	.LASF67:
+ 2441 043a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2441      52784275 
+ 2441      66666572 
+ 2441      00
+ 2442              	.LASF83:
+ 2443 0447 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2443      43313120 
+ 2443      352E342E 
+ 2443      31203230 
+ 2443      31363036 
+ 2444 047a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2444      20726576 
+ 2444      6973696F 
+ 2444      6E203233 
+ 2444      37373135 
+ 2445 04ad 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2445      66756E63 
+ 2445      74696F6E 
+ 2445      2D736563 
+ 2445      74696F6E 
+ 2446              	.LASF80:
+ 2447 04d5 43794465 		.ascii	"CyDelay\000"
+ 2447      6C617900 
+ 2448              	.LASF44:
+ 2449 04dd 63616E5F 		.ascii	"can_receive\000"
+ 2449      72656365 
+ 2449      69766500 
+ 2450              	.LASF48:
+ 2451 04e9 7061796C 		.ascii	"payload\000"
+ 2451      6F616400 
+ 2452              	.LASF32:
+ 2453 04f1 544F5251 		.ascii	"TORQUE_REQUEST_SEND\000"
+ 2453      55455F52 
+ 2453      45515545 
+ 2453      53545F53 
+ 2453      454E4400 
+ 2454              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

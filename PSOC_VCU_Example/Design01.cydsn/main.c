@@ -16,8 +16,9 @@
 //TODO: The state starts at 0
 volatile uint32_t state = 1;
 volatile uint8_t e_stop;
-uint8 throttle_total = 0;
-
+uint16 throttle_total = 0;
+uint8 throttle_upper = 0;
+uint8 throttle_lower = 0;
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -70,26 +71,36 @@ int main(void)
         
         
         //Interlock state machine
+        throttle_total = 8;
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          
             if((get_HV_Requested() == 1) && (e_stop != 0)) {
                 state = 1;
             }
         }
+        
         else if (state == 1) { 
             set_interlock(); //sets interlock, sends a message to close AIRs
             uint8 throttle_high = get_THROTTLE_HIGH();
             uint8 throttle_low = get_THROTTLE_LOW();
             
+            
             if(((throttle_high * 255 + throttle_low) < 0) || ((throttle_high * 255 + throttle_low) > 32767)){
                 throttle_total = 0;
             }
             else {
-                throttle_total = throttle_high * 255 + throttle_low;   
+                //TODO: change back to throttle_high * 255 + throttle_low;  
+                // higher values lead to overflowing, defaults to 0.
+                throttle_total = throttle_high*255+ throttle_low;
+                
+                //get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
+                
+                throttle_upper = throttle_total >> 8; // upper bits
+                throttle_lower = throttle_total & 0xFF; // lower bits   
             }
             
-            //Changing states
-            /*
+            
+            
             if(get_HV_Requested() == 0) {
                 state = 0;
             }
@@ -99,7 +110,7 @@ int main(void)
             //TODO: We need to get into state 2 if there's an error, but what error we check for is unknown atm.
             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
                 state = 2;   
-            }*/
+            }
             
             /*May or may not need to check status 3
             if(Status3 = 36) ; an OS defined variable that has info on driver faults
@@ -136,7 +147,7 @@ int main(void)
         }
         
         can_send_ESTOP(e_stop);
-        can_send_state_and_throttle(state, throttle_total);    
+        can_send_state_and_throttle(state, throttle_upper, throttle_lower);    
         
         CyDelay(1000);
     }

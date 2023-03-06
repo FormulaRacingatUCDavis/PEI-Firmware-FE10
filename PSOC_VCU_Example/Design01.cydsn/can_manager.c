@@ -161,10 +161,12 @@ void can_send_cmd(
 
 } // can_send_cmd()
 
-void can_send_state_and_throttle(uint8_t state, uint8_t throttle) {
+void can_send_state_and_throttle(uint8_t state, uint8_t throttle_upper, uint8_t throttle_lower) {
     uint8_t data[8] = {0};
     data[2] = state;
-    data[6] = throttle;
+    data[5] = throttle_upper;
+    data[6] = throttle_lower;
+    
     can_send(data, MC_DEBUG_SEND);
 }
 
