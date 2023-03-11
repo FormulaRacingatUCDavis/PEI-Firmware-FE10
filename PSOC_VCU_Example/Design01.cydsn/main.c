@@ -69,9 +69,9 @@ int main(void)
         current_lower = current & 0xFF; // lower bits
         can_send_PEI(current_upper, current_lower, shutdown_flags);
         
-        
+        can_send_PEI(get_THROTTLE_HIGH(), 1, shutdown_flags);
         //Interlock state machine
-        throttle_total = 8;
+        
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          
             if((get_HV_Requested() == 1) && (e_stop != 0)) {
@@ -91,14 +91,13 @@ int main(void)
             else {
                 //TODO: change back to throttle_high * 255 + throttle_low;  
                 // higher values lead to overflowing, defaults to 0.
-                throttle_total = throttle_high*255+ throttle_low;
-                
-                //get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
+                throttle_total = get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
                 
                 throttle_upper = throttle_total >> 8; // upper bits
                 throttle_lower = throttle_total & 0xFF; // lower bits   
+                
             }
-            
+            /*
             
             
             if(get_HV_Requested() == 0) {
@@ -111,7 +110,7 @@ int main(void)
             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
                 state = 2;   
             }
-            
+            */
             /*May or may not need to check status 3
             if(Status3 = 36) ; an OS defined variable that has info on driver faults
 		        ; checks for 2 specific errors
@@ -134,6 +133,7 @@ int main(void)
             */
         }
         //Trap state
+        /*
         // is entered when there are more errors than just estop (Status3 > 0). 
         else if(state == 2) {
 		    clear_interlock(); // clears interlock, send a message to open AIRs
@@ -145,10 +145,9 @@ int main(void)
                 //can_send_ESTOP(0); why is this here?
             }
         }
-        
+        */
         can_send_ESTOP(e_stop);
         can_send_state_and_throttle(state, throttle_upper, throttle_lower);    
-        
         CyDelay(1000);
     }
 }

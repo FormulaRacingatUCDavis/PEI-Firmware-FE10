@@ -37,6 +37,17 @@ extern volatile uint8_t ESTOP_MC;
 
 extern volatile uint8_t THROTTLE_HIGH;
 extern volatile uint8_t THROTTLE_LOW;
+
+extern volatile uint8_t POST_FAULT_LO_1;
+extern volatile uint8_t POST_FAULT_LO_2;
+extern volatile uint8_t POST_FAULT_HI_1;
+extern volatile uint8_t POST_FAULT_HI_2;
+
+extern volatile uint8_t RUN_FAULT_LO_1;
+extern volatile uint8_t RUN_FAULT_LO_2;
+extern volatile uint8_t RUN_FAULT_HI_1;
+extern volatile uint8_t RUN_FAULT_HI_2;
+
 /* `#END` */
 
 
@@ -787,6 +798,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgBSPD_Flags(void) 
     {
         /* `#START MESSAGE_BSPD_Flags_RECEIVED` */
+        HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
         THROTTLE_HIGH = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BSPD_Flags);
         THROTTLE_LOW = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BSPD_Flags);
         /* `#END` */
@@ -802,7 +814,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX4_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg4
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_Fault
     ********************************************************************************
     *
     * Summary:
@@ -820,15 +832,24 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg4(void) 
+    void CAN_ReceiveMsgMC_Fault(void) 
     {
-        /* `#START MESSAGE_4_RECEIVED` */
+        /* `#START MESSAGE_MC_Fault_RECEIVED` */
+        
+        POST_FAULT_LO_1 = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Fault);
+        POST_FAULT_LO_2 = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Fault);
+        POST_FAULT_HI_1 = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Fault);
+        POST_FAULT_HI_2 = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_LO_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_LO_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_HI_1 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_HI_2 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_MC_Fault);;
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_4_CALLBACK
-            CAN_ReceiveMsg_4_Callback();
-        #endif /* CAN_RECEIVE_MSG_4_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_Fault_CALLBACK
+            CAN_ReceiveMsg_MC_Fault_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_Fault_CALLBACK */
 
         CAN_RX[4u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }

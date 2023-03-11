@@ -436,6 +436,8 @@
                             break;
                             case 3u : CAN_ReceiveMsgBSPD_Flags();
                             break;
+                            case 4u : CAN_ReceiveMsgMC_Fault();
+                            break;
                             default:
                             break;
                         }

@@ -31,6 +31,18 @@ volatile uint8_t SET_INTERLOCK = 0;
 volatile uint8_t STATE = 0;
 volatile uint8_t HV_REQUEST_MC = 0;
 
+//MC_FAULT
+volatile uint8_t POST_FAULT_LO_1 =0;
+volatile uint8_t POST_FAULT_LO_2 = 0;
+volatile uint8_t POST_FAULT_HI_1 = 0;
+volatile uint8_t POST_FAULT_HI_2 = 0;
+volatile uint8_t RUN_FAULT_LO_1 = 0;
+volatile uint8_t RUN_FAULT_LO_2 = 0;
+volatile uint8_t RUN_FAULT_HI_1 = 0;
+volatile uint8_t RUN_FAULT_HI_2 =0;
+
+
+
 //Return the hv_requested state from the VCU.
 uint8_t get_HV_Requested()
 {
@@ -43,16 +55,7 @@ uint8_t get_VEHICLE_STATE()
     return VEHICLE_STATE;   
 }
 
-//returns THROTTLE_HIGH
-uint8_t get_THROTTLE_HIGH()
-{
-    return THROTTLE_HIGH;
-}
-//returns THROTTLE_LOW
-uint8_t get_THROTTLE_LOW()
-{
-    return THROTTLE_LOW;
-}
+
 //returns THROTTLE
 uint8_t get_THROTTLE()
 {
@@ -63,6 +66,39 @@ uint8_t get_STATE()
 {
     return STATE;
 }
+uint8_t get_POST_FAULT_LO_1()
+{
+    return POST_FAULT_LO_1;
+}
+uint8_t get_POST_FAULT_LO_2()
+{
+    return POST_FAULT_LO_2;
+}
+uint8_t get_POST_FAULT_HI_1()
+{
+    return POST_FAULT_HI_1;
+}
+uint8_t get_POST_FAULT_HI_2()
+{
+    return POST_FAULT_HI_2;
+}
+uint8_t get_RUN_FAULT_LO_1()
+{
+    return RUN_FAULT_LO_1;
+}
+uint8_t get_RUN_FAULT_LO_2()
+{
+    return RUN_FAULT_LO_2;
+}
+uint8_t get_RUN_FAULT_HI_1()
+{
+    return RUN_FAULT_HI_1;
+}
+uint8_t get_RUN_FAULT_HI_2()
+{
+    return RUN_FAULT_HI_2;
+}
+
 // called from CAN_TX_RX_func.c in the generic RX func
 // tldr: part of an interrupt service routine
 void can_receive(uint8_t *msg, int ID)
@@ -88,11 +124,29 @@ void can_receive(uint8_t *msg, int ID)
             THROTTLE_HIGH = msg[CAN_DATA_BYTE_2];
             THROTTLE_LOW = msg[CAN_DATA_BYTE_3];
             break;
+        case MC_FAULT:
+            POST_FAULT_LO_1 = msg[CAN_DATA_BYTE_1];
+            POST_FAULT_LO_2 = msg[CAN_DATA_BYTE_2];
+            POST_FAULT_HI_1 = msg[CAN_DATA_BYTE_3];
+            POST_FAULT_HI_2 = msg[CAN_DATA_BYTE_4];
+            RUN_FAULT_LO_1 = msg[CAN_DATA_BYTE_5];
+            RUN_FAULT_LO_2 = msg[CAN_DATA_BYTE_6];
+            RUN_FAULT_HI_1 = msg[CAN_DATA_BYTE_7];
+            RUN_FAULT_HI_2 = msg[CAN_DATA_BYTE_8];
     }
     
     CyExitCriticalSection(InterruptState);
 }
-
+//returns THROTTLE_HIGH
+uint8_t get_THROTTLE_HIGH()
+{
+    return THROTTLE_HIGH;
+}
+//returns THROTTLE_LOW
+uint8_t get_THROTTLE_LOW()
+{
+    return THROTTLE_LOW;
+}
 void can_test_send()
 {
     //CAN_1_DATA_BYTES_MSG msg;
@@ -169,6 +223,7 @@ void can_send_state_and_throttle(uint8_t state, uint8_t throttle_upper, uint8_t 
     
     can_send(data, MC_DEBUG_SEND);
 }
+
 
 void can_send_ESTOP(uint8_t estop) {
     uint8_t data[8] = {0};

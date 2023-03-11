@@ -17,6 +17,7 @@ typedef enum {
     MC_ESTOP = 0x366,
     MC_DEBUG = 0x466,
     BSPD_FLAGS = 0x0C1,
+    MC_FAULT = 0x0AB,
 } CAN_ID; //RECEIVE
 
 typedef enum {
@@ -54,6 +55,17 @@ uint8_t get_THROTTLE_LOW();
 uint8_t get_THROTTLE();
 
 uint8_t get_STATE();
+
+//MC_FAULT
+uint8_t get_POST_FAULT_LO_1();
+uint8_t get_POST_FAULT_LO_2();
+uint8_t get_POST_FAULT_HI_1();
+uint8_t get_POST_FAULT_HI_2();
+uint8_t get_RUN_FAULT_LO_1();
+uint8_t get_RUN_FAULT_LO_2();
+uint8_t get_RUN_FAULT_HI_1();
+uint8_t get_RUN_FAULT_HI_2();
+
 
 //Interlock functionality
 void set_interlock();
