@@ -69,9 +69,7 @@ int main(void)
         current_lower = current & 0xFF; // lower bits
         can_send_PEI(current_upper, current_lower, shutdown_flags);
         
-        can_send_PEI(get_THROTTLE_HIGH(), 1, shutdown_flags);
         //Interlock state machine
-        
         if (state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          
             if((get_HV_Requested() == 1) && (e_stop != 0)) {

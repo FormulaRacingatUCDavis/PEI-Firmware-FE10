@@ -798,6 +798,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgBSPD_Flags(void) 
     {
         /* `#START MESSAGE_BSPD_Flags_RECEIVED` */
+        HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
         THROTTLE_HIGH = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BSPD_Flags);
         THROTTLE_LOW = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BSPD_Flags);
         /* `#END` */
@@ -834,6 +835,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_Fault(void) 
     {
         /* `#START MESSAGE_MC_Fault_RECEIVED` */
+        
+        POST_FAULT_LO_1 = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Fault);
+        POST_FAULT_LO_2 = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Fault);
+        POST_FAULT_HI_1 = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Fault);
+        POST_FAULT_HI_2 = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_LO_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_LO_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_HI_1 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Fault);
+        RUN_FAULT_HI_2 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_MC_Fault);;
 
         /* `#END` */
 
