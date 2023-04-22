@@ -98,6 +98,10 @@ uint8_t get_RUN_FAULT_HI_2()
 {
     return RUN_FAULT_HI_2;
 }
+uint8_t get_RUN_FAULT_SUM()
+{
+    return RUN_FAULT_LO_1+RUN_FAULT_LO_2+RUN_FAULT_HI_1+RUN_FAULT_HI_2;
+}
 
 // called from CAN_TX_RX_func.c in the generic RX func
 // tldr: part of an interrupt service routine
@@ -217,9 +221,11 @@ void can_send_cmd(
 
 void can_send_state_and_throttle(uint8_t state, uint8_t throttle_upper, uint8_t throttle_lower) {
     uint8_t data[8] = {0};
-    data[2] = state;
+    
     data[5] = throttle_upper;
     data[6] = throttle_lower;
+    
+    data[2] = state;
     
     can_send(data, MC_DEBUG_SEND);
 }

@@ -41,34 +41,6 @@
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_FINAL</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>PSOC_VCU_Example</v>
-<v>PSOC_VCU_Example\Design01</v>
-<v>PSOC_VCU_Example\Design01\TopDesign</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Pins</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Analog</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Clocks</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Interrupts</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\DMA</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\System</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Directives</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\Flash Security</v>
-<v>PSOC_VCU_Example\Design01\Design01.cydwr\EEPROM</v>
-<v>PSOC_VCU_Example\Design01\Header Files</v>
-<v>PSOC_VCU_Example\Design01\Source Files</v>
-<v>PSOC_VCU_Example\Design01\Source Files\can_manager.c</v>
-<v>PSOC_VCU_Example\Design01\Source Files\can_manager.h</v>
-<v>PSOC_VCU_Example\Design01\Source Files\main.c</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\ADC_DelSig_1</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\ADC_DelSig_1_IRQ</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\ADC_DelSig_1_theACLK</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\AIR_NEG</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\AIR_POS</v>
-<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\BMS_Fault</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\CAN</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\CAN\CAN.c</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\CAN\CAN.h</v>
@@ -80,6 +52,34 @@
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Clock_1\Clock_1.h</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Current_Analog</v>
 <v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\cy_boot</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Em_EEPROM_Dynamic</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\GPIO1_ESD</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\GPIO2_ESD</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\GPIO3_ESD</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\GPIO4_ESD</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\GraphicLCDIntf</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\IMD_Fault</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\IMD_Fault\IMD_Fault.c</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\IMD_Fault\IMD_Fault.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\IMD_Fault\IMD_Fault_aliases.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Precharge</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Precharge\Precharge.c</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Precharge\Precharge.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Precharge\Precharge_aliases.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Rx</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_ACC_OUT</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_ACC_OUT\SD_ACC_OUT.c</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_ACC_OUT\SD_ACC_OUT.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_ACC_OUT\SD_ACC_OUT_aliases.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_FINAL</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_FINAL\SD_FINAL.c</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_FINAL\SD_FINAL.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_FINAL\SD_FINAL_aliases.h</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_IN</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\SD_OUT</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\Tx</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>PSOC_VCU_Example\Design01\Generated_Source\PSoC5\cycodeshareimport.ld</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -238,10 +238,7 @@
 <CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
 <indicators>
 <CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="55" DocumentName=".\Design01.cydsn\main.c" />
-</CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
-<CyGuid_67999771-01c6-4f62-90b3-2054bb36a318 type_name="CyDesigner.Framework.CyBookmark" version="1">
-<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="97" DocumentName=".\Design01.cydsn\main.c" />
+<CyGuid_a1027fc4-3497-43a6-85d7-b91ffa0029b7 type_name="CyDesigner.Framework.CySerializableMarginIndicator" version="1" LineNumber="56" DocumentName=".\Design01.cydsn\main.c" />
 </CyGuid_67999771-01c6-4f62-90b3-2054bb36a318>
 </indicators>
 </CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
@@ -251,6 +248,9 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Design01.cydsn\main.c" />
+<name v=".\Design01.cydsn\can_manager.c" />
+<name v=".\Design01.cydsn\can_manager.h" />
+<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -258,7 +258,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1134, 755" SelectedTabbedMdiWindow="34981d13-6f38-42ba-8a3a-fce015de7ccf"><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="34981d13-6f38-42ba-8a3a-fce015de7ccf" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1129, 755" SelectedTabbedMdiWindow="34981d13-6f38-42ba-8a3a-fce015de7ccf"><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="34981d13-6f38-42ba-8a3a-fce015de7ccf" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="4b84822f-bd12-4b1b-91d5-ace919cae5fc" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="74e24774-e28f-4129-b9fd-effad7364214" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="4db6684c-5558-47bc-8c5c-7068d9ceab4d" /><DocumentWindow Key="C:\Users\kendr\OneDrive\Documents\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="ac5cd2c4-a453-432e-89e9-bec6c1a6e7f2" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

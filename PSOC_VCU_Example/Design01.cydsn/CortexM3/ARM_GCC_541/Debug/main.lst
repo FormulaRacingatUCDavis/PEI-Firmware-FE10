@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 1
   32 0000 70B5     		push	{r4, r5, r6, lr}
   33              		.cfi_def_cfa_offset 16
   34              		.cfi_offset 4, -16
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 2
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 2
 
 
   35              		.cfi_offset 5, -12
@@ -90,22 +90,23 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 1
   54              		.loc 1 30 0
   55 0010 FFF7FEFF 		bl	ADC_DelSig_1_Start
   56              	.LVL3:
-  57              	.L10:
+  57              	.L13:
   58              	.LBB2:
   31:main.c        ****     
   32:main.c        ****     for(;;)
   33:main.c        ****     {   
-  34:main.c        ****         //We need read the e_stop status in from the Shutdown_IN pin.
-  35:main.c        ****         //If e_stop is hit, should be equal to 0.
-  36:main.c        ****         e_stop = SD_IN_Read();
-  59              		.loc 1 36 0
+  34:main.c        ****         
+  35:main.c        ****         //We need read the e_stop status in from the Shutdown_IN pin.
+  36:main.c        ****         //If e_stop is hit, should be equal to 0.
+  37:main.c        ****         e_stop = SD_IN_Read();
+  59              		.loc 1 37 0
   60 0014 FFF7FEFF 		bl	SD_IN_Read
   61              	.LVL4:
-  62 0018 374B     		ldr	r3, .L13
+  62 0018 3B4B     		ldr	r3, .L16
   63 001a 1870     		strb	r0, [r3]
-  37:main.c        ****         
-  38:main.c        ****         uint16_t current = (uint16_t) ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
-  64              		.loc 1 38 0
+  38:main.c        ****         
+  39:main.c        ****         uint16_t current = (uint16_t) ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
+  64              		.loc 1 39 0
   65 001c FFF7FEFF 		bl	ADC_DelSig_1_Read32
   66              	.LVL5:
   67 0020 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
@@ -113,1428 +114,1461 @@ ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 1
   69 0024 0546     		mov	r5, r0
   70 0026 86B2     		uxth	r6, r0
   71              	.LVL7:
-  39:main.c        ****         
-  40:main.c        ****         // shutdown flags, current
-  41:main.c        ****         uint8_t shutdown_flags = 0;
-  42:main.c        ****         uint8_t current_upper = 0;
-  43:main.c        ****         uint8_t current_lower = 0;
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 3
+  40:main.c        ****         
+  41:main.c        ****         // shutdown flags, current
+  42:main.c        ****         uint8_t shutdown_flags = 0;
+  43:main.c        ****         uint8_t current_upper = 0;
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 3
 
 
-  44:main.c        ****         
-  45:main.c        ****         if (IMD_Fault_Read()) { shutdown_flags |= (1 << 5); }
-  72              		.loc 1 45 0
+  44:main.c        ****         uint8_t current_lower = 0;
+  45:main.c        ****         
+  46:main.c        ****         if (IMD_Fault_Read()) { shutdown_flags |= (1 << 5); }
+  72              		.loc 1 46 0
   73 0028 FFF7FEFF 		bl	IMD_Fault_Read
   74              	.LVL8:
-  75 002c 08B1     		cbz	r0, .L11
+  75 002c 08B1     		cbz	r0, .L14
   76 002e 2024     		movs	r4, #32
   77 0030 00E0     		b	.L2
-  78              	.L11:
-  46:main.c        ****         else { shutdown_flags &= (0b011111); }
-  79              		.loc 1 46 0
+  78              	.L14:
+  47:main.c        ****         else { shutdown_flags &= (0b011111); }
+  79              		.loc 1 47 0
   80 0032 0024     		movs	r4, #0
   81              	.L2:
   82              	.LVL9:
-  47:main.c        ****         
-  48:main.c        ****         if (BMS_Fault_Read()) { shutdown_flags |= (1 << 4); }
-  83              		.loc 1 48 0
+  48:main.c        ****         
+  49:main.c        ****         if (BMS_Fault_Read()) { shutdown_flags |= (1 << 4); }
+  83              		.loc 1 49 0
   84 0034 FFF7FEFF 		bl	BMS_Fault_Read
   85              	.LVL10:
   86 0038 10B1     		cbz	r0, .L4
-  87              		.loc 1 48 0 is_stmt 0 discriminator 1
+  87              		.loc 1 49 0 is_stmt 0 discriminator 1
   88 003a 44F01004 		orr	r4, r4, #16
   89              	.LVL11:
   90 003e E4B2     		uxtb	r4, r4
   91              	.LVL12:
   92              	.L4:
-  49:main.c        ****         else { shutdown_flags &= (0b101111); }
-  50:main.c        ****         
-  51:main.c        ****         if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
-  93              		.loc 1 51 0 is_stmt 1
+  50:main.c        ****         else { shutdown_flags &= (0b101111); }
+  51:main.c        ****         
+  52:main.c        ****         if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
+  93              		.loc 1 52 0 is_stmt 1
   94 0040 FFF7FEFF 		bl	SD_FINAL_Read
   95              	.LVL13:
   96 0044 10B1     		cbz	r0, .L5
-  97              		.loc 1 51 0 is_stmt 0 discriminator 1
-  98 0046 44F00804 		orr	r4, r4, #8
+  97              		.loc 1 52 0 is_stmt 0 discriminator 1
+  98 0046 44F00802 		orr	r2, r4, #8
   99              	.LVL14:
  100 004a 01E0     		b	.L6
- 101              	.L5:
-  52:main.c        ****         else { shutdown_flags &= (0b110111); }
- 102              		.loc 1 52 0 is_stmt 1
- 103 004c 04F03704 		and	r4, r4, #55
- 104              	.LVL15:
- 105              	.L6:
-  53:main.c        ****         
+ 101              	.LVL15:
+ 102              	.L5:
+  53:main.c        ****         else { shutdown_flags &= (0b110111); }
+ 103              		.loc 1 53 0 is_stmt 1
+ 104 004c 04F03702 		and	r2, r4, #55
+ 105              	.LVL16:
+ 106              	.L6:
   54:main.c        ****         
-  55:main.c        ****         /* For debug purposes
-  56:main.c        ****         if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
-  57:main.c        ****         else { shutdown_flags &= (0b111011); }
-  58:main.c        ****         
-  59:main.c        ****         if (AIR_NEG_Read()) { shutdown_flags |= (1 << 1); }
-  60:main.c        ****         else { shutdown_flags &= (0b111101); }
-  61:main.c        ****         
-  62:main.c        ****         if (Precharge_Read()) { shutdown_flags |= (1 << 0); }
-  63:main.c        ****         else { shutdown_flags &= (0b111110); }
-  64:main.c        ****         */
-  65:main.c        ****         
-  66:main.c        ****         // send data via PCAN to BMS main
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 4
+  55:main.c        ****         
+  56:main.c        ****         /* For debug purposes
+  57:main.c        ****         if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
+  58:main.c        ****         else { shutdown_flags &= (0b111011); }
+  59:main.c        ****         
+  60:main.c        ****         if (AIR_NEG_Read()) { shutdown_flags |= (1 << 1); }
+  61:main.c        ****         else { shutdown_flags &= (0b111101); }
+  62:main.c        ****         
+  63:main.c        ****         if (Precharge_Read()) { shutdown_flags |= (1 << 0); }
+  64:main.c        ****         else { shutdown_flags &= (0b111110); }
+  65:main.c        ****         */
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 4
 
 
-  67:main.c        ****         // note: uses 2's complement
-  68:main.c        ****         current_upper = current >> 8; // upper bits
-  69:main.c        ****         current_lower = current & 0xFF; // lower bits
-  70:main.c        ****         can_send_PEI(current_upper, current_lower, shutdown_flags);
- 106              		.loc 1 70 0
- 107 0050 2246     		mov	r2, r4
- 108 0052 E9B2     		uxtb	r1, r5
- 109 0054 300A     		lsrs	r0, r6, #8
- 110 0056 FFF7FEFF 		bl	can_send_PEI
- 111              	.LVL16:
-  71:main.c        ****         
-  72:main.c        ****         can_send_PEI(get_THROTTLE_HIGH(), 1, shutdown_flags);
- 112              		.loc 1 72 0
- 113 005a FFF7FEFF 		bl	get_THROTTLE_HIGH
- 114              	.LVL17:
- 115 005e 2246     		mov	r2, r4
- 116 0060 0121     		movs	r1, #1
- 117 0062 FFF7FEFF 		bl	can_send_PEI
+  66:main.c        ****         
+  67:main.c        ****         // send data via PCAN to BMS main
+  68:main.c        ****         // note: uses 2's complement
+  69:main.c        ****         current_upper = current >> 8; // upper bits
+  70:main.c        ****         current_lower = current & 0xFF; // lower bits
+  71:main.c        ****         can_send_PEI(current_upper, current_lower, shutdown_flags);
+ 107              		.loc 1 71 0
+ 108 0050 E9B2     		uxtb	r1, r5
+ 109 0052 300A     		lsrs	r0, r6, #8
+ 110 0054 FFF7FEFF 		bl	can_send_PEI
+ 111              	.LVL17:
+  72:main.c        ****         
+  73:main.c        ****         
+  74:main.c        ****         //Interlock state machine
+  75:main.c        ****         
+  76:main.c        ****         
+  77:main.c        ****         
+  78:main.c        ****         if (state == 0) {
+ 112              		.loc 1 78 0
+ 113 0058 2C4B     		ldr	r3, .L16+4
+ 114 005a 1B68     		ldr	r3, [r3]
+ 115 005c 73B9     		cbnz	r3, .L7
+  79:main.c        ****             clear_interlock(); // clears interlock, send a message to open AIRs          
+ 116              		.loc 1 79 0
+ 117 005e FFF7FEFF 		bl	clear_interlock
  118              	.LVL18:
-  73:main.c        ****         //Interlock state machine
-  74:main.c        ****         throttle_total = 8;
- 119              		.loc 1 74 0
- 120 0066 0822     		movs	r2, #8
- 121 0068 244B     		ldr	r3, .L13+4
- 122 006a 1A80     		strh	r2, [r3]	@ movhi
-  75:main.c        ****         if (state == 0) {
- 123              		.loc 1 75 0
- 124 006c 244B     		ldr	r3, .L13+8
- 125 006e 1B68     		ldr	r3, [r3]
- 126 0070 73B9     		cbnz	r3, .L7
-  76:main.c        ****             clear_interlock(); // clears interlock, send a message to open AIRs          
- 127              		.loc 1 76 0
- 128 0072 FFF7FEFF 		bl	clear_interlock
- 129              	.LVL19:
-  77:main.c        ****             if((get_HV_Requested() == 1) && (e_stop != 0)) {
- 130              		.loc 1 77 0
- 131 0076 FFF7FEFF 		bl	get_HV_Requested
- 132              	.LVL20:
- 133 007a 0128     		cmp	r0, #1
- 134 007c 2BD1     		bne	.L8
- 135              		.loc 1 77 0 is_stmt 0 discriminator 1
- 136 007e 1E4B     		ldr	r3, .L13
- 137 0080 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 138 0082 13F0FF0F 		tst	r3, #255
- 139 0086 26D0     		beq	.L8
-  78:main.c        ****                 state = 1;
- 140              		.loc 1 78 0 is_stmt 1
- 141 0088 0122     		movs	r2, #1
- 142 008a 1D4B     		ldr	r3, .L13+8
- 143 008c 1A60     		str	r2, [r3]
- 144 008e 22E0     		b	.L8
- 145              	.L7:
-  79:main.c        ****             }
-  80:main.c        ****         }
-  81:main.c        ****         
-  82:main.c        ****         else if (state == 1) { 
- 146              		.loc 1 82 0
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 5
+  80:main.c        ****             if((get_HV_Requested() == 1) && (e_stop != 0)) {
+ 119              		.loc 1 80 0
+ 120 0062 FFF7FEFF 		bl	get_HV_Requested
+ 121              	.LVL19:
+ 122 0066 0128     		cmp	r0, #1
+ 123 0068 48D1     		bne	.L8
+ 124              		.loc 1 80 0 is_stmt 0 discriminator 1
+ 125 006a 274B     		ldr	r3, .L16
+ 126 006c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 127 006e 13F0FF0F 		tst	r3, #255
+ 128 0072 43D0     		beq	.L8
+  81:main.c        ****                 state = 1;
+ 129              		.loc 1 81 0 is_stmt 1
+ 130 0074 0122     		movs	r2, #1
+ 131 0076 254B     		ldr	r3, .L16+4
+ 132 0078 1A60     		str	r2, [r3]
+ 133 007a 3FE0     		b	.L8
+ 134              	.L7:
+  82:main.c        ****             }
+  83:main.c        ****         }
+  84:main.c        ****         
+  85:main.c        ****         else if (state == 1) {
+ 135              		.loc 1 85 0
+ 136 007c 234B     		ldr	r3, .L16+4
+ 137 007e 1B68     		ldr	r3, [r3]
+ 138 0080 012B     		cmp	r3, #1
+ 139 0082 3BD1     		bne	.L8
+ 140              	.LBB3:
+  86:main.c        ****             set_interlock(); //sets interlock, sends a message to close AIRs
+ 141              		.loc 1 86 0
+ 142 0084 FFF7FEFF 		bl	set_interlock
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 5
 
 
- 147 0090 1B4B     		ldr	r3, .L13+8
- 148 0092 1B68     		ldr	r3, [r3]
- 149 0094 012B     		cmp	r3, #1
- 150 0096 1ED1     		bne	.L8
- 151              	.LBB3:
-  83:main.c        ****             set_interlock(); //sets interlock, sends a message to close AIRs
- 152              		.loc 1 83 0
- 153 0098 FFF7FEFF 		bl	set_interlock
- 154              	.LVL21:
-  84:main.c        ****             uint8 throttle_high = get_THROTTLE_HIGH();
- 155              		.loc 1 84 0
- 156 009c FFF7FEFF 		bl	get_THROTTLE_HIGH
- 157              	.LVL22:
- 158 00a0 0446     		mov	r4, r0
- 159              	.LVL23:
-  85:main.c        ****             uint8 throttle_low = get_THROTTLE_LOW();
- 160              		.loc 1 85 0
- 161 00a2 FFF7FEFF 		bl	get_THROTTLE_LOW
- 162              	.LVL24:
-  86:main.c        ****             
-  87:main.c        ****             
-  88:main.c        ****             if(((throttle_high * 255 + throttle_low) < 0) || ((throttle_high * 255 + throttle_low) 
- 163              		.loc 1 88 0
- 164 00a6 C4EB0424 		rsb	r4, r4, r4, lsl #8
- 165              	.LVL25:
- 166 00aa 2044     		add	r0, r0, r4
+ 143              	.LVL20:
+  87:main.c        ****             uint8 throttle_high = get_THROTTLE_HIGH();
+ 144              		.loc 1 87 0
+ 145 0088 FFF7FEFF 		bl	get_THROTTLE_HIGH
+ 146              	.LVL21:
+ 147 008c 0446     		mov	r4, r0
+ 148              	.LVL22:
+  88:main.c        ****             uint8 throttle_low = get_THROTTLE_LOW();
+ 149              		.loc 1 88 0
+ 150 008e FFF7FEFF 		bl	get_THROTTLE_LOW
+ 151              	.LVL23:
+  89:main.c        ****             
+  90:main.c        ****             
+  91:main.c        ****             if(((throttle_high * 255 + throttle_low) < 0) || ((throttle_high * 255 + throttle_low) 
+ 152              		.loc 1 91 0
+ 153 0092 C4EB0424 		rsb	r4, r4, r4, lsl #8
+ 154              	.LVL24:
+ 155 0096 2044     		add	r0, r0, r4
+ 156              	.LVL25:
+ 157 0098 B0F5004F 		cmp	r0, #32768
+ 158 009c 03D3     		bcc	.L9
+  92:main.c        ****                 throttle_total = 0;
+ 159              		.loc 1 92 0
+ 160 009e 0022     		movs	r2, #0
+ 161 00a0 1B4B     		ldr	r3, .L16+8
+ 162 00a2 1A80     		strh	r2, [r3]	@ movhi
+ 163 00a4 12E0     		b	.L10
+ 164              	.L9:
+  93:main.c        ****             }
+  94:main.c        ****             else {
+  95:main.c        ****                 //TODO: change back to throttle_high * 255 + throttle_low;  
+  96:main.c        ****                 // higher values lead to overflowing, defaults to 0.
+  97:main.c        ****                 throttle_total = get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
+ 165              		.loc 1 97 0
+ 166 00a6 FFF7FEFF 		bl	get_THROTTLE_HIGH
  167              	.LVL26:
- 168 00ac B0F5004F 		cmp	r0, #32768
- 169 00b0 03D3     		bcc	.L9
-  89:main.c        ****                 throttle_total = 0;
- 170              		.loc 1 89 0
- 171 00b2 0022     		movs	r2, #0
- 172 00b4 114B     		ldr	r3, .L13+4
- 173 00b6 1A80     		strh	r2, [r3]	@ movhi
- 174 00b8 0DE0     		b	.L8
- 175              	.L9:
-  90:main.c        ****             }
-  91:main.c        ****             else {
-  92:main.c        ****                 //TODO: change back to throttle_high * 255 + throttle_low;  
-  93:main.c        ****                 // higher values lead to overflowing, defaults to 0.
-  94:main.c        ****                 throttle_total = get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
- 176              		.loc 1 94 0
- 177 00ba FFF7FEFF 		bl	get_THROTTLE_HIGH
- 178              	.LVL27:
- 179 00be 0446     		mov	r4, r0
- 180 00c0 FFF7FEFF 		bl	get_THROTTLE_LOW
- 181              	.LVL28:
- 182 00c4 C4EB0424 		rsb	r4, r4, r4, lsl #8
- 183 00c8 2044     		add	r0, r0, r4
- 184 00ca 80B2     		uxth	r0, r0
- 185 00cc 0B4B     		ldr	r3, .L13+4
- 186 00ce 1880     		strh	r0, [r3]	@ movhi
-  95:main.c        ****                 
-  96:main.c        ****                 throttle_upper = throttle_total >> 8; // upper bits
- 187              		.loc 1 96 0
- 188 00d0 020A     		lsrs	r2, r0, #8
- 189 00d2 9A70     		strb	r2, [r3, #2]
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 6
-
-
-  97:main.c        ****                 throttle_lower = throttle_total & 0xFF; // lower bits   
- 190              		.loc 1 97 0
- 191 00d4 D870     		strb	r0, [r3, #3]
- 192              	.L8:
- 193              	.LBE3:
+ 168 00aa 0446     		mov	r4, r0
+ 169 00ac FFF7FEFF 		bl	get_THROTTLE_LOW
+ 170              	.LVL27:
+ 171 00b0 C4EB0424 		rsb	r4, r4, r4, lsl #8
+ 172 00b4 2044     		add	r0, r0, r4
+ 173 00b6 80B2     		uxth	r0, r0
+ 174 00b8 154B     		ldr	r3, .L16+8
+ 175 00ba 1880     		strh	r0, [r3]	@ movhi
   98:main.c        ****                 
-  99:main.c        ****             }
- 100:main.c        ****             /*
- 101:main.c        ****             
- 102:main.c        ****             
- 103:main.c        ****             if(get_HV_Requested() == 0) {
- 104:main.c        ****                 state = 0;
- 105:main.c        ****             }
- 106:main.c        ****             else if (e_stop == 0) {
- 107:main.c        ****                 state = 3;   
- 108:main.c        ****             }
- 109:main.c        ****             //TODO: We need to get into state 2 if there's an error, but what error we check for is
- 110:main.c        ****             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
- 111:main.c        ****                 state = 2;   
- 112:main.c        ****             }
- 113:main.c        ****             */
- 114:main.c        ****             /*May or may not need to check status 3
- 115:main.c        ****             if(Status3 = 36) ; an OS defined variable that has info on driver faults
- 116:main.c        **** 		        ; checks for 2 specific errors
- 117:main.c        ****     		; Bit2 = Coi12 Driver Open/Short (Code 32)
- 118:main.c        ****     		; Bit5 = PD Open/Short (Code 35)
- 119:main.c        ****     		{
- 120:main.c        ****     			state = 3
- 121:main.c        ****     			e_stop = 1
- 122:main.c        ****     			; sends CAN message saying that estop should activate
- 123:main.c        ****     			send_mailbox(eStop)
- 124:main.c        ****     		}
- 125:main.c        ****         
- 126:main.c        ****         
- 127:main.c        ****             else if(Status3 > 0) 
+  99:main.c        ****                 throttle_upper = throttle_total >> 8; // upper bits
+ 176              		.loc 1 99 0
+ 177 00bc 020A     		lsrs	r2, r0, #8
+ 178 00be 9A70     		strb	r2, [r3, #2]
+ 100:main.c        ****                 throttle_lower = throttle_total & 0xFF; // lower bits   
+ 179              		.loc 1 100 0
+ 180 00c0 D870     		strb	r0, [r3, #3]
+ 101:main.c        ****                 
+ 102:main.c        ****                 //can_send_state_and_throttle(state, throttle_upper, throttle_lower);
+ 103:main.c        ****                 can_send_state_and_throttle(2, 4, 6);
+ 181              		.loc 1 103 0
+ 182 00c2 0622     		movs	r2, #6
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 6
+
+
+ 183 00c4 0421     		movs	r1, #4
+ 184 00c6 0220     		movs	r0, #2
+ 185 00c8 FFF7FEFF 		bl	can_send_state_and_throttle
+ 186              	.LVL28:
+ 187              	.L10:
+ 104:main.c        ****                 
+ 105:main.c        ****            
+ 106:main.c        ****             }
+ 107:main.c        ****             
+ 108:main.c        ****             
+ 109:main.c        ****             
+ 110:main.c        ****             
+ 111:main.c        ****             if(get_HV_Requested() == 0) {
+ 188              		.loc 1 111 0
+ 189 00cc FFF7FEFF 		bl	get_HV_Requested
+ 190              	.LVL29:
+ 191 00d0 18B9     		cbnz	r0, .L11
+ 112:main.c        ****                state = 0;
+ 192              		.loc 1 112 0
+ 193 00d2 0022     		movs	r2, #0
+ 194 00d4 0D4B     		ldr	r3, .L16+4
+ 195 00d6 1A60     		str	r2, [r3]
+ 196 00d8 10E0     		b	.L8
+ 197              	.L11:
+ 113:main.c        ****             }
+ 114:main.c        ****             
+ 115:main.c        ****             else if (e_stop == 0) {
+ 198              		.loc 1 115 0
+ 199 00da 0B4B     		ldr	r3, .L16
+ 200 00dc 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 201 00de 13F0FF0F 		tst	r3, #255
+ 202 00e2 03D1     		bne	.L12
+ 116:main.c        ****                 state = 3;   
+ 203              		.loc 1 116 0
+ 204 00e4 0322     		movs	r2, #3
+ 205 00e6 094B     		ldr	r3, .L16+4
+ 206 00e8 1A60     		str	r2, [r3]
+ 207 00ea 07E0     		b	.L8
+ 208              	.L12:
+ 117:main.c        ****             }
+ 118:main.c        ****             //TODO: We need to get into state 2 if there's an error, but what error we check for is
+ 119:main.c        ****             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
+ 209              		.loc 1 119 0
+ 210 00ec FFF7FEFF 		bl	get_VEHICLE_STATE
+ 211              	.LVL30:
+ 212 00f0 10F0800F 		tst	r0, #128
+ 213 00f4 02D0     		beq	.L8
+ 120:main.c        ****                 state = 2;   
+ 214              		.loc 1 120 0
+ 215 00f6 0222     		movs	r2, #2
+ 216 00f8 044B     		ldr	r3, .L16+4
+ 217 00fa 1A60     		str	r2, [r3]
+ 218              	.L8:
+ 219              	.LBE3:
+ 121:main.c        ****             }
+ 122:main.c        ****             
+ 123:main.c        ****             /*May or may not need to check status 3
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 7
+
+
+ 124:main.c        ****             if(Status3 = 36) ; an OS defined variable that has info on driver faults
+ 125:main.c        **** 		        ; checks for 2 specific errors
+ 126:main.c        ****     		; Bit2 = Coi12 Driver Open/Short (Code 32)
+ 127:main.c        ****     		; Bit5 = PD Open/Short (Code 35)
  128:main.c        ****     		{
- 129:main.c        ****     			; trap state
- 130:main.c        ****     			state = 2
- 131:main.c        ****     		}
- 132:main.c        ****             
- 133:main.c        ****             */
- 134:main.c        ****         }
- 135:main.c        ****         //Trap state
- 136:main.c        ****         /*
- 137:main.c        ****         // is entered when there are more errors than just estop (Status3 > 0). 
- 138:main.c        ****         else if(state == 2) {
- 139:main.c        **** 		    clear_interlock(); // clears interlock, send a message to open AIRs
- 140:main.c        **** 		    // set EM Brake = 0
- 141:main.c        **** 	    }
- 142:main.c        ****         else if (state == 3) {
- 143:main.c        ****             if (get_HV_Requested() == 0) {
- 144:main.c        ****                 state = 0;
- 145:main.c        ****                 //can_send_ESTOP(0); why is this here?
- 146:main.c        ****             }
- 147:main.c        ****         }
- 148:main.c        ****         */
- 149:main.c        ****         can_send_ESTOP(e_stop);
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 7
+ 129:main.c        ****     			state = 3
+ 130:main.c        ****     			e_stop = 1
+ 131:main.c        ****     			; sends CAN message saying that estop should activate
+ 132:main.c        ****     			send_mailbox(eStop)
+ 133:main.c        ****     		}
+ 134:main.c        ****         
+ 135:main.c        ****         
+ 136:main.c        ****             else if(Status3 > 0) 
+ 137:main.c        ****     		{
+ 138:main.c        ****     			; trap state
+ 139:main.c        ****     			state = 2
+ 140:main.c        ****     		}
+ 141:main.c        ****             
+ 142:main.c        ****             */
+ 143:main.c        ****             
+ 144:main.c        ****         }
+ 145:main.c        ****         //Trap state
+ 146:main.c        ****         /*
+ 147:main.c        ****         // is entered when there are more errors than just estop (Status3 > 0). 
+ 148:main.c        ****         else if(state == 2) {
+ 149:main.c        **** 		    clear_interlock(); // clears interlock, send a message to open AIRs
+ 150:main.c        **** 		    // set EM Brake = 0
+ 151:main.c        **** 	    }
+ 152:main.c        ****         else if (state == 3) {
+ 153:main.c        ****             if (get_HV_Requested() == 0) {
+ 154:main.c        ****                 state = 0;
+ 155:main.c        ****                 //can_send_ESTOP(0); why is this here?
+ 156:main.c        ****             }
+ 157:main.c        ****         }
+ 158:main.c        ****         */
+ 159:main.c        ****         
+ 160:main.c        ****         
+ 161:main.c        ****         
+ 162:main.c        ****         //can_send_ESTOP(e_stop);
+ 163:main.c        ****         CyDelay(1000);
+ 220              		.loc 1 163 0
+ 221 00fc 4FF47A70 		mov	r0, #1000
+ 222 0100 FFF7FEFF 		bl	CyDelay
+ 223              	.LVL31:
+ 224              	.LBE2:
+ 164:main.c        ****     }
+ 225              		.loc 1 164 0
+ 226 0104 86E7     		b	.L13
+ 227              	.L17:
+ 228 0106 00BF     		.align	2
+ 229              	.L16:
+ 230 0108 00000000 		.word	e_stop
+ 231 010c 00000000 		.word	.LANCHOR0
+ 232 0110 00000000 		.word	.LANCHOR1
+ 233              		.cfi_endproc
+ 234              	.LFE63:
+ 235              		.size	main, .-main
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 8
 
 
- 194              		.loc 1 149 0
- 195 00d6 084B     		ldr	r3, .L13
- 196 00d8 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 197 00da FFF7FEFF 		bl	can_send_ESTOP
- 198              	.LVL29:
- 150:main.c        ****         //can_send_state_and_throttle(state, get_THROTTLE_HIGH(), throttle_lower);    
- 151:main.c        ****         can_send_state_and_throttle(state, throttle_upper, throttle_lower);    
- 199              		.loc 1 151 0
- 200 00de 084B     		ldr	r3, .L13+8
- 201 00e0 1868     		ldr	r0, [r3]
- 202 00e2 064B     		ldr	r3, .L13+4
- 203 00e4 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
- 204 00e6 9978     		ldrb	r1, [r3, #2]	@ zero_extendqisi2
- 205 00e8 C0B2     		uxtb	r0, r0
- 206 00ea FFF7FEFF 		bl	can_send_state_and_throttle
- 207              	.LVL30:
- 152:main.c        ****         CyDelay(1000);
- 208              		.loc 1 152 0
- 209 00ee 4FF47A70 		mov	r0, #1000
- 210 00f2 FFF7FEFF 		bl	CyDelay
- 211              	.LVL31:
- 212              	.LBE2:
- 153:main.c        ****     }
- 213              		.loc 1 153 0
- 214 00f6 8DE7     		b	.L10
- 215              	.L14:
- 216              		.align	2
- 217              	.L13:
- 218 00f8 00000000 		.word	e_stop
- 219 00fc 00000000 		.word	.LANCHOR0
- 220 0100 00000000 		.word	.LANCHOR1
- 221              		.cfi_endproc
- 222              	.LFE63:
- 223              		.size	main, .-main
- 224              		.global	throttle_lower
- 225              		.global	throttle_upper
- 226              		.global	throttle_total
- 227              		.comm	e_stop,1,1
- 228              		.global	state
- 229              		.data
- 230              		.align	2
- 231              		.set	.LANCHOR1,. + 0
- 232              		.type	state, %object
- 233              		.size	state, 4
- 234              	state:
- 235 0000 01000000 		.word	1
- 236              		.bss
- 237              		.align	1
- 238              		.set	.LANCHOR0,. + 0
- 239              		.type	throttle_total, %object
- 240              		.size	throttle_total, 2
- 241              	throttle_total:
- 242 0000 0000     		.space	2
- 243              		.type	throttle_upper, %object
- 244              		.size	throttle_upper, 1
- 245              	throttle_upper:
- 246 0002 00       		.space	1
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 8
+ 236              		.global	throttle_lower
+ 237              		.global	throttle_upper
+ 238              		.global	throttle_total
+ 239              		.comm	e_stop,1,1
+ 240              		.global	state
+ 241              		.data
+ 242              		.align	2
+ 243              		.set	.LANCHOR0,. + 0
+ 244              		.type	state, %object
+ 245              		.size	state, 4
+ 246              	state:
+ 247 0000 01000000 		.word	1
+ 248              		.bss
+ 249              		.align	1
+ 250              		.set	.LANCHOR1,. + 0
+ 251              		.type	throttle_total, %object
+ 252              		.size	throttle_total, 2
+ 253              	throttle_total:
+ 254 0000 0000     		.space	2
+ 255              		.type	throttle_upper, %object
+ 256              		.size	throttle_upper, 1
+ 257              	throttle_upper:
+ 258 0002 00       		.space	1
+ 259              		.type	throttle_lower, %object
+ 260              		.size	throttle_lower, 1
+ 261              	throttle_lower:
+ 262 0003 00       		.space	1
+ 263              		.text
+ 264              	.Letext0:
+ 265              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 266              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 267              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 268              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 269              		.file 6 "can_manager.h"
+ 270              		.file 7 "Generated_Source\\PSoC5/SD_IN.h"
+ 271              		.file 8 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
+ 272              		.file 9 "Generated_Source\\PSoC5/IMD_Fault.h"
+ 273              		.file 10 "Generated_Source\\PSoC5/BMS_Fault.h"
+ 274              		.file 11 "Generated_Source\\PSoC5/SD_FINAL.h"
+ 275              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
+ 276              		.file 13 "Generated_Source\\PSoC5/CAN.h"
+ 277              		.section	.debug_info,"",%progbits
+ 278              	.Ldebug_info0:
+ 279 0000 BF030000 		.4byte	0x3bf
+ 280 0004 0400     		.2byte	0x4
+ 281 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 282 000a 04       		.byte	0x4
+ 283 000b 01       		.uleb128 0x1
+ 284 000c C5000000 		.4byte	.LASF55
+ 285 0010 0C       		.byte	0xc
+ 286 0011 C2020000 		.4byte	.LASF56
+ 287 0015 DF020000 		.4byte	.LASF57
+ 288 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 289 001d 00000000 		.4byte	0
+ 290 0021 00000000 		.4byte	.Ldebug_line0
+ 291 0025 02       		.uleb128 0x2
+ 292 0026 01       		.byte	0x1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 9
 
 
- 247              		.type	throttle_lower, %object
- 248              		.size	throttle_lower, 1
- 249              	throttle_lower:
- 250 0003 00       		.space	1
- 251              		.text
- 252              	.Letext0:
- 253              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 254              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 255              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 256              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 257              		.file 6 "can_manager.h"
- 258              		.file 7 "Generated_Source\\PSoC5/SD_IN.h"
- 259              		.file 8 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
- 260              		.file 9 "Generated_Source\\PSoC5/IMD_Fault.h"
- 261              		.file 10 "Generated_Source\\PSoC5/BMS_Fault.h"
- 262              		.file 11 "Generated_Source\\PSoC5/SD_FINAL.h"
- 263              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
- 264              		.file 13 "Generated_Source\\PSoC5/CAN.h"
- 265              		.section	.debug_info,"",%progbits
- 266              	.Ldebug_info0:
- 267 0000 CA030000 		.4byte	0x3ca
- 268 0004 0400     		.2byte	0x4
- 269 0006 00000000 		.4byte	.Ldebug_abbrev0
- 270 000a 04       		.byte	0x4
- 271 000b 01       		.uleb128 0x1
- 272 000c BB000000 		.4byte	.LASF55
- 273 0010 0C       		.byte	0xc
- 274 0011 C7020000 		.4byte	.LASF56
- 275 0015 E4020000 		.4byte	.LASF57
- 276 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 277 001d 00000000 		.4byte	0
- 278 0021 00000000 		.4byte	.Ldebug_line0
- 279 0025 02       		.uleb128 0x2
- 280 0026 01       		.byte	0x1
- 281 0027 06       		.byte	0x6
- 282 0028 7E030000 		.4byte	.LASF0
- 283 002c 03       		.uleb128 0x3
- 284 002d 00000000 		.4byte	.LASF3
- 285 0031 02       		.byte	0x2
- 286 0032 1D       		.byte	0x1d
- 287 0033 37000000 		.4byte	0x37
- 288 0037 02       		.uleb128 0x2
- 289 0038 01       		.byte	0x1
- 290 0039 08       		.byte	0x8
- 291 003a AD000000 		.4byte	.LASF1
- 292 003e 02       		.uleb128 0x2
- 293 003f 02       		.byte	0x2
- 294 0040 05       		.byte	0x5
- 295 0041 38030000 		.4byte	.LASF2
- 296 0045 03       		.uleb128 0x3
- 297 0046 A6010000 		.4byte	.LASF4
- 298 004a 02       		.byte	0x2
- 299 004b 2B       		.byte	0x2b
- 300 004c 50000000 		.4byte	0x50
- 301 0050 02       		.uleb128 0x2
- 302 0051 02       		.byte	0x2
- 303 0052 07       		.byte	0x7
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 9
+ 293 0027 06       		.byte	0x6
+ 294 0028 81030000 		.4byte	.LASF0
+ 295 002c 03       		.uleb128 0x3
+ 296 002d 00000000 		.4byte	.LASF3
+ 297 0031 02       		.byte	0x2
+ 298 0032 1D       		.byte	0x1d
+ 299 0033 37000000 		.4byte	0x37
+ 300 0037 02       		.uleb128 0x2
+ 301 0038 01       		.byte	0x1
+ 302 0039 08       		.byte	0x8
+ 303 003a B7000000 		.4byte	.LASF1
+ 304 003e 02       		.uleb128 0x2
+ 305 003f 02       		.byte	0x2
+ 306 0040 05       		.byte	0x5
+ 307 0041 3B030000 		.4byte	.LASF2
+ 308 0045 03       		.uleb128 0x3
+ 309 0046 A1010000 		.4byte	.LASF4
+ 310 004a 02       		.byte	0x2
+ 311 004b 2B       		.byte	0x2b
+ 312 004c 50000000 		.4byte	0x50
+ 313 0050 02       		.uleb128 0x2
+ 314 0051 02       		.byte	0x2
+ 315 0052 07       		.byte	0x7
+ 316 0053 65010000 		.4byte	.LASF5
+ 317 0057 03       		.uleb128 0x3
+ 318 0058 3A000000 		.4byte	.LASF6
+ 319 005c 02       		.byte	0x2
+ 320 005d 3F       		.byte	0x3f
+ 321 005e 62000000 		.4byte	0x62
+ 322 0062 02       		.uleb128 0x2
+ 323 0063 04       		.byte	0x4
+ 324 0064 05       		.byte	0x5
+ 325 0065 69030000 		.4byte	.LASF7
+ 326 0069 03       		.uleb128 0x3
+ 327 006a BA010000 		.4byte	.LASF8
+ 328 006e 02       		.byte	0x2
+ 329 006f 41       		.byte	0x41
+ 330 0070 74000000 		.4byte	0x74
+ 331 0074 02       		.uleb128 0x2
+ 332 0075 04       		.byte	0x4
+ 333 0076 07       		.byte	0x7
+ 334 0077 53010000 		.4byte	.LASF9
+ 335 007b 02       		.uleb128 0x2
+ 336 007c 08       		.byte	0x8
+ 337 007d 05       		.byte	0x5
+ 338 007e A6020000 		.4byte	.LASF10
+ 339 0082 02       		.uleb128 0x2
+ 340 0083 08       		.byte	0x8
+ 341 0084 07       		.byte	0x7
+ 342 0085 40020000 		.4byte	.LASF11
+ 343 0089 04       		.uleb128 0x4
+ 344 008a 04       		.byte	0x4
+ 345 008b 05       		.byte	0x5
+ 346 008c 696E7400 		.ascii	"int\000"
+ 347 0090 02       		.uleb128 0x2
+ 348 0091 04       		.byte	0x4
+ 349 0092 07       		.byte	0x7
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 10
 
 
- 304 0053 6A010000 		.4byte	.LASF5
- 305 0057 03       		.uleb128 0x3
- 306 0058 3A000000 		.4byte	.LASF6
- 307 005c 02       		.byte	0x2
- 308 005d 3F       		.byte	0x3f
- 309 005e 62000000 		.4byte	0x62
- 310 0062 02       		.uleb128 0x2
- 311 0063 04       		.byte	0x4
- 312 0064 05       		.byte	0x5
- 313 0065 66030000 		.4byte	.LASF7
- 314 0069 03       		.uleb128 0x3
- 315 006a BF010000 		.4byte	.LASF8
- 316 006e 02       		.byte	0x2
- 317 006f 41       		.byte	0x41
- 318 0070 74000000 		.4byte	0x74
- 319 0074 02       		.uleb128 0x2
- 320 0075 04       		.byte	0x4
- 321 0076 07       		.byte	0x7
- 322 0077 58010000 		.4byte	.LASF9
- 323 007b 02       		.uleb128 0x2
- 324 007c 08       		.byte	0x8
- 325 007d 05       		.byte	0x5
- 326 007e AB020000 		.4byte	.LASF10
- 327 0082 02       		.uleb128 0x2
- 328 0083 08       		.byte	0x8
- 329 0084 07       		.byte	0x7
- 330 0085 45020000 		.4byte	.LASF11
- 331 0089 04       		.uleb128 0x4
- 332 008a 04       		.byte	0x4
- 333 008b 05       		.byte	0x5
- 334 008c 696E7400 		.ascii	"int\000"
- 335 0090 02       		.uleb128 0x2
- 336 0091 04       		.byte	0x4
- 337 0092 07       		.byte	0x7
- 338 0093 0C020000 		.4byte	.LASF12
- 339 0097 03       		.uleb128 0x3
- 340 0098 5C020000 		.4byte	.LASF13
- 341 009c 03       		.byte	0x3
- 342 009d 18       		.byte	0x18
- 343 009e 2C000000 		.4byte	0x2c
- 344 00a2 03       		.uleb128 0x3
- 345 00a3 42030000 		.4byte	.LASF14
- 346 00a7 03       		.byte	0x3
- 347 00a8 24       		.byte	0x24
- 348 00a9 45000000 		.4byte	0x45
- 349 00ad 03       		.uleb128 0x3
- 350 00ae 61000000 		.4byte	.LASF15
- 351 00b2 03       		.byte	0x3
- 352 00b3 2C       		.byte	0x2c
- 353 00b4 57000000 		.4byte	0x57
- 354 00b8 03       		.uleb128 0x3
- 355 00b9 5D030000 		.4byte	.LASF16
- 356 00bd 03       		.byte	0x3
- 357 00be 30       		.byte	0x30
- 358 00bf 69000000 		.4byte	0x69
- 359 00c3 05       		.uleb128 0x5
- 360 00c4 86000000 		.4byte	.LASF17
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 10
+ 350 0093 07020000 		.4byte	.LASF12
+ 351 0097 03       		.uleb128 0x3
+ 352 0098 57020000 		.4byte	.LASF13
+ 353 009c 03       		.byte	0x3
+ 354 009d 18       		.byte	0x18
+ 355 009e 2C000000 		.4byte	0x2c
+ 356 00a2 03       		.uleb128 0x3
+ 357 00a3 45030000 		.4byte	.LASF14
+ 358 00a7 03       		.byte	0x3
+ 359 00a8 24       		.byte	0x24
+ 360 00a9 45000000 		.4byte	0x45
+ 361 00ad 03       		.uleb128 0x3
+ 362 00ae 33030000 		.4byte	.LASF15
+ 363 00b2 03       		.byte	0x3
+ 364 00b3 2C       		.byte	0x2c
+ 365 00b4 57000000 		.4byte	0x57
+ 366 00b8 03       		.uleb128 0x3
+ 367 00b9 60030000 		.4byte	.LASF16
+ 368 00bd 03       		.byte	0x3
+ 369 00be 30       		.byte	0x30
+ 370 00bf 69000000 		.4byte	0x69
+ 371 00c3 05       		.uleb128 0x5
+ 372 00c4 90000000 		.4byte	.LASF17
+ 373 00c8 04       		.byte	0x4
+ 374 00c9 E801     		.2byte	0x1e8
+ 375 00cb 37000000 		.4byte	0x37
+ 376 00cf 05       		.uleb128 0x5
+ 377 00d0 B3010000 		.4byte	.LASF18
+ 378 00d4 04       		.byte	0x4
+ 379 00d5 E901     		.2byte	0x1e9
+ 380 00d7 50000000 		.4byte	0x50
+ 381 00db 02       		.uleb128 0x2
+ 382 00dc 04       		.byte	0x4
+ 383 00dd 04       		.byte	0x4
+ 384 00de 8A000000 		.4byte	.LASF19
+ 385 00e2 02       		.uleb128 0x2
+ 386 00e3 08       		.byte	0x8
+ 387 00e4 04       		.byte	0x4
+ 388 00e5 AC010000 		.4byte	.LASF20
+ 389 00e9 02       		.uleb128 0x2
+ 390 00ea 01       		.byte	0x1
+ 391 00eb 08       		.byte	0x8
+ 392 00ec C9020000 		.4byte	.LASF21
+ 393 00f0 02       		.uleb128 0x2
+ 394 00f1 08       		.byte	0x8
+ 395 00f2 04       		.byte	0x4
+ 396 00f3 7D020000 		.4byte	.LASF22
+ 397 00f7 02       		.uleb128 0x2
+ 398 00f8 04       		.byte	0x4
+ 399 00f9 07       		.byte	0x7
+ 400 00fa 89020000 		.4byte	.LASF23
+ 401 00fe 06       		.uleb128 0x6
+ 402 00ff B8000000 		.4byte	0xb8
+ 403 0103 06       		.uleb128 0x6
+ 404 0104 97000000 		.4byte	0x97
+ 405 0108 07       		.uleb128 0x7
+ 406 0109 EF010000 		.4byte	.LASF58
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 11
 
 
- 361 00c8 04       		.byte	0x4
- 362 00c9 E801     		.2byte	0x1e8
- 363 00cb 37000000 		.4byte	0x37
- 364 00cf 05       		.uleb128 0x5
- 365 00d0 B8010000 		.4byte	.LASF18
- 366 00d4 04       		.byte	0x4
- 367 00d5 E901     		.2byte	0x1e9
- 368 00d7 50000000 		.4byte	0x50
- 369 00db 02       		.uleb128 0x2
- 370 00dc 04       		.byte	0x4
- 371 00dd 04       		.byte	0x4
- 372 00de 80000000 		.4byte	.LASF19
- 373 00e2 02       		.uleb128 0x2
- 374 00e3 08       		.byte	0x8
- 375 00e4 04       		.byte	0x4
- 376 00e5 B1010000 		.4byte	.LASF20
- 377 00e9 02       		.uleb128 0x2
- 378 00ea 01       		.byte	0x1
- 379 00eb 08       		.byte	0x8
- 380 00ec CE020000 		.4byte	.LASF21
- 381 00f0 02       		.uleb128 0x2
- 382 00f1 08       		.byte	0x8
- 383 00f2 04       		.byte	0x4
- 384 00f3 82020000 		.4byte	.LASF22
- 385 00f7 02       		.uleb128 0x2
- 386 00f8 04       		.byte	0x4
- 387 00f9 07       		.byte	0x7
- 388 00fa 8E020000 		.4byte	.LASF23
- 389 00fe 06       		.uleb128 0x6
- 390 00ff B8000000 		.4byte	0xb8
- 391 0103 06       		.uleb128 0x6
- 392 0104 97000000 		.4byte	0x97
- 393 0108 07       		.uleb128 0x7
- 394 0109 F4010000 		.4byte	.LASF58
- 395 010d 01       		.byte	0x1
- 396 010e 16       		.byte	0x16
- 397 010f 89000000 		.4byte	0x89
- 398 0113 00000000 		.4byte	.LFB63
- 399 0117 04010000 		.4byte	.LFE63-.LFB63
- 400 011b 01       		.uleb128 0x1
- 401 011c 9C       		.byte	0x9c
- 402 011d 96020000 		.4byte	0x296
- 403 0121 08       		.uleb128 0x8
- 404 0122 14000000 		.4byte	.LBB2
- 405 0126 E2000000 		.4byte	.LBE2-.LBB2
- 406 012a 71020000 		.4byte	0x271
- 407 012e 09       		.uleb128 0x9
- 408 012f 4B030000 		.4byte	.LASF24
- 409 0133 01       		.byte	0x1
- 410 0134 26       		.byte	0x26
- 411 0135 A2000000 		.4byte	0xa2
- 412 0139 01       		.uleb128 0x1
- 413 013a 56       		.byte	0x56
- 414 013b 0A       		.uleb128 0xa
- 415 013c 6F030000 		.4byte	.LASF25
- 416 0140 01       		.byte	0x1
- 417 0141 29       		.byte	0x29
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 11
+ 407 010d 01       		.byte	0x1
+ 408 010e 16       		.byte	0x16
+ 409 010f 89000000 		.4byte	0x89
+ 410 0113 00000000 		.4byte	.LFB63
+ 411 0117 14010000 		.4byte	.LFE63-.LFB63
+ 412 011b 01       		.uleb128 0x1
+ 413 011c 9C       		.byte	0x9c
+ 414 011d 8B020000 		.4byte	0x28b
+ 415 0121 08       		.uleb128 0x8
+ 416 0122 14000000 		.4byte	.LBB2
+ 417 0126 F0000000 		.4byte	.LBE2-.LBB2
+ 418 012a 66020000 		.4byte	0x266
+ 419 012e 09       		.uleb128 0x9
+ 420 012f 4E030000 		.4byte	.LASF24
+ 421 0133 01       		.byte	0x1
+ 422 0134 27       		.byte	0x27
+ 423 0135 A2000000 		.4byte	0xa2
+ 424 0139 01       		.uleb128 0x1
+ 425 013a 56       		.byte	0x56
+ 426 013b 0A       		.uleb128 0xa
+ 427 013c 72030000 		.4byte	.LASF25
+ 428 0140 01       		.byte	0x1
+ 429 0141 2A       		.byte	0x2a
+ 430 0142 97000000 		.4byte	0x97
+ 431 0146 00000000 		.4byte	.LLST0
+ 432 014a 0A       		.uleb128 0xa
+ 433 014b A8030000 		.4byte	.LASF26
+ 434 014f 01       		.byte	0x1
+ 435 0150 2B       		.byte	0x2b
+ 436 0151 97000000 		.4byte	0x97
+ 437 0155 4B000000 		.4byte	.LLST1
+ 438 0159 0A       		.uleb128 0xa
+ 439 015a D4010000 		.4byte	.LASF27
+ 440 015e 01       		.byte	0x1
+ 441 015f 2C       		.byte	0x2c
+ 442 0160 97000000 		.4byte	0x97
+ 443 0164 6E000000 		.4byte	.LLST2
+ 444 0168 08       		.uleb128 0x8
+ 445 0169 84000000 		.4byte	.LBB3
+ 446 016d 78000000 		.4byte	.LBE3-.LBB3
+ 447 0171 F0010000 		.4byte	0x1f0
+ 448 0175 0A       		.uleb128 0xa
+ 449 0176 0A000000 		.4byte	.LASF28
+ 450 017a 01       		.byte	0x1
+ 451 017b 57       		.byte	0x57
+ 452 017c C3000000 		.4byte	0xc3
+ 453 0180 8D000000 		.4byte	.LLST3
+ 454 0184 0A       		.uleb128 0xa
+ 455 0185 96000000 		.4byte	.LASF29
+ 456 0189 01       		.byte	0x1
+ 457 018a 58       		.byte	0x58
+ 458 018b C3000000 		.4byte	0xc3
+ 459 018f A0000000 		.4byte	.LLST4
+ 460 0193 0B       		.uleb128 0xb
+ 461 0194 88000000 		.4byte	.LVL20
+ 462 0198 F1020000 		.4byte	0x2f1
+ 463 019c 0B       		.uleb128 0xb
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 12
 
 
- 418 0142 97000000 		.4byte	0x97
- 419 0146 00000000 		.4byte	.LLST0
- 420 014a 0A       		.uleb128 0xa
- 421 014b A5030000 		.4byte	.LASF26
- 422 014f 01       		.byte	0x1
- 423 0150 2A       		.byte	0x2a
- 424 0151 97000000 		.4byte	0x97
- 425 0155 2A000000 		.4byte	.LLST1
- 426 0159 0A       		.uleb128 0xa
- 427 015a D9010000 		.4byte	.LASF27
- 428 015e 01       		.byte	0x1
- 429 015f 2B       		.byte	0x2b
- 430 0160 97000000 		.4byte	0x97
- 431 0164 4D000000 		.4byte	.LLST2
- 432 0168 08       		.uleb128 0x8
- 433 0169 98000000 		.4byte	.LBB3
- 434 016d 3E000000 		.4byte	.LBE3-.LBB3
- 435 0171 C1010000 		.4byte	0x1c1
- 436 0175 0A       		.uleb128 0xa
- 437 0176 0A000000 		.4byte	.LASF28
- 438 017a 01       		.byte	0x1
- 439 017b 54       		.byte	0x54
- 440 017c C3000000 		.4byte	0xc3
- 441 0180 6C000000 		.4byte	.LLST3
- 442 0184 0A       		.uleb128 0xa
- 443 0185 8C000000 		.4byte	.LASF29
- 444 0189 01       		.byte	0x1
- 445 018a 55       		.byte	0x55
- 446 018b C3000000 		.4byte	0xc3
- 447 018f 7F000000 		.4byte	.LLST4
- 448 0193 0B       		.uleb128 0xb
- 449 0194 9C000000 		.4byte	.LVL21
- 450 0198 FC020000 		.4byte	0x2fc
- 451 019c 0B       		.uleb128 0xb
- 452 019d A0000000 		.4byte	.LVL22
- 453 01a1 07030000 		.4byte	0x307
- 454 01a5 0B       		.uleb128 0xb
- 455 01a6 A6000000 		.4byte	.LVL24
- 456 01aa 12030000 		.4byte	0x312
- 457 01ae 0B       		.uleb128 0xb
- 458 01af BE000000 		.4byte	.LVL27
- 459 01b3 07030000 		.4byte	0x307
- 460 01b7 0B       		.uleb128 0xb
- 461 01b8 C4000000 		.4byte	.LVL28
- 462 01bc 12030000 		.4byte	0x312
- 463 01c0 00       		.byte	0
- 464 01c1 0B       		.uleb128 0xb
- 465 01c2 18000000 		.4byte	.LVL4
- 466 01c6 1D030000 		.4byte	0x31d
- 467 01ca 0B       		.uleb128 0xb
- 468 01cb 20000000 		.4byte	.LVL5
- 469 01cf 28030000 		.4byte	0x328
- 470 01d3 0B       		.uleb128 0xb
- 471 01d4 24000000 		.4byte	.LVL6
- 472 01d8 33030000 		.4byte	0x333
- 473 01dc 0B       		.uleb128 0xb
- 474 01dd 2C000000 		.4byte	.LVL8
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 12
+ 464 019d 8C000000 		.4byte	.LVL21
+ 465 01a1 FC020000 		.4byte	0x2fc
+ 466 01a5 0B       		.uleb128 0xb
+ 467 01a6 92000000 		.4byte	.LVL23
+ 468 01aa 07030000 		.4byte	0x307
+ 469 01ae 0B       		.uleb128 0xb
+ 470 01af AA000000 		.4byte	.LVL26
+ 471 01b3 FC020000 		.4byte	0x2fc
+ 472 01b7 0B       		.uleb128 0xb
+ 473 01b8 B0000000 		.4byte	.LVL27
+ 474 01bc 07030000 		.4byte	0x307
+ 475 01c0 0C       		.uleb128 0xc
+ 476 01c1 CC000000 		.4byte	.LVL28
+ 477 01c5 12030000 		.4byte	0x312
+ 478 01c9 DD010000 		.4byte	0x1dd
+ 479 01cd 0D       		.uleb128 0xd
+ 480 01ce 01       		.uleb128 0x1
+ 481 01cf 50       		.byte	0x50
+ 482 01d0 01       		.uleb128 0x1
+ 483 01d1 32       		.byte	0x32
+ 484 01d2 0D       		.uleb128 0xd
+ 485 01d3 01       		.uleb128 0x1
+ 486 01d4 51       		.byte	0x51
+ 487 01d5 01       		.uleb128 0x1
+ 488 01d6 34       		.byte	0x34
+ 489 01d7 0D       		.uleb128 0xd
+ 490 01d8 01       		.uleb128 0x1
+ 491 01d9 52       		.byte	0x52
+ 492 01da 01       		.uleb128 0x1
+ 493 01db 36       		.byte	0x36
+ 494 01dc 00       		.byte	0
+ 495 01dd 0B       		.uleb128 0xb
+ 496 01de D0000000 		.4byte	.LVL29
+ 497 01e2 1D030000 		.4byte	0x31d
+ 498 01e6 0B       		.uleb128 0xb
+ 499 01e7 F0000000 		.4byte	.LVL30
+ 500 01eb 28030000 		.4byte	0x328
+ 501 01ef 00       		.byte	0
+ 502 01f0 0B       		.uleb128 0xb
+ 503 01f1 18000000 		.4byte	.LVL4
+ 504 01f5 33030000 		.4byte	0x333
+ 505 01f9 0B       		.uleb128 0xb
+ 506 01fa 20000000 		.4byte	.LVL5
+ 507 01fe 3E030000 		.4byte	0x33e
+ 508 0202 0B       		.uleb128 0xb
+ 509 0203 24000000 		.4byte	.LVL6
+ 510 0207 49030000 		.4byte	0x349
+ 511 020b 0B       		.uleb128 0xb
+ 512 020c 2C000000 		.4byte	.LVL8
+ 513 0210 54030000 		.4byte	0x354
+ 514 0214 0B       		.uleb128 0xb
+ 515 0215 38000000 		.4byte	.LVL10
+ 516 0219 5F030000 		.4byte	0x35f
+ 517 021d 0B       		.uleb128 0xb
+ 518 021e 44000000 		.4byte	.LVL13
+ 519 0222 6A030000 		.4byte	0x36a
+ 520 0226 0C       		.uleb128 0xc
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 13
 
 
- 475 01e1 3E030000 		.4byte	0x33e
- 476 01e5 0B       		.uleb128 0xb
- 477 01e6 38000000 		.4byte	.LVL10
- 478 01ea 49030000 		.4byte	0x349
- 479 01ee 0B       		.uleb128 0xb
- 480 01ef 44000000 		.4byte	.LVL13
- 481 01f3 54030000 		.4byte	0x354
- 482 01f7 0C       		.uleb128 0xc
- 483 01f8 5A000000 		.4byte	.LVL16
- 484 01fc 5F030000 		.4byte	0x35f
- 485 0200 19020000 		.4byte	0x219
- 486 0204 0D       		.uleb128 0xd
- 487 0205 01       		.uleb128 0x1
- 488 0206 50       		.byte	0x50
- 489 0207 04       		.uleb128 0x4
- 490 0208 76       		.byte	0x76
- 491 0209 00       		.sleb128 0
- 492 020a 38       		.byte	0x38
- 493 020b 25       		.byte	0x25
- 494 020c 0D       		.uleb128 0xd
- 495 020d 01       		.uleb128 0x1
- 496 020e 51       		.byte	0x51
- 497 020f 02       		.uleb128 0x2
- 498 0210 75       		.byte	0x75
- 499 0211 00       		.sleb128 0
- 500 0212 0D       		.uleb128 0xd
- 501 0213 01       		.uleb128 0x1
- 502 0214 52       		.byte	0x52
- 503 0215 02       		.uleb128 0x2
- 504 0216 74       		.byte	0x74
- 505 0217 00       		.sleb128 0
- 506 0218 00       		.byte	0
- 507 0219 0B       		.uleb128 0xb
- 508 021a 5E000000 		.4byte	.LVL17
- 509 021e 07030000 		.4byte	0x307
- 510 0222 0C       		.uleb128 0xc
- 511 0223 66000000 		.4byte	.LVL18
- 512 0227 5F030000 		.4byte	0x35f
- 513 022b 3B020000 		.4byte	0x23b
- 514 022f 0D       		.uleb128 0xd
- 515 0230 01       		.uleb128 0x1
- 516 0231 51       		.byte	0x51
- 517 0232 01       		.uleb128 0x1
- 518 0233 31       		.byte	0x31
- 519 0234 0D       		.uleb128 0xd
- 520 0235 01       		.uleb128 0x1
- 521 0236 52       		.byte	0x52
- 522 0237 02       		.uleb128 0x2
- 523 0238 74       		.byte	0x74
- 524 0239 00       		.sleb128 0
- 525 023a 00       		.byte	0
- 526 023b 0B       		.uleb128 0xb
- 527 023c 76000000 		.4byte	.LVL19
- 528 0240 6A030000 		.4byte	0x36a
- 529 0244 0B       		.uleb128 0xb
- 530 0245 7A000000 		.4byte	.LVL20
- 531 0249 75030000 		.4byte	0x375
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 13
+ 521 0227 58000000 		.4byte	.LVL17
+ 522 022b 75030000 		.4byte	0x375
+ 523 022f 42020000 		.4byte	0x242
+ 524 0233 0D       		.uleb128 0xd
+ 525 0234 01       		.uleb128 0x1
+ 526 0235 50       		.byte	0x50
+ 527 0236 04       		.uleb128 0x4
+ 528 0237 76       		.byte	0x76
+ 529 0238 00       		.sleb128 0
+ 530 0239 38       		.byte	0x38
+ 531 023a 25       		.byte	0x25
+ 532 023b 0D       		.uleb128 0xd
+ 533 023c 01       		.uleb128 0x1
+ 534 023d 51       		.byte	0x51
+ 535 023e 02       		.uleb128 0x2
+ 536 023f 75       		.byte	0x75
+ 537 0240 00       		.sleb128 0
+ 538 0241 00       		.byte	0
+ 539 0242 0B       		.uleb128 0xb
+ 540 0243 62000000 		.4byte	.LVL18
+ 541 0247 80030000 		.4byte	0x380
+ 542 024b 0B       		.uleb128 0xb
+ 543 024c 66000000 		.4byte	.LVL19
+ 544 0250 1D030000 		.4byte	0x31d
+ 545 0254 0E       		.uleb128 0xe
+ 546 0255 04010000 		.4byte	.LVL31
+ 547 0259 8B030000 		.4byte	0x38b
+ 548 025d 0D       		.uleb128 0xd
+ 549 025e 01       		.uleb128 0x1
+ 550 025f 50       		.byte	0x50
+ 551 0260 03       		.uleb128 0x3
+ 552 0261 0A       		.byte	0xa
+ 553 0262 E803     		.2byte	0x3e8
+ 554 0264 00       		.byte	0
+ 555 0265 00       		.byte	0
+ 556 0266 0B       		.uleb128 0xb
+ 557 0267 08000000 		.4byte	.LVL0
+ 558 026b 96030000 		.4byte	0x396
+ 559 026f 0B       		.uleb128 0xb
+ 560 0270 0C000000 		.4byte	.LVL1
+ 561 0274 A1030000 		.4byte	0x3a1
+ 562 0278 0B       		.uleb128 0xb
+ 563 0279 10000000 		.4byte	.LVL2
+ 564 027d AC030000 		.4byte	0x3ac
+ 565 0281 0B       		.uleb128 0xb
+ 566 0282 14000000 		.4byte	.LVL3
+ 567 0286 B7030000 		.4byte	0x3b7
+ 568 028a 00       		.byte	0
+ 569 028b 0F       		.uleb128 0xf
+ 570 028c E2010000 		.4byte	.LASF30
+ 571 0290 05       		.byte	0x5
+ 572 0291 1207     		.2byte	0x712
+ 573 0293 97020000 		.4byte	0x297
+ 574 0297 06       		.uleb128 0x6
+ 575 0298 AD000000 		.4byte	0xad
+ 576 029c 10       		.uleb128 0x10
+ 577 029d 18000000 		.4byte	.LASF31
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 14
 
 
- 532 024d 0B       		.uleb128 0xb
- 533 024e DE000000 		.4byte	.LVL29
- 534 0252 80030000 		.4byte	0x380
- 535 0256 0B       		.uleb128 0xb
- 536 0257 EE000000 		.4byte	.LVL30
- 537 025b 8B030000 		.4byte	0x38b
- 538 025f 0E       		.uleb128 0xe
- 539 0260 F6000000 		.4byte	.LVL31
- 540 0264 96030000 		.4byte	0x396
- 541 0268 0D       		.uleb128 0xd
- 542 0269 01       		.uleb128 0x1
- 543 026a 50       		.byte	0x50
- 544 026b 03       		.uleb128 0x3
- 545 026c 0A       		.byte	0xa
- 546 026d E803     		.2byte	0x3e8
- 547 026f 00       		.byte	0
- 548 0270 00       		.byte	0
- 549 0271 0B       		.uleb128 0xb
- 550 0272 08000000 		.4byte	.LVL0
- 551 0276 A1030000 		.4byte	0x3a1
- 552 027a 0B       		.uleb128 0xb
- 553 027b 0C000000 		.4byte	.LVL1
- 554 027f AC030000 		.4byte	0x3ac
- 555 0283 0B       		.uleb128 0xb
- 556 0284 10000000 		.4byte	.LVL2
- 557 0288 B7030000 		.4byte	0x3b7
- 558 028c 0B       		.uleb128 0xb
- 559 028d 14000000 		.4byte	.LVL3
- 560 0291 C2030000 		.4byte	0x3c2
- 561 0295 00       		.byte	0
- 562 0296 0F       		.uleb128 0xf
- 563 0297 E7010000 		.4byte	.LASF30
- 564 029b 05       		.byte	0x5
- 565 029c 1207     		.2byte	0x712
- 566 029e A2020000 		.4byte	0x2a2
- 567 02a2 06       		.uleb128 0x6
- 568 02a3 AD000000 		.4byte	0xad
- 569 02a7 10       		.uleb128 0x10
- 570 02a8 18000000 		.4byte	.LASF31
- 571 02ac 01       		.byte	0x1
- 572 02ad 11       		.byte	0x11
- 573 02ae FE000000 		.4byte	0xfe
- 574 02b2 05       		.uleb128 0x5
- 575 02b3 03       		.byte	0x3
- 576 02b4 00000000 		.4byte	state
- 577 02b8 10       		.uleb128 0x10
- 578 02b9 79000000 		.4byte	.LASF32
- 579 02bd 01       		.byte	0x1
- 580 02be 12       		.byte	0x12
- 581 02bf 03010000 		.4byte	0x103
- 582 02c3 05       		.uleb128 0x5
- 583 02c4 03       		.byte	0x3
- 584 02c5 00000000 		.4byte	e_stop
- 585 02c9 10       		.uleb128 0x10
- 586 02ca 8E010000 		.4byte	.LASF33
- 587 02ce 01       		.byte	0x1
- 588 02cf 13       		.byte	0x13
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 14
+ 578 02a1 01       		.byte	0x1
+ 579 02a2 11       		.byte	0x11
+ 580 02a3 FE000000 		.4byte	0xfe
+ 581 02a7 05       		.uleb128 0x5
+ 582 02a8 03       		.byte	0x3
+ 583 02a9 00000000 		.4byte	state
+ 584 02ad 10       		.uleb128 0x10
+ 585 02ae 83000000 		.4byte	.LASF32
+ 586 02b2 01       		.byte	0x1
+ 587 02b3 12       		.byte	0x12
+ 588 02b4 03010000 		.4byte	0x103
+ 589 02b8 05       		.uleb128 0x5
+ 590 02b9 03       		.byte	0x3
+ 591 02ba 00000000 		.4byte	e_stop
+ 592 02be 10       		.uleb128 0x10
+ 593 02bf 89010000 		.4byte	.LASF33
+ 594 02c3 01       		.byte	0x1
+ 595 02c4 13       		.byte	0x13
+ 596 02c5 CF000000 		.4byte	0xcf
+ 597 02c9 05       		.uleb128 0x5
+ 598 02ca 03       		.byte	0x3
+ 599 02cb 00000000 		.4byte	throttle_total
+ 600 02cf 10       		.uleb128 0x10
+ 601 02d0 5F020000 		.4byte	.LASF34
+ 602 02d4 01       		.byte	0x1
+ 603 02d5 14       		.byte	0x14
+ 604 02d6 C3000000 		.4byte	0xc3
+ 605 02da 05       		.uleb128 0x5
+ 606 02db 03       		.byte	0x3
+ 607 02dc 00000000 		.4byte	throttle_upper
+ 608 02e0 10       		.uleb128 0x10
+ 609 02e1 6E020000 		.4byte	.LASF35
+ 610 02e5 01       		.byte	0x1
+ 611 02e6 15       		.byte	0x15
+ 612 02e7 C3000000 		.4byte	0xc3
+ 613 02eb 05       		.uleb128 0x5
+ 614 02ec 03       		.byte	0x3
+ 615 02ed 00000000 		.4byte	throttle_lower
+ 616 02f1 11       		.uleb128 0x11
+ 617 02f2 B4020000 		.4byte	.LASF36
+ 618 02f6 B4020000 		.4byte	.LASF36
+ 619 02fa 06       		.byte	0x6
+ 620 02fb 47       		.byte	0x47
+ 621 02fc 11       		.uleb128 0x11
+ 622 02fd 4F000000 		.4byte	.LASF37
+ 623 0301 4F000000 		.4byte	.LASF37
+ 624 0305 06       		.byte	0x6
+ 625 0306 35       		.byte	0x35
+ 626 0307 11       		.uleb128 0x11
+ 627 0308 CE020000 		.4byte	.LASF38
+ 628 030c CE020000 		.4byte	.LASF38
+ 629 0310 06       		.byte	0x6
+ 630 0311 36       		.byte	0x36
+ 631 0312 11       		.uleb128 0x11
+ 632 0313 1E000000 		.4byte	.LASF39
+ 633 0317 1E000000 		.4byte	.LASF39
+ 634 031b 06       		.byte	0x6
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 15
 
 
- 589 02d0 CF000000 		.4byte	0xcf
- 590 02d4 05       		.uleb128 0x5
- 591 02d5 03       		.byte	0x3
- 592 02d6 00000000 		.4byte	throttle_total
- 593 02da 10       		.uleb128 0x10
- 594 02db 64020000 		.4byte	.LASF34
- 595 02df 01       		.byte	0x1
- 596 02e0 14       		.byte	0x14
- 597 02e1 C3000000 		.4byte	0xc3
- 598 02e5 05       		.uleb128 0x5
- 599 02e6 03       		.byte	0x3
- 600 02e7 00000000 		.4byte	throttle_upper
- 601 02eb 10       		.uleb128 0x10
- 602 02ec 73020000 		.4byte	.LASF35
- 603 02f0 01       		.byte	0x1
- 604 02f1 15       		.byte	0x15
- 605 02f2 C3000000 		.4byte	0xc3
- 606 02f6 05       		.uleb128 0x5
- 607 02f7 03       		.byte	0x3
- 608 02f8 00000000 		.4byte	throttle_lower
- 609 02fc 11       		.uleb128 0x11
- 610 02fd B9020000 		.4byte	.LASF36
- 611 0301 B9020000 		.4byte	.LASF36
- 612 0305 06       		.byte	0x6
- 613 0306 47       		.byte	0x47
- 614 0307 11       		.uleb128 0x11
- 615 0308 4F000000 		.4byte	.LASF37
- 616 030c 4F000000 		.4byte	.LASF37
- 617 0310 06       		.byte	0x6
- 618 0311 35       		.byte	0x35
- 619 0312 11       		.uleb128 0x11
- 620 0313 D3020000 		.4byte	.LASF38
- 621 0317 D3020000 		.4byte	.LASF38
- 622 031b 06       		.byte	0x6
- 623 031c 36       		.byte	0x36
- 624 031d 11       		.uleb128 0x11
- 625 031e 44000000 		.4byte	.LASF39
- 626 0322 44000000 		.4byte	.LASF39
- 627 0326 07       		.byte	0x7
- 628 0327 29       		.byte	0x29
- 629 0328 11       		.uleb128 0x11
- 630 0329 99000000 		.4byte	.LASF40
- 631 032d 99000000 		.4byte	.LASF40
- 632 0331 08       		.byte	0x8
- 633 0332 56       		.byte	0x56
- 634 0333 11       		.uleb128 0x11
- 635 0334 28020000 		.4byte	.LASF41
- 636 0338 28020000 		.4byte	.LASF41
- 637 033c 08       		.byte	0x8
- 638 033d 47       		.byte	0x47
- 639 033e 11       		.uleb128 0x11
- 640 033f 19020000 		.4byte	.LASF42
- 641 0343 19020000 		.4byte	.LASF42
- 642 0347 09       		.byte	0x9
- 643 0348 29       		.byte	0x29
- 644 0349 11       		.uleb128 0x11
- 645 034a CA010000 		.4byte	.LASF43
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 15
+ 635 031c 2D       		.byte	0x2d
+ 636 031d 11       		.uleb128 0x11
+ 637 031e 78010000 		.4byte	.LASF40
+ 638 0322 78010000 		.4byte	.LASF40
+ 639 0326 06       		.byte	0x6
+ 640 0327 31       		.byte	0x31
+ 641 0328 11       		.uleb128 0x11
+ 642 0329 61000000 		.4byte	.LASF41
+ 643 032d 61000000 		.4byte	.LASF41
+ 644 0331 06       		.byte	0x6
+ 645 0332 32       		.byte	0x32
+ 646 0333 11       		.uleb128 0x11
+ 647 0334 44000000 		.4byte	.LASF42
+ 648 0338 44000000 		.4byte	.LASF42
+ 649 033c 07       		.byte	0x7
+ 650 033d 29       		.byte	0x29
+ 651 033e 11       		.uleb128 0x11
+ 652 033f A3000000 		.4byte	.LASF43
+ 653 0343 A3000000 		.4byte	.LASF43
+ 654 0347 08       		.byte	0x8
+ 655 0348 56       		.byte	0x56
+ 656 0349 11       		.uleb128 0x11
+ 657 034a 23020000 		.4byte	.LASF44
+ 658 034e 23020000 		.4byte	.LASF44
+ 659 0352 08       		.byte	0x8
+ 660 0353 47       		.byte	0x47
+ 661 0354 11       		.uleb128 0x11
+ 662 0355 14020000 		.4byte	.LASF45
+ 663 0359 14020000 		.4byte	.LASF45
+ 664 035d 09       		.byte	0x9
+ 665 035e 29       		.byte	0x29
+ 666 035f 11       		.uleb128 0x11
+ 667 0360 C5010000 		.4byte	.LASF46
+ 668 0364 C5010000 		.4byte	.LASF46
+ 669 0368 0A       		.byte	0xa
+ 670 0369 29       		.byte	0x29
+ 671 036a 11       		.uleb128 0x11
+ 672 036b 8D030000 		.4byte	.LASF47
+ 673 036f 8D030000 		.4byte	.LASF47
+ 674 0373 0B       		.byte	0xb
+ 675 0374 29       		.byte	0x29
+ 676 0375 11       		.uleb128 0x11
+ 677 0376 9B030000 		.4byte	.LASF48
+ 678 037a 9B030000 		.4byte	.LASF48
+ 679 037e 06       		.byte	0x6
+ 680 037f 4C       		.byte	0x4c
+ 681 0380 11       		.uleb128 0x11
+ 682 0381 73000000 		.4byte	.LASF49
+ 683 0385 73000000 		.4byte	.LASF49
+ 684 0389 06       		.byte	0x6
+ 685 038a 48       		.byte	0x48
+ 686 038b 11       		.uleb128 0x11
+ 687 038c B6030000 		.4byte	.LASF50
+ 688 0390 B6030000 		.4byte	.LASF50
+ 689 0394 0C       		.byte	0xc
+ 690 0395 76       		.byte	0x76
+ 691 0396 11       		.uleb128 0x11
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 16
 
 
- 646 034e CA010000 		.4byte	.LASF43
- 647 0352 0A       		.byte	0xa
- 648 0353 29       		.byte	0x29
- 649 0354 11       		.uleb128 0x11
- 650 0355 8A030000 		.4byte	.LASF44
- 651 0359 8A030000 		.4byte	.LASF44
- 652 035d 0B       		.byte	0xb
- 653 035e 29       		.byte	0x29
- 654 035f 11       		.uleb128 0x11
- 655 0360 98030000 		.4byte	.LASF45
- 656 0364 98030000 		.4byte	.LASF45
- 657 0368 06       		.byte	0x6
- 658 0369 4C       		.byte	0x4c
- 659 036a 11       		.uleb128 0x11
- 660 036b 69000000 		.4byte	.LASF46
- 661 036f 69000000 		.4byte	.LASF46
- 662 0373 06       		.byte	0x6
- 663 0374 48       		.byte	0x48
- 664 0375 11       		.uleb128 0x11
- 665 0376 7D010000 		.4byte	.LASF47
- 666 037a 7D010000 		.4byte	.LASF47
- 667 037e 06       		.byte	0x6
- 668 037f 31       		.byte	0x31
- 669 0380 11       		.uleb128 0x11
- 670 0381 49010000 		.4byte	.LASF48
- 671 0385 49010000 		.4byte	.LASF48
- 672 0389 06       		.byte	0x6
- 673 038a 2E       		.byte	0x2e
- 674 038b 11       		.uleb128 0x11
- 675 038c 1E000000 		.4byte	.LASF49
- 676 0390 1E000000 		.4byte	.LASF49
- 677 0394 06       		.byte	0x6
- 678 0395 2D       		.byte	0x2d
- 679 0396 11       		.uleb128 0x11
- 680 0397 B3030000 		.4byte	.LASF50
- 681 039b B3030000 		.4byte	.LASF50
- 682 039f 0C       		.byte	0xc
- 683 03a0 76       		.byte	0x76
- 684 03a1 11       		.uleb128 0x11
- 685 03a2 97020000 		.4byte	.LASF51
- 686 03a6 97020000 		.4byte	.LASF51
- 687 03aa 0D       		.byte	0xd
- 688 03ab C8       		.byte	0xc8
- 689 03ac 11       		.uleb128 0x11
- 690 03ad 9D010000 		.4byte	.LASF52
- 691 03b1 9D010000 		.4byte	.LASF52
- 692 03b5 0D       		.byte	0xd
- 693 03b6 C4       		.byte	0xc4
- 694 03b7 11       		.uleb128 0x11
- 695 03b8 53030000 		.4byte	.LASF53
- 696 03bc 53030000 		.4byte	.LASF53
- 697 03c0 0D       		.byte	0xd
- 698 03c1 C5       		.byte	0xc5
- 699 03c2 11       		.uleb128 0x11
- 700 03c3 F9010000 		.4byte	.LASF54
- 701 03c7 F9010000 		.4byte	.LASF54
- 702 03cb 08       		.byte	0x8
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 16
+ 692 0397 92020000 		.4byte	.LASF51
+ 693 039b 92020000 		.4byte	.LASF51
+ 694 039f 0D       		.byte	0xd
+ 695 03a0 C8       		.byte	0xc8
+ 696 03a1 11       		.uleb128 0x11
+ 697 03a2 98010000 		.4byte	.LASF52
+ 698 03a6 98010000 		.4byte	.LASF52
+ 699 03aa 0D       		.byte	0xd
+ 700 03ab C4       		.byte	0xc4
+ 701 03ac 11       		.uleb128 0x11
+ 702 03ad 56030000 		.4byte	.LASF53
+ 703 03b1 56030000 		.4byte	.LASF53
+ 704 03b5 0D       		.byte	0xd
+ 705 03b6 C5       		.byte	0xc5
+ 706 03b7 11       		.uleb128 0x11
+ 707 03b8 F4010000 		.4byte	.LASF54
+ 708 03bc F4010000 		.4byte	.LASF54
+ 709 03c0 08       		.byte	0x8
+ 710 03c1 3A       		.byte	0x3a
+ 711 03c2 00       		.byte	0
+ 712              		.section	.debug_abbrev,"",%progbits
+ 713              	.Ldebug_abbrev0:
+ 714 0000 01       		.uleb128 0x1
+ 715 0001 11       		.uleb128 0x11
+ 716 0002 01       		.byte	0x1
+ 717 0003 25       		.uleb128 0x25
+ 718 0004 0E       		.uleb128 0xe
+ 719 0005 13       		.uleb128 0x13
+ 720 0006 0B       		.uleb128 0xb
+ 721 0007 03       		.uleb128 0x3
+ 722 0008 0E       		.uleb128 0xe
+ 723 0009 1B       		.uleb128 0x1b
+ 724 000a 0E       		.uleb128 0xe
+ 725 000b 55       		.uleb128 0x55
+ 726 000c 17       		.uleb128 0x17
+ 727 000d 11       		.uleb128 0x11
+ 728 000e 01       		.uleb128 0x1
+ 729 000f 10       		.uleb128 0x10
+ 730 0010 17       		.uleb128 0x17
+ 731 0011 00       		.byte	0
+ 732 0012 00       		.byte	0
+ 733 0013 02       		.uleb128 0x2
+ 734 0014 24       		.uleb128 0x24
+ 735 0015 00       		.byte	0
+ 736 0016 0B       		.uleb128 0xb
+ 737 0017 0B       		.uleb128 0xb
+ 738 0018 3E       		.uleb128 0x3e
+ 739 0019 0B       		.uleb128 0xb
+ 740 001a 03       		.uleb128 0x3
+ 741 001b 0E       		.uleb128 0xe
+ 742 001c 00       		.byte	0
+ 743 001d 00       		.byte	0
+ 744 001e 03       		.uleb128 0x3
+ 745 001f 16       		.uleb128 0x16
+ 746 0020 00       		.byte	0
+ 747 0021 03       		.uleb128 0x3
+ 748 0022 0E       		.uleb128 0xe
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 17
 
 
- 703 03cc 3A       		.byte	0x3a
- 704 03cd 00       		.byte	0
- 705              		.section	.debug_abbrev,"",%progbits
- 706              	.Ldebug_abbrev0:
- 707 0000 01       		.uleb128 0x1
- 708 0001 11       		.uleb128 0x11
- 709 0002 01       		.byte	0x1
- 710 0003 25       		.uleb128 0x25
- 711 0004 0E       		.uleb128 0xe
- 712 0005 13       		.uleb128 0x13
- 713 0006 0B       		.uleb128 0xb
- 714 0007 03       		.uleb128 0x3
- 715 0008 0E       		.uleb128 0xe
- 716 0009 1B       		.uleb128 0x1b
- 717 000a 0E       		.uleb128 0xe
- 718 000b 55       		.uleb128 0x55
- 719 000c 17       		.uleb128 0x17
- 720 000d 11       		.uleb128 0x11
- 721 000e 01       		.uleb128 0x1
- 722 000f 10       		.uleb128 0x10
- 723 0010 17       		.uleb128 0x17
- 724 0011 00       		.byte	0
- 725 0012 00       		.byte	0
- 726 0013 02       		.uleb128 0x2
- 727 0014 24       		.uleb128 0x24
- 728 0015 00       		.byte	0
- 729 0016 0B       		.uleb128 0xb
- 730 0017 0B       		.uleb128 0xb
- 731 0018 3E       		.uleb128 0x3e
- 732 0019 0B       		.uleb128 0xb
- 733 001a 03       		.uleb128 0x3
- 734 001b 0E       		.uleb128 0xe
- 735 001c 00       		.byte	0
- 736 001d 00       		.byte	0
- 737 001e 03       		.uleb128 0x3
- 738 001f 16       		.uleb128 0x16
- 739 0020 00       		.byte	0
- 740 0021 03       		.uleb128 0x3
- 741 0022 0E       		.uleb128 0xe
- 742 0023 3A       		.uleb128 0x3a
- 743 0024 0B       		.uleb128 0xb
- 744 0025 3B       		.uleb128 0x3b
- 745 0026 0B       		.uleb128 0xb
- 746 0027 49       		.uleb128 0x49
- 747 0028 13       		.uleb128 0x13
- 748 0029 00       		.byte	0
- 749 002a 00       		.byte	0
- 750 002b 04       		.uleb128 0x4
- 751 002c 24       		.uleb128 0x24
- 752 002d 00       		.byte	0
- 753 002e 0B       		.uleb128 0xb
- 754 002f 0B       		.uleb128 0xb
- 755 0030 3E       		.uleb128 0x3e
- 756 0031 0B       		.uleb128 0xb
- 757 0032 03       		.uleb128 0x3
- 758 0033 08       		.uleb128 0x8
- 759 0034 00       		.byte	0
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 17
+ 749 0023 3A       		.uleb128 0x3a
+ 750 0024 0B       		.uleb128 0xb
+ 751 0025 3B       		.uleb128 0x3b
+ 752 0026 0B       		.uleb128 0xb
+ 753 0027 49       		.uleb128 0x49
+ 754 0028 13       		.uleb128 0x13
+ 755 0029 00       		.byte	0
+ 756 002a 00       		.byte	0
+ 757 002b 04       		.uleb128 0x4
+ 758 002c 24       		.uleb128 0x24
+ 759 002d 00       		.byte	0
+ 760 002e 0B       		.uleb128 0xb
+ 761 002f 0B       		.uleb128 0xb
+ 762 0030 3E       		.uleb128 0x3e
+ 763 0031 0B       		.uleb128 0xb
+ 764 0032 03       		.uleb128 0x3
+ 765 0033 08       		.uleb128 0x8
+ 766 0034 00       		.byte	0
+ 767 0035 00       		.byte	0
+ 768 0036 05       		.uleb128 0x5
+ 769 0037 16       		.uleb128 0x16
+ 770 0038 00       		.byte	0
+ 771 0039 03       		.uleb128 0x3
+ 772 003a 0E       		.uleb128 0xe
+ 773 003b 3A       		.uleb128 0x3a
+ 774 003c 0B       		.uleb128 0xb
+ 775 003d 3B       		.uleb128 0x3b
+ 776 003e 05       		.uleb128 0x5
+ 777 003f 49       		.uleb128 0x49
+ 778 0040 13       		.uleb128 0x13
+ 779 0041 00       		.byte	0
+ 780 0042 00       		.byte	0
+ 781 0043 06       		.uleb128 0x6
+ 782 0044 35       		.uleb128 0x35
+ 783 0045 00       		.byte	0
+ 784 0046 49       		.uleb128 0x49
+ 785 0047 13       		.uleb128 0x13
+ 786 0048 00       		.byte	0
+ 787 0049 00       		.byte	0
+ 788 004a 07       		.uleb128 0x7
+ 789 004b 2E       		.uleb128 0x2e
+ 790 004c 01       		.byte	0x1
+ 791 004d 3F       		.uleb128 0x3f
+ 792 004e 19       		.uleb128 0x19
+ 793 004f 03       		.uleb128 0x3
+ 794 0050 0E       		.uleb128 0xe
+ 795 0051 3A       		.uleb128 0x3a
+ 796 0052 0B       		.uleb128 0xb
+ 797 0053 3B       		.uleb128 0x3b
+ 798 0054 0B       		.uleb128 0xb
+ 799 0055 27       		.uleb128 0x27
+ 800 0056 19       		.uleb128 0x19
+ 801 0057 49       		.uleb128 0x49
+ 802 0058 13       		.uleb128 0x13
+ 803 0059 8701     		.uleb128 0x87
+ 804 005b 19       		.uleb128 0x19
+ 805 005c 11       		.uleb128 0x11
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 18
 
 
- 760 0035 00       		.byte	0
- 761 0036 05       		.uleb128 0x5
- 762 0037 16       		.uleb128 0x16
- 763 0038 00       		.byte	0
- 764 0039 03       		.uleb128 0x3
- 765 003a 0E       		.uleb128 0xe
- 766 003b 3A       		.uleb128 0x3a
- 767 003c 0B       		.uleb128 0xb
- 768 003d 3B       		.uleb128 0x3b
- 769 003e 05       		.uleb128 0x5
- 770 003f 49       		.uleb128 0x49
- 771 0040 13       		.uleb128 0x13
- 772 0041 00       		.byte	0
- 773 0042 00       		.byte	0
- 774 0043 06       		.uleb128 0x6
- 775 0044 35       		.uleb128 0x35
- 776 0045 00       		.byte	0
- 777 0046 49       		.uleb128 0x49
- 778 0047 13       		.uleb128 0x13
- 779 0048 00       		.byte	0
- 780 0049 00       		.byte	0
- 781 004a 07       		.uleb128 0x7
- 782 004b 2E       		.uleb128 0x2e
- 783 004c 01       		.byte	0x1
- 784 004d 3F       		.uleb128 0x3f
- 785 004e 19       		.uleb128 0x19
- 786 004f 03       		.uleb128 0x3
- 787 0050 0E       		.uleb128 0xe
- 788 0051 3A       		.uleb128 0x3a
- 789 0052 0B       		.uleb128 0xb
- 790 0053 3B       		.uleb128 0x3b
- 791 0054 0B       		.uleb128 0xb
- 792 0055 27       		.uleb128 0x27
- 793 0056 19       		.uleb128 0x19
- 794 0057 49       		.uleb128 0x49
- 795 0058 13       		.uleb128 0x13
- 796 0059 8701     		.uleb128 0x87
- 797 005b 19       		.uleb128 0x19
- 798 005c 11       		.uleb128 0x11
- 799 005d 01       		.uleb128 0x1
- 800 005e 12       		.uleb128 0x12
- 801 005f 06       		.uleb128 0x6
- 802 0060 40       		.uleb128 0x40
- 803 0061 18       		.uleb128 0x18
- 804 0062 9742     		.uleb128 0x2117
- 805 0064 19       		.uleb128 0x19
- 806 0065 01       		.uleb128 0x1
- 807 0066 13       		.uleb128 0x13
- 808 0067 00       		.byte	0
- 809 0068 00       		.byte	0
- 810 0069 08       		.uleb128 0x8
- 811 006a 0B       		.uleb128 0xb
- 812 006b 01       		.byte	0x1
- 813 006c 11       		.uleb128 0x11
- 814 006d 01       		.uleb128 0x1
- 815 006e 12       		.uleb128 0x12
- 816 006f 06       		.uleb128 0x6
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 18
+ 806 005d 01       		.uleb128 0x1
+ 807 005e 12       		.uleb128 0x12
+ 808 005f 06       		.uleb128 0x6
+ 809 0060 40       		.uleb128 0x40
+ 810 0061 18       		.uleb128 0x18
+ 811 0062 9742     		.uleb128 0x2117
+ 812 0064 19       		.uleb128 0x19
+ 813 0065 01       		.uleb128 0x1
+ 814 0066 13       		.uleb128 0x13
+ 815 0067 00       		.byte	0
+ 816 0068 00       		.byte	0
+ 817 0069 08       		.uleb128 0x8
+ 818 006a 0B       		.uleb128 0xb
+ 819 006b 01       		.byte	0x1
+ 820 006c 11       		.uleb128 0x11
+ 821 006d 01       		.uleb128 0x1
+ 822 006e 12       		.uleb128 0x12
+ 823 006f 06       		.uleb128 0x6
+ 824 0070 01       		.uleb128 0x1
+ 825 0071 13       		.uleb128 0x13
+ 826 0072 00       		.byte	0
+ 827 0073 00       		.byte	0
+ 828 0074 09       		.uleb128 0x9
+ 829 0075 34       		.uleb128 0x34
+ 830 0076 00       		.byte	0
+ 831 0077 03       		.uleb128 0x3
+ 832 0078 0E       		.uleb128 0xe
+ 833 0079 3A       		.uleb128 0x3a
+ 834 007a 0B       		.uleb128 0xb
+ 835 007b 3B       		.uleb128 0x3b
+ 836 007c 0B       		.uleb128 0xb
+ 837 007d 49       		.uleb128 0x49
+ 838 007e 13       		.uleb128 0x13
+ 839 007f 02       		.uleb128 0x2
+ 840 0080 18       		.uleb128 0x18
+ 841 0081 00       		.byte	0
+ 842 0082 00       		.byte	0
+ 843 0083 0A       		.uleb128 0xa
+ 844 0084 34       		.uleb128 0x34
+ 845 0085 00       		.byte	0
+ 846 0086 03       		.uleb128 0x3
+ 847 0087 0E       		.uleb128 0xe
+ 848 0088 3A       		.uleb128 0x3a
+ 849 0089 0B       		.uleb128 0xb
+ 850 008a 3B       		.uleb128 0x3b
+ 851 008b 0B       		.uleb128 0xb
+ 852 008c 49       		.uleb128 0x49
+ 853 008d 13       		.uleb128 0x13
+ 854 008e 02       		.uleb128 0x2
+ 855 008f 17       		.uleb128 0x17
+ 856 0090 00       		.byte	0
+ 857 0091 00       		.byte	0
+ 858 0092 0B       		.uleb128 0xb
+ 859 0093 898201   		.uleb128 0x4109
+ 860 0096 00       		.byte	0
+ 861 0097 11       		.uleb128 0x11
+ 862 0098 01       		.uleb128 0x1
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 19
 
 
- 817 0070 01       		.uleb128 0x1
- 818 0071 13       		.uleb128 0x13
- 819 0072 00       		.byte	0
- 820 0073 00       		.byte	0
- 821 0074 09       		.uleb128 0x9
- 822 0075 34       		.uleb128 0x34
- 823 0076 00       		.byte	0
- 824 0077 03       		.uleb128 0x3
- 825 0078 0E       		.uleb128 0xe
- 826 0079 3A       		.uleb128 0x3a
- 827 007a 0B       		.uleb128 0xb
- 828 007b 3B       		.uleb128 0x3b
- 829 007c 0B       		.uleb128 0xb
- 830 007d 49       		.uleb128 0x49
- 831 007e 13       		.uleb128 0x13
- 832 007f 02       		.uleb128 0x2
- 833 0080 18       		.uleb128 0x18
- 834 0081 00       		.byte	0
- 835 0082 00       		.byte	0
- 836 0083 0A       		.uleb128 0xa
- 837 0084 34       		.uleb128 0x34
- 838 0085 00       		.byte	0
- 839 0086 03       		.uleb128 0x3
- 840 0087 0E       		.uleb128 0xe
- 841 0088 3A       		.uleb128 0x3a
- 842 0089 0B       		.uleb128 0xb
- 843 008a 3B       		.uleb128 0x3b
- 844 008b 0B       		.uleb128 0xb
- 845 008c 49       		.uleb128 0x49
- 846 008d 13       		.uleb128 0x13
- 847 008e 02       		.uleb128 0x2
- 848 008f 17       		.uleb128 0x17
- 849 0090 00       		.byte	0
- 850 0091 00       		.byte	0
- 851 0092 0B       		.uleb128 0xb
- 852 0093 898201   		.uleb128 0x4109
- 853 0096 00       		.byte	0
- 854 0097 11       		.uleb128 0x11
- 855 0098 01       		.uleb128 0x1
- 856 0099 31       		.uleb128 0x31
- 857 009a 13       		.uleb128 0x13
- 858 009b 00       		.byte	0
- 859 009c 00       		.byte	0
- 860 009d 0C       		.uleb128 0xc
- 861 009e 898201   		.uleb128 0x4109
- 862 00a1 01       		.byte	0x1
- 863 00a2 11       		.uleb128 0x11
- 864 00a3 01       		.uleb128 0x1
- 865 00a4 31       		.uleb128 0x31
- 866 00a5 13       		.uleb128 0x13
- 867 00a6 01       		.uleb128 0x1
- 868 00a7 13       		.uleb128 0x13
- 869 00a8 00       		.byte	0
- 870 00a9 00       		.byte	0
- 871 00aa 0D       		.uleb128 0xd
- 872 00ab 8A8201   		.uleb128 0x410a
- 873 00ae 00       		.byte	0
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 19
+ 863 0099 31       		.uleb128 0x31
+ 864 009a 13       		.uleb128 0x13
+ 865 009b 00       		.byte	0
+ 866 009c 00       		.byte	0
+ 867 009d 0C       		.uleb128 0xc
+ 868 009e 898201   		.uleb128 0x4109
+ 869 00a1 01       		.byte	0x1
+ 870 00a2 11       		.uleb128 0x11
+ 871 00a3 01       		.uleb128 0x1
+ 872 00a4 31       		.uleb128 0x31
+ 873 00a5 13       		.uleb128 0x13
+ 874 00a6 01       		.uleb128 0x1
+ 875 00a7 13       		.uleb128 0x13
+ 876 00a8 00       		.byte	0
+ 877 00a9 00       		.byte	0
+ 878 00aa 0D       		.uleb128 0xd
+ 879 00ab 8A8201   		.uleb128 0x410a
+ 880 00ae 00       		.byte	0
+ 881 00af 02       		.uleb128 0x2
+ 882 00b0 18       		.uleb128 0x18
+ 883 00b1 9142     		.uleb128 0x2111
+ 884 00b3 18       		.uleb128 0x18
+ 885 00b4 00       		.byte	0
+ 886 00b5 00       		.byte	0
+ 887 00b6 0E       		.uleb128 0xe
+ 888 00b7 898201   		.uleb128 0x4109
+ 889 00ba 01       		.byte	0x1
+ 890 00bb 11       		.uleb128 0x11
+ 891 00bc 01       		.uleb128 0x1
+ 892 00bd 31       		.uleb128 0x31
+ 893 00be 13       		.uleb128 0x13
+ 894 00bf 00       		.byte	0
+ 895 00c0 00       		.byte	0
+ 896 00c1 0F       		.uleb128 0xf
+ 897 00c2 34       		.uleb128 0x34
+ 898 00c3 00       		.byte	0
+ 899 00c4 03       		.uleb128 0x3
+ 900 00c5 0E       		.uleb128 0xe
+ 901 00c6 3A       		.uleb128 0x3a
+ 902 00c7 0B       		.uleb128 0xb
+ 903 00c8 3B       		.uleb128 0x3b
+ 904 00c9 05       		.uleb128 0x5
+ 905 00ca 49       		.uleb128 0x49
+ 906 00cb 13       		.uleb128 0x13
+ 907 00cc 3F       		.uleb128 0x3f
+ 908 00cd 19       		.uleb128 0x19
+ 909 00ce 3C       		.uleb128 0x3c
+ 910 00cf 19       		.uleb128 0x19
+ 911 00d0 00       		.byte	0
+ 912 00d1 00       		.byte	0
+ 913 00d2 10       		.uleb128 0x10
+ 914 00d3 34       		.uleb128 0x34
+ 915 00d4 00       		.byte	0
+ 916 00d5 03       		.uleb128 0x3
+ 917 00d6 0E       		.uleb128 0xe
+ 918 00d7 3A       		.uleb128 0x3a
+ 919 00d8 0B       		.uleb128 0xb
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 20
 
 
- 874 00af 02       		.uleb128 0x2
- 875 00b0 18       		.uleb128 0x18
- 876 00b1 9142     		.uleb128 0x2111
- 877 00b3 18       		.uleb128 0x18
- 878 00b4 00       		.byte	0
- 879 00b5 00       		.byte	0
- 880 00b6 0E       		.uleb128 0xe
- 881 00b7 898201   		.uleb128 0x4109
- 882 00ba 01       		.byte	0x1
- 883 00bb 11       		.uleb128 0x11
- 884 00bc 01       		.uleb128 0x1
- 885 00bd 31       		.uleb128 0x31
- 886 00be 13       		.uleb128 0x13
- 887 00bf 00       		.byte	0
- 888 00c0 00       		.byte	0
- 889 00c1 0F       		.uleb128 0xf
- 890 00c2 34       		.uleb128 0x34
- 891 00c3 00       		.byte	0
- 892 00c4 03       		.uleb128 0x3
- 893 00c5 0E       		.uleb128 0xe
- 894 00c6 3A       		.uleb128 0x3a
- 895 00c7 0B       		.uleb128 0xb
- 896 00c8 3B       		.uleb128 0x3b
- 897 00c9 05       		.uleb128 0x5
- 898 00ca 49       		.uleb128 0x49
- 899 00cb 13       		.uleb128 0x13
- 900 00cc 3F       		.uleb128 0x3f
- 901 00cd 19       		.uleb128 0x19
- 902 00ce 3C       		.uleb128 0x3c
- 903 00cf 19       		.uleb128 0x19
- 904 00d0 00       		.byte	0
- 905 00d1 00       		.byte	0
- 906 00d2 10       		.uleb128 0x10
- 907 00d3 34       		.uleb128 0x34
- 908 00d4 00       		.byte	0
- 909 00d5 03       		.uleb128 0x3
- 910 00d6 0E       		.uleb128 0xe
- 911 00d7 3A       		.uleb128 0x3a
- 912 00d8 0B       		.uleb128 0xb
- 913 00d9 3B       		.uleb128 0x3b
- 914 00da 0B       		.uleb128 0xb
- 915 00db 49       		.uleb128 0x49
- 916 00dc 13       		.uleb128 0x13
- 917 00dd 3F       		.uleb128 0x3f
- 918 00de 19       		.uleb128 0x19
- 919 00df 02       		.uleb128 0x2
- 920 00e0 18       		.uleb128 0x18
- 921 00e1 00       		.byte	0
- 922 00e2 00       		.byte	0
- 923 00e3 11       		.uleb128 0x11
- 924 00e4 2E       		.uleb128 0x2e
- 925 00e5 00       		.byte	0
- 926 00e6 3F       		.uleb128 0x3f
- 927 00e7 19       		.uleb128 0x19
- 928 00e8 3C       		.uleb128 0x3c
- 929 00e9 19       		.uleb128 0x19
- 930 00ea 6E       		.uleb128 0x6e
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 20
+ 920 00d9 3B       		.uleb128 0x3b
+ 921 00da 0B       		.uleb128 0xb
+ 922 00db 49       		.uleb128 0x49
+ 923 00dc 13       		.uleb128 0x13
+ 924 00dd 3F       		.uleb128 0x3f
+ 925 00de 19       		.uleb128 0x19
+ 926 00df 02       		.uleb128 0x2
+ 927 00e0 18       		.uleb128 0x18
+ 928 00e1 00       		.byte	0
+ 929 00e2 00       		.byte	0
+ 930 00e3 11       		.uleb128 0x11
+ 931 00e4 2E       		.uleb128 0x2e
+ 932 00e5 00       		.byte	0
+ 933 00e6 3F       		.uleb128 0x3f
+ 934 00e7 19       		.uleb128 0x19
+ 935 00e8 3C       		.uleb128 0x3c
+ 936 00e9 19       		.uleb128 0x19
+ 937 00ea 6E       		.uleb128 0x6e
+ 938 00eb 0E       		.uleb128 0xe
+ 939 00ec 03       		.uleb128 0x3
+ 940 00ed 0E       		.uleb128 0xe
+ 941 00ee 3A       		.uleb128 0x3a
+ 942 00ef 0B       		.uleb128 0xb
+ 943 00f0 3B       		.uleb128 0x3b
+ 944 00f1 0B       		.uleb128 0xb
+ 945 00f2 00       		.byte	0
+ 946 00f3 00       		.byte	0
+ 947 00f4 00       		.byte	0
+ 948              		.section	.debug_loc,"",%progbits
+ 949              	.Ldebug_loc0:
+ 950              	.LLST0:
+ 951 0000 28000000 		.4byte	.LVL7
+ 952 0004 34000000 		.4byte	.LVL9
+ 953 0008 0200     		.2byte	0x2
+ 954 000a 30       		.byte	0x30
+ 955 000b 9F       		.byte	0x9f
+ 956 000c 34000000 		.4byte	.LVL9
+ 957 0010 3E000000 		.4byte	.LVL11
+ 958 0014 0100     		.2byte	0x1
+ 959 0016 54       		.byte	0x54
+ 960 0017 40000000 		.4byte	.LVL12
+ 961 001b 4A000000 		.4byte	.LVL14
+ 962 001f 0100     		.2byte	0x1
+ 963 0021 54       		.byte	0x54
+ 964 0022 4A000000 		.4byte	.LVL14
+ 965 0026 4C000000 		.4byte	.LVL15
+ 966 002a 0100     		.2byte	0x1
+ 967 002c 52       		.byte	0x52
+ 968 002d 4C000000 		.4byte	.LVL15
+ 969 0031 50000000 		.4byte	.LVL16
+ 970 0035 0100     		.2byte	0x1
+ 971 0037 54       		.byte	0x54
+ 972 0038 50000000 		.4byte	.LVL16
+ 973 003c 57000000 		.4byte	.LVL17-1
+ 974 0040 0100     		.2byte	0x1
+ 975 0042 52       		.byte	0x52
+ 976 0043 00000000 		.4byte	0
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 21
 
 
- 931 00eb 0E       		.uleb128 0xe
- 932 00ec 03       		.uleb128 0x3
- 933 00ed 0E       		.uleb128 0xe
- 934 00ee 3A       		.uleb128 0x3a
- 935 00ef 0B       		.uleb128 0xb
- 936 00f0 3B       		.uleb128 0x3b
- 937 00f1 0B       		.uleb128 0xb
- 938 00f2 00       		.byte	0
- 939 00f3 00       		.byte	0
- 940 00f4 00       		.byte	0
- 941              		.section	.debug_loc,"",%progbits
- 942              	.Ldebug_loc0:
- 943              	.LLST0:
- 944 0000 28000000 		.4byte	.LVL7
- 945 0004 34000000 		.4byte	.LVL9
- 946 0008 0200     		.2byte	0x2
- 947 000a 30       		.byte	0x30
- 948 000b 9F       		.byte	0x9f
- 949 000c 34000000 		.4byte	.LVL9
- 950 0010 3E000000 		.4byte	.LVL11
- 951 0014 0100     		.2byte	0x1
- 952 0016 54       		.byte	0x54
- 953 0017 40000000 		.4byte	.LVL12
- 954 001b A2000000 		.4byte	.LVL23
- 955 001f 0100     		.2byte	0x1
- 956 0021 54       		.byte	0x54
- 957 0022 00000000 		.4byte	0
- 958 0026 00000000 		.4byte	0
- 959              	.LLST1:
- 960 002a 28000000 		.4byte	.LVL7
- 961 002e 50000000 		.4byte	.LVL15
- 962 0032 0200     		.2byte	0x2
- 963 0034 30       		.byte	0x30
- 964 0035 9F       		.byte	0x9f
- 965 0036 50000000 		.4byte	.LVL15
- 966 003a 04010000 		.4byte	.LFE63
- 967 003e 0500     		.2byte	0x5
- 968 0040 76       		.byte	0x76
- 969 0041 00       		.sleb128 0
- 970 0042 38       		.byte	0x38
- 971 0043 25       		.byte	0x25
- 972 0044 9F       		.byte	0x9f
- 973 0045 00000000 		.4byte	0
- 974 0049 00000000 		.4byte	0
- 975              	.LLST2:
- 976 004d 28000000 		.4byte	.LVL7
- 977 0051 50000000 		.4byte	.LVL15
- 978 0055 0200     		.2byte	0x2
- 979 0057 30       		.byte	0x30
- 980 0058 9F       		.byte	0x9f
- 981 0059 50000000 		.4byte	.LVL15
- 982 005d 04010000 		.4byte	.LFE63
- 983 0061 0100     		.2byte	0x1
- 984 0063 55       		.byte	0x55
- 985 0064 00000000 		.4byte	0
- 986 0068 00000000 		.4byte	0
- 987              	.LLST3:
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 21
+ 977 0047 00000000 		.4byte	0
+ 978              	.LLST1:
+ 979 004b 28000000 		.4byte	.LVL7
+ 980 004f 50000000 		.4byte	.LVL16
+ 981 0053 0200     		.2byte	0x2
+ 982 0055 30       		.byte	0x30
+ 983 0056 9F       		.byte	0x9f
+ 984 0057 50000000 		.4byte	.LVL16
+ 985 005b 14010000 		.4byte	.LFE63
+ 986 005f 0500     		.2byte	0x5
+ 987 0061 76       		.byte	0x76
+ 988 0062 00       		.sleb128 0
+ 989 0063 38       		.byte	0x38
+ 990 0064 25       		.byte	0x25
+ 991 0065 9F       		.byte	0x9f
+ 992 0066 00000000 		.4byte	0
+ 993 006a 00000000 		.4byte	0
+ 994              	.LLST2:
+ 995 006e 28000000 		.4byte	.LVL7
+ 996 0072 50000000 		.4byte	.LVL16
+ 997 0076 0200     		.2byte	0x2
+ 998 0078 30       		.byte	0x30
+ 999 0079 9F       		.byte	0x9f
+ 1000 007a 50000000 		.4byte	.LVL16
+ 1001 007e 14010000 		.4byte	.LFE63
+ 1002 0082 0100     		.2byte	0x1
+ 1003 0084 55       		.byte	0x55
+ 1004 0085 00000000 		.4byte	0
+ 1005 0089 00000000 		.4byte	0
+ 1006              	.LLST3:
+ 1007 008d 8E000000 		.4byte	.LVL22
+ 1008 0091 96000000 		.4byte	.LVL24
+ 1009 0095 0100     		.2byte	0x1
+ 1010 0097 54       		.byte	0x54
+ 1011 0098 00000000 		.4byte	0
+ 1012 009c 00000000 		.4byte	0
+ 1013              	.LLST4:
+ 1014 00a0 92000000 		.4byte	.LVL23
+ 1015 00a4 98000000 		.4byte	.LVL25
+ 1016 00a8 0100     		.2byte	0x1
+ 1017 00aa 50       		.byte	0x50
+ 1018 00ab 00000000 		.4byte	0
+ 1019 00af 00000000 		.4byte	0
+ 1020              		.section	.debug_aranges,"",%progbits
+ 1021 0000 1C000000 		.4byte	0x1c
+ 1022 0004 0200     		.2byte	0x2
+ 1023 0006 00000000 		.4byte	.Ldebug_info0
+ 1024 000a 04       		.byte	0x4
+ 1025 000b 00       		.byte	0
+ 1026 000c 0000     		.2byte	0
+ 1027 000e 0000     		.2byte	0
+ 1028 0010 00000000 		.4byte	.LFB63
+ 1029 0014 14010000 		.4byte	.LFE63-.LFB63
+ 1030 0018 00000000 		.4byte	0
+ 1031 001c 00000000 		.4byte	0
+ 1032              		.section	.debug_ranges,"",%progbits
+ 1033              	.Ldebug_ranges0:
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 22
 
 
- 988 006c A2000000 		.4byte	.LVL23
- 989 0070 AA000000 		.4byte	.LVL25
- 990 0074 0100     		.2byte	0x1
- 991 0076 54       		.byte	0x54
- 992 0077 00000000 		.4byte	0
- 993 007b 00000000 		.4byte	0
- 994              	.LLST4:
- 995 007f A6000000 		.4byte	.LVL24
- 996 0083 AC000000 		.4byte	.LVL26
- 997 0087 0100     		.2byte	0x1
- 998 0089 50       		.byte	0x50
- 999 008a 00000000 		.4byte	0
- 1000 008e 00000000 		.4byte	0
- 1001              		.section	.debug_aranges,"",%progbits
- 1002 0000 1C000000 		.4byte	0x1c
- 1003 0004 0200     		.2byte	0x2
- 1004 0006 00000000 		.4byte	.Ldebug_info0
- 1005 000a 04       		.byte	0x4
- 1006 000b 00       		.byte	0
- 1007 000c 0000     		.2byte	0
- 1008 000e 0000     		.2byte	0
- 1009 0010 00000000 		.4byte	.LFB63
- 1010 0014 04010000 		.4byte	.LFE63-.LFB63
- 1011 0018 00000000 		.4byte	0
- 1012 001c 00000000 		.4byte	0
- 1013              		.section	.debug_ranges,"",%progbits
- 1014              	.Ldebug_ranges0:
- 1015 0000 00000000 		.4byte	.LFB63
- 1016 0004 04010000 		.4byte	.LFE63
- 1017 0008 00000000 		.4byte	0
- 1018 000c 00000000 		.4byte	0
- 1019              		.section	.debug_line,"",%progbits
- 1020              	.Ldebug_line0:
- 1021 0000 08020000 		.section	.debug_str,"MS",%progbits,1
- 1021      0200BA01 
- 1021      00000201 
- 1021      FB0E0D00 
- 1021      01010101 
- 1022              	.LASF3:
- 1023 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 1023      6E74385F 
- 1023      7400
- 1024              	.LASF28:
- 1025 000a 7468726F 		.ascii	"throttle_high\000"
- 1025      74746C65 
- 1025      5F686967 
- 1025      6800
- 1026              	.LASF31:
- 1027 0018 73746174 		.ascii	"state\000"
- 1027      6500
- 1028              	.LASF49:
- 1029 001e 63616E5F 		.ascii	"can_send_state_and_throttle\000"
- 1029      73656E64 
- 1029      5F737461 
- 1029      74655F61 
- 1029      6E645F74 
- 1030              	.LASF6:
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 22
+ 1034 0000 00000000 		.4byte	.LFB63
+ 1035 0004 14010000 		.4byte	.LFE63
+ 1036 0008 00000000 		.4byte	0
+ 1037 000c 00000000 		.4byte	0
+ 1038              		.section	.debug_line,"",%progbits
+ 1039              	.Ldebug_line0:
+ 1040 0000 0B020000 		.section	.debug_str,"MS",%progbits,1
+ 1040      0200BA01 
+ 1040      00000201 
+ 1040      FB0E0D00 
+ 1040      01010101 
+ 1041              	.LASF3:
+ 1042 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1042      6E74385F 
+ 1042      7400
+ 1043              	.LASF28:
+ 1044 000a 7468726F 		.ascii	"throttle_high\000"
+ 1044      74746C65 
+ 1044      5F686967 
+ 1044      6800
+ 1045              	.LASF31:
+ 1046 0018 73746174 		.ascii	"state\000"
+ 1046      6500
+ 1047              	.LASF39:
+ 1048 001e 63616E5F 		.ascii	"can_send_state_and_throttle\000"
+ 1048      73656E64 
+ 1048      5F737461 
+ 1048      74655F61 
+ 1048      6E645F74 
+ 1049              	.LASF6:
+ 1050 003a 5F5F696E 		.ascii	"__int32_t\000"
+ 1050      7433325F 
+ 1050      7400
+ 1051              	.LASF42:
+ 1052 0044 53445F49 		.ascii	"SD_IN_Read\000"
+ 1052      4E5F5265 
+ 1052      616400
+ 1053              	.LASF37:
+ 1054 004f 6765745F 		.ascii	"get_THROTTLE_HIGH\000"
+ 1054      5448524F 
+ 1054      54544C45 
+ 1054      5F484947 
+ 1054      4800
+ 1055              	.LASF41:
+ 1056 0061 6765745F 		.ascii	"get_VEHICLE_STATE\000"
+ 1056      56454849 
+ 1056      434C455F 
+ 1056      53544154 
+ 1056      4500
+ 1057              	.LASF49:
+ 1058 0073 636C6561 		.ascii	"clear_interlock\000"
+ 1058      725F696E 
+ 1058      7465726C 
+ 1058      6F636B00 
+ 1059              	.LASF32:
+ 1060 0083 655F7374 		.ascii	"e_stop\000"
+ 1060      6F7000
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 23
 
 
- 1031 003a 5F5F696E 		.ascii	"__int32_t\000"
- 1031      7433325F 
- 1031      7400
- 1032              	.LASF39:
- 1033 0044 53445F49 		.ascii	"SD_IN_Read\000"
- 1033      4E5F5265 
- 1033      616400
- 1034              	.LASF37:
- 1035 004f 6765745F 		.ascii	"get_THROTTLE_HIGH\000"
- 1035      5448524F 
- 1035      54544C45 
- 1035      5F484947 
- 1035      4800
- 1036              	.LASF15:
- 1037 0061 696E7433 		.ascii	"int32_t\000"
- 1037      325F7400 
- 1038              	.LASF46:
- 1039 0069 636C6561 		.ascii	"clear_interlock\000"
- 1039      725F696E 
- 1039      7465726C 
- 1039      6F636B00 
- 1040              	.LASF32:
- 1041 0079 655F7374 		.ascii	"e_stop\000"
- 1041      6F7000
- 1042              	.LASF19:
- 1043 0080 666C6F61 		.ascii	"float\000"
- 1043      7400
- 1044              	.LASF17:
- 1045 0086 75696E74 		.ascii	"uint8\000"
- 1045      3800
- 1046              	.LASF29:
- 1047 008c 7468726F 		.ascii	"throttle_low\000"
- 1047      74746C65 
- 1047      5F6C6F77 
- 1047      00
- 1048              	.LASF40:
- 1049 0099 4144435F 		.ascii	"ADC_DelSig_1_Read32\000"
- 1049      44656C53 
- 1049      69675F31 
- 1049      5F526561 
- 1049      64333200 
- 1050              	.LASF1:
- 1051 00ad 756E7369 		.ascii	"unsigned char\000"
- 1051      676E6564 
- 1051      20636861 
- 1051      7200
- 1052              	.LASF55:
- 1053 00bb 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1053      43313120 
- 1053      352E342E 
- 1053      31203230 
- 1053      31363036 
- 1054 00ee 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1054      20726576 
- 1054      6973696F 
- 1054      6E203233 
- 1054      37373135 
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 23
+ 1061              	.LASF19:
+ 1062 008a 666C6F61 		.ascii	"float\000"
+ 1062      7400
+ 1063              	.LASF17:
+ 1064 0090 75696E74 		.ascii	"uint8\000"
+ 1064      3800
+ 1065              	.LASF29:
+ 1066 0096 7468726F 		.ascii	"throttle_low\000"
+ 1066      74746C65 
+ 1066      5F6C6F77 
+ 1066      00
+ 1067              	.LASF43:
+ 1068 00a3 4144435F 		.ascii	"ADC_DelSig_1_Read32\000"
+ 1068      44656C53 
+ 1068      69675F31 
+ 1068      5F526561 
+ 1068      64333200 
+ 1069              	.LASF1:
+ 1070 00b7 756E7369 		.ascii	"unsigned char\000"
+ 1070      676E6564 
+ 1070      20636861 
+ 1070      7200
+ 1071              	.LASF55:
+ 1072 00c5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1072      43313120 
+ 1072      352E342E 
+ 1072      31203230 
+ 1072      31363036 
+ 1073 00f8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1073      20726576 
+ 1073      6973696F 
+ 1073      6E203233 
+ 1073      37373135 
+ 1074 012b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1074      66756E63 
+ 1074      74696F6E 
+ 1074      2D736563 
+ 1074      74696F6E 
+ 1075              	.LASF9:
+ 1076 0153 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1076      20756E73 
+ 1076      69676E65 
+ 1076      6420696E 
+ 1076      7400
+ 1077              	.LASF5:
+ 1078 0165 73686F72 		.ascii	"short unsigned int\000"
+ 1078      7420756E 
+ 1078      7369676E 
+ 1078      65642069 
+ 1078      6E7400
+ 1079              	.LASF40:
+ 1080 0178 6765745F 		.ascii	"get_HV_Requested\000"
+ 1080      48565F52 
+ 1080      65717565 
+ 1080      73746564 
+ 1080      00
+ 1081              	.LASF33:
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 24
 
 
- 1055 0121 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1055      66756E63 
- 1055      74696F6E 
- 1055      2D736563 
- 1055      74696F6E 
- 1056              	.LASF48:
- 1057 0149 63616E5F 		.ascii	"can_send_ESTOP\000"
- 1057      73656E64 
- 1057      5F455354 
- 1057      4F5000
- 1058              	.LASF9:
- 1059 0158 6C6F6E67 		.ascii	"long unsigned int\000"
- 1059      20756E73 
- 1059      69676E65 
- 1059      6420696E 
- 1059      7400
- 1060              	.LASF5:
- 1061 016a 73686F72 		.ascii	"short unsigned int\000"
- 1061      7420756E 
- 1061      7369676E 
- 1061      65642069 
- 1061      6E7400
- 1062              	.LASF47:
- 1063 017d 6765745F 		.ascii	"get_HV_Requested\000"
- 1063      48565F52 
- 1063      65717565 
- 1063      73746564 
- 1063      00
- 1064              	.LASF33:
- 1065 018e 7468726F 		.ascii	"throttle_total\000"
- 1065      74746C65 
- 1065      5F746F74 
- 1065      616C00
- 1066              	.LASF52:
- 1067 019d 43414E5F 		.ascii	"CAN_Init\000"
- 1067      496E6974 
- 1067      00
- 1068              	.LASF4:
- 1069 01a6 5F5F7569 		.ascii	"__uint16_t\000"
- 1069      6E743136 
- 1069      5F7400
- 1070              	.LASF20:
- 1071 01b1 646F7562 		.ascii	"double\000"
- 1071      6C6500
- 1072              	.LASF18:
- 1073 01b8 75696E74 		.ascii	"uint16\000"
- 1073      313600
- 1074              	.LASF8:
- 1075 01bf 5F5F7569 		.ascii	"__uint32_t\000"
- 1075      6E743332 
- 1075      5F7400
- 1076              	.LASF43:
- 1077 01ca 424D535F 		.ascii	"BMS_Fault_Read\000"
- 1077      4661756C 
- 1077      745F5265 
- 1077      616400
- 1078              	.LASF27:
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 24
+ 1082 0189 7468726F 		.ascii	"throttle_total\000"
+ 1082      74746C65 
+ 1082      5F746F74 
+ 1082      616C00
+ 1083              	.LASF52:
+ 1084 0198 43414E5F 		.ascii	"CAN_Init\000"
+ 1084      496E6974 
+ 1084      00
+ 1085              	.LASF4:
+ 1086 01a1 5F5F7569 		.ascii	"__uint16_t\000"
+ 1086      6E743136 
+ 1086      5F7400
+ 1087              	.LASF20:
+ 1088 01ac 646F7562 		.ascii	"double\000"
+ 1088      6C6500
+ 1089              	.LASF18:
+ 1090 01b3 75696E74 		.ascii	"uint16\000"
+ 1090      313600
+ 1091              	.LASF8:
+ 1092 01ba 5F5F7569 		.ascii	"__uint32_t\000"
+ 1092      6E743332 
+ 1092      5F7400
+ 1093              	.LASF46:
+ 1094 01c5 424D535F 		.ascii	"BMS_Fault_Read\000"
+ 1094      4661756C 
+ 1094      745F5265 
+ 1094      616400
+ 1095              	.LASF27:
+ 1096 01d4 63757272 		.ascii	"current_lower\000"
+ 1096      656E745F 
+ 1096      6C6F7765 
+ 1096      7200
+ 1097              	.LASF30:
+ 1098 01e2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1098      52784275 
+ 1098      66666572 
+ 1098      00
+ 1099              	.LASF58:
+ 1100 01ef 6D61696E 		.ascii	"main\000"
+ 1100      00
+ 1101              	.LASF54:
+ 1102 01f4 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
+ 1102      44656C53 
+ 1102      69675F31 
+ 1102      5F537461 
+ 1102      727400
+ 1103              	.LASF12:
+ 1104 0207 756E7369 		.ascii	"unsigned int\000"
+ 1104      676E6564 
+ 1104      20696E74 
+ 1104      00
+ 1105              	.LASF45:
+ 1106 0214 494D445F 		.ascii	"IMD_Fault_Read\000"
+ 1106      4661756C 
+ 1106      745F5265 
+ 1106      616400
+ 1107              	.LASF44:
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 25
 
 
- 1079 01d9 63757272 		.ascii	"current_lower\000"
- 1079      656E745F 
- 1079      6C6F7765 
- 1079      7200
- 1080              	.LASF30:
- 1081 01e7 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1081      52784275 
- 1081      66666572 
- 1081      00
- 1082              	.LASF58:
- 1083 01f4 6D61696E 		.ascii	"main\000"
- 1083      00
- 1084              	.LASF54:
- 1085 01f9 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
- 1085      44656C53 
- 1085      69675F31 
- 1085      5F537461 
- 1085      727400
- 1086              	.LASF12:
- 1087 020c 756E7369 		.ascii	"unsigned int\000"
- 1087      676E6564 
- 1087      20696E74 
- 1087      00
- 1088              	.LASF42:
- 1089 0219 494D445F 		.ascii	"IMD_Fault_Read\000"
- 1089      4661756C 
- 1089      745F5265 
- 1089      616400
- 1090              	.LASF41:
- 1091 0228 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
- 1091      44656C53 
- 1091      69675F31 
- 1091      5F436F75 
- 1091      6E747354 
- 1092              	.LASF11:
- 1093 0245 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1093      206C6F6E 
- 1093      6720756E 
- 1093      7369676E 
- 1093      65642069 
- 1094              	.LASF13:
- 1095 025c 75696E74 		.ascii	"uint8_t\000"
- 1095      385F7400 
- 1096              	.LASF34:
- 1097 0264 7468726F 		.ascii	"throttle_upper\000"
- 1097      74746C65 
- 1097      5F757070 
- 1097      657200
- 1098              	.LASF35:
- 1099 0273 7468726F 		.ascii	"throttle_lower\000"
- 1099      74746C65 
- 1099      5F6C6F77 
- 1099      657200
- 1100              	.LASF22:
- 1101 0282 6C6F6E67 		.ascii	"long double\000"
- 1101      20646F75 
- 1101      626C6500 
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 25
-
-
- 1102              	.LASF23:
- 1103 028e 73697A65 		.ascii	"sizetype\000"
- 1103      74797065 
- 1103      00
- 1104              	.LASF51:
- 1105 0297 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
- 1105      476C6F62 
- 1105      616C496E 
- 1105      74456E61 
- 1105      626C6500 
- 1106              	.LASF10:
- 1107 02ab 6C6F6E67 		.ascii	"long long int\000"
- 1107      206C6F6E 
- 1107      6720696E 
- 1107      7400
- 1108              	.LASF36:
- 1109 02b9 7365745F 		.ascii	"set_interlock\000"
- 1109      696E7465 
- 1109      726C6F63 
- 1109      6B00
- 1110              	.LASF56:
- 1111 02c7 6D61696E 		.ascii	"main.c\000"
- 1111      2E6300
- 1112              	.LASF21:
- 1113 02ce 63686172 		.ascii	"char\000"
- 1113      00
- 1114              	.LASF38:
- 1115 02d3 6765745F 		.ascii	"get_THROTTLE_LOW\000"
- 1115      5448524F 
- 1115      54544C45 
- 1115      5F4C4F57 
- 1115      00
- 1116              	.LASF57:
- 1117 02e4 433A5C55 		.ascii	"C:\\Users\\kendr\\OneDrive\\Documents\\PEI-Firmware"
- 1117      73657273 
- 1117      5C6B656E 
- 1117      64725C4F 
- 1117      6E654472 
- 1118 0312 2D464531 		.ascii	"-FE10\\PSOC_VCU_Example\\Design01.cydsn\000"
- 1118      305C5053 
- 1118      4F435F56 
- 1118      43555F45 
- 1118      78616D70 
- 1119              	.LASF2:
- 1120 0338 73686F72 		.ascii	"short int\000"
- 1120      7420696E 
- 1120      7400
- 1121              	.LASF14:
- 1122 0342 75696E74 		.ascii	"uint16_t\000"
- 1122      31365F74 
- 1122      00
- 1123              	.LASF24:
- 1124 034b 63757272 		.ascii	"current\000"
- 1124      656E7400 
- 1125              	.LASF53:
- 1126 0353 43414E5F 		.ascii	"CAN_Start\000"
- 1126      53746172 
-ARM GAS  C:\Users\kendr\AppData\Local\Temp\cczMvobY.s 			page 26
-
-
- 1126      7400
- 1127              	.LASF16:
- 1128 035d 75696E74 		.ascii	"uint32_t\000"
- 1128      33325F74 
- 1128      00
- 1129              	.LASF7:
- 1130 0366 6C6F6E67 		.ascii	"long int\000"
- 1130      20696E74 
+ 1108 0223 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
+ 1108      44656C53 
+ 1108      69675F31 
+ 1108      5F436F75 
+ 1108      6E747354 
+ 1109              	.LASF11:
+ 1110 0240 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1110      206C6F6E 
+ 1110      6720756E 
+ 1110      7369676E 
+ 1110      65642069 
+ 1111              	.LASF13:
+ 1112 0257 75696E74 		.ascii	"uint8_t\000"
+ 1112      385F7400 
+ 1113              	.LASF34:
+ 1114 025f 7468726F 		.ascii	"throttle_upper\000"
+ 1114      74746C65 
+ 1114      5F757070 
+ 1114      657200
+ 1115              	.LASF35:
+ 1116 026e 7468726F 		.ascii	"throttle_lower\000"
+ 1116      74746C65 
+ 1116      5F6C6F77 
+ 1116      657200
+ 1117              	.LASF22:
+ 1118 027d 6C6F6E67 		.ascii	"long double\000"
+ 1118      20646F75 
+ 1118      626C6500 
+ 1119              	.LASF23:
+ 1120 0289 73697A65 		.ascii	"sizetype\000"
+ 1120      74797065 
+ 1120      00
+ 1121              	.LASF51:
+ 1122 0292 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
+ 1122      476C6F62 
+ 1122      616C496E 
+ 1122      74456E61 
+ 1122      626C6500 
+ 1123              	.LASF10:
+ 1124 02a6 6C6F6E67 		.ascii	"long long int\000"
+ 1124      206C6F6E 
+ 1124      6720696E 
+ 1124      7400
+ 1125              	.LASF36:
+ 1126 02b4 7365745F 		.ascii	"set_interlock\000"
+ 1126      696E7465 
+ 1126      726C6F63 
+ 1126      6B00
+ 1127              	.LASF56:
+ 1128 02c2 6D61696E 		.ascii	"main.c\000"
+ 1128      2E6300
+ 1129              	.LASF21:
+ 1130 02c9 63686172 		.ascii	"char\000"
  1130      00
- 1131              	.LASF25:
- 1132 036f 73687574 		.ascii	"shutdown_flags\000"
- 1132      646F776E 
- 1132      5F666C61 
- 1132      677300
- 1133              	.LASF0:
- 1134 037e 7369676E 		.ascii	"signed char\000"
- 1134      65642063 
- 1134      68617200 
- 1135              	.LASF44:
- 1136 038a 53445F46 		.ascii	"SD_FINAL_Read\000"
- 1136      494E414C 
- 1136      5F526561 
- 1136      6400
- 1137              	.LASF45:
- 1138 0398 63616E5F 		.ascii	"can_send_PEI\000"
- 1138      73656E64 
- 1138      5F504549 
- 1138      00
- 1139              	.LASF26:
- 1140 03a5 63757272 		.ascii	"current_upper\000"
- 1140      656E745F 
- 1140      75707065 
- 1140      7200
- 1141              	.LASF50:
- 1142 03b3 43794465 		.ascii	"CyDelay\000"
- 1142      6C617900 
- 1143              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1131              	.LASF38:
+ 1132 02ce 6765745F 		.ascii	"get_THROTTLE_LOW\000"
+ 1132      5448524F 
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 26
+
+
+ 1132      54544C45 
+ 1132      5F4C4F57 
+ 1132      00
+ 1133              	.LASF57:
+ 1134 02df 433A5C55 		.ascii	"C:\\Users\\kendr\\OneDrive\\Documents\\PEI-Firmware"
+ 1134      73657273 
+ 1134      5C6B656E 
+ 1134      64725C4F 
+ 1134      6E654472 
+ 1135 030d 2D464531 		.ascii	"-FE10\\PSOC_VCU_Example\\Design01.cydsn\000"
+ 1135      305C5053 
+ 1135      4F435F56 
+ 1135      43555F45 
+ 1135      78616D70 
+ 1136              	.LASF15:
+ 1137 0333 696E7433 		.ascii	"int32_t\000"
+ 1137      325F7400 
+ 1138              	.LASF2:
+ 1139 033b 73686F72 		.ascii	"short int\000"
+ 1139      7420696E 
+ 1139      7400
+ 1140              	.LASF14:
+ 1141 0345 75696E74 		.ascii	"uint16_t\000"
+ 1141      31365F74 
+ 1141      00
+ 1142              	.LASF24:
+ 1143 034e 63757272 		.ascii	"current\000"
+ 1143      656E7400 
+ 1144              	.LASF53:
+ 1145 0356 43414E5F 		.ascii	"CAN_Start\000"
+ 1145      53746172 
+ 1145      7400
+ 1146              	.LASF16:
+ 1147 0360 75696E74 		.ascii	"uint32_t\000"
+ 1147      33325F74 
+ 1147      00
+ 1148              	.LASF7:
+ 1149 0369 6C6F6E67 		.ascii	"long int\000"
+ 1149      20696E74 
+ 1149      00
+ 1150              	.LASF25:
+ 1151 0372 73687574 		.ascii	"shutdown_flags\000"
+ 1151      646F776E 
+ 1151      5F666C61 
+ 1151      677300
+ 1152              	.LASF0:
+ 1153 0381 7369676E 		.ascii	"signed char\000"
+ 1153      65642063 
+ 1153      68617200 
+ 1154              	.LASF47:
+ 1155 038d 53445F46 		.ascii	"SD_FINAL_Read\000"
+ 1155      494E414C 
+ 1155      5F526561 
+ 1155      6400
+ 1156              	.LASF48:
+ 1157 039b 63616E5F 		.ascii	"can_send_PEI\000"
+ 1157      73656E64 
+ARM GAS  C:\Users\kendr\AppData\Local\Temp\cc3j29AQ.s 			page 27
+
+
+ 1157      5F504549 
+ 1157      00
+ 1158              	.LASF26:
+ 1159 03a8 63757272 		.ascii	"current_upper\000"
+ 1159      656E745F 
+ 1159      75707065 
+ 1159      7200
+ 1160              	.LASF50:
+ 1161 03b6 43794465 		.ascii	"CyDelay\000"
+ 1161      6C617900 
+ 1162              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

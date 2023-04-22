@@ -65,7 +65,7 @@ uint8_t get_RUN_FAULT_LO_1();
 uint8_t get_RUN_FAULT_LO_2();
 uint8_t get_RUN_FAULT_HI_1();
 uint8_t get_RUN_FAULT_HI_2();
-
+uint8_t get_RUN_FAULT_SUM();
 
 //Interlock functionality
 void set_interlock();
