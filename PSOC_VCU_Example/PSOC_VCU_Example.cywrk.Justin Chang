@@ -154,42 +154,6 @@
 <VisibleNodeIds>
 <v>PSOC_VCU_Example</v>
 <v>PSOC_VCU_Example\Design01</v>
-<v>PSOC_VCU_Example\Design01\CortexM3</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\can_manager.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Analog.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO1_ESD.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO2_ESD.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO3_ESD.lst</v>
-<v>PSOC_VCU_Example\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\GPIO4_ESD.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -241,6 +205,8 @@
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\Design01.cydwr" />
 <name v=".\Design01.cydsn\Generated_Source\PSoC5\ADC_DelSig_1.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\AIR_NEG.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\Precharge.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -248,7 +214,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1117, 547" SelectedTabbedMdiWindow="5109d269-48d6-4638-a3d0-85b71ac8d2f7"><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="5109d269-48d6-4638-a3d0-85b71ac8d2f7" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="41ce7dff-18e8-4fdf-be7d-59e3d8782d20" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="9bf97cf6-2604-447b-b067-651d4061917f" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="093cbce7-0212-404a-b058-1175847009af" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="f6e24cc9-5309-43d1-b230-ccef27c1a4ca" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cydwr" Guid="144d9860-3052-457d-b9da-1ac33e50bb60" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\ADC_DelSig_1.c" Guid="fe1de182-264e-4c84-bdd9-8ca56cf2330e" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d561c289-2a72-4829-9f00-e318d968c7c3" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1038, 547" SelectedTabbedMdiWindow="5109d269-48d6-4638-a3d0-85b71ac8d2f7"><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\main.c" Guid="5109d269-48d6-4638-a3d0-85b71ac8d2f7" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.c" Guid="41ce7dff-18e8-4fdf-be7d-59e3d8782d20" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\can_manager.h" Guid="9bf97cf6-2604-447b-b067-651d4061917f" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="093cbce7-0212-404a-b058-1175847009af" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="f6e24cc9-5309-43d1-b230-ccef27c1a4ca" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cydwr" Guid="144d9860-3052-457d-b9da-1ac33e50bb60" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\ADC_DelSig_1.c" Guid="fe1de182-264e-4c84-bdd9-8ca56cf2330e" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="d561c289-2a72-4829-9f00-e318d968c7c3" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\AIR_NEG.c" Guid="fee74a1a-1963-4de2-ae27-9242a73817e5" /><DocumentWindow Key="C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Generated_Source\PSoC5\Precharge.c" Guid="a041c98b-7c53-4954-a95d-4ddb07a7666b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

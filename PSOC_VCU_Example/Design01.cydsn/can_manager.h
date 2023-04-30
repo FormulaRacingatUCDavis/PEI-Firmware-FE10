@@ -78,7 +78,7 @@ void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
 void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags);
 
 //BMS_Voltage
-uint32_t get_BMS_Voltage();
+uint16_t get_MC_Voltage();
 
 
 /* Not necessary at the moment

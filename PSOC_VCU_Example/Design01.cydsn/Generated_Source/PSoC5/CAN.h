@@ -321,7 +321,7 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
     void CAN_ReceiveMsgMC_Fault(void) ;
 #endif /* CAN_RX4_FUNC_ENABLE */
 #if (CAN_RX5_FUNC_ENABLE)
-    void CAN_ReceiveMsgBMS_Voltage(void) ;
+    void CAN_ReceiveMsgMC_Voltage(void) ;
 #endif /* CAN_RX5_FUNC_ENABLE */
 #if (CAN_RX6_FUNC_ENABLE)
     void CAN_ReceiveMsg6(void) ;
@@ -426,7 +426,7 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 #define CAN_RX_MAILBOX_MC_ESTOP        (2u)
 #define CAN_RX_MAILBOX_BSPD_Flags      (3u)
 #define CAN_RX_MAILBOX_MC_Fault        (4u)
-#define CAN_RX_MAILBOX_BMS_Voltage     (5u)
+#define CAN_RX_MAILBOX_MC_Voltage      (5u)
 #define CAN_RX_MAILBOX_6               (6u)
 #define CAN_RX_MAILBOX_7               (7u)
 #define CAN_RX_MAILBOX_8               (8u)

@@ -41,17 +41,14 @@ volatile uint8_t RUN_FAULT_LO_2 = 0;
 volatile uint8_t RUN_FAULT_HI_1 = 0;
 volatile uint8_t RUN_FAULT_HI_2 =0;
 
-volatile uint8_t PACK_VOLTAGE_1; //Highest 8 bits
-volatile uint8_t PACK_VOLTAGE_2;
-volatile uint8_t PACK_VOLTAGE_3;
-volatile uint8_t PACK_VOLTAGE_4; //Lowest 8 bits
+volatile uint8_t MC_VOLTAGE_UPPER;
+volatile uint8_t MC_VOLTAGE_LOWER;
 
-uint32_t get_BMS_Voltage() {
-    uint32_t voltage = 0;
-    voltage |= PACK_VOLTAGE_1 << 24;
-    voltage |= PACK_VOLTAGE_2 << 16;
-    voltage |= PACK_VOLTAGE_3 << 8;
-    voltage |= PACK_VOLTAGE_4;
+//Gets capacitor voltage from the motor controller
+uint16_t get_MC_Voltage() {
+    uint16_t voltage = 0;
+    voltage |= MC_VOLTAGE_UPPER << 8;
+    voltage |= MC_VOLTAGE_LOWER;
     
     return voltage;
 }

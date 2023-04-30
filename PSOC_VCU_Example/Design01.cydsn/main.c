@@ -83,7 +83,7 @@ int main(void)
         else if (state == 1) {
             //Todo: Capacitor (gotten value) >= 95% pack voltage (threshold that we measure in testing)
             //This if statement is incorrect
-            if (get_BMS_Voltage() > max_Voltage) {
+            if (get_MC_Voltage() > max_Voltage) {
                 open_precharge();
             }
             else {

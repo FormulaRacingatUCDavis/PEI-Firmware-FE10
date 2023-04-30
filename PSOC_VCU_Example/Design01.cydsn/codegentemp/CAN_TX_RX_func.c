@@ -48,6 +48,9 @@ extern volatile uint8_t RUN_FAULT_LO_2;
 extern volatile uint8_t RUN_FAULT_HI_1;
 extern volatile uint8_t RUN_FAULT_HI_2;
 
+extern volatile uint8_t MC_VOLTAGE_UPPER;
+extern volatile uint8_t MC_VOLTAGE_LOWER;
+
 /* `#END` */
 
 
@@ -858,7 +861,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX5_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsgBMS_Voltage
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_Voltage
     ********************************************************************************
     *
     * Summary:
@@ -876,15 +879,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsgBMS_Voltage(void) 
+    void CAN_ReceiveMsgMC_Voltage(void) 
     {
-        /* `#START MESSAGE_BMS_Voltage_RECEIVED` */
+        /* `#START MESSAGE_MC_Voltage_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_BMS_Voltage_CALLBACK
-            CAN_ReceiveMsg_BMS_Voltage_Callback();
-        #endif /* CAN_RECEIVE_MSG_BMS_Voltage_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_Voltage_CALLBACK
+            CAN_ReceiveMsg_MC_Voltage_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_Voltage_CALLBACK */
 
         CAN_RX[5u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -1242,6 +1245,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 
 /* [] END OF FILE */
+#if 0 /* begin disabled code */
+`#start MESSAGE_BMS_Voltage_RECEIVED` -- section removed from template
+        PACK_VOLTAGE_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_BMS_Voltage);
+        PACK_VOLTAGE_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_BMS_Voltage);
+        PACK_VOLTAGE_3 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_BMS_Voltage);
+        PACK_VOLTAGE_4 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_BMS_Voltage);
+`#end`
+
+#endif /* end disabled code */
 #if 0 /* begin disabled code */
 `#start MESSAGE_1_RECEIVED` -- section removed from template
         state = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_1) << 8;
