@@ -250,12 +250,14 @@ void can_send_ESTOP(uint8_t estop) {
     can_send(data, 0x363);
 }
 
+//Closes the precharge relay, opens the positive relay
 void close_precharge() {
     AIR_NEG_Write(1);
     AIR_POS_Write(0);
     Precharge_Write(1);
 }
 
+//Opens the precharge relay, closese the positive relay
 void open_precharge()
 {
     AIR_NEG_Write(1);

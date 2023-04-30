@@ -81,8 +81,10 @@ int main(void)
         }
         
         else if (state == 1) {
+            //Todo: Capacitor (gotten value) >= 95% pack voltage (threshold that we measure in testing)
+            //This if statement is incorrect
             if (get_BMS_Voltage() > max_Voltage) {
-                open_precharge(); //sets interlock, sends a message to close AIRs
+                open_precharge();
             }
             else {
                 close_precharge();
@@ -98,10 +100,6 @@ int main(void)
             
             else if (e_stop == 0) {
                 state = 3;   
-            }
-            //TODO: We need to get into state 2 if there's an error, but what error we check for is unknown atm.
-            else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
-                state = 2;   
             }
             
             /*May or may not need to check status 3
@@ -126,13 +124,6 @@ int main(void)
             */
             
         }
-        //Trap state
-        
-        // is entered when there are more errors than just estop (Status3 > 0). 
-        else if(state == 2) {
-		    
-		    
-	    }
         else if (state == 3) {
             clear_interlock();
             if (get_HV_Requested() == 0) {
