@@ -19,6 +19,8 @@ volatile uint8_t e_stop;
 uint16 throttle_total = 0;
 uint8 throttle_upper = 0;
 uint8 throttle_lower = 0;
+#define max_Voltage 4976 //Change this later
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -31,11 +33,12 @@ int main(void)
     
     for(;;)
     {   
+        
         //We need read the e_stop status in from the Shutdown_IN pin.
         //If e_stop is hit, should be equal to 0.
         e_stop = SD_IN_Read();
         
-        uint16_t current = (uint16_t) ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
+        uint16_t current = (uint16_t) 1.09*ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
         
         // shutdown flags, current
         uint8_t shutdown_flags = 0;
@@ -77,30 +80,22 @@ int main(void)
             }
         }
         
-        else if (state == 1) { 
-            set_interlock(); //sets interlock, sends a message to close AIRs
-            uint8 throttle_high = get_THROTTLE_HIGH();
-            uint8 throttle_low = get_THROTTLE_LOW();
-            
-            
-            if(((throttle_high * 255 + throttle_low) < 0) || ((throttle_high * 255 + throttle_low) > 32767)){
-                throttle_total = 0;
+        else if (state == 1) {
+            if (get_BMS_Voltage() > max_Voltage) {
+                open_precharge(); //sets interlock, sends a message to close AIRs
             }
             else {
-                //TODO: change back to throttle_high * 255 + throttle_low;  
-                // higher values lead to overflowing, defaults to 0.
-                throttle_total = get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
-                
-                throttle_upper = throttle_total >> 8; // upper bits
-                throttle_lower = throttle_total & 0xFF; // lower bits   
-                
+                close_precharge();
             }
-            /*
             
+            if(get_RUN_FAULT_SUM() >0) {
+                state = 3;
+            }    
             
             if(get_HV_Requested() == 0) {
-                state = 0;
+               state = 0;
             }
+            
             else if (e_stop == 0) {
                 state = 3;   
             }
@@ -108,7 +103,7 @@ int main(void)
             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
                 state = 2;   
             }
-            */
+            
             /*May or may not need to check status 3
             if(Status3 = 36) ; an OS defined variable that has info on driver faults
 		        ; checks for 2 specific errors
@@ -129,23 +124,28 @@ int main(void)
     		}
             
             */
+            
         }
         //Trap state
-        /*
+        
         // is entered when there are more errors than just estop (Status3 > 0). 
         else if(state == 2) {
-		    clear_interlock(); // clears interlock, send a message to open AIRs
-		    // set EM Brake = 0
+		    
+		    
 	    }
         else if (state == 3) {
+            clear_interlock();
             if (get_HV_Requested() == 0) {
                 state = 0;
+                
                 //can_send_ESTOP(0); why is this here?
             }
         }
-        */
-        can_send_ESTOP(e_stop);
-        can_send_state_and_throttle(state, throttle_upper, throttle_lower);    
+        
+        
+        
+        
+        //can_send_ESTOP(e_stop);
         CyDelay(1000);
     }
 }

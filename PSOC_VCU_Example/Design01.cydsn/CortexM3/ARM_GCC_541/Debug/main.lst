@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 1
 
 
    1              		.syntax unified
@@ -49,63 +49,66 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 1
   19:main.c        **** uint16 throttle_total = 0;
   20:main.c        **** uint8 throttle_upper = 0;
   21:main.c        **** uint8 throttle_lower = 0;
-  22:main.c        **** int main(void)
-  23:main.c        **** {
-  28              		.loc 1 23 0
+  22:main.c        **** #define max_Voltage 4976 //Change this later
+  23:main.c        **** 
+  24:main.c        **** int main(void)
+  25:main.c        **** {
+  28              		.loc 1 25 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 70B5     		push	{r4, r5, r6, lr}
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 2
+
+
   33              		.cfi_def_cfa_offset 16
   34              		.cfi_offset 4, -16
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 2
-
-
   35              		.cfi_offset 5, -12
   36              		.cfi_offset 6, -8
   37              		.cfi_offset 14, -4
-  24:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  38              		.loc 1 24 0
+  26:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  38              		.loc 1 26 0
   39              		.syntax unified
-  40              	@ 24 "main.c" 1
+  40              	@ 26 "main.c" 1
   41 0002 62B6     		CPSIE   i
   42              	@ 0 "" 2
-  25:main.c        ****     
-  26:main.c        ****     //Initialize and start CAN
-  27:main.c        ****     CAN_GlobalIntEnable();
-  43              		.loc 1 27 0
+  27:main.c        ****     
+  28:main.c        ****     //Initialize and start CAN
+  29:main.c        ****     CAN_GlobalIntEnable();
+  43              		.loc 1 29 0
   44              		.thumb
   45              		.syntax unified
   46 0004 FFF7FEFF 		bl	CAN_GlobalIntEnable
   47              	.LVL0:
-  28:main.c        ****     CAN_Init();
-  48              		.loc 1 28 0
+  30:main.c        ****     CAN_Init();
+  48              		.loc 1 30 0
   49 0008 FFF7FEFF 		bl	CAN_Init
   50              	.LVL1:
-  29:main.c        ****     CAN_Start();
-  51              		.loc 1 29 0
+  31:main.c        ****     CAN_Start();
+  51              		.loc 1 31 0
   52 000c FFF7FEFF 		bl	CAN_Start
   53              	.LVL2:
-  30:main.c        ****     ADC_DelSig_1_Start();
-  54              		.loc 1 30 0
+  32:main.c        ****     ADC_DelSig_1_Start();
+  54              		.loc 1 32 0
   55 0010 FFF7FEFF 		bl	ADC_DelSig_1_Start
   56              	.LVL3:
-  57              	.L10:
+  57              	.L15:
   58              	.LBB2:
-  31:main.c        ****     
-  32:main.c        ****     for(;;)
-  33:main.c        ****     {   
-  34:main.c        ****         //We need read the e_stop status in from the Shutdown_IN pin.
-  35:main.c        ****         //If e_stop is hit, should be equal to 0.
-  36:main.c        ****         e_stop = SD_IN_Read();
-  59              		.loc 1 36 0
+  33:main.c        ****     
+  34:main.c        ****     for(;;)
+  35:main.c        ****     {   
+  36:main.c        ****         
+  37:main.c        ****         //We need read the e_stop status in from the Shutdown_IN pin.
+  38:main.c        ****         //If e_stop is hit, should be equal to 0.
+  39:main.c        ****         e_stop = SD_IN_Read();
+  59              		.loc 1 39 0
   60 0014 FFF7FEFF 		bl	SD_IN_Read
   61              	.LVL4:
-  62 0018 324B     		ldr	r3, .L13
+  62 0018 3A4B     		ldr	r3, .L18
   63 001a 1870     		strb	r0, [r3]
-  37:main.c        ****         
-  38:main.c        ****         uint16_t current = (uint16_t) ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
-  64              		.loc 1 38 0
+  40:main.c        ****         
+  41:main.c        ****         uint16_t current = (uint16_t) 1.09*ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
+  64              		.loc 1 41 0
   65 001c FFF7FEFF 		bl	ADC_DelSig_1_Read32
   66              	.LVL5:
   67 0020 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
@@ -113,1401 +116,1375 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 1
   69 0024 0546     		mov	r5, r0
   70 0026 86B2     		uxth	r6, r0
   71              	.LVL7:
-  39:main.c        ****         
-  40:main.c        ****         // shutdown flags, current
-  41:main.c        ****         uint8_t shutdown_flags = 0;
-  42:main.c        ****         uint8_t current_upper = 0;
-  43:main.c        ****         uint8_t current_lower = 0;
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 3
+  42:main.c        ****         
+  43:main.c        ****         // shutdown flags, current
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 3
 
 
-  44:main.c        ****         
-  45:main.c        ****         if (IMD_Fault_Read()) { shutdown_flags |= (1 << 5); }
-  72              		.loc 1 45 0
+  44:main.c        ****         uint8_t shutdown_flags = 0;
+  45:main.c        ****         uint8_t current_upper = 0;
+  46:main.c        ****         uint8_t current_lower = 0;
+  47:main.c        ****         
+  48:main.c        ****         if (IMD_Fault_Read()) { shutdown_flags |= (1 << 5); }
+  72              		.loc 1 48 0
   73 0028 FFF7FEFF 		bl	IMD_Fault_Read
   74              	.LVL8:
-  75 002c 08B1     		cbz	r0, .L11
+  75 002c 08B1     		cbz	r0, .L16
   76 002e 2024     		movs	r4, #32
   77 0030 00E0     		b	.L2
-  78              	.L11:
-  46:main.c        ****         else { shutdown_flags &= (0b011111); }
-  79              		.loc 1 46 0
+  78              	.L16:
+  49:main.c        ****         else { shutdown_flags &= (0b011111); }
+  79              		.loc 1 49 0
   80 0032 0024     		movs	r4, #0
   81              	.L2:
   82              	.LVL9:
-  47:main.c        ****         
-  48:main.c        ****         if (BMS_Fault_Read()) { shutdown_flags |= (1 << 4); }
-  83              		.loc 1 48 0
+  50:main.c        ****         
+  51:main.c        ****         if (BMS_Fault_Read()) { shutdown_flags |= (1 << 4); }
+  83              		.loc 1 51 0
   84 0034 FFF7FEFF 		bl	BMS_Fault_Read
   85              	.LVL10:
   86 0038 10B1     		cbz	r0, .L4
-  87              		.loc 1 48 0 is_stmt 0 discriminator 1
+  87              		.loc 1 51 0 is_stmt 0 discriminator 1
   88 003a 44F01004 		orr	r4, r4, #16
   89              	.LVL11:
   90 003e E4B2     		uxtb	r4, r4
   91              	.LVL12:
   92              	.L4:
-  49:main.c        ****         else { shutdown_flags &= (0b101111); }
-  50:main.c        ****         
-  51:main.c        ****         if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
-  93              		.loc 1 51 0 is_stmt 1
+  52:main.c        ****         else { shutdown_flags &= (0b101111); }
+  53:main.c        ****         
+  54:main.c        ****         if (SD_FINAL_Read()) { shutdown_flags |= (1 << 3); }
+  93              		.loc 1 54 0 is_stmt 1
   94 0040 FFF7FEFF 		bl	SD_FINAL_Read
   95              	.LVL13:
   96 0044 10B1     		cbz	r0, .L5
-  97              		.loc 1 51 0 is_stmt 0 discriminator 1
+  97              		.loc 1 54 0 is_stmt 0 discriminator 1
   98 0046 44F00802 		orr	r2, r4, #8
   99              	.LVL14:
  100 004a 01E0     		b	.L6
  101              	.LVL15:
  102              	.L5:
-  52:main.c        ****         else { shutdown_flags &= (0b110111); }
- 103              		.loc 1 52 0 is_stmt 1
+  55:main.c        ****         else { shutdown_flags &= (0b110111); }
+ 103              		.loc 1 55 0 is_stmt 1
  104 004c 04F03702 		and	r2, r4, #55
  105              	.LVL16:
  106              	.L6:
-  53:main.c        ****         
-  54:main.c        ****         
-  55:main.c        ****         /* For debug purposes
-  56:main.c        ****         if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
-  57:main.c        ****         else { shutdown_flags &= (0b111011); }
-  58:main.c        ****         
-  59:main.c        ****         if (AIR_NEG_Read()) { shutdown_flags |= (1 << 1); }
-  60:main.c        ****         else { shutdown_flags &= (0b111101); }
+  56:main.c        ****         
+  57:main.c        ****         
+  58:main.c        ****         /* For debug purposes
+  59:main.c        ****         if (AIR_POS_Read()) { shutdown_flags |= (1 << 2); }
+  60:main.c        ****         else { shutdown_flags &= (0b111011); }
   61:main.c        ****         
-  62:main.c        ****         if (Precharge_Read()) { shutdown_flags |= (1 << 0); }
-  63:main.c        ****         else { shutdown_flags &= (0b111110); }
-  64:main.c        ****         */
-  65:main.c        ****         
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 4
+  62:main.c        ****         if (AIR_NEG_Read()) { shutdown_flags |= (1 << 1); }
+  63:main.c        ****         else { shutdown_flags &= (0b111101); }
+  64:main.c        ****         
+  65:main.c        ****         if (Precharge_Read()) { shutdown_flags |= (1 << 0); }
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 4
 
 
-  66:main.c        ****         // send data via PCAN to BMS main
-  67:main.c        ****         // note: uses 2's complement
-  68:main.c        ****         current_upper = current >> 8; // upper bits
-  69:main.c        ****         current_lower = current & 0xFF; // lower bits
-  70:main.c        ****         can_send_PEI(current_upper, current_lower, shutdown_flags);
- 107              		.loc 1 70 0
+  66:main.c        ****         else { shutdown_flags &= (0b111110); }
+  67:main.c        ****         */
+  68:main.c        ****         
+  69:main.c        ****         // send data via PCAN to BMS main
+  70:main.c        ****         // note: uses 2's complement
+  71:main.c        ****         current_upper = current >> 8; // upper bits
+  72:main.c        ****         current_lower = current & 0xFF; // lower bits
+  73:main.c        ****         can_send_PEI(current_upper, current_lower, shutdown_flags);
+ 107              		.loc 1 73 0
  108 0050 E9B2     		uxtb	r1, r5
  109 0052 300A     		lsrs	r0, r6, #8
  110 0054 FFF7FEFF 		bl	can_send_PEI
  111              	.LVL17:
-  71:main.c        ****         
-  72:main.c        ****         //Interlock state machine
-  73:main.c        ****         if (state == 0) {
- 112              		.loc 1 73 0
- 113 0058 234B     		ldr	r3, .L13+4
+  74:main.c        ****         
+  75:main.c        ****         //Interlock state machine
+  76:main.c        ****         if (state == 0) {
+ 112              		.loc 1 76 0
+ 113 0058 2B4B     		ldr	r3, .L18+4
  114 005a 1B68     		ldr	r3, [r3]
  115 005c 73B9     		cbnz	r3, .L7
-  74:main.c        ****             clear_interlock(); // clears interlock, send a message to open AIRs          
- 116              		.loc 1 74 0
+  77:main.c        ****             clear_interlock(); // clears interlock, send a message to open AIRs          
+ 116              		.loc 1 77 0
  117 005e FFF7FEFF 		bl	clear_interlock
  118              	.LVL18:
-  75:main.c        ****             if((get_HV_Requested() == 1) && (e_stop != 0)) {
- 119              		.loc 1 75 0
+  78:main.c        ****             if((get_HV_Requested() == 1) && (e_stop != 0)) {
+ 119              		.loc 1 78 0
  120 0062 FFF7FEFF 		bl	get_HV_Requested
  121              	.LVL19:
  122 0066 0128     		cmp	r0, #1
- 123 0068 2BD1     		bne	.L8
- 124              		.loc 1 75 0 is_stmt 0 discriminator 1
- 125 006a 1E4B     		ldr	r3, .L13
+ 123 0068 46D1     		bne	.L8
+ 124              		.loc 1 78 0 is_stmt 0 discriminator 1
+ 125 006a 264B     		ldr	r3, .L18
  126 006c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  127 006e 13F0FF0F 		tst	r3, #255
- 128 0072 26D0     		beq	.L8
-  76:main.c        ****                 state = 1;
- 129              		.loc 1 76 0 is_stmt 1
+ 128 0072 41D0     		beq	.L8
+  79:main.c        ****                 state = 1;
+ 129              		.loc 1 79 0 is_stmt 1
  130 0074 0122     		movs	r2, #1
- 131 0076 1C4B     		ldr	r3, .L13+4
+ 131 0076 244B     		ldr	r3, .L18+4
  132 0078 1A60     		str	r2, [r3]
- 133 007a 22E0     		b	.L8
+ 133 007a 3DE0     		b	.L8
  134              	.L7:
-  77:main.c        ****             }
-  78:main.c        ****         }
-  79:main.c        ****         
-  80:main.c        ****         else if (state == 1) { 
- 135              		.loc 1 80 0
- 136 007c 1A4B     		ldr	r3, .L13+4
+  80:main.c        ****             }
+  81:main.c        ****         }
+  82:main.c        ****         
+  83:main.c        ****         else if (state == 1) {
+ 135              		.loc 1 83 0
+ 136 007c 224B     		ldr	r3, .L18+4
  137 007e 1B68     		ldr	r3, [r3]
  138 0080 012B     		cmp	r3, #1
- 139 0082 1ED1     		bne	.L8
- 140              	.LBB3:
-  81:main.c        ****             set_interlock(); //sets interlock, sends a message to close AIRs
- 141              		.loc 1 81 0
- 142 0084 FFF7FEFF 		bl	set_interlock
- 143              	.LVL20:
-  82:main.c        ****             uint8 throttle_high = get_THROTTLE_HIGH();
- 144              		.loc 1 82 0
- 145 0088 FFF7FEFF 		bl	get_THROTTLE_HIGH
- 146              	.LVL21:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 5
+ 139 0082 29D1     		bne	.L9
+  84:main.c        ****             if (get_BMS_Voltage() > max_Voltage) {
+ 140              		.loc 1 84 0
+ 141 0084 FFF7FEFF 		bl	get_BMS_Voltage
+ 142              	.LVL20:
+ 143 0088 41F27033 		movw	r3, #4976
+ 144 008c 9842     		cmp	r0, r3
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 5
 
 
- 147 008c 0446     		mov	r4, r0
- 148              	.LVL22:
-  83:main.c        ****             uint8 throttle_low = get_THROTTLE_LOW();
- 149              		.loc 1 83 0
- 150 008e FFF7FEFF 		bl	get_THROTTLE_LOW
- 151              	.LVL23:
-  84:main.c        ****             
-  85:main.c        ****             
-  86:main.c        ****             if(((throttle_high * 255 + throttle_low) < 0) || ((throttle_high * 255 + throttle_low) 
- 152              		.loc 1 86 0
- 153 0092 C4EB0424 		rsb	r4, r4, r4, lsl #8
- 154              	.LVL24:
- 155 0096 2044     		add	r0, r0, r4
- 156              	.LVL25:
- 157 0098 B0F5004F 		cmp	r0, #32768
- 158 009c 03D3     		bcc	.L9
-  87:main.c        ****                 throttle_total = 0;
- 159              		.loc 1 87 0
- 160 009e 0022     		movs	r2, #0
- 161 00a0 124B     		ldr	r3, .L13+8
- 162 00a2 1A80     		strh	r2, [r3]	@ movhi
- 163 00a4 0DE0     		b	.L8
- 164              	.L9:
-  88:main.c        ****             }
-  89:main.c        ****             else {
-  90:main.c        ****                 //TODO: change back to throttle_high * 255 + throttle_low;  
-  91:main.c        ****                 // higher values lead to overflowing, defaults to 0.
-  92:main.c        ****                 throttle_total = get_THROTTLE_HIGH()*255+ get_THROTTLE_LOW();
- 165              		.loc 1 92 0
- 166 00a6 FFF7FEFF 		bl	get_THROTTLE_HIGH
- 167              	.LVL26:
- 168 00aa 0446     		mov	r4, r0
- 169 00ac FFF7FEFF 		bl	get_THROTTLE_LOW
- 170              	.LVL27:
- 171 00b0 C4EB0424 		rsb	r4, r4, r4, lsl #8
- 172 00b4 2044     		add	r0, r0, r4
- 173 00b6 80B2     		uxth	r0, r0
- 174 00b8 0C4B     		ldr	r3, .L13+8
- 175 00ba 1880     		strh	r0, [r3]	@ movhi
-  93:main.c        ****                 
-  94:main.c        ****                 throttle_upper = throttle_total >> 8; // upper bits
- 176              		.loc 1 94 0
- 177 00bc 020A     		lsrs	r2, r0, #8
- 178 00be 9A70     		strb	r2, [r3, #2]
-  95:main.c        ****                 throttle_lower = throttle_total & 0xFF; // lower bits   
- 179              		.loc 1 95 0
- 180 00c0 D870     		strb	r0, [r3, #3]
- 181              	.L8:
- 182              	.LBE3:
-  96:main.c        ****                 
+ 145 008e 02D9     		bls	.L10
+  85:main.c        ****                 open_precharge(); //sets interlock, sends a message to close AIRs
+ 146              		.loc 1 85 0
+ 147 0090 FFF7FEFF 		bl	open_precharge
+ 148              	.LVL21:
+ 149 0094 01E0     		b	.L11
+ 150              	.L10:
+  86:main.c        ****             }
+  87:main.c        ****             else {
+  88:main.c        ****                 close_precharge();
+ 151              		.loc 1 88 0
+ 152 0096 FFF7FEFF 		bl	close_precharge
+ 153              	.LVL22:
+ 154              	.L11:
+  89:main.c        ****             }
+  90:main.c        ****             
+  91:main.c        ****             if(get_RUN_FAULT_SUM() >0) {
+ 155              		.loc 1 91 0
+ 156 009a FFF7FEFF 		bl	get_RUN_FAULT_SUM
+ 157              	.LVL23:
+ 158 009e 10B1     		cbz	r0, .L12
+  92:main.c        ****                 state = 3;
+ 159              		.loc 1 92 0
+ 160 00a0 0322     		movs	r2, #3
+ 161 00a2 194B     		ldr	r3, .L18+4
+ 162 00a4 1A60     		str	r2, [r3]
+ 163              	.L12:
+  93:main.c        ****             }    
+  94:main.c        ****             
+  95:main.c        ****             if(get_HV_Requested() == 0) {
+ 164              		.loc 1 95 0
+ 165 00a6 FFF7FEFF 		bl	get_HV_Requested
+ 166              	.LVL24:
+ 167 00aa 18B9     		cbnz	r0, .L13
+  96:main.c        ****                state = 0;
+ 168              		.loc 1 96 0
+ 169 00ac 0022     		movs	r2, #0
+ 170 00ae 164B     		ldr	r3, .L18+4
+ 171 00b0 1A60     		str	r2, [r3]
+ 172 00b2 21E0     		b	.L8
+ 173              	.L13:
   97:main.c        ****             }
-  98:main.c        ****             /*
-  99:main.c        ****             
- 100:main.c        ****             
- 101:main.c        ****             if(get_HV_Requested() == 0) {
- 102:main.c        ****                 state = 0;
- 103:main.c        ****             }
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 6
+  98:main.c        ****             
+  99:main.c        ****             else if (e_stop == 0) {
+ 174              		.loc 1 99 0
+ 175 00b4 134B     		ldr	r3, .L18
+ 176 00b6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 177 00b8 13F0FF0F 		tst	r3, #255
+ 178 00bc 03D1     		bne	.L14
+ 100:main.c        ****                 state = 3;   
+ 179              		.loc 1 100 0
+ 180 00be 0322     		movs	r2, #3
+ 181 00c0 114B     		ldr	r3, .L18+4
+ 182 00c2 1A60     		str	r2, [r3]
+ 183 00c4 18E0     		b	.L8
+ 184              	.L14:
+ 101:main.c        ****             }
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 6
 
 
- 104:main.c        ****             else if (e_stop == 0) {
- 105:main.c        ****                 state = 3;   
- 106:main.c        ****             }
- 107:main.c        ****             //TODO: We need to get into state 2 if there's an error, but what error we check for is
- 108:main.c        ****             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
- 109:main.c        ****                 state = 2;   
- 110:main.c        ****             }
- 111:main.c        ****             */
- 112:main.c        ****             /*May or may not need to check status 3
- 113:main.c        ****             if(Status3 = 36) ; an OS defined variable that has info on driver faults
- 114:main.c        **** 		        ; checks for 2 specific errors
- 115:main.c        ****     		; Bit2 = Coi12 Driver Open/Short (Code 32)
- 116:main.c        ****     		; Bit5 = PD Open/Short (Code 35)
- 117:main.c        ****     		{
- 118:main.c        ****     			state = 3
- 119:main.c        ****     			e_stop = 1
- 120:main.c        ****     			; sends CAN message saying that estop should activate
- 121:main.c        ****     			send_mailbox(eStop)
- 122:main.c        ****     		}
- 123:main.c        ****         
- 124:main.c        ****         
- 125:main.c        ****             else if(Status3 > 0) 
- 126:main.c        ****     		{
- 127:main.c        ****     			; trap state
- 128:main.c        ****     			state = 2
- 129:main.c        ****     		}
- 130:main.c        ****             
- 131:main.c        ****             */
- 132:main.c        ****         }
- 133:main.c        ****         //Trap state
- 134:main.c        ****         /*
- 135:main.c        ****         // is entered when there are more errors than just estop (Status3 > 0). 
- 136:main.c        ****         else if(state == 2) {
- 137:main.c        **** 		    clear_interlock(); // clears interlock, send a message to open AIRs
- 138:main.c        **** 		    // set EM Brake = 0
- 139:main.c        **** 	    }
- 140:main.c        ****         else if (state == 3) {
- 141:main.c        ****             if (get_HV_Requested() == 0) {
- 142:main.c        ****                 state = 0;
- 143:main.c        ****                 //can_send_ESTOP(0); why is this here?
- 144:main.c        ****             }
- 145:main.c        ****         }
- 146:main.c        ****         */
- 147:main.c        ****         can_send_ESTOP(e_stop);
- 183              		.loc 1 147 0
- 184 00c2 084B     		ldr	r3, .L13
- 185 00c4 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 186 00c6 FFF7FEFF 		bl	can_send_ESTOP
- 187              	.LVL28:
- 148:main.c        ****         can_send_state_and_throttle(state, throttle_upper, throttle_lower);    
- 188              		.loc 1 148 0
- 189 00ca 074B     		ldr	r3, .L13+4
- 190 00cc 1868     		ldr	r0, [r3]
- 191 00ce 074B     		ldr	r3, .L13+8
- 192 00d0 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
- 193 00d2 9978     		ldrb	r1, [r3, #2]	@ zero_extendqisi2
- 194 00d4 C0B2     		uxtb	r0, r0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 7
+ 102:main.c        ****             //TODO: We need to get into state 2 if there's an error, but what error we check for is
+ 103:main.c        ****             else if ((get_VEHICLE_STATE() & 0x80) == 0x80) {
+ 185              		.loc 1 103 0
+ 186 00c6 FFF7FEFF 		bl	get_VEHICLE_STATE
+ 187              	.LVL25:
+ 188 00ca 10F0800F 		tst	r0, #128
+ 189 00ce 13D0     		beq	.L8
+ 104:main.c        ****                 state = 2;   
+ 190              		.loc 1 104 0
+ 191 00d0 0222     		movs	r2, #2
+ 192 00d2 0D4B     		ldr	r3, .L18+4
+ 193 00d4 1A60     		str	r2, [r3]
+ 194 00d6 0FE0     		b	.L8
+ 195              	.L9:
+ 105:main.c        ****             }
+ 106:main.c        ****             
+ 107:main.c        ****             /*May or may not need to check status 3
+ 108:main.c        ****             if(Status3 = 36) ; an OS defined variable that has info on driver faults
+ 109:main.c        **** 		        ; checks for 2 specific errors
+ 110:main.c        ****     		; Bit2 = Coi12 Driver Open/Short (Code 32)
+ 111:main.c        ****     		; Bit5 = PD Open/Short (Code 35)
+ 112:main.c        ****     		{
+ 113:main.c        ****     			state = 3
+ 114:main.c        ****     			e_stop = 1
+ 115:main.c        ****     			; sends CAN message saying that estop should activate
+ 116:main.c        ****     			send_mailbox(eStop)
+ 117:main.c        ****     		}
+ 118:main.c        ****         
+ 119:main.c        ****         
+ 120:main.c        ****             else if(Status3 > 0) 
+ 121:main.c        ****     		{
+ 122:main.c        ****     			; trap state
+ 123:main.c        ****     			state = 2
+ 124:main.c        ****     		}
+ 125:main.c        ****             
+ 126:main.c        ****             */
+ 127:main.c        ****             
+ 128:main.c        ****         }
+ 129:main.c        ****         //Trap state
+ 130:main.c        ****         
+ 131:main.c        ****         // is entered when there are more errors than just estop (Status3 > 0). 
+ 132:main.c        ****         else if(state == 2) {
+ 196              		.loc 1 132 0
+ 197 00d8 0B4B     		ldr	r3, .L18+4
+ 198 00da 1B68     		ldr	r3, [r3]
+ 199 00dc 022B     		cmp	r3, #2
+ 200 00de 0BD0     		beq	.L8
+ 133:main.c        **** 		    
+ 134:main.c        **** 		    
+ 135:main.c        **** 	    }
+ 136:main.c        ****         else if (state == 3) {
+ 201              		.loc 1 136 0
+ 202 00e0 094B     		ldr	r3, .L18+4
+ 203 00e2 1B68     		ldr	r3, [r3]
+ 204 00e4 032B     		cmp	r3, #3
+ 205 00e6 07D1     		bne	.L8
+ 137:main.c        ****             clear_interlock();
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 7
 
 
- 195 00d6 FFF7FEFF 		bl	can_send_state_and_throttle
- 196              	.LVL29:
+ 206              		.loc 1 137 0
+ 207 00e8 FFF7FEFF 		bl	clear_interlock
+ 208              	.LVL26:
+ 138:main.c        ****             if (get_HV_Requested() == 0) {
+ 209              		.loc 1 138 0
+ 210 00ec FFF7FEFF 		bl	get_HV_Requested
+ 211              	.LVL27:
+ 212 00f0 10B9     		cbnz	r0, .L8
+ 139:main.c        ****                 state = 0;
+ 213              		.loc 1 139 0
+ 214 00f2 0022     		movs	r2, #0
+ 215 00f4 044B     		ldr	r3, .L18+4
+ 216 00f6 1A60     		str	r2, [r3]
+ 217              	.L8:
+ 140:main.c        ****                 
+ 141:main.c        ****                 //can_send_ESTOP(0); why is this here?
+ 142:main.c        ****             }
+ 143:main.c        ****         }
+ 144:main.c        ****         
+ 145:main.c        ****         
+ 146:main.c        ****         
+ 147:main.c        ****         
+ 148:main.c        ****         //can_send_ESTOP(e_stop);
  149:main.c        ****         CyDelay(1000);
- 197              		.loc 1 149 0
- 198 00da 4FF47A70 		mov	r0, #1000
- 199 00de FFF7FEFF 		bl	CyDelay
- 200              	.LVL30:
- 201              	.LBE2:
+ 218              		.loc 1 149 0
+ 219 00f8 4FF47A70 		mov	r0, #1000
+ 220 00fc FFF7FEFF 		bl	CyDelay
+ 221              	.LVL28:
+ 222              	.LBE2:
  150:main.c        ****     }
- 202              		.loc 1 150 0
- 203 00e2 97E7     		b	.L10
- 204              	.L14:
- 205              		.align	2
- 206              	.L13:
- 207 00e4 00000000 		.word	e_stop
- 208 00e8 00000000 		.word	.LANCHOR0
- 209 00ec 00000000 		.word	.LANCHOR1
- 210              		.cfi_endproc
- 211              	.LFE63:
- 212              		.size	main, .-main
- 213              		.global	throttle_lower
- 214              		.global	throttle_upper
- 215              		.global	throttle_total
- 216              		.comm	e_stop,1,1
- 217              		.global	state
- 218              		.data
- 219              		.align	2
- 220              		.set	.LANCHOR0,. + 0
- 221              		.type	state, %object
- 222              		.size	state, 4
- 223              	state:
- 224 0000 01000000 		.word	1
- 225              		.bss
- 226              		.align	1
- 227              		.set	.LANCHOR1,. + 0
- 228              		.type	throttle_total, %object
- 229              		.size	throttle_total, 2
- 230              	throttle_total:
- 231 0000 0000     		.space	2
- 232              		.type	throttle_upper, %object
- 233              		.size	throttle_upper, 1
- 234              	throttle_upper:
- 235 0002 00       		.space	1
- 236              		.type	throttle_lower, %object
- 237              		.size	throttle_lower, 1
- 238              	throttle_lower:
- 239 0003 00       		.space	1
- 240              		.text
- 241              	.Letext0:
- 242              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 243              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 244              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 245              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
- 246              		.file 6 "can_manager.h"
- 247              		.file 7 "Generated_Source\\PSoC5/SD_IN.h"
- 248              		.file 8 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
- 249              		.file 9 "Generated_Source\\PSoC5/IMD_Fault.h"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 8
+ 223              		.loc 1 150 0
+ 224 0100 88E7     		b	.L15
+ 225              	.L19:
+ 226 0102 00BF     		.align	2
+ 227              	.L18:
+ 228 0104 00000000 		.word	e_stop
+ 229 0108 00000000 		.word	.LANCHOR0
+ 230              		.cfi_endproc
+ 231              	.LFE63:
+ 232              		.size	main, .-main
+ 233              		.global	throttle_lower
+ 234              		.global	throttle_upper
+ 235              		.global	throttle_total
+ 236              		.comm	e_stop,1,1
+ 237              		.global	state
+ 238              		.data
+ 239              		.align	2
+ 240              		.set	.LANCHOR0,. + 0
+ 241              		.type	state, %object
+ 242              		.size	state, 4
+ 243              	state:
+ 244 0000 01000000 		.word	1
+ 245              		.bss
+ 246              		.align	1
+ 247              		.type	throttle_lower, %object
+ 248              		.size	throttle_lower, 1
+ 249              	throttle_lower:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 8
 
 
- 250              		.file 10 "Generated_Source\\PSoC5/BMS_Fault.h"
- 251              		.file 11 "Generated_Source\\PSoC5/SD_FINAL.h"
- 252              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
- 253              		.file 13 "Generated_Source\\PSoC5/CAN.h"
- 254              		.section	.debug_info,"",%progbits
- 255              	.Ldebug_info0:
- 256 0000 A2030000 		.4byte	0x3a2
- 257 0004 0400     		.2byte	0x4
- 258 0006 00000000 		.4byte	.Ldebug_abbrev0
- 259 000a 04       		.byte	0x4
- 260 000b 01       		.uleb128 0x1
- 261 000c F5000000 		.4byte	.LASF55
- 262 0010 0C       		.byte	0xc
- 263 0011 0F030000 		.4byte	.LASF56
- 264 0015 AD000000 		.4byte	.LASF57
- 265 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 266 001d 00000000 		.4byte	0
- 267 0021 00000000 		.4byte	.Ldebug_line0
- 268 0025 02       		.uleb128 0x2
- 269 0026 01       		.byte	0x1
- 270 0027 06       		.byte	0x6
- 271 0028 72030000 		.4byte	.LASF0
- 272 002c 03       		.uleb128 0x3
- 273 002d 00000000 		.4byte	.LASF3
- 274 0031 02       		.byte	0x2
- 275 0032 1D       		.byte	0x1d
- 276 0033 37000000 		.4byte	0x37
- 277 0037 02       		.uleb128 0x2
- 278 0038 01       		.byte	0x1
- 279 0039 08       		.byte	0x8
- 280 003a E0010000 		.4byte	.LASF1
- 281 003e 02       		.uleb128 0x2
- 282 003f 02       		.byte	0x2
- 283 0040 05       		.byte	0x5
- 284 0041 2C030000 		.4byte	.LASF2
- 285 0045 03       		.uleb128 0x3
- 286 0046 EE010000 		.4byte	.LASF4
- 287 004a 02       		.byte	0x2
- 288 004b 2B       		.byte	0x2b
- 289 004c 50000000 		.4byte	0x50
- 290 0050 02       		.uleb128 0x2
- 291 0051 02       		.byte	0x2
- 292 0052 07       		.byte	0x7
- 293 0053 A4010000 		.4byte	.LASF5
- 294 0057 03       		.uleb128 0x3
- 295 0058 3A000000 		.4byte	.LASF6
- 296 005c 02       		.byte	0x2
- 297 005d 3F       		.byte	0x3f
- 298 005e 62000000 		.4byte	0x62
- 299 0062 02       		.uleb128 0x2
- 300 0063 04       		.byte	0x4
- 301 0064 05       		.byte	0x5
- 302 0065 5A030000 		.4byte	.LASF7
- 303 0069 03       		.uleb128 0x3
- 304 006a 07020000 		.4byte	.LASF8
- 305 006e 02       		.byte	0x2
- 306 006f 41       		.byte	0x41
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 9
+ 250 0000 00       		.space	1
+ 251              		.type	throttle_upper, %object
+ 252              		.size	throttle_upper, 1
+ 253              	throttle_upper:
+ 254 0001 00       		.space	1
+ 255              		.type	throttle_total, %object
+ 256              		.size	throttle_total, 2
+ 257              	throttle_total:
+ 258 0002 0000     		.space	2
+ 259              		.text
+ 260              	.Letext0:
+ 261              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 262              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 263              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 264              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 265              		.file 6 "Generated_Source\\PSoC5/SD_IN.h"
+ 266              		.file 7 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
+ 267              		.file 8 "Generated_Source\\PSoC5/IMD_Fault.h"
+ 268              		.file 9 "Generated_Source\\PSoC5/BMS_Fault.h"
+ 269              		.file 10 "Generated_Source\\PSoC5/SD_FINAL.h"
+ 270              		.file 11 "can_manager.h"
+ 271              		.file 12 "Generated_Source\\PSoC5/CyLib.h"
+ 272              		.file 13 "Generated_Source\\PSoC5/CAN.h"
+ 273              		.section	.debug_info,"",%progbits
+ 274              	.Ldebug_info0:
+ 275 0000 7F030000 		.4byte	0x37f
+ 276 0004 0400     		.2byte	0x4
+ 277 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 278 000a 04       		.byte	0x4
+ 279 000b 01       		.uleb128 0x1
+ 280 000c C4000000 		.4byte	.LASF53
+ 281 0010 0C       		.byte	0xc
+ 282 0011 D7020000 		.4byte	.LASF54
+ 283 0015 7C000000 		.4byte	.LASF55
+ 284 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 285 001d 00000000 		.4byte	0
+ 286 0021 00000000 		.4byte	.Ldebug_line0
+ 287 0025 02       		.uleb128 0x2
+ 288 0026 01       		.byte	0x1
+ 289 0027 06       		.byte	0x6
+ 290 0028 4E030000 		.4byte	.LASF0
+ 291 002c 03       		.uleb128 0x3
+ 292 002d 0E000000 		.4byte	.LASF3
+ 293 0031 02       		.byte	0x2
+ 294 0032 1D       		.byte	0x1d
+ 295 0033 37000000 		.4byte	0x37
+ 296 0037 02       		.uleb128 0x2
+ 297 0038 01       		.byte	0x1
+ 298 0039 08       		.byte	0x8
+ 299 003a B0010000 		.4byte	.LASF1
+ 300 003e 02       		.uleb128 0x2
+ 301 003f 02       		.byte	0x2
+ 302 0040 05       		.byte	0x5
+ 303 0041 FD020000 		.4byte	.LASF2
+ 304 0045 03       		.uleb128 0x3
+ 305 0046 07030000 		.4byte	.LASF4
+ 306 004a 02       		.byte	0x2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 9
 
 
- 307 0070 74000000 		.4byte	0x74
- 308 0074 02       		.uleb128 0x2
- 309 0075 04       		.byte	0x4
- 310 0076 07       		.byte	0x7
- 311 0077 92010000 		.4byte	.LASF9
- 312 007b 02       		.uleb128 0x2
- 313 007c 08       		.byte	0x8
- 314 007d 05       		.byte	0x5
- 315 007e F3020000 		.4byte	.LASF10
- 316 0082 02       		.uleb128 0x2
- 317 0083 08       		.byte	0x8
- 318 0084 07       		.byte	0x7
- 319 0085 8D020000 		.4byte	.LASF11
- 320 0089 04       		.uleb128 0x4
- 321 008a 04       		.byte	0x4
- 322 008b 05       		.byte	0x5
- 323 008c 696E7400 		.ascii	"int\000"
- 324 0090 02       		.uleb128 0x2
- 325 0091 04       		.byte	0x4
- 326 0092 07       		.byte	0x7
- 327 0093 54020000 		.4byte	.LASF12
- 328 0097 03       		.uleb128 0x3
- 329 0098 A4020000 		.4byte	.LASF13
- 330 009c 03       		.byte	0x3
- 331 009d 18       		.byte	0x18
- 332 009e 2C000000 		.4byte	0x2c
- 333 00a2 03       		.uleb128 0x3
- 334 00a3 36030000 		.4byte	.LASF14
- 335 00a7 03       		.byte	0x3
- 336 00a8 24       		.byte	0x24
- 337 00a9 45000000 		.4byte	0x45
- 338 00ad 03       		.uleb128 0x3
- 339 00ae 61000000 		.4byte	.LASF15
- 340 00b2 03       		.byte	0x3
- 341 00b3 2C       		.byte	0x2c
- 342 00b4 57000000 		.4byte	0x57
- 343 00b8 03       		.uleb128 0x3
- 344 00b9 51030000 		.4byte	.LASF16
- 345 00bd 03       		.byte	0x3
- 346 00be 30       		.byte	0x30
- 347 00bf 69000000 		.4byte	0x69
- 348 00c3 05       		.uleb128 0x5
- 349 00c4 86000000 		.4byte	.LASF17
- 350 00c8 04       		.byte	0x4
- 351 00c9 E801     		.2byte	0x1e8
- 352 00cb 37000000 		.4byte	0x37
- 353 00cf 05       		.uleb128 0x5
- 354 00d0 00020000 		.4byte	.LASF18
- 355 00d4 04       		.byte	0x4
- 356 00d5 E901     		.2byte	0x1e9
- 357 00d7 50000000 		.4byte	0x50
- 358 00db 02       		.uleb128 0x2
- 359 00dc 04       		.byte	0x4
- 360 00dd 04       		.byte	0x4
- 361 00de 80000000 		.4byte	.LASF19
- 362 00e2 02       		.uleb128 0x2
- 363 00e3 08       		.byte	0x8
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 10
+ 307 004b 2B       		.byte	0x2b
+ 308 004c 50000000 		.4byte	0x50
+ 309 0050 02       		.uleb128 0x2
+ 310 0051 02       		.byte	0x2
+ 311 0052 07       		.byte	0x7
+ 312 0053 74010000 		.4byte	.LASF5
+ 313 0057 03       		.uleb128 0x3
+ 314 0058 1E000000 		.4byte	.LASF6
+ 315 005c 02       		.byte	0x2
+ 316 005d 3F       		.byte	0x3f
+ 317 005e 62000000 		.4byte	0x62
+ 318 0062 02       		.uleb128 0x2
+ 319 0063 04       		.byte	0x4
+ 320 0064 05       		.byte	0x5
+ 321 0065 36030000 		.4byte	.LASF7
+ 322 0069 03       		.uleb128 0x3
+ 323 006a DC010000 		.4byte	.LASF8
+ 324 006e 02       		.byte	0x2
+ 325 006f 41       		.byte	0x41
+ 326 0070 74000000 		.4byte	0x74
+ 327 0074 02       		.uleb128 0x2
+ 328 0075 04       		.byte	0x4
+ 329 0076 07       		.byte	0x7
+ 330 0077 52010000 		.4byte	.LASF9
+ 331 007b 02       		.uleb128 0x2
+ 332 007c 08       		.byte	0x8
+ 333 007d 05       		.byte	0x5
+ 334 007e 00000000 		.4byte	.LASF10
+ 335 0082 02       		.uleb128 0x2
+ 336 0083 08       		.byte	0x8
+ 337 0084 07       		.byte	0x7
+ 338 0085 62020000 		.4byte	.LASF11
+ 339 0089 04       		.uleb128 0x4
+ 340 008a 04       		.byte	0x4
+ 341 008b 05       		.byte	0x5
+ 342 008c 696E7400 		.ascii	"int\000"
+ 343 0090 02       		.uleb128 0x2
+ 344 0091 04       		.byte	0x4
+ 345 0092 07       		.byte	0x7
+ 346 0093 29020000 		.4byte	.LASF12
+ 347 0097 03       		.uleb128 0x3
+ 348 0098 79020000 		.4byte	.LASF13
+ 349 009c 03       		.byte	0x3
+ 350 009d 18       		.byte	0x18
+ 351 009e 2C000000 		.4byte	0x2c
+ 352 00a2 03       		.uleb128 0x3
+ 353 00a3 12030000 		.4byte	.LASF14
+ 354 00a7 03       		.byte	0x3
+ 355 00a8 24       		.byte	0x24
+ 356 00a9 45000000 		.4byte	0x45
+ 357 00ad 03       		.uleb128 0x3
+ 358 00ae F5020000 		.4byte	.LASF15
+ 359 00b2 03       		.byte	0x3
+ 360 00b3 2C       		.byte	0x2c
+ 361 00b4 57000000 		.4byte	0x57
+ 362 00b8 03       		.uleb128 0x3
+ 363 00b9 2D030000 		.4byte	.LASF16
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 10
 
 
- 364 00e4 04       		.byte	0x4
- 365 00e5 F9010000 		.4byte	.LASF20
- 366 00e9 02       		.uleb128 0x2
- 367 00ea 01       		.byte	0x1
- 368 00eb 08       		.byte	0x8
- 369 00ec 16030000 		.4byte	.LASF21
- 370 00f0 02       		.uleb128 0x2
- 371 00f1 08       		.byte	0x8
- 372 00f2 04       		.byte	0x4
- 373 00f3 CA020000 		.4byte	.LASF22
- 374 00f7 02       		.uleb128 0x2
- 375 00f8 04       		.byte	0x4
- 376 00f9 07       		.byte	0x7
- 377 00fa D6020000 		.4byte	.LASF23
- 378 00fe 06       		.uleb128 0x6
- 379 00ff B8000000 		.4byte	0xb8
- 380 0103 06       		.uleb128 0x6
- 381 0104 97000000 		.4byte	0x97
- 382 0108 07       		.uleb128 0x7
- 383 0109 3C020000 		.4byte	.LASF58
- 384 010d 01       		.byte	0x1
- 385 010e 16       		.byte	0x16
- 386 010f 89000000 		.4byte	0x89
- 387 0113 00000000 		.4byte	.LFB63
- 388 0117 F0000000 		.4byte	.LFE63-.LFB63
- 389 011b 01       		.uleb128 0x1
- 390 011c 9C       		.byte	0x9c
- 391 011d 6E020000 		.4byte	0x26e
- 392 0121 08       		.uleb128 0x8
- 393 0122 14000000 		.4byte	.LBB2
- 394 0126 CE000000 		.4byte	.LBE2-.LBB2
- 395 012a 49020000 		.4byte	0x249
- 396 012e 09       		.uleb128 0x9
- 397 012f 3F030000 		.4byte	.LASF24
- 398 0133 01       		.byte	0x1
- 399 0134 26       		.byte	0x26
- 400 0135 A2000000 		.4byte	0xa2
- 401 0139 01       		.uleb128 0x1
- 402 013a 56       		.byte	0x56
- 403 013b 0A       		.uleb128 0xa
- 404 013c 63030000 		.4byte	.LASF25
- 405 0140 01       		.byte	0x1
- 406 0141 29       		.byte	0x29
- 407 0142 97000000 		.4byte	0x97
- 408 0146 00000000 		.4byte	.LLST0
- 409 014a 0A       		.uleb128 0xa
- 410 014b 99030000 		.4byte	.LASF26
- 411 014f 01       		.byte	0x1
- 412 0150 2A       		.byte	0x2a
- 413 0151 97000000 		.4byte	0x97
- 414 0155 4B000000 		.4byte	.LLST1
- 415 0159 0A       		.uleb128 0xa
- 416 015a 21020000 		.4byte	.LASF27
- 417 015e 01       		.byte	0x1
- 418 015f 2B       		.byte	0x2b
- 419 0160 97000000 		.4byte	0x97
- 420 0164 6E000000 		.4byte	.LLST2
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 11
+ 364 00bd 03       		.byte	0x3
+ 365 00be 30       		.byte	0x30
+ 366 00bf 69000000 		.4byte	0x69
+ 367 00c3 05       		.uleb128 0x5
+ 368 00c4 62000000 		.4byte	.LASF17
+ 369 00c8 04       		.byte	0x4
+ 370 00c9 E801     		.2byte	0x1e8
+ 371 00cb 37000000 		.4byte	0x37
+ 372 00cf 05       		.uleb128 0x5
+ 373 00d0 D5010000 		.4byte	.LASF18
+ 374 00d4 04       		.byte	0x4
+ 375 00d5 E901     		.2byte	0x1e9
+ 376 00d7 50000000 		.4byte	0x50
+ 377 00db 02       		.uleb128 0x2
+ 378 00dc 04       		.byte	0x4
+ 379 00dd 04       		.byte	0x4
+ 380 00de 5C000000 		.4byte	.LASF19
+ 381 00e2 02       		.uleb128 0x2
+ 382 00e3 08       		.byte	0x8
+ 383 00e4 04       		.byte	0x4
+ 384 00e5 CE010000 		.4byte	.LASF20
+ 385 00e9 02       		.uleb128 0x2
+ 386 00ea 01       		.byte	0x1
+ 387 00eb 08       		.byte	0x8
+ 388 00ec DE020000 		.4byte	.LASF21
+ 389 00f0 02       		.uleb128 0x2
+ 390 00f1 08       		.byte	0x8
+ 391 00f2 04       		.byte	0x4
+ 392 00f3 9F020000 		.4byte	.LASF22
+ 393 00f7 02       		.uleb128 0x2
+ 394 00f8 04       		.byte	0x4
+ 395 00f9 07       		.byte	0x7
+ 396 00fa AB020000 		.4byte	.LASF23
+ 397 00fe 06       		.uleb128 0x6
+ 398 00ff B8000000 		.4byte	0xb8
+ 399 0103 06       		.uleb128 0x6
+ 400 0104 97000000 		.4byte	0x97
+ 401 0108 07       		.uleb128 0x7
+ 402 0109 11020000 		.4byte	.LASF56
+ 403 010d 01       		.byte	0x1
+ 404 010e 18       		.byte	0x18
+ 405 010f 89000000 		.4byte	0x89
+ 406 0113 00000000 		.4byte	.LFB63
+ 407 0117 0C010000 		.4byte	.LFE63-.LFB63
+ 408 011b 01       		.uleb128 0x1
+ 409 011c 9C       		.byte	0x9c
+ 410 011d 4B020000 		.4byte	0x24b
+ 411 0121 08       		.uleb128 0x8
+ 412 0122 14000000 		.4byte	.LBB2
+ 413 0126 EC000000 		.4byte	.LBE2-.LBB2
+ 414 012a 26020000 		.4byte	0x226
+ 415 012e 09       		.uleb128 0x9
+ 416 012f 1B030000 		.4byte	.LASF24
+ 417 0133 01       		.byte	0x1
+ 418 0134 29       		.byte	0x29
+ 419 0135 A2000000 		.4byte	0xa2
+ 420 0139 01       		.uleb128 0x1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 11
 
 
- 421 0168 08       		.uleb128 0x8
- 422 0169 84000000 		.4byte	.LBB3
- 423 016d 3E000000 		.4byte	.LBE3-.LBB3
- 424 0171 C1010000 		.4byte	0x1c1
- 425 0175 0A       		.uleb128 0xa
- 426 0176 0A000000 		.4byte	.LASF28
- 427 017a 01       		.byte	0x1
- 428 017b 52       		.byte	0x52
- 429 017c C3000000 		.4byte	0xc3
- 430 0180 8D000000 		.4byte	.LLST3
- 431 0184 0A       		.uleb128 0xa
- 432 0185 8C000000 		.4byte	.LASF29
- 433 0189 01       		.byte	0x1
- 434 018a 53       		.byte	0x53
- 435 018b C3000000 		.4byte	0xc3
- 436 018f A0000000 		.4byte	.LLST4
- 437 0193 0B       		.uleb128 0xb
- 438 0194 88000000 		.4byte	.LVL20
- 439 0198 D4020000 		.4byte	0x2d4
- 440 019c 0B       		.uleb128 0xb
- 441 019d 8C000000 		.4byte	.LVL21
- 442 01a1 DF020000 		.4byte	0x2df
- 443 01a5 0B       		.uleb128 0xb
- 444 01a6 92000000 		.4byte	.LVL23
- 445 01aa EA020000 		.4byte	0x2ea
- 446 01ae 0B       		.uleb128 0xb
- 447 01af AA000000 		.4byte	.LVL26
- 448 01b3 DF020000 		.4byte	0x2df
- 449 01b7 0B       		.uleb128 0xb
- 450 01b8 B0000000 		.4byte	.LVL27
- 451 01bc EA020000 		.4byte	0x2ea
- 452 01c0 00       		.byte	0
- 453 01c1 0B       		.uleb128 0xb
- 454 01c2 18000000 		.4byte	.LVL4
- 455 01c6 F5020000 		.4byte	0x2f5
- 456 01ca 0B       		.uleb128 0xb
- 457 01cb 20000000 		.4byte	.LVL5
- 458 01cf 00030000 		.4byte	0x300
- 459 01d3 0B       		.uleb128 0xb
- 460 01d4 24000000 		.4byte	.LVL6
- 461 01d8 0B030000 		.4byte	0x30b
- 462 01dc 0B       		.uleb128 0xb
- 463 01dd 2C000000 		.4byte	.LVL8
- 464 01e1 16030000 		.4byte	0x316
- 465 01e5 0B       		.uleb128 0xb
- 466 01e6 38000000 		.4byte	.LVL10
- 467 01ea 21030000 		.4byte	0x321
- 468 01ee 0B       		.uleb128 0xb
- 469 01ef 44000000 		.4byte	.LVL13
- 470 01f3 2C030000 		.4byte	0x32c
- 471 01f7 0C       		.uleb128 0xc
- 472 01f8 58000000 		.4byte	.LVL17
- 473 01fc 37030000 		.4byte	0x337
- 474 0200 13020000 		.4byte	0x213
- 475 0204 0D       		.uleb128 0xd
- 476 0205 01       		.uleb128 0x1
- 477 0206 50       		.byte	0x50
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 12
+ 421 013a 56       		.byte	0x56
+ 422 013b 0A       		.uleb128 0xa
+ 423 013c 3F030000 		.4byte	.LASF25
+ 424 0140 01       		.byte	0x1
+ 425 0141 2C       		.byte	0x2c
+ 426 0142 97000000 		.4byte	0x97
+ 427 0146 00000000 		.4byte	.LLST0
+ 428 014a 0A       		.uleb128 0xa
+ 429 014b 75030000 		.4byte	.LASF26
+ 430 014f 01       		.byte	0x1
+ 431 0150 2D       		.byte	0x2d
+ 432 0151 97000000 		.4byte	0x97
+ 433 0155 4B000000 		.4byte	.LLST1
+ 434 0159 0A       		.uleb128 0xa
+ 435 015a F6010000 		.4byte	.LASF27
+ 436 015e 01       		.byte	0x1
+ 437 015f 2E       		.byte	0x2e
+ 438 0160 97000000 		.4byte	0x97
+ 439 0164 6E000000 		.4byte	.LLST2
+ 440 0168 0B       		.uleb128 0xb
+ 441 0169 18000000 		.4byte	.LVL4
+ 442 016d B1020000 		.4byte	0x2b1
+ 443 0171 0B       		.uleb128 0xb
+ 444 0172 20000000 		.4byte	.LVL5
+ 445 0176 BC020000 		.4byte	0x2bc
+ 446 017a 0B       		.uleb128 0xb
+ 447 017b 24000000 		.4byte	.LVL6
+ 448 017f C7020000 		.4byte	0x2c7
+ 449 0183 0B       		.uleb128 0xb
+ 450 0184 2C000000 		.4byte	.LVL8
+ 451 0188 D2020000 		.4byte	0x2d2
+ 452 018c 0B       		.uleb128 0xb
+ 453 018d 38000000 		.4byte	.LVL10
+ 454 0191 DD020000 		.4byte	0x2dd
+ 455 0195 0B       		.uleb128 0xb
+ 456 0196 44000000 		.4byte	.LVL13
+ 457 019a E8020000 		.4byte	0x2e8
+ 458 019e 0C       		.uleb128 0xc
+ 459 019f 58000000 		.4byte	.LVL17
+ 460 01a3 F3020000 		.4byte	0x2f3
+ 461 01a7 BA010000 		.4byte	0x1ba
+ 462 01ab 0D       		.uleb128 0xd
+ 463 01ac 01       		.uleb128 0x1
+ 464 01ad 50       		.byte	0x50
+ 465 01ae 04       		.uleb128 0x4
+ 466 01af 76       		.byte	0x76
+ 467 01b0 00       		.sleb128 0
+ 468 01b1 38       		.byte	0x38
+ 469 01b2 25       		.byte	0x25
+ 470 01b3 0D       		.uleb128 0xd
+ 471 01b4 01       		.uleb128 0x1
+ 472 01b5 51       		.byte	0x51
+ 473 01b6 02       		.uleb128 0x2
+ 474 01b7 75       		.byte	0x75
+ 475 01b8 00       		.sleb128 0
+ 476 01b9 00       		.byte	0
+ 477 01ba 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 12
 
 
- 478 0207 04       		.uleb128 0x4
- 479 0208 76       		.byte	0x76
- 480 0209 00       		.sleb128 0
- 481 020a 38       		.byte	0x38
- 482 020b 25       		.byte	0x25
- 483 020c 0D       		.uleb128 0xd
- 484 020d 01       		.uleb128 0x1
- 485 020e 51       		.byte	0x51
- 486 020f 02       		.uleb128 0x2
- 487 0210 75       		.byte	0x75
- 488 0211 00       		.sleb128 0
- 489 0212 00       		.byte	0
- 490 0213 0B       		.uleb128 0xb
- 491 0214 62000000 		.4byte	.LVL18
- 492 0218 42030000 		.4byte	0x342
- 493 021c 0B       		.uleb128 0xb
- 494 021d 66000000 		.4byte	.LVL19
- 495 0221 4D030000 		.4byte	0x34d
- 496 0225 0B       		.uleb128 0xb
- 497 0226 CA000000 		.4byte	.LVL28
- 498 022a 58030000 		.4byte	0x358
- 499 022e 0B       		.uleb128 0xb
- 500 022f DA000000 		.4byte	.LVL29
- 501 0233 63030000 		.4byte	0x363
- 502 0237 0E       		.uleb128 0xe
- 503 0238 E2000000 		.4byte	.LVL30
- 504 023c 6E030000 		.4byte	0x36e
- 505 0240 0D       		.uleb128 0xd
- 506 0241 01       		.uleb128 0x1
- 507 0242 50       		.byte	0x50
- 508 0243 03       		.uleb128 0x3
- 509 0244 0A       		.byte	0xa
- 510 0245 E803     		.2byte	0x3e8
- 511 0247 00       		.byte	0
- 512 0248 00       		.byte	0
- 513 0249 0B       		.uleb128 0xb
- 514 024a 08000000 		.4byte	.LVL0
- 515 024e 79030000 		.4byte	0x379
- 516 0252 0B       		.uleb128 0xb
- 517 0253 0C000000 		.4byte	.LVL1
- 518 0257 84030000 		.4byte	0x384
- 519 025b 0B       		.uleb128 0xb
- 520 025c 10000000 		.4byte	.LVL2
- 521 0260 8F030000 		.4byte	0x38f
- 522 0264 0B       		.uleb128 0xb
- 523 0265 14000000 		.4byte	.LVL3
- 524 0269 9A030000 		.4byte	0x39a
- 525 026d 00       		.byte	0
- 526 026e 0F       		.uleb128 0xf
- 527 026f 2F020000 		.4byte	.LASF30
- 528 0273 05       		.byte	0x5
- 529 0274 1207     		.2byte	0x712
- 530 0276 7A020000 		.4byte	0x27a
- 531 027a 06       		.uleb128 0x6
- 532 027b AD000000 		.4byte	0xad
- 533 027f 10       		.uleb128 0x10
- 534 0280 18000000 		.4byte	.LASF31
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 13
+ 478 01bb 62000000 		.4byte	.LVL18
+ 479 01bf FE020000 		.4byte	0x2fe
+ 480 01c3 0B       		.uleb128 0xb
+ 481 01c4 66000000 		.4byte	.LVL19
+ 482 01c8 09030000 		.4byte	0x309
+ 483 01cc 0B       		.uleb128 0xb
+ 484 01cd 88000000 		.4byte	.LVL20
+ 485 01d1 14030000 		.4byte	0x314
+ 486 01d5 0B       		.uleb128 0xb
+ 487 01d6 94000000 		.4byte	.LVL21
+ 488 01da 1F030000 		.4byte	0x31f
+ 489 01de 0B       		.uleb128 0xb
+ 490 01df 9A000000 		.4byte	.LVL22
+ 491 01e3 2A030000 		.4byte	0x32a
+ 492 01e7 0B       		.uleb128 0xb
+ 493 01e8 9E000000 		.4byte	.LVL23
+ 494 01ec 35030000 		.4byte	0x335
+ 495 01f0 0B       		.uleb128 0xb
+ 496 01f1 AA000000 		.4byte	.LVL24
+ 497 01f5 09030000 		.4byte	0x309
+ 498 01f9 0B       		.uleb128 0xb
+ 499 01fa CA000000 		.4byte	.LVL25
+ 500 01fe 40030000 		.4byte	0x340
+ 501 0202 0B       		.uleb128 0xb
+ 502 0203 EC000000 		.4byte	.LVL26
+ 503 0207 FE020000 		.4byte	0x2fe
+ 504 020b 0B       		.uleb128 0xb
+ 505 020c F0000000 		.4byte	.LVL27
+ 506 0210 09030000 		.4byte	0x309
+ 507 0214 0E       		.uleb128 0xe
+ 508 0215 00010000 		.4byte	.LVL28
+ 509 0219 4B030000 		.4byte	0x34b
+ 510 021d 0D       		.uleb128 0xd
+ 511 021e 01       		.uleb128 0x1
+ 512 021f 50       		.byte	0x50
+ 513 0220 03       		.uleb128 0x3
+ 514 0221 0A       		.byte	0xa
+ 515 0222 E803     		.2byte	0x3e8
+ 516 0224 00       		.byte	0
+ 517 0225 00       		.byte	0
+ 518 0226 0B       		.uleb128 0xb
+ 519 0227 08000000 		.4byte	.LVL0
+ 520 022b 56030000 		.4byte	0x356
+ 521 022f 0B       		.uleb128 0xb
+ 522 0230 0C000000 		.4byte	.LVL1
+ 523 0234 61030000 		.4byte	0x361
+ 524 0238 0B       		.uleb128 0xb
+ 525 0239 10000000 		.4byte	.LVL2
+ 526 023d 6C030000 		.4byte	0x36c
+ 527 0241 0B       		.uleb128 0xb
+ 528 0242 14000000 		.4byte	.LVL3
+ 529 0246 77030000 		.4byte	0x377
+ 530 024a 00       		.byte	0
+ 531 024b 0F       		.uleb128 0xf
+ 532 024c 04020000 		.4byte	.LASF28
+ 533 0250 05       		.byte	0x5
+ 534 0251 1207     		.2byte	0x712
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 13
 
 
- 535 0284 01       		.byte	0x1
- 536 0285 11       		.byte	0x11
- 537 0286 FE000000 		.4byte	0xfe
- 538 028a 05       		.uleb128 0x5
- 539 028b 03       		.byte	0x3
- 540 028c 00000000 		.4byte	state
- 541 0290 10       		.uleb128 0x10
- 542 0291 79000000 		.4byte	.LASF32
- 543 0295 01       		.byte	0x1
- 544 0296 12       		.byte	0x12
- 545 0297 03010000 		.4byte	0x103
- 546 029b 05       		.uleb128 0x5
- 547 029c 03       		.byte	0x3
- 548 029d 00000000 		.4byte	e_stop
- 549 02a1 10       		.uleb128 0x10
- 550 02a2 C8010000 		.4byte	.LASF33
- 551 02a6 01       		.byte	0x1
- 552 02a7 13       		.byte	0x13
- 553 02a8 CF000000 		.4byte	0xcf
- 554 02ac 05       		.uleb128 0x5
- 555 02ad 03       		.byte	0x3
- 556 02ae 00000000 		.4byte	throttle_total
- 557 02b2 10       		.uleb128 0x10
- 558 02b3 AC020000 		.4byte	.LASF34
- 559 02b7 01       		.byte	0x1
- 560 02b8 14       		.byte	0x14
- 561 02b9 C3000000 		.4byte	0xc3
- 562 02bd 05       		.uleb128 0x5
- 563 02be 03       		.byte	0x3
- 564 02bf 00000000 		.4byte	throttle_upper
- 565 02c3 10       		.uleb128 0x10
- 566 02c4 BB020000 		.4byte	.LASF35
- 567 02c8 01       		.byte	0x1
- 568 02c9 15       		.byte	0x15
- 569 02ca C3000000 		.4byte	0xc3
- 570 02ce 05       		.uleb128 0x5
- 571 02cf 03       		.byte	0x3
- 572 02d0 00000000 		.4byte	throttle_lower
- 573 02d4 11       		.uleb128 0x11
- 574 02d5 01030000 		.4byte	.LASF36
- 575 02d9 01030000 		.4byte	.LASF36
- 576 02dd 06       		.byte	0x6
- 577 02de 47       		.byte	0x47
- 578 02df 11       		.uleb128 0x11
- 579 02e0 4F000000 		.4byte	.LASF37
- 580 02e4 4F000000 		.4byte	.LASF37
- 581 02e8 06       		.byte	0x6
- 582 02e9 35       		.byte	0x35
- 583 02ea 11       		.uleb128 0x11
- 584 02eb 1B030000 		.4byte	.LASF38
- 585 02ef 1B030000 		.4byte	.LASF38
- 586 02f3 06       		.byte	0x6
- 587 02f4 36       		.byte	0x36
- 588 02f5 11       		.uleb128 0x11
- 589 02f6 44000000 		.4byte	.LASF39
- 590 02fa 44000000 		.4byte	.LASF39
- 591 02fe 07       		.byte	0x7
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 14
+ 535 0253 57020000 		.4byte	0x257
+ 536 0257 06       		.uleb128 0x6
+ 537 0258 AD000000 		.4byte	0xad
+ 538 025c 10       		.uleb128 0x10
+ 539 025d 18000000 		.4byte	.LASF29
+ 540 0261 01       		.byte	0x1
+ 541 0262 11       		.byte	0x11
+ 542 0263 FE000000 		.4byte	0xfe
+ 543 0267 05       		.uleb128 0x5
+ 544 0268 03       		.byte	0x3
+ 545 0269 00000000 		.4byte	state
+ 546 026d 10       		.uleb128 0x10
+ 547 026e 55000000 		.4byte	.LASF30
+ 548 0272 01       		.byte	0x1
+ 549 0273 12       		.byte	0x12
+ 550 0274 03010000 		.4byte	0x103
+ 551 0278 05       		.uleb128 0x5
+ 552 0279 03       		.byte	0x3
+ 553 027a 00000000 		.4byte	e_stop
+ 554 027e 10       		.uleb128 0x10
+ 555 027f 98010000 		.4byte	.LASF31
+ 556 0283 01       		.byte	0x1
+ 557 0284 13       		.byte	0x13
+ 558 0285 CF000000 		.4byte	0xcf
+ 559 0289 05       		.uleb128 0x5
+ 560 028a 03       		.byte	0x3
+ 561 028b 00000000 		.4byte	throttle_total
+ 562 028f 10       		.uleb128 0x10
+ 563 0290 81020000 		.4byte	.LASF32
+ 564 0294 01       		.byte	0x1
+ 565 0295 14       		.byte	0x14
+ 566 0296 C3000000 		.4byte	0xc3
+ 567 029a 05       		.uleb128 0x5
+ 568 029b 03       		.byte	0x3
+ 569 029c 00000000 		.4byte	throttle_upper
+ 570 02a0 10       		.uleb128 0x10
+ 571 02a1 90020000 		.4byte	.LASF33
+ 572 02a5 01       		.byte	0x1
+ 573 02a6 15       		.byte	0x15
+ 574 02a7 C3000000 		.4byte	0xc3
+ 575 02ab 05       		.uleb128 0x5
+ 576 02ac 03       		.byte	0x3
+ 577 02ad 00000000 		.4byte	throttle_lower
+ 578 02b1 11       		.uleb128 0x11
+ 579 02b2 28000000 		.4byte	.LASF34
+ 580 02b6 28000000 		.4byte	.LASF34
+ 581 02ba 06       		.byte	0x6
+ 582 02bb 29       		.byte	0x29
+ 583 02bc 11       		.uleb128 0x11
+ 584 02bd 68000000 		.4byte	.LASF35
+ 585 02c1 68000000 		.4byte	.LASF35
+ 586 02c5 07       		.byte	0x7
+ 587 02c6 56       		.byte	0x56
+ 588 02c7 11       		.uleb128 0x11
+ 589 02c8 45020000 		.4byte	.LASF36
+ 590 02cc 45020000 		.4byte	.LASF36
+ 591 02d0 07       		.byte	0x7
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 14
 
 
- 592 02ff 29       		.byte	0x29
- 593 0300 11       		.uleb128 0x11
- 594 0301 99000000 		.4byte	.LASF40
- 595 0305 99000000 		.4byte	.LASF40
- 596 0309 08       		.byte	0x8
- 597 030a 56       		.byte	0x56
- 598 030b 11       		.uleb128 0x11
- 599 030c 70020000 		.4byte	.LASF41
- 600 0310 70020000 		.4byte	.LASF41
- 601 0314 08       		.byte	0x8
- 602 0315 47       		.byte	0x47
- 603 0316 11       		.uleb128 0x11
- 604 0317 61020000 		.4byte	.LASF42
- 605 031b 61020000 		.4byte	.LASF42
- 606 031f 09       		.byte	0x9
- 607 0320 29       		.byte	0x29
- 608 0321 11       		.uleb128 0x11
- 609 0322 12020000 		.4byte	.LASF43
- 610 0326 12020000 		.4byte	.LASF43
- 611 032a 0A       		.byte	0xa
- 612 032b 29       		.byte	0x29
- 613 032c 11       		.uleb128 0x11
- 614 032d 7E030000 		.4byte	.LASF44
- 615 0331 7E030000 		.4byte	.LASF44
- 616 0335 0B       		.byte	0xb
- 617 0336 29       		.byte	0x29
- 618 0337 11       		.uleb128 0x11
- 619 0338 8C030000 		.4byte	.LASF45
- 620 033c 8C030000 		.4byte	.LASF45
- 621 0340 06       		.byte	0x6
- 622 0341 4C       		.byte	0x4c
- 623 0342 11       		.uleb128 0x11
- 624 0343 69000000 		.4byte	.LASF46
- 625 0347 69000000 		.4byte	.LASF46
- 626 034b 06       		.byte	0x6
- 627 034c 48       		.byte	0x48
- 628 034d 11       		.uleb128 0x11
- 629 034e B7010000 		.4byte	.LASF47
- 630 0352 B7010000 		.4byte	.LASF47
- 631 0356 06       		.byte	0x6
- 632 0357 31       		.byte	0x31
- 633 0358 11       		.uleb128 0x11
- 634 0359 83010000 		.4byte	.LASF48
- 635 035d 83010000 		.4byte	.LASF48
- 636 0361 06       		.byte	0x6
- 637 0362 2E       		.byte	0x2e
- 638 0363 11       		.uleb128 0x11
- 639 0364 1E000000 		.4byte	.LASF49
- 640 0368 1E000000 		.4byte	.LASF49
- 641 036c 06       		.byte	0x6
- 642 036d 2D       		.byte	0x2d
- 643 036e 11       		.uleb128 0x11
- 644 036f A7030000 		.4byte	.LASF50
- 645 0373 A7030000 		.4byte	.LASF50
- 646 0377 0C       		.byte	0xc
- 647 0378 76       		.byte	0x76
- 648 0379 11       		.uleb128 0x11
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 15
+ 592 02d1 47       		.byte	0x47
+ 593 02d2 11       		.uleb128 0x11
+ 594 02d3 36020000 		.4byte	.LASF37
+ 595 02d7 36020000 		.4byte	.LASF37
+ 596 02db 08       		.byte	0x8
+ 597 02dc 29       		.byte	0x29
+ 598 02dd 11       		.uleb128 0x11
+ 599 02de E7010000 		.4byte	.LASF38
+ 600 02e2 E7010000 		.4byte	.LASF38
+ 601 02e6 09       		.byte	0x9
+ 602 02e7 29       		.byte	0x29
+ 603 02e8 11       		.uleb128 0x11
+ 604 02e9 5A030000 		.4byte	.LASF39
+ 605 02ed 5A030000 		.4byte	.LASF39
+ 606 02f1 0A       		.byte	0xa
+ 607 02f2 29       		.byte	0x29
+ 608 02f3 11       		.uleb128 0x11
+ 609 02f4 68030000 		.4byte	.LASF40
+ 610 02f8 68030000 		.4byte	.LASF40
+ 611 02fc 0B       		.byte	0xb
+ 612 02fd 4E       		.byte	0x4e
+ 613 02fe 11       		.uleb128 0x11
+ 614 02ff 45000000 		.4byte	.LASF41
+ 615 0303 45000000 		.4byte	.LASF41
+ 616 0307 0B       		.byte	0xb
+ 617 0308 4A       		.byte	0x4a
+ 618 0309 11       		.uleb128 0x11
+ 619 030a 87010000 		.4byte	.LASF42
+ 620 030e 87010000 		.4byte	.LASF42
+ 621 0312 0B       		.byte	0xb
+ 622 0313 32       		.byte	0x32
+ 623 0314 11       		.uleb128 0x11
+ 624 0315 64010000 		.4byte	.LASF43
+ 625 0319 64010000 		.4byte	.LASF43
+ 626 031d 0B       		.byte	0xb
+ 627 031e 51       		.byte	0x51
+ 628 031f 11       		.uleb128 0x11
+ 629 0320 C8020000 		.4byte	.LASF44
+ 630 0324 C8020000 		.4byte	.LASF44
+ 631 0328 0B       		.byte	0xb
+ 632 0329 48       		.byte	0x48
+ 633 032a 11       		.uleb128 0x11
+ 634 032b BE010000 		.4byte	.LASF45
+ 635 032f BE010000 		.4byte	.LASF45
+ 636 0333 0B       		.byte	0xb
+ 637 0334 49       		.byte	0x49
+ 638 0335 11       		.uleb128 0x11
+ 639 0336 E3020000 		.4byte	.LASF46
+ 640 033a E3020000 		.4byte	.LASF46
+ 641 033e 0B       		.byte	0xb
+ 642 033f 45       		.byte	0x45
+ 643 0340 11       		.uleb128 0x11
+ 644 0341 33000000 		.4byte	.LASF47
+ 645 0345 33000000 		.4byte	.LASF47
+ 646 0349 0B       		.byte	0xb
+ 647 034a 33       		.byte	0x33
+ 648 034b 11       		.uleb128 0x11
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 15
 
 
- 649 037a DF020000 		.4byte	.LASF51
- 650 037e DF020000 		.4byte	.LASF51
- 651 0382 0D       		.byte	0xd
- 652 0383 C8       		.byte	0xc8
- 653 0384 11       		.uleb128 0x11
- 654 0385 D7010000 		.4byte	.LASF52
- 655 0389 D7010000 		.4byte	.LASF52
- 656 038d 0D       		.byte	0xd
- 657 038e C4       		.byte	0xc4
- 658 038f 11       		.uleb128 0x11
- 659 0390 47030000 		.4byte	.LASF53
- 660 0394 47030000 		.4byte	.LASF53
- 661 0398 0D       		.byte	0xd
- 662 0399 C5       		.byte	0xc5
- 663 039a 11       		.uleb128 0x11
- 664 039b 41020000 		.4byte	.LASF54
- 665 039f 41020000 		.4byte	.LASF54
- 666 03a3 08       		.byte	0x8
- 667 03a4 3A       		.byte	0x3a
- 668 03a5 00       		.byte	0
- 669              		.section	.debug_abbrev,"",%progbits
- 670              	.Ldebug_abbrev0:
- 671 0000 01       		.uleb128 0x1
- 672 0001 11       		.uleb128 0x11
- 673 0002 01       		.byte	0x1
- 674 0003 25       		.uleb128 0x25
- 675 0004 0E       		.uleb128 0xe
- 676 0005 13       		.uleb128 0x13
- 677 0006 0B       		.uleb128 0xb
- 678 0007 03       		.uleb128 0x3
- 679 0008 0E       		.uleb128 0xe
- 680 0009 1B       		.uleb128 0x1b
- 681 000a 0E       		.uleb128 0xe
- 682 000b 55       		.uleb128 0x55
- 683 000c 17       		.uleb128 0x17
- 684 000d 11       		.uleb128 0x11
- 685 000e 01       		.uleb128 0x1
- 686 000f 10       		.uleb128 0x10
- 687 0010 17       		.uleb128 0x17
- 688 0011 00       		.byte	0
- 689 0012 00       		.byte	0
- 690 0013 02       		.uleb128 0x2
- 691 0014 24       		.uleb128 0x24
- 692 0015 00       		.byte	0
- 693 0016 0B       		.uleb128 0xb
- 694 0017 0B       		.uleb128 0xb
- 695 0018 3E       		.uleb128 0x3e
- 696 0019 0B       		.uleb128 0xb
- 697 001a 03       		.uleb128 0x3
- 698 001b 0E       		.uleb128 0xe
- 699 001c 00       		.byte	0
- 700 001d 00       		.byte	0
- 701 001e 03       		.uleb128 0x3
- 702 001f 16       		.uleb128 0x16
- 703 0020 00       		.byte	0
- 704 0021 03       		.uleb128 0x3
- 705 0022 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 16
+ 649 034c 83030000 		.4byte	.LASF48
+ 650 0350 83030000 		.4byte	.LASF48
+ 651 0354 0C       		.byte	0xc
+ 652 0355 76       		.byte	0x76
+ 653 0356 11       		.uleb128 0x11
+ 654 0357 B4020000 		.4byte	.LASF49
+ 655 035b B4020000 		.4byte	.LASF49
+ 656 035f 0D       		.byte	0xd
+ 657 0360 C8       		.byte	0xc8
+ 658 0361 11       		.uleb128 0x11
+ 659 0362 A7010000 		.4byte	.LASF50
+ 660 0366 A7010000 		.4byte	.LASF50
+ 661 036a 0D       		.byte	0xd
+ 662 036b C4       		.byte	0xc4
+ 663 036c 11       		.uleb128 0x11
+ 664 036d 23030000 		.4byte	.LASF51
+ 665 0371 23030000 		.4byte	.LASF51
+ 666 0375 0D       		.byte	0xd
+ 667 0376 C5       		.byte	0xc5
+ 668 0377 11       		.uleb128 0x11
+ 669 0378 16020000 		.4byte	.LASF52
+ 670 037c 16020000 		.4byte	.LASF52
+ 671 0380 07       		.byte	0x7
+ 672 0381 3A       		.byte	0x3a
+ 673 0382 00       		.byte	0
+ 674              		.section	.debug_abbrev,"",%progbits
+ 675              	.Ldebug_abbrev0:
+ 676 0000 01       		.uleb128 0x1
+ 677 0001 11       		.uleb128 0x11
+ 678 0002 01       		.byte	0x1
+ 679 0003 25       		.uleb128 0x25
+ 680 0004 0E       		.uleb128 0xe
+ 681 0005 13       		.uleb128 0x13
+ 682 0006 0B       		.uleb128 0xb
+ 683 0007 03       		.uleb128 0x3
+ 684 0008 0E       		.uleb128 0xe
+ 685 0009 1B       		.uleb128 0x1b
+ 686 000a 0E       		.uleb128 0xe
+ 687 000b 55       		.uleb128 0x55
+ 688 000c 17       		.uleb128 0x17
+ 689 000d 11       		.uleb128 0x11
+ 690 000e 01       		.uleb128 0x1
+ 691 000f 10       		.uleb128 0x10
+ 692 0010 17       		.uleb128 0x17
+ 693 0011 00       		.byte	0
+ 694 0012 00       		.byte	0
+ 695 0013 02       		.uleb128 0x2
+ 696 0014 24       		.uleb128 0x24
+ 697 0015 00       		.byte	0
+ 698 0016 0B       		.uleb128 0xb
+ 699 0017 0B       		.uleb128 0xb
+ 700 0018 3E       		.uleb128 0x3e
+ 701 0019 0B       		.uleb128 0xb
+ 702 001a 03       		.uleb128 0x3
+ 703 001b 0E       		.uleb128 0xe
+ 704 001c 00       		.byte	0
+ 705 001d 00       		.byte	0
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 16
 
 
- 706 0023 3A       		.uleb128 0x3a
- 707 0024 0B       		.uleb128 0xb
- 708 0025 3B       		.uleb128 0x3b
- 709 0026 0B       		.uleb128 0xb
- 710 0027 49       		.uleb128 0x49
- 711 0028 13       		.uleb128 0x13
- 712 0029 00       		.byte	0
- 713 002a 00       		.byte	0
- 714 002b 04       		.uleb128 0x4
- 715 002c 24       		.uleb128 0x24
- 716 002d 00       		.byte	0
- 717 002e 0B       		.uleb128 0xb
- 718 002f 0B       		.uleb128 0xb
- 719 0030 3E       		.uleb128 0x3e
- 720 0031 0B       		.uleb128 0xb
- 721 0032 03       		.uleb128 0x3
- 722 0033 08       		.uleb128 0x8
- 723 0034 00       		.byte	0
- 724 0035 00       		.byte	0
- 725 0036 05       		.uleb128 0x5
- 726 0037 16       		.uleb128 0x16
- 727 0038 00       		.byte	0
- 728 0039 03       		.uleb128 0x3
- 729 003a 0E       		.uleb128 0xe
- 730 003b 3A       		.uleb128 0x3a
- 731 003c 0B       		.uleb128 0xb
- 732 003d 3B       		.uleb128 0x3b
- 733 003e 05       		.uleb128 0x5
- 734 003f 49       		.uleb128 0x49
- 735 0040 13       		.uleb128 0x13
- 736 0041 00       		.byte	0
- 737 0042 00       		.byte	0
- 738 0043 06       		.uleb128 0x6
- 739 0044 35       		.uleb128 0x35
- 740 0045 00       		.byte	0
- 741 0046 49       		.uleb128 0x49
- 742 0047 13       		.uleb128 0x13
- 743 0048 00       		.byte	0
- 744 0049 00       		.byte	0
- 745 004a 07       		.uleb128 0x7
- 746 004b 2E       		.uleb128 0x2e
- 747 004c 01       		.byte	0x1
- 748 004d 3F       		.uleb128 0x3f
- 749 004e 19       		.uleb128 0x19
- 750 004f 03       		.uleb128 0x3
- 751 0050 0E       		.uleb128 0xe
- 752 0051 3A       		.uleb128 0x3a
- 753 0052 0B       		.uleb128 0xb
- 754 0053 3B       		.uleb128 0x3b
- 755 0054 0B       		.uleb128 0xb
- 756 0055 27       		.uleb128 0x27
- 757 0056 19       		.uleb128 0x19
- 758 0057 49       		.uleb128 0x49
- 759 0058 13       		.uleb128 0x13
- 760 0059 8701     		.uleb128 0x87
- 761 005b 19       		.uleb128 0x19
- 762 005c 11       		.uleb128 0x11
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 17
+ 706 001e 03       		.uleb128 0x3
+ 707 001f 16       		.uleb128 0x16
+ 708 0020 00       		.byte	0
+ 709 0021 03       		.uleb128 0x3
+ 710 0022 0E       		.uleb128 0xe
+ 711 0023 3A       		.uleb128 0x3a
+ 712 0024 0B       		.uleb128 0xb
+ 713 0025 3B       		.uleb128 0x3b
+ 714 0026 0B       		.uleb128 0xb
+ 715 0027 49       		.uleb128 0x49
+ 716 0028 13       		.uleb128 0x13
+ 717 0029 00       		.byte	0
+ 718 002a 00       		.byte	0
+ 719 002b 04       		.uleb128 0x4
+ 720 002c 24       		.uleb128 0x24
+ 721 002d 00       		.byte	0
+ 722 002e 0B       		.uleb128 0xb
+ 723 002f 0B       		.uleb128 0xb
+ 724 0030 3E       		.uleb128 0x3e
+ 725 0031 0B       		.uleb128 0xb
+ 726 0032 03       		.uleb128 0x3
+ 727 0033 08       		.uleb128 0x8
+ 728 0034 00       		.byte	0
+ 729 0035 00       		.byte	0
+ 730 0036 05       		.uleb128 0x5
+ 731 0037 16       		.uleb128 0x16
+ 732 0038 00       		.byte	0
+ 733 0039 03       		.uleb128 0x3
+ 734 003a 0E       		.uleb128 0xe
+ 735 003b 3A       		.uleb128 0x3a
+ 736 003c 0B       		.uleb128 0xb
+ 737 003d 3B       		.uleb128 0x3b
+ 738 003e 05       		.uleb128 0x5
+ 739 003f 49       		.uleb128 0x49
+ 740 0040 13       		.uleb128 0x13
+ 741 0041 00       		.byte	0
+ 742 0042 00       		.byte	0
+ 743 0043 06       		.uleb128 0x6
+ 744 0044 35       		.uleb128 0x35
+ 745 0045 00       		.byte	0
+ 746 0046 49       		.uleb128 0x49
+ 747 0047 13       		.uleb128 0x13
+ 748 0048 00       		.byte	0
+ 749 0049 00       		.byte	0
+ 750 004a 07       		.uleb128 0x7
+ 751 004b 2E       		.uleb128 0x2e
+ 752 004c 01       		.byte	0x1
+ 753 004d 3F       		.uleb128 0x3f
+ 754 004e 19       		.uleb128 0x19
+ 755 004f 03       		.uleb128 0x3
+ 756 0050 0E       		.uleb128 0xe
+ 757 0051 3A       		.uleb128 0x3a
+ 758 0052 0B       		.uleb128 0xb
+ 759 0053 3B       		.uleb128 0x3b
+ 760 0054 0B       		.uleb128 0xb
+ 761 0055 27       		.uleb128 0x27
+ 762 0056 19       		.uleb128 0x19
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 17
 
 
- 763 005d 01       		.uleb128 0x1
- 764 005e 12       		.uleb128 0x12
- 765 005f 06       		.uleb128 0x6
- 766 0060 40       		.uleb128 0x40
- 767 0061 18       		.uleb128 0x18
- 768 0062 9742     		.uleb128 0x2117
- 769 0064 19       		.uleb128 0x19
- 770 0065 01       		.uleb128 0x1
- 771 0066 13       		.uleb128 0x13
- 772 0067 00       		.byte	0
- 773 0068 00       		.byte	0
- 774 0069 08       		.uleb128 0x8
- 775 006a 0B       		.uleb128 0xb
- 776 006b 01       		.byte	0x1
- 777 006c 11       		.uleb128 0x11
- 778 006d 01       		.uleb128 0x1
- 779 006e 12       		.uleb128 0x12
- 780 006f 06       		.uleb128 0x6
- 781 0070 01       		.uleb128 0x1
- 782 0071 13       		.uleb128 0x13
- 783 0072 00       		.byte	0
- 784 0073 00       		.byte	0
- 785 0074 09       		.uleb128 0x9
- 786 0075 34       		.uleb128 0x34
- 787 0076 00       		.byte	0
- 788 0077 03       		.uleb128 0x3
- 789 0078 0E       		.uleb128 0xe
- 790 0079 3A       		.uleb128 0x3a
- 791 007a 0B       		.uleb128 0xb
- 792 007b 3B       		.uleb128 0x3b
- 793 007c 0B       		.uleb128 0xb
- 794 007d 49       		.uleb128 0x49
- 795 007e 13       		.uleb128 0x13
- 796 007f 02       		.uleb128 0x2
- 797 0080 18       		.uleb128 0x18
- 798 0081 00       		.byte	0
- 799 0082 00       		.byte	0
- 800 0083 0A       		.uleb128 0xa
- 801 0084 34       		.uleb128 0x34
- 802 0085 00       		.byte	0
- 803 0086 03       		.uleb128 0x3
- 804 0087 0E       		.uleb128 0xe
- 805 0088 3A       		.uleb128 0x3a
- 806 0089 0B       		.uleb128 0xb
- 807 008a 3B       		.uleb128 0x3b
- 808 008b 0B       		.uleb128 0xb
- 809 008c 49       		.uleb128 0x49
- 810 008d 13       		.uleb128 0x13
- 811 008e 02       		.uleb128 0x2
- 812 008f 17       		.uleb128 0x17
- 813 0090 00       		.byte	0
- 814 0091 00       		.byte	0
- 815 0092 0B       		.uleb128 0xb
- 816 0093 898201   		.uleb128 0x4109
- 817 0096 00       		.byte	0
- 818 0097 11       		.uleb128 0x11
- 819 0098 01       		.uleb128 0x1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 18
+ 763 0057 49       		.uleb128 0x49
+ 764 0058 13       		.uleb128 0x13
+ 765 0059 8701     		.uleb128 0x87
+ 766 005b 19       		.uleb128 0x19
+ 767 005c 11       		.uleb128 0x11
+ 768 005d 01       		.uleb128 0x1
+ 769 005e 12       		.uleb128 0x12
+ 770 005f 06       		.uleb128 0x6
+ 771 0060 40       		.uleb128 0x40
+ 772 0061 18       		.uleb128 0x18
+ 773 0062 9742     		.uleb128 0x2117
+ 774 0064 19       		.uleb128 0x19
+ 775 0065 01       		.uleb128 0x1
+ 776 0066 13       		.uleb128 0x13
+ 777 0067 00       		.byte	0
+ 778 0068 00       		.byte	0
+ 779 0069 08       		.uleb128 0x8
+ 780 006a 0B       		.uleb128 0xb
+ 781 006b 01       		.byte	0x1
+ 782 006c 11       		.uleb128 0x11
+ 783 006d 01       		.uleb128 0x1
+ 784 006e 12       		.uleb128 0x12
+ 785 006f 06       		.uleb128 0x6
+ 786 0070 01       		.uleb128 0x1
+ 787 0071 13       		.uleb128 0x13
+ 788 0072 00       		.byte	0
+ 789 0073 00       		.byte	0
+ 790 0074 09       		.uleb128 0x9
+ 791 0075 34       		.uleb128 0x34
+ 792 0076 00       		.byte	0
+ 793 0077 03       		.uleb128 0x3
+ 794 0078 0E       		.uleb128 0xe
+ 795 0079 3A       		.uleb128 0x3a
+ 796 007a 0B       		.uleb128 0xb
+ 797 007b 3B       		.uleb128 0x3b
+ 798 007c 0B       		.uleb128 0xb
+ 799 007d 49       		.uleb128 0x49
+ 800 007e 13       		.uleb128 0x13
+ 801 007f 02       		.uleb128 0x2
+ 802 0080 18       		.uleb128 0x18
+ 803 0081 00       		.byte	0
+ 804 0082 00       		.byte	0
+ 805 0083 0A       		.uleb128 0xa
+ 806 0084 34       		.uleb128 0x34
+ 807 0085 00       		.byte	0
+ 808 0086 03       		.uleb128 0x3
+ 809 0087 0E       		.uleb128 0xe
+ 810 0088 3A       		.uleb128 0x3a
+ 811 0089 0B       		.uleb128 0xb
+ 812 008a 3B       		.uleb128 0x3b
+ 813 008b 0B       		.uleb128 0xb
+ 814 008c 49       		.uleb128 0x49
+ 815 008d 13       		.uleb128 0x13
+ 816 008e 02       		.uleb128 0x2
+ 817 008f 17       		.uleb128 0x17
+ 818 0090 00       		.byte	0
+ 819 0091 00       		.byte	0
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 18
 
 
- 820 0099 31       		.uleb128 0x31
- 821 009a 13       		.uleb128 0x13
- 822 009b 00       		.byte	0
- 823 009c 00       		.byte	0
- 824 009d 0C       		.uleb128 0xc
- 825 009e 898201   		.uleb128 0x4109
- 826 00a1 01       		.byte	0x1
- 827 00a2 11       		.uleb128 0x11
- 828 00a3 01       		.uleb128 0x1
- 829 00a4 31       		.uleb128 0x31
- 830 00a5 13       		.uleb128 0x13
- 831 00a6 01       		.uleb128 0x1
- 832 00a7 13       		.uleb128 0x13
- 833 00a8 00       		.byte	0
- 834 00a9 00       		.byte	0
- 835 00aa 0D       		.uleb128 0xd
- 836 00ab 8A8201   		.uleb128 0x410a
- 837 00ae 00       		.byte	0
- 838 00af 02       		.uleb128 0x2
- 839 00b0 18       		.uleb128 0x18
- 840 00b1 9142     		.uleb128 0x2111
- 841 00b3 18       		.uleb128 0x18
- 842 00b4 00       		.byte	0
- 843 00b5 00       		.byte	0
- 844 00b6 0E       		.uleb128 0xe
- 845 00b7 898201   		.uleb128 0x4109
- 846 00ba 01       		.byte	0x1
- 847 00bb 11       		.uleb128 0x11
- 848 00bc 01       		.uleb128 0x1
- 849 00bd 31       		.uleb128 0x31
- 850 00be 13       		.uleb128 0x13
- 851 00bf 00       		.byte	0
- 852 00c0 00       		.byte	0
- 853 00c1 0F       		.uleb128 0xf
- 854 00c2 34       		.uleb128 0x34
- 855 00c3 00       		.byte	0
- 856 00c4 03       		.uleb128 0x3
- 857 00c5 0E       		.uleb128 0xe
- 858 00c6 3A       		.uleb128 0x3a
- 859 00c7 0B       		.uleb128 0xb
- 860 00c8 3B       		.uleb128 0x3b
- 861 00c9 05       		.uleb128 0x5
- 862 00ca 49       		.uleb128 0x49
- 863 00cb 13       		.uleb128 0x13
- 864 00cc 3F       		.uleb128 0x3f
- 865 00cd 19       		.uleb128 0x19
- 866 00ce 3C       		.uleb128 0x3c
- 867 00cf 19       		.uleb128 0x19
- 868 00d0 00       		.byte	0
- 869 00d1 00       		.byte	0
- 870 00d2 10       		.uleb128 0x10
- 871 00d3 34       		.uleb128 0x34
- 872 00d4 00       		.byte	0
- 873 00d5 03       		.uleb128 0x3
- 874 00d6 0E       		.uleb128 0xe
- 875 00d7 3A       		.uleb128 0x3a
- 876 00d8 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 19
+ 820 0092 0B       		.uleb128 0xb
+ 821 0093 898201   		.uleb128 0x4109
+ 822 0096 00       		.byte	0
+ 823 0097 11       		.uleb128 0x11
+ 824 0098 01       		.uleb128 0x1
+ 825 0099 31       		.uleb128 0x31
+ 826 009a 13       		.uleb128 0x13
+ 827 009b 00       		.byte	0
+ 828 009c 00       		.byte	0
+ 829 009d 0C       		.uleb128 0xc
+ 830 009e 898201   		.uleb128 0x4109
+ 831 00a1 01       		.byte	0x1
+ 832 00a2 11       		.uleb128 0x11
+ 833 00a3 01       		.uleb128 0x1
+ 834 00a4 31       		.uleb128 0x31
+ 835 00a5 13       		.uleb128 0x13
+ 836 00a6 01       		.uleb128 0x1
+ 837 00a7 13       		.uleb128 0x13
+ 838 00a8 00       		.byte	0
+ 839 00a9 00       		.byte	0
+ 840 00aa 0D       		.uleb128 0xd
+ 841 00ab 8A8201   		.uleb128 0x410a
+ 842 00ae 00       		.byte	0
+ 843 00af 02       		.uleb128 0x2
+ 844 00b0 18       		.uleb128 0x18
+ 845 00b1 9142     		.uleb128 0x2111
+ 846 00b3 18       		.uleb128 0x18
+ 847 00b4 00       		.byte	0
+ 848 00b5 00       		.byte	0
+ 849 00b6 0E       		.uleb128 0xe
+ 850 00b7 898201   		.uleb128 0x4109
+ 851 00ba 01       		.byte	0x1
+ 852 00bb 11       		.uleb128 0x11
+ 853 00bc 01       		.uleb128 0x1
+ 854 00bd 31       		.uleb128 0x31
+ 855 00be 13       		.uleb128 0x13
+ 856 00bf 00       		.byte	0
+ 857 00c0 00       		.byte	0
+ 858 00c1 0F       		.uleb128 0xf
+ 859 00c2 34       		.uleb128 0x34
+ 860 00c3 00       		.byte	0
+ 861 00c4 03       		.uleb128 0x3
+ 862 00c5 0E       		.uleb128 0xe
+ 863 00c6 3A       		.uleb128 0x3a
+ 864 00c7 0B       		.uleb128 0xb
+ 865 00c8 3B       		.uleb128 0x3b
+ 866 00c9 05       		.uleb128 0x5
+ 867 00ca 49       		.uleb128 0x49
+ 868 00cb 13       		.uleb128 0x13
+ 869 00cc 3F       		.uleb128 0x3f
+ 870 00cd 19       		.uleb128 0x19
+ 871 00ce 3C       		.uleb128 0x3c
+ 872 00cf 19       		.uleb128 0x19
+ 873 00d0 00       		.byte	0
+ 874 00d1 00       		.byte	0
+ 875 00d2 10       		.uleb128 0x10
+ 876 00d3 34       		.uleb128 0x34
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 19
 
 
- 877 00d9 3B       		.uleb128 0x3b
- 878 00da 0B       		.uleb128 0xb
- 879 00db 49       		.uleb128 0x49
- 880 00dc 13       		.uleb128 0x13
- 881 00dd 3F       		.uleb128 0x3f
- 882 00de 19       		.uleb128 0x19
- 883 00df 02       		.uleb128 0x2
- 884 00e0 18       		.uleb128 0x18
- 885 00e1 00       		.byte	0
- 886 00e2 00       		.byte	0
- 887 00e3 11       		.uleb128 0x11
- 888 00e4 2E       		.uleb128 0x2e
- 889 00e5 00       		.byte	0
- 890 00e6 3F       		.uleb128 0x3f
- 891 00e7 19       		.uleb128 0x19
- 892 00e8 3C       		.uleb128 0x3c
- 893 00e9 19       		.uleb128 0x19
- 894 00ea 6E       		.uleb128 0x6e
- 895 00eb 0E       		.uleb128 0xe
- 896 00ec 03       		.uleb128 0x3
- 897 00ed 0E       		.uleb128 0xe
- 898 00ee 3A       		.uleb128 0x3a
- 899 00ef 0B       		.uleb128 0xb
- 900 00f0 3B       		.uleb128 0x3b
- 901 00f1 0B       		.uleb128 0xb
- 902 00f2 00       		.byte	0
- 903 00f3 00       		.byte	0
- 904 00f4 00       		.byte	0
- 905              		.section	.debug_loc,"",%progbits
- 906              	.Ldebug_loc0:
- 907              	.LLST0:
- 908 0000 28000000 		.4byte	.LVL7
- 909 0004 34000000 		.4byte	.LVL9
- 910 0008 0200     		.2byte	0x2
- 911 000a 30       		.byte	0x30
- 912 000b 9F       		.byte	0x9f
- 913 000c 34000000 		.4byte	.LVL9
- 914 0010 3E000000 		.4byte	.LVL11
- 915 0014 0100     		.2byte	0x1
- 916 0016 54       		.byte	0x54
- 917 0017 40000000 		.4byte	.LVL12
- 918 001b 4A000000 		.4byte	.LVL14
- 919 001f 0100     		.2byte	0x1
- 920 0021 54       		.byte	0x54
- 921 0022 4A000000 		.4byte	.LVL14
- 922 0026 4C000000 		.4byte	.LVL15
- 923 002a 0100     		.2byte	0x1
- 924 002c 52       		.byte	0x52
- 925 002d 4C000000 		.4byte	.LVL15
- 926 0031 50000000 		.4byte	.LVL16
- 927 0035 0100     		.2byte	0x1
- 928 0037 54       		.byte	0x54
- 929 0038 50000000 		.4byte	.LVL16
- 930 003c 57000000 		.4byte	.LVL17-1
- 931 0040 0100     		.2byte	0x1
- 932 0042 52       		.byte	0x52
- 933 0043 00000000 		.4byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 20
+ 877 00d4 00       		.byte	0
+ 878 00d5 03       		.uleb128 0x3
+ 879 00d6 0E       		.uleb128 0xe
+ 880 00d7 3A       		.uleb128 0x3a
+ 881 00d8 0B       		.uleb128 0xb
+ 882 00d9 3B       		.uleb128 0x3b
+ 883 00da 0B       		.uleb128 0xb
+ 884 00db 49       		.uleb128 0x49
+ 885 00dc 13       		.uleb128 0x13
+ 886 00dd 3F       		.uleb128 0x3f
+ 887 00de 19       		.uleb128 0x19
+ 888 00df 02       		.uleb128 0x2
+ 889 00e0 18       		.uleb128 0x18
+ 890 00e1 00       		.byte	0
+ 891 00e2 00       		.byte	0
+ 892 00e3 11       		.uleb128 0x11
+ 893 00e4 2E       		.uleb128 0x2e
+ 894 00e5 00       		.byte	0
+ 895 00e6 3F       		.uleb128 0x3f
+ 896 00e7 19       		.uleb128 0x19
+ 897 00e8 3C       		.uleb128 0x3c
+ 898 00e9 19       		.uleb128 0x19
+ 899 00ea 6E       		.uleb128 0x6e
+ 900 00eb 0E       		.uleb128 0xe
+ 901 00ec 03       		.uleb128 0x3
+ 902 00ed 0E       		.uleb128 0xe
+ 903 00ee 3A       		.uleb128 0x3a
+ 904 00ef 0B       		.uleb128 0xb
+ 905 00f0 3B       		.uleb128 0x3b
+ 906 00f1 0B       		.uleb128 0xb
+ 907 00f2 00       		.byte	0
+ 908 00f3 00       		.byte	0
+ 909 00f4 00       		.byte	0
+ 910              		.section	.debug_loc,"",%progbits
+ 911              	.Ldebug_loc0:
+ 912              	.LLST0:
+ 913 0000 28000000 		.4byte	.LVL7
+ 914 0004 34000000 		.4byte	.LVL9
+ 915 0008 0200     		.2byte	0x2
+ 916 000a 30       		.byte	0x30
+ 917 000b 9F       		.byte	0x9f
+ 918 000c 34000000 		.4byte	.LVL9
+ 919 0010 3E000000 		.4byte	.LVL11
+ 920 0014 0100     		.2byte	0x1
+ 921 0016 54       		.byte	0x54
+ 922 0017 40000000 		.4byte	.LVL12
+ 923 001b 4A000000 		.4byte	.LVL14
+ 924 001f 0100     		.2byte	0x1
+ 925 0021 54       		.byte	0x54
+ 926 0022 4A000000 		.4byte	.LVL14
+ 927 0026 4C000000 		.4byte	.LVL15
+ 928 002a 0100     		.2byte	0x1
+ 929 002c 52       		.byte	0x52
+ 930 002d 4C000000 		.4byte	.LVL15
+ 931 0031 50000000 		.4byte	.LVL16
+ 932 0035 0100     		.2byte	0x1
+ 933 0037 54       		.byte	0x54
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 20
 
 
- 934 0047 00000000 		.4byte	0
- 935              	.LLST1:
- 936 004b 28000000 		.4byte	.LVL7
- 937 004f 50000000 		.4byte	.LVL16
- 938 0053 0200     		.2byte	0x2
- 939 0055 30       		.byte	0x30
- 940 0056 9F       		.byte	0x9f
- 941 0057 50000000 		.4byte	.LVL16
- 942 005b F0000000 		.4byte	.LFE63
- 943 005f 0500     		.2byte	0x5
- 944 0061 76       		.byte	0x76
- 945 0062 00       		.sleb128 0
- 946 0063 38       		.byte	0x38
- 947 0064 25       		.byte	0x25
- 948 0065 9F       		.byte	0x9f
- 949 0066 00000000 		.4byte	0
- 950 006a 00000000 		.4byte	0
- 951              	.LLST2:
- 952 006e 28000000 		.4byte	.LVL7
- 953 0072 50000000 		.4byte	.LVL16
- 954 0076 0200     		.2byte	0x2
- 955 0078 30       		.byte	0x30
- 956 0079 9F       		.byte	0x9f
- 957 007a 50000000 		.4byte	.LVL16
- 958 007e F0000000 		.4byte	.LFE63
- 959 0082 0100     		.2byte	0x1
- 960 0084 55       		.byte	0x55
- 961 0085 00000000 		.4byte	0
- 962 0089 00000000 		.4byte	0
- 963              	.LLST3:
- 964 008d 8E000000 		.4byte	.LVL22
- 965 0091 96000000 		.4byte	.LVL24
- 966 0095 0100     		.2byte	0x1
- 967 0097 54       		.byte	0x54
- 968 0098 00000000 		.4byte	0
- 969 009c 00000000 		.4byte	0
- 970              	.LLST4:
- 971 00a0 92000000 		.4byte	.LVL23
- 972 00a4 98000000 		.4byte	.LVL25
- 973 00a8 0100     		.2byte	0x1
- 974 00aa 50       		.byte	0x50
- 975 00ab 00000000 		.4byte	0
- 976 00af 00000000 		.4byte	0
- 977              		.section	.debug_aranges,"",%progbits
- 978 0000 1C000000 		.4byte	0x1c
- 979 0004 0200     		.2byte	0x2
- 980 0006 00000000 		.4byte	.Ldebug_info0
- 981 000a 04       		.byte	0x4
- 982 000b 00       		.byte	0
- 983 000c 0000     		.2byte	0
- 984 000e 0000     		.2byte	0
- 985 0010 00000000 		.4byte	.LFB63
- 986 0014 F0000000 		.4byte	.LFE63-.LFB63
- 987 0018 00000000 		.4byte	0
- 988 001c 00000000 		.4byte	0
- 989              		.section	.debug_ranges,"",%progbits
- 990              	.Ldebug_ranges0:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 21
+ 934 0038 50000000 		.4byte	.LVL16
+ 935 003c 57000000 		.4byte	.LVL17-1
+ 936 0040 0100     		.2byte	0x1
+ 937 0042 52       		.byte	0x52
+ 938 0043 00000000 		.4byte	0
+ 939 0047 00000000 		.4byte	0
+ 940              	.LLST1:
+ 941 004b 28000000 		.4byte	.LVL7
+ 942 004f 50000000 		.4byte	.LVL16
+ 943 0053 0200     		.2byte	0x2
+ 944 0055 30       		.byte	0x30
+ 945 0056 9F       		.byte	0x9f
+ 946 0057 50000000 		.4byte	.LVL16
+ 947 005b 0C010000 		.4byte	.LFE63
+ 948 005f 0500     		.2byte	0x5
+ 949 0061 76       		.byte	0x76
+ 950 0062 00       		.sleb128 0
+ 951 0063 38       		.byte	0x38
+ 952 0064 25       		.byte	0x25
+ 953 0065 9F       		.byte	0x9f
+ 954 0066 00000000 		.4byte	0
+ 955 006a 00000000 		.4byte	0
+ 956              	.LLST2:
+ 957 006e 28000000 		.4byte	.LVL7
+ 958 0072 50000000 		.4byte	.LVL16
+ 959 0076 0200     		.2byte	0x2
+ 960 0078 30       		.byte	0x30
+ 961 0079 9F       		.byte	0x9f
+ 962 007a 50000000 		.4byte	.LVL16
+ 963 007e 0C010000 		.4byte	.LFE63
+ 964 0082 0100     		.2byte	0x1
+ 965 0084 55       		.byte	0x55
+ 966 0085 00000000 		.4byte	0
+ 967 0089 00000000 		.4byte	0
+ 968              		.section	.debug_aranges,"",%progbits
+ 969 0000 1C000000 		.4byte	0x1c
+ 970 0004 0200     		.2byte	0x2
+ 971 0006 00000000 		.4byte	.Ldebug_info0
+ 972 000a 04       		.byte	0x4
+ 973 000b 00       		.byte	0
+ 974 000c 0000     		.2byte	0
+ 975 000e 0000     		.2byte	0
+ 976 0010 00000000 		.4byte	.LFB63
+ 977 0014 0C010000 		.4byte	.LFE63-.LFB63
+ 978 0018 00000000 		.4byte	0
+ 979 001c 00000000 		.4byte	0
+ 980              		.section	.debug_ranges,"",%progbits
+ 981              	.Ldebug_ranges0:
+ 982 0000 00000000 		.4byte	.LFB63
+ 983 0004 0C010000 		.4byte	.LFE63
+ 984 0008 00000000 		.4byte	0
+ 985 000c 00000000 		.4byte	0
+ 986              		.section	.debug_line,"",%progbits
+ 987              	.Ldebug_line0:
+ 988 0000 0E020000 		.section	.debug_str,"MS",%progbits,1
+ 988      0200BA01 
+ 988      00000201 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 21
 
 
- 991 0000 00000000 		.4byte	.LFB63
- 992 0004 F0000000 		.4byte	.LFE63
- 993 0008 00000000 		.4byte	0
- 994 000c 00000000 		.4byte	0
- 995              		.section	.debug_line,"",%progbits
- 996              	.Ldebug_line0:
- 997 0000 06020000 		.section	.debug_str,"MS",%progbits,1
- 997      0200BA01 
- 997      00000201 
- 997      FB0E0D00 
- 997      01010101 
- 998              	.LASF3:
- 999 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 999      6E74385F 
- 999      7400
- 1000              	.LASF28:
- 1001 000a 7468726F 		.ascii	"throttle_high\000"
- 1001      74746C65 
- 1001      5F686967 
- 1001      6800
- 1002              	.LASF31:
- 1003 0018 73746174 		.ascii	"state\000"
- 1003      6500
- 1004              	.LASF49:
- 1005 001e 63616E5F 		.ascii	"can_send_state_and_throttle\000"
- 1005      73656E64 
- 1005      5F737461 
- 1005      74655F61 
- 1005      6E645F74 
- 1006              	.LASF6:
- 1007 003a 5F5F696E 		.ascii	"__int32_t\000"
- 1007      7433325F 
- 1007      7400
- 1008              	.LASF39:
- 1009 0044 53445F49 		.ascii	"SD_IN_Read\000"
- 1009      4E5F5265 
- 1009      616400
- 1010              	.LASF37:
- 1011 004f 6765745F 		.ascii	"get_THROTTLE_HIGH\000"
- 1011      5448524F 
- 1011      54544C45 
- 1011      5F484947 
- 1011      4800
- 1012              	.LASF15:
- 1013 0061 696E7433 		.ascii	"int32_t\000"
- 1013      325F7400 
- 1014              	.LASF46:
- 1015 0069 636C6561 		.ascii	"clear_interlock\000"
- 1015      725F696E 
- 1015      7465726C 
- 1015      6F636B00 
- 1016              	.LASF32:
- 1017 0079 655F7374 		.ascii	"e_stop\000"
- 1017      6F7000
- 1018              	.LASF19:
- 1019 0080 666C6F61 		.ascii	"float\000"
+ 988      FB0E0D00 
+ 988      01010101 
+ 989              	.LASF10:
+ 990 0000 6C6F6E67 		.ascii	"long long int\000"
+ 990      206C6F6E 
+ 990      6720696E 
+ 990      7400
+ 991              	.LASF3:
+ 992 000e 5F5F7569 		.ascii	"__uint8_t\000"
+ 992      6E74385F 
+ 992      7400
+ 993              	.LASF29:
+ 994 0018 73746174 		.ascii	"state\000"
+ 994      6500
+ 995              	.LASF6:
+ 996 001e 5F5F696E 		.ascii	"__int32_t\000"
+ 996      7433325F 
+ 996      7400
+ 997              	.LASF34:
+ 998 0028 53445F49 		.ascii	"SD_IN_Read\000"
+ 998      4E5F5265 
+ 998      616400
+ 999              	.LASF47:
+ 1000 0033 6765745F 		.ascii	"get_VEHICLE_STATE\000"
+ 1000      56454849 
+ 1000      434C455F 
+ 1000      53544154 
+ 1000      4500
+ 1001              	.LASF41:
+ 1002 0045 636C6561 		.ascii	"clear_interlock\000"
+ 1002      725F696E 
+ 1002      7465726C 
+ 1002      6F636B00 
+ 1003              	.LASF30:
+ 1004 0055 655F7374 		.ascii	"e_stop\000"
+ 1004      6F7000
+ 1005              	.LASF19:
+ 1006 005c 666C6F61 		.ascii	"float\000"
+ 1006      7400
+ 1007              	.LASF17:
+ 1008 0062 75696E74 		.ascii	"uint8\000"
+ 1008      3800
+ 1009              	.LASF35:
+ 1010 0068 4144435F 		.ascii	"ADC_DelSig_1_Read32\000"
+ 1010      44656C53 
+ 1010      69675F31 
+ 1010      5F526561 
+ 1010      64333200 
+ 1011              	.LASF55:
+ 1012 007c 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
+ 1012      73657273 
+ 1012      5C4A7573 
+ 1012      74696E20 
+ 1012      4368616E 
+ 1013 00ab 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
+ 1013      616D706C 
+ 1013      655C4465 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 22
+
+
+ 1013      7369676E 
+ 1013      30312E63 
+ 1014              	.LASF53:
+ 1015 00c4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1015      43313120 
+ 1015      352E342E 
+ 1015      31203230 
+ 1015      31363036 
+ 1016 00f7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1016      20726576 
+ 1016      6973696F 
+ 1016      6E203233 
+ 1016      37373135 
+ 1017 012a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1017      66756E63 
+ 1017      74696F6E 
+ 1017      2D736563 
+ 1017      74696F6E 
+ 1018              	.LASF9:
+ 1019 0152 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1019      20756E73 
+ 1019      69676E65 
+ 1019      6420696E 
  1019      7400
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 22
+ 1020              	.LASF43:
+ 1021 0164 6765745F 		.ascii	"get_BMS_Voltage\000"
+ 1021      424D535F 
+ 1021      566F6C74 
+ 1021      61676500 
+ 1022              	.LASF5:
+ 1023 0174 73686F72 		.ascii	"short unsigned int\000"
+ 1023      7420756E 
+ 1023      7369676E 
+ 1023      65642069 
+ 1023      6E7400
+ 1024              	.LASF42:
+ 1025 0187 6765745F 		.ascii	"get_HV_Requested\000"
+ 1025      48565F52 
+ 1025      65717565 
+ 1025      73746564 
+ 1025      00
+ 1026              	.LASF31:
+ 1027 0198 7468726F 		.ascii	"throttle_total\000"
+ 1027      74746C65 
+ 1027      5F746F74 
+ 1027      616C00
+ 1028              	.LASF50:
+ 1029 01a7 43414E5F 		.ascii	"CAN_Init\000"
+ 1029      496E6974 
+ 1029      00
+ 1030              	.LASF1:
+ 1031 01b0 756E7369 		.ascii	"unsigned char\000"
+ 1031      676E6564 
+ 1031      20636861 
+ 1031      7200
+ 1032              	.LASF45:
+ 1033 01be 636C6F73 		.ascii	"close_precharge\000"
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 23
 
 
- 1020              	.LASF17:
- 1021 0086 75696E74 		.ascii	"uint8\000"
- 1021      3800
- 1022              	.LASF29:
- 1023 008c 7468726F 		.ascii	"throttle_low\000"
- 1023      74746C65 
- 1023      5F6C6F77 
- 1023      00
- 1024              	.LASF40:
- 1025 0099 4144435F 		.ascii	"ADC_DelSig_1_Read32\000"
- 1025      44656C53 
- 1025      69675F31 
- 1025      5F526561 
- 1025      64333200 
- 1026              	.LASF57:
- 1027 00ad 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
- 1027      73657273 
- 1027      5C4A7573 
- 1027      74696E20 
- 1027      4368616E 
- 1028 00dc 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
- 1028      616D706C 
- 1028      655C4465 
- 1028      7369676E 
- 1028      30312E63 
- 1029              	.LASF55:
- 1030 00f5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1030      43313120 
- 1030      352E342E 
- 1030      31203230 
- 1030      31363036 
- 1031 0128 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1031      20726576 
- 1031      6973696F 
- 1031      6E203233 
- 1031      37373135 
- 1032 015b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1032      66756E63 
- 1032      74696F6E 
- 1032      2D736563 
- 1032      74696F6E 
- 1033              	.LASF48:
- 1034 0183 63616E5F 		.ascii	"can_send_ESTOP\000"
- 1034      73656E64 
- 1034      5F455354 
- 1034      4F5000
- 1035              	.LASF9:
- 1036 0192 6C6F6E67 		.ascii	"long unsigned int\000"
- 1036      20756E73 
- 1036      69676E65 
- 1036      6420696E 
- 1036      7400
- 1037              	.LASF5:
- 1038 01a4 73686F72 		.ascii	"short unsigned int\000"
- 1038      7420756E 
- 1038      7369676E 
- 1038      65642069 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 23
+ 1033      655F7072 
+ 1033      65636861 
+ 1033      72676500 
+ 1034              	.LASF20:
+ 1035 01ce 646F7562 		.ascii	"double\000"
+ 1035      6C6500
+ 1036              	.LASF18:
+ 1037 01d5 75696E74 		.ascii	"uint16\000"
+ 1037      313600
+ 1038              	.LASF8:
+ 1039 01dc 5F5F7569 		.ascii	"__uint32_t\000"
+ 1039      6E743332 
+ 1039      5F7400
+ 1040              	.LASF38:
+ 1041 01e7 424D535F 		.ascii	"BMS_Fault_Read\000"
+ 1041      4661756C 
+ 1041      745F5265 
+ 1041      616400
+ 1042              	.LASF27:
+ 1043 01f6 63757272 		.ascii	"current_lower\000"
+ 1043      656E745F 
+ 1043      6C6F7765 
+ 1043      7200
+ 1044              	.LASF28:
+ 1045 0204 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1045      52784275 
+ 1045      66666572 
+ 1045      00
+ 1046              	.LASF56:
+ 1047 0211 6D61696E 		.ascii	"main\000"
+ 1047      00
+ 1048              	.LASF52:
+ 1049 0216 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
+ 1049      44656C53 
+ 1049      69675F31 
+ 1049      5F537461 
+ 1049      727400
+ 1050              	.LASF12:
+ 1051 0229 756E7369 		.ascii	"unsigned int\000"
+ 1051      676E6564 
+ 1051      20696E74 
+ 1051      00
+ 1052              	.LASF37:
+ 1053 0236 494D445F 		.ascii	"IMD_Fault_Read\000"
+ 1053      4661756C 
+ 1053      745F5265 
+ 1053      616400
+ 1054              	.LASF36:
+ 1055 0245 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
+ 1055      44656C53 
+ 1055      69675F31 
+ 1055      5F436F75 
+ 1055      6E747354 
+ 1056              	.LASF11:
+ 1057 0262 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1057      206C6F6E 
+ 1057      6720756E 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 24
 
 
- 1038      6E7400
- 1039              	.LASF47:
- 1040 01b7 6765745F 		.ascii	"get_HV_Requested\000"
- 1040      48565F52 
- 1040      65717565 
- 1040      73746564 
- 1040      00
- 1041              	.LASF33:
- 1042 01c8 7468726F 		.ascii	"throttle_total\000"
- 1042      74746C65 
- 1042      5F746F74 
- 1042      616C00
- 1043              	.LASF52:
- 1044 01d7 43414E5F 		.ascii	"CAN_Init\000"
- 1044      496E6974 
- 1044      00
- 1045              	.LASF1:
- 1046 01e0 756E7369 		.ascii	"unsigned char\000"
- 1046      676E6564 
- 1046      20636861 
- 1046      7200
- 1047              	.LASF4:
- 1048 01ee 5F5F7569 		.ascii	"__uint16_t\000"
- 1048      6E743136 
- 1048      5F7400
- 1049              	.LASF20:
- 1050 01f9 646F7562 		.ascii	"double\000"
- 1050      6C6500
- 1051              	.LASF18:
- 1052 0200 75696E74 		.ascii	"uint16\000"
- 1052      313600
- 1053              	.LASF8:
- 1054 0207 5F5F7569 		.ascii	"__uint32_t\000"
- 1054      6E743332 
- 1054      5F7400
- 1055              	.LASF43:
- 1056 0212 424D535F 		.ascii	"BMS_Fault_Read\000"
- 1056      4661756C 
- 1056      745F5265 
- 1056      616400
- 1057              	.LASF27:
- 1058 0221 63757272 		.ascii	"current_lower\000"
- 1058      656E745F 
- 1058      6C6F7765 
- 1058      7200
- 1059              	.LASF30:
- 1060 022f 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1060      52784275 
- 1060      66666572 
- 1060      00
- 1061              	.LASF58:
- 1062 023c 6D61696E 		.ascii	"main\000"
- 1062      00
- 1063              	.LASF54:
- 1064 0241 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
- 1064      44656C53 
- 1064      69675F31 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 24
+ 1057      7369676E 
+ 1057      65642069 
+ 1058              	.LASF13:
+ 1059 0279 75696E74 		.ascii	"uint8_t\000"
+ 1059      385F7400 
+ 1060              	.LASF32:
+ 1061 0281 7468726F 		.ascii	"throttle_upper\000"
+ 1061      74746C65 
+ 1061      5F757070 
+ 1061      657200
+ 1062              	.LASF33:
+ 1063 0290 7468726F 		.ascii	"throttle_lower\000"
+ 1063      74746C65 
+ 1063      5F6C6F77 
+ 1063      657200
+ 1064              	.LASF22:
+ 1065 029f 6C6F6E67 		.ascii	"long double\000"
+ 1065      20646F75 
+ 1065      626C6500 
+ 1066              	.LASF23:
+ 1067 02ab 73697A65 		.ascii	"sizetype\000"
+ 1067      74797065 
+ 1067      00
+ 1068              	.LASF49:
+ 1069 02b4 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
+ 1069      476C6F62 
+ 1069      616C496E 
+ 1069      74456E61 
+ 1069      626C6500 
+ 1070              	.LASF44:
+ 1071 02c8 6F70656E 		.ascii	"open_precharge\000"
+ 1071      5F707265 
+ 1071      63686172 
+ 1071      676500
+ 1072              	.LASF54:
+ 1073 02d7 6D61696E 		.ascii	"main.c\000"
+ 1073      2E6300
+ 1074              	.LASF21:
+ 1075 02de 63686172 		.ascii	"char\000"
+ 1075      00
+ 1076              	.LASF46:
+ 1077 02e3 6765745F 		.ascii	"get_RUN_FAULT_SUM\000"
+ 1077      52554E5F 
+ 1077      4641554C 
+ 1077      545F5355 
+ 1077      4D00
+ 1078              	.LASF15:
+ 1079 02f5 696E7433 		.ascii	"int32_t\000"
+ 1079      325F7400 
+ 1080              	.LASF2:
+ 1081 02fd 73686F72 		.ascii	"short int\000"
+ 1081      7420696E 
+ 1081      7400
+ 1082              	.LASF4:
+ 1083 0307 5F5F7569 		.ascii	"__uint16_t\000"
+ 1083      6E743136 
+ 1083      5F7400
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc4klOs3.s 			page 25
 
 
- 1064      5F537461 
- 1064      727400
- 1065              	.LASF12:
- 1066 0254 756E7369 		.ascii	"unsigned int\000"
- 1066      676E6564 
- 1066      20696E74 
- 1066      00
- 1067              	.LASF42:
- 1068 0261 494D445F 		.ascii	"IMD_Fault_Read\000"
- 1068      4661756C 
- 1068      745F5265 
- 1068      616400
- 1069              	.LASF41:
- 1070 0270 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
- 1070      44656C53 
- 1070      69675F31 
- 1070      5F436F75 
- 1070      6E747354 
- 1071              	.LASF11:
- 1072 028d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1072      206C6F6E 
- 1072      6720756E 
- 1072      7369676E 
- 1072      65642069 
- 1073              	.LASF13:
- 1074 02a4 75696E74 		.ascii	"uint8_t\000"
- 1074      385F7400 
- 1075              	.LASF34:
- 1076 02ac 7468726F 		.ascii	"throttle_upper\000"
- 1076      74746C65 
- 1076      5F757070 
- 1076      657200
- 1077              	.LASF35:
- 1078 02bb 7468726F 		.ascii	"throttle_lower\000"
- 1078      74746C65 
- 1078      5F6C6F77 
- 1078      657200
- 1079              	.LASF22:
- 1080 02ca 6C6F6E67 		.ascii	"long double\000"
- 1080      20646F75 
- 1080      626C6500 
- 1081              	.LASF23:
- 1082 02d6 73697A65 		.ascii	"sizetype\000"
- 1082      74797065 
- 1082      00
- 1083              	.LASF51:
- 1084 02df 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
- 1084      476C6F62 
- 1084      616C496E 
- 1084      74456E61 
- 1084      626C6500 
- 1085              	.LASF10:
- 1086 02f3 6C6F6E67 		.ascii	"long long int\000"
- 1086      206C6F6E 
- 1086      6720696E 
- 1086      7400
- 1087              	.LASF36:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 25
-
-
- 1088 0301 7365745F 		.ascii	"set_interlock\000"
- 1088      696E7465 
- 1088      726C6F63 
- 1088      6B00
- 1089              	.LASF56:
- 1090 030f 6D61696E 		.ascii	"main.c\000"
- 1090      2E6300
- 1091              	.LASF21:
- 1092 0316 63686172 		.ascii	"char\000"
- 1092      00
- 1093              	.LASF38:
- 1094 031b 6765745F 		.ascii	"get_THROTTLE_LOW\000"
- 1094      5448524F 
- 1094      54544C45 
- 1094      5F4C4F57 
- 1094      00
- 1095              	.LASF2:
- 1096 032c 73686F72 		.ascii	"short int\000"
- 1096      7420696E 
- 1096      7400
- 1097              	.LASF14:
- 1098 0336 75696E74 		.ascii	"uint16_t\000"
- 1098      31365F74 
- 1098      00
- 1099              	.LASF24:
- 1100 033f 63757272 		.ascii	"current\000"
- 1100      656E7400 
- 1101              	.LASF53:
- 1102 0347 43414E5F 		.ascii	"CAN_Start\000"
- 1102      53746172 
- 1102      7400
- 1103              	.LASF16:
- 1104 0351 75696E74 		.ascii	"uint32_t\000"
- 1104      33325F74 
- 1104      00
- 1105              	.LASF7:
- 1106 035a 6C6F6E67 		.ascii	"long int\000"
- 1106      20696E74 
- 1106      00
- 1107              	.LASF25:
- 1108 0363 73687574 		.ascii	"shutdown_flags\000"
- 1108      646F776E 
- 1108      5F666C61 
- 1108      677300
- 1109              	.LASF0:
- 1110 0372 7369676E 		.ascii	"signed char\000"
- 1110      65642063 
- 1110      68617200 
- 1111              	.LASF44:
- 1112 037e 53445F46 		.ascii	"SD_FINAL_Read\000"
- 1112      494E414C 
- 1112      5F526561 
- 1112      6400
- 1113              	.LASF45:
- 1114 038c 63616E5F 		.ascii	"can_send_PEI\000"
- 1114      73656E64 
- 1114      5F504549 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccwX84Go.s 			page 26
-
-
- 1114      00
- 1115              	.LASF26:
- 1116 0399 63757272 		.ascii	"current_upper\000"
- 1116      656E745F 
- 1116      75707065 
- 1116      7200
- 1117              	.LASF50:
- 1118 03a7 43794465 		.ascii	"CyDelay\000"
- 1118      6C617900 
- 1119              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1084              	.LASF14:
+ 1085 0312 75696E74 		.ascii	"uint16_t\000"
+ 1085      31365F74 
+ 1085      00
+ 1086              	.LASF24:
+ 1087 031b 63757272 		.ascii	"current\000"
+ 1087      656E7400 
+ 1088              	.LASF51:
+ 1089 0323 43414E5F 		.ascii	"CAN_Start\000"
+ 1089      53746172 
+ 1089      7400
+ 1090              	.LASF16:
+ 1091 032d 75696E74 		.ascii	"uint32_t\000"
+ 1091      33325F74 
+ 1091      00
+ 1092              	.LASF7:
+ 1093 0336 6C6F6E67 		.ascii	"long int\000"
+ 1093      20696E74 
+ 1093      00
+ 1094              	.LASF25:
+ 1095 033f 73687574 		.ascii	"shutdown_flags\000"
+ 1095      646F776E 
+ 1095      5F666C61 
+ 1095      677300
+ 1096              	.LASF0:
+ 1097 034e 7369676E 		.ascii	"signed char\000"
+ 1097      65642063 
+ 1097      68617200 
+ 1098              	.LASF39:
+ 1099 035a 53445F46 		.ascii	"SD_FINAL_Read\000"
+ 1099      494E414C 
+ 1099      5F526561 
+ 1099      6400
+ 1100              	.LASF40:
+ 1101 0368 63616E5F 		.ascii	"can_send_PEI\000"
+ 1101      73656E64 
+ 1101      5F504549 
+ 1101      00
+ 1102              	.LASF26:
+ 1103 0375 63757272 		.ascii	"current_upper\000"
+ 1103      656E745F 
+ 1103      75707065 
+ 1103      7200
+ 1104              	.LASF48:
+ 1105 0383 43794465 		.ascii	"CyDelay\000"
+ 1105      6C617900 
+ 1106              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
