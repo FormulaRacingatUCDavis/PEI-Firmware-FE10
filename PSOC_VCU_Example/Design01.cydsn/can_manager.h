@@ -18,6 +18,7 @@ typedef enum {
     MC_DEBUG = 0x466,
     BSPD_FLAGS = 0x0C1,
     MC_FAULT = 0x0AB,
+    BMS_VOLTAGE = 0x388,
 } CAN_ID; //RECEIVE
 
 typedef enum {
@@ -68,14 +69,16 @@ uint8_t get_RUN_FAULT_HI_2();
 uint8_t get_RUN_FAULT_SUM();
 
 //Interlock functionality
-void set_interlock();
+void open_precharge();
+void close_precharge();
 void clear_interlock();
 void can_send_interlock(uint8_t air_pos, uint8_t air_neg);
 
 //Current flags, shutdown circuit
 void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags);
 
-
+//BMS_Voltage
+uint32_t get_BMS_Voltage();
 
 
 /* Not necessary at the moment

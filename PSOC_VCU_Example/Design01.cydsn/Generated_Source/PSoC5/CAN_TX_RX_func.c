@@ -48,6 +48,11 @@ extern volatile uint8_t RUN_FAULT_LO_2;
 extern volatile uint8_t RUN_FAULT_HI_1;
 extern volatile uint8_t RUN_FAULT_HI_2;
 
+extern volatile uint8_t PACK_VOLTAGE_1; //Highest 8 bits
+extern volatile uint8_t PACK_VOLTAGE_2;
+extern volatile uint8_t PACK_VOLTAGE_3;
+extern volatile uint8_t PACK_VOLTAGE_4; //Lowest 8 bits
+
 /* `#END` */
 
 
@@ -858,7 +863,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX5_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg5
+    * FUNCTION NAME:   CAN_ReceiveMsgBMS_Voltage
     ********************************************************************************
     *
     * Summary:
@@ -876,15 +881,18 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg5(void) 
+    void CAN_ReceiveMsgBMS_Voltage(void) 
     {
-        /* `#START MESSAGE_5_RECEIVED` */
-
+        /* `#START MESSAGE_BMS_Voltage_RECEIVED` */
+        PACK_VOLTAGE_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_BMS_Voltage);
+        PACK_VOLTAGE_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_BMS_Voltage);
+        PACK_VOLTAGE_3 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_BMS_Voltage);
+        PACK_VOLTAGE_4 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_BMS_Voltage);
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_5_CALLBACK
-            CAN_ReceiveMsg_5_Callback();
-        #endif /* CAN_RECEIVE_MSG_5_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BMS_Voltage_CALLBACK
+            CAN_ReceiveMsg_BMS_Voltage_Callback();
+        #endif /* CAN_RECEIVE_MSG_BMS_Voltage_CALLBACK */
 
         CAN_RX[5u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }

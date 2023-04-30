@@ -41,7 +41,20 @@ volatile uint8_t RUN_FAULT_LO_2 = 0;
 volatile uint8_t RUN_FAULT_HI_1 = 0;
 volatile uint8_t RUN_FAULT_HI_2 =0;
 
+volatile uint8_t PACK_VOLTAGE_1; //Highest 8 bits
+volatile uint8_t PACK_VOLTAGE_2;
+volatile uint8_t PACK_VOLTAGE_3;
+volatile uint8_t PACK_VOLTAGE_4; //Lowest 8 bits
 
+uint32_t get_BMS_Voltage() {
+    uint32_t voltage = 0;
+    voltage |= PACK_VOLTAGE_1 << 24;
+    voltage |= PACK_VOLTAGE_2 << 16;
+    voltage |= PACK_VOLTAGE_3 << 8;
+    voltage |= PACK_VOLTAGE_4;
+    
+    return voltage;
+}
 
 //Return the hv_requested state from the VCU.
 uint8_t get_HV_Requested()
@@ -237,11 +250,17 @@ void can_send_ESTOP(uint8_t estop) {
     can_send(data, 0x363);
 }
 
-void set_interlock()
+void close_precharge() {
+    AIR_NEG_Write(1);
+    AIR_POS_Write(0);
+    Precharge_Write(1);
+}
+
+void open_precharge()
 {
     AIR_NEG_Write(1);
+    Precharge_Write(0);
     AIR_POS_Write(1);
-    //can_send_interlock(1,1);
 }    
 
 void clear_interlock()

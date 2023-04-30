@@ -858,7 +858,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX5_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg5
+    * FUNCTION NAME:   CAN_ReceiveMsgBMS_Voltage
     ********************************************************************************
     *
     * Summary:
@@ -876,15 +876,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg5(void) 
+    void CAN_ReceiveMsgBMS_Voltage(void) 
     {
-        /* `#START MESSAGE_5_RECEIVED` */
+        /* `#START MESSAGE_BMS_Voltage_RECEIVED` */
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_5_CALLBACK
-            CAN_ReceiveMsg_5_Callback();
-        #endif /* CAN_RECEIVE_MSG_5_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_BMS_Voltage_CALLBACK
+            CAN_ReceiveMsg_BMS_Voltage_Callback();
+        #endif /* CAN_RECEIVE_MSG_BMS_Voltage_CALLBACK */
 
         CAN_RX[5u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
   28:Generated_Source\PSoC5/CAN_INT.c ****     /*******************************************************************************
   29:Generated_Source\PSoC5/CAN_INT.c ****     * FUNCTION NAME:   CAN_ArbLostIsr
   30:Generated_Source\PSoC5/CAN_INT.c ****     ********************************************************************************
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 2
 
 
   31:Generated_Source\PSoC5/CAN_INT.c ****     *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
   85:Generated_Source\PSoC5/CAN_INT.c ****         /* Clear Overload Error flag */
   86:Generated_Source\PSoC5/CAN_INT.c ****         CAN_INT_SR_REG.byte[0u] = CAN_OVERLOAD_ERROR_MASK;
   87:Generated_Source\PSoC5/CAN_INT.c **** 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 3
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 3
 
 
   88:Generated_Source\PSoC5/CAN_INT.c ****         /* `#START OVER_LOAD_ERROR_ISR` */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  142:Generated_Source\PSoC5/CAN_INT.c ****     *  in Customizer.
  143:Generated_Source\PSoC5/CAN_INT.c ****     *
  144:Generated_Source\PSoC5/CAN_INT.c ****     * Parameters:
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 4
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 4
 
 
  145:Generated_Source\PSoC5/CAN_INT.c ****     *  None.
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  199:Generated_Source\PSoC5/CAN_INT.c ****         #ifdef CAN_ACK_ERROR_ISR_CALLBACK
  200:Generated_Source\PSoC5/CAN_INT.c ****             CAN_AckErrorIsr_Callback();
  201:Generated_Source\PSoC5/CAN_INT.c ****         #endif /* CAN_ACK_ERROR_ISR_CALLBACK */
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 5
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 5
 
 
  202:Generated_Source\PSoC5/CAN_INT.c ****     }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  256:Generated_Source\PSoC5/CAN_INT.c ****     * Reentrant:
  257:Generated_Source\PSoC5/CAN_INT.c ****     *  Depends on Customer code.
  258:Generated_Source\PSoC5/CAN_INT.c ****     *
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 6
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 6
 
 
  259:Generated_Source\PSoC5/CAN_INT.c ****     *******************************************************************************/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  313:Generated_Source\PSoC5/CAN_INT.c **** 
  314:Generated_Source\PSoC5/CAN_INT.c **** 
  315:Generated_Source\PSoC5/CAN_INT.c **** #if (CAN_RX_MSG_LOST)
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 7
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 7
 
 
  316:Generated_Source\PSoC5/CAN_INT.c ****     /*******************************************************************************
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  370:Generated_Source\PSoC5/CAN_INT.c ****     void CAN_MsgTXIsr(void) 
  371:Generated_Source\PSoC5/CAN_INT.c ****     {
  372:Generated_Source\PSoC5/CAN_INT.c ****         /* Clear Transmit Message flag */
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 8
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 8
 
 
  373:Generated_Source\PSoC5/CAN_INT.c ****         CAN_INT_SR_REG.byte[1u] = CAN_TX_MESSAGE_MASK;
@@ -472,13 +472,13 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  410:Generated_Source\PSoC5/CAN_INT.c ****         CAN_INT_SR_REG.byte[1u] = CAN_RX_MESSAGE_MASK;
   39              		.loc 1 410 0
   40 0002 1022     		movs	r2, #16
-  41 0004 184B     		ldr	r3, .L13
+  41 0004 1A4B     		ldr	r3, .L14
   42 0006 5A70     		strb	r2, [r3, #1]
   43              	.LVL1:
  407:Generated_Source\PSoC5/CAN_INT.c **** 
   44              		.loc 1 407 0
   45 0008 0125     		movs	r5, #1
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 9
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 9
 
 
  411:Generated_Source\PSoC5/CAN_INT.c **** 
@@ -493,35 +493,35 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
  420:Generated_Source\PSoC5/CAN_INT.c ****         for (mailboxNumber = 0u; mailboxNumber < CAN_NUMBER_OF_RX_MAILBOXES; mailboxNumber++)
   46              		.loc 1 420 0
   47 000a 0024     		movs	r4, #0
-  48 000c 29E0     		b	.L2
+  48 000c 2CE0     		b	.L2
   49              	.LVL2:
-  50              	.L11:
+  50              	.L12:
  421:Generated_Source\PSoC5/CAN_INT.c ****         {
  422:Generated_Source\PSoC5/CAN_INT.c ****             if ((CY_GET_REG16((reg16 *) &CAN_BUF_SR_REG.byte[0u]) & shift) != 0u)
   51              		.loc 1 422 0
-  52 000e 174B     		ldr	r3, .L13+4
+  52 000e 194B     		ldr	r3, .L14+4
   53 0010 1B88     		ldrh	r3, [r3]
   54 0012 1D42     		tst	r5, r3
-  55 0014 21D0     		beq	.L3
+  55 0014 24D0     		beq	.L3
  423:Generated_Source\PSoC5/CAN_INT.c ****             {
  424:Generated_Source\PSoC5/CAN_INT.c ****                 if ((CAN_RX[mailboxNumber].rxcmd.byte[0u] & CAN_RX_INT_ENABLE_MASK) != 0u)
   56              		.loc 1 424 0
   57 0016 6301     		lsls	r3, r4, #5
-  58 0018 154A     		ldr	r2, .L13+8
+  58 0018 174A     		ldr	r2, .L14+8
   59 001a 9B5C     		ldrb	r3, [r3, r2]	@ zero_extendqisi2
   60 001c 13F0200F 		tst	r3, #32
-  61 0020 1BD0     		beq	.L3
+  61 0020 1ED0     		beq	.L3
  425:Generated_Source\PSoC5/CAN_INT.c ****                 {
  426:Generated_Source\PSoC5/CAN_INT.c ****                     if ((CAN_RX_MAILBOX_TYPE & shift) != 0u)
   62              		.loc 1 426 0
-  63 0022 15F01F0F 		tst	r5, #31
-  64 0026 15D0     		beq	.L4
+  63 0022 15F03F0F 		tst	r5, #63
+  64 0026 18D0     		beq	.L4
  427:Generated_Source\PSoC5/CAN_INT.c ****                     {
  428:Generated_Source\PSoC5/CAN_INT.c ****                         /* RX Full mailboxes handler */
  429:Generated_Source\PSoC5/CAN_INT.c ****                         switch(mailboxNumber)
   65              		.loc 1 429 0
-  66 0028 042C     		cmp	r4, #4
-  67 002a 16D8     		bhi	.L3
+  66 0028 052C     		cmp	r4, #5
+  67 002a 19D8     		bhi	.L3
   68 002c DFE804F0 		tbb	[pc, r4]
   69              	.L6:
   70 0030 03       		.byte	(.L5-.L6)/2
@@ -529,1072 +529,1098 @@ ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 1
   72 0032 09       		.byte	(.L8-.L6)/2
   73 0033 0C       		.byte	(.L9-.L6)/2
   74 0034 0F       		.byte	(.L10-.L6)/2
-  75 0035 00       		.p2align 1
-  76              	.L5:
+  75 0035 12       		.byte	(.L11-.L6)/2
+  76              		.p2align 1
+  77              	.L5:
  430:Generated_Source\PSoC5/CAN_INT.c ****                         {
  431:Generated_Source\PSoC5/CAN_INT.c ****                             case 0u : CAN_ReceiveMsgTorque_Request_Command();
-  77              		.loc 1 431 0
-  78 0036 FFF7FEFF 		bl	CAN_ReceiveMsgTorque_Request_Command
-  79              	.LVL3:
+  78              		.loc 1 431 0
+  79 0036 FFF7FEFF 		bl	CAN_ReceiveMsgTorque_Request_Command
+  80              	.LVL3:
  432:Generated_Source\PSoC5/CAN_INT.c ****                             break;
-  80              		.loc 1 432 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 10
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 10
 
 
-  81 003a 0EE0     		b	.L3
-  82              	.L7:
+  81              		.loc 1 432 0
+  82 003a 11E0     		b	.L3
+  83              	.L7:
  433:Generated_Source\PSoC5/CAN_INT.c ****                             case 1u : CAN_ReceiveMsgMC_Debug();
-  83              		.loc 1 433 0
-  84 003c FFF7FEFF 		bl	CAN_ReceiveMsgMC_Debug
-  85              	.LVL4:
+  84              		.loc 1 433 0
+  85 003c FFF7FEFF 		bl	CAN_ReceiveMsgMC_Debug
+  86              	.LVL4:
  434:Generated_Source\PSoC5/CAN_INT.c ****                             break;
-  86              		.loc 1 434 0
-  87 0040 0BE0     		b	.L3
-  88              	.L8:
+  87              		.loc 1 434 0
+  88 0040 0EE0     		b	.L3
+  89              	.L8:
  435:Generated_Source\PSoC5/CAN_INT.c ****                             case 2u : CAN_ReceiveMsgMC_ESTOP();
-  89              		.loc 1 435 0
-  90 0042 FFF7FEFF 		bl	CAN_ReceiveMsgMC_ESTOP
-  91              	.LVL5:
+  90              		.loc 1 435 0
+  91 0042 FFF7FEFF 		bl	CAN_ReceiveMsgMC_ESTOP
+  92              	.LVL5:
  436:Generated_Source\PSoC5/CAN_INT.c ****                             break;
-  92              		.loc 1 436 0
-  93 0046 08E0     		b	.L3
-  94              	.L9:
+  93              		.loc 1 436 0
+  94 0046 0BE0     		b	.L3
+  95              	.L9:
  437:Generated_Source\PSoC5/CAN_INT.c ****                             case 3u : CAN_ReceiveMsgBSPD_Flags();
-  95              		.loc 1 437 0
-  96 0048 FFF7FEFF 		bl	CAN_ReceiveMsgBSPD_Flags
-  97              	.LVL6:
+  96              		.loc 1 437 0
+  97 0048 FFF7FEFF 		bl	CAN_ReceiveMsgBSPD_Flags
+  98              	.LVL6:
  438:Generated_Source\PSoC5/CAN_INT.c ****                             break;
-  98              		.loc 1 438 0
-  99 004c 05E0     		b	.L3
- 100              	.L10:
+  99              		.loc 1 438 0
+ 100 004c 08E0     		b	.L3
+ 101              	.L10:
  439:Generated_Source\PSoC5/CAN_INT.c ****                             case 4u : CAN_ReceiveMsgMC_Fault();
- 101              		.loc 1 439 0
- 102 004e FFF7FEFF 		bl	CAN_ReceiveMsgMC_Fault
- 103              	.LVL7:
+ 102              		.loc 1 439 0
+ 103 004e FFF7FEFF 		bl	CAN_ReceiveMsgMC_Fault
+ 104              	.LVL7:
  440:Generated_Source\PSoC5/CAN_INT.c ****                             break;
- 104              		.loc 1 440 0
- 105 0052 02E0     		b	.L3
- 106              	.L4:
- 441:Generated_Source\PSoC5/CAN_INT.c ****                             default:
- 442:Generated_Source\PSoC5/CAN_INT.c ****                             break;
- 443:Generated_Source\PSoC5/CAN_INT.c ****                         }
- 444:Generated_Source\PSoC5/CAN_INT.c ****                     }
- 445:Generated_Source\PSoC5/CAN_INT.c ****                     else
- 446:Generated_Source\PSoC5/CAN_INT.c ****                     {
- 447:Generated_Source\PSoC5/CAN_INT.c ****                         /* RX Basic mailbox handler */
- 448:Generated_Source\PSoC5/CAN_INT.c ****                         CAN_ReceiveMsg(mailboxNumber);
- 107              		.loc 1 448 0
- 108 0054 2046     		mov	r0, r4
- 109 0056 FFF7FEFF 		bl	CAN_ReceiveMsg
+ 105              		.loc 1 440 0
+ 106 0052 05E0     		b	.L3
+ 107              	.L11:
+ 441:Generated_Source\PSoC5/CAN_INT.c ****                             case 5u : CAN_ReceiveMsgBMS_Voltage();
+ 108              		.loc 1 441 0
+ 109 0054 FFF7FEFF 		bl	CAN_ReceiveMsgBMS_Voltage
  110              	.LVL8:
- 111              	.L3:
- 449:Generated_Source\PSoC5/CAN_INT.c ****                     }
- 450:Generated_Source\PSoC5/CAN_INT.c ****                 }
- 451:Generated_Source\PSoC5/CAN_INT.c ****             }
- 452:Generated_Source\PSoC5/CAN_INT.c ****             shift <<= 1u;
- 112              		.loc 1 452 0 discriminator 2
- 113 005a 6D00     		lsls	r5, r5, #1
- 114              	.LVL9:
- 115 005c ADB2     		uxth	r5, r5
- 116              	.LVL10:
- 420:Generated_Source\PSoC5/CAN_INT.c ****         {
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 11
+ 442:Generated_Source\PSoC5/CAN_INT.c ****                             break;
+ 111              		.loc 1 442 0
+ 112 0058 02E0     		b	.L3
+ 113              	.L4:
+ 443:Generated_Source\PSoC5/CAN_INT.c ****                             default:
+ 444:Generated_Source\PSoC5/CAN_INT.c ****                             break;
+ 445:Generated_Source\PSoC5/CAN_INT.c ****                         }
+ 446:Generated_Source\PSoC5/CAN_INT.c ****                     }
+ 447:Generated_Source\PSoC5/CAN_INT.c ****                     else
+ 448:Generated_Source\PSoC5/CAN_INT.c ****                     {
+ 449:Generated_Source\PSoC5/CAN_INT.c ****                         /* RX Basic mailbox handler */
+ 450:Generated_Source\PSoC5/CAN_INT.c ****                         CAN_ReceiveMsg(mailboxNumber);
+ 114              		.loc 1 450 0
+ 115 005a 2046     		mov	r0, r4
+ 116 005c FFF7FEFF 		bl	CAN_ReceiveMsg
+ 117              	.LVL9:
+ 118              	.L3:
+ 451:Generated_Source\PSoC5/CAN_INT.c ****                     }
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 11
 
 
- 117              		.loc 1 420 0 discriminator 2
- 118 005e 0134     		adds	r4, r4, #1
- 119              	.LVL11:
- 120 0060 E4B2     		uxtb	r4, r4
- 121              	.LVL12:
- 122              	.L2:
+ 452:Generated_Source\PSoC5/CAN_INT.c ****                 }
+ 453:Generated_Source\PSoC5/CAN_INT.c ****             }
+ 454:Generated_Source\PSoC5/CAN_INT.c ****             shift <<= 1u;
+ 119              		.loc 1 454 0 discriminator 2
+ 120 0060 6D00     		lsls	r5, r5, #1
+ 121              	.LVL10:
+ 122 0062 ADB2     		uxth	r5, r5
+ 123              	.LVL11:
  420:Generated_Source\PSoC5/CAN_INT.c ****         {
- 123              		.loc 1 420 0 is_stmt 0 discriminator 1
- 124 0062 0F2C     		cmp	r4, #15
- 125 0064 D3D9     		bls	.L11
- 453:Generated_Source\PSoC5/CAN_INT.c ****         }
- 454:Generated_Source\PSoC5/CAN_INT.c ****     }
- 126              		.loc 1 454 0 is_stmt 1
- 127 0066 38BD     		pop	{r3, r4, r5, pc}
+ 124              		.loc 1 420 0 discriminator 2
+ 125 0064 0134     		adds	r4, r4, #1
+ 126              	.LVL12:
+ 127 0066 E4B2     		uxtb	r4, r4
  128              	.LVL13:
- 129              	.L14:
- 130              		.align	2
- 131              	.L13:
- 132 0068 00A00040 		.word	1073782784
- 133 006c 08A00040 		.word	1073782792
- 134 0070 A0A00040 		.word	1073782944
- 135              		.cfi_endproc
- 136              	.LFE0:
- 137              		.size	CAN_MsgRXIsr, .-CAN_MsgRXIsr
- 138              		.section	.text.CAN_ISR,"ax",%progbits
- 139              		.align	2
- 140              		.global	CAN_ISR
- 141              		.thumb
- 142              		.thumb_func
- 143              		.type	CAN_ISR, %function
- 144              	CAN_ISR:
- 145              	.LFB1:
- 455:Generated_Source\PSoC5/CAN_INT.c **** #endif /* CAN_RX_MESSAGE */
- 456:Generated_Source\PSoC5/CAN_INT.c **** 
- 457:Generated_Source\PSoC5/CAN_INT.c **** 
- 458:Generated_Source\PSoC5/CAN_INT.c **** /*******************************************************************************
- 459:Generated_Source\PSoC5/CAN_INT.c **** * Function Name: CAN_ISR
- 460:Generated_Source\PSoC5/CAN_INT.c **** ********************************************************************************
- 461:Generated_Source\PSoC5/CAN_INT.c **** *
- 462:Generated_Source\PSoC5/CAN_INT.c **** * Summary:
- 463:Generated_Source\PSoC5/CAN_INT.c **** *  This ISR is executed when CAN Core generates and interrupt on one of events:
- 464:Generated_Source\PSoC5/CAN_INT.c **** *  Arb_lost, Overload, Bit_err, Stuff_err, Ack_err, Form_err, Crc_err,
- 465:Generated_Source\PSoC5/CAN_INT.c **** *  Buss_off, Rx_msg_lost, Tx_msg or Rx_msg. The interrupt sources depends
- 466:Generated_Source\PSoC5/CAN_INT.c **** *  on the Customizer inputs.
- 467:Generated_Source\PSoC5/CAN_INT.c **** *
- 468:Generated_Source\PSoC5/CAN_INT.c **** * Parameters:
- 469:Generated_Source\PSoC5/CAN_INT.c **** *  None.
- 470:Generated_Source\PSoC5/CAN_INT.c **** *
- 471:Generated_Source\PSoC5/CAN_INT.c **** * Return:
- 472:Generated_Source\PSoC5/CAN_INT.c **** *  None.
- 473:Generated_Source\PSoC5/CAN_INT.c **** *
- 474:Generated_Source\PSoC5/CAN_INT.c **** *******************************************************************************/
- 475:Generated_Source\PSoC5/CAN_INT.c **** CY_ISR(CAN_ISR)
- 476:Generated_Source\PSoC5/CAN_INT.c **** {
- 146              		.loc 1 476 0
- 147              		.cfi_startproc
- 148              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 12
+ 129              	.L2:
+ 420:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 130              		.loc 1 420 0 is_stmt 0 discriminator 1
+ 131 0068 0F2C     		cmp	r4, #15
+ 132 006a D0D9     		bls	.L12
+ 455:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 456:Generated_Source\PSoC5/CAN_INT.c ****     }
+ 133              		.loc 1 456 0 is_stmt 1
+ 134 006c 38BD     		pop	{r3, r4, r5, pc}
+ 135              	.LVL14:
+ 136              	.L15:
+ 137 006e 00BF     		.align	2
+ 138              	.L14:
+ 139 0070 00A00040 		.word	1073782784
+ 140 0074 08A00040 		.word	1073782792
+ 141 0078 A0A00040 		.word	1073782944
+ 142              		.cfi_endproc
+ 143              	.LFE0:
+ 144              		.size	CAN_MsgRXIsr, .-CAN_MsgRXIsr
+ 145              		.section	.text.CAN_ISR,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	CAN_ISR
+ 148              		.thumb
+ 149              		.thumb_func
+ 150              		.type	CAN_ISR, %function
+ 151              	CAN_ISR:
+ 152              	.LFB1:
+ 457:Generated_Source\PSoC5/CAN_INT.c **** #endif /* CAN_RX_MESSAGE */
+ 458:Generated_Source\PSoC5/CAN_INT.c **** 
+ 459:Generated_Source\PSoC5/CAN_INT.c **** 
+ 460:Generated_Source\PSoC5/CAN_INT.c **** /*******************************************************************************
+ 461:Generated_Source\PSoC5/CAN_INT.c **** * Function Name: CAN_ISR
+ 462:Generated_Source\PSoC5/CAN_INT.c **** ********************************************************************************
+ 463:Generated_Source\PSoC5/CAN_INT.c **** *
+ 464:Generated_Source\PSoC5/CAN_INT.c **** * Summary:
+ 465:Generated_Source\PSoC5/CAN_INT.c **** *  This ISR is executed when CAN Core generates and interrupt on one of events:
+ 466:Generated_Source\PSoC5/CAN_INT.c **** *  Arb_lost, Overload, Bit_err, Stuff_err, Ack_err, Form_err, Crc_err,
+ 467:Generated_Source\PSoC5/CAN_INT.c **** *  Buss_off, Rx_msg_lost, Tx_msg or Rx_msg. The interrupt sources depends
+ 468:Generated_Source\PSoC5/CAN_INT.c **** *  on the Customizer inputs.
+ 469:Generated_Source\PSoC5/CAN_INT.c **** *
+ 470:Generated_Source\PSoC5/CAN_INT.c **** * Parameters:
+ 471:Generated_Source\PSoC5/CAN_INT.c **** *  None.
+ 472:Generated_Source\PSoC5/CAN_INT.c **** *
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 12
 
 
- 149              		@ frame_needed = 0, uses_anonymous_args = 0
- 150 0000 08B5     		push	{r3, lr}
- 151              		.cfi_def_cfa_offset 8
- 152              		.cfi_offset 3, -8
- 153              		.cfi_offset 14, -4
- 477:Generated_Source\PSoC5/CAN_INT.c ****     #ifdef CAN_ISR_INTERRUPT_CALLBACK
- 478:Generated_Source\PSoC5/CAN_INT.c ****         CAN_ISR_InterruptCallback();
- 479:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_ISR_INTERRUPT_CALLBACK */
- 480:Generated_Source\PSoC5/CAN_INT.c ****     
- 481:Generated_Source\PSoC5/CAN_INT.c ****     /* Place your Interrupt code here. */
- 482:Generated_Source\PSoC5/CAN_INT.c ****     /* `#START CAN_ISR` */
- 483:Generated_Source\PSoC5/CAN_INT.c **** 
- 484:Generated_Source\PSoC5/CAN_INT.c ****     /* `#END` */
- 485:Generated_Source\PSoC5/CAN_INT.c ****     
- 486:Generated_Source\PSoC5/CAN_INT.c ****     /* Arbitration */
- 487:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_ARB_LOST && (CAN_ARB_LOST_USE_HELPER || \
- 488:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 489:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_ARBITRATION_LOST_MASK) != 0u)
- 490:Generated_Source\PSoC5/CAN_INT.c ****         {
- 491:Generated_Source\PSoC5/CAN_INT.c ****             CAN_ArbLostIsr();
- 492:Generated_Source\PSoC5/CAN_INT.c ****         }
- 493:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_ARB_LOST && CAN_ARB_LOST_USE_HELPER */
- 494:Generated_Source\PSoC5/CAN_INT.c **** 
- 495:Generated_Source\PSoC5/CAN_INT.c ****     /* Overload Error */
- 496:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_OVERLOAD && (CAN_OVERLOAD_USE_HELPER || \
- 497:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 498:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_OVERLOAD_ERROR_MASK) != 0u)
- 499:Generated_Source\PSoC5/CAN_INT.c ****         {
- 500:Generated_Source\PSoC5/CAN_INT.c ****             CAN_OvrLdErrorIsr();
- 501:Generated_Source\PSoC5/CAN_INT.c ****         }
- 502:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_OVERLOAD && CAN_OVERLOAD_USE_HELPER */
- 503:Generated_Source\PSoC5/CAN_INT.c **** 
- 504:Generated_Source\PSoC5/CAN_INT.c ****     /* Bit Error */
- 505:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_BIT_ERR && (CAN_BIT_ERR_USE_HELPER || \
- 506:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 507:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_BIT_ERROR_MASK) != 0u)
- 508:Generated_Source\PSoC5/CAN_INT.c ****         {
- 509:Generated_Source\PSoC5/CAN_INT.c ****             CAN_BitErrorIsr();
- 510:Generated_Source\PSoC5/CAN_INT.c ****         }
- 511:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_BIT_ERR && CAN_BIT_ERR_USE_HELPER */
- 512:Generated_Source\PSoC5/CAN_INT.c **** 
- 513:Generated_Source\PSoC5/CAN_INT.c ****     /* Bit Staff Error */
- 514:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_STUFF_ERR && (CAN_STUFF_ERR_USE_HELPER || \
- 515:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 516:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_STUFF_ERROR_MASK) != 0u)
- 517:Generated_Source\PSoC5/CAN_INT.c ****         {
- 518:Generated_Source\PSoC5/CAN_INT.c ****             CAN_BitStuffErrorIsr();
- 519:Generated_Source\PSoC5/CAN_INT.c ****         }
- 520:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_STUFF_ERR && CAN_STUFF_ERR_USE_HELPER */
- 521:Generated_Source\PSoC5/CAN_INT.c **** 
- 522:Generated_Source\PSoC5/CAN_INT.c ****     /* ACK Error */
- 523:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_ACK_ERR && (CAN_ACK_ERR_USE_HELPER || \
- 524:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 525:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_ACK_ERROR_MASK) != 0u)
- 526:Generated_Source\PSoC5/CAN_INT.c ****         {
- 527:Generated_Source\PSoC5/CAN_INT.c ****             CAN_AckErrorIsr();
- 528:Generated_Source\PSoC5/CAN_INT.c ****         }
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 13
+ 473:Generated_Source\PSoC5/CAN_INT.c **** * Return:
+ 474:Generated_Source\PSoC5/CAN_INT.c **** *  None.
+ 475:Generated_Source\PSoC5/CAN_INT.c **** *
+ 476:Generated_Source\PSoC5/CAN_INT.c **** *******************************************************************************/
+ 477:Generated_Source\PSoC5/CAN_INT.c **** CY_ISR(CAN_ISR)
+ 478:Generated_Source\PSoC5/CAN_INT.c **** {
+ 153              		.loc 1 478 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157 0000 08B5     		push	{r3, lr}
+ 158              		.cfi_def_cfa_offset 8
+ 159              		.cfi_offset 3, -8
+ 160              		.cfi_offset 14, -4
+ 479:Generated_Source\PSoC5/CAN_INT.c ****     #ifdef CAN_ISR_INTERRUPT_CALLBACK
+ 480:Generated_Source\PSoC5/CAN_INT.c ****         CAN_ISR_InterruptCallback();
+ 481:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_ISR_INTERRUPT_CALLBACK */
+ 482:Generated_Source\PSoC5/CAN_INT.c ****     
+ 483:Generated_Source\PSoC5/CAN_INT.c ****     /* Place your Interrupt code here. */
+ 484:Generated_Source\PSoC5/CAN_INT.c ****     /* `#START CAN_ISR` */
+ 485:Generated_Source\PSoC5/CAN_INT.c **** 
+ 486:Generated_Source\PSoC5/CAN_INT.c ****     /* `#END` */
+ 487:Generated_Source\PSoC5/CAN_INT.c ****     
+ 488:Generated_Source\PSoC5/CAN_INT.c ****     /* Arbitration */
+ 489:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_ARB_LOST && (CAN_ARB_LOST_USE_HELPER || \
+ 490:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 491:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_ARBITRATION_LOST_MASK) != 0u)
+ 492:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 493:Generated_Source\PSoC5/CAN_INT.c ****             CAN_ArbLostIsr();
+ 494:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 495:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_ARB_LOST && CAN_ARB_LOST_USE_HELPER */
+ 496:Generated_Source\PSoC5/CAN_INT.c **** 
+ 497:Generated_Source\PSoC5/CAN_INT.c ****     /* Overload Error */
+ 498:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_OVERLOAD && (CAN_OVERLOAD_USE_HELPER || \
+ 499:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 500:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_OVERLOAD_ERROR_MASK) != 0u)
+ 501:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 502:Generated_Source\PSoC5/CAN_INT.c ****             CAN_OvrLdErrorIsr();
+ 503:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 504:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_OVERLOAD && CAN_OVERLOAD_USE_HELPER */
+ 505:Generated_Source\PSoC5/CAN_INT.c **** 
+ 506:Generated_Source\PSoC5/CAN_INT.c ****     /* Bit Error */
+ 507:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_BIT_ERR && (CAN_BIT_ERR_USE_HELPER || \
+ 508:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 509:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_BIT_ERROR_MASK) != 0u)
+ 510:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 511:Generated_Source\PSoC5/CAN_INT.c ****             CAN_BitErrorIsr();
+ 512:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 513:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_BIT_ERR && CAN_BIT_ERR_USE_HELPER */
+ 514:Generated_Source\PSoC5/CAN_INT.c **** 
+ 515:Generated_Source\PSoC5/CAN_INT.c ****     /* Bit Staff Error */
+ 516:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_STUFF_ERR && (CAN_STUFF_ERR_USE_HELPER || \
+ 517:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 518:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_STUFF_ERROR_MASK) != 0u)
+ 519:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 520:Generated_Source\PSoC5/CAN_INT.c ****             CAN_BitStuffErrorIsr();
+ 521:Generated_Source\PSoC5/CAN_INT.c ****         }
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 13
 
 
- 529:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_ACK_ERR && CAN_ACK_ERR_USE_HELPER */
- 530:Generated_Source\PSoC5/CAN_INT.c **** 
- 531:Generated_Source\PSoC5/CAN_INT.c ****     /* Form(msg) Error */
- 532:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_FORM_ERR && (CAN_FORM_ERR_USE_HELPER || \
- 533:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 534:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_FORM_ERROR_MASK) != 0u)
- 535:Generated_Source\PSoC5/CAN_INT.c ****         {
- 536:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgErrorIsr();
- 537:Generated_Source\PSoC5/CAN_INT.c ****         }
- 538:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_FORM_ERR && CAN_FORM_ERR_USE_HELPER */
- 539:Generated_Source\PSoC5/CAN_INT.c **** 
- 540:Generated_Source\PSoC5/CAN_INT.c ****     /* CRC Error */
- 541:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_CRC_ERR && (CAN_CRC_ERR_USE_HELPER || \
- 542:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 543:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_CRC_ERROR_MASK) != 0u)
- 544:Generated_Source\PSoC5/CAN_INT.c ****         {
- 545:Generated_Source\PSoC5/CAN_INT.c ****             CAN_CrcErrorIsr();
- 546:Generated_Source\PSoC5/CAN_INT.c ****         }
- 547:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_CRC_ERR && CAN_CRC_ERR_USE_HELPER */
- 548:Generated_Source\PSoC5/CAN_INT.c **** 
- 549:Generated_Source\PSoC5/CAN_INT.c ****     /* Bus Off state */
- 550:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_BUS_OFF && (CAN_BUS_OFF_USE_HELPER || \
- 551:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 552:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_BUS_OFF_MASK) != 0u)
- 553:Generated_Source\PSoC5/CAN_INT.c ****         {
- 554:Generated_Source\PSoC5/CAN_INT.c ****             CAN_BusOffIsr();
- 555:Generated_Source\PSoC5/CAN_INT.c ****         }
- 556:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_BUS_OFF && CAN_BUS_OFF_USE_HELPER */
- 557:Generated_Source\PSoC5/CAN_INT.c **** 
- 558:Generated_Source\PSoC5/CAN_INT.c ****     /* Message Lost */
- 559:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_RX_MSG_LOST && (CAN_RX_MSG_LOST_USE_HELPER || \
- 560:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 561:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_RX_MSG_LOST_MASK) != 0u)
- 562:Generated_Source\PSoC5/CAN_INT.c ****         {
- 563:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgLostIsr();
- 564:Generated_Source\PSoC5/CAN_INT.c ****         }
- 565:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_RX_MSG_LOST && CAN_RX_MSG_LOST_USE_HELPER */
- 566:Generated_Source\PSoC5/CAN_INT.c **** 
- 567:Generated_Source\PSoC5/CAN_INT.c ****     /* TX Message Send */
- 568:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_TX_MESSAGE && (CAN_TX_MESSAGE_USE_HELPER || \
- 569:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 570:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_TX_MESSAGE_MASK) != 0u)
- 571:Generated_Source\PSoC5/CAN_INT.c ****         {
- 572:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgTXIsr();
- 573:Generated_Source\PSoC5/CAN_INT.c ****         }
- 574:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_TX_MESSAGE && CAN_TX_MESSAGE_USE_HELPER */
- 575:Generated_Source\PSoC5/CAN_INT.c **** 
- 576:Generated_Source\PSoC5/CAN_INT.c ****     /* RX Message Available */
- 577:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_RX_MESSAGE && (CAN_RX_MESSAGE_USE_HELPER || \
- 578:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
- 579:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_RX_MESSAGE_MASK) != 0u)
- 154              		.loc 1 579 0
- 155 0002 044B     		ldr	r3, .L18
- 156 0004 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
- 157 0006 13F0100F 		tst	r3, #16
- 158 000a 01D0     		beq	.L15
- 580:Generated_Source\PSoC5/CAN_INT.c ****         {
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 14
+ 522:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_STUFF_ERR && CAN_STUFF_ERR_USE_HELPER */
+ 523:Generated_Source\PSoC5/CAN_INT.c **** 
+ 524:Generated_Source\PSoC5/CAN_INT.c ****     /* ACK Error */
+ 525:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_ACK_ERR && (CAN_ACK_ERR_USE_HELPER || \
+ 526:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 527:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_ACK_ERROR_MASK) != 0u)
+ 528:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 529:Generated_Source\PSoC5/CAN_INT.c ****             CAN_AckErrorIsr();
+ 530:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 531:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_ACK_ERR && CAN_ACK_ERR_USE_HELPER */
+ 532:Generated_Source\PSoC5/CAN_INT.c **** 
+ 533:Generated_Source\PSoC5/CAN_INT.c ****     /* Form(msg) Error */
+ 534:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_FORM_ERR && (CAN_FORM_ERR_USE_HELPER || \
+ 535:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 536:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[0u] & CAN_FORM_ERROR_MASK) != 0u)
+ 537:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 538:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgErrorIsr();
+ 539:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 540:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_FORM_ERR && CAN_FORM_ERR_USE_HELPER */
+ 541:Generated_Source\PSoC5/CAN_INT.c **** 
+ 542:Generated_Source\PSoC5/CAN_INT.c ****     /* CRC Error */
+ 543:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_CRC_ERR && (CAN_CRC_ERR_USE_HELPER || \
+ 544:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 545:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_CRC_ERROR_MASK) != 0u)
+ 546:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 547:Generated_Source\PSoC5/CAN_INT.c ****             CAN_CrcErrorIsr();
+ 548:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 549:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_CRC_ERR && CAN_CRC_ERR_USE_HELPER */
+ 550:Generated_Source\PSoC5/CAN_INT.c **** 
+ 551:Generated_Source\PSoC5/CAN_INT.c ****     /* Bus Off state */
+ 552:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_BUS_OFF && (CAN_BUS_OFF_USE_HELPER || \
+ 553:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 554:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_BUS_OFF_MASK) != 0u)
+ 555:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 556:Generated_Source\PSoC5/CAN_INT.c ****             CAN_BusOffIsr();
+ 557:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 558:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_BUS_OFF && CAN_BUS_OFF_USE_HELPER */
+ 559:Generated_Source\PSoC5/CAN_INT.c **** 
+ 560:Generated_Source\PSoC5/CAN_INT.c ****     /* Message Lost */
+ 561:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_RX_MSG_LOST && (CAN_RX_MSG_LOST_USE_HELPER || \
+ 562:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 563:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_RX_MSG_LOST_MASK) != 0u)
+ 564:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 565:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgLostIsr();
+ 566:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 567:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_RX_MSG_LOST && CAN_RX_MSG_LOST_USE_HELPER */
+ 568:Generated_Source\PSoC5/CAN_INT.c **** 
+ 569:Generated_Source\PSoC5/CAN_INT.c ****     /* TX Message Send */
+ 570:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_TX_MESSAGE && (CAN_TX_MESSAGE_USE_HELPER || \
+ 571:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 572:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_TX_MESSAGE_MASK) != 0u)
+ 573:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 574:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgTXIsr();
+ 575:Generated_Source\PSoC5/CAN_INT.c ****         }
+ 576:Generated_Source\PSoC5/CAN_INT.c ****     #endif /* CAN_TX_MESSAGE && CAN_TX_MESSAGE_USE_HELPER */
+ 577:Generated_Source\PSoC5/CAN_INT.c **** 
+ 578:Generated_Source\PSoC5/CAN_INT.c ****     /* RX Message Available */
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 14
 
 
- 581:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgRXIsr();
- 159              		.loc 1 581 0
- 160 000c FFF7FEFF 		bl	CAN_MsgRXIsr
- 161              	.LVL14:
- 162              	.L15:
- 163 0010 08BD     		pop	{r3, pc}
- 164              	.L19:
- 165 0012 00BF     		.align	2
- 166              	.L18:
- 167 0014 00A00040 		.word	1073782784
- 168              		.cfi_endproc
- 169              	.LFE1:
- 170              		.size	CAN_ISR, .-CAN_ISR
- 171              		.text
- 172              	.Letext0:
- 173              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 174              		.file 3 "Generated_Source\\PSoC5\\CAN.h"
- 175              		.section	.debug_info,"",%progbits
- 176              	.Ldebug_info0:
- 177 0000 73020000 		.4byte	0x273
- 178 0004 0400     		.2byte	0x4
- 179 0006 00000000 		.4byte	.Ldebug_abbrev0
- 180 000a 04       		.byte	0x4
- 181 000b 01       		.uleb128 0x1
- 182 000c BC010000 		.4byte	.LASF39
- 183 0010 0C       		.byte	0xc
- 184 0011 6D020000 		.4byte	.LASF40
- 185 0015 7D000000 		.4byte	.LASF41
- 186 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 187 001d 00000000 		.4byte	0
- 188 0021 00000000 		.4byte	.Ldebug_line0
- 189 0025 02       		.uleb128 0x2
- 190 0026 01       		.byte	0x1
- 191 0027 06       		.byte	0x6
- 192 0028 B3020000 		.4byte	.LASF0
- 193 002c 02       		.uleb128 0x2
- 194 002d 01       		.byte	0x1
- 195 002e 08       		.byte	0x8
- 196 002f 19010000 		.4byte	.LASF1
- 197 0033 02       		.uleb128 0x2
- 198 0034 02       		.byte	0x2
- 199 0035 05       		.byte	0x5
- 200 0036 8E020000 		.4byte	.LASF2
- 201 003a 02       		.uleb128 0x2
- 202 003b 02       		.byte	0x2
- 203 003c 07       		.byte	0x7
- 204 003d 51000000 		.4byte	.LASF3
- 205 0041 02       		.uleb128 0x2
- 206 0042 04       		.byte	0x4
- 207 0043 05       		.byte	0x5
- 208 0044 9E020000 		.4byte	.LASF4
- 209 0048 02       		.uleb128 0x2
- 210 0049 04       		.byte	0x4
- 211 004a 07       		.byte	0x7
- 212 004b 42010000 		.4byte	.LASF5
- 213 004f 02       		.uleb128 0x2
- 214 0050 08       		.byte	0x8
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 15
+ 579:Generated_Source\PSoC5/CAN_INT.c ****     #if (CAN_RX_MESSAGE && (CAN_RX_MESSAGE_USE_HELPER || \
+ 580:Generated_Source\PSoC5/CAN_INT.c ****         (!CAN_ADVANCED_INTERRUPT_CFG)))
+ 581:Generated_Source\PSoC5/CAN_INT.c ****         if ((CAN_INT_SR_REG.byte[1u] & CAN_RX_MESSAGE_MASK) != 0u)
+ 161              		.loc 1 581 0
+ 162 0002 044B     		ldr	r3, .L19
+ 163 0004 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 164 0006 13F0100F 		tst	r3, #16
+ 165 000a 01D0     		beq	.L16
+ 582:Generated_Source\PSoC5/CAN_INT.c ****         {
+ 583:Generated_Source\PSoC5/CAN_INT.c ****             CAN_MsgRXIsr();
+ 166              		.loc 1 583 0
+ 167 000c FFF7FEFF 		bl	CAN_MsgRXIsr
+ 168              	.LVL15:
+ 169              	.L16:
+ 170 0010 08BD     		pop	{r3, pc}
+ 171              	.L20:
+ 172 0012 00BF     		.align	2
+ 173              	.L19:
+ 174 0014 00A00040 		.word	1073782784
+ 175              		.cfi_endproc
+ 176              	.LFE1:
+ 177              		.size	CAN_ISR, .-CAN_ISR
+ 178              		.text
+ 179              	.Letext0:
+ 180              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ 181              		.file 3 "Generated_Source\\PSoC5\\CAN.h"
+ 182              		.section	.debug_info,"",%progbits
+ 183              	.Ldebug_info0:
+ 184 0000 88020000 		.4byte	0x288
+ 185 0004 0400     		.2byte	0x4
+ 186 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 187 000a 04       		.byte	0x4
+ 188 000b 01       		.uleb128 0x1
+ 189 000c D6010000 		.4byte	.LASF40
+ 190 0010 0C       		.byte	0xc
+ 191 0011 87020000 		.4byte	.LASF41
+ 192 0015 7D000000 		.4byte	.LASF42
+ 193 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 194 001d 00000000 		.4byte	0
+ 195 0021 00000000 		.4byte	.Ldebug_line0
+ 196 0025 02       		.uleb128 0x2
+ 197 0026 01       		.byte	0x1
+ 198 0027 06       		.byte	0x6
+ 199 0028 CD020000 		.4byte	.LASF0
+ 200 002c 02       		.uleb128 0x2
+ 201 002d 01       		.byte	0x1
+ 202 002e 08       		.byte	0x8
+ 203 002f 33010000 		.4byte	.LASF1
+ 204 0033 02       		.uleb128 0x2
+ 205 0034 02       		.byte	0x2
+ 206 0035 05       		.byte	0x5
+ 207 0036 A8020000 		.4byte	.LASF2
+ 208 003a 02       		.uleb128 0x2
+ 209 003b 02       		.byte	0x2
+ 210 003c 07       		.byte	0x7
+ 211 003d 51000000 		.4byte	.LASF3
+ 212 0041 02       		.uleb128 0x2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 15
 
 
- 215 0051 05       		.byte	0x5
- 216 0052 5A020000 		.4byte	.LASF6
- 217 0056 02       		.uleb128 0x2
- 218 0057 08       		.byte	0x8
- 219 0058 07       		.byte	0x7
- 220 0059 78010000 		.4byte	.LASF7
- 221 005d 03       		.uleb128 0x3
- 222 005e 04       		.byte	0x4
- 223 005f 05       		.byte	0x5
- 224 0060 696E7400 		.ascii	"int\000"
- 225 0064 02       		.uleb128 0x2
- 226 0065 04       		.byte	0x4
- 227 0066 07       		.byte	0x7
- 228 0067 54010000 		.4byte	.LASF8
- 229 006b 04       		.uleb128 0x4
- 230 006c 0B010000 		.4byte	.LASF9
- 231 0070 02       		.byte	0x2
- 232 0071 E801     		.2byte	0x1e8
- 233 0073 2C000000 		.4byte	0x2c
- 234 0077 04       		.uleb128 0x4
- 235 0078 2E010000 		.4byte	.LASF10
- 236 007c 02       		.byte	0x2
- 237 007d E901     		.2byte	0x1e9
- 238 007f 3A000000 		.4byte	0x3a
- 239 0083 02       		.uleb128 0x2
- 240 0084 04       		.byte	0x4
- 241 0085 04       		.byte	0x4
- 242 0086 77000000 		.4byte	.LASF11
- 243 008a 02       		.uleb128 0x2
- 244 008b 08       		.byte	0x8
- 245 008c 04       		.byte	0x4
- 246 008d 27010000 		.4byte	.LASF12
- 247 0091 02       		.uleb128 0x2
- 248 0092 01       		.byte	0x1
- 249 0093 08       		.byte	0x8
- 250 0094 68020000 		.4byte	.LASF13
- 251 0098 04       		.uleb128 0x4
- 252 0099 CA000000 		.4byte	.LASF14
- 253 009d 02       		.byte	0x2
- 254 009e 9202     		.2byte	0x292
- 255 00a0 A4000000 		.4byte	0xa4
- 256 00a4 05       		.uleb128 0x5
- 257 00a5 6B000000 		.4byte	0x6b
- 258 00a9 04       		.uleb128 0x4
- 259 00aa 00000000 		.4byte	.LASF15
- 260 00ae 02       		.byte	0x2
- 261 00af 9302     		.2byte	0x293
- 262 00b1 B5000000 		.4byte	0xb5
- 263 00b5 05       		.uleb128 0x5
- 264 00b6 77000000 		.4byte	0x77
- 265 00ba 02       		.uleb128 0x2
- 266 00bb 08       		.byte	0x8
- 267 00bc 04       		.byte	0x4
- 268 00bd A7020000 		.4byte	.LASF16
- 269 00c1 02       		.uleb128 0x2
- 270 00c2 04       		.byte	0x4
- 271 00c3 07       		.byte	0x7
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 16
+ 213 0042 04       		.byte	0x4
+ 214 0043 05       		.byte	0x5
+ 215 0044 B8020000 		.4byte	.LASF4
+ 216 0048 02       		.uleb128 0x2
+ 217 0049 04       		.byte	0x4
+ 218 004a 07       		.byte	0x7
+ 219 004b 5C010000 		.4byte	.LASF5
+ 220 004f 02       		.uleb128 0x2
+ 221 0050 08       		.byte	0x8
+ 222 0051 05       		.byte	0x5
+ 223 0052 74020000 		.4byte	.LASF6
+ 224 0056 02       		.uleb128 0x2
+ 225 0057 08       		.byte	0x8
+ 226 0058 07       		.byte	0x7
+ 227 0059 92010000 		.4byte	.LASF7
+ 228 005d 03       		.uleb128 0x3
+ 229 005e 04       		.byte	0x4
+ 230 005f 05       		.byte	0x5
+ 231 0060 696E7400 		.ascii	"int\000"
+ 232 0064 02       		.uleb128 0x2
+ 233 0065 04       		.byte	0x4
+ 234 0066 07       		.byte	0x7
+ 235 0067 6E010000 		.4byte	.LASF8
+ 236 006b 04       		.uleb128 0x4
+ 237 006c 25010000 		.4byte	.LASF9
+ 238 0070 02       		.byte	0x2
+ 239 0071 E801     		.2byte	0x1e8
+ 240 0073 2C000000 		.4byte	0x2c
+ 241 0077 04       		.uleb128 0x4
+ 242 0078 48010000 		.4byte	.LASF10
+ 243 007c 02       		.byte	0x2
+ 244 007d E901     		.2byte	0x1e9
+ 245 007f 3A000000 		.4byte	0x3a
+ 246 0083 02       		.uleb128 0x2
+ 247 0084 04       		.byte	0x4
+ 248 0085 04       		.byte	0x4
+ 249 0086 77000000 		.4byte	.LASF11
+ 250 008a 02       		.uleb128 0x2
+ 251 008b 08       		.byte	0x8
+ 252 008c 04       		.byte	0x4
+ 253 008d 41010000 		.4byte	.LASF12
+ 254 0091 02       		.uleb128 0x2
+ 255 0092 01       		.byte	0x1
+ 256 0093 08       		.byte	0x8
+ 257 0094 82020000 		.4byte	.LASF13
+ 258 0098 04       		.uleb128 0x4
+ 259 0099 E4000000 		.4byte	.LASF14
+ 260 009d 02       		.byte	0x2
+ 261 009e 9202     		.2byte	0x292
+ 262 00a0 A4000000 		.4byte	0xa4
+ 263 00a4 05       		.uleb128 0x5
+ 264 00a5 6B000000 		.4byte	0x6b
+ 265 00a9 04       		.uleb128 0x4
+ 266 00aa 00000000 		.4byte	.LASF15
+ 267 00ae 02       		.byte	0x2
+ 268 00af 9302     		.2byte	0x293
+ 269 00b1 B5000000 		.4byte	0xb5
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 16
 
 
- 272 00c4 4A020000 		.4byte	.LASF17
- 273 00c8 06       		.uleb128 0x6
- 274 00c9 08       		.byte	0x8
- 275 00ca 03       		.byte	0x3
- 276 00cb 75       		.byte	0x75
- 277 00cc DD000000 		.4byte	0xdd
- 278 00d0 07       		.uleb128 0x7
- 279 00d1 64000000 		.4byte	.LASF19
- 280 00d5 03       		.byte	0x3
- 281 00d6 77       		.byte	0x77
- 282 00d7 ED000000 		.4byte	0xed
- 283 00db 00       		.byte	0
- 284 00dc 00       		.byte	0
- 285 00dd 08       		.uleb128 0x8
- 286 00de 98000000 		.4byte	0x98
- 287 00e2 ED000000 		.4byte	0xed
- 288 00e6 09       		.uleb128 0x9
- 289 00e7 C1000000 		.4byte	0xc1
- 290 00eb 07       		.byte	0x7
- 291 00ec 00       		.byte	0
- 292 00ed 05       		.uleb128 0x5
- 293 00ee DD000000 		.4byte	0xdd
- 294 00f2 0A       		.uleb128 0xa
- 295 00f3 23000000 		.4byte	.LASF18
- 296 00f7 03       		.byte	0x3
- 297 00f8 78       		.byte	0x78
- 298 00f9 C8000000 		.4byte	0xc8
- 299 00fd 06       		.uleb128 0x6
- 300 00fe 04       		.byte	0x4
- 301 00ff 03       		.byte	0x3
- 302 0100 7B       		.byte	0x7b
- 303 0101 12010000 		.4byte	0x112
- 304 0105 07       		.uleb128 0x7
- 305 0106 64000000 		.4byte	.LASF19
- 306 010a 03       		.byte	0x3
- 307 010b 7D       		.byte	0x7d
- 308 010c 22010000 		.4byte	0x122
- 309 0110 00       		.byte	0
- 310 0111 00       		.byte	0
- 311 0112 08       		.uleb128 0x8
- 312 0113 98000000 		.4byte	0x98
- 313 0117 22010000 		.4byte	0x122
- 314 011b 09       		.uleb128 0x9
- 315 011c C1000000 		.4byte	0xc1
- 316 0120 03       		.byte	0x3
- 317 0121 00       		.byte	0
- 318 0122 05       		.uleb128 0x5
- 319 0123 12010000 		.4byte	0x112
- 320 0127 0A       		.uleb128 0xa
- 321 0128 46000000 		.4byte	.LASF20
- 322 012c 03       		.byte	0x3
- 323 012d 7E       		.byte	0x7e
- 324 012e FD000000 		.4byte	0xfd
- 325 0132 06       		.uleb128 0x6
- 326 0133 20       		.byte	0x20
- 327 0134 03       		.byte	0x3
- 328 0135 A0       		.byte	0xa0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 17
+ 270 00b5 05       		.uleb128 0x5
+ 271 00b6 77000000 		.4byte	0x77
+ 272 00ba 02       		.uleb128 0x2
+ 273 00bb 08       		.byte	0x8
+ 274 00bc 04       		.byte	0x4
+ 275 00bd C1020000 		.4byte	.LASF16
+ 276 00c1 02       		.uleb128 0x2
+ 277 00c2 04       		.byte	0x4
+ 278 00c3 07       		.byte	0x7
+ 279 00c4 64020000 		.4byte	.LASF17
+ 280 00c8 06       		.uleb128 0x6
+ 281 00c9 08       		.byte	0x8
+ 282 00ca 03       		.byte	0x3
+ 283 00cb 75       		.byte	0x75
+ 284 00cc DD000000 		.4byte	0xdd
+ 285 00d0 07       		.uleb128 0x7
+ 286 00d1 64000000 		.4byte	.LASF19
+ 287 00d5 03       		.byte	0x3
+ 288 00d6 77       		.byte	0x77
+ 289 00d7 ED000000 		.4byte	0xed
+ 290 00db 00       		.byte	0
+ 291 00dc 00       		.byte	0
+ 292 00dd 08       		.uleb128 0x8
+ 293 00de 98000000 		.4byte	0x98
+ 294 00e2 ED000000 		.4byte	0xed
+ 295 00e6 09       		.uleb128 0x9
+ 296 00e7 C1000000 		.4byte	0xc1
+ 297 00eb 07       		.byte	0x7
+ 298 00ec 00       		.byte	0
+ 299 00ed 05       		.uleb128 0x5
+ 300 00ee DD000000 		.4byte	0xdd
+ 301 00f2 0A       		.uleb128 0xa
+ 302 00f3 23000000 		.4byte	.LASF18
+ 303 00f7 03       		.byte	0x3
+ 304 00f8 78       		.byte	0x78
+ 305 00f9 C8000000 		.4byte	0xc8
+ 306 00fd 06       		.uleb128 0x6
+ 307 00fe 04       		.byte	0x4
+ 308 00ff 03       		.byte	0x3
+ 309 0100 7B       		.byte	0x7b
+ 310 0101 12010000 		.4byte	0x112
+ 311 0105 07       		.uleb128 0x7
+ 312 0106 64000000 		.4byte	.LASF19
+ 313 010a 03       		.byte	0x3
+ 314 010b 7D       		.byte	0x7d
+ 315 010c 22010000 		.4byte	0x122
+ 316 0110 00       		.byte	0
+ 317 0111 00       		.byte	0
+ 318 0112 08       		.uleb128 0x8
+ 319 0113 98000000 		.4byte	0x98
+ 320 0117 22010000 		.4byte	0x122
+ 321 011b 09       		.uleb128 0x9
+ 322 011c C1000000 		.4byte	0xc1
+ 323 0120 03       		.byte	0x3
+ 324 0121 00       		.byte	0
+ 325 0122 05       		.uleb128 0x5
+ 326 0123 12010000 		.4byte	0x112
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 17
 
 
- 329 0136 8F010000 		.4byte	0x18f
- 330 013a 07       		.uleb128 0x7
- 331 013b B6010000 		.4byte	.LASF21
- 332 013f 03       		.byte	0x3
- 333 0140 A2       		.byte	0xa2
- 334 0141 27010000 		.4byte	0x127
- 335 0145 00       		.byte	0
- 336 0146 07       		.uleb128 0x7
- 337 0147 C5000000 		.4byte	.LASF22
- 338 014b 03       		.byte	0x3
- 339 014c A3       		.byte	0xa3
- 340 014d 27010000 		.4byte	0x127
- 341 0151 04       		.byte	0x4
- 342 0152 07       		.uleb128 0x7
- 343 0153 69000000 		.4byte	.LASF23
- 344 0157 03       		.byte	0x3
- 345 0158 A4       		.byte	0xa4
- 346 0159 F2000000 		.4byte	0xf2
- 347 015d 08       		.byte	0x8
- 348 015e 07       		.uleb128 0x7
- 349 015f 32000000 		.4byte	.LASF24
- 350 0163 03       		.byte	0x3
- 351 0164 A5       		.byte	0xa5
- 352 0165 27010000 		.4byte	0x127
- 353 0169 10       		.byte	0x10
- 354 016a 07       		.uleb128 0x7
- 355 016b 98020000 		.4byte	.LASF25
- 356 016f 03       		.byte	0x3
- 357 0170 A6       		.byte	0xa6
- 358 0171 27010000 		.4byte	0x127
- 359 0175 14       		.byte	0x14
- 360 0176 07       		.uleb128 0x7
- 361 0177 53020000 		.4byte	.LASF26
- 362 017b 03       		.byte	0x3
- 363 017c A7       		.byte	0xa7
- 364 017d 27010000 		.4byte	0x127
- 365 0181 18       		.byte	0x18
- 366 0182 07       		.uleb128 0x7
- 367 0183 70000000 		.4byte	.LASF27
- 368 0187 03       		.byte	0x3
- 369 0188 A8       		.byte	0xa8
- 370 0189 27010000 		.4byte	0x127
- 371 018d 1C       		.byte	0x1c
- 372 018e 00       		.byte	0
- 373 018f 0A       		.uleb128 0xa
- 374 0190 A8010000 		.4byte	.LASF28
- 375 0194 03       		.byte	0x3
- 376 0195 A9       		.byte	0xa9
- 377 0196 32010000 		.4byte	0x132
- 378 019a 0B       		.uleb128 0xb
- 379 019b 35010000 		.4byte	.LASF31
- 380 019f 01       		.byte	0x1
- 381 01a0 9401     		.2byte	0x194
- 382 01a2 00000000 		.4byte	.LFB0
- 383 01a6 74000000 		.4byte	.LFE0-.LFB0
- 384 01aa 01       		.uleb128 0x1
- 385 01ab 9C       		.byte	0x9c
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 18
+ 327 0127 0A       		.uleb128 0xa
+ 328 0128 46000000 		.4byte	.LASF20
+ 329 012c 03       		.byte	0x3
+ 330 012d 7E       		.byte	0x7e
+ 331 012e FD000000 		.4byte	0xfd
+ 332 0132 06       		.uleb128 0x6
+ 333 0133 20       		.byte	0x20
+ 334 0134 03       		.byte	0x3
+ 335 0135 A0       		.byte	0xa0
+ 336 0136 8F010000 		.4byte	0x18f
+ 337 013a 07       		.uleb128 0x7
+ 338 013b D0010000 		.4byte	.LASF21
+ 339 013f 03       		.byte	0x3
+ 340 0140 A2       		.byte	0xa2
+ 341 0141 27010000 		.4byte	0x127
+ 342 0145 00       		.byte	0
+ 343 0146 07       		.uleb128 0x7
+ 344 0147 C5000000 		.4byte	.LASF22
+ 345 014b 03       		.byte	0x3
+ 346 014c A3       		.byte	0xa3
+ 347 014d 27010000 		.4byte	0x127
+ 348 0151 04       		.byte	0x4
+ 349 0152 07       		.uleb128 0x7
+ 350 0153 69000000 		.4byte	.LASF23
+ 351 0157 03       		.byte	0x3
+ 352 0158 A4       		.byte	0xa4
+ 353 0159 F2000000 		.4byte	0xf2
+ 354 015d 08       		.byte	0x8
+ 355 015e 07       		.uleb128 0x7
+ 356 015f 32000000 		.4byte	.LASF24
+ 357 0163 03       		.byte	0x3
+ 358 0164 A5       		.byte	0xa5
+ 359 0165 27010000 		.4byte	0x127
+ 360 0169 10       		.byte	0x10
+ 361 016a 07       		.uleb128 0x7
+ 362 016b B2020000 		.4byte	.LASF25
+ 363 016f 03       		.byte	0x3
+ 364 0170 A6       		.byte	0xa6
+ 365 0171 27010000 		.4byte	0x127
+ 366 0175 14       		.byte	0x14
+ 367 0176 07       		.uleb128 0x7
+ 368 0177 6D020000 		.4byte	.LASF26
+ 369 017b 03       		.byte	0x3
+ 370 017c A7       		.byte	0xa7
+ 371 017d 27010000 		.4byte	0x127
+ 372 0181 18       		.byte	0x18
+ 373 0182 07       		.uleb128 0x7
+ 374 0183 70000000 		.4byte	.LASF27
+ 375 0187 03       		.byte	0x3
+ 376 0188 A8       		.byte	0xa8
+ 377 0189 27010000 		.4byte	0x127
+ 378 018d 1C       		.byte	0x1c
+ 379 018e 00       		.byte	0
+ 380 018f 0A       		.uleb128 0xa
+ 381 0190 C2010000 		.4byte	.LASF28
+ 382 0194 03       		.byte	0x3
+ 383 0195 A9       		.byte	0xa9
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 18
 
 
- 386 01ac 0E020000 		.4byte	0x20e
- 387 01b0 0C       		.uleb128 0xc
- 388 01b1 38000000 		.4byte	.LASF29
- 389 01b5 01       		.byte	0x1
- 390 01b6 9601     		.2byte	0x196
- 391 01b8 6B000000 		.4byte	0x6b
- 392 01bc 00000000 		.4byte	.LLST0
- 393 01c0 0C       		.uleb128 0xc
- 394 01c1 1D000000 		.4byte	.LASF30
- 395 01c5 01       		.byte	0x1
- 396 01c6 9701     		.2byte	0x197
- 397 01c8 77000000 		.4byte	0x77
- 398 01cc 2A000000 		.4byte	.LLST1
- 399 01d0 0D       		.uleb128 0xd
- 400 01d1 3A000000 		.4byte	.LVL3
- 401 01d5 2E020000 		.4byte	0x22e
- 402 01d9 0D       		.uleb128 0xd
- 403 01da 40000000 		.4byte	.LVL4
- 404 01de 3A020000 		.4byte	0x23a
- 405 01e2 0D       		.uleb128 0xd
- 406 01e3 46000000 		.4byte	.LVL5
- 407 01e7 46020000 		.4byte	0x246
- 408 01eb 0D       		.uleb128 0xd
- 409 01ec 4C000000 		.4byte	.LVL6
- 410 01f0 52020000 		.4byte	0x252
- 411 01f4 0D       		.uleb128 0xd
- 412 01f5 52000000 		.4byte	.LVL7
- 413 01f9 5E020000 		.4byte	0x25e
- 414 01fd 0E       		.uleb128 0xe
- 415 01fe 5A000000 		.4byte	.LVL8
- 416 0202 6A020000 		.4byte	0x26a
- 417 0206 0F       		.uleb128 0xf
- 418 0207 01       		.uleb128 0x1
- 419 0208 50       		.byte	0x50
- 420 0209 02       		.uleb128 0x2
- 421 020a 74       		.byte	0x74
- 422 020b 00       		.sleb128 0
- 423 020c 00       		.byte	0
- 424 020d 00       		.byte	0
- 425 020e 0B       		.uleb128 0xb
- 426 020f 11010000 		.4byte	.LASF32
- 427 0213 01       		.byte	0x1
- 428 0214 DB01     		.2byte	0x1db
- 429 0216 00000000 		.4byte	.LFB1
- 430 021a 18000000 		.4byte	.LFE1-.LFB1
- 431 021e 01       		.uleb128 0x1
- 432 021f 9C       		.byte	0x9c
- 433 0220 2E020000 		.4byte	0x22e
- 434 0224 0D       		.uleb128 0xd
- 435 0225 10000000 		.4byte	.LVL14
- 436 0229 9A010000 		.4byte	0x19a
- 437 022d 00       		.byte	0
- 438 022e 10       		.uleb128 0x10
- 439 022f CF000000 		.4byte	.LASF33
- 440 0233 CF000000 		.4byte	.LASF33
- 441 0237 03       		.byte	0x3
- 442 0238 3501     		.2byte	0x135
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 19
+ 384 0196 32010000 		.4byte	0x132
+ 385 019a 0B       		.uleb128 0xb
+ 386 019b 4F010000 		.4byte	.LASF31
+ 387 019f 01       		.byte	0x1
+ 388 01a0 9401     		.2byte	0x194
+ 389 01a2 00000000 		.4byte	.LFB0
+ 390 01a6 7C000000 		.4byte	.LFE0-.LFB0
+ 391 01aa 01       		.uleb128 0x1
+ 392 01ab 9C       		.byte	0x9c
+ 393 01ac 17020000 		.4byte	0x217
+ 394 01b0 0C       		.uleb128 0xc
+ 395 01b1 38000000 		.4byte	.LASF29
+ 396 01b5 01       		.byte	0x1
+ 397 01b6 9601     		.2byte	0x196
+ 398 01b8 6B000000 		.4byte	0x6b
+ 399 01bc 00000000 		.4byte	.LLST0
+ 400 01c0 0C       		.uleb128 0xc
+ 401 01c1 1D000000 		.4byte	.LASF30
+ 402 01c5 01       		.byte	0x1
+ 403 01c6 9701     		.2byte	0x197
+ 404 01c8 77000000 		.4byte	0x77
+ 405 01cc 2A000000 		.4byte	.LLST1
+ 406 01d0 0D       		.uleb128 0xd
+ 407 01d1 3A000000 		.4byte	.LVL3
+ 408 01d5 37020000 		.4byte	0x237
+ 409 01d9 0D       		.uleb128 0xd
+ 410 01da 40000000 		.4byte	.LVL4
+ 411 01de 43020000 		.4byte	0x243
+ 412 01e2 0D       		.uleb128 0xd
+ 413 01e3 46000000 		.4byte	.LVL5
+ 414 01e7 4F020000 		.4byte	0x24f
+ 415 01eb 0D       		.uleb128 0xd
+ 416 01ec 4C000000 		.4byte	.LVL6
+ 417 01f0 5B020000 		.4byte	0x25b
+ 418 01f4 0D       		.uleb128 0xd
+ 419 01f5 52000000 		.4byte	.LVL7
+ 420 01f9 67020000 		.4byte	0x267
+ 421 01fd 0D       		.uleb128 0xd
+ 422 01fe 58000000 		.4byte	.LVL8
+ 423 0202 73020000 		.4byte	0x273
+ 424 0206 0E       		.uleb128 0xe
+ 425 0207 60000000 		.4byte	.LVL9
+ 426 020b 7F020000 		.4byte	0x27f
+ 427 020f 0F       		.uleb128 0xf
+ 428 0210 01       		.uleb128 0x1
+ 429 0211 50       		.byte	0x50
+ 430 0212 02       		.uleb128 0x2
+ 431 0213 74       		.byte	0x74
+ 432 0214 00       		.sleb128 0
+ 433 0215 00       		.byte	0
+ 434 0216 00       		.byte	0
+ 435 0217 0B       		.uleb128 0xb
+ 436 0218 2B010000 		.4byte	.LASF32
+ 437 021c 01       		.byte	0x1
+ 438 021d DD01     		.2byte	0x1dd
+ 439 021f 00000000 		.4byte	.LFB1
+ 440 0223 18000000 		.4byte	.LFE1-.LFB1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 19
 
 
- 443 023a 10       		.uleb128 0x10
- 444 023b 06000000 		.4byte	.LASF34
- 445 023f 06000000 		.4byte	.LASF34
- 446 0243 03       		.byte	0x3
- 447 0244 3801     		.2byte	0x138
- 448 0246 10       		.uleb128 0x10
- 449 0247 F4000000 		.4byte	.LASF35
- 450 024b F4000000 		.4byte	.LASF35
- 451 024f 03       		.byte	0x3
- 452 0250 3B01     		.2byte	0x13b
- 453 0252 10       		.uleb128 0x10
- 454 0253 8F010000 		.4byte	.LASF36
- 455 0257 8F010000 		.4byte	.LASF36
- 456 025b 03       		.byte	0x3
- 457 025c 3E01     		.2byte	0x13e
- 458 025e 10       		.uleb128 0x10
- 459 025f 61010000 		.4byte	.LASF37
- 460 0263 61010000 		.4byte	.LASF37
- 461 0267 03       		.byte	0x3
- 462 0268 4101     		.2byte	0x141
- 463 026a 10       		.uleb128 0x10
- 464 026b BF020000 		.4byte	.LASF38
- 465 026f BF020000 		.4byte	.LASF38
- 466 0273 03       		.byte	0x3
- 467 0274 1A01     		.2byte	0x11a
- 468 0276 00       		.byte	0
- 469              		.section	.debug_abbrev,"",%progbits
- 470              	.Ldebug_abbrev0:
- 471 0000 01       		.uleb128 0x1
- 472 0001 11       		.uleb128 0x11
- 473 0002 01       		.byte	0x1
- 474 0003 25       		.uleb128 0x25
- 475 0004 0E       		.uleb128 0xe
- 476 0005 13       		.uleb128 0x13
- 477 0006 0B       		.uleb128 0xb
- 478 0007 03       		.uleb128 0x3
- 479 0008 0E       		.uleb128 0xe
- 480 0009 1B       		.uleb128 0x1b
- 481 000a 0E       		.uleb128 0xe
- 482 000b 55       		.uleb128 0x55
- 483 000c 17       		.uleb128 0x17
- 484 000d 11       		.uleb128 0x11
- 485 000e 01       		.uleb128 0x1
- 486 000f 10       		.uleb128 0x10
- 487 0010 17       		.uleb128 0x17
- 488 0011 00       		.byte	0
- 489 0012 00       		.byte	0
- 490 0013 02       		.uleb128 0x2
- 491 0014 24       		.uleb128 0x24
- 492 0015 00       		.byte	0
- 493 0016 0B       		.uleb128 0xb
- 494 0017 0B       		.uleb128 0xb
- 495 0018 3E       		.uleb128 0x3e
- 496 0019 0B       		.uleb128 0xb
- 497 001a 03       		.uleb128 0x3
- 498 001b 0E       		.uleb128 0xe
- 499 001c 00       		.byte	0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 20
+ 441 0227 01       		.uleb128 0x1
+ 442 0228 9C       		.byte	0x9c
+ 443 0229 37020000 		.4byte	0x237
+ 444 022d 0D       		.uleb128 0xd
+ 445 022e 10000000 		.4byte	.LVL15
+ 446 0232 9A010000 		.4byte	0x19a
+ 447 0236 00       		.byte	0
+ 448 0237 10       		.uleb128 0x10
+ 449 0238 E9000000 		.4byte	.LASF33
+ 450 023c E9000000 		.4byte	.LASF33
+ 451 0240 03       		.byte	0x3
+ 452 0241 3501     		.2byte	0x135
+ 453 0243 10       		.uleb128 0x10
+ 454 0244 06000000 		.4byte	.LASF34
+ 455 0248 06000000 		.4byte	.LASF34
+ 456 024c 03       		.byte	0x3
+ 457 024d 3801     		.2byte	0x138
+ 458 024f 10       		.uleb128 0x10
+ 459 0250 0E010000 		.4byte	.LASF35
+ 460 0254 0E010000 		.4byte	.LASF35
+ 461 0258 03       		.byte	0x3
+ 462 0259 3B01     		.2byte	0x13b
+ 463 025b 10       		.uleb128 0x10
+ 464 025c A9010000 		.4byte	.LASF36
+ 465 0260 A9010000 		.4byte	.LASF36
+ 466 0264 03       		.byte	0x3
+ 467 0265 3E01     		.2byte	0x13e
+ 468 0267 10       		.uleb128 0x10
+ 469 0268 7B010000 		.4byte	.LASF37
+ 470 026c 7B010000 		.4byte	.LASF37
+ 471 0270 03       		.byte	0x3
+ 472 0271 4101     		.2byte	0x141
+ 473 0273 10       		.uleb128 0x10
+ 474 0274 CA000000 		.4byte	.LASF38
+ 475 0278 CA000000 		.4byte	.LASF38
+ 476 027c 03       		.byte	0x3
+ 477 027d 4401     		.2byte	0x144
+ 478 027f 10       		.uleb128 0x10
+ 479 0280 D9020000 		.4byte	.LASF39
+ 480 0284 D9020000 		.4byte	.LASF39
+ 481 0288 03       		.byte	0x3
+ 482 0289 1A01     		.2byte	0x11a
+ 483 028b 00       		.byte	0
+ 484              		.section	.debug_abbrev,"",%progbits
+ 485              	.Ldebug_abbrev0:
+ 486 0000 01       		.uleb128 0x1
+ 487 0001 11       		.uleb128 0x11
+ 488 0002 01       		.byte	0x1
+ 489 0003 25       		.uleb128 0x25
+ 490 0004 0E       		.uleb128 0xe
+ 491 0005 13       		.uleb128 0x13
+ 492 0006 0B       		.uleb128 0xb
+ 493 0007 03       		.uleb128 0x3
+ 494 0008 0E       		.uleb128 0xe
+ 495 0009 1B       		.uleb128 0x1b
+ 496 000a 0E       		.uleb128 0xe
+ 497 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 20
 
 
- 500 001d 00       		.byte	0
- 501 001e 03       		.uleb128 0x3
- 502 001f 24       		.uleb128 0x24
- 503 0020 00       		.byte	0
- 504 0021 0B       		.uleb128 0xb
- 505 0022 0B       		.uleb128 0xb
- 506 0023 3E       		.uleb128 0x3e
- 507 0024 0B       		.uleb128 0xb
- 508 0025 03       		.uleb128 0x3
- 509 0026 08       		.uleb128 0x8
- 510 0027 00       		.byte	0
- 511 0028 00       		.byte	0
- 512 0029 04       		.uleb128 0x4
- 513 002a 16       		.uleb128 0x16
- 514 002b 00       		.byte	0
- 515 002c 03       		.uleb128 0x3
- 516 002d 0E       		.uleb128 0xe
- 517 002e 3A       		.uleb128 0x3a
- 518 002f 0B       		.uleb128 0xb
- 519 0030 3B       		.uleb128 0x3b
- 520 0031 05       		.uleb128 0x5
- 521 0032 49       		.uleb128 0x49
- 522 0033 13       		.uleb128 0x13
- 523 0034 00       		.byte	0
- 524 0035 00       		.byte	0
- 525 0036 05       		.uleb128 0x5
- 526 0037 35       		.uleb128 0x35
- 527 0038 00       		.byte	0
- 528 0039 49       		.uleb128 0x49
- 529 003a 13       		.uleb128 0x13
- 530 003b 00       		.byte	0
- 531 003c 00       		.byte	0
- 532 003d 06       		.uleb128 0x6
- 533 003e 13       		.uleb128 0x13
- 534 003f 01       		.byte	0x1
- 535 0040 0B       		.uleb128 0xb
- 536 0041 0B       		.uleb128 0xb
- 537 0042 3A       		.uleb128 0x3a
- 538 0043 0B       		.uleb128 0xb
- 539 0044 3B       		.uleb128 0x3b
- 540 0045 0B       		.uleb128 0xb
- 541 0046 01       		.uleb128 0x1
- 542 0047 13       		.uleb128 0x13
- 543 0048 00       		.byte	0
- 544 0049 00       		.byte	0
- 545 004a 07       		.uleb128 0x7
- 546 004b 0D       		.uleb128 0xd
- 547 004c 00       		.byte	0
- 548 004d 03       		.uleb128 0x3
- 549 004e 0E       		.uleb128 0xe
- 550 004f 3A       		.uleb128 0x3a
- 551 0050 0B       		.uleb128 0xb
- 552 0051 3B       		.uleb128 0x3b
- 553 0052 0B       		.uleb128 0xb
- 554 0053 49       		.uleb128 0x49
- 555 0054 13       		.uleb128 0x13
- 556 0055 38       		.uleb128 0x38
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 21
+ 498 000c 17       		.uleb128 0x17
+ 499 000d 11       		.uleb128 0x11
+ 500 000e 01       		.uleb128 0x1
+ 501 000f 10       		.uleb128 0x10
+ 502 0010 17       		.uleb128 0x17
+ 503 0011 00       		.byte	0
+ 504 0012 00       		.byte	0
+ 505 0013 02       		.uleb128 0x2
+ 506 0014 24       		.uleb128 0x24
+ 507 0015 00       		.byte	0
+ 508 0016 0B       		.uleb128 0xb
+ 509 0017 0B       		.uleb128 0xb
+ 510 0018 3E       		.uleb128 0x3e
+ 511 0019 0B       		.uleb128 0xb
+ 512 001a 03       		.uleb128 0x3
+ 513 001b 0E       		.uleb128 0xe
+ 514 001c 00       		.byte	0
+ 515 001d 00       		.byte	0
+ 516 001e 03       		.uleb128 0x3
+ 517 001f 24       		.uleb128 0x24
+ 518 0020 00       		.byte	0
+ 519 0021 0B       		.uleb128 0xb
+ 520 0022 0B       		.uleb128 0xb
+ 521 0023 3E       		.uleb128 0x3e
+ 522 0024 0B       		.uleb128 0xb
+ 523 0025 03       		.uleb128 0x3
+ 524 0026 08       		.uleb128 0x8
+ 525 0027 00       		.byte	0
+ 526 0028 00       		.byte	0
+ 527 0029 04       		.uleb128 0x4
+ 528 002a 16       		.uleb128 0x16
+ 529 002b 00       		.byte	0
+ 530 002c 03       		.uleb128 0x3
+ 531 002d 0E       		.uleb128 0xe
+ 532 002e 3A       		.uleb128 0x3a
+ 533 002f 0B       		.uleb128 0xb
+ 534 0030 3B       		.uleb128 0x3b
+ 535 0031 05       		.uleb128 0x5
+ 536 0032 49       		.uleb128 0x49
+ 537 0033 13       		.uleb128 0x13
+ 538 0034 00       		.byte	0
+ 539 0035 00       		.byte	0
+ 540 0036 05       		.uleb128 0x5
+ 541 0037 35       		.uleb128 0x35
+ 542 0038 00       		.byte	0
+ 543 0039 49       		.uleb128 0x49
+ 544 003a 13       		.uleb128 0x13
+ 545 003b 00       		.byte	0
+ 546 003c 00       		.byte	0
+ 547 003d 06       		.uleb128 0x6
+ 548 003e 13       		.uleb128 0x13
+ 549 003f 01       		.byte	0x1
+ 550 0040 0B       		.uleb128 0xb
+ 551 0041 0B       		.uleb128 0xb
+ 552 0042 3A       		.uleb128 0x3a
+ 553 0043 0B       		.uleb128 0xb
+ 554 0044 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 21
 
 
- 557 0056 0B       		.uleb128 0xb
- 558 0057 00       		.byte	0
- 559 0058 00       		.byte	0
- 560 0059 08       		.uleb128 0x8
- 561 005a 01       		.uleb128 0x1
- 562 005b 01       		.byte	0x1
- 563 005c 49       		.uleb128 0x49
- 564 005d 13       		.uleb128 0x13
- 565 005e 01       		.uleb128 0x1
- 566 005f 13       		.uleb128 0x13
- 567 0060 00       		.byte	0
- 568 0061 00       		.byte	0
- 569 0062 09       		.uleb128 0x9
- 570 0063 21       		.uleb128 0x21
- 571 0064 00       		.byte	0
- 572 0065 49       		.uleb128 0x49
- 573 0066 13       		.uleb128 0x13
- 574 0067 2F       		.uleb128 0x2f
- 575 0068 0B       		.uleb128 0xb
- 576 0069 00       		.byte	0
- 577 006a 00       		.byte	0
- 578 006b 0A       		.uleb128 0xa
- 579 006c 16       		.uleb128 0x16
- 580 006d 00       		.byte	0
- 581 006e 03       		.uleb128 0x3
- 582 006f 0E       		.uleb128 0xe
- 583 0070 3A       		.uleb128 0x3a
- 584 0071 0B       		.uleb128 0xb
- 585 0072 3B       		.uleb128 0x3b
- 586 0073 0B       		.uleb128 0xb
- 587 0074 49       		.uleb128 0x49
- 588 0075 13       		.uleb128 0x13
- 589 0076 00       		.byte	0
- 590 0077 00       		.byte	0
- 591 0078 0B       		.uleb128 0xb
- 592 0079 2E       		.uleb128 0x2e
- 593 007a 01       		.byte	0x1
- 594 007b 3F       		.uleb128 0x3f
- 595 007c 19       		.uleb128 0x19
- 596 007d 03       		.uleb128 0x3
- 597 007e 0E       		.uleb128 0xe
- 598 007f 3A       		.uleb128 0x3a
- 599 0080 0B       		.uleb128 0xb
- 600 0081 3B       		.uleb128 0x3b
- 601 0082 05       		.uleb128 0x5
- 602 0083 27       		.uleb128 0x27
- 603 0084 19       		.uleb128 0x19
- 604 0085 11       		.uleb128 0x11
- 605 0086 01       		.uleb128 0x1
- 606 0087 12       		.uleb128 0x12
- 607 0088 06       		.uleb128 0x6
- 608 0089 40       		.uleb128 0x40
- 609 008a 18       		.uleb128 0x18
- 610 008b 9742     		.uleb128 0x2117
- 611 008d 19       		.uleb128 0x19
- 612 008e 01       		.uleb128 0x1
- 613 008f 13       		.uleb128 0x13
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 22
+ 555 0045 0B       		.uleb128 0xb
+ 556 0046 01       		.uleb128 0x1
+ 557 0047 13       		.uleb128 0x13
+ 558 0048 00       		.byte	0
+ 559 0049 00       		.byte	0
+ 560 004a 07       		.uleb128 0x7
+ 561 004b 0D       		.uleb128 0xd
+ 562 004c 00       		.byte	0
+ 563 004d 03       		.uleb128 0x3
+ 564 004e 0E       		.uleb128 0xe
+ 565 004f 3A       		.uleb128 0x3a
+ 566 0050 0B       		.uleb128 0xb
+ 567 0051 3B       		.uleb128 0x3b
+ 568 0052 0B       		.uleb128 0xb
+ 569 0053 49       		.uleb128 0x49
+ 570 0054 13       		.uleb128 0x13
+ 571 0055 38       		.uleb128 0x38
+ 572 0056 0B       		.uleb128 0xb
+ 573 0057 00       		.byte	0
+ 574 0058 00       		.byte	0
+ 575 0059 08       		.uleb128 0x8
+ 576 005a 01       		.uleb128 0x1
+ 577 005b 01       		.byte	0x1
+ 578 005c 49       		.uleb128 0x49
+ 579 005d 13       		.uleb128 0x13
+ 580 005e 01       		.uleb128 0x1
+ 581 005f 13       		.uleb128 0x13
+ 582 0060 00       		.byte	0
+ 583 0061 00       		.byte	0
+ 584 0062 09       		.uleb128 0x9
+ 585 0063 21       		.uleb128 0x21
+ 586 0064 00       		.byte	0
+ 587 0065 49       		.uleb128 0x49
+ 588 0066 13       		.uleb128 0x13
+ 589 0067 2F       		.uleb128 0x2f
+ 590 0068 0B       		.uleb128 0xb
+ 591 0069 00       		.byte	0
+ 592 006a 00       		.byte	0
+ 593 006b 0A       		.uleb128 0xa
+ 594 006c 16       		.uleb128 0x16
+ 595 006d 00       		.byte	0
+ 596 006e 03       		.uleb128 0x3
+ 597 006f 0E       		.uleb128 0xe
+ 598 0070 3A       		.uleb128 0x3a
+ 599 0071 0B       		.uleb128 0xb
+ 600 0072 3B       		.uleb128 0x3b
+ 601 0073 0B       		.uleb128 0xb
+ 602 0074 49       		.uleb128 0x49
+ 603 0075 13       		.uleb128 0x13
+ 604 0076 00       		.byte	0
+ 605 0077 00       		.byte	0
+ 606 0078 0B       		.uleb128 0xb
+ 607 0079 2E       		.uleb128 0x2e
+ 608 007a 01       		.byte	0x1
+ 609 007b 3F       		.uleb128 0x3f
+ 610 007c 19       		.uleb128 0x19
+ 611 007d 03       		.uleb128 0x3
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 22
 
 
- 614 0090 00       		.byte	0
- 615 0091 00       		.byte	0
- 616 0092 0C       		.uleb128 0xc
- 617 0093 34       		.uleb128 0x34
- 618 0094 00       		.byte	0
- 619 0095 03       		.uleb128 0x3
- 620 0096 0E       		.uleb128 0xe
- 621 0097 3A       		.uleb128 0x3a
- 622 0098 0B       		.uleb128 0xb
- 623 0099 3B       		.uleb128 0x3b
- 624 009a 05       		.uleb128 0x5
- 625 009b 49       		.uleb128 0x49
- 626 009c 13       		.uleb128 0x13
- 627 009d 02       		.uleb128 0x2
- 628 009e 17       		.uleb128 0x17
- 629 009f 00       		.byte	0
- 630 00a0 00       		.byte	0
- 631 00a1 0D       		.uleb128 0xd
- 632 00a2 898201   		.uleb128 0x4109
- 633 00a5 00       		.byte	0
- 634 00a6 11       		.uleb128 0x11
- 635 00a7 01       		.uleb128 0x1
- 636 00a8 31       		.uleb128 0x31
- 637 00a9 13       		.uleb128 0x13
- 638 00aa 00       		.byte	0
- 639 00ab 00       		.byte	0
- 640 00ac 0E       		.uleb128 0xe
- 641 00ad 898201   		.uleb128 0x4109
- 642 00b0 01       		.byte	0x1
- 643 00b1 11       		.uleb128 0x11
- 644 00b2 01       		.uleb128 0x1
- 645 00b3 31       		.uleb128 0x31
- 646 00b4 13       		.uleb128 0x13
- 647 00b5 00       		.byte	0
- 648 00b6 00       		.byte	0
- 649 00b7 0F       		.uleb128 0xf
- 650 00b8 8A8201   		.uleb128 0x410a
- 651 00bb 00       		.byte	0
- 652 00bc 02       		.uleb128 0x2
- 653 00bd 18       		.uleb128 0x18
- 654 00be 9142     		.uleb128 0x2111
- 655 00c0 18       		.uleb128 0x18
- 656 00c1 00       		.byte	0
- 657 00c2 00       		.byte	0
- 658 00c3 10       		.uleb128 0x10
- 659 00c4 2E       		.uleb128 0x2e
- 660 00c5 00       		.byte	0
- 661 00c6 3F       		.uleb128 0x3f
- 662 00c7 19       		.uleb128 0x19
- 663 00c8 3C       		.uleb128 0x3c
- 664 00c9 19       		.uleb128 0x19
- 665 00ca 6E       		.uleb128 0x6e
- 666 00cb 0E       		.uleb128 0xe
- 667 00cc 03       		.uleb128 0x3
- 668 00cd 0E       		.uleb128 0xe
- 669 00ce 3A       		.uleb128 0x3a
- 670 00cf 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 23
+ 612 007e 0E       		.uleb128 0xe
+ 613 007f 3A       		.uleb128 0x3a
+ 614 0080 0B       		.uleb128 0xb
+ 615 0081 3B       		.uleb128 0x3b
+ 616 0082 05       		.uleb128 0x5
+ 617 0083 27       		.uleb128 0x27
+ 618 0084 19       		.uleb128 0x19
+ 619 0085 11       		.uleb128 0x11
+ 620 0086 01       		.uleb128 0x1
+ 621 0087 12       		.uleb128 0x12
+ 622 0088 06       		.uleb128 0x6
+ 623 0089 40       		.uleb128 0x40
+ 624 008a 18       		.uleb128 0x18
+ 625 008b 9742     		.uleb128 0x2117
+ 626 008d 19       		.uleb128 0x19
+ 627 008e 01       		.uleb128 0x1
+ 628 008f 13       		.uleb128 0x13
+ 629 0090 00       		.byte	0
+ 630 0091 00       		.byte	0
+ 631 0092 0C       		.uleb128 0xc
+ 632 0093 34       		.uleb128 0x34
+ 633 0094 00       		.byte	0
+ 634 0095 03       		.uleb128 0x3
+ 635 0096 0E       		.uleb128 0xe
+ 636 0097 3A       		.uleb128 0x3a
+ 637 0098 0B       		.uleb128 0xb
+ 638 0099 3B       		.uleb128 0x3b
+ 639 009a 05       		.uleb128 0x5
+ 640 009b 49       		.uleb128 0x49
+ 641 009c 13       		.uleb128 0x13
+ 642 009d 02       		.uleb128 0x2
+ 643 009e 17       		.uleb128 0x17
+ 644 009f 00       		.byte	0
+ 645 00a0 00       		.byte	0
+ 646 00a1 0D       		.uleb128 0xd
+ 647 00a2 898201   		.uleb128 0x4109
+ 648 00a5 00       		.byte	0
+ 649 00a6 11       		.uleb128 0x11
+ 650 00a7 01       		.uleb128 0x1
+ 651 00a8 31       		.uleb128 0x31
+ 652 00a9 13       		.uleb128 0x13
+ 653 00aa 00       		.byte	0
+ 654 00ab 00       		.byte	0
+ 655 00ac 0E       		.uleb128 0xe
+ 656 00ad 898201   		.uleb128 0x4109
+ 657 00b0 01       		.byte	0x1
+ 658 00b1 11       		.uleb128 0x11
+ 659 00b2 01       		.uleb128 0x1
+ 660 00b3 31       		.uleb128 0x31
+ 661 00b4 13       		.uleb128 0x13
+ 662 00b5 00       		.byte	0
+ 663 00b6 00       		.byte	0
+ 664 00b7 0F       		.uleb128 0xf
+ 665 00b8 8A8201   		.uleb128 0x410a
+ 666 00bb 00       		.byte	0
+ 667 00bc 02       		.uleb128 0x2
+ 668 00bd 18       		.uleb128 0x18
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 23
 
 
- 671 00d0 3B       		.uleb128 0x3b
- 672 00d1 05       		.uleb128 0x5
- 673 00d2 00       		.byte	0
- 674 00d3 00       		.byte	0
- 675 00d4 00       		.byte	0
- 676              		.section	.debug_loc,"",%progbits
- 677              	.Ldebug_loc0:
- 678              	.LLST0:
- 679 0000 08000000 		.4byte	.LVL1
- 680 0004 0E000000 		.4byte	.LVL2
- 681 0008 0200     		.2byte	0x2
- 682 000a 30       		.byte	0x30
- 683 000b 9F       		.byte	0x9f
- 684 000c 0E000000 		.4byte	.LVL2
- 685 0010 60000000 		.4byte	.LVL11
- 686 0014 0100     		.2byte	0x1
- 687 0016 54       		.byte	0x54
- 688 0017 62000000 		.4byte	.LVL12
- 689 001b 68000000 		.4byte	.LVL13
- 690 001f 0100     		.2byte	0x1
- 691 0021 54       		.byte	0x54
- 692 0022 00000000 		.4byte	0
- 693 0026 00000000 		.4byte	0
- 694              	.LLST1:
- 695 002a 02000000 		.4byte	.LVL0
- 696 002e 0E000000 		.4byte	.LVL2
- 697 0032 0200     		.2byte	0x2
- 698 0034 31       		.byte	0x31
- 699 0035 9F       		.byte	0x9f
- 700 0036 0E000000 		.4byte	.LVL2
- 701 003a 5C000000 		.4byte	.LVL9
- 702 003e 0100     		.2byte	0x1
- 703 0040 55       		.byte	0x55
- 704 0041 5E000000 		.4byte	.LVL10
- 705 0045 68000000 		.4byte	.LVL13
- 706 0049 0100     		.2byte	0x1
- 707 004b 55       		.byte	0x55
- 708 004c 00000000 		.4byte	0
- 709 0050 00000000 		.4byte	0
- 710              		.section	.debug_aranges,"",%progbits
- 711 0000 24000000 		.4byte	0x24
- 712 0004 0200     		.2byte	0x2
- 713 0006 00000000 		.4byte	.Ldebug_info0
- 714 000a 04       		.byte	0x4
- 715 000b 00       		.byte	0
- 716 000c 0000     		.2byte	0
- 717 000e 0000     		.2byte	0
- 718 0010 00000000 		.4byte	.LFB0
- 719 0014 74000000 		.4byte	.LFE0-.LFB0
- 720 0018 00000000 		.4byte	.LFB1
- 721 001c 18000000 		.4byte	.LFE1-.LFB1
- 722 0020 00000000 		.4byte	0
- 723 0024 00000000 		.4byte	0
- 724              		.section	.debug_ranges,"",%progbits
- 725              	.Ldebug_ranges0:
- 726 0000 00000000 		.4byte	.LFB0
- 727 0004 74000000 		.4byte	.LFE0
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 24
+ 669 00be 9142     		.uleb128 0x2111
+ 670 00c0 18       		.uleb128 0x18
+ 671 00c1 00       		.byte	0
+ 672 00c2 00       		.byte	0
+ 673 00c3 10       		.uleb128 0x10
+ 674 00c4 2E       		.uleb128 0x2e
+ 675 00c5 00       		.byte	0
+ 676 00c6 3F       		.uleb128 0x3f
+ 677 00c7 19       		.uleb128 0x19
+ 678 00c8 3C       		.uleb128 0x3c
+ 679 00c9 19       		.uleb128 0x19
+ 680 00ca 6E       		.uleb128 0x6e
+ 681 00cb 0E       		.uleb128 0xe
+ 682 00cc 03       		.uleb128 0x3
+ 683 00cd 0E       		.uleb128 0xe
+ 684 00ce 3A       		.uleb128 0x3a
+ 685 00cf 0B       		.uleb128 0xb
+ 686 00d0 3B       		.uleb128 0x3b
+ 687 00d1 05       		.uleb128 0x5
+ 688 00d2 00       		.byte	0
+ 689 00d3 00       		.byte	0
+ 690 00d4 00       		.byte	0
+ 691              		.section	.debug_loc,"",%progbits
+ 692              	.Ldebug_loc0:
+ 693              	.LLST0:
+ 694 0000 08000000 		.4byte	.LVL1
+ 695 0004 0E000000 		.4byte	.LVL2
+ 696 0008 0200     		.2byte	0x2
+ 697 000a 30       		.byte	0x30
+ 698 000b 9F       		.byte	0x9f
+ 699 000c 0E000000 		.4byte	.LVL2
+ 700 0010 66000000 		.4byte	.LVL12
+ 701 0014 0100     		.2byte	0x1
+ 702 0016 54       		.byte	0x54
+ 703 0017 68000000 		.4byte	.LVL13
+ 704 001b 6E000000 		.4byte	.LVL14
+ 705 001f 0100     		.2byte	0x1
+ 706 0021 54       		.byte	0x54
+ 707 0022 00000000 		.4byte	0
+ 708 0026 00000000 		.4byte	0
+ 709              	.LLST1:
+ 710 002a 02000000 		.4byte	.LVL0
+ 711 002e 0E000000 		.4byte	.LVL2
+ 712 0032 0200     		.2byte	0x2
+ 713 0034 31       		.byte	0x31
+ 714 0035 9F       		.byte	0x9f
+ 715 0036 0E000000 		.4byte	.LVL2
+ 716 003a 62000000 		.4byte	.LVL10
+ 717 003e 0100     		.2byte	0x1
+ 718 0040 55       		.byte	0x55
+ 719 0041 64000000 		.4byte	.LVL11
+ 720 0045 6E000000 		.4byte	.LVL14
+ 721 0049 0100     		.2byte	0x1
+ 722 004b 55       		.byte	0x55
+ 723 004c 00000000 		.4byte	0
+ 724 0050 00000000 		.4byte	0
+ 725              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 24
 
 
- 728 0008 00000000 		.4byte	.LFB1
- 729 000c 18000000 		.4byte	.LFE1
- 730 0010 00000000 		.4byte	0
- 731 0014 00000000 		.4byte	0
- 732              		.section	.debug_line,"",%progbits
- 733              	.Ldebug_line0:
- 734 0000 A2000000 		.section	.debug_str,"MS",%progbits,1
- 734      02004D00 
- 734      00000201 
- 734      FB0E0D00 
- 734      01010101 
- 735              	.LASF15:
- 736 0000 72656731 		.ascii	"reg16\000"
- 736      3600
- 737              	.LASF34:
- 738 0006 43414E5F 		.ascii	"CAN_ReceiveMsgMC_Debug\000"
- 738      52656365 
- 738      6976654D 
- 738      73674D43 
- 738      5F446562 
- 739              	.LASF30:
- 740 001d 73686966 		.ascii	"shift\000"
- 740      7400
- 741              	.LASF18:
- 742 0023 43414E5F 		.ascii	"CAN_DATA_BYTES\000"
- 742      44415441 
- 742      5F425954 
- 742      455300
- 743              	.LASF24:
- 744 0032 7278616D 		.ascii	"rxamr\000"
- 744      7200
- 745              	.LASF29:
- 746 0038 6D61696C 		.ascii	"mailboxNumber\000"
- 746      626F784E 
- 746      756D6265 
- 746      7200
- 747              	.LASF20:
- 748 0046 43414E5F 		.ascii	"CAN_REG_32\000"
- 748      5245475F 
- 748      333200
- 749              	.LASF3:
- 750 0051 73686F72 		.ascii	"short unsigned int\000"
- 750      7420756E 
- 750      7369676E 
- 750      65642069 
- 750      6E7400
- 751              	.LASF19:
- 752 0064 62797465 		.ascii	"byte\000"
- 752      00
- 753              	.LASF23:
- 754 0069 72786461 		.ascii	"rxdata\000"
- 754      746100
- 755              	.LASF27:
- 756 0070 72786163 		.ascii	"rxacrd\000"
- 756      726400
- 757              	.LASF11:
- 758 0077 666C6F61 		.ascii	"float\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 25
+ 726 0000 24000000 		.4byte	0x24
+ 727 0004 0200     		.2byte	0x2
+ 728 0006 00000000 		.4byte	.Ldebug_info0
+ 729 000a 04       		.byte	0x4
+ 730 000b 00       		.byte	0
+ 731 000c 0000     		.2byte	0
+ 732 000e 0000     		.2byte	0
+ 733 0010 00000000 		.4byte	.LFB0
+ 734 0014 7C000000 		.4byte	.LFE0-.LFB0
+ 735 0018 00000000 		.4byte	.LFB1
+ 736 001c 18000000 		.4byte	.LFE1-.LFB1
+ 737 0020 00000000 		.4byte	0
+ 738 0024 00000000 		.4byte	0
+ 739              		.section	.debug_ranges,"",%progbits
+ 740              	.Ldebug_ranges0:
+ 741 0000 00000000 		.4byte	.LFB0
+ 742 0004 7C000000 		.4byte	.LFE0
+ 743 0008 00000000 		.4byte	.LFB1
+ 744 000c 18000000 		.4byte	.LFE1
+ 745 0010 00000000 		.4byte	0
+ 746 0014 00000000 		.4byte	0
+ 747              		.section	.debug_line,"",%progbits
+ 748              	.Ldebug_line0:
+ 749 0000 A4000000 		.section	.debug_str,"MS",%progbits,1
+ 749      02004D00 
+ 749      00000201 
+ 749      FB0E0D00 
+ 749      01010101 
+ 750              	.LASF15:
+ 751 0000 72656731 		.ascii	"reg16\000"
+ 751      3600
+ 752              	.LASF34:
+ 753 0006 43414E5F 		.ascii	"CAN_ReceiveMsgMC_Debug\000"
+ 753      52656365 
+ 753      6976654D 
+ 753      73674D43 
+ 753      5F446562 
+ 754              	.LASF30:
+ 755 001d 73686966 		.ascii	"shift\000"
+ 755      7400
+ 756              	.LASF18:
+ 757 0023 43414E5F 		.ascii	"CAN_DATA_BYTES\000"
+ 757      44415441 
+ 757      5F425954 
+ 757      455300
+ 758              	.LASF24:
+ 759 0032 7278616D 		.ascii	"rxamr\000"
+ 759      7200
+ 760              	.LASF29:
+ 761 0038 6D61696C 		.ascii	"mailboxNumber\000"
+ 761      626F784E 
+ 761      756D6265 
+ 761      7200
+ 762              	.LASF20:
+ 763 0046 43414E5F 		.ascii	"CAN_REG_32\000"
+ 763      5245475F 
+ 763      333200
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 25
 
 
- 758      7400
- 759              	.LASF41:
- 760 007d 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
- 760      73657273 
- 760      5C4A7573 
- 760      74696E20 
- 760      4368616E 
- 761 00ac 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
- 761      616D706C 
- 761      655C4465 
- 761      7369676E 
- 761      30312E63 
- 762              	.LASF22:
- 763 00c5 72786964 		.ascii	"rxid\000"
- 763      00
- 764              	.LASF14:
- 765 00ca 72656738 		.ascii	"reg8\000"
- 765      00
- 766              	.LASF33:
- 767 00cf 43414E5F 		.ascii	"CAN_ReceiveMsgTorque_Request_Command\000"
- 767      52656365 
- 767      6976654D 
- 767      7367546F 
- 767      72717565 
- 768              	.LASF35:
- 769 00f4 43414E5F 		.ascii	"CAN_ReceiveMsgMC_ESTOP\000"
- 769      52656365 
- 769      6976654D 
- 769      73674D43 
- 769      5F455354 
- 770              	.LASF9:
- 771 010b 75696E74 		.ascii	"uint8\000"
- 771      3800
- 772              	.LASF32:
- 773 0111 43414E5F 		.ascii	"CAN_ISR\000"
- 773      49535200 
- 774              	.LASF1:
- 775 0119 756E7369 		.ascii	"unsigned char\000"
- 775      676E6564 
- 775      20636861 
- 775      7200
- 776              	.LASF12:
- 777 0127 646F7562 		.ascii	"double\000"
- 777      6C6500
- 778              	.LASF10:
- 779 012e 75696E74 		.ascii	"uint16\000"
- 779      313600
- 780              	.LASF31:
- 781 0135 43414E5F 		.ascii	"CAN_MsgRXIsr\000"
- 781      4D736752 
- 781      58497372 
- 781      00
- 782              	.LASF5:
- 783 0142 6C6F6E67 		.ascii	"long unsigned int\000"
- 783      20756E73 
- 783      69676E65 
- 783      6420696E 
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 26
+ 764              	.LASF3:
+ 765 0051 73686F72 		.ascii	"short unsigned int\000"
+ 765      7420756E 
+ 765      7369676E 
+ 765      65642069 
+ 765      6E7400
+ 766              	.LASF19:
+ 767 0064 62797465 		.ascii	"byte\000"
+ 767      00
+ 768              	.LASF23:
+ 769 0069 72786461 		.ascii	"rxdata\000"
+ 769      746100
+ 770              	.LASF27:
+ 771 0070 72786163 		.ascii	"rxacrd\000"
+ 771      726400
+ 772              	.LASF11:
+ 773 0077 666C6F61 		.ascii	"float\000"
+ 773      7400
+ 774              	.LASF42:
+ 775 007d 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PSOC_VC"
+ 775      73657273 
+ 775      5C4A7573 
+ 775      74696E20 
+ 775      4368616E 
+ 776 00ac 555F4578 		.ascii	"U_Example\\Design01.cydsn\000"
+ 776      616D706C 
+ 776      655C4465 
+ 776      7369676E 
+ 776      30312E63 
+ 777              	.LASF22:
+ 778 00c5 72786964 		.ascii	"rxid\000"
+ 778      00
+ 779              	.LASF38:
+ 780 00ca 43414E5F 		.ascii	"CAN_ReceiveMsgBMS_Voltage\000"
+ 780      52656365 
+ 780      6976654D 
+ 780      7367424D 
+ 780      535F566F 
+ 781              	.LASF14:
+ 782 00e4 72656738 		.ascii	"reg8\000"
+ 782      00
+ 783              	.LASF33:
+ 784 00e9 43414E5F 		.ascii	"CAN_ReceiveMsgTorque_Request_Command\000"
+ 784      52656365 
+ 784      6976654D 
+ 784      7367546F 
+ 784      72717565 
+ 785              	.LASF35:
+ 786 010e 43414E5F 		.ascii	"CAN_ReceiveMsgMC_ESTOP\000"
+ 786      52656365 
+ 786      6976654D 
+ 786      73674D43 
+ 786      5F455354 
+ 787              	.LASF9:
+ 788 0125 75696E74 		.ascii	"uint8\000"
+ 788      3800
+ 789              	.LASF32:
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 26
 
 
- 783      7400
- 784              	.LASF8:
- 785 0154 756E7369 		.ascii	"unsigned int\000"
- 785      676E6564 
- 785      20696E74 
- 785      00
- 786              	.LASF37:
- 787 0161 43414E5F 		.ascii	"CAN_ReceiveMsgMC_Fault\000"
- 787      52656365 
- 787      6976654D 
- 787      73674D43 
- 787      5F466175 
- 788              	.LASF7:
- 789 0178 6C6F6E67 		.ascii	"long long unsigned int\000"
- 789      206C6F6E 
- 789      6720756E 
- 789      7369676E 
- 789      65642069 
- 790              	.LASF36:
- 791 018f 43414E5F 		.ascii	"CAN_ReceiveMsgBSPD_Flags\000"
- 791      52656365 
- 791      6976654D 
- 791      73674253 
- 791      50445F46 
- 792              	.LASF28:
- 793 01a8 43414E5F 		.ascii	"CAN_RX_STRUCT\000"
- 793      52585F53 
- 793      54525543 
- 793      5400
- 794              	.LASF21:
- 795 01b6 7278636D 		.ascii	"rxcmd\000"
- 795      6400
- 796              	.LASF39:
- 797 01bc 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 797      43313120 
- 797      352E342E 
- 797      31203230 
- 797      31363036 
- 798 01ef 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 798      20726576 
- 798      6973696F 
- 798      6E203233 
- 798      37373135 
- 799 0222 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 799      66756E63 
- 799      74696F6E 
- 799      2D736563 
- 799      74696F6E 
- 800              	.LASF17:
- 801 024a 73697A65 		.ascii	"sizetype\000"
- 801      74797065 
- 801      00
- 802              	.LASF26:
- 803 0253 7278616D 		.ascii	"rxamrd\000"
- 803      726400
- 804              	.LASF6:
- 805 025a 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccxOIjta.s 			page 27
+ 790 012b 43414E5F 		.ascii	"CAN_ISR\000"
+ 790      49535200 
+ 791              	.LASF1:
+ 792 0133 756E7369 		.ascii	"unsigned char\000"
+ 792      676E6564 
+ 792      20636861 
+ 792      7200
+ 793              	.LASF12:
+ 794 0141 646F7562 		.ascii	"double\000"
+ 794      6C6500
+ 795              	.LASF10:
+ 796 0148 75696E74 		.ascii	"uint16\000"
+ 796      313600
+ 797              	.LASF31:
+ 798 014f 43414E5F 		.ascii	"CAN_MsgRXIsr\000"
+ 798      4D736752 
+ 798      58497372 
+ 798      00
+ 799              	.LASF5:
+ 800 015c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 800      20756E73 
+ 800      69676E65 
+ 800      6420696E 
+ 800      7400
+ 801              	.LASF8:
+ 802 016e 756E7369 		.ascii	"unsigned int\000"
+ 802      676E6564 
+ 802      20696E74 
+ 802      00
+ 803              	.LASF37:
+ 804 017b 43414E5F 		.ascii	"CAN_ReceiveMsgMC_Fault\000"
+ 804      52656365 
+ 804      6976654D 
+ 804      73674D43 
+ 804      5F466175 
+ 805              	.LASF7:
+ 806 0192 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 806      206C6F6E 
+ 806      6720756E 
+ 806      7369676E 
+ 806      65642069 
+ 807              	.LASF36:
+ 808 01a9 43414E5F 		.ascii	"CAN_ReceiveMsgBSPD_Flags\000"
+ 808      52656365 
+ 808      6976654D 
+ 808      73674253 
+ 808      50445F46 
+ 809              	.LASF28:
+ 810 01c2 43414E5F 		.ascii	"CAN_RX_STRUCT\000"
+ 810      52585F53 
+ 810      54525543 
+ 810      5400
+ 811              	.LASF21:
+ 812 01d0 7278636D 		.ascii	"rxcmd\000"
+ 812      6400
+ 813              	.LASF40:
+ 814 01d6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 27
 
 
- 805      206C6F6E 
- 805      6720696E 
- 805      7400
- 806              	.LASF13:
- 807 0268 63686172 		.ascii	"char\000"
- 807      00
- 808              	.LASF40:
- 809 026d 47656E65 		.ascii	"Generated_Source\\PSoC5\\CAN_INT.c\000"
- 809      72617465 
- 809      645F536F 
- 809      75726365 
- 809      5C50536F 
- 810              	.LASF2:
- 811 028e 73686F72 		.ascii	"short int\000"
- 811      7420696E 
- 811      7400
- 812              	.LASF25:
- 813 0298 72786163 		.ascii	"rxacr\000"
- 813      7200
- 814              	.LASF4:
- 815 029e 6C6F6E67 		.ascii	"long int\000"
- 815      20696E74 
- 815      00
- 816              	.LASF16:
- 817 02a7 6C6F6E67 		.ascii	"long double\000"
- 817      20646F75 
- 817      626C6500 
- 818              	.LASF0:
- 819 02b3 7369676E 		.ascii	"signed char\000"
- 819      65642063 
- 819      68617200 
- 820              	.LASF38:
- 821 02bf 43414E5F 		.ascii	"CAN_ReceiveMsg\000"
- 821      52656365 
- 821      6976654D 
- 821      736700
- 822              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 814      43313120 
+ 814      352E342E 
+ 814      31203230 
+ 814      31363036 
+ 815 0209 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 815      20726576 
+ 815      6973696F 
+ 815      6E203233 
+ 815      37373135 
+ 816 023c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 816      66756E63 
+ 816      74696F6E 
+ 816      2D736563 
+ 816      74696F6E 
+ 817              	.LASF17:
+ 818 0264 73697A65 		.ascii	"sizetype\000"
+ 818      74797065 
+ 818      00
+ 819              	.LASF26:
+ 820 026d 7278616D 		.ascii	"rxamrd\000"
+ 820      726400
+ 821              	.LASF6:
+ 822 0274 6C6F6E67 		.ascii	"long long int\000"
+ 822      206C6F6E 
+ 822      6720696E 
+ 822      7400
+ 823              	.LASF13:
+ 824 0282 63686172 		.ascii	"char\000"
+ 824      00
+ 825              	.LASF41:
+ 826 0287 47656E65 		.ascii	"Generated_Source\\PSoC5\\CAN_INT.c\000"
+ 826      72617465 
+ 826      645F536F 
+ 826      75726365 
+ 826      5C50536F 
+ 827              	.LASF2:
+ 828 02a8 73686F72 		.ascii	"short int\000"
+ 828      7420696E 
+ 828      7400
+ 829              	.LASF25:
+ 830 02b2 72786163 		.ascii	"rxacr\000"
+ 830      7200
+ 831              	.LASF4:
+ 832 02b8 6C6F6E67 		.ascii	"long int\000"
+ 832      20696E74 
+ 832      00
+ 833              	.LASF16:
+ 834 02c1 6C6F6E67 		.ascii	"long double\000"
+ 834      20646F75 
+ 834      626C6500 
+ 835              	.LASF0:
+ 836 02cd 7369676E 		.ascii	"signed char\000"
+ 836      65642063 
+ 836      68617200 
+ 837              	.LASF39:
+ 838 02d9 43414E5F 		.ascii	"CAN_ReceiveMsg\000"
+ 838      52656365 
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\cc8ueg7Y.s 			page 28
+
+
+ 838      6976654D 
+ 838      736700
+ 839              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

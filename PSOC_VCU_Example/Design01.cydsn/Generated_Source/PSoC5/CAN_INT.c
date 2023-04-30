@@ -438,6 +438,8 @@
                             break;
                             case 4u : CAN_ReceiveMsgMC_Fault();
                             break;
+                            case 5u : CAN_ReceiveMsgBMS_Voltage();
+                            break;
                             default:
                             break;
                         }
