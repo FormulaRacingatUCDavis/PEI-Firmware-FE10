@@ -1,6 +1,6 @@
-# Component constraints for C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\Users\Justin Chang\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cyprj
-# Date: Sun, 30 Apr 2023 23:18:44 GMT
+# Component constraints for C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\Design01.cyprj
+# Date: Sat, 20 May 2023 19:37:12 GMT
 # GraphicLCDIntf
 # False paths present for both 8 and 16 bits Graphic LCD Interface configurations 
 expr {(8) == 8 ?

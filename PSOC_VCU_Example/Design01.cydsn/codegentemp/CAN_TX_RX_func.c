@@ -882,7 +882,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_Voltage(void) 
     {
         /* `#START MESSAGE_MC_Voltage_RECEIVED` */
-
+        MC_VOLTAGE_UPPER = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Voltage);
+        MC_VOLTAGE_LOWER = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Voltage);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_Voltage_CALLBACK
