@@ -25,32 +25,16 @@
 #include "cyapicallbacks.h"
 
 /* `#START TX_RX_FUNCTION` */
-extern volatile uint8_t SET_INTERLOCK;
-extern volatile uint8_t HV_REQUEST_MC;
-extern volatile uint8_t STATE;
-extern volatile uint8_t THROTTLE;
 
-extern volatile uint8_t HV_REQUEST_TR;
-extern volatile uint8_t VEHICLE_STATE;
+//BMS Varialbes
+extern uint8_t bms_temp;
+extern uint16_t bms_status;
+extern uint8_t bms_soc;
+extern uint16_t bms_voltage;
 
-extern volatile uint8_t ESTOP_MC;
-
-extern volatile uint8_t THROTTLE_HIGH;
-extern volatile uint8_t THROTTLE_LOW;
-
-extern volatile uint8_t POST_FAULT_LO_1;
-extern volatile uint8_t POST_FAULT_LO_2;
-extern volatile uint8_t POST_FAULT_HI_1;
-extern volatile uint8_t POST_FAULT_HI_2;
-
-extern volatile uint8_t RUN_FAULT_LO_1;
-extern volatile uint8_t RUN_FAULT_LO_2;
-extern volatile uint8_t RUN_FAULT_HI_1;
-extern volatile uint8_t RUN_FAULT_HI_2;
-
-extern volatile uint8_t MC_VOLTAGE_UPPER;
-extern volatile uint8_t MC_VOLTAGE_LOWER;
-
+extern uint16_t mc_voltage;
+extern uint8_t hv_requested;
+extern uint8_t vcu_state;
 /* `#END` */
 
 
@@ -211,7 +195,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX0_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsgTORQUE_REQUEST_COMMAND
+    * FUNCTION NAME:   CAN_SendMsg0
     ********************************************************************************
     *
     * Summary:
@@ -230,7 +214,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsgTORQUE_REQUEST_COMMAND(void) 
+    uint8 CAN_SendMsg0(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -244,13 +228,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_TORQUE_REQUEST_COMMAND_TRASMITTED` */
+                /* `#START MESSAGE_0_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_TORQUE_REQUEST_COMMAND_CALLBACK
-                    CAN_SendMsg_TORQUE_REQUEST_COMMAND_Callback();
-                #endif /* CAN_SEND_MSG_TORQUE_REQUEST_COMMAND_CALLBACK */
+                #ifdef CAN_SEND_MSG_0_CALLBACK
+                    CAN_SendMsg_0_Callback();
+                #endif /* CAN_SEND_MSG_0_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(0u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(0u)) | CAN_SEND_MESSAGE);
@@ -315,7 +299,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsgMC_ESTOP
+    * FUNCTION NAME:   CAN_SendMsg2
     ********************************************************************************
     *
     * Summary:
@@ -334,7 +318,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsgMC_ESTOP(void) 
+    uint8 CAN_SendMsg2(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -348,13 +332,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_MC_ESTOP_TRASMITTED` */
+                /* `#START MESSAGE_2_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_MC_ESTOP_CALLBACK
-                    CAN_SendMsg_MC_ESTOP_Callback();
-                #endif /* CAN_SEND_MSG_MC_ESTOP_CALLBACK */
+                #ifdef CAN_SEND_MSG_2_CALLBACK
+                    CAN_SendMsg_2_Callback();
+                #endif /* CAN_SEND_MSG_2_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(2u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(2u)) | CAN_SEND_MESSAGE);
@@ -367,7 +351,7 @@ void CAN_TxCancel(uint8 bufferId)
 
 #if (CAN_TX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_SendMsgMC_DEBUG
+    * FUNCTION NAME:   CAN_SendMsg3
     ********************************************************************************
     *
     * Summary:
@@ -386,7 +370,7 @@ void CAN_TxCancel(uint8 bufferId)
     *    CAN_FAIL              The function failed
     *
     *******************************************************************************/
-    uint8 CAN_SendMsgMC_DEBUG(void) 
+    uint8 CAN_SendMsg3(void) 
     {
         uint8 result = CYRET_SUCCESS;
 
@@ -400,13 +384,13 @@ void CAN_TxCancel(uint8 bufferId)
             }
             else
             {
-                /* `#START MESSAGE_MC_DEBUG_TRASMITTED` */
+                /* `#START MESSAGE_3_TRASMITTED` */
 
                 /* `#END` */
 
-                #ifdef CAN_SEND_MSG_MC_DEBUG_CALLBACK
-                    CAN_SendMsg_MC_DEBUG_Callback();
-                #endif /* CAN_SEND_MSG_MC_DEBUG_CALLBACK */
+                #ifdef CAN_SEND_MSG_3_CALLBACK
+                    CAN_SendMsg_3_Callback();
+                #endif /* CAN_SEND_MSG_3_CALLBACK */
 
                 CY_SET_REG32(CAN_TX_CMD_PTR(3u),
                 CY_GET_REG32(CAN_TX_CMD_PTR(3u)) | CAN_SEND_MESSAGE);
@@ -671,7 +655,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX0_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsgTorque_Request_Command
+    * FUNCTION NAME:   CAN_ReceiveMsgvcu_torque_request
     ********************************************************************************
     *
     * Summary:
@@ -689,16 +673,18 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsgTorque_Request_Command(void) 
+    void CAN_ReceiveMsgvcu_torque_request(void) 
     {
-        /* `#START MESSAGE_Torque_Request_Command_RECEIVED` */
-        HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
-        VEHICLE_STATE = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_Torque_Request_Command);
+        /* `#START MESSAGE_vcu_torque_request_RECEIVED` */
+        
+        vcu_state = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
+        hv_requested = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
+
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_Torque_Request_Command_CALLBACK
-            CAN_ReceiveMsg_Torque_Request_Command_Callback();
-        #endif /* CAN_RECEIVE_MSG_Torque_Request_Command_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_vcu_torque_request_CALLBACK
+            CAN_ReceiveMsg_vcu_torque_request_Callback();
+        #endif /* CAN_RECEIVE_MSG_vcu_torque_request_CALLBACK */
 
         CAN_RX[0u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -707,7 +693,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX1_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:    CAN_ReceiveMsgMC_Debug
+    * FUNCTION NAME:    CAN_ReceiveMsgbms_status
     ********************************************************************************
     *
     * Summary:
@@ -725,18 +711,20 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsgMC_Debug(void) 
+    void CAN_ReceiveMsgbms_status(void) 
     {
-        /* `#START MESSAGE_MC_Debug_RECEIVED` */
-        SET_INTERLOCK = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Debug);
-        HV_REQUEST_MC = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Debug);
-        STATE = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Debug);
-        THROTTLE = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Debug);
+        /* `#START MESSAGE_bms_status_RECEIVED` */
+        
+        bms_temp = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_bms_status);
+        bms_soc = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_bms_status);
+        bms_status = (CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_bms_status) << 8) + CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_bms_status);
+        bms_voltage = (CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_bms_status) << 8) + CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_bms_status);
+
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_MC_Debug_CALLBACK
-            CAN_ReceiveMsg_MC_Debug_Callback();
-        #endif /* CAN_RECEIVE_MSG_MC_Debug_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_bms_status_CALLBACK
+            CAN_ReceiveMsg_bms_status_Callback();
+        #endif /* CAN_RECEIVE_MSG_bms_status_CALLBACK */
 
         CAN_RX[1u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -745,7 +733,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsgMC_ESTOP
+    * FUNCTION NAME:   CAN_ReceiveMsg2
     ********************************************************************************
     *
     * Summary:
@@ -763,15 +751,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsgMC_ESTOP(void) 
+    void CAN_ReceiveMsg2(void) 
     {
-        /* `#START MESSAGE_MC_ESTOP_RECEIVED` */
-        ESTOP_MC = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_ESTOP);
+        /* `#START MESSAGE_2_RECEIVED` */
+
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_MC_ESTOP_CALLBACK
-            CAN_ReceiveMsg_MC_ESTOP_Callback();
-        #endif /* CAN_RECEIVE_MSG_MC_ESTOP_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_2_CALLBACK
+            CAN_ReceiveMsg_2_Callback();
+        #endif /* CAN_RECEIVE_MSG_2_CALLBACK */
 
         CAN_RX[2u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -780,7 +768,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX3_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsgBSPD_Flags
+    * FUNCTION NAME:   CAN_ReceiveMsg3
     ********************************************************************************
     *
     * Summary:
@@ -798,17 +786,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsgBSPD_Flags(void) 
+    void CAN_ReceiveMsg3(void) 
     {
-        /* `#START MESSAGE_BSPD_Flags_RECEIVED` */
-        HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
-        THROTTLE_HIGH = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_BSPD_Flags);
-        THROTTLE_LOW = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_BSPD_Flags);
+        /* `#START MESSAGE_3_RECEIVED` */
+
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_BSPD_Flags_CALLBACK
-            CAN_ReceiveMsg_BSPD_Flags_Callback();
-        #endif /* CAN_RECEIVE_MSG_BSPD_Flags_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_3_CALLBACK
+            CAN_ReceiveMsg_3_Callback();
+        #endif /* CAN_RECEIVE_MSG_3_CALLBACK */
 
         CAN_RX[3u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -839,15 +825,14 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     {
         /* `#START MESSAGE_MC_Fault_RECEIVED` */
         
-        POST_FAULT_LO_1 = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Fault);
-        POST_FAULT_LO_2 = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Fault);
-        POST_FAULT_HI_1 = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Fault);
-        POST_FAULT_HI_2 = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_MC_Fault);
-        RUN_FAULT_LO_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_Fault);
-        RUN_FAULT_LO_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Fault);
-        RUN_FAULT_HI_1 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Fault);
-        RUN_FAULT_HI_2 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_MC_Fault);;
-
+        //POST_FAULT_LO_1 = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Fault);
+        //POST_FAULT_LO_2 = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Fault);
+        //POST_FAULT_HI_1 = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Fault);
+        //POST_FAULT_HI_2 = CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_MC_Fault);
+        //RUN_FAULT_LO_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_Fault);
+        //RUN_FAULT_LO_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Fault);
+        //RUN_FAULT_HI_1 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Fault);
+        //RUN_FAULT_HI_2 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_MC_Fault);;
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_Fault_CALLBACK
@@ -882,8 +867,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_Voltage(void) 
     {
         /* `#START MESSAGE_MC_Voltage_RECEIVED` */
-        MC_VOLTAGE_UPPER = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Voltage);
-        MC_VOLTAGE_LOWER = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Voltage);
+        mc_voltage = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Voltage) << 8;
+        mc_voltage += CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Voltage);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_Voltage_CALLBACK
@@ -1247,11 +1232,30 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 /* [] END OF FILE */
 #if 0 /* begin disabled code */
+`#start MESSAGE_MC_Debug_RECEIVED` -- section removed from template
+        //SET_INTERLOCK = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Debug);
+        //HV_REQUEST_MC = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Debug);
+        //STATE = CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Debug);
+        //THROTTLE = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Debug);
+`#end`
+
+#endif /* end disabled code */
+#if 0 /* begin disabled code */
+`#start MESSAGE_MC_ESTOP_RECEIVED` -- section removed from template
+        //ESTOP_MC = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_ESTOP);
+`#end`
+
+#endif /* end disabled code */
+#if 0 /* begin disabled code */
 `#start MESSAGE_BMS_Voltage_RECEIVED` -- section removed from template
         PACK_VOLTAGE_1 = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_BMS_Voltage);
         PACK_VOLTAGE_2 = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_BMS_Voltage);
         PACK_VOLTAGE_3 = CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_BMS_Voltage);
         PACK_VOLTAGE_4 = CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_BMS_Voltage);
+=======
+`#start MESSAGE_Torque_Request_Command_RECEIVED` -- section removed from template
+        HV_REQUEST_TR = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_Torque_Request_Command);
+        VEHICLE_STATE = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_Torque_Request_Command);
 `#end`
 
 #endif /* end disabled code */

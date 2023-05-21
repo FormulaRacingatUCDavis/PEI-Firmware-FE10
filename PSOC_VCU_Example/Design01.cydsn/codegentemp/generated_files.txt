@@ -30,11 +30,9 @@
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\SD_FINAL_aliases.h" value="HEADER;;;;;SD_FINAL" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\SD_FINAL.c" value="SOURCE_C;CortexM3;;;;SD_FINAL" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\SD_FINAL.h" value="HEADER;;;;;SD_FINAL" />
-  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\Clock_1.c" value="SOURCE_C;CortexM3;;;;Clock_1" />
-  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\Clock_1.h" value="HEADER;;;;;Clock_1" />
-  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\GraphicLCDIntf.c" value="SOURCE_C;CortexM3;;;;GraphicLCDIntf" />
-  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\GraphicLCDIntf.h" value="HEADER;;;;;GraphicLCDIntf" />
-  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\GraphicLCDIntf_PM.c" value="SOURCE_C;CortexM3;;;;GraphicLCDIntf" />
+  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\LCD.c" value="SOURCE_C;CortexM3;;;;LCD" />
+  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\LCD.h" value="HEADER;;;;;LCD" />
+  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\LCD_PM.c" value="SOURCE_C;CortexM3;;;;LCD" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\Rx_aliases.h" value="HEADER;;;;;Rx" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\Rx.c" value="SOURCE_C;CortexM3;;;;Rx" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\Rx.h" value="HEADER;;;;;Rx" />
@@ -80,6 +78,9 @@
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\ADC_DelSig_1.h" value="HEADER;;;;;ADC_DelSig_1" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\ADC_DelSig_1_PM.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig_1" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\ADC_DelSig_1_INT.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig_1" />
+  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\LCD_LCDPort_aliases.h" value="HEADER;;;;;LCD_LCDPort" />
+  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\LCD_LCDPort.c" value="SOURCE_C;CortexM3;;;;LCD_LCDPort" />
+  <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\LCD_LCDPort.h" value="HEADER;;;;;LCD_LCDPort" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\ADC_DelSig_1_AMux.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig_1_AMux" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\ADC_DelSig_1_AMux.h" value="HEADER;;;;;ADC_DelSig_1_AMux" />
   <file name="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PSOC_VCU_Example\Design01.cydsn\codegentemp\ADC_DelSig_1_Ext_CP_Clk.c" value="SOURCE_C;CortexM3;;;;ADC_DelSig_1_Ext_CP_Clk" />

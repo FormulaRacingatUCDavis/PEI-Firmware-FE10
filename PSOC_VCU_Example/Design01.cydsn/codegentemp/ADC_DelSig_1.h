@@ -98,14 +98,14 @@ CY_ISR_PROTO(ADC_DelSig_1_ISR4);
 /* Default configuration values from user parameters */
 #define ADC_DelSig_1_CFG1_RESOLUTION         (16u )
 #define ADC_DelSig_1_CFG1_INPUT_RANGE        (2u)
-#define ADC_DelSig_1_CFG1_SRATE              (10000u)
+#define ADC_DelSig_1_CFG1_SRATE              (2000u)
 #define ADC_DelSig_1_CFG1_REFERENCE          (5u)
 #define ADC_DelSig_1_CFG1_BUFFER_GAIN        (1u)
 #define ADC_DelSig_1_CFG1_CONV_MODE          (2u)
 #define ADC_DelSig_1_CFG1_INPUT_RANGE_VALUE  (5)
 #define ADC_DelSig_1_DEFAULT_STROBE                     (0u)
 #define ADC_DelSig_1_DEFAULT_INTERNAL_CLK               (1u)
-#define ADC_DelSig_1_DEFAULT_NUM_CONFIGS                (4u)
+#define ADC_DelSig_1_DEFAULT_NUM_CONFIGS                (1u)
 #define ADC_DelSig_1_DEFAULT_CHARGE_PUMP_CLOCK          (1u)
 #define ADC_DelSig_1_DEFAULT_INPUT_MODE                 (1u)
 #define ADC_DelSig_1_IRQ_REMOVE                         (0u)          /* Removes internal interrupt */
@@ -1337,13 +1337,13 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 
 /* Default register settings for the Config 1 */
 /* Default Config
-* ADC_DelSig_1_CFG1 Sample Rate: 10000 Samples per Second
+* ADC_DelSig_1_CFG1 Sample Rate: 2000 Samples per Second
 * ADC_DelSig_1_CFG1 Conversion Mode: 2
 * ADC_DelSig_1_CFG1 Input Buffer Gain: 1
 * ADC_DelSig_1_CFG1 Reference: 5
 * ADC_DelSig_1_CFG1 Input Range: 2
 * ADC_DelSig_1_CFG1 Resolution: 16 bits
-* ADC_DelSig_1_CFG1 Clock: 640000 Hz
+* ADC_DelSig_1_CFG1 Clock: 128000 Hz
 */
 
 #define ADC_DelSig_1_CFG1_DEC_CR             (0x38u)
@@ -1375,10 +1375,10 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG1_DSM_CR11           (0x48u)
 #define ADC_DelSig_1_CFG1_DSM_CR12           (0x01u)
 #define ADC_DelSig_1_CFG1_DSM_CR13           (0x00u)
-#define ADC_DelSig_1_CFG1_DSM_CR14           (0x01u)
-#define ADC_DelSig_1_CFG1_DSM_CR15           (0x11u)
-#define ADC_DelSig_1_CFG1_DSM_CR16           (0x19u)
-#define ADC_DelSig_1_CFG1_DSM_CR17           (0x97u)
+#define ADC_DelSig_1_CFG1_DSM_CR14           (0x00u)
+#define ADC_DelSig_1_CFG1_DSM_CR15           (0x00u)
+#define ADC_DelSig_1_CFG1_DSM_CR16           (0x0Au)
+#define ADC_DelSig_1_CFG1_DSM_CR17           (0x43u)
 #define ADC_DelSig_1_CFG1_DSM_REF0           (0x52u)
 #define ADC_DelSig_1_CFG1_DSM_REF1           (0x00u)
 #define ADC_DelSig_1_CFG1_DSM_REF2           (0x58u)
@@ -1395,7 +1395,7 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG1_DSM_OUT1           (0x00u)
 #define ADC_DelSig_1_CFG1_DSM_SW3            (0x40u)
 #define ADC_DelSig_1_CFG1_CLOCKS_PER_SAMPLE  (0x0040u)
-#define ADC_DelSig_1_CFG1_CLOCK_FREQ         (640000u)
+#define ADC_DelSig_1_CFG1_CLOCK_FREQ         (128000u)
 #define ADC_DelSig_1_CFG1_CP_CLOCK_FREQ      (4000000u)
 #define ADC_DelSig_1_CFG1_REFERENCE_VOLTAGE  (1.2500)
 #define ADC_DelSig_1_CFG1_COUNTS_PER_VOLT    (13107)
@@ -1403,7 +1403,7 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG1_IDEAL_ODDDEC_GAIN  (0x8000u)
 
 #define ADC_DelSig_1_CFG1_ALIGNMENT          (0u)
-#define ADC_DelSig_1_CFG1_ADC_CLK_DIVIDER    (37u)
+#define ADC_DelSig_1_CFG1_ADC_CLK_DIVIDER    (186u)
 #define ADC_DelSig_1_CFG1_CP_CLK_DIVIDER     (5u)
 
 /* Input and DAC Cap values in pF */
@@ -1437,19 +1437,19 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 
 /* Default register settings for the Config 2 */
 /* Second Config
-* ADC_DelSig_1_CFG2 Sample Rate: 10000 Samples per Second
+* ADC_DelSig_1_CFG2 Sample Rate: 2000 Samples per Second
 * ADC_DelSig_1_CFG2 Conversion Mode: 2
 * ADC_DelSig_1_CFG2 Input Buffer Gain: 1
 * ADC_DelSig_1_CFG2 Reference: 0
-* ADC_DelSig_1_CFG2 Input Range: 0
+* ADC_DelSig_1_CFG2 Input Range: 4
 * ADC_DelSig_1_CFG2 Resolution: 16 bits
-* ADC_DelSig_1_CFG2 Clock: 640000 Hz
+* ADC_DelSig_1_CFG2 Clock: 128000 Hz
 */
 
 #define ADC_DelSig_1_CFG2_DEC_CR             (0x38u)
 #define ADC_DelSig_1_CFG2_DEC_SR             (0x14u)
 #define ADC_DelSig_1_CFG2_DEC_SHIFT1         (0x04u)
-#define ADC_DelSig_1_CFG2_DEC_SHIFT2         (0x06u)
+#define ADC_DelSig_1_CFG2_DEC_SHIFT2         (0x07u)
 #define ADC_DelSig_1_CFG2_DEC_DIV            (0)
 #define ADC_DelSig_1_CFG2_DEC_DR2            (0x00u)
 #define ADC_DelSig_1_CFG2_DEC_DR2H           (0x00u)
@@ -1475,10 +1475,10 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG2_DSM_CR11           (0x5Au)
 #define ADC_DelSig_1_CFG2_DSM_CR12           (0x05u)
 #define ADC_DelSig_1_CFG2_DSM_CR13           (0x00u)
-#define ADC_DelSig_1_CFG2_DSM_CR14           (0x01u)
-#define ADC_DelSig_1_CFG2_DSM_CR15           (0x11u)
-#define ADC_DelSig_1_CFG2_DSM_CR16           (0x19u)
-#define ADC_DelSig_1_CFG2_DSM_CR17           (0x97u)
+#define ADC_DelSig_1_CFG2_DSM_CR14           (0x00u)
+#define ADC_DelSig_1_CFG2_DSM_CR15           (0x00u)
+#define ADC_DelSig_1_CFG2_DSM_CR16           (0x0Au)
+#define ADC_DelSig_1_CFG2_DSM_CR17           (0x43u)
 #define ADC_DelSig_1_CFG2_DSM_REF0           (0x44u)
 #define ADC_DelSig_1_CFG2_DSM_REF2           (0x58u)
 #define ADC_DelSig_1_CFG2_DSM_REF3           (0x00u)
@@ -1490,23 +1490,23 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG2_DSM_BUF3           (0x00u)
 #define ADC_DelSig_1_CFG2_DSM_OUT0           (0x00u)
 #define ADC_DelSig_1_CFG2_DSM_OUT1           (0x00u)
-#define ADC_DelSig_1_CFG2_DSM_SW3            (0x40u)
-#define ADC_DelSig_1_CFG2_SRATE              (10000u )
+#define ADC_DelSig_1_CFG2_DSM_SW3            (0x00u)
+#define ADC_DelSig_1_CFG2_SRATE              (2000u )
 #define ADC_DelSig_1_CFG2_CLOCKS_PER_SAMPLE  (0x0040u)
-#define ADC_DelSig_1_CFG2_CLOCK_FREQ         (640000u)
+#define ADC_DelSig_1_CFG2_CLOCK_FREQ         (128000u)
 #define ADC_DelSig_1_CFG2_CP_CLOCK_FREQ      (4000000u)
 #define ADC_DelSig_1_CFG2_REFERENCE_VOLTAGE  (1.0240)
-#define ADC_DelSig_1_CFG2_COUNTS_PER_VOLT    (64000)
+#define ADC_DelSig_1_CFG2_COUNTS_PER_VOLT    (32000)
 #define ADC_DelSig_1_CFG2_RESOLUTION         (16u)
 #define ADC_DelSig_1_CFG2_CONV_MODE          (2u)
 #define ADC_DelSig_1_CFG2_IDEAL_DEC_GAIN     (0x90DAu)
-#define ADC_DelSig_1_CFG2_INPUT_RANGE        (0u)
+#define ADC_DelSig_1_CFG2_INPUT_RANGE        (4u)
 #define ADC_DelSig_1_CFG2_INPUT_RANGE_VALUE  (1.024)
 
 #define ADC_DelSig_1_CFG2_REFERENCE          (0u)
 #define ADC_DelSig_1_CFG2_BUFFER_GAIN        (1u)
 #define ADC_DelSig_1_CFG2_ALIGNMENT          (0u)
-#define ADC_DelSig_1_CFG2_ADC_CLK_DIVIDER    (37u)
+#define ADC_DelSig_1_CFG2_ADC_CLK_DIVIDER    (186u)
 #define ADC_DelSig_1_CFG2_CP_CLK_DIVIDER     (5u)
 
 /* Input and DAC Cap values in pF */
@@ -1541,19 +1541,19 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 
 /* Default register settings for the following configuration */
 /* Third Config
-* ADC_DelSig_1_CFG3 Sample Rate: 10000 Samples per Second
+* ADC_DelSig_1_CFG3 Sample Rate: 2000 Samples per Second
 * ADC_DelSig_1_CFG3 Conversion Mode: 2
 * ADC_DelSig_1_CFG3 Input Buffer Gain: 1
 * ADC_DelSig_1_CFG3 Reference: 0
-* ADC_DelSig_1_CFG3 Input Range: 0
+* ADC_DelSig_1_CFG3 Input Range: 4
 * ADC_DelSig_1_CFG3 Resolution: 16 bits
-* ADC_DelSig_1_CFG3 Clock: 640000 Hz
+* ADC_DelSig_1_CFG3 Clock: 128000 Hz
 */
 
 #define ADC_DelSig_1_CFG3_DEC_CR             (0x38u)
 #define ADC_DelSig_1_CFG3_DEC_SR             (0x14u)
 #define ADC_DelSig_1_CFG3_DEC_SHIFT1         (0x04u)
-#define ADC_DelSig_1_CFG3_DEC_SHIFT2         (0x06u)
+#define ADC_DelSig_1_CFG3_DEC_SHIFT2         (0x07u)
 #define ADC_DelSig_1_CFG3_DEC_DIV            (0)
 #define ADC_DelSig_1_CFG3_DEC_DR2            (0x00u)
 #define ADC_DelSig_1_CFG3_DEC_DR2H           (0x00u)
@@ -1579,10 +1579,10 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG3_DSM_CR11           (0x5Au)
 #define ADC_DelSig_1_CFG3_DSM_CR12           (0x05u)
 #define ADC_DelSig_1_CFG3_DSM_CR13           (0x00u)
-#define ADC_DelSig_1_CFG3_DSM_CR14           (0x01u)
-#define ADC_DelSig_1_CFG3_DSM_CR15           (0x11u)
-#define ADC_DelSig_1_CFG3_DSM_CR16           (0x19u)
-#define ADC_DelSig_1_CFG3_DSM_CR17           (0x97u)
+#define ADC_DelSig_1_CFG3_DSM_CR14           (0x00u)
+#define ADC_DelSig_1_CFG3_DSM_CR15           (0x00u)
+#define ADC_DelSig_1_CFG3_DSM_CR16           (0x0Au)
+#define ADC_DelSig_1_CFG3_DSM_CR17           (0x43u)
 #define ADC_DelSig_1_CFG3_DSM_REF0           (0x44u)
 #define ADC_DelSig_1_CFG3_DSM_REF2           (0x58u)
 #define ADC_DelSig_1_CFG3_DSM_REF3           (0x00u)
@@ -1594,22 +1594,22 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG3_DSM_BUF3           (0x00u)
 #define ADC_DelSig_1_CFG3_DSM_OUT0           (0x00u)
 #define ADC_DelSig_1_CFG3_DSM_OUT1           (0x00u)
-#define ADC_DelSig_1_CFG3_DSM_SW3            (0x40u)
-#define ADC_DelSig_1_CFG3_SRATE              (10000u)
+#define ADC_DelSig_1_CFG3_DSM_SW3            (0x00u)
+#define ADC_DelSig_1_CFG3_SRATE              (2000u)
 #define ADC_DelSig_1_CFG3_CLOCKS_PER_SAMPLE  (0x0040u)
-#define ADC_DelSig_1_CFG3_CLOCK_FREQ         (640000u)
+#define ADC_DelSig_1_CFG3_CLOCK_FREQ         (128000u)
 #define ADC_DelSig_1_CFG3_CP_CLOCK_FREQ      (4000000u)
 #define ADC_DelSig_1_CFG3_REFERENCE_VOLTAGE  (1.0240)
-#define ADC_DelSig_1_CFG3_COUNTS_PER_VOLT    (64000)
+#define ADC_DelSig_1_CFG3_COUNTS_PER_VOLT    (32000)
 #define ADC_DelSig_1_CFG3_RESOLUTION         (16u)
 #define ADC_DelSig_1_CFG3_CONV_MODE          (2u)
 #define ADC_DelSig_1_CFG3_IDEAL_DEC_GAIN     (0x90DAu)
-#define ADC_DelSig_1_CFG3_INPUT_RANGE        (0u)
+#define ADC_DelSig_1_CFG3_INPUT_RANGE        (4u)
 #define ADC_DelSig_1_CFG3_REFERENCE          (0u)
 #define ADC_DelSig_1_CFG3_BUFFER_GAIN        (1u)
 #define ADC_DelSig_1_CFG3_INPUT_RANGE_VALUE  (1.024)
 #define ADC_DelSig_1_CFG3_ALIGNMENT          (0u)
-#define ADC_DelSig_1_CFG3_ADC_CLK_DIVIDER    (37u)
+#define ADC_DelSig_1_CFG3_ADC_CLK_DIVIDER    (186u)
 #define ADC_DelSig_1_CFG3_CP_CLK_DIVIDER     (5u)
 
 /* Input and DAC Cap values in pF */
@@ -1644,19 +1644,19 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 
 /* Default register settings for the following configuration */
 /* Fourth Config
-* ADC_DelSig_1_CFG4 Sample Rate: 10000 Samples per Second
+* ADC_DelSig_1_CFG4 Sample Rate: 2000 Samples per Second
 * ADC_DelSig_1_CFG4 Conversion Mode: 2
 * ADC_DelSig_1_CFG4 Input Buffer Gain: 1
 * ADC_DelSig_1_CFG4 Reference: 0
-* ADC_DelSig_1_CFG4 Input Range: 0
+* ADC_DelSig_1_CFG4 Input Range: 4
 * ADC_DelSig_1_CFG4 Resolution: 16 bits
-* ADC_DelSig_1_CFG4 Clock: 640000 Hz
+* ADC_DelSig_1_CFG4 Clock: 128000 Hz
 */
 
 #define ADC_DelSig_1_CFG4_DEC_CR             (0x38u)
 #define ADC_DelSig_1_CFG4_DEC_SR             (0x14u)
 #define ADC_DelSig_1_CFG4_DEC_SHIFT1         (0x04u)
-#define ADC_DelSig_1_CFG4_DEC_SHIFT2         (0x06u)
+#define ADC_DelSig_1_CFG4_DEC_SHIFT2         (0x07u)
 #define ADC_DelSig_1_CFG4_DEC_DIV            (0)
 #define ADC_DelSig_1_CFG4_DEC_DR2            (0x00u)
 #define ADC_DelSig_1_CFG4_DEC_DR2H           (0x00u)
@@ -1682,10 +1682,10 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG4_DSM_CR11           (0x5Au)
 #define ADC_DelSig_1_CFG4_DSM_CR12           (0x05u)
 #define ADC_DelSig_1_CFG4_DSM_CR13           (0x00u)
-#define ADC_DelSig_1_CFG4_DSM_CR14           (0x01u)
-#define ADC_DelSig_1_CFG4_DSM_CR15           (0x11u)
-#define ADC_DelSig_1_CFG4_DSM_CR16           (0x19u)
-#define ADC_DelSig_1_CFG4_DSM_CR17           (0x97u)
+#define ADC_DelSig_1_CFG4_DSM_CR14           (0x00u)
+#define ADC_DelSig_1_CFG4_DSM_CR15           (0x00u)
+#define ADC_DelSig_1_CFG4_DSM_CR16           (0x0Au)
+#define ADC_DelSig_1_CFG4_DSM_CR17           (0x43u)
 #define ADC_DelSig_1_CFG4_DSM_REF0           (0x44u)
 #define ADC_DelSig_1_CFG4_DSM_REF2           (0x58u)
 #define ADC_DelSig_1_CFG4_DSM_REF3           (0x00u)
@@ -1697,22 +1697,22 @@ extern volatile int32 ADC_DelSig_1_CountsPerVolt;
 #define ADC_DelSig_1_CFG4_DSM_BUF3           (0x00u)
 #define ADC_DelSig_1_CFG4_DSM_OUT0           (0x00u)
 #define ADC_DelSig_1_CFG4_DSM_OUT1           (0x00u)
-#define ADC_DelSig_1_CFG4_DSM_SW3            (0x40u)
-#define ADC_DelSig_1_CFG4_SRATE              (10000u)
+#define ADC_DelSig_1_CFG4_DSM_SW3            (0x00u)
+#define ADC_DelSig_1_CFG4_SRATE              (2000u)
 #define ADC_DelSig_1_CFG4_CLOCKS_PER_SAMPLE  (0x0040u)
-#define ADC_DelSig_1_CFG4_CLOCK_FREQ         (640000u)
+#define ADC_DelSig_1_CFG4_CLOCK_FREQ         (128000u)
 #define ADC_DelSig_1_CFG4_CP_CLOCK_FREQ      (4000000u)
 #define ADC_DelSig_1_CFG4_REFERENCE_VOLTAGE  (1.0240)
-#define ADC_DelSig_1_CFG4_COUNTS_PER_VOLT    (64000)
+#define ADC_DelSig_1_CFG4_COUNTS_PER_VOLT    (32000)
 #define ADC_DelSig_1_CFG4_RESOLUTION         (16u)
 #define ADC_DelSig_1_CFG4_CONV_MODE          (2u)
 #define ADC_DelSig_1_CFG4_IDEAL_DEC_GAIN     (0x90DAu)
-#define ADC_DelSig_1_CFG4_INPUT_RANGE        (0u)
+#define ADC_DelSig_1_CFG4_INPUT_RANGE        (4u)
 #define ADC_DelSig_1_CFG4_REFERENCE          (0u)
 #define ADC_DelSig_1_CFG4_BUFFER_GAIN        (1u)
 #define ADC_DelSig_1_CFG4_INPUT_RANGE_VALUE  (1.024)
 #define ADC_DelSig_1_CFG4_ALIGNMENT          (0u)
-#define ADC_DelSig_1_CFG4_ADC_CLK_DIVIDER    (37u)
+#define ADC_DelSig_1_CFG4_ADC_CLK_DIVIDER    (186u)
 #define ADC_DelSig_1_CFG4_CP_CLK_DIVIDER     (5u)
 
 /* Input cap and DAC Cap values in pF */

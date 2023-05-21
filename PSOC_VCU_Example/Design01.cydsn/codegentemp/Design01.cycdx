@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
+  <block name="GPIO4_ESD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="IMD_Fault" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="GPIO3_ESD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="GPIO1_ESD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="GPIO2_ESD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="GPIO3_ESD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="AIR_NEG" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="AIR_POS" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Precharge" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="GPIO4_ESD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="ADC_DelSig_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="cy_analog_virtualmux_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_5" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -828,11 +828,18 @@
       </field>
     </register>
   </block>
-  <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Em_EEPROM_Dynamic" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="IMD_Fault" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="BMS_Fault" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Current_Analog" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Precharge" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SD_FINAL" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="LCD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
+    <block name="LCDPort" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  </block>
+  <block name="SD_ACC_OUT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SD_IN" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="SD_OUT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="AIR_NEG" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="AIR_POS" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="CAN" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false">
     <block name="CanIP" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="Clock" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -1118,17 +1125,6 @@
       <field name="DATA_LOW" from="31" to="0" access="RW" resetVal="" desc="Lower Data Bytes" hidden="false" />
     </register>
   </block>
-  <block name="SD_FINAL" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="D_RD" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="D_WR" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="SD_IN" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="SD_OUT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="SD_ACC_OUT" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="D_CS" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="GraphicLCDIntf" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Rx" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="Tx" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="D_RS" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Clock_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="d" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

@@ -12,14 +12,22 @@
 #include "project.h"
 #include "CAN.h"
 #include "can_manager.h"
+#include "display.h"
 
 //TODO: The state starts at 0
-volatile uint32_t state = 1;
+volatile uint32_t pei_state = 1;
 volatile uint8_t e_stop;
-uint16 throttle_total = 0;
-uint8 throttle_upper = 0;
-uint8 throttle_lower = 0;
+
 #define max_Voltage 4976 //Change this later
+
+uint16_t current;
+uint16_t bms_status = 0;
+uint16_t bms_voltage = 0;
+uint8_t bms_soc = 0;
+uint8_t bms_temp = 0;
+uint8_t hv_requested = 0;
+uint16_t mc_voltage;
+uint8_t vcu_state;
 
 int main(void)
 {
@@ -30,15 +38,16 @@ int main(void)
     CAN_Init();
     CAN_Start();
     ADC_DelSig_1_Start();
+    LCD_Start();
     
     for(;;)
     {   
         
         //We need read the e_stop status in from the Shutdown_IN pin.
         //If e_stop is hit, should be equal to 0.
-        e_stop = SD_IN_Read();
-        
-        uint16_t current = (uint16_t) 1.09*ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
+        e_stop = SD_FINAL_Read();
+        current = (uint16_t) ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
+
         
         // shutdown flags, current
         uint8_t shutdown_flags = 0;
@@ -73,33 +82,32 @@ int main(void)
         can_send_PEI(current_upper, current_lower, shutdown_flags);
         
         //Interlock state machine
-        if (state == 0) {
+        if (pei_state == 0) {
             clear_interlock(); // clears interlock, send a message to open AIRs          
-            if((get_HV_Requested() == 1) && (e_stop != 0)) {
-                state = 1;
+            if((hv_requested == 1) && (e_stop != 0)) {
+                pei_state = 1;
             }
         }
-        
-        else if (state == 1) {
+        else if (pei_state == 1) {
             //Todo: Capacitor (gotten value) >= 95% pack voltage (threshold that we measure in testing)
             //This if statement is incorrect
-            if (get_MC_Voltage() > max_Voltage) {
+            if (mc_voltage > max_Voltage) {
                 open_precharge();
             }
             else {
                 close_precharge();
             }
             
-            if(get_RUN_FAULT_SUM() >0) {
-                state = 3;
+            if(0){//get_RUN_FAULT_SUM() >0) {
+                pei_state = 3;
             }    
             
-            if(get_HV_Requested() == 0) {
-               state = 0;
+            if(hv_requested == 0) {
+               pei_state = 0;
             }
             
             else if (e_stop == 0) {
-                state = 3;   
+                pei_state = 3;   
             }
             
             /*May or may not need to check status 3
@@ -124,19 +132,16 @@ int main(void)
             */
             
         }
-        else if (state == 3) {
+        else if (pei_state == 3) {
             clear_interlock();
-            if (get_HV_Requested() == 0) {
-                state = 0;
-                
-                //can_send_ESTOP(0); why is this here?
+            if (hv_requested == 0) {
+                pei_state = 0;
             }
         }
         
         
-        
-        
-        //can_send_ESTOP(e_stop);
+
+        update_display();
         CyDelay(1000);
     }
 }

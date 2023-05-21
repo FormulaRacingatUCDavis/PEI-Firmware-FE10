@@ -50,9 +50,9 @@ uint8 CAN_RxTxBuffersConfig(void)
     static const CAN_RX_CFG CYCODE CAN_RXConfigStruct[] =
     {
         { 0u, 0x28u, 0x1FFFF9u, 0xECC00000u },
-        { 1u, 0x28u, 0x1FFFF9u, 0x8CC00000u },
-        { 2u, 0x28u, 0x1FFFF9u, 0x6CC00000u },
-        { 3u, 0x28u, 0x1FFFF9u, 0x18200000u },
+        { 1u, 0x28u, 0x1FFFF9u, 0x70000000u },
+        { 2u, 0x0u, 0x0u, 0x0u },
+        { 3u, 0x0u, 0x0u, 0x0u },
         { 4u, 0x28u, 0x1FFFF9u, 0x15600000u },
         { 5u, 0x28u, 0x1FFFF9u, 0x14E00000u },
         { 6u, 0x0u, 0x0u, 0x0u },
@@ -69,10 +69,10 @@ uint8 CAN_RxTxBuffersConfig(void)
 
     static const CAN_TX_CFG CYCODE CAN_TXConfigStruct[] =
     {
-        { 0u, 0x80000u, 0xEC600000u },
+        { 0u, 0x0u, 0x0u },
         { 1u, 0x80000u, 0x70600000u },
-        { 2u, 0x80000u, 0x6C600000u },
-        { 3u, 0x80000u, 0x8C600000u },
+        { 2u, 0x0u, 0x0u },
+        { 3u, 0x0u, 0x0u },
         { 4u, 0x880008u, 0x0u },
         { 5u, 0x880008u, 0x0u },
         { 6u, 0x880008u, 0x0u },

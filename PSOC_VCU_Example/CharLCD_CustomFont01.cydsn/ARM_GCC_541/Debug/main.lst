@@ -1,0 +1,753 @@
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.rodata
+  20              		.align	2
+  21              	.LC0:
+  22 0000 50657266 		.ascii	"Perform\000"
+  22      6F726D00 
+  23              		.section	.text.main,"ax",%progbits
+  24              		.align	2
+  25              		.global	main
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	main, %function
+  29              	main:
+  30              	.LFB63:
+  31              		.file 1 "main.c"
+   1:main.c        **** /*******************************************************************************
+   2:main.c        **** * File Name: main.c
+   3:main.c        **** *
+   4:main.c        **** * Version: 2.0
+   5:main.c        **** *
+   6:main.c        **** * Description:
+   7:main.c        **** *  The example project displays " CYPRESS" in custom font on a 2X16 LCD 
+   8:main.c        **** *  available with CY8CKIT-001.
+   9:main.c        **** *
+  10:main.c        **** ********************************************************************************
+  11:main.c        **** * Copyright 2012, Cypress Semiconductor Corporation. All rights reserved.
+  12:main.c        **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  13:main.c        **** * by and subject to worldwide patent and copyright laws and treaties.
+  14:main.c        **** * Therefore, you may use this software only as provided in the license agreement
+  15:main.c        **** * accompanying the software package from which you obtained this software.
+  16:main.c        **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  17:main.c        **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  18:main.c        **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  19:main.c        **** *******************************************************************************/
+  20:main.c        **** 
+  21:main.c        **** #include <project.h>
+  22:main.c        **** 
+  23:main.c        **** extern uint8 const CYCODE LCD_customFonts[];
+  24:main.c        **** 
+  25:main.c        **** /*******************************************************************************
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 2
+
+
+  26:main.c        **** * Function Name: main
+  27:main.c        **** ********************************************************************************
+  28:main.c        **** *
+  29:main.c        **** * Summary:
+  30:main.c        **** *  The main program does the following
+  31:main.c        **** *  1. Initializes the LCD.
+  32:main.c        **** *  2. Loads custom fonts. 
+  33:main.c        **** *  3. Puts "CYPRESS" in custom available font in row 0 of the LCD.
+  34:main.c        **** *  4. Prints " Perform" in normal font in row 1 of the LCD.
+  35:main.c        **** *
+  36:main.c        **** * Parameters:
+  37:main.c        **** *  None.
+  38:main.c        **** *
+  39:main.c        **** * Return:
+  40:main.c        **** *  None.
+  41:main.c        **** *
+  42:main.c        **** *******************************************************************************/
+  43:main.c        **** int main()
+  44:main.c        **** {   
+  32              		.loc 1 44 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 8
+  35              		@ frame_needed = 1, uses_anonymous_args = 0
+  36 0000 80B5     		push	{r7, lr}
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 82B0     		sub	sp, sp, #8
+  41              		.cfi_def_cfa_offset 16
+  42 0004 00AF     		add	r7, sp, #0
+  43              		.cfi_def_cfa_register 7
+  45:main.c        ****   uint8 pos = 1u;
+  44              		.loc 1 45 0
+  45 0006 0123     		movs	r3, #1
+  46 0008 FB71     		strb	r3, [r7, #7]
+  46:main.c        ****   uint8 row = 0u;
+  47              		.loc 1 46 0
+  48 000a 0023     		movs	r3, #0
+  49 000c BB71     		strb	r3, [r7, #6]
+  47:main.c        ****   
+  48:main.c        ****   LCD_Start();
+  50              		.loc 1 48 0
+  51 000e FFF7FEFF 		bl	LCD_Start
+  49:main.c        ****   LCD_LoadCustomFonts(LCD_customFonts);    
+  52              		.loc 1 49 0
+  53 0012 3148     		ldr	r0, .L3
+  54 0014 FFF7FEFF 		bl	LCD_LoadCustomFonts
+  50:main.c        **** 
+  51:main.c        ****   LCD_Position(row, pos);
+  55              		.loc 1 51 0
+  56 0018 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  57 001a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  58 001c 1146     		mov	r1, r2
+  59 001e 1846     		mov	r0, r3
+  60 0020 FFF7FEFF 		bl	LCD_Position
+  52:main.c        ****   LCD_PutChar(LCD_CUSTOM_0);        /* Puts "C" at 2nd column in first row */
+  61              		.loc 1 52 0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 3
+
+
+  62 0024 0020     		movs	r0, #0
+  63 0026 FFF7FEFF 		bl	LCD_PutChar
+  53:main.c        ****   pos += 2u;
+  64              		.loc 1 53 0
+  65 002a FB79     		ldrb	r3, [r7, #7]
+  66 002c 0233     		adds	r3, r3, #2
+  67 002e FB71     		strb	r3, [r7, #7]
+  54:main.c        **** 
+  55:main.c        ****   LCD_Position(row, pos);
+  68              		.loc 1 55 0
+  69 0030 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  70 0032 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  71 0034 1146     		mov	r1, r2
+  72 0036 1846     		mov	r0, r3
+  73 0038 FFF7FEFF 		bl	LCD_Position
+  56:main.c        ****   LCD_PutChar(LCD_CUSTOM_1);        /* Puts "Y" at 4th column in first row */
+  74              		.loc 1 56 0
+  75 003c 0120     		movs	r0, #1
+  76 003e FFF7FEFF 		bl	LCD_PutChar
+  57:main.c        ****   pos += 2u;
+  77              		.loc 1 57 0
+  78 0042 FB79     		ldrb	r3, [r7, #7]
+  79 0044 0233     		adds	r3, r3, #2
+  80 0046 FB71     		strb	r3, [r7, #7]
+  58:main.c        ****         
+  59:main.c        ****   LCD_Position(row, pos);
+  81              		.loc 1 59 0
+  82 0048 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  83 004a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  84 004c 1146     		mov	r1, r2
+  85 004e 1846     		mov	r0, r3
+  86 0050 FFF7FEFF 		bl	LCD_Position
+  60:main.c        ****   LCD_PutChar(LCD_CUSTOM_2);        /* Puts "P" at 6th column in first row */
+  87              		.loc 1 60 0
+  88 0054 0220     		movs	r0, #2
+  89 0056 FFF7FEFF 		bl	LCD_PutChar
+  61:main.c        ****   pos += 2u;
+  90              		.loc 1 61 0
+  91 005a FB79     		ldrb	r3, [r7, #7]
+  92 005c 0233     		adds	r3, r3, #2
+  93 005e FB71     		strb	r3, [r7, #7]
+  62:main.c        **** 
+  63:main.c        ****   LCD_Position(row, pos);
+  94              		.loc 1 63 0
+  95 0060 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+  96 0062 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+  97 0064 1146     		mov	r1, r2
+  98 0066 1846     		mov	r0, r3
+  99 0068 FFF7FEFF 		bl	LCD_Position
+  64:main.c        ****   LCD_PutChar(LCD_CUSTOM_3);        /* Puts "R" at 8th column in first row */
+ 100              		.loc 1 64 0
+ 101 006c 0320     		movs	r0, #3
+ 102 006e FFF7FEFF 		bl	LCD_PutChar
+  65:main.c        ****   pos += 2u;     
+ 103              		.loc 1 65 0
+ 104 0072 FB79     		ldrb	r3, [r7, #7]
+ 105 0074 0233     		adds	r3, r3, #2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 4
+
+
+ 106 0076 FB71     		strb	r3, [r7, #7]
+  66:main.c        ****   
+  67:main.c        ****   LCD_Position(row, pos);
+ 107              		.loc 1 67 0
+ 108 0078 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 109 007a BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 110 007c 1146     		mov	r1, r2
+ 111 007e 1846     		mov	r0, r3
+ 112 0080 FFF7FEFF 		bl	LCD_Position
+  68:main.c        ****   LCD_PutChar(LCD_CUSTOM_4);        /* Puts "E" at 10th column in first row */
+ 113              		.loc 1 68 0
+ 114 0084 0420     		movs	r0, #4
+ 115 0086 FFF7FEFF 		bl	LCD_PutChar
+  69:main.c        ****   pos += 2u;
+ 116              		.loc 1 69 0
+ 117 008a FB79     		ldrb	r3, [r7, #7]
+ 118 008c 0233     		adds	r3, r3, #2
+ 119 008e FB71     		strb	r3, [r7, #7]
+  70:main.c        ****         
+  71:main.c        ****   LCD_Position(row, pos);
+ 120              		.loc 1 71 0
+ 121 0090 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 122 0092 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 123 0094 1146     		mov	r1, r2
+ 124 0096 1846     		mov	r0, r3
+ 125 0098 FFF7FEFF 		bl	LCD_Position
+  72:main.c        ****   LCD_PutChar(LCD_CUSTOM_5);        /* Puts "S" at 12th column in first row */
+ 126              		.loc 1 72 0
+ 127 009c 0520     		movs	r0, #5
+ 128 009e FFF7FEFF 		bl	LCD_PutChar
+  73:main.c        ****   pos += 2u;
+ 129              		.loc 1 73 0
+ 130 00a2 FB79     		ldrb	r3, [r7, #7]
+ 131 00a4 0233     		adds	r3, r3, #2
+ 132 00a6 FB71     		strb	r3, [r7, #7]
+  74:main.c        ****         
+  75:main.c        ****   LCD_Position(row, pos);
+ 133              		.loc 1 75 0
+ 134 00a8 FA79     		ldrb	r2, [r7, #7]	@ zero_extendqisi2
+ 135 00aa BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 136 00ac 1146     		mov	r1, r2
+ 137 00ae 1846     		mov	r0, r3
+ 138 00b0 FFF7FEFF 		bl	LCD_Position
+  76:main.c        ****   LCD_PutChar(LCD_CUSTOM_6);        /* Puts "S" at 14th column in first row */
+ 139              		.loc 1 76 0
+ 140 00b4 0620     		movs	r0, #6
+ 141 00b6 FFF7FEFF 		bl	LCD_PutChar
+  77:main.c        ****   pos += 2u;
+ 142              		.loc 1 77 0
+ 143 00ba FB79     		ldrb	r3, [r7, #7]
+ 144 00bc 0233     		adds	r3, r3, #2
+ 145 00be FB71     		strb	r3, [r7, #7]
+  78:main.c        ****     
+  79:main.c        ****   CyDelay(200u);
+ 146              		.loc 1 79 0
+ 147 00c0 C820     		movs	r0, #200
+ 148 00c2 FFF7FEFF 		bl	CyDelay
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 5
+
+
+  80:main.c        ****   LCD_Position(1u, 9u);
+ 149              		.loc 1 80 0
+ 150 00c6 0921     		movs	r1, #9
+ 151 00c8 0120     		movs	r0, #1
+ 152 00ca FFF7FEFF 		bl	LCD_Position
+  81:main.c        ****   LCD_PrintString("Perform");        /* Puts "Perform" from 8th column in second row */
+ 153              		.loc 1 81 0
+ 154 00ce 0348     		ldr	r0, .L3+4
+ 155 00d0 FFF7FEFF 		bl	LCD_PrintString
+ 156              	.L2:
+  82:main.c        ****            
+  83:main.c        ****   for(;;)
+  84:main.c        ****   {}
+ 157              		.loc 1 84 0 discriminator 1
+ 158 00d4 FEE7     		b	.L2
+ 159              	.L4:
+ 160 00d6 00BF     		.align	2
+ 161              	.L3:
+ 162 00d8 00000000 		.word	LCD_customFonts
+ 163 00dc 00000000 		.word	.LC0
+ 164              		.cfi_endproc
+ 165              	.LFE63:
+ 166              		.size	main, .-main
+ 167              		.text
+ 168              	.Letext0:
+ 169              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 170              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 171              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 172              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 173              		.section	.debug_info,"",%progbits
+ 174              	.Ldebug_info0:
+ 175 0000 19010000 		.4byte	0x119
+ 176 0004 0400     		.2byte	0x4
+ 177 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 178 000a 04       		.byte	0x4
+ 179 000b 01       		.uleb128 0x1
+ 180 000c 79000000 		.4byte	.LASF19
+ 181 0010 0C       		.byte	0xc
+ 182 0011 3E000000 		.4byte	.LASF20
+ 183 0015 5D010000 		.4byte	.LASF21
+ 184 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 185 001d 00000000 		.4byte	0
+ 186 0021 00000000 		.4byte	.Ldebug_line0
+ 187 0025 02       		.uleb128 0x2
+ 188 0026 01       		.byte	0x1
+ 189 0027 06       		.byte	0x6
+ 190 0028 3B010000 		.4byte	.LASF0
+ 191 002c 02       		.uleb128 0x2
+ 192 002d 01       		.byte	0x1
+ 193 002e 08       		.byte	0x8
+ 194 002f 07010000 		.4byte	.LASF1
+ 195 0033 02       		.uleb128 0x2
+ 196 0034 02       		.byte	0x2
+ 197 0035 05       		.byte	0x5
+ 198 0036 C1010000 		.4byte	.LASF2
+ 199 003a 02       		.uleb128 0x2
+ 200 003b 02       		.byte	0x2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 6
+
+
+ 201 003c 07       		.byte	0x7
+ 202 003d 0E000000 		.4byte	.LASF3
+ 203 0041 03       		.uleb128 0x3
+ 204 0042 53010000 		.4byte	.LASF9
+ 205 0046 02       		.byte	0x2
+ 206 0047 3F       		.byte	0x3f
+ 207 0048 4C000000 		.4byte	0x4c
+ 208 004c 02       		.uleb128 0x2
+ 209 004d 04       		.byte	0x4
+ 210 004e 05       		.byte	0x5
+ 211 004f 15010000 		.4byte	.LASF4
+ 212 0053 02       		.uleb128 0x2
+ 213 0054 04       		.byte	0x4
+ 214 0055 07       		.byte	0x7
+ 215 0056 50000000 		.4byte	.LASF5
+ 216 005a 02       		.uleb128 0x2
+ 217 005b 08       		.byte	0x8
+ 218 005c 05       		.byte	0x5
+ 219 005d 00000000 		.4byte	.LASF6
+ 220 0061 02       		.uleb128 0x2
+ 221 0062 08       		.byte	0x8
+ 222 0063 07       		.byte	0x7
+ 223 0064 62000000 		.4byte	.LASF7
+ 224 0068 04       		.uleb128 0x4
+ 225 0069 04       		.byte	0x4
+ 226 006a 05       		.byte	0x5
+ 227 006b 696E7400 		.ascii	"int\000"
+ 228 006f 02       		.uleb128 0x2
+ 229 0070 04       		.byte	0x4
+ 230 0071 07       		.byte	0x7
+ 231 0072 21000000 		.4byte	.LASF8
+ 232 0076 03       		.uleb128 0x3
+ 233 0077 CB010000 		.4byte	.LASF10
+ 234 007b 03       		.byte	0x3
+ 235 007c 2C       		.byte	0x2c
+ 236 007d 41000000 		.4byte	0x41
+ 237 0081 05       		.uleb128 0x5
+ 238 0082 4A000000 		.4byte	.LASF11
+ 239 0086 04       		.byte	0x4
+ 240 0087 9201     		.2byte	0x192
+ 241 0089 2C000000 		.4byte	0x2c
+ 242 008d 02       		.uleb128 0x2
+ 243 008e 04       		.byte	0x4
+ 244 008f 04       		.byte	0x4
+ 245 0090 BB010000 		.4byte	.LASF12
+ 246 0094 02       		.uleb128 0x2
+ 247 0095 08       		.byte	0x8
+ 248 0096 04       		.byte	0x4
+ 249 0097 1E010000 		.4byte	.LASF13
+ 250 009b 02       		.uleb128 0x2
+ 251 009c 01       		.byte	0x1
+ 252 009d 08       		.byte	0x8
+ 253 009e D3010000 		.4byte	.LASF14
+ 254 00a2 02       		.uleb128 0x2
+ 255 00a3 04       		.byte	0x4
+ 256 00a4 07       		.byte	0x7
+ 257 00a5 25010000 		.4byte	.LASF15
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 7
+
+
+ 258 00a9 02       		.uleb128 0x2
+ 259 00aa 08       		.byte	0x8
+ 260 00ab 04       		.byte	0x4
+ 261 00ac 47010000 		.4byte	.LASF16
+ 262 00b0 06       		.uleb128 0x6
+ 263 00b1 45000000 		.4byte	.LASF22
+ 264 00b5 01       		.byte	0x1
+ 265 00b6 2B       		.byte	0x2b
+ 266 00b7 68000000 		.4byte	0x68
+ 267 00bb 00000000 		.4byte	.LFB63
+ 268 00bf E0000000 		.4byte	.LFE63-.LFB63
+ 269 00c3 01       		.uleb128 0x1
+ 270 00c4 9C       		.byte	0x9c
+ 271 00c5 E6000000 		.4byte	0xe6
+ 272 00c9 07       		.uleb128 0x7
+ 273 00ca 706F7300 		.ascii	"pos\000"
+ 274 00ce 01       		.byte	0x1
+ 275 00cf 2D       		.byte	0x2d
+ 276 00d0 81000000 		.4byte	0x81
+ 277 00d4 02       		.uleb128 0x2
+ 278 00d5 91       		.byte	0x91
+ 279 00d6 77       		.sleb128 -9
+ 280 00d7 07       		.uleb128 0x7
+ 281 00d8 726F7700 		.ascii	"row\000"
+ 282 00dc 01       		.byte	0x1
+ 283 00dd 2E       		.byte	0x2e
+ 284 00de 81000000 		.4byte	0x81
+ 285 00e2 02       		.uleb128 0x2
+ 286 00e3 91       		.byte	0x91
+ 287 00e4 76       		.sleb128 -10
+ 288 00e5 00       		.byte	0
+ 289 00e6 08       		.uleb128 0x8
+ 290 00e7 F6000000 		.4byte	0xf6
+ 291 00eb F6000000 		.4byte	0xf6
+ 292 00ef 09       		.uleb128 0x9
+ 293 00f0 A2000000 		.4byte	0xa2
+ 294 00f4 3F       		.byte	0x3f
+ 295 00f5 00       		.byte	0
+ 296 00f6 0A       		.uleb128 0xa
+ 297 00f7 81000000 		.4byte	0x81
+ 298 00fb 0B       		.uleb128 0xb
+ 299 00fc 2E000000 		.4byte	.LASF17
+ 300 0100 01       		.byte	0x1
+ 301 0101 17       		.byte	0x17
+ 302 0102 06010000 		.4byte	0x106
+ 303 0106 0A       		.uleb128 0xa
+ 304 0107 E6000000 		.4byte	0xe6
+ 305 010b 0C       		.uleb128 0xc
+ 306 010c 2E010000 		.4byte	.LASF18
+ 307 0110 05       		.byte	0x5
+ 308 0111 1207     		.2byte	0x712
+ 309 0113 17010000 		.4byte	0x117
+ 310 0117 0D       		.uleb128 0xd
+ 311 0118 76000000 		.4byte	0x76
+ 312 011c 00       		.byte	0
+ 313              		.section	.debug_abbrev,"",%progbits
+ 314              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 8
+
+
+ 315 0000 01       		.uleb128 0x1
+ 316 0001 11       		.uleb128 0x11
+ 317 0002 01       		.byte	0x1
+ 318 0003 25       		.uleb128 0x25
+ 319 0004 0E       		.uleb128 0xe
+ 320 0005 13       		.uleb128 0x13
+ 321 0006 0B       		.uleb128 0xb
+ 322 0007 03       		.uleb128 0x3
+ 323 0008 0E       		.uleb128 0xe
+ 324 0009 1B       		.uleb128 0x1b
+ 325 000a 0E       		.uleb128 0xe
+ 326 000b 55       		.uleb128 0x55
+ 327 000c 17       		.uleb128 0x17
+ 328 000d 11       		.uleb128 0x11
+ 329 000e 01       		.uleb128 0x1
+ 330 000f 10       		.uleb128 0x10
+ 331 0010 17       		.uleb128 0x17
+ 332 0011 00       		.byte	0
+ 333 0012 00       		.byte	0
+ 334 0013 02       		.uleb128 0x2
+ 335 0014 24       		.uleb128 0x24
+ 336 0015 00       		.byte	0
+ 337 0016 0B       		.uleb128 0xb
+ 338 0017 0B       		.uleb128 0xb
+ 339 0018 3E       		.uleb128 0x3e
+ 340 0019 0B       		.uleb128 0xb
+ 341 001a 03       		.uleb128 0x3
+ 342 001b 0E       		.uleb128 0xe
+ 343 001c 00       		.byte	0
+ 344 001d 00       		.byte	0
+ 345 001e 03       		.uleb128 0x3
+ 346 001f 16       		.uleb128 0x16
+ 347 0020 00       		.byte	0
+ 348 0021 03       		.uleb128 0x3
+ 349 0022 0E       		.uleb128 0xe
+ 350 0023 3A       		.uleb128 0x3a
+ 351 0024 0B       		.uleb128 0xb
+ 352 0025 3B       		.uleb128 0x3b
+ 353 0026 0B       		.uleb128 0xb
+ 354 0027 49       		.uleb128 0x49
+ 355 0028 13       		.uleb128 0x13
+ 356 0029 00       		.byte	0
+ 357 002a 00       		.byte	0
+ 358 002b 04       		.uleb128 0x4
+ 359 002c 24       		.uleb128 0x24
+ 360 002d 00       		.byte	0
+ 361 002e 0B       		.uleb128 0xb
+ 362 002f 0B       		.uleb128 0xb
+ 363 0030 3E       		.uleb128 0x3e
+ 364 0031 0B       		.uleb128 0xb
+ 365 0032 03       		.uleb128 0x3
+ 366 0033 08       		.uleb128 0x8
+ 367 0034 00       		.byte	0
+ 368 0035 00       		.byte	0
+ 369 0036 05       		.uleb128 0x5
+ 370 0037 16       		.uleb128 0x16
+ 371 0038 00       		.byte	0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 9
+
+
+ 372 0039 03       		.uleb128 0x3
+ 373 003a 0E       		.uleb128 0xe
+ 374 003b 3A       		.uleb128 0x3a
+ 375 003c 0B       		.uleb128 0xb
+ 376 003d 3B       		.uleb128 0x3b
+ 377 003e 05       		.uleb128 0x5
+ 378 003f 49       		.uleb128 0x49
+ 379 0040 13       		.uleb128 0x13
+ 380 0041 00       		.byte	0
+ 381 0042 00       		.byte	0
+ 382 0043 06       		.uleb128 0x6
+ 383 0044 2E       		.uleb128 0x2e
+ 384 0045 01       		.byte	0x1
+ 385 0046 3F       		.uleb128 0x3f
+ 386 0047 19       		.uleb128 0x19
+ 387 0048 03       		.uleb128 0x3
+ 388 0049 0E       		.uleb128 0xe
+ 389 004a 3A       		.uleb128 0x3a
+ 390 004b 0B       		.uleb128 0xb
+ 391 004c 3B       		.uleb128 0x3b
+ 392 004d 0B       		.uleb128 0xb
+ 393 004e 49       		.uleb128 0x49
+ 394 004f 13       		.uleb128 0x13
+ 395 0050 11       		.uleb128 0x11
+ 396 0051 01       		.uleb128 0x1
+ 397 0052 12       		.uleb128 0x12
+ 398 0053 06       		.uleb128 0x6
+ 399 0054 40       		.uleb128 0x40
+ 400 0055 18       		.uleb128 0x18
+ 401 0056 9642     		.uleb128 0x2116
+ 402 0058 19       		.uleb128 0x19
+ 403 0059 01       		.uleb128 0x1
+ 404 005a 13       		.uleb128 0x13
+ 405 005b 00       		.byte	0
+ 406 005c 00       		.byte	0
+ 407 005d 07       		.uleb128 0x7
+ 408 005e 34       		.uleb128 0x34
+ 409 005f 00       		.byte	0
+ 410 0060 03       		.uleb128 0x3
+ 411 0061 08       		.uleb128 0x8
+ 412 0062 3A       		.uleb128 0x3a
+ 413 0063 0B       		.uleb128 0xb
+ 414 0064 3B       		.uleb128 0x3b
+ 415 0065 0B       		.uleb128 0xb
+ 416 0066 49       		.uleb128 0x49
+ 417 0067 13       		.uleb128 0x13
+ 418 0068 02       		.uleb128 0x2
+ 419 0069 18       		.uleb128 0x18
+ 420 006a 00       		.byte	0
+ 421 006b 00       		.byte	0
+ 422 006c 08       		.uleb128 0x8
+ 423 006d 01       		.uleb128 0x1
+ 424 006e 01       		.byte	0x1
+ 425 006f 49       		.uleb128 0x49
+ 426 0070 13       		.uleb128 0x13
+ 427 0071 01       		.uleb128 0x1
+ 428 0072 13       		.uleb128 0x13
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 10
+
+
+ 429 0073 00       		.byte	0
+ 430 0074 00       		.byte	0
+ 431 0075 09       		.uleb128 0x9
+ 432 0076 21       		.uleb128 0x21
+ 433 0077 00       		.byte	0
+ 434 0078 49       		.uleb128 0x49
+ 435 0079 13       		.uleb128 0x13
+ 436 007a 2F       		.uleb128 0x2f
+ 437 007b 0B       		.uleb128 0xb
+ 438 007c 00       		.byte	0
+ 439 007d 00       		.byte	0
+ 440 007e 0A       		.uleb128 0xa
+ 441 007f 26       		.uleb128 0x26
+ 442 0080 00       		.byte	0
+ 443 0081 49       		.uleb128 0x49
+ 444 0082 13       		.uleb128 0x13
+ 445 0083 00       		.byte	0
+ 446 0084 00       		.byte	0
+ 447 0085 0B       		.uleb128 0xb
+ 448 0086 34       		.uleb128 0x34
+ 449 0087 00       		.byte	0
+ 450 0088 03       		.uleb128 0x3
+ 451 0089 0E       		.uleb128 0xe
+ 452 008a 3A       		.uleb128 0x3a
+ 453 008b 0B       		.uleb128 0xb
+ 454 008c 3B       		.uleb128 0x3b
+ 455 008d 0B       		.uleb128 0xb
+ 456 008e 49       		.uleb128 0x49
+ 457 008f 13       		.uleb128 0x13
+ 458 0090 3F       		.uleb128 0x3f
+ 459 0091 19       		.uleb128 0x19
+ 460 0092 3C       		.uleb128 0x3c
+ 461 0093 19       		.uleb128 0x19
+ 462 0094 00       		.byte	0
+ 463 0095 00       		.byte	0
+ 464 0096 0C       		.uleb128 0xc
+ 465 0097 34       		.uleb128 0x34
+ 466 0098 00       		.byte	0
+ 467 0099 03       		.uleb128 0x3
+ 468 009a 0E       		.uleb128 0xe
+ 469 009b 3A       		.uleb128 0x3a
+ 470 009c 0B       		.uleb128 0xb
+ 471 009d 3B       		.uleb128 0x3b
+ 472 009e 05       		.uleb128 0x5
+ 473 009f 49       		.uleb128 0x49
+ 474 00a0 13       		.uleb128 0x13
+ 475 00a1 3F       		.uleb128 0x3f
+ 476 00a2 19       		.uleb128 0x19
+ 477 00a3 3C       		.uleb128 0x3c
+ 478 00a4 19       		.uleb128 0x19
+ 479 00a5 00       		.byte	0
+ 480 00a6 00       		.byte	0
+ 481 00a7 0D       		.uleb128 0xd
+ 482 00a8 35       		.uleb128 0x35
+ 483 00a9 00       		.byte	0
+ 484 00aa 49       		.uleb128 0x49
+ 485 00ab 13       		.uleb128 0x13
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 11
+
+
+ 486 00ac 00       		.byte	0
+ 487 00ad 00       		.byte	0
+ 488 00ae 00       		.byte	0
+ 489              		.section	.debug_aranges,"",%progbits
+ 490 0000 1C000000 		.4byte	0x1c
+ 491 0004 0200     		.2byte	0x2
+ 492 0006 00000000 		.4byte	.Ldebug_info0
+ 493 000a 04       		.byte	0x4
+ 494 000b 00       		.byte	0
+ 495 000c 0000     		.2byte	0
+ 496 000e 0000     		.2byte	0
+ 497 0010 00000000 		.4byte	.LFB63
+ 498 0014 E0000000 		.4byte	.LFE63-.LFB63
+ 499 0018 00000000 		.4byte	0
+ 500 001c 00000000 		.4byte	0
+ 501              		.section	.debug_ranges,"",%progbits
+ 502              	.Ldebug_ranges0:
+ 503 0000 00000000 		.4byte	.LFB63
+ 504 0004 E0000000 		.4byte	.LFE63
+ 505 0008 00000000 		.4byte	0
+ 506 000c 00000000 		.4byte	0
+ 507              		.section	.debug_line,"",%progbits
+ 508              	.Ldebug_line0:
+ 509 0000 82010000 		.section	.debug_str,"MS",%progbits,1
+ 509      02004C01 
+ 509      00000201 
+ 509      FB0E0D00 
+ 509      01010101 
+ 510              	.LASF6:
+ 511 0000 6C6F6E67 		.ascii	"long long int\000"
+ 511      206C6F6E 
+ 511      6720696E 
+ 511      7400
+ 512              	.LASF3:
+ 513 000e 73686F72 		.ascii	"short unsigned int\000"
+ 513      7420756E 
+ 513      7369676E 
+ 513      65642069 
+ 513      6E7400
+ 514              	.LASF8:
+ 515 0021 756E7369 		.ascii	"unsigned int\000"
+ 515      676E6564 
+ 515      20696E74 
+ 515      00
+ 516              	.LASF17:
+ 517 002e 4C43445F 		.ascii	"LCD_customFonts\000"
+ 517      63757374 
+ 517      6F6D466F 
+ 517      6E747300 
+ 518              	.LASF20:
+ 519 003e 6D61696E 		.ascii	"main.c\000"
+ 519      2E6300
+ 520              	.LASF22:
+ 521 0045 6D61696E 		.ascii	"main\000"
+ 521      00
+ 522              	.LASF11:
+ 523 004a 75696E74 		.ascii	"uint8\000"
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 12
+
+
+ 523      3800
+ 524              	.LASF5:
+ 525 0050 6C6F6E67 		.ascii	"long unsigned int\000"
+ 525      20756E73 
+ 525      69676E65 
+ 525      6420696E 
+ 525      7400
+ 526              	.LASF7:
+ 527 0062 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 527      206C6F6E 
+ 527      6720756E 
+ 527      7369676E 
+ 527      65642069 
+ 528              	.LASF19:
+ 529 0079 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 529      43313120 
+ 529      352E342E 
+ 529      31203230 
+ 529      31363036 
+ 530 00ac 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 530      20726576 
+ 530      6973696F 
+ 530      6E203233 
+ 530      37373135 
+ 531 00df 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 531      66756E63 
+ 531      74696F6E 
+ 531      2D736563 
+ 531      74696F6E 
+ 532              	.LASF1:
+ 533 0107 756E7369 		.ascii	"unsigned char\000"
+ 533      676E6564 
+ 533      20636861 
+ 533      7200
+ 534              	.LASF4:
+ 535 0115 6C6F6E67 		.ascii	"long int\000"
+ 535      20696E74 
+ 535      00
+ 536              	.LASF13:
+ 537 011e 646F7562 		.ascii	"double\000"
+ 537      6C6500
+ 538              	.LASF15:
+ 539 0125 73697A65 		.ascii	"sizetype\000"
+ 539      74797065 
+ 539      00
+ 540              	.LASF18:
+ 541 012e 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 541      52784275 
+ 541      66666572 
+ 541      00
+ 542              	.LASF0:
+ 543 013b 7369676E 		.ascii	"signed char\000"
+ 543      65642063 
+ 543      68617200 
+ 544              	.LASF16:
+ 545 0147 6C6F6E67 		.ascii	"long double\000"
+ 545      20646F75 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc4BGPBu.s 			page 13
+
+
+ 545      626C6500 
+ 546              	.LASF9:
+ 547 0153 5F5F696E 		.ascii	"__int32_t\000"
+ 547      7433325F 
+ 547      7400
+ 548              	.LASF21:
+ 549 015d 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
+ 549      73657273 
+ 549      5C6C656F 
+ 549      6A615C44 
+ 549      6F63756D 
+ 550 018b 4531305C 		.ascii	"E10\\PSOC_VCU_Example\\CharLCD_CustomFont01.cydsn\000"
+ 550      50534F43 
+ 550      5F564355 
+ 550      5F457861 
+ 550      6D706C65 
+ 551              	.LASF12:
+ 552 01bb 666C6F61 		.ascii	"float\000"
+ 552      7400
+ 553              	.LASF2:
+ 554 01c1 73686F72 		.ascii	"short int\000"
+ 554      7420696E 
+ 554      7400
+ 555              	.LASF10:
+ 556 01cb 696E7433 		.ascii	"int32_t\000"
+ 556      325F7400 
+ 557              	.LASF14:
+ 558 01d3 63686172 		.ascii	"char\000"
+ 558      00
+ 559              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

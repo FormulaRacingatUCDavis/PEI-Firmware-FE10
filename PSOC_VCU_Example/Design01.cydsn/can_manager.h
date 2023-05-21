@@ -18,7 +18,7 @@ typedef enum {
     MC_DEBUG = 0x466,
     BSPD_FLAGS = 0x0C1,
     MC_FAULT = 0x0AB,
-    BMS_VOLTAGE = 0x388,
+    BMS_STATUS = 0x380
 } CAN_ID; //RECEIVE
 
 typedef enum {
@@ -34,7 +34,7 @@ typedef enum {
     HV_ENABLED,
     DRIVE,
     FAULT = 0x80,
-}vcu_state;
+}VCU_STATE;
 
 // Basic CAN functionality
 void can_receive(uint8_t *msg, int ID);

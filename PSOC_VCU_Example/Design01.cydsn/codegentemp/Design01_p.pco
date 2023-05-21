@@ -1,55 +1,34 @@
 dont_use_io iocell 1 0
 dont_use_io iocell 1 1
-set_location "\GraphicLCDIntf:full\" macrocell 0 3 1 2
-set_location "__ONE__" macrocell 1 3 0 3
-set_location "\GraphicLCDIntf:state_2\" macrocell 0 3 1 0
-set_location "Net_130" macrocell 1 3 0 2
-set_location "Net_132" macrocell 0 3 1 3
-set_location "tmpOE__d_net_7" macrocell 0 3 0 3
-set_location "\GraphicLCDIntf:state_3\" macrocell 0 3 0 2
-set_location "Net_129" macrocell 0 3 1 1
-set_location "Net_131" macrocell 1 3 0 1
-set_location "\GraphicLCDIntf:GraphLcd8:Lsb\" datapathcell 0 3 2 
-set_location "\GraphicLCDIntf:state_1\" macrocell 0 3 0 0
-set_location "\GraphicLCDIntf:status_1\" macrocell 0 3 0 1
-set_location "\GraphicLCDIntf:state_0\" macrocell 1 3 0 0
-set_io "d(5)" iocell 2 5
+set_location "__ONE__" macrocell 1 3 0 0
+set_io "\LCD:LCDPort(6)\" iocell 2 6
+set_io "\LCD:LCDPort(5)\" iocell 2 5
+set_io "\LCD:LCDPort(3)\" iocell 2 3
 set_io "GPIO1_ESD(0)" iocell 1 6
-set_io "d(6)" iocell 2 6
-set_location "ClockBlock" clockblockcell -1 -1 0
+set_io "\LCD:LCDPort(4)\" iocell 2 4
 # Note: port 12 is the logical name for port 7
 set_io "GPIO4_ESD(0)" iocell 12 7
-set_io "d(3)" iocell 2 3
 set_io "Tx(0)" iocell 6 7
 set_io "SD_FINAL(0)" iocell 1 5
 set_location "\ADC_DelSig_1:DSM\" dsmodcell -1 -1 0
 set_location "\CAN:CanIP\" cancell -1 -1 0
-set_io "d(0)" iocell 2 0
 set_io "SD_ACC_OUT(0)" iocell 1 3
 set_io "Rx(0)" iocell 6 6
-set_io "D_WR(0)" iocell 0 2
 set_io "SD_OUT(0)" iocell 1 4
 set_io "BMS_Fault(0)" iocell 3 7
-set_io "D_RD(0)" iocell 0 5
-# Note: port 15 is the logical name for port 8
-set_io "D_CS(0)" iocell 15 4
-set_io "d(1)" iocell 2 1
-set_io "d(4)" iocell 2 4
-set_location "\GraphicLCDIntf:StsReg\" statuscell 1 3 3 
+set_location "ClockBlock" clockblockcell -1 -1 0
 # Note: port 12 is the logical name for port 7
 set_io "GPIO3_ESD(0)" iocell 12 6
 set_io "SD_IN(0)" iocell 1 2
-set_io "d(2)" iocell 2 2
 set_io "IMD_Fault(0)" iocell 3 6
-set_io "d(7)" iocell 2 7
-# Note: port 15 is the logical name for port 8
-set_io "D_RS(0)" iocell 15 5
-set_location "\ADC_DelSig_1:IRQ\" interrupt -1 -1 29
 set_location "\CAN:isr\" interrupt -1 -1 16
+set_location "\ADC_DelSig_1:IRQ\" interrupt -1 -1 29
 set_io "GPIO2_ESD(0)" iocell 1 7
+set_io "\LCD:LCDPort(0)\" iocell 2 0
 set_io "AIR_NEG(0)" iocell 5 4
 set_io "AIR_POS(0)" iocell 5 5
 set_io "Precharge(0)" iocell 5 6
 set_io "Current_Analog(0)" iocell 3 5
 set_location "\ADC_DelSig_1:DEC\" decimatorcell -1 -1 0
-set_location "\GraphicLCDIntf:LsbReg\" statuscell 0 3 3 
+set_io "\LCD:LCDPort(2)\" iocell 2 2
+set_io "\LCD:LCDPort(1)\" iocell 2 1

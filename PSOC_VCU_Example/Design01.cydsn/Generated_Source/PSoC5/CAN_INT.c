@@ -428,13 +428,9 @@
                         /* RX Full mailboxes handler */
                         switch(mailboxNumber)
                         {
-                            case 0u : CAN_ReceiveMsgTorque_Request_Command();
+                            case 0u : CAN_ReceiveMsgvcu_torque_request();
                             break;
-                            case 1u : CAN_ReceiveMsgMC_Debug();
-                            break;
-                            case 2u : CAN_ReceiveMsgMC_ESTOP();
-                            break;
-                            case 3u : CAN_ReceiveMsgBSPD_Flags();
+                            case 1u : CAN_ReceiveMsgbms_status();
                             break;
                             case 4u : CAN_ReceiveMsgMC_Fault();
                             break;
