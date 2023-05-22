@@ -1,0 +1,6 @@
+C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10\PEI_Firmware_FE10.cydsn\PEI_Firmware_FE10.cyprj|72e3b8af-262e-42b1-be2e-4114479054a2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|99f40cc6-4f88-44b8-bffb-cb0ac562b867
+C:\Users\leoja\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|ce9ef6f2-8418-4bcd-a787-bebaa65362e5
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fa7de7e1-003f-466a-beeb-37216668f2de
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|1c9da9e2-2757-4598-995c-9b1c46b09dc9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3f34619f-5493-49dd-a313-31256bff9fd2

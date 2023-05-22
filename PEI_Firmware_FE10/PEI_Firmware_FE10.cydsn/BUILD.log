@@ -1,0 +1,59 @@
+--------------- Build Started: 05/21/2023 14:27:53 Project: PEI_Firmware_FE10, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\leoja\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10\PEI_Firmware_FE10.cydsn\PEI_Firmware_FE10.cyprj -d CY8C5868AXI-LP035 -s C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10\PEI_Firmware_FE10.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+Elaborating Design...
+HDL Generation...
+Synthesis...
+Tech Mapping...
+ADD: pft.M0040: information: The following 23 pin(s) will be assigned a location by the fitter: \LCD:LCDPort(0)\, \LCD:LCDPort(1)\, \LCD:LCDPort(2)\, \LCD:LCDPort(3)\, \LCD:LCDPort(4)\, \LCD:LCDPort(5)\, \LCD:LCDPort(6)\, AIR_NEG(0), AIR_POS(0), BMS_Fault(0), Current_Analog(0), GPIO1_ESD(0), GPIO2_ESD(0), GPIO3_ESD(0), GPIO4_ESD(0), IMD_Fault(0), Precharge(0), Rx(0), SD_ACC_OUT(0), SD_FINAL(0), SD_IN(0), SD_OUT(0), Tx(0)
+Analog Placement...
+Info: apr.M0002: Analog signal "\ADC_DelSig_1:Net_35\" is connected to one terminal only. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 39% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 60% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 79% done. (App=cydsfit)
+Analog Routing...
+Analog Code Generation...
+Digital Placement...
+Digital Routing...
+Bitstream Generation...
+Bitstream Verification...
+Static timing analysis...
+API Generation...
+Dependency Generation...
+Cleanup...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/can_manager.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c can_manager.c -o .\CortexM3\ARM_GCC_541\Debug\can_manager.o
+In file included from Generated_Source\PSoC5/project.h:35:0,
+                 from can_manager.h:9,
+                 from can_manager.c:14:
+Generated_Source\PSoC5/CAN.h:505:28: error: expected identifier or '(' before 'volatile'
+ #define CAN_TX          ( (volatile CAN_TX_STRUCT XDATA *) CAN_CanIP__TX0_CMD)
+                            ^
+Generated_Source\PSoC5/CAN.h:929:40: note: in expansion of macro 'CAN_TX'
+     #define CAN_TX_DATA_BYTE1(i)       CAN_TX[i].txdata.byte[CAN_DATA_BYTE_1]
+                                        ^
+can_manager.c:17:1: note: in expansion of macro 'CAN_TX_DATA_BYTE1'
+ CAN_TX_DATA_BYTE1(CAN_TX_MAILBOX_PEI_CHARGER) = 
+ ^
+In file included from Generated_Source\PSoC5/cyfitter.h:20:0,
+                 from Generated_Source\PSoC5/cytypes.h:37,
+                 from Generated_Source\PSoC5/cyfitter_cfg.h:20,
+                 from Generated_Source\PSoC5/project.h:17,
+                 from can_manager.h:9,
+                 from can_manager.c:14:
+Generated_Source\PSoC5/cydevice_trm.h:3063:28: error: expected ')' before numeric constant
+ #define CYREG_CAN0_TX0_CMD 0x4000a020u
+                            ^
+Generated_Source\PSoC5/cyfitter.h:229:28: note: in expansion of macro 'CYREG_CAN0_TX0_CMD'
+ #define CAN_CanIP__TX0_CMD CYREG_CAN0_TX0_CMD
+                            ^
+Generated_Source\PSoC5/CAN.h:505:60: note: in expansion of macro 'CAN_CanIP__TX0_CMD'
+ #define CAN_TX          ( (volatile CAN_TX_STRUCT XDATA *) CAN_CanIP__TX0_CMD)
+                                                            ^
+Generated_Source\PSoC5/CAN.h:929:40: note: in expansion of macro 'CAN_TX'
+     #define CAN_TX_DATA_BYTE1(i)       CAN_TX[i].txdata.byte[CAN_DATA_BYTE_1]
+                                        ^
+can_manager.c:17:1: note: in expansion of macro 'CAN_TX_DATA_BYTE1'
+ CAN_TX_DATA_BYTE1(CAN_TX_MAILBOX_PEI_CHARGER) = 
+ ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Build Failed: 05/21/2023 14:28:20 ---------------

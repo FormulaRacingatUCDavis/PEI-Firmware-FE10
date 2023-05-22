@@ -1,0 +1,561 @@
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"can_manager.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.can_send_PEI,"ax",%progbits
+  20              		.align	2
+  21              		.global	can_send_PEI
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	can_send_PEI, %function
+  25              	can_send_PEI:
+  26              	.LFB63:
+  27              		.file 1 "can_manager.c"
+   1:can_manager.c **** /* ========================================
+   2:can_manager.c ****  * Can API for FRUCD
+   3:can_manager.c ****  * Schuyler Alschuler 2016 - 2017
+   4:can_manager.c ****  * ========================================
+   5:can_manager.c **** */
+   6:can_manager.c **** 
+   7:can_manager.c **** /*******************************************
+   8:can_manager.c ****  * Used to interface dashboard with CAN bus
+   9:can_manager.c ****  * some functinality can be found in CAN_TX_RX_func.c
+  10:can_manager.c ****  * which is a generated source file
+  11:can_manager.c ****  * see the can component of the top design for specific mailboxes
+  12:can_manager.c ****  ******************************************/
+  13:can_manager.c **** 
+  14:can_manager.c **** #include "can_manager.h"
+  15:can_manager.c **** #include "CAN.h"
+  16:can_manager.c **** 
+  17:can_manager.c **** 
+  18:can_manager.c **** //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
+  19:can_manager.c **** /* Used for debug purposes
+  20:can_manager.c **** void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
+  21:can_manager.c **** {
+  22:can_manager.c ****     uint8_t data[8] = {0};
+  23:can_manager.c ****     data[3] = air_neg;
+  24:can_manager.c ****     data[4] = air_pos;
+  25:can_manager.c ****     can_send(data, 0x383); 
+  26:can_manager.c **** }
+  27:can_manager.c **** */
+  28:can_manager.c **** 
+  29:can_manager.c **** void can_send_PEI(uint8_t current_upper, uint8_t current_lower, uint8_t shutdown_flags)
+  30:can_manager.c **** {
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 2
+
+
+  28              		.loc 1 30 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  34 0000 7047     		bx	lr
+  35              		.cfi_endproc
+  36              	.LFE63:
+  37              		.size	can_send_PEI, .-can_send_PEI
+  38 0002 00BF     		.text
+  39              	.Letext0:
+  40              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  41              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  42              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+  43              		.section	.debug_info,"",%progbits
+  44              	.Ldebug_info0:
+  45 0000 20010000 		.4byte	0x120
+  46 0004 0400     		.2byte	0x4
+  47 0006 00000000 		.4byte	.Ldebug_abbrev0
+  48 000a 04       		.byte	0x4
+  49 000b 01       		.uleb128 0x1
+  50 000c 3B000000 		.4byte	.LASF21
+  51 0010 0C       		.byte	0xc
+  52 0011 33010000 		.4byte	.LASF22
+  53 0015 95010000 		.4byte	.LASF23
+  54 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  55 001d 00000000 		.4byte	0
+  56 0021 00000000 		.4byte	.Ldebug_line0
+  57 0025 02       		.uleb128 0x2
+  58 0026 01       		.byte	0x1
+  59 0027 06       		.byte	0x6
+  60 0028 5E010000 		.4byte	.LASF0
+  61 002c 03       		.uleb128 0x3
+  62 002d 1B010000 		.4byte	.LASF4
+  63 0031 02       		.byte	0x2
+  64 0032 1D       		.byte	0x1d
+  65 0033 37000000 		.4byte	0x37
+  66 0037 02       		.uleb128 0x2
+  67 0038 01       		.byte	0x1
+  68 0039 08       		.byte	0x8
+  69 003a 0D010000 		.4byte	.LASF1
+  70 003e 02       		.uleb128 0x2
+  71 003f 02       		.byte	0x2
+  72 0040 05       		.byte	0x5
+  73 0041 F1010000 		.4byte	.LASF2
+  74 0045 02       		.uleb128 0x2
+  75 0046 02       		.byte	0x2
+  76 0047 07       		.byte	0x7
+  77 0048 0E000000 		.4byte	.LASF3
+  78 004c 03       		.uleb128 0x3
+  79 004d 76010000 		.4byte	.LASF5
+  80 0051 02       		.byte	0x2
+  81 0052 3F       		.byte	0x3f
+  82 0053 57000000 		.4byte	0x57
+  83 0057 02       		.uleb128 0x2
+  84 0058 04       		.byte	0x4
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 3
+
+
+  85 0059 05       		.byte	0x5
+  86 005a 2A010000 		.4byte	.LASF6
+  87 005e 02       		.uleb128 0x2
+  88 005f 04       		.byte	0x4
+  89 0060 07       		.byte	0x7
+  90 0061 C9000000 		.4byte	.LASF7
+  91 0065 02       		.uleb128 0x2
+  92 0066 08       		.byte	0x8
+  93 0067 05       		.byte	0x5
+  94 0068 00000000 		.4byte	.LASF8
+  95 006c 02       		.uleb128 0x2
+  96 006d 08       		.byte	0x8
+  97 006e 07       		.byte	0x7
+  98 006f DB000000 		.4byte	.LASF9
+  99 0073 04       		.uleb128 0x4
+ 100 0074 04       		.byte	0x4
+ 101 0075 05       		.byte	0x5
+ 102 0076 696E7400 		.ascii	"int\000"
+ 103 007a 02       		.uleb128 0x2
+ 104 007b 04       		.byte	0x4
+ 105 007c 07       		.byte	0x7
+ 106 007d 21000000 		.4byte	.LASF10
+ 107 0081 03       		.uleb128 0x3
+ 108 0082 05010000 		.4byte	.LASF11
+ 109 0086 03       		.byte	0x3
+ 110 0087 18       		.byte	0x18
+ 111 0088 2C000000 		.4byte	0x2c
+ 112 008c 03       		.uleb128 0x3
+ 113 008d FB010000 		.4byte	.LASF12
+ 114 0091 03       		.byte	0x3
+ 115 0092 2C       		.byte	0x2c
+ 116 0093 4C000000 		.4byte	0x4c
+ 117 0097 02       		.uleb128 0x2
+ 118 0098 04       		.byte	0x4
+ 119 0099 04       		.byte	0x4
+ 120 009a 80010000 		.4byte	.LASF13
+ 121 009e 02       		.uleb128 0x2
+ 122 009f 08       		.byte	0x8
+ 123 00a0 04       		.byte	0x4
+ 124 00a1 41010000 		.4byte	.LASF14
+ 125 00a5 02       		.uleb128 0x2
+ 126 00a6 01       		.byte	0x1
+ 127 00a7 08       		.byte	0x8
+ 128 00a8 25010000 		.4byte	.LASF15
+ 129 00ac 02       		.uleb128 0x2
+ 130 00ad 08       		.byte	0x8
+ 131 00ae 04       		.byte	0x4
+ 132 00af 6A010000 		.4byte	.LASF16
+ 133 00b3 02       		.uleb128 0x2
+ 134 00b4 04       		.byte	0x4
+ 135 00b5 07       		.byte	0x7
+ 136 00b6 48010000 		.4byte	.LASF17
+ 137 00ba 05       		.uleb128 0x5
+ 138 00bb 2E000000 		.4byte	.LASF24
+ 139 00bf 01       		.byte	0x1
+ 140 00c0 1D       		.byte	0x1d
+ 141 00c1 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 4
+
+
+ 142 00c5 02000000 		.4byte	.LFE63-.LFB63
+ 143 00c9 01       		.uleb128 0x1
+ 144 00ca 9C       		.byte	0x9c
+ 145 00cb 02010000 		.4byte	0x102
+ 146 00cf 06       		.uleb128 0x6
+ 147 00d0 03020000 		.4byte	.LASF18
+ 148 00d4 01       		.byte	0x1
+ 149 00d5 1D       		.byte	0x1d
+ 150 00d6 81000000 		.4byte	0x81
+ 151 00da 01       		.uleb128 0x1
+ 152 00db 50       		.byte	0x50
+ 153 00dc 06       		.uleb128 0x6
+ 154 00dd F7000000 		.4byte	.LASF19
+ 155 00e1 01       		.byte	0x1
+ 156 00e2 1D       		.byte	0x1d
+ 157 00e3 81000000 		.4byte	0x81
+ 158 00e7 01       		.uleb128 0x1
+ 159 00e8 51       		.byte	0x51
+ 160 00e9 06       		.uleb128 0x6
+ 161 00ea 86010000 		.4byte	.LASF20
+ 162 00ee 01       		.byte	0x1
+ 163 00ef 1D       		.byte	0x1d
+ 164 00f0 81000000 		.4byte	0x81
+ 165 00f4 01       		.uleb128 0x1
+ 166 00f5 52       		.byte	0x52
+ 167 00f6 07       		.uleb128 0x7
+ 168 00f7 F2000000 		.4byte	.LASF25
+ 169 00fb 01       		.byte	0x1
+ 170 00fc 1F       		.byte	0x1f
+ 171 00fd 02010000 		.4byte	0x102
+ 172 0101 00       		.byte	0
+ 173 0102 08       		.uleb128 0x8
+ 174 0103 81000000 		.4byte	0x81
+ 175 0107 12010000 		.4byte	0x112
+ 176 010b 09       		.uleb128 0x9
+ 177 010c B3000000 		.4byte	0xb3
+ 178 0110 07       		.byte	0x7
+ 179 0111 00       		.byte	0
+ 180 0112 0A       		.uleb128 0xa
+ 181 0113 51010000 		.4byte	.LASF26
+ 182 0117 04       		.byte	0x4
+ 183 0118 1207     		.2byte	0x712
+ 184 011a 1E010000 		.4byte	0x11e
+ 185 011e 0B       		.uleb128 0xb
+ 186 011f 8C000000 		.4byte	0x8c
+ 187 0123 00       		.byte	0
+ 188              		.section	.debug_abbrev,"",%progbits
+ 189              	.Ldebug_abbrev0:
+ 190 0000 01       		.uleb128 0x1
+ 191 0001 11       		.uleb128 0x11
+ 192 0002 01       		.byte	0x1
+ 193 0003 25       		.uleb128 0x25
+ 194 0004 0E       		.uleb128 0xe
+ 195 0005 13       		.uleb128 0x13
+ 196 0006 0B       		.uleb128 0xb
+ 197 0007 03       		.uleb128 0x3
+ 198 0008 0E       		.uleb128 0xe
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 5
+
+
+ 199 0009 1B       		.uleb128 0x1b
+ 200 000a 0E       		.uleb128 0xe
+ 201 000b 55       		.uleb128 0x55
+ 202 000c 17       		.uleb128 0x17
+ 203 000d 11       		.uleb128 0x11
+ 204 000e 01       		.uleb128 0x1
+ 205 000f 10       		.uleb128 0x10
+ 206 0010 17       		.uleb128 0x17
+ 207 0011 00       		.byte	0
+ 208 0012 00       		.byte	0
+ 209 0013 02       		.uleb128 0x2
+ 210 0014 24       		.uleb128 0x24
+ 211 0015 00       		.byte	0
+ 212 0016 0B       		.uleb128 0xb
+ 213 0017 0B       		.uleb128 0xb
+ 214 0018 3E       		.uleb128 0x3e
+ 215 0019 0B       		.uleb128 0xb
+ 216 001a 03       		.uleb128 0x3
+ 217 001b 0E       		.uleb128 0xe
+ 218 001c 00       		.byte	0
+ 219 001d 00       		.byte	0
+ 220 001e 03       		.uleb128 0x3
+ 221 001f 16       		.uleb128 0x16
+ 222 0020 00       		.byte	0
+ 223 0021 03       		.uleb128 0x3
+ 224 0022 0E       		.uleb128 0xe
+ 225 0023 3A       		.uleb128 0x3a
+ 226 0024 0B       		.uleb128 0xb
+ 227 0025 3B       		.uleb128 0x3b
+ 228 0026 0B       		.uleb128 0xb
+ 229 0027 49       		.uleb128 0x49
+ 230 0028 13       		.uleb128 0x13
+ 231 0029 00       		.byte	0
+ 232 002a 00       		.byte	0
+ 233 002b 04       		.uleb128 0x4
+ 234 002c 24       		.uleb128 0x24
+ 235 002d 00       		.byte	0
+ 236 002e 0B       		.uleb128 0xb
+ 237 002f 0B       		.uleb128 0xb
+ 238 0030 3E       		.uleb128 0x3e
+ 239 0031 0B       		.uleb128 0xb
+ 240 0032 03       		.uleb128 0x3
+ 241 0033 08       		.uleb128 0x8
+ 242 0034 00       		.byte	0
+ 243 0035 00       		.byte	0
+ 244 0036 05       		.uleb128 0x5
+ 245 0037 2E       		.uleb128 0x2e
+ 246 0038 01       		.byte	0x1
+ 247 0039 3F       		.uleb128 0x3f
+ 248 003a 19       		.uleb128 0x19
+ 249 003b 03       		.uleb128 0x3
+ 250 003c 0E       		.uleb128 0xe
+ 251 003d 3A       		.uleb128 0x3a
+ 252 003e 0B       		.uleb128 0xb
+ 253 003f 3B       		.uleb128 0x3b
+ 254 0040 0B       		.uleb128 0xb
+ 255 0041 27       		.uleb128 0x27
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 6
+
+
+ 256 0042 19       		.uleb128 0x19
+ 257 0043 11       		.uleb128 0x11
+ 258 0044 01       		.uleb128 0x1
+ 259 0045 12       		.uleb128 0x12
+ 260 0046 06       		.uleb128 0x6
+ 261 0047 40       		.uleb128 0x40
+ 262 0048 18       		.uleb128 0x18
+ 263 0049 9742     		.uleb128 0x2117
+ 264 004b 19       		.uleb128 0x19
+ 265 004c 01       		.uleb128 0x1
+ 266 004d 13       		.uleb128 0x13
+ 267 004e 00       		.byte	0
+ 268 004f 00       		.byte	0
+ 269 0050 06       		.uleb128 0x6
+ 270 0051 05       		.uleb128 0x5
+ 271 0052 00       		.byte	0
+ 272 0053 03       		.uleb128 0x3
+ 273 0054 0E       		.uleb128 0xe
+ 274 0055 3A       		.uleb128 0x3a
+ 275 0056 0B       		.uleb128 0xb
+ 276 0057 3B       		.uleb128 0x3b
+ 277 0058 0B       		.uleb128 0xb
+ 278 0059 49       		.uleb128 0x49
+ 279 005a 13       		.uleb128 0x13
+ 280 005b 02       		.uleb128 0x2
+ 281 005c 18       		.uleb128 0x18
+ 282 005d 00       		.byte	0
+ 283 005e 00       		.byte	0
+ 284 005f 07       		.uleb128 0x7
+ 285 0060 34       		.uleb128 0x34
+ 286 0061 00       		.byte	0
+ 287 0062 03       		.uleb128 0x3
+ 288 0063 0E       		.uleb128 0xe
+ 289 0064 3A       		.uleb128 0x3a
+ 290 0065 0B       		.uleb128 0xb
+ 291 0066 3B       		.uleb128 0x3b
+ 292 0067 0B       		.uleb128 0xb
+ 293 0068 49       		.uleb128 0x49
+ 294 0069 13       		.uleb128 0x13
+ 295 006a 00       		.byte	0
+ 296 006b 00       		.byte	0
+ 297 006c 08       		.uleb128 0x8
+ 298 006d 01       		.uleb128 0x1
+ 299 006e 01       		.byte	0x1
+ 300 006f 49       		.uleb128 0x49
+ 301 0070 13       		.uleb128 0x13
+ 302 0071 01       		.uleb128 0x1
+ 303 0072 13       		.uleb128 0x13
+ 304 0073 00       		.byte	0
+ 305 0074 00       		.byte	0
+ 306 0075 09       		.uleb128 0x9
+ 307 0076 21       		.uleb128 0x21
+ 308 0077 00       		.byte	0
+ 309 0078 49       		.uleb128 0x49
+ 310 0079 13       		.uleb128 0x13
+ 311 007a 2F       		.uleb128 0x2f
+ 312 007b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 7
+
+
+ 313 007c 00       		.byte	0
+ 314 007d 00       		.byte	0
+ 315 007e 0A       		.uleb128 0xa
+ 316 007f 34       		.uleb128 0x34
+ 317 0080 00       		.byte	0
+ 318 0081 03       		.uleb128 0x3
+ 319 0082 0E       		.uleb128 0xe
+ 320 0083 3A       		.uleb128 0x3a
+ 321 0084 0B       		.uleb128 0xb
+ 322 0085 3B       		.uleb128 0x3b
+ 323 0086 05       		.uleb128 0x5
+ 324 0087 49       		.uleb128 0x49
+ 325 0088 13       		.uleb128 0x13
+ 326 0089 3F       		.uleb128 0x3f
+ 327 008a 19       		.uleb128 0x19
+ 328 008b 3C       		.uleb128 0x3c
+ 329 008c 19       		.uleb128 0x19
+ 330 008d 00       		.byte	0
+ 331 008e 00       		.byte	0
+ 332 008f 0B       		.uleb128 0xb
+ 333 0090 35       		.uleb128 0x35
+ 334 0091 00       		.byte	0
+ 335 0092 49       		.uleb128 0x49
+ 336 0093 13       		.uleb128 0x13
+ 337 0094 00       		.byte	0
+ 338 0095 00       		.byte	0
+ 339 0096 00       		.byte	0
+ 340              		.section	.debug_aranges,"",%progbits
+ 341 0000 1C000000 		.4byte	0x1c
+ 342 0004 0200     		.2byte	0x2
+ 343 0006 00000000 		.4byte	.Ldebug_info0
+ 344 000a 04       		.byte	0x4
+ 345 000b 00       		.byte	0
+ 346 000c 0000     		.2byte	0
+ 347 000e 0000     		.2byte	0
+ 348 0010 00000000 		.4byte	.LFB63
+ 349 0014 02000000 		.4byte	.LFE63-.LFB63
+ 350 0018 00000000 		.4byte	0
+ 351 001c 00000000 		.4byte	0
+ 352              		.section	.debug_ranges,"",%progbits
+ 353              	.Ldebug_ranges0:
+ 354 0000 00000000 		.4byte	.LFB63
+ 355 0004 02000000 		.4byte	.LFE63
+ 356 0008 00000000 		.4byte	0
+ 357 000c 00000000 		.4byte	0
+ 358              		.section	.debug_line,"",%progbits
+ 359              	.Ldebug_line0:
+ 360 0000 5B010000 		.section	.debug_str,"MS",%progbits,1
+ 360      02004601 
+ 360      00000201 
+ 360      FB0E0D00 
+ 360      01010101 
+ 361              	.LASF8:
+ 362 0000 6C6F6E67 		.ascii	"long long int\000"
+ 362      206C6F6E 
+ 362      6720696E 
+ 362      7400
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 8
+
+
+ 363              	.LASF3:
+ 364 000e 73686F72 		.ascii	"short unsigned int\000"
+ 364      7420756E 
+ 364      7369676E 
+ 364      65642069 
+ 364      6E7400
+ 365              	.LASF10:
+ 366 0021 756E7369 		.ascii	"unsigned int\000"
+ 366      676E6564 
+ 366      20696E74 
+ 366      00
+ 367              	.LASF24:
+ 368 002e 63616E5F 		.ascii	"can_send_PEI\000"
+ 368      73656E64 
+ 368      5F504549 
+ 368      00
+ 369              	.LASF21:
+ 370 003b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 370      43313120 
+ 370      352E342E 
+ 370      31203230 
+ 370      31363036 
+ 371 006e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 371      20726576 
+ 371      6973696F 
+ 371      6E203233 
+ 371      37373135 
+ 372 00a1 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 372      66756E63 
+ 372      74696F6E 
+ 372      2D736563 
+ 372      74696F6E 
+ 373              	.LASF7:
+ 374 00c9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 374      20756E73 
+ 374      69676E65 
+ 374      6420696E 
+ 374      7400
+ 375              	.LASF9:
+ 376 00db 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 376      206C6F6E 
+ 376      6720756E 
+ 376      7369676E 
+ 376      65642069 
+ 377              	.LASF25:
+ 378 00f2 64617461 		.ascii	"data\000"
+ 378      00
+ 379              	.LASF19:
+ 380 00f7 63757272 		.ascii	"current_lower\000"
+ 380      656E745F 
+ 380      6C6F7765 
+ 380      7200
+ 381              	.LASF11:
+ 382 0105 75696E74 		.ascii	"uint8_t\000"
+ 382      385F7400 
+ 383              	.LASF1:
+ 384 010d 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 9
+
+
+ 384      676E6564 
+ 384      20636861 
+ 384      7200
+ 385              	.LASF4:
+ 386 011b 5F5F7569 		.ascii	"__uint8_t\000"
+ 386      6E74385F 
+ 386      7400
+ 387              	.LASF15:
+ 388 0125 63686172 		.ascii	"char\000"
+ 388      00
+ 389              	.LASF6:
+ 390 012a 6C6F6E67 		.ascii	"long int\000"
+ 390      20696E74 
+ 390      00
+ 391              	.LASF22:
+ 392 0133 63616E5F 		.ascii	"can_manager.c\000"
+ 392      6D616E61 
+ 392      6765722E 
+ 392      6300
+ 393              	.LASF14:
+ 394 0141 646F7562 		.ascii	"double\000"
+ 394      6C6500
+ 395              	.LASF17:
+ 396 0148 73697A65 		.ascii	"sizetype\000"
+ 396      74797065 
+ 396      00
+ 397              	.LASF26:
+ 398 0151 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 398      52784275 
+ 398      66666572 
+ 398      00
+ 399              	.LASF0:
+ 400 015e 7369676E 		.ascii	"signed char\000"
+ 400      65642063 
+ 400      68617200 
+ 401              	.LASF16:
+ 402 016a 6C6F6E67 		.ascii	"long double\000"
+ 402      20646F75 
+ 402      626C6500 
+ 403              	.LASF5:
+ 404 0176 5F5F696E 		.ascii	"__int32_t\000"
+ 404      7433325F 
+ 404      7400
+ 405              	.LASF13:
+ 406 0180 666C6F61 		.ascii	"float\000"
+ 406      7400
+ 407              	.LASF20:
+ 408 0186 73687574 		.ascii	"shutdown_flags\000"
+ 408      646F776E 
+ 408      5F666C61 
+ 408      677300
+ 409              	.LASF23:
+ 410 0195 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
+ 410      73657273 
+ 410      5C6C656F 
+ 410      6A615C44 
+ 410      6F63756D 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccfcA7m9.s 			page 10
+
+
+ 411 01c3 4531305C 		.ascii	"E10\\PEI_Firmware_FE10\\PEI_Firmware_FE10.cydsn\000"
+ 411      5045495F 
+ 411      4669726D 
+ 411      77617265 
+ 411      5F464531 
+ 412              	.LASF2:
+ 413 01f1 73686F72 		.ascii	"short int\000"
+ 413      7420696E 
+ 413      7400
+ 414              	.LASF12:
+ 415 01fb 696E7433 		.ascii	"int32_t\000"
+ 415      325F7400 
+ 416              	.LASF18:
+ 417 0203 63757272 		.ascii	"current_upper\000"
+ 417      656E745F 
+ 417      75707065 
+ 417      7200
+ 418              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
