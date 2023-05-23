@@ -16,8 +16,13 @@
 
 extern uint8_t vcu_attached;
 extern uint8_t charger_attached;
-extern uint16_t loop_counter;
 uint8_t baud = 0;
+
+extern uint16_t loops_since_vcu_message;
+extern uint16_t loops_since_bms_message;
+extern uint16_t loops_since_mc_message;
+extern uint16_t loops_since_charger_message;
+extern uint16_t loop_counter;
 
 //temporarily reporting AIR NEG/POS state on 3rd and 4th bytes of PCAN PEI message
 /* Used for debug purposes
@@ -51,12 +56,20 @@ void can_send_CHARGER(uint8_t charge_start){
 }
 
 //checks to see if a can timout has occured and toggles can bus if so
-void check_vcu_charger(){
+void check_can_messages(){
+    //update timeout counters
+    loop_counter++;
+    loops_since_bms_message++;
+    loops_since_charger_message++;
+    loops_since_mc_message++;
+    loops_since_vcu_message++;
+    
+    
     if(charger_attached || vcu_attached){
         return;
     }
     
-    if(loop_counter > CAN_TIMEOUT_LOOP_COUNT){
+    if(loop_counter > CAN_BAUD_TOGGLE_LOOP_COUNT){
         CAN_toggle_baud();
         loop_counter = 0;
     }

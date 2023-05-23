@@ -11,7 +11,8 @@
 #define CHARGER_MAX_CURRENT 26     //1300W/504V = 2.6A
 #define CHARGER_MAX_VOLTAGE 5040   //504V
     
-#define CAN_TIMEOUT_LOOP_COUNT 5
+#define CAN_BAUD_TOGGLE_LOOP_COUNT 5
+#define CAN_TIMEOUT_LOOP_COUNT 10
 
 //Current flags, shutdown circuit
 void can_send_PEI(int16_t current, uint8_t shutdown_flags);

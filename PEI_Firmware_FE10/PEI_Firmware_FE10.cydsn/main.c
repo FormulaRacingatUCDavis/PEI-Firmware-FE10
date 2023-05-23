@@ -19,7 +19,6 @@ volatile uint8_t e_stop;
 //pei parameters
 int16_t current;
 uint8_t relay_flags = 0;
-uint16_t loop_counter = 0;
 
 //vcu parameters
 VCU_STATE vcu_state = LV;
@@ -43,6 +42,12 @@ uint16_t mc_run_faults = 0;
 uint8_t charger_attached = 0;
 uint8_t charger_status = 0;
 
+//loop counters
+uint16_t loop_counter = 0;
+uint16_t loops_since_vcu_message = 0;
+uint16_t loops_since_bms_message = 0;
+uint16_t loops_since_mc_message = 0;
+uint16_t loops_since_charger_message = 0;
 
 int main(void)
 {
@@ -118,7 +123,6 @@ int main(void)
         can_send_PEI(current, shutdown_flags);
         check_vcu_charger();
         update_display();
-        loop_counter++;
         
         CyDelay(1000);
     }
