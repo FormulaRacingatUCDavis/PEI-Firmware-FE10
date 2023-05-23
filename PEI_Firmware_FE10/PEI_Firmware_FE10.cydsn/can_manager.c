@@ -56,7 +56,7 @@ void can_send_CHARGER(uint8_t charge_start){
 }
 
 //checks to see if a can timout has occured and toggles can bus if so
-void check_can_messages(){
+void check_can(){
     //update timeout counters
     loop_counter++;
     loops_since_bms_message++;

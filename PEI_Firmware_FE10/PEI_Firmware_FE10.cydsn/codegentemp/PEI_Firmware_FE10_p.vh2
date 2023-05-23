@@ -1,5 +1,5 @@
 -- Project:   PEI_Firmware_FE10
--- Generated: 05/21/2023 14:28:05
+-- Generated: 05/22/2023 17:24:45
 -- PSoC Creator  4.4
 
 ENTITY PEI_Firmware_FE10 IS
@@ -20,10 +20,10 @@ ENTITY PEI_Firmware_FE10 IS
         AIR_NEG(0)_PAD : OUT std_ulogic;
         AIR_POS(0)_PAD : OUT std_ulogic;
         Precharge(0)_PAD : OUT std_ulogic;
-        GPIO1_ESD(0)_PAD : INOUT std_ulogic;
-        GPIO2_ESD(0)_PAD : INOUT std_ulogic;
-        GPIO3_ESD(0)_PAD : INOUT std_ulogic;
-        GPIO4_ESD(0)_PAD : INOUT std_ulogic;
+        GPIO1_ESD(0)_PAD : IN std_ulogic;
+        GPIO2_ESD(0)_PAD : IN std_ulogic;
+        GPIO3_ESD(0)_PAD : IN std_ulogic;
+        GPIO4_ESD(0)_PAD : IN std_ulogic;
         IMD_Fault(0)_PAD : IN std_ulogic;
         BMS_Fault(0)_PAD : IN std_ulogic);
     ATTRIBUTE voltage_VDDABUF OF __DEFAULT__ : ENTITY IS 5e0;
@@ -1366,7 +1366,7 @@ BEGIN
 
     GPIO1_ESD:logicalport
         GENERIC MAP(
-            drive_mode => "100",
+            drive_mode => "001",
             ibuf_enabled => "1",
             id => "ec79bf7c-91e4-4484-96e0-29f30eede315",
             init_dr_st => "0",
@@ -1402,7 +1402,7 @@ BEGIN
             pa_out_clock_en => -1,
             pa_out_reset => -1,
             pin_aliases => "",
-            pin_mode => "B",
+            pin_mode => "I",
             por_state => 4,
             port_alias_group => "",
             port_alias_required => 0,
@@ -1456,7 +1456,7 @@ BEGIN
 
     GPIO2_ESD:logicalport
         GENERIC MAP(
-            drive_mode => "100",
+            drive_mode => "001",
             ibuf_enabled => "1",
             id => "03d8d2e5-313d-4a04-8f85-f408373699ef",
             init_dr_st => "0",
@@ -1492,7 +1492,7 @@ BEGIN
             pa_out_clock_en => -1,
             pa_out_reset => -1,
             pin_aliases => "",
-            pin_mode => "B",
+            pin_mode => "I",
             por_state => 4,
             port_alias_group => "",
             port_alias_required => 0,
@@ -1546,7 +1546,7 @@ BEGIN
 
     GPIO3_ESD:logicalport
         GENERIC MAP(
-            drive_mode => "100",
+            drive_mode => "001",
             ibuf_enabled => "1",
             id => "36ad7ac5-90a1-4588-88d8-e46ae21f0391",
             init_dr_st => "0",
@@ -1582,7 +1582,7 @@ BEGIN
             pa_out_clock_en => -1,
             pa_out_reset => -1,
             pin_aliases => "",
-            pin_mode => "B",
+            pin_mode => "I",
             por_state => 4,
             port_alias_group => "",
             port_alias_required => 0,
@@ -1636,7 +1636,7 @@ BEGIN
 
     GPIO4_ESD:logicalport
         GENERIC MAP(
-            drive_mode => "100",
+            drive_mode => "001",
             ibuf_enabled => "1",
             id => "6dd078a1-55d2-4121-9591-cb84ac076e95",
             init_dr_st => "0",
@@ -1672,7 +1672,7 @@ BEGIN
             pa_out_clock_en => -1,
             pa_out_reset => -1,
             pin_aliases => "",
-            pin_mode => "B",
+            pin_mode => "I",
             por_state => 4,
             port_alias_group => "",
             port_alias_required => 0,

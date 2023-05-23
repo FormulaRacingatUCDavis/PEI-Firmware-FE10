@@ -432,6 +432,8 @@
                             break;
                             case 1u : CAN_ReceiveMsgbms_status();
                             break;
+                            case 2u : CAN_ReceiveMsgcharger_status();
+                            break;
                             case 3u : CAN_ReceiveMsgMC_State();
                             break;
                             case 4u : CAN_ReceiveMsgMC_Fault();

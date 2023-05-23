@@ -2,7 +2,7 @@
 --	Conversion of PEI_Firmware_FE10.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun May 21 14:28:02 2023
+--	Mon May 22 17:24:44 2023
 --
 
 USE cypress.cypress.all;
@@ -90,22 +90,22 @@ TERMINAL tmpSIOVREF__Precharge_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Precharge_net_0 : bit;
 SIGNAL tmpOE__GPIO1_ESD_net_0 : bit;
 SIGNAL tmpFB_0__GPIO1_ESD_net_0 : bit;
-SIGNAL Net_27 : bit;
+SIGNAL tmpIO_0__GPIO1_ESD_net_0 : bit;
 TERMINAL tmpSIOVREF__GPIO1_ESD_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__GPIO1_ESD_net_0 : bit;
 SIGNAL tmpOE__GPIO2_ESD_net_0 : bit;
 SIGNAL tmpFB_0__GPIO2_ESD_net_0 : bit;
-SIGNAL Net_28 : bit;
+SIGNAL tmpIO_0__GPIO2_ESD_net_0 : bit;
 TERMINAL tmpSIOVREF__GPIO2_ESD_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__GPIO2_ESD_net_0 : bit;
 SIGNAL tmpOE__GPIO3_ESD_net_0 : bit;
 SIGNAL tmpFB_0__GPIO3_ESD_net_0 : bit;
-SIGNAL Net_29 : bit;
+SIGNAL tmpIO_0__GPIO3_ESD_net_0 : bit;
 TERMINAL tmpSIOVREF__GPIO3_ESD_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__GPIO3_ESD_net_0 : bit;
 SIGNAL tmpOE__GPIO4_ESD_net_0 : bit;
 SIGNAL tmpFB_0__GPIO4_ESD_net_0 : bit;
-SIGNAL Net_30 : bit;
+SIGNAL tmpIO_0__GPIO4_ESD_net_0 : bit;
 TERMINAL tmpSIOVREF__GPIO4_ESD_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__GPIO4_ESD_net_0 : bit;
 SIGNAL tmpOE__IMD_Fault_net_0 : bit;
@@ -896,7 +896,7 @@ Precharge:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__Precharge_net_0);
 GPIO1_ESD:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"ec79bf7c-91e4-4484-96e0-29f30eede315",
-		drive_mode=>"100",
+		drive_mode=>"001",
 		ibuf_enabled=>"1",
 		init_dr_st=>"0",
 		input_sync=>"0",
@@ -921,7 +921,7 @@ GPIO1_ESD:cy_psoc3_pins_v1_10
 		oe_conn=>"0",
 		oe_reset=>'0',
 		pin_aliases=>"",
-		pin_mode=>"B",
+		pin_mode=>"I",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"00000000",
@@ -954,7 +954,7 @@ GPIO1_ESD:cy_psoc3_pins_v1_10
 		y=>(zero),
 		fb=>(tmpFB_0__GPIO1_ESD_net_0),
 		analog=>(open),
-		io=>Net_27,
+		io=>(tmpIO_0__GPIO1_ESD_net_0),
 		siovref=>(tmpSIOVREF__GPIO1_ESD_net_0),
 		annotation=>(open),
 		in_clock=>zero,
@@ -966,7 +966,7 @@ GPIO1_ESD:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__GPIO1_ESD_net_0);
 GPIO2_ESD:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"03d8d2e5-313d-4a04-8f85-f408373699ef",
-		drive_mode=>"100",
+		drive_mode=>"001",
 		ibuf_enabled=>"1",
 		init_dr_st=>"0",
 		input_sync=>"0",
@@ -991,7 +991,7 @@ GPIO2_ESD:cy_psoc3_pins_v1_10
 		oe_conn=>"0",
 		oe_reset=>'0',
 		pin_aliases=>"",
-		pin_mode=>"B",
+		pin_mode=>"I",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"00000000",
@@ -1024,7 +1024,7 @@ GPIO2_ESD:cy_psoc3_pins_v1_10
 		y=>(zero),
 		fb=>(tmpFB_0__GPIO2_ESD_net_0),
 		analog=>(open),
-		io=>Net_28,
+		io=>(tmpIO_0__GPIO2_ESD_net_0),
 		siovref=>(tmpSIOVREF__GPIO2_ESD_net_0),
 		annotation=>(open),
 		in_clock=>zero,
@@ -1036,7 +1036,7 @@ GPIO2_ESD:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__GPIO2_ESD_net_0);
 GPIO3_ESD:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"36ad7ac5-90a1-4588-88d8-e46ae21f0391",
-		drive_mode=>"100",
+		drive_mode=>"001",
 		ibuf_enabled=>"1",
 		init_dr_st=>"0",
 		input_sync=>"0",
@@ -1061,7 +1061,7 @@ GPIO3_ESD:cy_psoc3_pins_v1_10
 		oe_conn=>"0",
 		oe_reset=>'0',
 		pin_aliases=>"",
-		pin_mode=>"B",
+		pin_mode=>"I",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"00000000",
@@ -1094,7 +1094,7 @@ GPIO3_ESD:cy_psoc3_pins_v1_10
 		y=>(zero),
 		fb=>(tmpFB_0__GPIO3_ESD_net_0),
 		analog=>(open),
-		io=>Net_29,
+		io=>(tmpIO_0__GPIO3_ESD_net_0),
 		siovref=>(tmpSIOVREF__GPIO3_ESD_net_0),
 		annotation=>(open),
 		in_clock=>zero,
@@ -1106,7 +1106,7 @@ GPIO3_ESD:cy_psoc3_pins_v1_10
 		interrupt=>tmpINTERRUPT_0__GPIO3_ESD_net_0);
 GPIO4_ESD:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"6dd078a1-55d2-4121-9591-cb84ac076e95",
-		drive_mode=>"100",
+		drive_mode=>"001",
 		ibuf_enabled=>"1",
 		init_dr_st=>"0",
 		input_sync=>"0",
@@ -1131,7 +1131,7 @@ GPIO4_ESD:cy_psoc3_pins_v1_10
 		oe_conn=>"0",
 		oe_reset=>'0',
 		pin_aliases=>"",
-		pin_mode=>"B",
+		pin_mode=>"I",
 		por_state=>4,
 		sio_group_cnt=>0,
 		sio_hifreq=>"00000000",
@@ -1164,7 +1164,7 @@ GPIO4_ESD:cy_psoc3_pins_v1_10
 		y=>(zero),
 		fb=>(tmpFB_0__GPIO4_ESD_net_0),
 		analog=>(open),
-		io=>Net_30,
+		io=>(tmpIO_0__GPIO4_ESD_net_0),
 		siovref=>(tmpSIOVREF__GPIO4_ESD_net_0),
 		annotation=>(open),
 		in_clock=>zero,

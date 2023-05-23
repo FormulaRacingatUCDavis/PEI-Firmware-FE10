@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2023-05-21T21:28:10Z")
+ (DATE "2023-05-23T00:24:47Z")
  (DESIGN "PEI_Firmware_FE10")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -14,7 +14,7 @@
    (ABSOLUTE
     (INTERCONNECT ClockBlock.clk_bus_glb \\CAN\:isr\\.clock (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.clk_bus_glb \\ADC_DelSig_1\:IRQ\\.clock (0.000:0.000:0.000))
-    (INTERCONNECT Rx\(0\).fb \\CAN\:CanIP\\.can_rx (10.740:10.740:10.740))
+    (INTERCONNECT Rx\(0\).fb \\CAN\:CanIP\\.can_rx (10.754:10.754:10.754))
     (INTERCONNECT \\CAN\:CanIP\\.can_tx Tx\(0\).pin_input (2.951:2.951:2.951))
     (INTERCONNECT \\CAN\:CanIP\\.interrupt \\CAN\:isr\\.interrupt (1.000:1.000:1.000))
     (INTERCONNECT \\ADC_DelSig_1\:DEC\\.interrupt \\ADC_DelSig_1\:IRQ\\.interrupt (1.000:1.000:1.000))

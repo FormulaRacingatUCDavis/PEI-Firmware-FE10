@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
   28:Generated_Source\PSoC5/Current_Analog.c **** *
   29:Generated_Source\PSoC5/Current_Analog.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/Current_Analog.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 2
 
 
   31:Generated_Source\PSoC5/Current_Analog.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
   52              		.size	Current_Analog_Write, .-Current_Analog_Write
   53              		.section	.text.Current_Analog_SetDriveMode,"ax",%progbits
   54              		.align	2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 3
 
 
   55              		.global	Current_Analog_SetDriveMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
   77 0012 00BF     		.align	2
   78              	.L5:
   79 0014 01500040 		.word	1073762305
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 4
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 4
 
 
   80              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  110              		.align	2
  111              		.global	Current_Analog_ReadDataReg
  112              		.thumb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 5
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 5
 
 
  113              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  139              	.Ldebug_info0:
  140 0000 1B010000 		.4byte	0x11b
  141 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 6
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 6
 
 
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -314,7 +314,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 1C020000 		.4byte	.LASF0
+ 155 0028 1D020000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
@@ -322,7 +322,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 03020000 		.4byte	.LASF2
+ 163 0036 04020000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
@@ -330,7 +330,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
  170 0043 05       		.byte	0x5
- 171 0044 13020000 		.4byte	.LASF4
+ 171 0044 14020000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
@@ -352,13 +352,13 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  190 0066 07       		.byte	0x7
  191 0067 14010000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c 0D020000 		.4byte	.LASF12
+ 193 006c 0E020000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
  195 0071 E801     		.2byte	0x1e8
  196 0073 2C000000 		.4byte	0x2c
  197 0077 02       		.uleb128 0x2
  198 0078 04       		.byte	0x4
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 7
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 7
 
 
  199 0079 04       		.byte	0x4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  253 00ef 21000000 		.4byte	.LLST1
  254 00f3 00       		.byte	0
  255 00f4 09       		.uleb128 0x9
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 8
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 8
 
 
  256 00f5 3D010000 		.4byte	.LASF18
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  310 0022 0B       		.uleb128 0xb
  311 0023 3E       		.uleb128 0x3e
  312 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 9
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 9
 
 
  313 0025 03       		.uleb128 0x3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  367 005c 3A       		.uleb128 0x3a
  368 005d 0B       		.uleb128 0xb
  369 005e 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 10
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 10
 
 
  370 005f 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  424 000a 50       		.byte	0x50
  425 000b 0A000000 		.4byte	.LVL2
  426 000f 18000000 		.4byte	.LFE0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 11
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 11
 
 
  427 0013 0400     		.2byte	0x4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  480      02004B00 
  480      00000201 
  480      FB0E0D00 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 12
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 12
 
 
  480      01010101 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  502 00f2 646F7562 		.ascii	"double\000"
  502      6C6500
  503              	.LASF19:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 13
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 13
 
 
  504 00f9 43757272 		.ascii	"Current_Analog_ReadDataReg\000"
@@ -767,32 +767,32 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 1
  520 01a3 63686172 		.ascii	"char\000"
  520      00
  521              	.LASF22:
- 522 01a8 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
+ 522 01a8 443A5C55 		.ascii	"D:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
  522      73657273 
  522      5C6C656F 
  522      6A615C44 
  522      6F63756D 
- 523 01d6 4531305C 		.ascii	"E10\\PSOC_VCU_Example\\PEI_Firmware_FE10.cydsn\000"
- 523      50534F43 
- 523      5F564355 
- 523      5F457861 
- 523      6D706C65 
+ 523 01d6 4531305C 		.ascii	"E10\\PEI_Firmware_FE10\\PEI_Firmware_FE10.cydsn\000"
+ 523      5045495F 
+ 523      4669726D 
+ 523      77617265 
+ 523      5F464531 
  524              	.LASF2:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc6NfnPV.s 			page 14
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccRe3FDj.s 			page 14
 
 
- 525 0203 73686F72 		.ascii	"short int\000"
+ 525 0204 73686F72 		.ascii	"short int\000"
  525      7420696E 
  525      7400
  526              	.LASF12:
- 527 020d 75696E74 		.ascii	"uint8\000"
+ 527 020e 75696E74 		.ascii	"uint8\000"
  527      3800
  528              	.LASF4:
- 529 0213 6C6F6E67 		.ascii	"long int\000"
+ 529 0214 6C6F6E67 		.ascii	"long int\000"
  529      20696E74 
  529      00
  530              	.LASF0:
- 531 021c 7369676E 		.ascii	"signed char\000"
+ 531 021d 7369676E 		.ascii	"signed char\000"
  531      65642063 
  531      68617200 
  532              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

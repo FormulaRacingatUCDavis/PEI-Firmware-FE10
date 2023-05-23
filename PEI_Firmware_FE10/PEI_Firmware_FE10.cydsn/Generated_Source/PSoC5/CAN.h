@@ -85,10 +85,10 @@ extern uint8 CAN_initVar;
 #define CAN_TX7_FUNC_ENABLE            (0u)
 #define CAN_RX0_FUNC_ENABLE            (1u)
 #define CAN_RX1_FUNC_ENABLE            (1u)
+#define CAN_RX2_FUNC_ENABLE            (1u)
 #define CAN_RX3_FUNC_ENABLE            (1u)
 #define CAN_RX4_FUNC_ENABLE            (1u)
 #define CAN_RX5_FUNC_ENABLE            (1u)
-#define CAN_RX2_FUNC_ENABLE            (0u)
 #define CAN_RX6_FUNC_ENABLE            (0u)
 #define CAN_RX7_FUNC_ENABLE            (0u)
 #define CAN_RX8_FUNC_ENABLE            (0u)
@@ -99,7 +99,7 @@ extern uint8 CAN_initVar;
 #define CAN_RX13_FUNC_ENABLE           (0u)
 #define CAN_RX14_FUNC_ENABLE           (0u)
 #define CAN_RX15_FUNC_ENABLE           (0u)
-#define CAN_RX_MAILBOX_TYPE            (0x3Bu)
+#define CAN_RX_MAILBOX_TYPE            (0x3Fu)
 #define CAN_TX_MAILBOX_TYPE            (0x3u)
 
 
@@ -312,7 +312,7 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
     void CAN_ReceiveMsgbms_status(void) ;
 #endif /* CAN_RX1_FUNC_ENABLE */
 #if (CAN_RX2_FUNC_ENABLE)
-    void CAN_ReceiveMsg2(void) ;
+    void CAN_ReceiveMsgcharger_status(void) ;
 #endif /* CAN_RX2_FUNC_ENABLE */
 #if (CAN_RX3_FUNC_ENABLE)
     void CAN_ReceiveMsgMC_State(void) ;
@@ -423,7 +423,7 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 /* RX Defines to link mailbox names with mailbox numbers */
 #define CAN_RX_MAILBOX_vcu_torque_request (0u)
 #define CAN_RX_MAILBOX_bms_status      (1u)
-#define CAN_RX_MAILBOX_2               (2u)
+#define CAN_RX_MAILBOX_charger_status  (2u)
 #define CAN_RX_MAILBOX_MC_State        (3u)
 #define CAN_RX_MAILBOX_MC_Fault        (4u)
 #define CAN_RX_MAILBOX_MC_Voltage      (5u)
@@ -444,9 +444,9 @@ void  CAN_ReceiveMsg(uint8 rxMailbox) ;
 ***************************************/
 
 /* General */
-#define CAN_BITRATE                   (18u)
-#define CAN_CFG_REG_TSEG1             (5u - 1u)
-#define CAN_CFG_REG_TSEG2             (4u - 1u)
+#define CAN_BITRATE                   (11u)
+#define CAN_CFG_REG_TSEG1             (10u - 1u)
+#define CAN_CFG_REG_TSEG2             (5u - 1u)
 #define CAN_CFG_REG_SJW               (4u - 1u)
 #define CAN_SAMPLING_MODE             (0u)
 #define CAN_ARBITER                   (0u)

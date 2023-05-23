@@ -34,7 +34,7 @@ extern uint16_t bms_voltage;
 
 //MC varialbes
 extern int16_t mc_voltage;
-extern uint8_t vsm_state;
+extern uint8_t mc_vsm_state;
 extern uint8_t mc_discharge_state;
 extern uint16_t mc_post_faults;
 extern uint16_t mc_run_faults;
@@ -696,7 +696,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     {
         /* `#START MESSAGE_vcu_torque_request_RECEIVED` */
         
-        
+        loops_since_vcu_message = 0;
+        vcu_attached = 0;
         
         vcu_state = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
         hv_requested = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
@@ -756,7 +757,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX2_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg2
+    * FUNCTION NAME:   CAN_ReceiveMsgcharger_status
     ********************************************************************************
     *
     * Summary:
@@ -774,15 +775,20 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg2(void) 
+    void CAN_ReceiveMsgcharger_status(void) 
     {
-        /* `#START MESSAGE_2_RECEIVED` */
+        /* `#START MESSAGE_charger_status_RECEIVED` */
+        
+        charger_attached = 1;
+        loops_since_charger_message = 0;
+        
+        charger_status = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_charger_status);
 
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_2_CALLBACK
-            CAN_ReceiveMsg_2_Callback();
-        #endif /* CAN_RECEIVE_MSG_2_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_charger_status_CALLBACK
+            CAN_ReceiveMsg_charger_status_Callback();
+        #endif /* CAN_RECEIVE_MSG_charger_status_CALLBACK */
 
         CAN_RX[2u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }
@@ -815,7 +821,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         
         loops_since_mc_message = 0;
         
-        vsm_state = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_State);
+        mc_vsm_state = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_State);
         mc_discharge_state = (CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_State) >> 5) & 0x07; //bits 5-7
 
         /* `#END` */

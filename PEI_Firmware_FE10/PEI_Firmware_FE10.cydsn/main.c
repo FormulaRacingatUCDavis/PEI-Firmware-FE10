@@ -12,11 +12,8 @@
 
 #include "main.h"
 
-//TODO: The state starts at 0
-volatile PEI_STATE_t pei_state = PEI_LV;
-volatile uint8_t e_stop;
-
 //pei parameters
+PEI_STATE_t pei_state = PEI_LV;
 int16_t current;
 uint8_t relay_flags = 0;
 
@@ -48,6 +45,8 @@ uint16_t loops_since_vcu_message = 0;
 uint16_t loops_since_bms_message = 0;
 uint16_t loops_since_mc_message = 0;
 uint16_t loops_since_charger_message = 0;
+
+
 
 int main(void)
 {
@@ -81,10 +80,14 @@ int main(void)
             case PEI_LV:
                 clear_interlock(); // clears interlock, send a message to open AIRs   
                 
-                if(precharge_ready()) {
-                    if(vcu_attached) pei_state = PEI_PRECHARGE;
-                    else if(charger_attached) pei_state = PEI_HV;   //charger doesn't need precharge
+                if(hv_request() && hv_allowed()) {
+                    if(vcu_attached && precharge_ready()){
+                        pei_state = PEI_PRECHARGE;
+                    } else if(charger_attached){
+                        pei_state = PEI_HV;   //charger doesn't need precharge
+                    }
                 }
+                
                 break;
             
             case PEI_PRECHARGE:           
@@ -105,7 +108,7 @@ int main(void)
              case PEI_HV:
                 finish_precharge();
                 
-                if(hv_requested == 0) {
+                if(hv_request() == 0) {
                    pei_state = PEI_LV;
                 }
                 
@@ -121,7 +124,7 @@ int main(void)
         }
 
         can_send_PEI(current, shutdown_flags);
-        check_vcu_charger();
+        check_can();
         update_display();
         
         CyDelay(1000);
@@ -137,16 +140,20 @@ uint8_t hv_request(){
 
 uint8_t hv_allowed(){
     if(SD_FINAL_Read() == 0) return 0;  //shutdown circuit open
+    if(loops_since_bms_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
     
     if(vcu_attached){
         if(mc_post_faults != 0) return 0;   //mc faults
         if(mc_run_faults != 0) return 0;
         if(mc_discharge_state == DISCHARGE_ACTIVE) return 0;  //mc is trying to discharge
+        if(loops_since_mc_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
+        if(loops_since_vcu_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
         
         return 1;
         
     } else if(charger_attached){
         if((charger_status & 0b1011) != 0) return 0; //check charger fault bits
+        if(loops_since_charger_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
 
         return 1;
     } 
@@ -155,12 +162,7 @@ uint8_t hv_allowed(){
 }
 
 uint8_t precharge_ready(){
-    if(hv_allowed() == 0) return 0;
-    if(hv_request() == 0) return 0;
-    
-    if(vcu_attached){
-        if(mc_vsm_state != PRECHARGE_INIT && mc_vsm_state != PRECHARGE_ACTIVE) return 0;
-    }
+    if(mc_vsm_state != PRECHARGE_INIT && mc_vsm_state != PRECHARGE_ACTIVE) return 0;
     
     return 1;                
 }

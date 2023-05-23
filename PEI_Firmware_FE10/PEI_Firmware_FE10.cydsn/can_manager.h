@@ -18,7 +18,7 @@
 void can_send_PEI(int16_t current, uint8_t shutdown_flags);
 void can_send_CHARGER(uint8_t charge_start);
 
-void check_vcu_charger();
+void check_can();
 void CAN_toggle_baud();
 void CAN_to_125KB();
 void CAN_to_500KB();
