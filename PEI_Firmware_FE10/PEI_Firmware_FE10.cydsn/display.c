@@ -10,45 +10,63 @@
  * ========================================
 */
 #include "display.h"
+#include "fsm.h"
 
 extern uint8_t bms_soc;
 extern uint8_t bms_temp;
 extern uint16_t bms_status;
 extern uint16_t bms_voltage;
-extern uint16_t current;
+extern int16_t current;
+extern uint8_t pei_status;
 
 void update_display(){
     LCD_Position(0,0);
     
     if(bms_status & (PACK_TEMP_OVER | PACK_TEMP_UNDER)){
-        LCD_PrintString("BMS TEMP");
+        LCD_PrintString("BMS TEMP     ");
     }else if(bms_status & SPI_FAULT){
-        LCD_PrintString("SPI FAULT");
+        LCD_PrintString("SPI FAULT    ");
     }else if(bms_status & CELL_VOLT_OVER){
-        LCD_PrintString("OVERVOLT");
+        LCD_PrintString("OVERVOLT     ");
     }else if(bms_status & CELL_VOLT_UNDER){
-        LCD_PrintString("UNDERVOLT");
+        LCD_PrintString("UNDERVOLT    ");
     }else if(bms_status & IMBALANCE){
-        LCD_PrintString("IMBALANCE");
+        LCD_PrintString("IMBALANCE    ");
     }else if(bms_status & LOW_SOC){
-        LCD_PrintString("LOW SOC");
+        LCD_PrintString("LOW SOC      ");
+    }else if(pei_status & BMS_TIMEOUT){
+        LCD_PrintString("BMS TIMEOUT  ");
+    }else if(pei_status & MC_FAULT){
+        LCD_PrintString("MC FAULT     ");
+    }else if(pei_status & MC_TIMEOUT){
+        LCD_PrintString("MC TIMEOUT   ");
+    }else if(pei_status & VCU_CHARGER_TIMEOUT){
+        LCD_PrintString("VCU TIMEOUT  ");
+    }else if(pei_status & CHARGER_FAULT){
+        LCD_PrintString("CHARGER FAULT");
+    }else if(pei_status & MC_DISCHARGING){
+        LCD_PrintString("MC DISCHARGE ");
+    }else if(pei_status & SHUTDOWN){
+        LCD_PrintString("SHUTDOWN OPEN");
     }else if(bms_status & CHARGEMODE){
-        LCD_PrintString("CHARGE MODE");
+        LCD_PrintString("CHARGE MODE  ");
     }else{
-        LCD_PrintString("NORMAL");
+        LCD_PrintString("NORMAL       ");
     }
     
-    LCD_Position(1, 0);
+    
     char str[8];
-    sprintf(str, "%u%%", bms_soc);
+    
+    LCD_Position(1, 0);
+    sprintf(str, "%u%% ", bms_soc);
     LCD_PrintString(str);
     
     LCD_Position(1, 5);
-    sprintf(str, "%uC", bms_temp);
+    sprintf(str, "%uC ", bms_temp);
     LCD_PrintString(str);
     
     LCD_Position(1, 10);
-    sprintf(str, "%uA", current);
+    sprintf(str, "%dA  ", current/10);
     LCD_PrintString(str);
 }
 

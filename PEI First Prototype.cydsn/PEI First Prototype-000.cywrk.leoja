@@ -120,7 +120,32 @@
 <v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype.rpt</v>
 <v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds />
+<VisibleNodeIds>
+<v>PEI First Prototype-000</v>
+<v>PEI First Prototype-000\PEI First Prototype</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.elf</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.hex</v>
+<v>PEI First Prototype-000\PEI First Prototype\CortexM3\ARM_GCC_541\Debug\PEI First Prototype.map</v>
+<v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype.gpdsc</v>
+<v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype.rpt</v>
+<v>PEI First Prototype-000\PEI First Prototype\PEI First Prototype_timing.html</v>
+</VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -158,7 +183,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2158, 855" SelectedTabbedMdiWindow="e84d8946-d1df-4b77-9882-6c57a0679925"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2158, 989" SelectedTabbedMdiWindow="e84d8946-d1df-4b77-9882-6c57a0679925"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

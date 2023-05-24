@@ -40,11 +40,13 @@
           <File BuildType="BUILD" Toolchain="">can_manager.c</File>
           <File BuildType="BUILD" Toolchain="">display.c</File>
           <File BuildType="BUILD" Toolchain="">relays.c</File>
+          <File BuildType="BUILD" Toolchain="">fsm.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">display.h</File>
           <File BuildType="BUILD" Toolchain="">can_manager.h</File>
           <File BuildType="BUILD" Toolchain="">main.h</File>
           <File BuildType="BUILD" Toolchain="">relays.h</File>
+          <File BuildType="BUILD" Toolchain="">fsm.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10\PEI_Firmware_FE10.cydsn\Generated_Source\PSoC5">

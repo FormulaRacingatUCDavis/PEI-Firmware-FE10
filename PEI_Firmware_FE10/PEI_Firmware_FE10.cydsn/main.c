@@ -14,6 +14,7 @@
 
 //pei parameters
 PEI_STATE_t pei_state = PEI_LV;
+uint8_t pei_status = NORMAL;
 int16_t current;
 uint8_t relay_flags = 0;
 
@@ -46,8 +47,6 @@ uint16_t loops_since_bms_message = 0;
 uint16_t loops_since_mc_message = 0;
 uint16_t loops_since_charger_message = 0;
 
-
-
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
@@ -63,7 +62,7 @@ int main(void)
     {       
         // shutdown flags, current
         uint8_t shutdown_flags = 0;
-        int16_t current = get_current();
+        current = get_current();
         
         shutdown_flags = relay_flags & 0x07;
         if (IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
@@ -72,6 +71,8 @@ int main(void)
         
         
         //Interlock state machine
+        update_status();
+        
         if(hv_allowed() == 0){
             pei_state = PEI_FAULT;
         }
@@ -131,50 +132,12 @@ int main(void)
     }
 }
 
-uint8_t hv_request(){
-    if(vcu_attached) return hv_requested;     
-    else if(charger_attached) return GPIO1_ESD_Read();
-    
-    return 0;
-} 
 
-uint8_t hv_allowed(){
-    if(SD_FINAL_Read() == 0) return 0;  //shutdown circuit open
-    if(loops_since_bms_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
-    
-    if(vcu_attached){
-        if(mc_post_faults != 0) return 0;   //mc faults
-        if(mc_run_faults != 0) return 0;
-        if(mc_discharge_state == DISCHARGE_ACTIVE) return 0;  //mc is trying to discharge
-        if(loops_since_mc_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
-        if(loops_since_vcu_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
-        
-        return 1;
-        
-    } else if(charger_attached){
-        if((charger_status & 0b1011) != 0) return 0; //check charger fault bits
-        if(loops_since_charger_message > CAN_TIMEOUT_LOOP_COUNT) return 0;
-
-        return 1;
-    } 
-    
-    return 0;
-}
-
-uint8_t precharge_ready(){
-    if(mc_vsm_state != PRECHARGE_INIT && mc_vsm_state != PRECHARGE_ACTIVE) return 0;
-    
-    return 1;                
-}
-
-uint8_t precharge_complete(){    
-    uint16_t threshold = (uint16_t)(((float)bms_voltage)*0.95);
-    return (mc_voltage > threshold);
-}
 
 int16_t get_current(){
     double current_raw_mv = (double)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
     int16_t current = (int16_t)(((current_raw_mv*5.0/3.3) - 2500)/6.667)*10;
     return current;
 }
+
 /* [] END OF FILE */
