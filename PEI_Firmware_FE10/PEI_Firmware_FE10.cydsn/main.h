@@ -16,6 +16,8 @@
 #include "relays.h"
 #include "fsm.h"
 
+#define CAN_MSG_INTERVAL 100
+
 int16_t get_current();
 
 

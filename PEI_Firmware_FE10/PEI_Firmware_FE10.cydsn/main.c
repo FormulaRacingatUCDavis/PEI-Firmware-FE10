@@ -58,77 +58,81 @@ int main(void)
     ADC_DelSig_1_Start();
     LCD_Start();
     
+    uint8_t shutdown_flags = 0;
+    
     for(;;)
     {       
-        // shutdown flags, current
-        uint8_t shutdown_flags = 0;
-        current = get_current();
-        
-        shutdown_flags = relay_flags & 0x07;
-        if (IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
-        if (BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
-        if (SD_FINAL_Read()) shutdown_flags |= (1 << 3);
-        
-        
-        //Interlock state machine
-        update_status();
-        
-        if(hv_allowed() == 0){
-            pei_state = PEI_FAULT;
-        }
-          
-        switch(pei_state){
-            case PEI_LV:
-                clear_interlock(); // clears interlock, send a message to open AIRs   
-                
-                if(hv_request() && hv_allowed()) {
-                    if(vcu_attached && precharge_ready()){
-                        pei_state = PEI_PRECHARGE;
-                    } else if(charger_attached){
-                        pei_state = PEI_HV;   //charger doesn't need precharge
-                    }
-                }
-                
-                break;
+        for(uint8_t i = 0; i < CAN_MSG_INTERVAL; i++){
+            // shutdown flags, current
+            shutdown_flags = 0;
             
-            case PEI_PRECHARGE:           
-                start_precharge();
-                
-                //Todo: Capacitor (gotten value) >= 95% pack voltage (threshold that we measure in testing)
-                //This if statement is incorrect
-                if (precharge_complete()){
-                    pei_state = PEI_HV;
-                }
-
-                if(hv_request() == 0) {
-                   pei_state = PEI_LV;
-                }
-                
-                break;
-                
-             case PEI_HV:
-                finish_precharge();
-                
-                if(hv_request() == 0) {
-                   pei_state = PEI_LV;
-                }
-                
-                break;
-                
-            default:
-                clear_interlock();
+            shutdown_flags = relay_flags & 0x07;
+            if (IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
+            if (BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
+            if (SD_FINAL_Read()) shutdown_flags |= (1 << 3);
+            
+            
+            //Interlock state machine
+            update_status();
+            
+            if(hv_allowed() == 0){
                 pei_state = PEI_FAULT;
+            }
+              
+            switch(pei_state){
+                case PEI_LV:
+                    clear_interlock(); // clears interlock, send a message to open AIRs   
+                    
+                    if(hv_request() && hv_allowed()) {
+                        if(vcu_attached && precharge_ready()){
+                            pei_state = PEI_PRECHARGE;
+                        } else if(charger_attached){
+                            pei_state = PEI_HV;   //charger doesn't need precharge
+                        }
+                    }
+                    
+                    break;
                 
-                if (hv_request() == 0 && hv_allowed()) {
-                    pei_state = PEI_LV;
-                } 
-        }
+                case PEI_PRECHARGE:           
+                    start_precharge();
+                    
+                    //Todo: Capacitor (gotten value) >= 95% pack voltage (threshold that we measure in testing)
+                    //This if statement is incorrect
+                    if (precharge_complete()){
+                        pei_state = PEI_HV;
+                    }
 
-        can_send_PEI(current, shutdown_flags);
-        check_can();
-        update_display();
+                    if(hv_request() == 0) {
+                       pei_state = PEI_LV;
+                    }
+                    
+                    break;
+                    
+                 case PEI_HV:
+                    finish_precharge();
+                    
+                    if(hv_request() == 0) {
+                       pei_state = PEI_LV;
+                    }
+                    
+                    break;
+                    
+                default:
+                    clear_interlock();
+                    pei_state = PEI_FAULT;
+                    
+                    if (hv_request() == 0 && hv_allowed()) {
+                        pei_state = PEI_LV;
+                    } 
+            } //end switch
+
+            check_can();
+            
+        } //end for loop
         
-        CyDelay(1000);
+        current = get_current();
+        update_display();
+        can_send_PEI(current, shutdown_flags);
     }
 }
 
