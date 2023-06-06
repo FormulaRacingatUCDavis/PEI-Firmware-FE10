@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|601807b5-3d80-42c4-a21e-5b6164fb2a02
+D:\Users\leoja\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2f60dbf7-4019-469b-880e-2bcfbd43b972
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|254f5d1d-b376-4bc4-b464-31d271488d81
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8a9750ac-b9d6-42c8-97c7-3f4671eed63c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|2d5473a6-613a-460e-a193-e472fa2fcba0
+D:\Users\leoja\Documents\PSoC Creator\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cyprj|5aae645d-22da-4725-8ac0-74d46a0fe29a
