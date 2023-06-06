@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
   29:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
   30:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
   31:Generated_Source\PSoC5/ADC_DelSig_1.c **** /***************************************
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 2
 
 
   32:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Global data allocation
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
   86:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
   87:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Return:
   88:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  None
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 3
 
 
   89:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  143:Generated_Source\PSoC5/ADC_DelSig_1.c ****                                           ADC_DelSig_1_CFG2);
  144:Generated_Source\PSoC5/ADC_DelSig_1.c ****     #endif /* ADC_DelSig_1_DEFAULT_NUM_CONFIGS > 1 */
  145:Generated_Source\PSoC5/ADC_DelSig_1.c ****     #if(ADC_DelSig_1_DEFAULT_NUM_CONFIGS > 2)
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 4
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 4
 
 
  146:Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_GainCompensation(ADC_DelSig_1_CFG3_INPUT_RANGE,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  200:Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_STBY_PWRMGR_DEC_REG |= ADC_DelSig_1_STBY_PWR_DEC_EN;
  201:Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_STBY_PWRMGR_DSM_REG |= ADC_DelSig_1_STBY_PWR_DSM_EN;
  202:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 5
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 5
 
 
  203:Generated_Source\PSoC5/ADC_DelSig_1.c ****     /* Disable PRES, Enable power to VCMBUF0, REFBUF0 and REFBUF1, enable PRES */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  257:Generated_Source\PSoC5/ADC_DelSig_1.c ****              (ADC_DelSig_1_CFG3_REFERENCE != ADC_DelSig_1_EXT_REF_ON_P32))) ||
  258:Generated_Source\PSoC5/ADC_DelSig_1.c ****              ((config == 4u) &&
  259:Generated_Source\PSoC5/ADC_DelSig_1.c ****               (ADC_DelSig_1_CFG4_INPUT_RANGE == ADC_DelSig_1_IR_VSSA_TO_2VREF) &&
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 6
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 6
 
 
  260:Generated_Source\PSoC5/ADC_DelSig_1.c ****              ((ADC_DelSig_1_CFG4_REFERENCE != ADC_DelSig_1_EXT_REF_ON_P03) &&
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  314:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  Subsequent calls of the Start function only enable the ADC and turn
  315:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  on the power. If multiple configurations are selected, it will
  316:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  configure the ADC for configuration 1 by default, unless the
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 7
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 7
 
 
  317:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  ADC_DelSig_1_SelectConfiguration( ) function has been called to change
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  371:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  372:Generated_Source\PSoC5/ADC_DelSig_1.c ****     /* Stop conversions */
  373:Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_DEC_CR_REG &= (uint8)~ADC_DelSig_1_DEC_START_CONV;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 8
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 8
 
 
  374:Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_DEC_SR_REG |=  ADC_DelSig_1_DEC_INTR_CLEAR;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  428:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  gain:  Two bit value to select a gain of 1, 2, 4, or 8.
  429:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
  430:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Return:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 9
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 9
 
 
  431:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  None
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  485:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  Calculates a new GCOR value and writes it into the GCOR register. 
  486:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  The GCOR value is a 16-bit value that represents a gain of 0 to 2. 
  487:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  The ADC result is multiplied by this value before it is placed in the ADC 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 10
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 10
 
 
  488:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  output registers. The numerical format for the GCOR value is:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  542:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
  543:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Summary:
  544:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  This API returns the current GCOR register value, normalized based on the
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 11
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 11
 
 
  545:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  GVAL register settings.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  599:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Function Name: ADC_DelSig_1_StopConvert
  600:Generated_Source\PSoC5/ADC_DelSig_1.c **** ********************************************************************************
  601:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 12
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 12
 
 
  602:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Summary:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  656:Generated_Source\PSoC5/ADC_DelSig_1.c ****         *   resolution above 16 bit
  657:Generated_Source\PSoC5/ADC_DelSig_1.c ****         */
  658:Generated_Source\PSoC5/ADC_DelSig_1.c ****         if(ADC_DelSig_1_stopConversion != 0u)
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 13
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 13
 
 
  659:Generated_Source\PSoC5/ADC_DelSig_1.c ****         {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  713:Generated_Source\PSoC5/ADC_DelSig_1.c ****     }
  714:Generated_Source\PSoC5/ADC_DelSig_1.c ****     else /*No action required for other coherency */
  715:Generated_Source\PSoC5/ADC_DelSig_1.c ****     {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 14
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 14
 
 
  716:Generated_Source\PSoC5/ADC_DelSig_1.c ****     }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  770:Generated_Source\PSoC5/ADC_DelSig_1.c ****             result = (CY_GET_REG16(ADC_DelSig_1_DEC_SAMP_16B_PTR));
  771:Generated_Source\PSoC5/ADC_DelSig_1.c ****         #else
  772:Generated_Source\PSoC5/ADC_DelSig_1.c ****             result = ADC_DelSig_1_DEC_SAMP_REG;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 15
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 15
 
 
  773:Generated_Source\PSoC5/ADC_DelSig_1.c ****             result |=  (uint16)((uint16)ADC_DelSig_1_DEC_SAMPM_REG << 8u);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  827:Generated_Source\PSoC5/ADC_DelSig_1.c ****                 result |= 0xFF00u;
  828:Generated_Source\PSoC5/ADC_DelSig_1.c ****             }
  829:Generated_Source\PSoC5/ADC_DelSig_1.c ****             result = (result << 8u) | ADC_DelSig_1_DEC_SAMPM_REG;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 16
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 16
 
 
  830:Generated_Source\PSoC5/ADC_DelSig_1.c ****             result = (result << 8u) | ADC_DelSig_1_DEC_SAMP_REG;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  884:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  given reading before calculating the voltage conversion.
  885:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
  886:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Parameters:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 17
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 17
 
 
  887:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  int32:  This value is a measured value when the inputs are shorted or 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  941:Generated_Source\PSoC5/ADC_DelSig_1.c **** }
  942:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  943:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 18
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 18
 
 
  944:Generated_Source\PSoC5/ADC_DelSig_1.c **** /*******************************************************************************
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  998:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  999:Generated_Source\PSoC5/ADC_DelSig_1.c ****     mVolts = (int16)(( adcCounts * ADC_DelSig_1_1MV_COUNTS ) / ADC_DelSig_1_CountsPerVolt) ;
 1000:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 19
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 19
 
 
 1001:Generated_Source\PSoC5/ADC_DelSig_1.c ****     return(mVolts);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1055:Generated_Source\PSoC5/ADC_DelSig_1.c ****     #endif /* ADC_DelSig_1_CFG2_DEC_DIV */
 1056:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1057:Generated_Source\PSoC5/ADC_DelSig_1.c ****     /* Subtract ADC offset */
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 20
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 20
 
 
 1058:Generated_Source\PSoC5/ADC_DelSig_1.c ****     adcCounts -= ADC_DelSig_1_Offset;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1112:Generated_Source\PSoC5/ADC_DelSig_1.c ****         #if(ADC_DelSig_1_CFG2_DEC_DIV != 0)
 1113:Generated_Source\PSoC5/ADC_DelSig_1.c ****             adcCounts /= ADC_DelSig_1_CFG2_DEC_DIV;
 1114:Generated_Source\PSoC5/ADC_DelSig_1.c ****         #endif /* ADC_DelSig_1_CFG2_DEC_DIV */
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 21
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 21
 
 
 1115:Generated_Source\PSoC5/ADC_DelSig_1.c ****     }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1169:Generated_Source\PSoC5/ADC_DelSig_1.c ****         #if( (ADC_DelSig_1_CFG1_RESOLUTION == ADC_DelSig_1__BITS_16) || \
 1170:Generated_Source\PSoC5/ADC_DelSig_1.c ****              (ADC_DelSig_1_CFG2_RESOLUTION == ADC_DelSig_1__BITS_16) || \
 1171:Generated_Source\PSoC5/ADC_DelSig_1.c ****              (ADC_DelSig_1_CFG3_RESOLUTION == ADC_DelSig_1__BITS_16) || \
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 22
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 22
 
 
 1172:Generated_Source\PSoC5/ADC_DelSig_1.c ****              (ADC_DelSig_1_CFG4_RESOLUTION == ADC_DelSig_1__BITS_16) )
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1226:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1227:Generated_Source\PSoC5/ADC_DelSig_1.c **** /*******************************************************************************
 1228:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Function Name: ADC_DelSig_1_InitConfig(uint8 config)
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 23
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 23
 
 
 1229:Generated_Source\PSoC5/ADC_DelSig_1.c **** ********************************************************************************
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1283:Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_DSM_BUF2_REG    = ADC_DelSig_1_CFG1_DSM_BUF2;
 1284:Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_DSM_BUF3_REG    = ADC_DelSig_1_CFG1_DSM_BUF3;
 1285:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 24
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 24
 
 
 1286:Generated_Source\PSoC5/ADC_DelSig_1.c ****         /* To select either Vssa or Vref to -ve input of DSM depending on
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1340:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DSM_CR11_REG    = ADC_DelSig_1_CFG2_DSM_CR11;
 1341:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DSM_CR12_REG    = ADC_DelSig_1_CFG2_DSM_CR12;
 1342:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DSM_CR14_REG    = ADC_DelSig_1_CFG2_DSM_CR14;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 25
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 25
 
 
 1343:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DSM_CR15_REG    = ADC_DelSig_1_CFG2_DSM_CR15;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1397:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_SHIFT1_REG  = ADC_DelSig_1_CFG3_DEC_SHIFT1;
 1398:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_SHIFT2_REG  = ADC_DelSig_1_CFG3_DEC_SHIFT2;
 1399:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_DR2_REG     = ADC_DelSig_1_CFG3_DEC_DR2;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 26
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 26
 
 
 1400:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_DEC_DR2H_REG    = ADC_DelSig_1_CFG3_DEC_DR2H;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1454:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1455:Generated_Source\PSoC5/ADC_DelSig_1.c ****             #if(ADC_DelSig_1_IRQ_REMOVE == 0u)
 1456:Generated_Source\PSoC5/ADC_DelSig_1.c ****                 /* Set interrupt vector */
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 27
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 27
 
 
 1457:Generated_Source\PSoC5/ADC_DelSig_1.c ****                 (void)CyIntSetVector(ADC_DelSig_1_INTC_NUMBER, &ADC_DelSig_1_ISR3);
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1511:Generated_Source\PSoC5/ADC_DelSig_1.c ****             #if(ADC_DelSig_1_CFG4_RESOLUTION > 16 && \
 1512:Generated_Source\PSoC5/ADC_DelSig_1.c ****                 ADC_DelSig_1_CFG4_CONV_MODE == ADC_DelSig_1_MODE_SINGLE_SAMPLE)
 1513:Generated_Source\PSoC5/ADC_DelSig_1.c ****                 ADC_DelSig_1_stopConversion = 1u;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 28
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 28
 
 
 1514:Generated_Source\PSoC5/ADC_DelSig_1.c ****             #endif /* Single sample with resolution above 16 bits */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1568:Generated_Source\PSoC5/ADC_DelSig_1.c **** 		*/
 1569:Generated_Source\PSoC5/ADC_DelSig_1.c ****         if(ADC_DelSig_1_initVar == 0u)
 1570:Generated_Source\PSoC5/ADC_DelSig_1.c ****         {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 29
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 29
 
 
 1571:Generated_Source\PSoC5/ADC_DelSig_1.c ****             ADC_DelSig_1_started = 1u;
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1625:Generated_Source\PSoC5/ADC_DelSig_1.c **** static void ADC_DelSig_1_GainCompensation(uint8 inputRange, uint16 idealDecGain, uint16 idealOddDec
 1626:Generated_Source\PSoC5/ADC_DelSig_1.c ****                               uint8 resolution, uint8 config) 
 1627:Generated_Source\PSoC5/ADC_DelSig_1.c **** {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 30
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 30
 
 
   27              		.loc 1 1627 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
   66              	.LVL2:
   67 0028 22E0     		b	.L3
   68              	.LVL3:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 31
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 31
 
 
   69              	.L9:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1666:Generated_Source\PSoC5/ADC_DelSig_1.c ****                     flash = ADC_DelSig_1_DEC_TRIM_VREF_4_DIFF_16_20;
  100              		.loc 1 1666 0
  101 004a 1F48     		ldr	r0, .L18+16
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 32
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 32
 
 
  102 004c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  135              		.loc 1 1687 0
  136 006e 0020     		movs	r0, #0
  137              	.L3:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 33
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 33
 
 
  138              	.LVL18:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  175 009a 0F49     		ldr	r1, .L18+32
  176 009c 01EB8303 		add	r3, r1, r3, lsl #2
  177 00a0 0F21     		movs	r1, #15
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 34
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 34
 
 
  178 00a2 9970     		strb	r1, [r3, #2]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1720:Generated_Source\PSoC5/ADC_DelSig_1.c **** ******************************************************************************
 1721:Generated_Source\PSoC5/ADC_DelSig_1.c **** *
 1722:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Summary:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 35
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 35
 
 
 1723:Generated_Source\PSoC5/ADC_DelSig_1.c **** *  This API sets the DSM_REF0 register. This is written for internal use.
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  250 0022 0320     		movs	r0, #3
  251 0024 FFF7FEFF 		bl	CyDelayUs
  252              	.LVL38:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 36
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 36
 
 
 1744:Generated_Source\PSoC5/ADC_DelSig_1.c ****     /* Enable the press circuit */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  298              		.cfi_offset 4, -16
  299              		.cfi_offset 5, -12
  300              		.cfi_offset 6, -8
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 37
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 37
 
 
  301              		.cfi_offset 14, -4
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  343 0048 0A23     		movs	r3, #10
  344 004a 214A     		ldr	r2, .L28+8
  345 004c 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 38
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 38
 
 
 1267:Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_DSM_CR7_REG     = ADC_DelSig_1_CFG1_DSM_CR7;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  388 0088 1C70     		strb	r4, [r3]
 1281:Generated_Source\PSoC5/ADC_DelSig_1.c ****         ADC_DelSig_1_DSM_BUF1_REG    = ADC_DelSig_1_CFG1_DSM_BUF1;
  389              		.loc 1 1281 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 39
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 39
 
 
  390 008a 0526     		movs	r6, #5
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  436              		.align	2
  437              	.L28:
  438 00c8 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 40
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 40
 
 
  439 00cc 004E0040 		.word	1073761792
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  487 001e 1D20     		movs	r0, #29
  488 0020 FFF7FEFF 		bl	CyIntSetPriority
  489              	.LVL51:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 41
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 41
 
 
  110:Generated_Source\PSoC5/ADC_DelSig_1.c ****     ADC_DelSig_1_DSM_DEM1_REG    = ADC_DelSig_1_CFG1_DSM_DEM1;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  128:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  532              		.loc 1 128 0
  533 0066 0433     		adds	r3, r3, #4
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 42
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 42
 
 
  534 0068 1C70     		strb	r4, [r3]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  582              		.section	.text.ADC_DelSig_1_Enable,"ax",%progbits
  583              		.align	2
  584              		.global	ADC_DelSig_1_Enable
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 43
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 43
 
 
  585              		.thumb
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  631 0038 2B70     		strb	r3, [r5]
  205:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  632              		.loc 1 205 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 44
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 44
 
 
  633 003a 214C     		ldr	r4, .L36+12
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  293:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  678              		.loc 1 293 0
  679 0092 1032     		adds	r2, r2, #16
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 45
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 45
 
 
  680 0094 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  729 0004 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
  730 0006 4BB9     		cbnz	r3, .L39
  338:Generated_Source\PSoC5/ADC_DelSig_1.c ****         {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 46
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 46
 
 
  731              		.loc 1 338 0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  779              		.loc 1 373 0
  780 0008 314A     		ldr	r2, .L46
  781 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 47
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 47
 
 
  782 000c 03F0FE03 		and	r3, r3, #254
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  826              		.loc 1 395 0
  827 0066 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  828 0068 02F0FE02 		and	r2, r2, #254
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 48
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 48
 
 
  829 006c 1A70     		strb	r2, [r3]
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  874              	.LVL65:
  875 00cc 70BD     		pop	{r4, r5, r6, pc}
  876              	.LVL66:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 49
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 49
 
 
  877              	.L47:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  927              		.thumb_func
  928              		.type	ADC_DelSig_1_SetCoherency, %function
  929              	ADC_DelSig_1_SetCoherency:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 50
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 50
 
 
  930              	.LFB5:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  979 0002 0446     		mov	r4, r0
  516:Generated_Source\PSoC5/ADC_DelSig_1.c ****     tmpValue = ((float32)tmpReg / (float32)ADC_DelSig_1_IDEAL_GAIN_CONST);
  980              		.loc 1 516 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 51
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 51
 
 
  981 0004 184B     		ldr	r3, .L58+8
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  532:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
  1028              		.loc 1 532 0
  1029 0054 0020     		movs	r0, #0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 52
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 52
 
 
  1030              	.LVL88:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1077              		.loc 1 567 0
  1078 0010 C3F10F03 		rsb	r3, r3, #15
  1079              	.LVL94:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 53
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 53
 
 
  1080 0014 9840     		lsls	r0, r0, r3
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1130              		.cfi_startproc
  1131              		@ args = 0, pretend = 0, frame = 0
  1132              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 54
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 54
 
 
  1133              		@ link register save eliminated.
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1181              		.loc 1 666 0
  1182 001a 012B     		cmp	r3, #1
  1183 001c 01D0     		beq	.L73
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 55
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 55
 
 
  666:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1231              	.LVL105:
  1232              	.L78:
  710:Generated_Source\PSoC5/ADC_DelSig_1.c ****     {   /* Dummy read of the MSB byte to unlock the coherency */
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 56
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 56
 
 
  1233              		.loc 1 710 0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1281              	.LVL107:
  758:Generated_Source\PSoC5/ADC_DelSig_1.c ****     {   /*  Use default method to read result registers i.e. LSB byte read at the end*/
  1282              		.loc 1 758 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 57
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 57
 
 
  1283 0008 012B     		cmp	r3, #1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1329 0044 114E0040 		.word	1073761809
  1330 0048 124E0040 		.word	1073761810
  1331 004c 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 58
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 58
 
 
  1332              		.cfi_endproc
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1378              		.loc 1 847 0
  1379 0024 023B     		subs	r3, r3, #2
  1380 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 59
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 59
 
 
  1381 0028 43EA0043 		orr	r3, r3, r0, lsl #16
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1429              		.thumb
  1430              		.thumb_func
  1431              		.type	ADC_DelSig_1_SetOffset, %function
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 60
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 60
 
 
  1432              	ADC_DelSig_1_SetOffset:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1482              	ADC_DelSig_1_CountsTo_mVolts:
  1483              	.LFB16:
  966:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 61
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 61
 
 
  1484              		.loc 1 966 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1533              		.loc 1 1058 0
  1534 0002 074B     		ldr	r3, .L107
  1535 0004 9B68     		ldr	r3, [r3, #8]
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 62
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 62
 
 
  1536              	.LVL134:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1585 0010 022B     		cmp	r3, #2
  1586 0012 01D0     		beq	.L110
 1116:Generated_Source\PSoC5/ADC_DelSig_1.c ****     {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 63
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 63
 
 
  1587              		.loc 1 1116 0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1637 0000 38B5     		push	{r3, r4, r5, lr}
  1638              		.cfi_def_cfa_offset 16
  1639              		.cfi_offset 3, -16
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 64
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 64
 
 
  1640              		.cfi_offset 4, -12
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1593:Generated_Source\PSoC5/ADC_DelSig_1.c ****         }
  1684              		.loc 1 1593 0
  1685 0042 FFF7FEFF 		bl	ADC_DelSig_1_StartConvert
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 65
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 65
 
 
  1686              	.LVL149:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1716              		.cfi_startproc
  1717              		@ args = 0, pretend = 0, frame = 0
  1718              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 66
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 66
 
 
  1719 0000 10B5     		push	{r4, lr}
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
 1783:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1784:Generated_Source\PSoC5/ADC_DelSig_1.c **** 
 1785:Generated_Source\PSoC5/ADC_DelSig_1.c **** /*******************************************************************************
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 67
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 67
 
 
 1786:Generated_Source\PSoC5/ADC_DelSig_1.c **** * Function Name: ADC_DelSig_1_Read16
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1789              	.LVL163:
 1813:Generated_Source\PSoC5/ADC_DelSig_1.c ****     
 1814:Generated_Source\PSoC5/ADC_DelSig_1.c ****      return(result);
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 68
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 68
 
 
 1815:Generated_Source\PSoC5/ADC_DelSig_1.c **** }
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1817              		.loc 1 1841 0
  1818 0002 084A     		ldr	r2, .L131
  1819 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 69
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 69
 
 
  1820 0006 43F00403 		orr	r3, r3, #4
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1867 0000 00000000 		.space	4
  1868              		.type	ADC_DelSig_1_stopConversion, %object
  1869              		.size	ADC_DelSig_1_stopConversion, 1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 70
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 70
 
 
  1870              	ADC_DelSig_1_stopConversion:
@@ -4176,8 +4176,8 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1902 000b 01       		.uleb128 0x1
  1903 000c C7030000 		.4byte	.LASF101
  1904 0010 0C       		.byte	0xc
- 1905 0011 FB050000 		.4byte	.LASF102
- 1906 0015 11050000 		.4byte	.LASF103
+ 1905 0011 AF050000 		.4byte	.LASF102
+ 1906 0015 5B060000 		.4byte	.LASF103
  1907 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1908 001d 00000000 		.4byte	0
  1909 0021 00000000 		.4byte	.Ldebug_line0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1924 003c 05       		.byte	0x5
  1925 003d B5030000 		.4byte	.LASF3
  1926 0041 02       		.uleb128 0x2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 71
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 71
 
 
  1927 0042 02       		.byte	0x2
@@ -4249,7 +4249,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1972 009c EB01     		.2byte	0x1eb
  1973 009e 2C000000 		.4byte	0x2c
  1974 00a2 04       		.uleb128 0x4
- 1975 00a3 46060000 		.4byte	.LASF14
+ 1975 00a3 FA050000 		.4byte	.LASF14
  1976 00a7 02       		.byte	0x2
  1977 00a8 EC01     		.2byte	0x1ec
  1978 00aa 3A000000 		.4byte	0x3a
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  1981 00b3 02       		.byte	0x2
  1982 00b4 ED01     		.2byte	0x1ed
  1983 00b6 48000000 		.4byte	0x48
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 72
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 72
 
 
  1984 00ba 04       		.uleb128 0x4
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2038 012a E0040000 		.4byte	.LASF25
  2039 012e 03       		.byte	0x3
  2040 012f 32       		.byte	0x32
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 73
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 73
 
 
  2041 0130 72000000 		.4byte	0x72
@@ -4330,7 +4330,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2047 013c 33       		.byte	0x33
  2048 013d 15010000 		.4byte	0x115
  2049 0141 09       		.uleb128 0x9
- 2050 0142 93050000 		.4byte	.LASF36
+ 2050 0142 47050000 		.4byte	.LASF36
  2051 0146 01       		.byte	0x1
  2052 0147 5906     		.2byte	0x659
  2053 0149 00000000 		.4byte	.LFB21
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2095 01b8 7E030000 		.4byte	.LASF33
  2096 01bc 01       		.byte	0x1
  2097 01bd 5D06     		.2byte	0x65d
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 74
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 74
 
 
  2098 01bf AE000000 		.4byte	0xae
@@ -4421,7 +4421,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2135 0215 72000000 		.4byte	0x72
  2136 0219 F2010000 		.4byte	.LLST9
  2137 021d 0B       		.uleb128 0xb
- 2138 021e B1050000 		.4byte	.LASF39
+ 2138 021e 65050000 		.4byte	.LASF39
  2139 0222 01       		.byte	0x1
  2140 0223 C606     		.2byte	0x6c6
  2141 0225 72000000 		.4byte	0x72
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2152 0245 50       		.byte	0x50
  2153 0246 01       		.uleb128 0x1
  2154 0247 33       		.byte	0x33
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 75
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 75
 
 
  2155 0248 00       		.byte	0
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2209 02b6 01       		.uleb128 0x1
  2210 02b7 50       		.byte	0x50
  2211 02b8 02       		.uleb128 0x2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 76
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 76
 
 
  2212 02b9 76       		.byte	0x76
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2266 0313 00       		.byte	0
  2267 0314 0F       		.uleb128 0xf
  2268 0315 1C000000 		.4byte	.LVL50
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 77
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 77
 
 
  2269 0319 020A0000 		.4byte	0xa02
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2323 0369 77       		.byte	0x77
  2324 036a 00       		.sleb128 0
  2325 036b 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 78
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 78
 
 
  2326 036c 0E       		.uleb128 0xe
@@ -4640,7 +4640,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2342 0391 BC       		.byte	0xbc
  2343 0392 72000000 		.4byte	0x72
  2344 0396 12       		.uleb128 0x12
- 2345 0397 B1050000 		.4byte	.LASF39
+ 2345 0397 65050000 		.4byte	.LASF39
  2346 039b 01       		.byte	0x1
  2347 039c BD       		.byte	0xbd
  2348 039d 72000000 		.4byte	0x72
@@ -4670,7 +4670,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2372 03d0 00       		.byte	0
  2373 03d1 00       		.byte	0
  2374 03d2 13       		.uleb128 0x13
- 2375 03d3 33060000 		.4byte	.LASF43
+ 2375 03d3 E7050000 		.4byte	.LASF43
  2376 03d7 01       		.byte	0x1
  2377 03d8 4E01     		.2byte	0x14e
  2378 03da 00000000 		.4byte	.LFB2
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2380 03e2 01       		.uleb128 0x1
  2381 03e3 9C       		.byte	0x9c
  2382 03e4 FB030000 		.4byte	0x3fb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 79
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 79
 
 
  2383 03e8 0E       		.uleb128 0xe
@@ -4698,7 +4698,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2397 040c 9C       		.byte	0x9c
  2398 040d 4E040000 		.4byte	0x44e
  2399 0411 0B       		.uleb128 0xb
- 2400 0412 B1050000 		.4byte	.LASF39
+ 2400 0412 65050000 		.4byte	.LASF39
  2401 0416 01       		.byte	0x1
  2402 0417 7101     		.2byte	0x171
  2403 0419 72000000 		.4byte	0x72
@@ -4728,7 +4728,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2427 044c 00       		.byte	0
  2428 044d 00       		.byte	0
  2429 044e 13       		.uleb128 0x13
- 2430 044f C4060000 		.4byte	.LASF45
+ 2430 044f D0060000 		.4byte	.LASF45
  2431 0453 01       		.byte	0x1
  2432 0454 B201     		.2byte	0x1b2
  2433 0456 00000000 		.4byte	.LFB4
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2437 0460 85040000 		.4byte	0x485
  2438 0464 0A       		.uleb128 0xa
  2439 0465 C7020000 		.4byte	.LASF46
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 80
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 80
 
 
  2440 0469 01       		.byte	0x1
@@ -4746,7 +4746,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2442 046c 72000000 		.4byte	0x72
  2443 0470 78020000 		.4byte	.LLST14
  2444 0474 0B       		.uleb128 0xb
- 2445 0475 DF060000 		.4byte	.LASF47
+ 2445 0475 EB060000 		.4byte	.LASF47
  2446 0479 01       		.byte	0x1
  2447 047a B401     		.2byte	0x1b4
  2448 047c 72000000 		.4byte	0x72
@@ -4768,14 +4768,14 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2464 04a3 72000000 		.4byte	0x72
  2465 04a7 B7020000 		.4byte	.LLST16
  2466 04ab 0B       		.uleb128 0xb
- 2467 04ac DF060000 		.4byte	.LASF47
+ 2467 04ac EB060000 		.4byte	.LASF47
  2468 04b0 01       		.byte	0x1
  2469 04b1 D801     		.2byte	0x1d8
  2470 04b3 72000000 		.4byte	0x72
  2471 04b7 D8020000 		.4byte	.LLST17
  2472 04bb 00       		.byte	0
  2473 04bc 14       		.uleb128 0x14
- 2474 04bd DF050000 		.4byte	.LASF53
+ 2474 04bd 93050000 		.4byte	.LASF53
  2475 04c1 01       		.byte	0x1
  2476 04c2 FE01     		.2byte	0x1fe
  2477 04c4 72000000 		.4byte	0x72
@@ -4785,20 +4785,20 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2481 04d1 9C       		.byte	0x9c
  2482 04d2 17050000 		.4byte	0x517
  2483 04d6 0A       		.uleb128 0xa
- 2484 04d7 28060000 		.4byte	.LASF50
+ 2484 04d7 DC050000 		.4byte	.LASF50
  2485 04db 01       		.byte	0x1
  2486 04dc FE01     		.2byte	0x1fe
  2487 04de BA000000 		.4byte	0xba
  2488 04e2 F6020000 		.4byte	.LLST18
  2489 04e6 0B       		.uleb128 0xb
- 2490 04e7 DF060000 		.4byte	.LASF47
+ 2490 04e7 EB060000 		.4byte	.LASF47
  2491 04eb 01       		.byte	0x1
  2492 04ec 0002     		.2byte	0x200
  2493 04ee 7E000000 		.4byte	0x7e
  2494 04f2 24030000 		.4byte	.LLST19
  2495 04f6 0B       		.uleb128 0xb
- 2496 04f7 21060000 		.4byte	.LASF51
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 81
+ 2496 04f7 D5050000 		.4byte	.LASF51
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 81
 
 
  2497 04fb 01       		.byte	0x1
@@ -4813,7 +4813,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2506 0512 7B030000 		.4byte	.LLST21
  2507 0516 00       		.byte	0
  2508 0517 15       		.uleb128 0x15
- 2509 0518 1C070000 		.4byte	.LASF54
+ 2509 0518 28070000 		.4byte	.LASF54
  2510 051c 01       		.byte	0x1
  2511 051d 2D02     		.2byte	0x22d
  2512 051f 7E000000 		.4byte	0x7e
@@ -4823,7 +4823,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2516 052c 9C       		.byte	0x9c
  2517 052d 52050000 		.4byte	0x552
  2518 0531 0B       		.uleb128 0xb
- 2519 0532 F4050000 		.4byte	.LASF55
+ 2519 0532 A8050000 		.4byte	.LASF55
  2520 0536 01       		.byte	0x1
  2521 0537 2F02     		.2byte	0x22f
  2522 0539 72000000 		.4byte	0x72
@@ -4844,7 +4844,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2537 0562 01       		.uleb128 0x1
  2538 0563 9C       		.byte	0x9c
  2539 0564 16       		.uleb128 0x16
- 2540 0565 4C060000 		.4byte	.LASF57
+ 2540 0565 00060000 		.4byte	.LASF57
  2541 0569 01       		.byte	0x1
  2542 056a 6602     		.2byte	0x266
  2543 056c 00000000 		.4byte	.LFB9
@@ -4852,13 +4852,13 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2545 0574 01       		.uleb128 0x1
  2546 0575 9C       		.byte	0x9c
  2547 0576 15       		.uleb128 0x15
- 2548 0577 C2050000 		.4byte	.LASF58
+ 2548 0577 76050000 		.4byte	.LASF58
  2549 057b 01       		.byte	0x1
  2550 057c 8902     		.2byte	0x289
  2551 057e 72000000 		.4byte	0x72
  2552 0582 00000000 		.4byte	.LFB10
  2553 0586 30000000 		.4byte	.LFE10-.LFB10
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 82
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 82
 
 
  2554 058a 01       		.uleb128 0x1
@@ -4871,7 +4871,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2561 0598 72000000 		.4byte	0x72
  2562 059c EB030000 		.4byte	.LLST24
  2563 05a0 0B       		.uleb128 0xb
- 2564 05a1 21060000 		.4byte	.LASF51
+ 2564 05a1 D5050000 		.4byte	.LASF51
  2565 05a5 01       		.byte	0x1
  2566 05a6 8B02     		.2byte	0x28b
  2567 05a8 72000000 		.4byte	0x72
@@ -4888,7 +4888,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2578 05c6 9C       		.byte	0x9c
  2579 05c7 EA050000 		.4byte	0x5ea
  2580 05cb 17       		.uleb128 0x17
- 2581 05cc F9060000 		.4byte	.LASF61
+ 2581 05cc 05070000 		.4byte	.LASF61
  2582 05d0 01       		.byte	0x1
  2583 05d1 BA02     		.2byte	0x2ba
  2584 05d3 96000000 		.4byte	0x96
@@ -4912,13 +4912,13 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2602 05ff 9C       		.byte	0x9c
  2603 0600 25060000 		.4byte	0x625
  2604 0604 0B       		.uleb128 0xb
- 2605 0605 F9060000 		.4byte	.LASF61
+ 2605 0605 05070000 		.4byte	.LASF61
  2606 0609 01       		.byte	0x1
  2607 060a F002     		.2byte	0x2f0
  2608 060c 7E000000 		.4byte	0x7e
  2609 0610 48040000 		.4byte	.LLST27
  2610 0614 0B       		.uleb128 0xb
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 83
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 83
 
 
  2611 0615 E0020000 		.4byte	.LASF49
@@ -4938,7 +4938,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2625 063a 9C       		.byte	0x9c
  2626 063b 60060000 		.4byte	0x660
  2627 063f 0B       		.uleb128 0xb
- 2628 0640 F9060000 		.4byte	.LASF61
+ 2628 0640 05070000 		.4byte	.LASF61
  2629 0644 01       		.byte	0x1
  2630 0645 2C03     		.2byte	0x32c
  2631 0647 8A000000 		.4byte	0x8a
@@ -4960,7 +4960,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2647 0671 9C       		.byte	0x9c
  2648 0672 85060000 		.4byte	0x685
  2649 0676 18       		.uleb128 0x18
- 2650 0677 5D050000 		.4byte	.LASF65
+ 2650 0677 11050000 		.4byte	.LASF65
  2651 067b 01       		.byte	0x1
  2652 067c 8703     		.2byte	0x387
  2653 067e AE000000 		.4byte	0xae
@@ -4968,7 +4968,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2655 0683 50       		.byte	0x50
  2656 0684 00       		.byte	0
  2657 0685 13       		.uleb128 0x13
- 2658 0686 7E060000 		.4byte	.LASF66
+ 2658 0686 32060000 		.4byte	.LASF66
  2659 068a 01       		.byte	0x1
  2660 068b AA03     		.2byte	0x3aa
  2661 068d 00000000 		.4byte	.LFB15
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2665 0697 AA060000 		.4byte	0x6aa
  2666 069b 18       		.uleb128 0x18
  2667 069c 07000000 		.4byte	.LASF67
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 84
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 84
 
 
  2668 06a0 01       		.byte	0x1
@@ -4988,7 +4988,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2672 06a8 50       		.byte	0x50
  2673 06a9 00       		.byte	0
  2674 06aa 15       		.uleb128 0x15
- 2675 06ab A7060000 		.4byte	.LASF68
+ 2675 06ab B3060000 		.4byte	.LASF68
  2676 06af 01       		.byte	0x1
  2677 06b0 C503     		.2byte	0x3c5
  2678 06b2 A2000000 		.4byte	0xa2
@@ -4998,7 +4998,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2682 06bf 9C       		.byte	0x9c
  2683 06c0 E3060000 		.4byte	0x6e3
  2684 06c4 0A       		.uleb128 0xa
- 2685 06c5 89050000 		.4byte	.LASF69
+ 2685 06c5 3D050000 		.4byte	.LASF69
  2686 06c9 01       		.byte	0x1
  2687 06ca C503     		.2byte	0x3c5
  2688 06cc AE000000 		.4byte	0xae
@@ -5022,7 +5022,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2706 06f8 9C       		.byte	0x9c
  2707 06f9 1C070000 		.4byte	0x71c
  2708 06fd 0A       		.uleb128 0xa
- 2709 06fe 89050000 		.4byte	.LASF69
+ 2709 06fe 3D050000 		.4byte	.LASF69
  2710 0702 01       		.byte	0x1
  2711 0703 0204     		.2byte	0x402
  2712 0705 AE000000 		.4byte	0xae
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2722 071c 15       		.uleb128 0x15
  2723 071d AA020000 		.4byte	.LASF73
  2724 0721 01       		.byte	0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 85
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 85
 
 
  2725 0722 4404     		.2byte	0x444
@@ -5049,7 +5049,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2730 0731 9C       		.byte	0x9c
  2731 0732 82070000 		.4byte	0x782
  2732 0736 0A       		.uleb128 0xa
- 2733 0737 89050000 		.4byte	.LASF69
+ 2733 0737 3D050000 		.4byte	.LASF69
  2734 073b 01       		.byte	0x1
  2735 073c 4404     		.2byte	0x444
  2736 073e AE000000 		.4byte	0xae
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2779 07a9 E5040000 		.4byte	.LASF78
  2780 07ad 01       		.byte	0x1
  2781 07ae 1806     		.2byte	0x618
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 86
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 86
 
 
  2782 07b0 72000000 		.4byte	0x72
@@ -5134,7 +5134,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2812 07f5 00       		.byte	0
  2813 07f6 00       		.byte	0
  2814 07f7 15       		.uleb128 0x15
- 2815 07f8 E6060000 		.4byte	.LASF79
+ 2815 07f8 F2060000 		.4byte	.LASF79
  2816 07fc 01       		.byte	0x1
  2817 07fd EA06     		.2byte	0x6ea
  2818 07ff 96000000 		.4byte	0x96
@@ -5144,7 +5144,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2822 080c 9C       		.byte	0x9c
  2823 080d 50080000 		.4byte	0x850
  2824 0811 0B       		.uleb128 0xb
- 2825 0812 F9060000 		.4byte	.LASF61
+ 2825 0812 05070000 		.4byte	.LASF61
  2826 0816 01       		.byte	0x1
  2827 0817 EC06     		.2byte	0x6ec
  2828 0819 96000000 		.4byte	0x96
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2836 0833 3D080000 		.4byte	0x83d
  2837 0837 0D       		.uleb128 0xd
  2838 0838 01       		.uleb128 0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 87
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 87
 
 
  2839 0839 50       		.byte	0x50
@@ -5173,7 +5173,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2848 084b 64050000 		.4byte	0x564
  2849 084f 00       		.byte	0
  2850 0850 15       		.uleb128 0x15
- 2851 0851 93060000 		.4byte	.LASF80
+ 2851 0851 47060000 		.4byte	.LASF80
  2852 0855 01       		.byte	0x1
  2853 0856 0B07     		.2byte	0x70b
  2854 0858 A2000000 		.4byte	0xa2
@@ -5183,7 +5183,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2858 0865 9C       		.byte	0x9c
  2859 0866 A9080000 		.4byte	0x8a9
  2860 086a 0B       		.uleb128 0xb
- 2861 086b F9060000 		.4byte	.LASF61
+ 2861 086b 05070000 		.4byte	.LASF61
  2862 086f 01       		.byte	0x1
  2863 0870 0D07     		.2byte	0x70d
  2864 0872 A2000000 		.4byte	0xa2
@@ -5218,11 +5218,11 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2893 08bd 01       		.uleb128 0x1
  2894 08be 9C       		.byte	0x9c
  2895 08bf 02090000 		.4byte	0x902
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 88
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 88
 
 
  2896 08c3 0B       		.uleb128 0xb
- 2897 08c4 F9060000 		.4byte	.LASF61
+ 2897 08c4 05070000 		.4byte	.LASF61
  2898 08c8 01       		.byte	0x1
  2899 08c9 2E07     		.2byte	0x72e
  2900 08cb AE000000 		.4byte	0xae
@@ -5255,7 +5255,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2927 0910 00       		.byte	0
  2928 0911 00       		.byte	0
  2929 0912 1D       		.uleb128 0x1d
- 2930 0913 32070000 		.4byte	.LASF82
+ 2930 0913 3E070000 		.4byte	.LASF82
  2931 0917 01       		.byte	0x1
  2932 0918 3D       		.byte	0x3d
  2933 0919 02090000 		.4byte	0x902
@@ -5278,11 +5278,11 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  2950 093f 05       		.uleb128 0x5
  2951 0940 03       		.byte	0x3
  2952 0941 00000000 		.4byte	ADC_DelSig_1_convDone
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 89
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 89
 
 
  2953 0945 1E       		.uleb128 0x1e
- 2954 0946 00070000 		.4byte	.LASF85
+ 2954 0946 0C070000 		.4byte	.LASF85
  2955 094a 01       		.byte	0x1
  2956 094b 29       		.byte	0x29
  2957 094c E0000000 		.4byte	0xe0
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3007 09ba 2E010000 		.4byte	.LASF92
  3008 09be 04       		.byte	0x4
  3009 09bf 77       		.byte	0x77
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 90
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 90
 
 
  3010 09c0 1F       		.uleb128 0x1f
@@ -5347,8 +5347,8 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3013 09c9 04       		.byte	0x4
  3014 09ca 7E       		.byte	0x7e
  3015 09cb 1F       		.uleb128 0x1f
- 3016 09cc 65060000 		.4byte	.LASF94
- 3017 09d0 65060000 		.4byte	.LASF94
+ 3016 09cc 19060000 		.4byte	.LASF94
+ 3017 09d0 19060000 		.4byte	.LASF94
  3018 09d4 05       		.byte	0x5
  3019 09d5 57       		.byte	0x57
  3020 09d6 1F       		.uleb128 0x1f
@@ -5372,8 +5372,8 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3038 0a00 06       		.byte	0x6
  3039 0a01 32       		.byte	0x32
  3040 0a02 1F       		.uleb128 0x1f
- 3041 0a03 64050000 		.4byte	.LASF99
- 3042 0a07 64050000 		.4byte	.LASF99
+ 3041 0a03 18050000 		.4byte	.LASF99
+ 3042 0a07 18050000 		.4byte	.LASF99
  3043 0a0b 07       		.byte	0x7
  3044 0a0c 32       		.byte	0x32
  3045 0a0d 1F       		.uleb128 0x1f
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3064 000b 55       		.uleb128 0x55
  3065 000c 17       		.uleb128 0x17
  3066 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 91
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 91
 
 
  3067 000e 01       		.uleb128 0x1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3121 0044 3B       		.uleb128 0x3b
  3122 0045 0B       		.uleb128 0xb
  3123 0046 01       		.uleb128 0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 92
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 92
 
 
  3124 0047 13       		.uleb128 0x13
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3178 007e 0A       		.uleb128 0xa
  3179 007f 05       		.uleb128 0x5
  3180 0080 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 93
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 93
 
 
  3181 0081 03       		.uleb128 0x3
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3235 00be 0F       		.uleb128 0xf
  3236 00bf 898201   		.uleb128 0x4109
  3237 00c2 01       		.byte	0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 94
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 94
 
 
  3238 00c3 11       		.uleb128 0x11
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3292 00fa 0B       		.uleb128 0xb
  3293 00fb 49       		.uleb128 0x49
  3294 00fc 13       		.uleb128 0x13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 95
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 95
 
 
  3295 00fd 02       		.uleb128 0x2
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3349 0135 00       		.byte	0
  3350 0136 00       		.byte	0
  3351 0137 15       		.uleb128 0x15
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 96
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 96
 
 
  3352 0138 2E       		.uleb128 0x2e
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3406 0170 3A       		.uleb128 0x3a
  3407 0171 0B       		.uleb128 0xb
  3408 0172 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 97
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 97
 
 
  3409 0173 05       		.uleb128 0x5
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3463 01a9 01       		.byte	0x1
  3464 01aa 49       		.uleb128 0x49
  3465 01ab 13       		.uleb128 0x13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 98
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 98
 
 
  3466 01ac 01       		.uleb128 0x1
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3520 01e2 03       		.uleb128 0x3
  3521 01e3 0E       		.uleb128 0xe
  3522 01e4 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 99
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 99
 
 
  3523 01e5 0B       		.uleb128 0xb
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3577 006a 51       		.byte	0x51
  3578 006b 9F       		.byte	0x9f
  3579 006c 00000000 		.4byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 100
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 100
 
 
  3580 0070 00000000 		.4byte	0
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3634 00ef DC000000 		.4byte	.LFE21
  3635 00f3 0400     		.2byte	0x4
  3636 00f5 F3       		.byte	0xf3
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 101
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 101
 
 
  3637 00f6 01       		.uleb128 0x1
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3691 0182 0100     		.2byte	0x1
  3692 0184 50       		.byte	0x50
  3693 0185 70000000 		.4byte	.LVL18
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 102
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 102
 
 
  3694 0189 8E000000 		.4byte	.LVL26
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3748 0217 40000000 		.4byte	.LVL40
  3749 021b 0100     		.2byte	0x1
  3750 021d 56       		.byte	0x56
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 103
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 103
 
 
  3751 021e 00000000 		.4byte	0
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3805 02a8 18000000 		.4byte	.LFE4
  3806 02ac 0100     		.2byte	0x1
  3807 02ae 50       		.byte	0x50
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 104
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 104
 
 
  3808 02af 00000000 		.4byte	0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3862 0331 24       		.byte	0x24
  3863 0332 03       		.byte	0x3
  3864 0333 00000000 		.4byte	.LANCHOR0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 105
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 105
 
 
  3865 0337 22       		.byte	0x22
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3919 03be 14000000 		.4byte	.LVL94
  3920 03c2 0100     		.2byte	0x1
  3921 03c4 53       		.byte	0x53
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 106
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 106
 
 
  3922 03c5 00000000 		.4byte	0
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  3976 0453 18000000 		.4byte	.LVL111
  3977 0457 20000000 		.4byte	.LVL112
  3978 045b 0100     		.2byte	0x1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 107
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 107
 
 
  3979 045d 52       		.byte	0x52
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4033 04e1 6C000000 		.4byte	.LFE13
  4034 04e5 0100     		.2byte	0x1
  4035 04e7 50       		.byte	0x50
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 108
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 108
 
 
  4036 04e8 00000000 		.4byte	0
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4090 0574 4C000000 		.4byte	.LFE18
  4091 0578 0400     		.2byte	0x4
  4092 057a F3       		.byte	0xf3
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 109
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 109
 
 
  4093 057b 01       		.uleb128 0x1
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4147 05f8 01       		.uleb128 0x1
  4148 05f9 50       		.byte	0x50
  4149 05fa 9F       		.byte	0x9f
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 110
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 110
 
 
  4150 05fb 00000000 		.4byte	0
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4204 0684 00000000 		.4byte	0
  4205 0688 00000000 		.4byte	0
  4206              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 111
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 111
 
 
  4207 0000 E4000000 		.4byte	0xe4
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4261 00cc 28000000 		.4byte	.LFE23-.LFB23
  4262 00d0 00000000 		.4byte	.LFB24
  4263 00d4 28000000 		.4byte	.LFE24-.LFB24
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 112
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 112
 
 
  4264 00d8 00000000 		.4byte	.LFB25
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4318 00c0 00000000 		.4byte	.LFB24
  4319 00c4 28000000 		.4byte	.LFE24
  4320 00c8 00000000 		.4byte	.LFB25
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 113
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 113
 
 
  4321 00cc 28000000 		.4byte	.LFE25
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4346 00a5 69646561 		.ascii	"idealOddDecGain\000"
  4346      6C4F6464 
  4346      44656347 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 114
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 114
 
 
  4346      61696E00 
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4373              	.LASF97:
  4374 014c 4379496E 		.ascii	"CyIntSetVector\000"
  4374      74536574 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 115
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 115
 
 
  4374      56656374 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4398 01f2 4144435F 		.ascii	"ADC_DelSig_1_Ext_CP_Clk_SetDividerRegister\000"
  4398      44656C53 
  4398      69675F31 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 116
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 116
 
 
  4398      5F457874 
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4422      00
  4423              	.LASF87:
  4424 02cc 4144435F 		.ascii	"ADC_DelSig_1_Config\000"
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 117
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 117
 
 
  4424      44656C53 
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4446 0389 43794861 		.ascii	"CyHalt\000"
  4446      6C7400
  4447              	.LASF2:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 118
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 118
 
 
  4448 0390 756E7369 		.ascii	"unsigned char\000"
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4468      52657375 
  4469              	.LASF18:
  4470 049f 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 119
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 119
 
 
  4470      00
@@ -7113,152 +7113,152 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 1
  4484      69675F31 
  4484      5F536574 
  4484      44534D52 
- 4485              	.LASF103:
- 4486 0511 443A5C55 		.ascii	"D:\\Users\\leoja\\Documents\\PSoC Creator\\PEI_Firm"
- 4486      73657273 
- 4486      5C6C656F 
- 4486      6A615C44 
- 4486      6F63756D 
- 4487 053f 77617265 		.ascii	"ware_FE10_Rev2\\Design01.cydsn\000"
- 4487      5F464531 
- 4487      305F5265 
- 4487      76325C44 
- 4487      65736967 
- 4488              	.LASF65:
- 4489 055d 6F666673 		.ascii	"offset\000"
- 4489      657400
- 4490              	.LASF99:
- 4491 0564 4144435F 		.ascii	"ADC_DelSig_1_theACLK_SetModeRegister\000"
- 4491      44656C53 
- 4491      69675F31 
- 4491      5F746865 
- 4491      41434C4B 
- 4492              	.LASF69:
- 4493 0589 61646343 		.ascii	"adcCounts\000"
- 4493      6F756E74 
- 4493      7300
- 4494              	.LASF36:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 120
+ 4485              	.LASF65:
+ 4486 0511 6F666673 		.ascii	"offset\000"
+ 4486      657400
+ 4487              	.LASF99:
+ 4488 0518 4144435F 		.ascii	"ADC_DelSig_1_theACLK_SetModeRegister\000"
+ 4488      44656C53 
+ 4488      69675F31 
+ 4488      5F746865 
+ 4488      41434C4B 
+ 4489              	.LASF69:
+ 4490 053d 61646343 		.ascii	"adcCounts\000"
+ 4490      6F756E74 
+ 4490      7300
+ 4491              	.LASF36:
+ 4492 0547 4144435F 		.ascii	"ADC_DelSig_1_GainCompensation\000"
+ 4492      44656C53 
+ 4492      69675F31 
+ 4492      5F476169 
+ 4492      6E436F6D 
+ 4493              	.LASF39:
+ 4494 0565 656E6162 		.ascii	"enableInterrupts\000"
+ 4494      6C65496E 
+ 4494      74657272 
+ 4494      75707473 
+ 4494      00
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 120
 
 
- 4495 0593 4144435F 		.ascii	"ADC_DelSig_1_GainCompensation\000"
- 4495      44656C53 
- 4495      69675F31 
- 4495      5F476169 
- 4495      6E436F6D 
- 4496              	.LASF39:
- 4497 05b1 656E6162 		.ascii	"enableInterrupts\000"
- 4497      6C65496E 
- 4497      74657272 
- 4497      75707473 
- 4497      00
- 4498              	.LASF58:
- 4499 05c2 4144435F 		.ascii	"ADC_DelSig_1_IsEndConversion\000"
- 4499      44656C53 
- 4499      69675F31 
- 4499      5F497345 
- 4499      6E64436F 
- 4500              	.LASF53:
- 4501 05df 4144435F 		.ascii	"ADC_DelSig_1_SetGCOR\000"
- 4501      44656C53 
- 4501      69675F31 
- 4501      5F536574 
- 4501      47434F52 
- 4502              	.LASF55:
- 4503 05f4 6756616C 		.ascii	"gValue\000"
- 4503      756500
- 4504              	.LASF102:
- 4505 05fb 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_DelSig_1.c\000"
- 4505      72617465 
- 4505      645F536F 
- 4505      75726365 
- 4505      5C50536F 
- 4506              	.LASF51:
- 4507 0621 73746174 		.ascii	"status\000"
- 4507      757300
- 4508              	.LASF50:
- 4509 0628 6761696E 		.ascii	"gainAdjust\000"
- 4509      41646A75 
- 4509      737400
- 4510              	.LASF43:
- 4511 0633 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
- 4511      44656C53 
- 4511      69675F31 
- 4511      5F537461 
- 4511      727400
- 4512              	.LASF14:
- 4513 0646 696E7431 		.ascii	"int16\000"
- 4513      3600
- 4514              	.LASF57:
- 4515 064c 4144435F 		.ascii	"ADC_DelSig_1_StopConvert\000"
- 4515      44656C53 
- 4515      69675F31 
- 4515      5F53746F 
- 4515      70436F6E 
- 4516              	.LASF94:
- 4517 0665 4144435F 		.ascii	"ADC_DelSig_1_AMux_Select\000"
- 4517      44656C53 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 121
+ 4495              	.LASF58:
+ 4496 0576 4144435F 		.ascii	"ADC_DelSig_1_IsEndConversion\000"
+ 4496      44656C53 
+ 4496      69675F31 
+ 4496      5F497345 
+ 4496      6E64436F 
+ 4497              	.LASF53:
+ 4498 0593 4144435F 		.ascii	"ADC_DelSig_1_SetGCOR\000"
+ 4498      44656C53 
+ 4498      69675F31 
+ 4498      5F536574 
+ 4498      47434F52 
+ 4499              	.LASF55:
+ 4500 05a8 6756616C 		.ascii	"gValue\000"
+ 4500      756500
+ 4501              	.LASF102:
+ 4502 05af 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_DelSig_1.c\000"
+ 4502      72617465 
+ 4502      645F536F 
+ 4502      75726365 
+ 4502      5C50536F 
+ 4503              	.LASF51:
+ 4504 05d5 73746174 		.ascii	"status\000"
+ 4504      757300
+ 4505              	.LASF50:
+ 4506 05dc 6761696E 		.ascii	"gainAdjust\000"
+ 4506      41646A75 
+ 4506      737400
+ 4507              	.LASF43:
+ 4508 05e7 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
+ 4508      44656C53 
+ 4508      69675F31 
+ 4508      5F537461 
+ 4508      727400
+ 4509              	.LASF14:
+ 4510 05fa 696E7431 		.ascii	"int16\000"
+ 4510      3600
+ 4511              	.LASF57:
+ 4512 0600 4144435F 		.ascii	"ADC_DelSig_1_StopConvert\000"
+ 4512      44656C53 
+ 4512      69675F31 
+ 4512      5F53746F 
+ 4512      70436F6E 
+ 4513              	.LASF94:
+ 4514 0619 4144435F 		.ascii	"ADC_DelSig_1_AMux_Select\000"
+ 4514      44656C53 
+ 4514      69675F31 
+ 4514      5F414D75 
+ 4514      785F5365 
+ 4515              	.LASF66:
+ 4516 0632 4144435F 		.ascii	"ADC_DelSig_1_SetGain\000"
+ 4516      44656C53 
+ 4516      69675F31 
+ 4516      5F536574 
+ 4516      4761696E 
+ 4517              	.LASF80:
+ 4518 0647 4144435F 		.ascii	"ADC_DelSig_1_Read16\000"
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 121
 
 
- 4517      69675F31 
- 4517      5F414D75 
- 4517      785F5365 
- 4518              	.LASF66:
- 4519 067e 4144435F 		.ascii	"ADC_DelSig_1_SetGain\000"
- 4519      44656C53 
- 4519      69675F31 
- 4519      5F536574 
- 4519      4761696E 
- 4520              	.LASF80:
- 4521 0693 4144435F 		.ascii	"ADC_DelSig_1_Read16\000"
- 4521      44656C53 
- 4521      69675F31 
- 4521      5F526561 
- 4521      64313600 
+ 4518      44656C53 
+ 4518      69675F31 
+ 4518      5F526561 
+ 4518      64313600 
+ 4519              	.LASF103:
+ 4520 065b 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
+ 4520      73657273 
+ 4520      5C6C656F 
+ 4520      6A615C44 
+ 4520      6F63756D 
+ 4521 0689 4531305C 		.ascii	"E10\\PEI_Firmware_FE10_Rev2\\Design01.cydsn\000"
+ 4521      5045495F 
+ 4521      4669726D 
+ 4521      77617265 
+ 4521      5F464531 
  4522              	.LASF68:
- 4523 06a7 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
+ 4523 06b3 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
  4523      44656C53 
  4523      69675F31 
  4523      5F436F75 
  4523      6E747354 
  4524              	.LASF45:
- 4525 06c4 4144435F 		.ascii	"ADC_DelSig_1_SetBufferGain\000"
+ 4525 06d0 4144435F 		.ascii	"ADC_DelSig_1_SetBufferGain\000"
  4525      44656C53 
  4525      69675F31 
  4525      5F536574 
  4525      42756666 
  4526              	.LASF47:
- 4527 06df 746D7052 		.ascii	"tmpReg\000"
+ 4527 06eb 746D7052 		.ascii	"tmpReg\000"
  4527      656700
  4528              	.LASF79:
- 4529 06e6 4144435F 		.ascii	"ADC_DelSig_1_Read8\000"
+ 4529 06f2 4144435F 		.ascii	"ADC_DelSig_1_Read8\000"
  4529      44656C53 
  4529      69675F31 
  4529      5F526561 
  4529      643800
  4530              	.LASF61:
- 4531 06f9 72657375 		.ascii	"result\000"
+ 4531 0705 72657375 		.ascii	"result\000"
  4531      6C7400
  4532              	.LASF85:
- 4533 0700 4144435F 		.ascii	"ADC_DelSig_1_stopConversion\000"
+ 4533 070c 4144435F 		.ascii	"ADC_DelSig_1_stopConversion\000"
  4533      44656C53 
  4533      69675F31 
  4533      5F73746F 
  4533      70436F6E 
  4534              	.LASF54:
- 4535 071c 4144435F 		.ascii	"ADC_DelSig_1_ReadGCOR\000"
+ 4535 0728 4144435F 		.ascii	"ADC_DelSig_1_ReadGCOR\000"
  4535      44656C53 
  4535      69675F31 
  4535      5F526561 
  4535      6447434F 
  4536              	.LASF82:
- 4537 0732 4144435F 		.ascii	"ADC_DelSig_1_gcor\000"
+ 4537 073e 4144435F 		.ascii	"ADC_DelSig_1_gcor\000"
  4537      44656C53 
  4537      69675F31 
  4537      5F67636F 
  4537      7200
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cckDws9b.s 			page 122
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccK0Sq4O.s 			page 122
 
 
  4538              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

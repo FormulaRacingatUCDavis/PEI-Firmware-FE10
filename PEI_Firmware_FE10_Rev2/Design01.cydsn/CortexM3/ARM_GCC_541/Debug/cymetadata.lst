@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
   55 001a 01       		.byte	1
   56 001b 40       		.byte	64
   57 001c 03       		.byte	3
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 2
 
 
   58 001d 45       		.byte	69
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  112 0053 01       		.byte	1
  113 0054 DE       		.byte	-34
  114 0055 01       		.byte	1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 3
 
 
  115 0056 94       		.byte	-108
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  169 008c C0       		.byte	-64
  170 008d 00       		.byte	0
  171 008e 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 4
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 4
 
 
  172 008f 00       		.byte	0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  226 0000 BC       		.byte	-68
  227 0001 90       		.byte	-112
  228 0002 AC       		.byte	-84
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 5
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 5
 
 
  229 0003 AF       		.byte	-81
@@ -292,16 +292,16 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  273 000b 01       		.uleb128 0x1
  274 000c 24000000 		.4byte	.LASF17
  275 0010 0C       		.byte	0xc
- 276 0011 CA010000 		.4byte	.LASF18
- 277 0015 69010000 		.4byte	.LASF19
+ 276 0011 D6010000 		.4byte	.LASF18
+ 277 0015 E7000000 		.4byte	.LASF19
  278 0019 00000000 		.4byte	.Ldebug_line0
  279 001d 02       		.uleb128 0x2
  280 001e 01       		.byte	0x1
  281 001f 06       		.byte	0x6
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 6
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 6
 
 
- 282 0020 BE010000 		.4byte	.LASF0
+ 282 0020 CA010000 		.4byte	.LASF0
  283 0024 03       		.uleb128 0x3
  284 0025 00000000 		.4byte	.LASF9
  285 0029 01       		.byte	0x1
@@ -314,7 +314,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  292 0036 02       		.uleb128 0x2
  293 0037 02       		.byte	0x2
  294 0038 05       		.byte	0x5
- 295 0039 5F010000 		.4byte	.LASF2
+ 295 0039 B7010000 		.4byte	.LASF2
  296 003d 02       		.uleb128 0x2
  297 003e 02       		.byte	0x2
  298 003f 07       		.byte	0x7
@@ -322,7 +322,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  300 0044 02       		.uleb128 0x2
  301 0045 04       		.byte	0x4
  302 0046 05       		.byte	0x5
- 303 0047 B5010000 		.4byte	.LASF4
+ 303 0047 C1010000 		.4byte	.LASF4
  304 004b 02       		.uleb128 0x2
  305 004c 04       		.byte	0x4
  306 004d 07       		.byte	0x7
@@ -330,11 +330,11 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  308 0052 02       		.uleb128 0x2
  309 0053 08       		.byte	0x8
  310 0054 05       		.byte	0x5
- 311 0055 51010000 		.4byte	.LASF6
+ 311 0055 A9010000 		.4byte	.LASF6
  312 0059 02       		.uleb128 0x2
  313 005a 08       		.byte	0x8
  314 005b 07       		.byte	0x7
- 315 005c 06010000 		.4byte	.LASF7
+ 315 005c 5E010000 		.4byte	.LASF7
  316 0060 04       		.uleb128 0x4
  317 0061 04       		.byte	0x4
  318 0062 05       		.byte	0x5
@@ -342,9 +342,9 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  320 0067 02       		.uleb128 0x2
  321 0068 04       		.byte	0x4
  322 0069 07       		.byte	0x7
- 323 006a F9000000 		.4byte	.LASF8
+ 323 006a 51010000 		.4byte	.LASF8
  324 006e 03       		.uleb128 0x3
- 325 006f 1D010000 		.4byte	.LASF10
+ 325 006f 75010000 		.4byte	.LASF10
  326 0073 02       		.byte	0x2
  327 0074 18       		.byte	0x18
  328 0075 24000000 		.4byte	0x24
@@ -358,14 +358,14 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  336 0089 02       		.uleb128 0x2
  337 008a 04       		.byte	0x4
  338 008b 07       		.byte	0x7
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 7
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 7
 
 
- 339 008c 48010000 		.4byte	.LASF11
+ 339 008c A0010000 		.4byte	.LASF11
  340 0090 07       		.uleb128 0x7
  341 0091 6E000000 		.4byte	0x6e
  342 0095 08       		.uleb128 0x8
- 343 0096 E7000000 		.4byte	.LASF12
+ 343 0096 3F010000 		.4byte	.LASF12
  344 009a 03       		.byte	0x3
  345 009b 1F       		.byte	0x1f
  346 009c A6000000 		.4byte	0xa6
@@ -392,7 +392,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  367 00cc 07       		.uleb128 0x7
  368 00cd AB000000 		.4byte	0xab
  369 00d1 08       		.uleb128 0x8
- 370 00d2 3A010000 		.4byte	.LASF14
+ 370 00d2 92010000 		.4byte	.LASF14
  371 00d6 03       		.byte	0x3
  372 00d7 52       		.byte	0x52
  373 00d8 E2000000 		.4byte	0xe2
@@ -409,7 +409,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  384 00f5 FF       		.byte	0xff
  385 00f6 00       		.byte	0
  386 00f7 08       		.uleb128 0x8
- 387 00f8 25010000 		.4byte	.LASF15
+ 387 00f8 7D010000 		.4byte	.LASF15
  388 00fc 03       		.byte	0x3
  389 00fd 60       		.byte	0x60
  390 00fe 08010000 		.4byte	0x108
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  393 0104 00000000 		.4byte	cy_meta_flashprotect
  394 0108 07       		.uleb128 0x7
  395 0109 E7000000 		.4byte	0xe7
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 8
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 8
 
 
  396 010d 05       		.uleb128 0x5
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  450 0022 0B       		.uleb128 0xb
  451 0023 49       		.uleb128 0x49
  452 0024 13       		.uleb128 0x13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 9
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 9
 
 
  453 0025 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  507 005b 00       		.byte	0
  508 005c 00       		.byte	0
  509              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 10
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 10
 
 
  510 0000 14000000 		.4byte	0x14
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  535      7369676E 
  535      65642069 
  535      6E7400
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 11
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 11
 
 
  536              	.LASF13:
@@ -606,74 +606,74 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 1
  537      6574615F 
  537      63757374 
  537      6E766C00 
- 538              	.LASF12:
- 539 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
- 539      6574615F 
- 539      636F6E66 
- 539      69676563 
- 539      6300
- 540              	.LASF8:
- 541 00f9 756E7369 		.ascii	"unsigned int\000"
- 541      676E6564 
- 541      20696E74 
- 541      00
- 542              	.LASF7:
- 543 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
- 543      206C6F6E 
- 543      6720756E 
- 543      7369676E 
- 543      65642069 
- 544              	.LASF10:
- 545 011d 75696E74 		.ascii	"uint8_t\000"
- 545      385F7400 
- 546              	.LASF15:
- 547 0125 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 547      6574615F 
- 547      666C6173 
- 547      6870726F 
- 547      74656374 
- 548              	.LASF14:
- 549 013a 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 549      6574615F 
- 549      776F6E76 
- 549      6C00
- 550              	.LASF11:
- 551 0148 73697A65 		.ascii	"sizetype\000"
- 551      74797065 
- 551      00
- 552              	.LASF6:
- 553 0151 6C6F6E67 		.ascii	"long long int\000"
- 553      206C6F6E 
- 553      6720696E 
- 553      7400
- 554              	.LASF2:
- 555 015f 73686F72 		.ascii	"short int\000"
- 555      7420696E 
- 555      7400
- 556              	.LASF19:
- 557 0169 443A5C55 		.ascii	"D:\\Users\\leoja\\Documents\\PSoC Creator\\PEI_Firm"
- 557      73657273 
- 557      5C6C656F 
- 557      6A615C44 
- 557      6F63756D 
- 558 0197 77617265 		.ascii	"ware_FE10_Rev2\\Design01.cydsn\000"
- 558      5F464531 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccl5gQpd.s 			page 12
+ 538              	.LASF19:
+ 539 00e7 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
+ 539      73657273 
+ 539      5C6C656F 
+ 539      6A615C44 
+ 539      6F63756D 
+ 540 0115 4531305C 		.ascii	"E10\\PEI_Firmware_FE10_Rev2\\Design01.cydsn\000"
+ 540      5045495F 
+ 540      4669726D 
+ 540      77617265 
+ 540      5F464531 
+ 541              	.LASF12:
+ 542 013f 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 542      6574615F 
+ 542      636F6E66 
+ 542      69676563 
+ 542      6300
+ 543              	.LASF8:
+ 544 0151 756E7369 		.ascii	"unsigned int\000"
+ 544      676E6564 
+ 544      20696E74 
+ 544      00
+ 545              	.LASF7:
+ 546 015e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 546      206C6F6E 
+ 546      6720756E 
+ 546      7369676E 
+ 546      65642069 
+ 547              	.LASF10:
+ 548 0175 75696E74 		.ascii	"uint8_t\000"
+ 548      385F7400 
+ 549              	.LASF15:
+ 550 017d 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 550      6574615F 
+ 550      666C6173 
+ 550      6870726F 
+ 550      74656374 
+ 551              	.LASF14:
+ 552 0192 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 552      6574615F 
+ 552      776F6E76 
+ 552      6C00
+ 553              	.LASF11:
+ 554 01a0 73697A65 		.ascii	"sizetype\000"
+ 554      74797065 
+ 554      00
+ 555              	.LASF6:
+ 556 01a9 6C6F6E67 		.ascii	"long long int\000"
+ 556      206C6F6E 
+ 556      6720696E 
+ 556      7400
+ 557              	.LASF2:
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\cc3nKIci.s 			page 12
 
 
- 558      305F5265 
- 558      76325C44 
- 558      65736967 
+ 558 01b7 73686F72 		.ascii	"short int\000"
+ 558      7420696E 
+ 558      7400
  559              	.LASF4:
- 560 01b5 6C6F6E67 		.ascii	"long int\000"
+ 560 01c1 6C6F6E67 		.ascii	"long int\000"
  560      20696E74 
  560      00
  561              	.LASF0:
- 562 01be 7369676E 		.ascii	"signed char\000"
+ 562 01ca 7369676E 		.ascii	"signed char\000"
  562      65642063 
  562      68617200 
  563              	.LASF18:
- 564 01ca 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 564 01d6 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
  564      72617465 
  564      645F536F 
  564      75726365 

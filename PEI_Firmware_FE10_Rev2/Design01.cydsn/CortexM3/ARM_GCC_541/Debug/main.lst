@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 1
 
 
    1              		.syntax unified
@@ -19,15 +19,20 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.main,"ax",%progbits
-  20              		.align	2
-  21              		.global	main
-  22              		.thumb
-  23              		.thumb_func
-  24              		.type	main, %function
-  25              	main:
-  26              	.LFB63:
-  27              		.file 1 "main.c"
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_dmul
+  21              		.global	__aeabi_ddiv
+  22              		.global	__aeabi_dsub
+  23              		.global	__aeabi_d2iz
+  24              		.section	.text.get_current,"ax",%progbits
+  25              		.align	2
+  26              		.global	get_current
+  27              		.thumb
+  28              		.thumb_func
+  29              		.type	get_current, %function
+  30              	get_current:
+  31              	.LFB65:
+  32              		.file 1 "main.c"
    1:main.c        **** /* ========================================
    2:main.c        ****  *
    3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
@@ -39,394 +44,2229 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 1
    9:main.c        ****  *
   10:main.c        ****  * ========================================
   11:main.c        **** */
-  12:main.c        **** #include "project.h"
-  13:main.c        **** 
-  14:main.c        **** int main(void)
-  15:main.c        **** {
-  28              		.loc 1 15 0
-  29              		.cfi_startproc
-  30              		@ Volatile: function does not return.
-  31              		@ args = 0, pretend = 0, frame = 0
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
-  34              		.loc 1 16 0
-  35              		.syntax unified
-  36              	@ 16 "main.c" 1
-  37 0000 62B6     		CPSIE   i
-  38              	@ 0 "" 2
-  39              		.thumb
-  40              		.syntax unified
-  41              	.L2:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 2
+  12:main.c        **** 
+  13:main.c        **** #include "main.h"
+  14:main.c        **** 
+  15:main.c        **** //pei parameters
+  16:main.c        **** PEI_STATE_t pei_state = PEI_LV;
+  17:main.c        **** uint8_t pei_status = NORMAL;
+  18:main.c        **** int16_t current;
+  19:main.c        **** uint8_t relay_flags = 0;
+  20:main.c        **** 
+  21:main.c        **** //vcu parameters
+  22:main.c        **** VCU_STATE vcu_state = LV;
+  23:main.c        **** uint8_t hv_requested = 0;
+  24:main.c        **** uint8_t vcu_attached = 0;
+  25:main.c        **** 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 2
 
 
-  42 0002 FEE7     		b	.L2
-  43              		.cfi_endproc
-  44              	.LFE63:
-  45              		.size	main, .-main
-  46              		.text
-  47              	.Letext0:
-  48              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
-  49              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
-  50              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
-  51              		.section	.debug_info,"",%progbits
-  52              	.Ldebug_info0:
-  53 0000 C7000000 		.4byte	0xc7
-  54 0004 0400     		.2byte	0x4
-  55 0006 00000000 		.4byte	.Ldebug_abbrev0
-  56 000a 04       		.byte	0x4
-  57 000b 01       		.uleb128 0x1
-  58 000c 3A000000 		.4byte	.LASF16
-  59 0010 0C       		.byte	0xc
-  60 0011 2E000000 		.4byte	.LASF17
-  61 0015 0D010000 		.4byte	.LASF18
-  62 0019 00000000 		.4byte	.Ldebug_ranges0+0
-  63 001d 00000000 		.4byte	0
-  64 0021 00000000 		.4byte	.Ldebug_line0
-  65 0025 02       		.uleb128 0x2
-  66 0026 01       		.byte	0x1
-  67 0027 06       		.byte	0x6
-  68 0028 6D010000 		.4byte	.LASF0
-  69 002c 02       		.uleb128 0x2
-  70 002d 01       		.byte	0x1
-  71 002e 08       		.byte	0x8
-  72 002f F1000000 		.4byte	.LASF1
-  73 0033 02       		.uleb128 0x2
-  74 0034 02       		.byte	0x2
-  75 0035 05       		.byte	0x5
-  76 0036 95010000 		.4byte	.LASF2
-  77 003a 02       		.uleb128 0x2
-  78 003b 02       		.byte	0x2
-  79 003c 07       		.byte	0x7
-  80 003d 0E000000 		.4byte	.LASF3
-  81 0041 03       		.uleb128 0x3
-  82 0042 85010000 		.4byte	.LASF9
-  83 0046 02       		.byte	0x2
-  84 0047 3F       		.byte	0x3f
-  85 0048 4C000000 		.4byte	0x4c
-  86 004c 02       		.uleb128 0x2
-  87 004d 04       		.byte	0x4
-  88 004e 05       		.byte	0x5
-  89 004f 04010000 		.4byte	.LASF4
-  90 0053 02       		.uleb128 0x2
-  91 0054 04       		.byte	0x4
-  92 0055 07       		.byte	0x7
-  93 0056 C8000000 		.4byte	.LASF5
-  94 005a 02       		.uleb128 0x2
-  95 005b 08       		.byte	0x8
-  96 005c 05       		.byte	0x5
-  97 005d 00000000 		.4byte	.LASF6
-  98 0061 02       		.uleb128 0x2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 3
+  26:main.c        **** //bms parameters 
+  27:main.c        **** uint16_t bms_status = 0;
+  28:main.c        **** uint16_t bms_voltage = 0;
+  29:main.c        **** uint8_t bms_soc = 0;
+  30:main.c        **** uint8_t bms_temp = 0;
+  31:main.c        **** 
+  32:main.c        **** //mc parameters
+  33:main.c        **** int16_t mc_voltage = 0;
+  34:main.c        **** MC_VSM_STATE mc_vsm_state = VSM_START;
+  35:main.c        **** MC_DISCHARGE_STATE mc_discharge_state = DISCHARGE_DISABLED;
+  36:main.c        **** uint16_t mc_post_faults = 0;
+  37:main.c        **** uint16_t mc_run_faults = 0;
+  38:main.c        **** 
+  39:main.c        **** //charger parameters
+  40:main.c        **** uint8_t charger_attached = 0;
+  41:main.c        **** uint8_t charger_status = 0;
+  42:main.c        **** 
+  43:main.c        **** //loop counters
+  44:main.c        **** uint16_t loop_counter = 0;
+  45:main.c        **** uint16_t loops_since_vcu_message = 0;
+  46:main.c        **** uint16_t loops_since_bms_message = 0;
+  47:main.c        **** uint16_t loops_since_mc_message = 0;
+  48:main.c        **** uint16_t loops_since_charger_message = 0;
+  49:main.c        **** 
+  50:main.c        **** int main(void)
+  51:main.c        **** {
+  52:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  53:main.c        ****     
+  54:main.c        ****     //Initialize and start CAN
+  55:main.c        ****     CAN_GlobalIntEnable();
+  56:main.c        ****     CAN_Init();
+  57:main.c        ****     CAN_Start();
+  58:main.c        ****     ADC_DelSig_1_Start();
+  59:main.c        ****     LCD_Start();
+  60:main.c        ****     
+  61:main.c        ****     uint8_t shutdown_flags = 0;
+  62:main.c        ****     
+  63:main.c        ****     for(;;)
+  64:main.c        ****     {       
+  65:main.c        ****         for(uint8_t i = 0; i < CAN_MSG_INTERVAL; i++){
+  66:main.c        ****             // shutdown flags, current
+  67:main.c        ****             shutdown_flags = 0;
+  68:main.c        ****             
+  69:main.c        ****             shutdown_flags = relay_flags & 0x07;
+  70:main.c        ****             if (IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
+  71:main.c        ****             if (BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
+  72:main.c        ****             if (SD_FINAL_Read()) shutdown_flags |= (1 << 3);
+  73:main.c        ****             
+  74:main.c        ****             
+  75:main.c        ****             //Interlock state machine
+  76:main.c        ****             update_status();
+  77:main.c        ****             
+  78:main.c        ****             if(hv_allowed() == 0){
+  79:main.c        ****                 pei_state = PEI_FAULT;
+  80:main.c        ****             }
+  81:main.c        ****               
+  82:main.c        ****             switch(pei_state){
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 3
 
 
-  99 0062 08       		.byte	0x8
- 100 0063 07       		.byte	0x7
- 101 0064 DA000000 		.4byte	.LASF7
- 102 0068 04       		.uleb128 0x4
- 103 0069 04       		.byte	0x4
- 104 006a 05       		.byte	0x5
- 105 006b 696E7400 		.ascii	"int\000"
- 106 006f 02       		.uleb128 0x2
- 107 0070 04       		.byte	0x4
- 108 0071 07       		.byte	0x7
- 109 0072 21000000 		.4byte	.LASF8
- 110 0076 03       		.uleb128 0x3
- 111 0077 9F010000 		.4byte	.LASF10
- 112 007b 03       		.byte	0x3
- 113 007c 2C       		.byte	0x2c
- 114 007d 41000000 		.4byte	0x41
- 115 0081 02       		.uleb128 0x2
- 116 0082 04       		.byte	0x4
- 117 0083 04       		.byte	0x4
- 118 0084 8F010000 		.4byte	.LASF11
- 119 0088 02       		.uleb128 0x2
- 120 0089 08       		.byte	0x8
- 121 008a 04       		.byte	0x4
- 122 008b 59010000 		.4byte	.LASF12
- 123 008f 02       		.uleb128 0x2
- 124 0090 01       		.byte	0x1
- 125 0091 08       		.byte	0x8
- 126 0092 FF000000 		.4byte	.LASF13
- 127 0096 02       		.uleb128 0x2
- 128 0097 08       		.byte	0x8
- 129 0098 04       		.byte	0x4
- 130 0099 79010000 		.4byte	.LASF14
- 131 009d 02       		.uleb128 0x2
- 132 009e 04       		.byte	0x4
- 133 009f 07       		.byte	0x7
- 134 00a0 A7010000 		.4byte	.LASF15
- 135 00a4 05       		.uleb128 0x5
- 136 00a5 35000000 		.4byte	.LASF19
- 137 00a9 01       		.byte	0x1
- 138 00aa 0E       		.byte	0xe
- 139 00ab 68000000 		.4byte	0x68
- 140 00af 00000000 		.4byte	.LFB63
- 141 00b3 04000000 		.4byte	.LFE63-.LFB63
- 142 00b7 01       		.uleb128 0x1
- 143 00b8 9C       		.byte	0x9c
- 144 00b9 06       		.uleb128 0x6
- 145 00ba 60010000 		.4byte	.LASF20
- 146 00be 04       		.byte	0x4
- 147 00bf 1207     		.2byte	0x712
- 148 00c1 C5000000 		.4byte	0xc5
- 149 00c5 07       		.uleb128 0x7
- 150 00c6 76000000 		.4byte	0x76
- 151 00ca 00       		.byte	0
- 152              		.section	.debug_abbrev,"",%progbits
- 153              	.Ldebug_abbrev0:
- 154 0000 01       		.uleb128 0x1
- 155 0001 11       		.uleb128 0x11
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 4
+  83:main.c        ****                 case PEI_LV:
+  84:main.c        ****                     clear_interlock(); // clears interlock, send a message to open AIRs   
+  85:main.c        ****                     
+  86:main.c        ****                     if(hv_request() && hv_allowed()) {
+  87:main.c        ****                         if(vcu_attached && precharge_ready()){
+  88:main.c        ****                             pei_state = PEI_PRECHARGE;
+  89:main.c        ****                         } else if(charger_attached){
+  90:main.c        ****                             pei_state = PEI_HV;   //charger doesn't need precharge
+  91:main.c        ****                         }
+  92:main.c        ****                     }
+  93:main.c        ****                     
+  94:main.c        ****                     break;
+  95:main.c        ****                 
+  96:main.c        ****                 case PEI_PRECHARGE:           
+  97:main.c        ****                     start_precharge();
+  98:main.c        ****                     
+  99:main.c        ****                     //Todo: Capacitor (gotten value) >= 95% pack voltage (threshold that we measure
+ 100:main.c        ****                     //This if statement is incorrect
+ 101:main.c        ****                     if (precharge_complete()){
+ 102:main.c        ****                         pei_state = PEI_HV;
+ 103:main.c        ****                     }
+ 104:main.c        **** 
+ 105:main.c        ****                     if(hv_request() == 0) {
+ 106:main.c        ****                        pei_state = PEI_LV;
+ 107:main.c        ****                     }
+ 108:main.c        ****                     
+ 109:main.c        ****                     break;
+ 110:main.c        ****                     
+ 111:main.c        ****                  case PEI_HV:
+ 112:main.c        ****                     finish_precharge();
+ 113:main.c        ****                     
+ 114:main.c        ****                     if(hv_request() == 0) {
+ 115:main.c        ****                        pei_state = PEI_LV;
+ 116:main.c        ****                     }
+ 117:main.c        ****                     
+ 118:main.c        ****                     break;
+ 119:main.c        ****                     
+ 120:main.c        ****                 default:
+ 121:main.c        ****                     clear_interlock();
+ 122:main.c        ****                     pei_state = PEI_FAULT;
+ 123:main.c        ****                     
+ 124:main.c        ****                     if (hv_request() == 0 && hv_allowed()) {
+ 125:main.c        ****                         pei_state = PEI_LV;
+ 126:main.c        ****                     } 
+ 127:main.c        ****             } //end switch
+ 128:main.c        **** 
+ 129:main.c        ****             check_can();
+ 130:main.c        ****             
+ 131:main.c        ****         } //end for loop
+ 132:main.c        ****         
+ 133:main.c        ****         current = get_current();
+ 134:main.c        ****         update_display();
+ 135:main.c        ****         can_send_PEI(current, shutdown_flags);
+ 136:main.c        ****     }
+ 137:main.c        **** }
+ 138:main.c        **** 
+ 139:main.c        **** 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 4
 
 
- 156 0002 01       		.byte	0x1
- 157 0003 25       		.uleb128 0x25
- 158 0004 0E       		.uleb128 0xe
- 159 0005 13       		.uleb128 0x13
- 160 0006 0B       		.uleb128 0xb
- 161 0007 03       		.uleb128 0x3
- 162 0008 0E       		.uleb128 0xe
- 163 0009 1B       		.uleb128 0x1b
- 164 000a 0E       		.uleb128 0xe
- 165 000b 55       		.uleb128 0x55
- 166 000c 17       		.uleb128 0x17
- 167 000d 11       		.uleb128 0x11
- 168 000e 01       		.uleb128 0x1
- 169 000f 10       		.uleb128 0x10
- 170 0010 17       		.uleb128 0x17
- 171 0011 00       		.byte	0
- 172 0012 00       		.byte	0
- 173 0013 02       		.uleb128 0x2
- 174 0014 24       		.uleb128 0x24
- 175 0015 00       		.byte	0
- 176 0016 0B       		.uleb128 0xb
- 177 0017 0B       		.uleb128 0xb
- 178 0018 3E       		.uleb128 0x3e
- 179 0019 0B       		.uleb128 0xb
- 180 001a 03       		.uleb128 0x3
- 181 001b 0E       		.uleb128 0xe
- 182 001c 00       		.byte	0
- 183 001d 00       		.byte	0
- 184 001e 03       		.uleb128 0x3
- 185 001f 16       		.uleb128 0x16
- 186 0020 00       		.byte	0
- 187 0021 03       		.uleb128 0x3
- 188 0022 0E       		.uleb128 0xe
- 189 0023 3A       		.uleb128 0x3a
- 190 0024 0B       		.uleb128 0xb
- 191 0025 3B       		.uleb128 0x3b
- 192 0026 0B       		.uleb128 0xb
- 193 0027 49       		.uleb128 0x49
- 194 0028 13       		.uleb128 0x13
- 195 0029 00       		.byte	0
- 196 002a 00       		.byte	0
- 197 002b 04       		.uleb128 0x4
- 198 002c 24       		.uleb128 0x24
- 199 002d 00       		.byte	0
- 200 002e 0B       		.uleb128 0xb
- 201 002f 0B       		.uleb128 0xb
- 202 0030 3E       		.uleb128 0x3e
- 203 0031 0B       		.uleb128 0xb
- 204 0032 03       		.uleb128 0x3
- 205 0033 08       		.uleb128 0x8
- 206 0034 00       		.byte	0
- 207 0035 00       		.byte	0
- 208 0036 05       		.uleb128 0x5
- 209 0037 2E       		.uleb128 0x2e
- 210 0038 00       		.byte	0
- 211 0039 3F       		.uleb128 0x3f
- 212 003a 19       		.uleb128 0x19
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 5
+ 140:main.c        **** 
+ 141:main.c        **** int16_t get_current(){
+  33              		.loc 1 141 0
+  34              		.cfi_startproc
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37 0000 08B5     		push	{r3, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 3, -8
+  40              		.cfi_offset 14, -4
+ 142:main.c        ****     double current_raw_mv = (double)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
+  41              		.loc 1 142 0
+  42 0002 FFF7FEFF 		bl	ADC_DelSig_1_Read32
+  43              	.LVL0:
+  44 0006 FFF7FEFF 		bl	ADC_DelSig_1_CountsTo_mVolts
+  45              	.LVL1:
+  46 000a FFF7FEFF 		bl	__aeabi_i2d
+  47              	.LVL2:
+ 143:main.c        ****     int16_t current = (int16_t)(((current_raw_mv*5.0/3.3) - 2500)/6.667)*10;
+  48              		.loc 1 143 0
+  49 000e 0022     		movs	r2, #0
+  50 0010 134B     		ldr	r3, .L3+24
+  51 0012 FFF7FEFF 		bl	__aeabi_dmul
+  52              	.LVL3:
+  53 0016 0CA3     		adr	r3, .L3
+  54 0018 D3E90023 		ldrd	r2, [r3]
+  55 001c FFF7FEFF 		bl	__aeabi_ddiv
+  56              	.LVL4:
+  57 0020 0BA3     		adr	r3, .L3+8
+  58 0022 D3E90023 		ldrd	r2, [r3]
+  59 0026 FFF7FEFF 		bl	__aeabi_dsub
+  60              	.LVL5:
+  61 002a 0BA3     		adr	r3, .L3+16
+  62 002c D3E90023 		ldrd	r2, [r3]
+  63 0030 FFF7FEFF 		bl	__aeabi_ddiv
+  64              	.LVL6:
+  65 0034 FFF7FEFF 		bl	__aeabi_d2iz
+  66              	.LVL7:
+  67 0038 00B2     		sxth	r0, r0
+  68 003a 00EB8003 		add	r3, r0, r0, lsl #2
+  69 003e 5800     		lsls	r0, r3, #1
+  70              	.LVL8:
+ 144:main.c        ****     return current;
+ 145:main.c        **** }
+  71              		.loc 1 145 0
+  72 0040 00B2     		sxth	r0, r0
+  73 0042 08BD     		pop	{r3, pc}
+  74              	.L4:
+  75 0044 AFF30080 		.align	3
+  76              	.L3:
+  77 0048 66666666 		.word	1717986918
+  78 004c 66660A40 		.word	1074423398
+  79 0050 00000000 		.word	0
+  80 0054 0088A340 		.word	1084459008
+  81 0058 5EBA490C 		.word	206158430
+  82 005c 02AB1A40 		.word	1075489538
+  83 0060 00001440 		.word	1075052544
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 5
 
 
- 213 003b 03       		.uleb128 0x3
- 214 003c 0E       		.uleb128 0xe
- 215 003d 3A       		.uleb128 0x3a
- 216 003e 0B       		.uleb128 0xb
- 217 003f 3B       		.uleb128 0x3b
- 218 0040 0B       		.uleb128 0xb
- 219 0041 27       		.uleb128 0x27
- 220 0042 19       		.uleb128 0x19
- 221 0043 49       		.uleb128 0x49
- 222 0044 13       		.uleb128 0x13
- 223 0045 8701     		.uleb128 0x87
- 224 0047 19       		.uleb128 0x19
- 225 0048 11       		.uleb128 0x11
- 226 0049 01       		.uleb128 0x1
- 227 004a 12       		.uleb128 0x12
- 228 004b 06       		.uleb128 0x6
- 229 004c 40       		.uleb128 0x40
- 230 004d 18       		.uleb128 0x18
- 231 004e 9742     		.uleb128 0x2117
- 232 0050 19       		.uleb128 0x19
- 233 0051 00       		.byte	0
- 234 0052 00       		.byte	0
- 235 0053 06       		.uleb128 0x6
- 236 0054 34       		.uleb128 0x34
- 237 0055 00       		.byte	0
- 238 0056 03       		.uleb128 0x3
- 239 0057 0E       		.uleb128 0xe
- 240 0058 3A       		.uleb128 0x3a
- 241 0059 0B       		.uleb128 0xb
- 242 005a 3B       		.uleb128 0x3b
- 243 005b 05       		.uleb128 0x5
- 244 005c 49       		.uleb128 0x49
- 245 005d 13       		.uleb128 0x13
- 246 005e 3F       		.uleb128 0x3f
- 247 005f 19       		.uleb128 0x19
- 248 0060 3C       		.uleb128 0x3c
- 249 0061 19       		.uleb128 0x19
- 250 0062 00       		.byte	0
- 251 0063 00       		.byte	0
- 252 0064 07       		.uleb128 0x7
- 253 0065 35       		.uleb128 0x35
- 254 0066 00       		.byte	0
- 255 0067 49       		.uleb128 0x49
- 256 0068 13       		.uleb128 0x13
- 257 0069 00       		.byte	0
- 258 006a 00       		.byte	0
- 259 006b 00       		.byte	0
- 260              		.section	.debug_aranges,"",%progbits
- 261 0000 1C000000 		.4byte	0x1c
- 262 0004 0200     		.2byte	0x2
- 263 0006 00000000 		.4byte	.Ldebug_info0
- 264 000a 04       		.byte	0x4
- 265 000b 00       		.byte	0
- 266 000c 0000     		.2byte	0
- 267 000e 0000     		.2byte	0
- 268 0010 00000000 		.4byte	.LFB63
- 269 0014 04000000 		.4byte	.LFE63-.LFB63
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 6
+  84              		.cfi_endproc
+  85              	.LFE65:
+  86              		.size	get_current, .-get_current
+  87              		.section	.text.main,"ax",%progbits
+  88              		.align	2
+  89              		.global	main
+  90              		.thumb
+  91              		.thumb_func
+  92              		.type	main, %function
+  93              	main:
+  94              	.LFB64:
+  51:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  95              		.loc 1 51 0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 38B5     		push	{r3, r4, r5, lr}
+ 100              		.cfi_def_cfa_offset 16
+ 101              		.cfi_offset 3, -16
+ 102              		.cfi_offset 4, -12
+ 103              		.cfi_offset 5, -8
+ 104              		.cfi_offset 14, -4
+  52:main.c        ****     
+ 105              		.loc 1 52 0
+ 106              		.syntax unified
+ 107              	@ 52 "main.c" 1
+ 108 0002 62B6     		CPSIE   i
+ 109              	@ 0 "" 2
+  55:main.c        ****     CAN_Init();
+ 110              		.loc 1 55 0
+ 111              		.thumb
+ 112              		.syntax unified
+ 113 0004 FFF7FEFF 		bl	CAN_GlobalIntEnable
+ 114              	.LVL9:
+  56:main.c        ****     CAN_Start();
+ 115              		.loc 1 56 0
+ 116 0008 FFF7FEFF 		bl	CAN_Init
+ 117              	.LVL10:
+  57:main.c        ****     ADC_DelSig_1_Start();
+ 118              		.loc 1 57 0
+ 119 000c FFF7FEFF 		bl	CAN_Start
+ 120              	.LVL11:
+  58:main.c        ****     LCD_Start();
+ 121              		.loc 1 58 0
+ 122 0010 FFF7FEFF 		bl	ADC_DelSig_1_Start
+ 123              	.LVL12:
+  59:main.c        ****     
+ 124              		.loc 1 59 0
+ 125 0014 FFF7FEFF 		bl	LCD_Start
+ 126              	.LVL13:
+  61:main.c        ****     
+ 127              		.loc 1 61 0
+ 128 0018 0024     		movs	r4, #0
+ 129              	.LVL14:
+ 130              	.L19:
+ 131              	.LBB2:
+  65:main.c        ****             // shutdown flags, current
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 6
 
 
- 270 0018 00000000 		.4byte	0
- 271 001c 00000000 		.4byte	0
- 272              		.section	.debug_ranges,"",%progbits
- 273              	.Ldebug_ranges0:
- 274 0000 00000000 		.4byte	.LFB63
- 275 0004 04000000 		.4byte	.LFE63
- 276 0008 00000000 		.4byte	0
- 277 000c 00000000 		.4byte	0
- 278              		.section	.debug_line,"",%progbits
- 279              	.Ldebug_line0:
- 280 0000 55010000 		.section	.debug_str,"MS",%progbits,1
- 280      02003F01 
- 280      00000201 
- 280      FB0E0D00 
- 280      01010101 
- 281              	.LASF6:
- 282 0000 6C6F6E67 		.ascii	"long long int\000"
- 282      206C6F6E 
- 282      6720696E 
- 282      7400
- 283              	.LASF3:
- 284 000e 73686F72 		.ascii	"short unsigned int\000"
- 284      7420756E 
- 284      7369676E 
- 284      65642069 
- 284      6E7400
- 285              	.LASF8:
- 286 0021 756E7369 		.ascii	"unsigned int\000"
- 286      676E6564 
- 286      20696E74 
- 286      00
- 287              	.LASF17:
- 288 002e 6D61696E 		.ascii	"main.c\000"
- 288      2E6300
- 289              	.LASF19:
- 290 0035 6D61696E 		.ascii	"main\000"
- 290      00
- 291              	.LASF16:
- 292 003a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 292      43313120 
- 292      352E342E 
- 292      31203230 
- 292      31363036 
- 293 006d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 293      20726576 
- 293      6973696F 
- 293      6E203233 
- 293      37373135 
- 294 00a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 294      66756E63 
- 294      74696F6E 
- 294      2D736563 
- 294      74696F6E 
- 295              	.LASF5:
- 296 00c8 6C6F6E67 		.ascii	"long unsigned int\000"
- 296      20756E73 
- 296      69676E65 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 7
+ 132              		.loc 1 65 0
+ 133 001a 0025     		movs	r5, #0
+ 134 001c 67E0     		b	.L6
+ 135              	.LVL15:
+ 136              	.L18:
+  69:main.c        ****             if (IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
+ 137              		.loc 1 69 0
+ 138 001e 3B4B     		ldr	r3, .L22
+ 139 0020 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 140 0022 04F00704 		and	r4, r4, #7
+ 141              	.LVL16:
+  70:main.c        ****             if (BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
+ 142              		.loc 1 70 0
+ 143 0026 FFF7FEFF 		bl	IMD_Fault_Read
+ 144              	.LVL17:
+ 145 002a 08B1     		cbz	r0, .L7
+  70:main.c        ****             if (BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
+ 146              		.loc 1 70 0 is_stmt 0 discriminator 1
+ 147 002c 44F02004 		orr	r4, r4, #32
+ 148              	.LVL18:
+ 149              	.L7:
+  71:main.c        ****             if (SD_FINAL_Read()) shutdown_flags |= (1 << 3);
+ 150              		.loc 1 71 0 is_stmt 1
+ 151 0030 FFF7FEFF 		bl	BMS_Fault_Read
+ 152              	.LVL19:
+ 153 0034 08B1     		cbz	r0, .L8
+  71:main.c        ****             if (SD_FINAL_Read()) shutdown_flags |= (1 << 3);
+ 154              		.loc 1 71 0 is_stmt 0 discriminator 1
+ 155 0036 44F01004 		orr	r4, r4, #16
+ 156              	.LVL20:
+ 157              	.L8:
+  72:main.c        ****             
+ 158              		.loc 1 72 0 is_stmt 1
+ 159 003a FFF7FEFF 		bl	SD_FINAL_Read
+ 160              	.LVL21:
+ 161 003e 08B1     		cbz	r0, .L9
+  72:main.c        ****             
+ 162              		.loc 1 72 0 is_stmt 0 discriminator 1
+ 163 0040 44F00804 		orr	r4, r4, #8
+ 164              	.LVL22:
+ 165              	.L9:
+  76:main.c        ****             
+ 166              		.loc 1 76 0 is_stmt 1
+ 167 0044 FFF7FEFF 		bl	update_status
+ 168              	.LVL23:
+  78:main.c        ****                 pei_state = PEI_FAULT;
+ 169              		.loc 1 78 0
+ 170 0048 FFF7FEFF 		bl	hv_allowed
+ 171              	.LVL24:
+ 172 004c 10B9     		cbnz	r0, .L10
+  79:main.c        ****             }
+ 173              		.loc 1 79 0
+ 174 004e 0322     		movs	r2, #3
+ 175 0050 2E4B     		ldr	r3, .L22
+ 176 0052 5A70     		strb	r2, [r3, #1]
+ 177              	.L10:
+  82:main.c        ****                 case PEI_LV:
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 7
 
 
- 296      6420696E 
- 296      7400
- 297              	.LASF7:
- 298 00da 6C6F6E67 		.ascii	"long long unsigned int\000"
- 298      206C6F6E 
- 298      6720756E 
- 298      7369676E 
- 298      65642069 
- 299              	.LASF1:
- 300 00f1 756E7369 		.ascii	"unsigned char\000"
- 300      676E6564 
- 300      20636861 
- 300      7200
- 301              	.LASF13:
- 302 00ff 63686172 		.ascii	"char\000"
- 302      00
- 303              	.LASF4:
- 304 0104 6C6F6E67 		.ascii	"long int\000"
- 304      20696E74 
- 304      00
- 305              	.LASF18:
- 306 010d 443A5C55 		.ascii	"D:\\Users\\leoja\\Documents\\PSoC Creator\\PEI_Firm"
- 306      73657273 
- 306      5C6C656F 
- 306      6A615C44 
- 306      6F63756D 
- 307 013b 77617265 		.ascii	"ware_FE10_Rev2\\Design01.cydsn\000"
- 307      5F464531 
- 307      305F5265 
- 307      76325C44 
- 307      65736967 
- 308              	.LASF12:
- 309 0159 646F7562 		.ascii	"double\000"
- 309      6C6500
- 310              	.LASF20:
- 311 0160 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 311      52784275 
- 311      66666572 
- 311      00
- 312              	.LASF0:
- 313 016d 7369676E 		.ascii	"signed char\000"
- 313      65642063 
- 313      68617200 
- 314              	.LASF14:
- 315 0179 6C6F6E67 		.ascii	"long double\000"
- 315      20646F75 
- 315      626C6500 
- 316              	.LASF9:
- 317 0185 5F5F696E 		.ascii	"__int32_t\000"
- 317      7433325F 
- 317      7400
- 318              	.LASF11:
- 319 018f 666C6F61 		.ascii	"float\000"
- 319      7400
- 320              	.LASF2:
- 321 0195 73686F72 		.ascii	"short int\000"
- 321      7420696E 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccyCW2lM.s 			page 8
+ 178              		.loc 1 82 0
+ 179 0054 2D4B     		ldr	r3, .L22
+ 180 0056 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 181 0058 012B     		cmp	r3, #1
+ 182 005a 1ED0     		beq	.L12
+ 183 005c 13B1     		cbz	r3, .L13
+ 184 005e 022B     		cmp	r3, #2
+ 185 0060 2AD0     		beq	.L14
+ 186 0062 32E0     		b	.L20
+ 187              	.L13:
+  84:main.c        ****                     
+ 188              		.loc 1 84 0
+ 189 0064 FFF7FEFF 		bl	clear_interlock
+ 190              	.LVL25:
+  86:main.c        ****                         if(vcu_attached && precharge_ready()){
+ 191              		.loc 1 86 0
+ 192 0068 FFF7FEFF 		bl	hv_request
+ 193              	.LVL26:
+ 194 006c 0028     		cmp	r0, #0
+ 195 006e 3AD0     		beq	.L15
+  86:main.c        ****                         if(vcu_attached && precharge_ready()){
+ 196              		.loc 1 86 0 is_stmt 0 discriminator 1
+ 197 0070 FFF7FEFF 		bl	hv_allowed
+ 198              	.LVL27:
+ 199 0074 0028     		cmp	r0, #0
+ 200 0076 36D0     		beq	.L15
+  87:main.c        ****                             pei_state = PEI_PRECHARGE;
+ 201              		.loc 1 87 0 is_stmt 1
+ 202 0078 244B     		ldr	r3, .L22
+ 203 007a 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 204 007c 33B1     		cbz	r3, .L16
+  87:main.c        ****                             pei_state = PEI_PRECHARGE;
+ 205              		.loc 1 87 0 is_stmt 0 discriminator 1
+ 206 007e FFF7FEFF 		bl	precharge_ready
+ 207              	.LVL28:
+ 208 0082 18B1     		cbz	r0, .L16
+  88:main.c        ****                         } else if(charger_attached){
+ 209              		.loc 1 88 0 is_stmt 1
+ 210 0084 0122     		movs	r2, #1
+ 211 0086 214B     		ldr	r3, .L22
+ 212 0088 5A70     		strb	r2, [r3, #1]
+ 213 008a 2CE0     		b	.L15
+ 214              	.L16:
+  89:main.c        ****                             pei_state = PEI_HV;   //charger doesn't need precharge
+ 215              		.loc 1 89 0
+ 216 008c 1F4B     		ldr	r3, .L22
+ 217 008e DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 218 0090 4BB3     		cbz	r3, .L15
+  90:main.c        ****                         }
+ 219              		.loc 1 90 0
+ 220 0092 0222     		movs	r2, #2
+ 221 0094 1D4B     		ldr	r3, .L22
+ 222 0096 5A70     		strb	r2, [r3, #1]
+ 223 0098 25E0     		b	.L15
+ 224              	.L12:
+  97:main.c        ****                     
+ 225              		.loc 1 97 0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 8
 
 
- 321      7400
- 322              	.LASF10:
- 323 019f 696E7433 		.ascii	"int32_t\000"
- 323      325F7400 
- 324              	.LASF15:
- 325 01a7 73697A65 		.ascii	"sizetype\000"
- 325      74797065 
- 325      00
- 326              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 226 009a FFF7FEFF 		bl	start_precharge
+ 227              	.LVL29:
+ 101:main.c        ****                         pei_state = PEI_HV;
+ 228              		.loc 1 101 0
+ 229 009e FFF7FEFF 		bl	precharge_complete
+ 230              	.LVL30:
+ 231 00a2 10B1     		cbz	r0, .L17
+ 102:main.c        ****                     }
+ 232              		.loc 1 102 0
+ 233 00a4 0222     		movs	r2, #2
+ 234 00a6 194B     		ldr	r3, .L22
+ 235 00a8 5A70     		strb	r2, [r3, #1]
+ 236              	.L17:
+ 105:main.c        ****                        pei_state = PEI_LV;
+ 237              		.loc 1 105 0
+ 238 00aa FFF7FEFF 		bl	hv_request
+ 239              	.LVL31:
+ 240 00ae D0B9     		cbnz	r0, .L15
+ 106:main.c        ****                     }
+ 241              		.loc 1 106 0
+ 242 00b0 0022     		movs	r2, #0
+ 243 00b2 164B     		ldr	r3, .L22
+ 244 00b4 5A70     		strb	r2, [r3, #1]
+ 245 00b6 16E0     		b	.L15
+ 246              	.L14:
+ 112:main.c        ****                     
+ 247              		.loc 1 112 0
+ 248 00b8 FFF7FEFF 		bl	finish_precharge
+ 249              	.LVL32:
+ 114:main.c        ****                        pei_state = PEI_LV;
+ 250              		.loc 1 114 0
+ 251 00bc FFF7FEFF 		bl	hv_request
+ 252              	.LVL33:
+ 253 00c0 88B9     		cbnz	r0, .L15
+ 115:main.c        ****                     }
+ 254              		.loc 1 115 0
+ 255 00c2 0022     		movs	r2, #0
+ 256 00c4 114B     		ldr	r3, .L22
+ 257 00c6 5A70     		strb	r2, [r3, #1]
+ 258 00c8 0DE0     		b	.L15
+ 259              	.L20:
+ 121:main.c        ****                     pei_state = PEI_FAULT;
+ 260              		.loc 1 121 0
+ 261 00ca FFF7FEFF 		bl	clear_interlock
+ 262              	.LVL34:
+ 122:main.c        ****                     
+ 263              		.loc 1 122 0
+ 264 00ce 0322     		movs	r2, #3
+ 265 00d0 0E4B     		ldr	r3, .L22
+ 266 00d2 5A70     		strb	r2, [r3, #1]
+ 124:main.c        ****                         pei_state = PEI_LV;
+ 267              		.loc 1 124 0
+ 268 00d4 FFF7FEFF 		bl	hv_request
+ 269              	.LVL35:
+ 270 00d8 28B9     		cbnz	r0, .L15
+ 124:main.c        ****                         pei_state = PEI_LV;
+ 271              		.loc 1 124 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 9
+
+
+ 272 00da FFF7FEFF 		bl	hv_allowed
+ 273              	.LVL36:
+ 274 00de 10B1     		cbz	r0, .L15
+ 125:main.c        ****                     } 
+ 275              		.loc 1 125 0 is_stmt 1
+ 276 00e0 0022     		movs	r2, #0
+ 277 00e2 0A4B     		ldr	r3, .L22
+ 278 00e4 5A70     		strb	r2, [r3, #1]
+ 279              	.L15:
+ 129:main.c        ****             
+ 280              		.loc 1 129 0 discriminator 2
+ 281 00e6 FFF7FEFF 		bl	check_can
+ 282              	.LVL37:
+  65:main.c        ****             // shutdown flags, current
+ 283              		.loc 1 65 0 discriminator 2
+ 284 00ea 6B1C     		adds	r3, r5, #1
+ 285 00ec DDB2     		uxtb	r5, r3
+ 286              	.LVL38:
+ 287              	.L6:
+  65:main.c        ****             // shutdown flags, current
+ 288              		.loc 1 65 0 is_stmt 0 discriminator 1
+ 289 00ee 632D     		cmp	r5, #99
+ 290 00f0 95D9     		bls	.L18
+ 291              	.LBE2:
+ 133:main.c        ****         update_display();
+ 292              		.loc 1 133 0 is_stmt 1
+ 293 00f2 FFF7FEFF 		bl	get_current
+ 294              	.LVL39:
+ 295 00f6 064D     		ldr	r5, .L22+4
+ 296              	.LVL40:
+ 297 00f8 2880     		strh	r0, [r5]	@ movhi
+ 134:main.c        ****         can_send_PEI(current, shutdown_flags);
+ 298              		.loc 1 134 0
+ 299 00fa FFF7FEFF 		bl	update_display
+ 300              	.LVL41:
+ 135:main.c        ****     }
+ 301              		.loc 1 135 0
+ 302 00fe 2146     		mov	r1, r4
+ 303 0100 B5F90000 		ldrsh	r0, [r5]
+ 304 0104 FFF7FEFF 		bl	can_send_PEI
+ 305              	.LVL42:
+ 136:main.c        **** }
+ 306              		.loc 1 136 0
+ 307 0108 87E7     		b	.L19
+ 308              	.L23:
+ 309 010a 00BF     		.align	2
+ 310              	.L22:
+ 311 010c 00000000 		.word	.LANCHOR0
+ 312 0110 00000000 		.word	current
+ 313              		.cfi_endproc
+ 314              	.LFE64:
+ 315              		.size	main, .-main
+ 316              		.global	loops_since_charger_message
+ 317              		.global	loops_since_mc_message
+ 318              		.global	loops_since_bms_message
+ 319              		.global	loops_since_vcu_message
+ 320              		.global	loop_counter
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 10
+
+
+ 321              		.global	charger_status
+ 322              		.global	charger_attached
+ 323              		.global	mc_run_faults
+ 324              		.global	mc_post_faults
+ 325              		.global	mc_discharge_state
+ 326              		.global	mc_vsm_state
+ 327              		.global	mc_voltage
+ 328              		.global	bms_temp
+ 329              		.global	bms_soc
+ 330              		.global	bms_voltage
+ 331              		.global	bms_status
+ 332              		.global	vcu_attached
+ 333              		.global	hv_requested
+ 334              		.global	vcu_state
+ 335              		.global	relay_flags
+ 336              		.comm	current,2,2
+ 337              		.global	pei_status
+ 338              		.global	pei_state
+ 339              		.bss
+ 340              		.align	1
+ 341              		.set	.LANCHOR0,. + 0
+ 342              		.type	relay_flags, %object
+ 343              		.size	relay_flags, 1
+ 344              	relay_flags:
+ 345 0000 00       		.space	1
+ 346              		.type	pei_state, %object
+ 347              		.size	pei_state, 1
+ 348              	pei_state:
+ 349 0001 00       		.space	1
+ 350              		.type	vcu_attached, %object
+ 351              		.size	vcu_attached, 1
+ 352              	vcu_attached:
+ 353 0002 00       		.space	1
+ 354              		.type	charger_attached, %object
+ 355              		.size	charger_attached, 1
+ 356              	charger_attached:
+ 357 0003 00       		.space	1
+ 358              		.type	loops_since_charger_message, %object
+ 359              		.size	loops_since_charger_message, 2
+ 360              	loops_since_charger_message:
+ 361 0004 0000     		.space	2
+ 362              		.type	loops_since_mc_message, %object
+ 363              		.size	loops_since_mc_message, 2
+ 364              	loops_since_mc_message:
+ 365 0006 0000     		.space	2
+ 366              		.type	loops_since_bms_message, %object
+ 367              		.size	loops_since_bms_message, 2
+ 368              	loops_since_bms_message:
+ 369 0008 0000     		.space	2
+ 370              		.type	loops_since_vcu_message, %object
+ 371              		.size	loops_since_vcu_message, 2
+ 372              	loops_since_vcu_message:
+ 373 000a 0000     		.space	2
+ 374              		.type	loop_counter, %object
+ 375              		.size	loop_counter, 2
+ 376              	loop_counter:
+ 377 000c 0000     		.space	2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 11
+
+
+ 378              		.type	charger_status, %object
+ 379              		.size	charger_status, 1
+ 380              	charger_status:
+ 381 000e 00       		.space	1
+ 382 000f 00       		.space	1
+ 383              		.type	mc_run_faults, %object
+ 384              		.size	mc_run_faults, 2
+ 385              	mc_run_faults:
+ 386 0010 0000     		.space	2
+ 387              		.type	mc_post_faults, %object
+ 388              		.size	mc_post_faults, 2
+ 389              	mc_post_faults:
+ 390 0012 0000     		.space	2
+ 391              		.type	mc_discharge_state, %object
+ 392              		.size	mc_discharge_state, 1
+ 393              	mc_discharge_state:
+ 394 0014 00       		.space	1
+ 395              		.type	mc_vsm_state, %object
+ 396              		.size	mc_vsm_state, 1
+ 397              	mc_vsm_state:
+ 398 0015 00       		.space	1
+ 399              		.type	mc_voltage, %object
+ 400              		.size	mc_voltage, 2
+ 401              	mc_voltage:
+ 402 0016 0000     		.space	2
+ 403              		.type	bms_temp, %object
+ 404              		.size	bms_temp, 1
+ 405              	bms_temp:
+ 406 0018 00       		.space	1
+ 407              		.type	bms_soc, %object
+ 408              		.size	bms_soc, 1
+ 409              	bms_soc:
+ 410 0019 00       		.space	1
+ 411              		.type	bms_voltage, %object
+ 412              		.size	bms_voltage, 2
+ 413              	bms_voltage:
+ 414 001a 0000     		.space	2
+ 415              		.type	bms_status, %object
+ 416              		.size	bms_status, 2
+ 417              	bms_status:
+ 418 001c 0000     		.space	2
+ 419              		.type	hv_requested, %object
+ 420              		.size	hv_requested, 1
+ 421              	hv_requested:
+ 422 001e 00       		.space	1
+ 423              		.type	vcu_state, %object
+ 424              		.size	vcu_state, 1
+ 425              	vcu_state:
+ 426 001f 00       		.space	1
+ 427              		.type	pei_status, %object
+ 428              		.size	pei_status, 1
+ 429              	pei_status:
+ 430 0020 00       		.space	1
+ 431              		.text
+ 432              	.Letext0:
+ 433              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 434              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 12
+
+
+ 435              		.file 4 "fsm.h"
+ 436              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 437              		.file 6 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
+ 438              		.file 7 "Generated_Source\\PSoC5/IMD_Fault.h"
+ 439              		.file 8 "Generated_Source\\PSoC5/BMS_Fault.h"
+ 440              		.file 9 "Generated_Source\\PSoC5/SD_FINAL.h"
+ 441              		.file 10 "relays.h"
+ 442              		.file 11 "can_manager.h"
+ 443              		.file 12 "Generated_Source\\PSoC5/CAN.h"
+ 444              		.file 13 "Generated_Source\\PSoC5/LCD.h"
+ 445              		.file 14 "display.h"
+ 446              		.section	.debug_info,"",%progbits
+ 447              	.Ldebug_info0:
+ 448 0000 CE050000 		.4byte	0x5ce
+ 449 0004 0400     		.2byte	0x4
+ 450 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 451 000a 04       		.byte	0x4
+ 452 000b 01       		.uleb128 0x1
+ 453 000c 3D050000 		.4byte	.LASF96
+ 454 0010 0C       		.byte	0xc
+ 455 0011 B0030000 		.4byte	.LASF97
+ 456 0015 D6030000 		.4byte	.LASF98
+ 457 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 458 001d 00000000 		.4byte	0
+ 459 0021 00000000 		.4byte	.Ldebug_line0
+ 460 0025 02       		.uleb128 0x2
+ 461 0026 01       		.byte	0x1
+ 462 0027 06       		.byte	0x6
+ 463 0028 B2020000 		.4byte	.LASF0
+ 464 002c 03       		.uleb128 0x3
+ 465 002d 10020000 		.4byte	.LASF2
+ 466 0031 02       		.byte	0x2
+ 467 0032 1D       		.byte	0x1d
+ 468 0033 37000000 		.4byte	0x37
+ 469 0037 02       		.uleb128 0x2
+ 470 0038 01       		.byte	0x1
+ 471 0039 08       		.byte	0x8
+ 472 003a 35020000 		.4byte	.LASF1
+ 473 003e 03       		.uleb128 0x3
+ 474 003f 1B000000 		.4byte	.LASF3
+ 475 0043 02       		.byte	0x2
+ 476 0044 29       		.byte	0x29
+ 477 0045 49000000 		.4byte	0x49
+ 478 0049 02       		.uleb128 0x2
+ 479 004a 02       		.byte	0x2
+ 480 004b 05       		.byte	0x5
+ 481 004c CC000000 		.4byte	.LASF4
+ 482 0050 03       		.uleb128 0x3
+ 483 0051 B7000000 		.4byte	.LASF5
+ 484 0055 02       		.byte	0x2
+ 485 0056 2B       		.byte	0x2b
+ 486 0057 5B000000 		.4byte	0x5b
+ 487 005b 02       		.uleb128 0x2
+ 488 005c 02       		.byte	0x2
+ 489 005d 07       		.byte	0x7
+ 490 005e 3D030000 		.4byte	.LASF6
+ 491 0062 03       		.uleb128 0x3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 13
+
+
+ 492 0063 77040000 		.4byte	.LASF7
+ 493 0067 02       		.byte	0x2
+ 494 0068 3F       		.byte	0x3f
+ 495 0069 6D000000 		.4byte	0x6d
+ 496 006d 02       		.uleb128 0x2
+ 497 006e 04       		.byte	0x4
+ 498 006f 05       		.byte	0x5
+ 499 0070 F1010000 		.4byte	.LASF8
+ 500 0074 02       		.uleb128 0x2
+ 501 0075 04       		.byte	0x4
+ 502 0076 07       		.byte	0x7
+ 503 0077 F4020000 		.4byte	.LASF9
+ 504 007b 02       		.uleb128 0x2
+ 505 007c 08       		.byte	0x8
+ 506 007d 05       		.byte	0x5
+ 507 007e A9010000 		.4byte	.LASF10
+ 508 0082 02       		.uleb128 0x2
+ 509 0083 08       		.byte	0x8
+ 510 0084 07       		.byte	0x7
+ 511 0085 BE020000 		.4byte	.LASF11
+ 512 0089 04       		.uleb128 0x4
+ 513 008a 04       		.byte	0x4
+ 514 008b 05       		.byte	0x5
+ 515 008c 696E7400 		.ascii	"int\000"
+ 516 0090 02       		.uleb128 0x2
+ 517 0091 04       		.byte	0x4
+ 518 0092 07       		.byte	0x7
+ 519 0093 DE020000 		.4byte	.LASF12
+ 520 0097 03       		.uleb128 0x3
+ 521 0098 42000000 		.4byte	.LASF13
+ 522 009c 03       		.byte	0x3
+ 523 009d 18       		.byte	0x18
+ 524 009e 2C000000 		.4byte	0x2c
+ 525 00a2 03       		.uleb128 0x3
+ 526 00a3 86030000 		.4byte	.LASF14
+ 527 00a7 03       		.byte	0x3
+ 528 00a8 20       		.byte	0x20
+ 529 00a9 3E000000 		.4byte	0x3e
+ 530 00ad 03       		.uleb128 0x3
+ 531 00ae EB020000 		.4byte	.LASF15
+ 532 00b2 03       		.byte	0x3
+ 533 00b3 24       		.byte	0x24
+ 534 00b4 50000000 		.4byte	0x50
+ 535 00b8 03       		.uleb128 0x3
+ 536 00b9 7E030000 		.4byte	.LASF16
+ 537 00bd 03       		.byte	0x3
+ 538 00be 2C       		.byte	0x2c
+ 539 00bf 62000000 		.4byte	0x62
+ 540 00c3 02       		.uleb128 0x2
+ 541 00c4 04       		.byte	0x4
+ 542 00c5 04       		.byte	0x4
+ 543 00c6 6F010000 		.4byte	.LASF17
+ 544 00ca 02       		.uleb128 0x2
+ 545 00cb 08       		.byte	0x8
+ 546 00cc 04       		.byte	0x4
+ 547 00cd 2E040000 		.4byte	.LASF18
+ 548 00d1 02       		.uleb128 0x2
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 14
+
+
+ 549 00d2 01       		.byte	0x1
+ 550 00d3 08       		.byte	0x8
+ 551 00d4 4A000000 		.4byte	.LASF19
+ 552 00d8 02       		.uleb128 0x2
+ 553 00d9 08       		.byte	0x8
+ 554 00da 04       		.byte	0x4
+ 555 00db 6D020000 		.4byte	.LASF20
+ 556 00df 02       		.uleb128 0x2
+ 557 00e0 04       		.byte	0x4
+ 558 00e1 07       		.byte	0x7
+ 559 00e2 71000000 		.4byte	.LASF21
+ 560 00e6 05       		.uleb128 0x5
+ 561 00e7 01       		.byte	0x1
+ 562 00e8 37000000 		.4byte	0x37
+ 563 00ec 04       		.byte	0x4
+ 564 00ed 13       		.byte	0x13
+ 565 00ee 0B010000 		.4byte	0x10b
+ 566 00f2 06       		.uleb128 0x6
+ 567 00f3 B7010000 		.4byte	.LASF22
+ 568 00f7 00       		.byte	0
+ 569 00f8 06       		.uleb128 0x6
+ 570 00f9 27020000 		.4byte	.LASF23
+ 571 00fd 01       		.byte	0x1
+ 572 00fe 06       		.uleb128 0x6
+ 573 00ff 66020000 		.4byte	.LASF24
+ 574 0103 02       		.byte	0x2
+ 575 0104 06       		.uleb128 0x6
+ 576 0105 A3040000 		.4byte	.LASF25
+ 577 0109 03       		.byte	0x3
+ 578 010a 00       		.byte	0
+ 579 010b 03       		.uleb128 0x3
+ 580 010c 3F010000 		.4byte	.LASF26
+ 581 0110 04       		.byte	0x4
+ 582 0111 18       		.byte	0x18
+ 583 0112 E6000000 		.4byte	0xe6
+ 584 0116 05       		.uleb128 0x5
+ 585 0117 01       		.byte	0x1
+ 586 0118 37000000 		.4byte	0x37
+ 587 011c 04       		.byte	0x4
+ 588 011d 1A       		.byte	0x1a
+ 589 011e 40010000 		.4byte	0x140
+ 590 0122 07       		.uleb128 0x7
+ 591 0123 4C5600   		.ascii	"LV\000"
+ 592 0126 00       		.byte	0
+ 593 0127 06       		.uleb128 0x6
+ 594 0128 63010000 		.4byte	.LASF27
+ 595 012c 01       		.byte	0x1
+ 596 012d 06       		.uleb128 0x6
+ 597 012e 5A000000 		.4byte	.LASF28
+ 598 0132 02       		.byte	0x2
+ 599 0133 06       		.uleb128 0x6
+ 600 0134 2A050000 		.4byte	.LASF29
+ 601 0138 03       		.byte	0x3
+ 602 0139 06       		.uleb128 0x6
+ 603 013a 9B000000 		.4byte	.LASF30
+ 604 013e 80       		.byte	0x80
+ 605 013f 00       		.byte	0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 15
+
+
+ 606 0140 03       		.uleb128 0x3
+ 607 0141 35010000 		.4byte	.LASF31
+ 608 0145 04       		.byte	0x4
+ 609 0146 20       		.byte	0x20
+ 610 0147 16010000 		.4byte	0x116
+ 611 014b 05       		.uleb128 0x5
+ 612 014c 01       		.byte	0x1
+ 613 014d 37000000 		.4byte	0x37
+ 614 0151 04       		.byte	0x4
+ 615 0152 22       		.byte	0x22
+ 616 0153 94010000 		.4byte	0x194
+ 617 0157 06       		.uleb128 0x6
+ 618 0158 43020000 		.4byte	.LASF32
+ 619 015c 00       		.byte	0
+ 620 015d 06       		.uleb128 0x6
+ 621 015e 26010000 		.4byte	.LASF33
+ 622 0162 01       		.byte	0x1
+ 623 0163 06       		.uleb128 0x6
+ 624 0164 1F030000 		.4byte	.LASF34
+ 625 0168 02       		.byte	0x2
+ 626 0169 06       		.uleb128 0x6
+ 627 016a 75010000 		.4byte	.LASF35
+ 628 016e 03       		.byte	0x3
+ 629 016f 06       		.uleb128 0x6
+ 630 0170 01050000 		.4byte	.LASF36
+ 631 0174 04       		.byte	0x4
+ 632 0175 06       		.uleb128 0x6
+ 633 0176 06030000 		.4byte	.LASF37
+ 634 017a 05       		.byte	0x5
+ 635 017b 06       		.uleb128 0x6
+ 636 017c B7030000 		.4byte	.LASF38
+ 637 0180 06       		.byte	0x6
+ 638 0181 06       		.uleb128 0x6
+ 639 0182 35040000 		.4byte	.LASF39
+ 640 0186 07       		.byte	0x7
+ 641 0187 06       		.uleb128 0x6
+ 642 0188 16050000 		.4byte	.LASF40
+ 643 018c 0E       		.byte	0xe
+ 644 018d 06       		.uleb128 0x6
+ 645 018e 8E030000 		.4byte	.LASF41
+ 646 0192 0F       		.byte	0xf
+ 647 0193 00       		.byte	0
+ 648 0194 03       		.uleb128 0x3
+ 649 0195 1A020000 		.4byte	.LASF42
+ 650 0199 04       		.byte	0x4
+ 651 019a 2D       		.byte	0x2d
+ 652 019b 4B010000 		.4byte	0x14b
+ 653 019f 05       		.uleb128 0x5
+ 654 01a0 01       		.byte	0x1
+ 655 01a1 37000000 		.4byte	0x37
+ 656 01a5 04       		.byte	0x4
+ 657 01a6 2F       		.byte	0x2f
+ 658 01a7 CA010000 		.4byte	0x1ca
+ 659 01ab 06       		.uleb128 0x6
+ 660 01ac 88010000 		.4byte	.LASF43
+ 661 01b0 00       		.byte	0
+ 662 01b1 06       		.uleb128 0x6
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 16
+
+
+ 663 01b2 79020000 		.4byte	.LASF44
+ 664 01b6 01       		.byte	0x1
+ 665 01b7 06       		.uleb128 0x6
+ 666 01b8 25000000 		.4byte	.LASF45
+ 667 01bc 02       		.byte	0x2
+ 668 01bd 06       		.uleb128 0x6
+ 669 01be A6000000 		.4byte	.LASF46
+ 670 01c2 03       		.byte	0x3
+ 671 01c3 06       		.uleb128 0x6
+ 672 01c4 CB050000 		.4byte	.LASF47
+ 673 01c8 04       		.byte	0x4
+ 674 01c9 00       		.byte	0
+ 675 01ca 03       		.uleb128 0x3
+ 676 01cb DE050000 		.4byte	.LASF48
+ 677 01cf 04       		.byte	0x4
+ 678 01d0 35       		.byte	0x35
+ 679 01d1 9F010000 		.4byte	0x19f
+ 680 01d5 08       		.uleb128 0x8
+ 681 01d6 72030000 		.4byte	.LASF99
+ 682 01da 01       		.byte	0x1
+ 683 01db 8D       		.byte	0x8d
+ 684 01dc A2000000 		.4byte	0xa2
+ 685 01e0 00000000 		.4byte	.LFB65
+ 686 01e4 64000000 		.4byte	.LFE65-.LFB65
+ 687 01e8 01       		.uleb128 0x1
+ 688 01e9 9C       		.byte	0x9c
+ 689 01ea 1D020000 		.4byte	0x21d
+ 690 01ee 09       		.uleb128 0x9
+ 691 01ef 94040000 		.4byte	.LASF49
+ 692 01f3 01       		.byte	0x1
+ 693 01f4 8E       		.byte	0x8e
+ 694 01f5 CA000000 		.4byte	0xca
+ 695 01f9 00000000 		.4byte	.LLST0
+ 696 01fd 0A       		.uleb128 0xa
+ 697 01fe F1000000 		.4byte	.LASF50
+ 698 0202 01       		.byte	0x1
+ 699 0203 8F       		.byte	0x8f
+ 700 0204 A2000000 		.4byte	0xa2
+ 701 0208 01       		.uleb128 0x1
+ 702 0209 50       		.byte	0x50
+ 703 020a 0B       		.uleb128 0xb
+ 704 020b 06000000 		.4byte	.LVL0
+ 705 020f EA040000 		.4byte	0x4ea
+ 706 0213 0B       		.uleb128 0xb
+ 707 0214 0A000000 		.4byte	.LVL1
+ 708 0218 F5040000 		.4byte	0x4f5
+ 709 021c 00       		.byte	0
+ 710 021d 0C       		.uleb128 0xc
+ 711 021e A1000000 		.4byte	.LASF100
+ 712 0222 01       		.byte	0x1
+ 713 0223 32       		.byte	0x32
+ 714 0224 89000000 		.4byte	0x89
+ 715 0228 00000000 		.4byte	.LFB64
+ 716 022c 14010000 		.4byte	.LFE64-.LFB64
+ 717 0230 01       		.uleb128 0x1
+ 718 0231 9C       		.byte	0x9c
+ 719 0232 52030000 		.4byte	0x352
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 17
+
+
+ 720 0236 09       		.uleb128 0x9
+ 721 0237 57020000 		.4byte	.LASF51
+ 722 023b 01       		.byte	0x1
+ 723 023c 3D       		.byte	0x3d
+ 724 023d 97000000 		.4byte	0x97
+ 725 0241 18000000 		.4byte	.LLST1
+ 726 0245 0D       		.uleb128 0xd
+ 727 0246 1A000000 		.4byte	.LBB2
+ 728 024a D8000000 		.4byte	.LBE2-.LBB2
+ 729 024e 02030000 		.4byte	0x302
+ 730 0252 0E       		.uleb128 0xe
+ 731 0253 6900     		.ascii	"i\000"
+ 732 0255 01       		.byte	0x1
+ 733 0256 41       		.byte	0x41
+ 734 0257 97000000 		.4byte	0x97
+ 735 025b 4E000000 		.4byte	.LLST2
+ 736 025f 0B       		.uleb128 0xb
+ 737 0260 2A000000 		.4byte	.LVL17
+ 738 0264 00050000 		.4byte	0x500
+ 739 0268 0B       		.uleb128 0xb
+ 740 0269 34000000 		.4byte	.LVL19
+ 741 026d 0B050000 		.4byte	0x50b
+ 742 0271 0B       		.uleb128 0xb
+ 743 0272 3E000000 		.4byte	.LVL21
+ 744 0276 16050000 		.4byte	0x516
+ 745 027a 0B       		.uleb128 0xb
+ 746 027b 48000000 		.4byte	.LVL23
+ 747 027f 21050000 		.4byte	0x521
+ 748 0283 0B       		.uleb128 0xb
+ 749 0284 4C000000 		.4byte	.LVL24
+ 750 0288 2C050000 		.4byte	0x52c
+ 751 028c 0B       		.uleb128 0xb
+ 752 028d 68000000 		.4byte	.LVL25
+ 753 0291 37050000 		.4byte	0x537
+ 754 0295 0B       		.uleb128 0xb
+ 755 0296 6C000000 		.4byte	.LVL26
+ 756 029a 42050000 		.4byte	0x542
+ 757 029e 0B       		.uleb128 0xb
+ 758 029f 74000000 		.4byte	.LVL27
+ 759 02a3 2C050000 		.4byte	0x52c
+ 760 02a7 0B       		.uleb128 0xb
+ 761 02a8 82000000 		.4byte	.LVL28
+ 762 02ac 4D050000 		.4byte	0x54d
+ 763 02b0 0B       		.uleb128 0xb
+ 764 02b1 9E000000 		.4byte	.LVL29
+ 765 02b5 58050000 		.4byte	0x558
+ 766 02b9 0B       		.uleb128 0xb
+ 767 02ba A2000000 		.4byte	.LVL30
+ 768 02be 63050000 		.4byte	0x563
+ 769 02c2 0B       		.uleb128 0xb
+ 770 02c3 AE000000 		.4byte	.LVL31
+ 771 02c7 42050000 		.4byte	0x542
+ 772 02cb 0B       		.uleb128 0xb
+ 773 02cc BC000000 		.4byte	.LVL32
+ 774 02d0 6E050000 		.4byte	0x56e
+ 775 02d4 0B       		.uleb128 0xb
+ 776 02d5 C0000000 		.4byte	.LVL33
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 18
+
+
+ 777 02d9 42050000 		.4byte	0x542
+ 778 02dd 0B       		.uleb128 0xb
+ 779 02de CE000000 		.4byte	.LVL34
+ 780 02e2 37050000 		.4byte	0x537
+ 781 02e6 0B       		.uleb128 0xb
+ 782 02e7 D8000000 		.4byte	.LVL35
+ 783 02eb 42050000 		.4byte	0x542
+ 784 02ef 0B       		.uleb128 0xb
+ 785 02f0 DE000000 		.4byte	.LVL36
+ 786 02f4 2C050000 		.4byte	0x52c
+ 787 02f8 0B       		.uleb128 0xb
+ 788 02f9 EA000000 		.4byte	.LVL37
+ 789 02fd 79050000 		.4byte	0x579
+ 790 0301 00       		.byte	0
+ 791 0302 0B       		.uleb128 0xb
+ 792 0303 08000000 		.4byte	.LVL9
+ 793 0307 84050000 		.4byte	0x584
+ 794 030b 0B       		.uleb128 0xb
+ 795 030c 0C000000 		.4byte	.LVL10
+ 796 0310 8F050000 		.4byte	0x58f
+ 797 0314 0B       		.uleb128 0xb
+ 798 0315 10000000 		.4byte	.LVL11
+ 799 0319 9A050000 		.4byte	0x59a
+ 800 031d 0B       		.uleb128 0xb
+ 801 031e 14000000 		.4byte	.LVL12
+ 802 0322 A5050000 		.4byte	0x5a5
+ 803 0326 0B       		.uleb128 0xb
+ 804 0327 18000000 		.4byte	.LVL13
+ 805 032b B0050000 		.4byte	0x5b0
+ 806 032f 0B       		.uleb128 0xb
+ 807 0330 F6000000 		.4byte	.LVL39
+ 808 0334 D5010000 		.4byte	0x1d5
+ 809 0338 0B       		.uleb128 0xb
+ 810 0339 FE000000 		.4byte	.LVL41
+ 811 033d BB050000 		.4byte	0x5bb
+ 812 0341 0F       		.uleb128 0xf
+ 813 0342 08010000 		.4byte	.LVL42
+ 814 0346 C6050000 		.4byte	0x5c6
+ 815 034a 10       		.uleb128 0x10
+ 816 034b 01       		.uleb128 0x1
+ 817 034c 51       		.byte	0x51
+ 818 034d 02       		.uleb128 0x2
+ 819 034e 74       		.byte	0x74
+ 820 034f 00       		.sleb128 0
+ 821 0350 00       		.byte	0
+ 822 0351 00       		.byte	0
+ 823 0352 11       		.uleb128 0x11
+ 824 0353 30050000 		.4byte	.LASF52
+ 825 0357 05       		.byte	0x5
+ 826 0358 1207     		.2byte	0x712
+ 827 035a 5E030000 		.4byte	0x35e
+ 828 035e 12       		.uleb128 0x12
+ 829 035f B8000000 		.4byte	0xb8
+ 830 0363 13       		.uleb128 0x13
+ 831 0364 9C030000 		.4byte	.LASF53
+ 832 0368 01       		.byte	0x1
+ 833 0369 10       		.byte	0x10
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 19
+
+
+ 834 036a 0B010000 		.4byte	0x10b
+ 835 036e 05       		.uleb128 0x5
+ 836 036f 03       		.byte	0x3
+ 837 0370 00000000 		.4byte	pei_state
+ 838 0374 13       		.uleb128 0x13
+ 839 0375 4B010000 		.4byte	.LASF54
+ 840 0379 01       		.byte	0x1
+ 841 037a 11       		.byte	0x11
+ 842 037b 97000000 		.4byte	0x97
+ 843 037f 05       		.uleb128 0x5
+ 844 0380 03       		.byte	0x3
+ 845 0381 00000000 		.4byte	pei_status
+ 846 0385 13       		.uleb128 0x13
+ 847 0386 F1000000 		.4byte	.LASF50
+ 848 038a 01       		.byte	0x1
+ 849 038b 12       		.byte	0x12
+ 850 038c A2000000 		.4byte	0xa2
+ 851 0390 05       		.uleb128 0x5
+ 852 0391 03       		.byte	0x3
+ 853 0392 00000000 		.4byte	current
+ 854 0396 13       		.uleb128 0x13
+ 855 0397 0A050000 		.4byte	.LASF55
+ 856 039b 01       		.byte	0x1
+ 857 039c 13       		.byte	0x13
+ 858 039d 97000000 		.4byte	0x97
+ 859 03a1 05       		.uleb128 0x5
+ 860 03a2 03       		.byte	0x3
+ 861 03a3 00000000 		.4byte	relay_flags
+ 862 03a7 13       		.uleb128 0x13
+ 863 03a8 A6030000 		.4byte	.LASF56
+ 864 03ac 01       		.byte	0x1
+ 865 03ad 16       		.byte	0x16
+ 866 03ae 40010000 		.4byte	0x140
+ 867 03b2 05       		.uleb128 0x5
+ 868 03b3 03       		.byte	0x3
+ 869 03b4 00000000 		.4byte	vcu_state
+ 870 03b8 13       		.uleb128 0x13
+ 871 03b9 D6000000 		.4byte	.LASF57
+ 872 03bd 01       		.byte	0x1
+ 873 03be 17       		.byte	0x17
+ 874 03bf 97000000 		.4byte	0x97
+ 875 03c3 05       		.uleb128 0x5
+ 876 03c4 03       		.byte	0x3
+ 877 03c5 00000000 		.4byte	hv_requested
+ 878 03c9 13       		.uleb128 0x13
+ 879 03ca 8E000000 		.4byte	.LASF58
+ 880 03ce 01       		.byte	0x1
+ 881 03cf 18       		.byte	0x18
+ 882 03d0 97000000 		.4byte	0x97
+ 883 03d4 05       		.uleb128 0x5
+ 884 03d5 03       		.byte	0x3
+ 885 03d6 00000000 		.4byte	vcu_attached
+ 886 03da 13       		.uleb128 0x13
+ 887 03db D9040000 		.4byte	.LASF59
+ 888 03df 01       		.byte	0x1
+ 889 03e0 1B       		.byte	0x1b
+ 890 03e1 AD000000 		.4byte	0xad
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 20
+
+
+ 891 03e5 05       		.uleb128 0x5
+ 892 03e6 03       		.byte	0x3
+ 893 03e7 00000000 		.4byte	bms_status
+ 894 03eb 13       		.uleb128 0x13
+ 895 03ec 65000000 		.4byte	.LASF60
+ 896 03f0 01       		.byte	0x1
+ 897 03f1 1C       		.byte	0x1c
+ 898 03f2 AD000000 		.4byte	0xad
+ 899 03f6 05       		.uleb128 0x5
+ 900 03f7 03       		.byte	0x3
+ 901 03f8 00000000 		.4byte	bms_voltage
+ 902 03fc 13       		.uleb128 0x13
+ 903 03fd FA010000 		.4byte	.LASF61
+ 904 0401 01       		.byte	0x1
+ 905 0402 1D       		.byte	0x1d
+ 906 0403 97000000 		.4byte	0x97
+ 907 0407 05       		.uleb128 0x5
+ 908 0408 03       		.byte	0x3
+ 909 0409 00000000 		.4byte	bms_soc
+ 910 040d 13       		.uleb128 0x13
+ 911 040e AD040000 		.4byte	.LASF62
+ 912 0412 01       		.byte	0x1
+ 913 0413 1E       		.byte	0x1e
+ 914 0414 97000000 		.4byte	0x97
+ 915 0418 05       		.uleb128 0x5
+ 916 0419 03       		.byte	0x3
+ 917 041a 00000000 		.4byte	bms_temp
+ 918 041e 13       		.uleb128 0x13
+ 919 041f 4F000000 		.4byte	.LASF63
+ 920 0423 01       		.byte	0x1
+ 921 0424 21       		.byte	0x21
+ 922 0425 A2000000 		.4byte	0xa2
+ 923 0429 05       		.uleb128 0x5
+ 924 042a 03       		.byte	0x3
+ 925 042b 00000000 		.4byte	mc_voltage
+ 926 042f 13       		.uleb128 0x13
+ 927 0430 E4040000 		.4byte	.LASF64
+ 928 0434 01       		.byte	0x1
+ 929 0435 22       		.byte	0x22
+ 930 0436 94010000 		.4byte	0x194
+ 931 043a 05       		.uleb128 0x5
+ 932 043b 03       		.byte	0x3
+ 933 043c 00000000 		.4byte	mc_vsm_state
+ 934 0440 13       		.uleb128 0x13
+ 935 0441 81040000 		.4byte	.LASF65
+ 936 0445 01       		.byte	0x1
+ 937 0446 23       		.byte	0x23
+ 938 0447 CA010000 		.4byte	0x1ca
+ 939 044b 05       		.uleb128 0x5
+ 940 044c 03       		.byte	0x3
+ 941 044d 00000000 		.4byte	mc_discharge_state
+ 942 0451 13       		.uleb128 0x13
+ 943 0452 00060000 		.4byte	.LASF66
+ 944 0456 01       		.byte	0x1
+ 945 0457 24       		.byte	0x24
+ 946 0458 AD000000 		.4byte	0xad
+ 947 045c 05       		.uleb128 0x5
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 21
+
+
+ 948 045d 03       		.byte	0x3
+ 949 045e 00000000 		.4byte	mc_post_faults
+ 950 0462 13       		.uleb128 0x13
+ 951 0463 9B010000 		.4byte	.LASF67
+ 952 0467 01       		.byte	0x1
+ 953 0468 25       		.byte	0x25
+ 954 0469 AD000000 		.4byte	0xad
+ 955 046d 05       		.uleb128 0x5
+ 956 046e 03       		.byte	0x3
+ 957 046f 00000000 		.4byte	mc_run_faults
+ 958 0473 13       		.uleb128 0x13
+ 959 0474 C5030000 		.4byte	.LASF68
+ 960 0478 01       		.byte	0x1
+ 961 0479 28       		.byte	0x28
+ 962 047a 97000000 		.4byte	0x97
+ 963 047e 05       		.uleb128 0x5
+ 964 047f 03       		.byte	0x3
+ 965 0480 00000000 		.4byte	charger_attached
+ 966 0484 13       		.uleb128 0x13
+ 967 0485 10030000 		.4byte	.LASF69
+ 968 0489 01       		.byte	0x1
+ 969 048a 29       		.byte	0x29
+ 970 048b 97000000 		.4byte	0x97
+ 971 048f 05       		.uleb128 0x5
+ 972 0490 03       		.byte	0x3
+ 973 0491 00000000 		.4byte	charger_status
+ 974 0495 13       		.uleb128 0x13
+ 975 0496 56010000 		.4byte	.LASF70
+ 976 049a 01       		.byte	0x1
+ 977 049b 2C       		.byte	0x2c
+ 978 049c AD000000 		.4byte	0xad
+ 979 04a0 05       		.uleb128 0x5
+ 980 04a1 03       		.byte	0x3
+ 981 04a2 00000000 		.4byte	loop_counter
+ 982 04a6 13       		.uleb128 0x13
+ 983 04a7 9A020000 		.4byte	.LASF71
+ 984 04ab 01       		.byte	0x1
+ 985 04ac 2D       		.byte	0x2d
+ 986 04ad AD000000 		.4byte	0xad
+ 987 04b1 05       		.uleb128 0x5
+ 988 04b2 03       		.byte	0x3
+ 989 04b3 00000000 		.4byte	loops_since_vcu_message
+ 990 04b7 13       		.uleb128 0x13
+ 991 04b8 B6040000 		.4byte	.LASF72
+ 992 04bc 01       		.byte	0x1
+ 993 04bd 2E       		.byte	0x2e
+ 994 04be AD000000 		.4byte	0xad
+ 995 04c2 05       		.uleb128 0x5
+ 996 04c3 03       		.byte	0x3
+ 997 04c4 00000000 		.4byte	loops_since_bms_message
+ 998 04c8 13       		.uleb128 0x13
+ 999 04c9 BE010000 		.4byte	.LASF73
+ 1000 04cd 01       		.byte	0x1
+ 1001 04ce 2F       		.byte	0x2f
+ 1002 04cf AD000000 		.4byte	0xad
+ 1003 04d3 05       		.uleb128 0x5
+ 1004 04d4 03       		.byte	0x3
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 22
+
+
+ 1005 04d5 00000000 		.4byte	loops_since_mc_message
+ 1006 04d9 13       		.uleb128 0x13
+ 1007 04da D5010000 		.4byte	.LASF74
+ 1008 04de 01       		.byte	0x1
+ 1009 04df 30       		.byte	0x30
+ 1010 04e0 AD000000 		.4byte	0xad
+ 1011 04e4 05       		.uleb128 0x5
+ 1012 04e5 03       		.byte	0x3
+ 1013 04e6 00000000 		.4byte	loops_since_charger_message
+ 1014 04ea 14       		.uleb128 0x14
+ 1015 04eb 7A000000 		.4byte	.LASF75
+ 1016 04ef 7A000000 		.4byte	.LASF75
+ 1017 04f3 06       		.byte	0x6
+ 1018 04f4 56       		.byte	0x56
+ 1019 04f5 14       		.uleb128 0x14
+ 1020 04f6 5A040000 		.4byte	.LASF76
+ 1021 04fa 5A040000 		.4byte	.LASF76
+ 1022 04fe 06       		.byte	0x6
+ 1023 04ff 47       		.byte	0x47
+ 1024 0500 14       		.uleb128 0x14
+ 1025 0501 F1050000 		.4byte	.LASF77
+ 1026 0505 F1050000 		.4byte	.LASF77
+ 1027 0509 07       		.byte	0x7
+ 1028 050a 29       		.byte	0x29
+ 1029 050b 14       		.uleb128 0x14
+ 1030 050c 8B020000 		.4byte	.LASF78
+ 1031 0510 8B020000 		.4byte	.LASF78
+ 1032 0514 08       		.byte	0x8
+ 1033 0515 29       		.byte	0x29
+ 1034 0516 14       		.uleb128 0x14
+ 1035 0517 02020000 		.4byte	.LASF79
+ 1036 051b 02020000 		.4byte	.LASF79
+ 1037 051f 09       		.byte	0x9
+ 1038 0520 29       		.byte	0x29
+ 1039 0521 14       		.uleb128 0x14
+ 1040 0522 E3000000 		.4byte	.LASF80
+ 1041 0526 E3000000 		.4byte	.LASF80
+ 1042 052a 04       		.byte	0x4
+ 1043 052b 45       		.byte	0x45
+ 1044 052c 14       		.uleb128 0x14
+ 1045 052d 10000000 		.4byte	.LASF81
+ 1046 0531 10000000 		.4byte	.LASF81
+ 1047 0535 04       		.byte	0x4
+ 1048 0536 41       		.byte	0x41
+ 1049 0537 14       		.uleb128 0x14
+ 1050 0538 00000000 		.4byte	.LASF82
+ 1051 053c 00000000 		.4byte	.LASF82
+ 1052 0540 0A       		.byte	0xa
+ 1053 0541 12       		.byte	0x12
+ 1054 0542 14       		.uleb128 0x14
+ 1055 0543 CE040000 		.4byte	.LASF83
+ 1056 0547 CE040000 		.4byte	.LASF83
+ 1057 054b 04       		.byte	0x4
+ 1058 054c 40       		.byte	0x40
+ 1059 054d 14       		.uleb128 0x14
+ 1060 054e F9000000 		.4byte	.LASF84
+ 1061 0552 F9000000 		.4byte	.LASF84
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 23
+
+
+ 1062 0556 04       		.byte	0x4
+ 1063 0557 43       		.byte	0x43
+ 1064 0558 14       		.uleb128 0x14
+ 1065 0559 F1040000 		.4byte	.LASF85
+ 1066 055d F1040000 		.4byte	.LASF85
+ 1067 0561 0A       		.byte	0xa
+ 1068 0562 11       		.byte	0x11
+ 1069 0563 14       		.uleb128 0x14
+ 1070 0564 5F030000 		.4byte	.LASF86
+ 1071 0568 5F030000 		.4byte	.LASF86
+ 1072 056c 04       		.byte	0x4
+ 1073 056d 42       		.byte	0x42
+ 1074 056e 14       		.uleb128 0x14
+ 1075 056f 31000000 		.4byte	.LASF87
+ 1076 0573 31000000 		.4byte	.LASF87
+ 1077 0577 0A       		.byte	0xa
+ 1078 0578 10       		.byte	0x10
+ 1079 0579 14       		.uleb128 0x14
+ 1080 057a 1C010000 		.4byte	.LASF88
+ 1081 057e 1C010000 		.4byte	.LASF88
+ 1082 0582 0B       		.byte	0xb
+ 1083 0583 15       		.byte	0x15
+ 1084 0584 14       		.uleb128 0x14
+ 1085 0585 46040000 		.4byte	.LASF89
+ 1086 0589 46040000 		.4byte	.LASF89
+ 1087 058d 0C       		.byte	0xc
+ 1088 058e C8       		.byte	0xc8
+ 1089 058f 14       		.uleb128 0x14
+ 1090 0590 D5020000 		.4byte	.LASF90
+ 1091 0594 D5020000 		.4byte	.LASF90
+ 1092 0598 0C       		.byte	0xc
+ 1093 0599 C4       		.byte	0xc4
+ 1094 059a 14       		.uleb128 0x14
+ 1095 059b C2000000 		.4byte	.LASF91
+ 1096 059f C2000000 		.4byte	.LASF91
+ 1097 05a3 0C       		.byte	0xc
+ 1098 05a4 C5       		.byte	0xc5
+ 1099 05a5 14       		.uleb128 0x14
+ 1100 05a6 09010000 		.4byte	.LASF92
+ 1101 05aa 09010000 		.4byte	.LASF92
+ 1102 05ae 06       		.byte	0x6
+ 1103 05af 3A       		.byte	0x3a
+ 1104 05b0 14       		.uleb128 0x14
+ 1105 05b1 4D020000 		.4byte	.LASF93
+ 1106 05b5 4D020000 		.4byte	.LASF93
+ 1107 05b9 0D       		.byte	0xd
+ 1108 05ba 38       		.byte	0x38
+ 1109 05bb 14       		.uleb128 0x14
+ 1110 05bc 50030000 		.4byte	.LASF94
+ 1111 05c0 50030000 		.4byte	.LASF94
+ 1112 05c4 0E       		.byte	0xe
+ 1113 05c5 23       		.byte	0x23
+ 1114 05c6 14       		.uleb128 0x14
+ 1115 05c7 30030000 		.4byte	.LASF95
+ 1116 05cb 30030000 		.4byte	.LASF95
+ 1117 05cf 0B       		.byte	0xb
+ 1118 05d0 12       		.byte	0x12
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 24
+
+
+ 1119 05d1 00       		.byte	0
+ 1120              		.section	.debug_abbrev,"",%progbits
+ 1121              	.Ldebug_abbrev0:
+ 1122 0000 01       		.uleb128 0x1
+ 1123 0001 11       		.uleb128 0x11
+ 1124 0002 01       		.byte	0x1
+ 1125 0003 25       		.uleb128 0x25
+ 1126 0004 0E       		.uleb128 0xe
+ 1127 0005 13       		.uleb128 0x13
+ 1128 0006 0B       		.uleb128 0xb
+ 1129 0007 03       		.uleb128 0x3
+ 1130 0008 0E       		.uleb128 0xe
+ 1131 0009 1B       		.uleb128 0x1b
+ 1132 000a 0E       		.uleb128 0xe
+ 1133 000b 55       		.uleb128 0x55
+ 1134 000c 17       		.uleb128 0x17
+ 1135 000d 11       		.uleb128 0x11
+ 1136 000e 01       		.uleb128 0x1
+ 1137 000f 10       		.uleb128 0x10
+ 1138 0010 17       		.uleb128 0x17
+ 1139 0011 00       		.byte	0
+ 1140 0012 00       		.byte	0
+ 1141 0013 02       		.uleb128 0x2
+ 1142 0014 24       		.uleb128 0x24
+ 1143 0015 00       		.byte	0
+ 1144 0016 0B       		.uleb128 0xb
+ 1145 0017 0B       		.uleb128 0xb
+ 1146 0018 3E       		.uleb128 0x3e
+ 1147 0019 0B       		.uleb128 0xb
+ 1148 001a 03       		.uleb128 0x3
+ 1149 001b 0E       		.uleb128 0xe
+ 1150 001c 00       		.byte	0
+ 1151 001d 00       		.byte	0
+ 1152 001e 03       		.uleb128 0x3
+ 1153 001f 16       		.uleb128 0x16
+ 1154 0020 00       		.byte	0
+ 1155 0021 03       		.uleb128 0x3
+ 1156 0022 0E       		.uleb128 0xe
+ 1157 0023 3A       		.uleb128 0x3a
+ 1158 0024 0B       		.uleb128 0xb
+ 1159 0025 3B       		.uleb128 0x3b
+ 1160 0026 0B       		.uleb128 0xb
+ 1161 0027 49       		.uleb128 0x49
+ 1162 0028 13       		.uleb128 0x13
+ 1163 0029 00       		.byte	0
+ 1164 002a 00       		.byte	0
+ 1165 002b 04       		.uleb128 0x4
+ 1166 002c 24       		.uleb128 0x24
+ 1167 002d 00       		.byte	0
+ 1168 002e 0B       		.uleb128 0xb
+ 1169 002f 0B       		.uleb128 0xb
+ 1170 0030 3E       		.uleb128 0x3e
+ 1171 0031 0B       		.uleb128 0xb
+ 1172 0032 03       		.uleb128 0x3
+ 1173 0033 08       		.uleb128 0x8
+ 1174 0034 00       		.byte	0
+ 1175 0035 00       		.byte	0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 25
+
+
+ 1176 0036 05       		.uleb128 0x5
+ 1177 0037 04       		.uleb128 0x4
+ 1178 0038 01       		.byte	0x1
+ 1179 0039 0B       		.uleb128 0xb
+ 1180 003a 0B       		.uleb128 0xb
+ 1181 003b 49       		.uleb128 0x49
+ 1182 003c 13       		.uleb128 0x13
+ 1183 003d 3A       		.uleb128 0x3a
+ 1184 003e 0B       		.uleb128 0xb
+ 1185 003f 3B       		.uleb128 0x3b
+ 1186 0040 0B       		.uleb128 0xb
+ 1187 0041 01       		.uleb128 0x1
+ 1188 0042 13       		.uleb128 0x13
+ 1189 0043 00       		.byte	0
+ 1190 0044 00       		.byte	0
+ 1191 0045 06       		.uleb128 0x6
+ 1192 0046 28       		.uleb128 0x28
+ 1193 0047 00       		.byte	0
+ 1194 0048 03       		.uleb128 0x3
+ 1195 0049 0E       		.uleb128 0xe
+ 1196 004a 1C       		.uleb128 0x1c
+ 1197 004b 0B       		.uleb128 0xb
+ 1198 004c 00       		.byte	0
+ 1199 004d 00       		.byte	0
+ 1200 004e 07       		.uleb128 0x7
+ 1201 004f 28       		.uleb128 0x28
+ 1202 0050 00       		.byte	0
+ 1203 0051 03       		.uleb128 0x3
+ 1204 0052 08       		.uleb128 0x8
+ 1205 0053 1C       		.uleb128 0x1c
+ 1206 0054 0B       		.uleb128 0xb
+ 1207 0055 00       		.byte	0
+ 1208 0056 00       		.byte	0
+ 1209 0057 08       		.uleb128 0x8
+ 1210 0058 2E       		.uleb128 0x2e
+ 1211 0059 01       		.byte	0x1
+ 1212 005a 3F       		.uleb128 0x3f
+ 1213 005b 19       		.uleb128 0x19
+ 1214 005c 03       		.uleb128 0x3
+ 1215 005d 0E       		.uleb128 0xe
+ 1216 005e 3A       		.uleb128 0x3a
+ 1217 005f 0B       		.uleb128 0xb
+ 1218 0060 3B       		.uleb128 0x3b
+ 1219 0061 0B       		.uleb128 0xb
+ 1220 0062 49       		.uleb128 0x49
+ 1221 0063 13       		.uleb128 0x13
+ 1222 0064 11       		.uleb128 0x11
+ 1223 0065 01       		.uleb128 0x1
+ 1224 0066 12       		.uleb128 0x12
+ 1225 0067 06       		.uleb128 0x6
+ 1226 0068 40       		.uleb128 0x40
+ 1227 0069 18       		.uleb128 0x18
+ 1228 006a 9642     		.uleb128 0x2116
+ 1229 006c 19       		.uleb128 0x19
+ 1230 006d 01       		.uleb128 0x1
+ 1231 006e 13       		.uleb128 0x13
+ 1232 006f 00       		.byte	0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 26
+
+
+ 1233 0070 00       		.byte	0
+ 1234 0071 09       		.uleb128 0x9
+ 1235 0072 34       		.uleb128 0x34
+ 1236 0073 00       		.byte	0
+ 1237 0074 03       		.uleb128 0x3
+ 1238 0075 0E       		.uleb128 0xe
+ 1239 0076 3A       		.uleb128 0x3a
+ 1240 0077 0B       		.uleb128 0xb
+ 1241 0078 3B       		.uleb128 0x3b
+ 1242 0079 0B       		.uleb128 0xb
+ 1243 007a 49       		.uleb128 0x49
+ 1244 007b 13       		.uleb128 0x13
+ 1245 007c 02       		.uleb128 0x2
+ 1246 007d 17       		.uleb128 0x17
+ 1247 007e 00       		.byte	0
+ 1248 007f 00       		.byte	0
+ 1249 0080 0A       		.uleb128 0xa
+ 1250 0081 34       		.uleb128 0x34
+ 1251 0082 00       		.byte	0
+ 1252 0083 03       		.uleb128 0x3
+ 1253 0084 0E       		.uleb128 0xe
+ 1254 0085 3A       		.uleb128 0x3a
+ 1255 0086 0B       		.uleb128 0xb
+ 1256 0087 3B       		.uleb128 0x3b
+ 1257 0088 0B       		.uleb128 0xb
+ 1258 0089 49       		.uleb128 0x49
+ 1259 008a 13       		.uleb128 0x13
+ 1260 008b 02       		.uleb128 0x2
+ 1261 008c 18       		.uleb128 0x18
+ 1262 008d 00       		.byte	0
+ 1263 008e 00       		.byte	0
+ 1264 008f 0B       		.uleb128 0xb
+ 1265 0090 898201   		.uleb128 0x4109
+ 1266 0093 00       		.byte	0
+ 1267 0094 11       		.uleb128 0x11
+ 1268 0095 01       		.uleb128 0x1
+ 1269 0096 31       		.uleb128 0x31
+ 1270 0097 13       		.uleb128 0x13
+ 1271 0098 00       		.byte	0
+ 1272 0099 00       		.byte	0
+ 1273 009a 0C       		.uleb128 0xc
+ 1274 009b 2E       		.uleb128 0x2e
+ 1275 009c 01       		.byte	0x1
+ 1276 009d 3F       		.uleb128 0x3f
+ 1277 009e 19       		.uleb128 0x19
+ 1278 009f 03       		.uleb128 0x3
+ 1279 00a0 0E       		.uleb128 0xe
+ 1280 00a1 3A       		.uleb128 0x3a
+ 1281 00a2 0B       		.uleb128 0xb
+ 1282 00a3 3B       		.uleb128 0x3b
+ 1283 00a4 0B       		.uleb128 0xb
+ 1284 00a5 27       		.uleb128 0x27
+ 1285 00a6 19       		.uleb128 0x19
+ 1286 00a7 49       		.uleb128 0x49
+ 1287 00a8 13       		.uleb128 0x13
+ 1288 00a9 8701     		.uleb128 0x87
+ 1289 00ab 19       		.uleb128 0x19
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 27
+
+
+ 1290 00ac 11       		.uleb128 0x11
+ 1291 00ad 01       		.uleb128 0x1
+ 1292 00ae 12       		.uleb128 0x12
+ 1293 00af 06       		.uleb128 0x6
+ 1294 00b0 40       		.uleb128 0x40
+ 1295 00b1 18       		.uleb128 0x18
+ 1296 00b2 9742     		.uleb128 0x2117
+ 1297 00b4 19       		.uleb128 0x19
+ 1298 00b5 01       		.uleb128 0x1
+ 1299 00b6 13       		.uleb128 0x13
+ 1300 00b7 00       		.byte	0
+ 1301 00b8 00       		.byte	0
+ 1302 00b9 0D       		.uleb128 0xd
+ 1303 00ba 0B       		.uleb128 0xb
+ 1304 00bb 01       		.byte	0x1
+ 1305 00bc 11       		.uleb128 0x11
+ 1306 00bd 01       		.uleb128 0x1
+ 1307 00be 12       		.uleb128 0x12
+ 1308 00bf 06       		.uleb128 0x6
+ 1309 00c0 01       		.uleb128 0x1
+ 1310 00c1 13       		.uleb128 0x13
+ 1311 00c2 00       		.byte	0
+ 1312 00c3 00       		.byte	0
+ 1313 00c4 0E       		.uleb128 0xe
+ 1314 00c5 34       		.uleb128 0x34
+ 1315 00c6 00       		.byte	0
+ 1316 00c7 03       		.uleb128 0x3
+ 1317 00c8 08       		.uleb128 0x8
+ 1318 00c9 3A       		.uleb128 0x3a
+ 1319 00ca 0B       		.uleb128 0xb
+ 1320 00cb 3B       		.uleb128 0x3b
+ 1321 00cc 0B       		.uleb128 0xb
+ 1322 00cd 49       		.uleb128 0x49
+ 1323 00ce 13       		.uleb128 0x13
+ 1324 00cf 02       		.uleb128 0x2
+ 1325 00d0 17       		.uleb128 0x17
+ 1326 00d1 00       		.byte	0
+ 1327 00d2 00       		.byte	0
+ 1328 00d3 0F       		.uleb128 0xf
+ 1329 00d4 898201   		.uleb128 0x4109
+ 1330 00d7 01       		.byte	0x1
+ 1331 00d8 11       		.uleb128 0x11
+ 1332 00d9 01       		.uleb128 0x1
+ 1333 00da 31       		.uleb128 0x31
+ 1334 00db 13       		.uleb128 0x13
+ 1335 00dc 00       		.byte	0
+ 1336 00dd 00       		.byte	0
+ 1337 00de 10       		.uleb128 0x10
+ 1338 00df 8A8201   		.uleb128 0x410a
+ 1339 00e2 00       		.byte	0
+ 1340 00e3 02       		.uleb128 0x2
+ 1341 00e4 18       		.uleb128 0x18
+ 1342 00e5 9142     		.uleb128 0x2111
+ 1343 00e7 18       		.uleb128 0x18
+ 1344 00e8 00       		.byte	0
+ 1345 00e9 00       		.byte	0
+ 1346 00ea 11       		.uleb128 0x11
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 28
+
+
+ 1347 00eb 34       		.uleb128 0x34
+ 1348 00ec 00       		.byte	0
+ 1349 00ed 03       		.uleb128 0x3
+ 1350 00ee 0E       		.uleb128 0xe
+ 1351 00ef 3A       		.uleb128 0x3a
+ 1352 00f0 0B       		.uleb128 0xb
+ 1353 00f1 3B       		.uleb128 0x3b
+ 1354 00f2 05       		.uleb128 0x5
+ 1355 00f3 49       		.uleb128 0x49
+ 1356 00f4 13       		.uleb128 0x13
+ 1357 00f5 3F       		.uleb128 0x3f
+ 1358 00f6 19       		.uleb128 0x19
+ 1359 00f7 3C       		.uleb128 0x3c
+ 1360 00f8 19       		.uleb128 0x19
+ 1361 00f9 00       		.byte	0
+ 1362 00fa 00       		.byte	0
+ 1363 00fb 12       		.uleb128 0x12
+ 1364 00fc 35       		.uleb128 0x35
+ 1365 00fd 00       		.byte	0
+ 1366 00fe 49       		.uleb128 0x49
+ 1367 00ff 13       		.uleb128 0x13
+ 1368 0100 00       		.byte	0
+ 1369 0101 00       		.byte	0
+ 1370 0102 13       		.uleb128 0x13
+ 1371 0103 34       		.uleb128 0x34
+ 1372 0104 00       		.byte	0
+ 1373 0105 03       		.uleb128 0x3
+ 1374 0106 0E       		.uleb128 0xe
+ 1375 0107 3A       		.uleb128 0x3a
+ 1376 0108 0B       		.uleb128 0xb
+ 1377 0109 3B       		.uleb128 0x3b
+ 1378 010a 0B       		.uleb128 0xb
+ 1379 010b 49       		.uleb128 0x49
+ 1380 010c 13       		.uleb128 0x13
+ 1381 010d 3F       		.uleb128 0x3f
+ 1382 010e 19       		.uleb128 0x19
+ 1383 010f 02       		.uleb128 0x2
+ 1384 0110 18       		.uleb128 0x18
+ 1385 0111 00       		.byte	0
+ 1386 0112 00       		.byte	0
+ 1387 0113 14       		.uleb128 0x14
+ 1388 0114 2E       		.uleb128 0x2e
+ 1389 0115 00       		.byte	0
+ 1390 0116 3F       		.uleb128 0x3f
+ 1391 0117 19       		.uleb128 0x19
+ 1392 0118 3C       		.uleb128 0x3c
+ 1393 0119 19       		.uleb128 0x19
+ 1394 011a 6E       		.uleb128 0x6e
+ 1395 011b 0E       		.uleb128 0xe
+ 1396 011c 03       		.uleb128 0x3
+ 1397 011d 0E       		.uleb128 0xe
+ 1398 011e 3A       		.uleb128 0x3a
+ 1399 011f 0B       		.uleb128 0xb
+ 1400 0120 3B       		.uleb128 0x3b
+ 1401 0121 0B       		.uleb128 0xb
+ 1402 0122 00       		.byte	0
+ 1403 0123 00       		.byte	0
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 29
+
+
+ 1404 0124 00       		.byte	0
+ 1405              		.section	.debug_loc,"",%progbits
+ 1406              	.Ldebug_loc0:
+ 1407              	.LLST0:
+ 1408 0000 0E000000 		.4byte	.LVL2
+ 1409 0004 15000000 		.4byte	.LVL3-1
+ 1410 0008 0600     		.2byte	0x6
+ 1411 000a 50       		.byte	0x50
+ 1412 000b 93       		.byte	0x93
+ 1413 000c 04       		.uleb128 0x4
+ 1414 000d 51       		.byte	0x51
+ 1415 000e 93       		.byte	0x93
+ 1416 000f 04       		.uleb128 0x4
+ 1417 0010 00000000 		.4byte	0
+ 1418 0014 00000000 		.4byte	0
+ 1419              	.LLST1:
+ 1420 0018 18000000 		.4byte	.LVL13
+ 1421 001c 1A000000 		.4byte	.LVL14
+ 1422 0020 0200     		.2byte	0x2
+ 1423 0022 30       		.byte	0x30
+ 1424 0023 9F       		.byte	0x9f
+ 1425 0024 1A000000 		.4byte	.LVL14
+ 1426 0028 1E000000 		.4byte	.LVL15
+ 1427 002c 0100     		.2byte	0x1
+ 1428 002e 54       		.byte	0x54
+ 1429 002f 1E000000 		.4byte	.LVL15
+ 1430 0033 26000000 		.4byte	.LVL16
+ 1431 0037 0200     		.2byte	0x2
+ 1432 0039 30       		.byte	0x30
+ 1433 003a 9F       		.byte	0x9f
+ 1434 003b 26000000 		.4byte	.LVL16
+ 1435 003f 14010000 		.4byte	.LFE64
+ 1436 0043 0100     		.2byte	0x1
+ 1437 0045 54       		.byte	0x54
+ 1438 0046 00000000 		.4byte	0
+ 1439 004a 00000000 		.4byte	0
+ 1440              	.LLST2:
+ 1441 004e 1A000000 		.4byte	.LVL14
+ 1442 0052 1E000000 		.4byte	.LVL15
+ 1443 0056 0200     		.2byte	0x2
+ 1444 0058 30       		.byte	0x30
+ 1445 0059 9F       		.byte	0x9f
+ 1446 005a 1E000000 		.4byte	.LVL15
+ 1447 005e F8000000 		.4byte	.LVL40
+ 1448 0062 0100     		.2byte	0x1
+ 1449 0064 55       		.byte	0x55
+ 1450 0065 00000000 		.4byte	0
+ 1451 0069 00000000 		.4byte	0
+ 1452              		.section	.debug_aranges,"",%progbits
+ 1453 0000 24000000 		.4byte	0x24
+ 1454 0004 0200     		.2byte	0x2
+ 1455 0006 00000000 		.4byte	.Ldebug_info0
+ 1456 000a 04       		.byte	0x4
+ 1457 000b 00       		.byte	0
+ 1458 000c 0000     		.2byte	0
+ 1459 000e 0000     		.2byte	0
+ 1460 0010 00000000 		.4byte	.LFB65
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 30
+
+
+ 1461 0014 64000000 		.4byte	.LFE65-.LFB65
+ 1462 0018 00000000 		.4byte	.LFB64
+ 1463 001c 14010000 		.4byte	.LFE64-.LFB64
+ 1464 0020 00000000 		.4byte	0
+ 1465 0024 00000000 		.4byte	0
+ 1466              		.section	.debug_ranges,"",%progbits
+ 1467              	.Ldebug_ranges0:
+ 1468 0000 00000000 		.4byte	.LFB65
+ 1469 0004 64000000 		.4byte	.LFE65
+ 1470 0008 00000000 		.4byte	.LFB64
+ 1471 000c 14010000 		.4byte	.LFE64
+ 1472 0010 00000000 		.4byte	0
+ 1473 0014 00000000 		.4byte	0
+ 1474              		.section	.debug_line,"",%progbits
+ 1475              	.Ldebug_line0:
+ 1476 0000 51020000 		.section	.debug_str,"MS",%progbits,1
+ 1476      0200C201 
+ 1476      00000201 
+ 1476      FB0E0D00 
+ 1476      01010101 
+ 1477              	.LASF82:
+ 1478 0000 636C6561 		.ascii	"clear_interlock\000"
+ 1478      725F696E 
+ 1478      7465726C 
+ 1478      6F636B00 
+ 1479              	.LASF81:
+ 1480 0010 68765F61 		.ascii	"hv_allowed\000"
+ 1480      6C6C6F77 
+ 1480      656400
+ 1481              	.LASF3:
+ 1482 001b 5F5F696E 		.ascii	"__int16_t\000"
+ 1482      7431365F 
+ 1482      7400
+ 1483              	.LASF45:
+ 1484 0025 53504545 		.ascii	"SPEED_CHECK\000"
+ 1484      445F4348 
+ 1484      45434B00 
+ 1485              	.LASF87:
+ 1486 0031 66696E69 		.ascii	"finish_precharge\000"
+ 1486      73685F70 
+ 1486      72656368 
+ 1486      61726765 
+ 1486      00
+ 1487              	.LASF13:
+ 1488 0042 75696E74 		.ascii	"uint8_t\000"
+ 1488      385F7400 
+ 1489              	.LASF19:
+ 1490 004a 63686172 		.ascii	"char\000"
+ 1490      00
+ 1491              	.LASF63:
+ 1492 004f 6D635F76 		.ascii	"mc_voltage\000"
+ 1492      6F6C7461 
+ 1492      676500
+ 1493              	.LASF28:
+ 1494 005a 48565F45 		.ascii	"HV_ENABLED\000"
+ 1494      4E41424C 
+ 1494      454400
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 31
+
+
+ 1495              	.LASF60:
+ 1496 0065 626D735F 		.ascii	"bms_voltage\000"
+ 1496      766F6C74 
+ 1496      61676500 
+ 1497              	.LASF21:
+ 1498 0071 73697A65 		.ascii	"sizetype\000"
+ 1498      74797065 
+ 1498      00
+ 1499              	.LASF75:
+ 1500 007a 4144435F 		.ascii	"ADC_DelSig_1_Read32\000"
+ 1500      44656C53 
+ 1500      69675F31 
+ 1500      5F526561 
+ 1500      64333200 
+ 1501              	.LASF58:
+ 1502 008e 7663755F 		.ascii	"vcu_attached\000"
+ 1502      61747461 
+ 1502      63686564 
+ 1502      00
+ 1503              	.LASF30:
+ 1504 009b 4641554C 		.ascii	"FAULT\000"
+ 1504      5400
+ 1505              	.LASF100:
+ 1506 00a1 6D61696E 		.ascii	"main\000"
+ 1506      00
+ 1507              	.LASF46:
+ 1508 00a6 44495343 		.ascii	"DISCHARGE_ACTIVE\000"
+ 1508      48415247 
+ 1508      455F4143 
+ 1508      54495645 
+ 1508      00
+ 1509              	.LASF5:
+ 1510 00b7 5F5F7569 		.ascii	"__uint16_t\000"
+ 1510      6E743136 
+ 1510      5F7400
+ 1511              	.LASF91:
+ 1512 00c2 43414E5F 		.ascii	"CAN_Start\000"
+ 1512      53746172 
+ 1512      7400
+ 1513              	.LASF4:
+ 1514 00cc 73686F72 		.ascii	"short int\000"
+ 1514      7420696E 
+ 1514      7400
+ 1515              	.LASF57:
+ 1516 00d6 68765F72 		.ascii	"hv_requested\000"
+ 1516      65717565 
+ 1516      73746564 
+ 1516      00
+ 1517              	.LASF80:
+ 1518 00e3 75706461 		.ascii	"update_status\000"
+ 1518      74655F73 
+ 1518      74617475 
+ 1518      7300
+ 1519              	.LASF50:
+ 1520 00f1 63757272 		.ascii	"current\000"
+ 1520      656E7400 
+ 1521              	.LASF84:
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 32
+
+
+ 1522 00f9 70726563 		.ascii	"precharge_ready\000"
+ 1522      68617267 
+ 1522      655F7265 
+ 1522      61647900 
+ 1523              	.LASF92:
+ 1524 0109 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
+ 1524      44656C53 
+ 1524      69675F31 
+ 1524      5F537461 
+ 1524      727400
+ 1525              	.LASF88:
+ 1526 011c 63686563 		.ascii	"check_can\000"
+ 1526      6B5F6361 
+ 1526      6E00
+ 1527              	.LASF33:
+ 1528 0126 50524543 		.ascii	"PRECHARGE_INIT\000"
+ 1528      48415247 
+ 1528      455F494E 
+ 1528      495400
+ 1529              	.LASF31:
+ 1530 0135 5643555F 		.ascii	"VCU_STATE\000"
+ 1530      53544154 
+ 1530      4500
+ 1531              	.LASF26:
+ 1532 013f 5045495F 		.ascii	"PEI_STATE_t\000"
+ 1532      53544154 
+ 1532      455F7400 
+ 1533              	.LASF54:
+ 1534 014b 7065695F 		.ascii	"pei_status\000"
+ 1534      73746174 
+ 1534      757300
+ 1535              	.LASF70:
+ 1536 0156 6C6F6F70 		.ascii	"loop_counter\000"
+ 1536      5F636F75 
+ 1536      6E746572 
+ 1536      00
+ 1537              	.LASF27:
+ 1538 0163 50524543 		.ascii	"PRECHARGING\000"
+ 1538      48415247 
+ 1538      494E4700 
+ 1539              	.LASF17:
+ 1540 016f 666C6F61 		.ascii	"float\000"
+ 1540      7400
+ 1541              	.LASF35:
+ 1542 0175 50524543 		.ascii	"PRECHARGE_COMPLETE\000"
+ 1542      48415247 
+ 1542      455F434F 
+ 1542      4D504C45 
+ 1542      544500
+ 1543              	.LASF43:
+ 1544 0188 44495343 		.ascii	"DISCHARGE_DISABLED\000"
+ 1544      48415247 
+ 1544      455F4449 
+ 1544      5341424C 
+ 1544      454400
+ 1545              	.LASF67:
+ 1546 019b 6D635F72 		.ascii	"mc_run_faults\000"
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 33
+
+
+ 1546      756E5F66 
+ 1546      61756C74 
+ 1546      7300
+ 1547              	.LASF10:
+ 1548 01a9 6C6F6E67 		.ascii	"long long int\000"
+ 1548      206C6F6E 
+ 1548      6720696E 
+ 1548      7400
+ 1549              	.LASF22:
+ 1550 01b7 5045495F 		.ascii	"PEI_LV\000"
+ 1550      4C5600
+ 1551              	.LASF73:
+ 1552 01be 6C6F6F70 		.ascii	"loops_since_mc_message\000"
+ 1552      735F7369 
+ 1552      6E63655F 
+ 1552      6D635F6D 
+ 1552      65737361 
+ 1553              	.LASF74:
+ 1554 01d5 6C6F6F70 		.ascii	"loops_since_charger_message\000"
+ 1554      735F7369 
+ 1554      6E63655F 
+ 1554      63686172 
+ 1554      6765725F 
+ 1555              	.LASF8:
+ 1556 01f1 6C6F6E67 		.ascii	"long int\000"
+ 1556      20696E74 
+ 1556      00
+ 1557              	.LASF61:
+ 1558 01fa 626D735F 		.ascii	"bms_soc\000"
+ 1558      736F6300 
+ 1559              	.LASF79:
+ 1560 0202 53445F46 		.ascii	"SD_FINAL_Read\000"
+ 1560      494E414C 
+ 1560      5F526561 
+ 1560      6400
+ 1561              	.LASF2:
+ 1562 0210 5F5F7569 		.ascii	"__uint8_t\000"
+ 1562      6E74385F 
+ 1562      7400
+ 1563              	.LASF42:
+ 1564 021a 4D435F56 		.ascii	"MC_VSM_STATE\000"
+ 1564      534D5F53 
+ 1564      54415445 
+ 1564      00
+ 1565              	.LASF23:
+ 1566 0227 5045495F 		.ascii	"PEI_PRECHARGE\000"
+ 1566      50524543 
+ 1566      48415247 
+ 1566      4500
+ 1567              	.LASF1:
+ 1568 0235 756E7369 		.ascii	"unsigned char\000"
+ 1568      676E6564 
+ 1568      20636861 
+ 1568      7200
+ 1569              	.LASF32:
+ 1570 0243 56534D5F 		.ascii	"VSM_START\000"
+ 1570      53544152 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 34
+
+
+ 1570      5400
+ 1571              	.LASF93:
+ 1572 024d 4C43445F 		.ascii	"LCD_Start\000"
+ 1572      53746172 
+ 1572      7400
+ 1573              	.LASF51:
+ 1574 0257 73687574 		.ascii	"shutdown_flags\000"
+ 1574      646F776E 
+ 1574      5F666C61 
+ 1574      677300
+ 1575              	.LASF24:
+ 1576 0266 5045495F 		.ascii	"PEI_HV\000"
+ 1576      485600
+ 1577              	.LASF20:
+ 1578 026d 6C6F6E67 		.ascii	"long double\000"
+ 1578      20646F75 
+ 1578      626C6500 
+ 1579              	.LASF44:
+ 1580 0279 44495343 		.ascii	"DISCHARGE_ENABLED\000"
+ 1580      48415247 
+ 1580      455F454E 
+ 1580      41424C45 
+ 1580      4400
+ 1581              	.LASF78:
+ 1582 028b 424D535F 		.ascii	"BMS_Fault_Read\000"
+ 1582      4661756C 
+ 1582      745F5265 
+ 1582      616400
+ 1583              	.LASF71:
+ 1584 029a 6C6F6F70 		.ascii	"loops_since_vcu_message\000"
+ 1584      735F7369 
+ 1584      6E63655F 
+ 1584      7663755F 
+ 1584      6D657373 
+ 1585              	.LASF0:
+ 1586 02b2 7369676E 		.ascii	"signed char\000"
+ 1586      65642063 
+ 1586      68617200 
+ 1587              	.LASF11:
+ 1588 02be 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1588      206C6F6E 
+ 1588      6720756E 
+ 1588      7369676E 
+ 1588      65642069 
+ 1589              	.LASF90:
+ 1590 02d5 43414E5F 		.ascii	"CAN_Init\000"
+ 1590      496E6974 
+ 1590      00
+ 1591              	.LASF12:
+ 1592 02de 756E7369 		.ascii	"unsigned int\000"
+ 1592      676E6564 
+ 1592      20696E74 
+ 1592      00
+ 1593              	.LASF15:
+ 1594 02eb 75696E74 		.ascii	"uint16_t\000"
+ 1594      31365F74 
+ 1594      00
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 35
+
+
+ 1595              	.LASF9:
+ 1596 02f4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1596      20756E73 
+ 1596      69676E65 
+ 1596      6420696E 
+ 1596      7400
+ 1597              	.LASF37:
+ 1598 0306 56534D5F 		.ascii	"VSM_READY\000"
+ 1598      52454144 
+ 1598      5900
+ 1599              	.LASF69:
+ 1600 0310 63686172 		.ascii	"charger_status\000"
+ 1600      6765725F 
+ 1600      73746174 
+ 1600      757300
+ 1601              	.LASF34:
+ 1602 031f 50524543 		.ascii	"PRECHARGE_ACTIVE\000"
+ 1602      48415247 
+ 1602      455F4143 
+ 1602      54495645 
+ 1602      00
+ 1603              	.LASF95:
+ 1604 0330 63616E5F 		.ascii	"can_send_PEI\000"
+ 1604      73656E64 
+ 1604      5F504549 
+ 1604      00
+ 1605              	.LASF6:
+ 1606 033d 73686F72 		.ascii	"short unsigned int\000"
+ 1606      7420756E 
+ 1606      7369676E 
+ 1606      65642069 
+ 1606      6E7400
+ 1607              	.LASF94:
+ 1608 0350 75706461 		.ascii	"update_display\000"
+ 1608      74655F64 
+ 1608      6973706C 
+ 1608      617900
+ 1609              	.LASF86:
+ 1610 035f 70726563 		.ascii	"precharge_complete\000"
+ 1610      68617267 
+ 1610      655F636F 
+ 1610      6D706C65 
+ 1610      746500
+ 1611              	.LASF99:
+ 1612 0372 6765745F 		.ascii	"get_current\000"
+ 1612      63757272 
+ 1612      656E7400 
+ 1613              	.LASF16:
+ 1614 037e 696E7433 		.ascii	"int32_t\000"
+ 1614      325F7400 
+ 1615              	.LASF14:
+ 1616 0386 696E7431 		.ascii	"int16_t\000"
+ 1616      365F7400 
+ 1617              	.LASF41:
+ 1618 038e 52454359 		.ascii	"RECYCLE_POWER\000"
+ 1618      434C455F 
+ 1618      504F5745 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 36
+
+
+ 1618      5200
+ 1619              	.LASF53:
+ 1620 039c 7065695F 		.ascii	"pei_state\000"
+ 1620      73746174 
+ 1620      6500
+ 1621              	.LASF56:
+ 1622 03a6 7663755F 		.ascii	"vcu_state\000"
+ 1622      73746174 
+ 1622      6500
+ 1623              	.LASF97:
+ 1624 03b0 6D61696E 		.ascii	"main.c\000"
+ 1624      2E6300
+ 1625              	.LASF38:
+ 1626 03b7 4D4F544F 		.ascii	"MOTOR_RUNNING\000"
+ 1626      525F5255 
+ 1626      4E4E494E 
+ 1626      4700
+ 1627              	.LASF68:
+ 1628 03c5 63686172 		.ascii	"charger_attached\000"
+ 1628      6765725F 
+ 1628      61747461 
+ 1628      63686564 
+ 1628      00
+ 1629              	.LASF98:
+ 1630 03d6 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
+ 1630      73657273 
+ 1630      5C6C656F 
+ 1630      6A615C44 
+ 1630      6F63756D 
+ 1631 0404 4531305C 		.ascii	"E10\\PEI_Firmware_FE10_Rev2\\Design01.cydsn\000"
+ 1631      5045495F 
+ 1631      4669726D 
+ 1631      77617265 
+ 1631      5F464531 
+ 1632              	.LASF18:
+ 1633 042e 646F7562 		.ascii	"double\000"
+ 1633      6C6500
+ 1634              	.LASF39:
+ 1635 0435 424C494E 		.ascii	"BLINK_FAULT_CODE\000"
+ 1635      4B5F4641 
+ 1635      554C545F 
+ 1635      434F4445 
+ 1635      00
+ 1636              	.LASF89:
+ 1637 0446 43414E5F 		.ascii	"CAN_GlobalIntEnable\000"
+ 1637      476C6F62 
+ 1637      616C496E 
+ 1637      74456E61 
+ 1637      626C6500 
+ 1638              	.LASF76:
+ 1639 045a 4144435F 		.ascii	"ADC_DelSig_1_CountsTo_mVolts\000"
+ 1639      44656C53 
+ 1639      69675F31 
+ 1639      5F436F75 
+ 1639      6E747354 
+ 1640              	.LASF7:
+ 1641 0477 5F5F696E 		.ascii	"__int32_t\000"
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 37
+
+
+ 1641      7433325F 
+ 1641      7400
+ 1642              	.LASF65:
+ 1643 0481 6D635F64 		.ascii	"mc_discharge_state\000"
+ 1643      69736368 
+ 1643      61726765 
+ 1643      5F737461 
+ 1643      746500
+ 1644              	.LASF49:
+ 1645 0494 63757272 		.ascii	"current_raw_mv\000"
+ 1645      656E745F 
+ 1645      7261775F 
+ 1645      6D7600
+ 1646              	.LASF25:
+ 1647 04a3 5045495F 		.ascii	"PEI_FAULT\000"
+ 1647      4641554C 
+ 1647      5400
+ 1648              	.LASF62:
+ 1649 04ad 626D735F 		.ascii	"bms_temp\000"
+ 1649      74656D70 
+ 1649      00
+ 1650              	.LASF72:
+ 1651 04b6 6C6F6F70 		.ascii	"loops_since_bms_message\000"
+ 1651      735F7369 
+ 1651      6E63655F 
+ 1651      626D735F 
+ 1651      6D657373 
+ 1652              	.LASF83:
+ 1653 04ce 68765F72 		.ascii	"hv_request\000"
+ 1653      65717565 
+ 1653      737400
+ 1654              	.LASF59:
+ 1655 04d9 626D735F 		.ascii	"bms_status\000"
+ 1655      73746174 
+ 1655      757300
+ 1656              	.LASF64:
+ 1657 04e4 6D635F76 		.ascii	"mc_vsm_state\000"
+ 1657      736D5F73 
+ 1657      74617465 
+ 1657      00
+ 1658              	.LASF85:
+ 1659 04f1 73746172 		.ascii	"start_precharge\000"
+ 1659      745F7072 
+ 1659      65636861 
+ 1659      72676500 
+ 1660              	.LASF36:
+ 1661 0501 56534D5F 		.ascii	"VSM_WAIT\000"
+ 1661      57414954 
+ 1661      00
+ 1662              	.LASF55:
+ 1663 050a 72656C61 		.ascii	"relay_flags\000"
+ 1663      795F666C 
+ 1663      61677300 
+ 1664              	.LASF40:
+ 1665 0516 53485554 		.ascii	"SHUTDOWN_IN_PROCESS\000"
+ 1665      444F574E 
+ 1665      5F494E5F 
+ARM GAS  C:\Users\leoja\AppData\Local\Temp\ccApNg6X.s 			page 38
+
+
+ 1665      50524F43 
+ 1665      45535300 
+ 1666              	.LASF29:
+ 1667 052a 44524956 		.ascii	"DRIVE\000"
+ 1667      4500
+ 1668              	.LASF52:
+ 1669 0530 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1669      52784275 
+ 1669      66666572 
+ 1669      00
+ 1670              	.LASF96:
+ 1671 053d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1671      43313120 
+ 1671      352E342E 
+ 1671      31203230 
+ 1671      31363036 
+ 1672 0570 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1672      20726576 
+ 1672      6973696F 
+ 1672      6E203233 
+ 1672      37373135 
+ 1673 05a3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1673      66756E63 
+ 1673      74696F6E 
+ 1673      2D736563 
+ 1673      74696F6E 
+ 1674              	.LASF47:
+ 1675 05cb 44495343 		.ascii	"DISCHARGE_COMPLETE\000"
+ 1675      48415247 
+ 1675      455F434F 
+ 1675      4D504C45 
+ 1675      544500
+ 1676              	.LASF48:
+ 1677 05de 4D435F44 		.ascii	"MC_DISCHARGE_STATE\000"
+ 1677      49534348 
+ 1677      41524745 
+ 1677      5F535441 
+ 1677      544500
+ 1678              	.LASF77:
+ 1679 05f1 494D445F 		.ascii	"IMD_Fault_Read\000"
+ 1679      4661756C 
+ 1679      745F5265 
+ 1679      616400
+ 1680              	.LASF66:
+ 1681 0600 6D635F70 		.ascii	"mc_post_faults\000"
+ 1681      6F73745F 
+ 1681      6661756C 
+ 1681      747300
+ 1682              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
