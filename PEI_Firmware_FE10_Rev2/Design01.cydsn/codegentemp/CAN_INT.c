@@ -440,6 +440,8 @@
                             break;
                             case 5u : CAN_ReceiveMsgMC_Voltage();
                             break;
+                            case 6u : CAN_ReceiveMsgMC_Command();
+                            break;
                             default:
                             break;
                         }

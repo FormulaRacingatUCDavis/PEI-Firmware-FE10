@@ -54,6 +54,9 @@ extern uint16_t loops_since_bms_message;
 extern uint16_t loops_since_mc_message;
 extern uint16_t loops_since_charger_message;
 
+//MC Command
+uint8_t enable_commands;
+
 /* `#END` */
 
 
@@ -924,7 +927,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
 
 #if (CAN_RX6_FUNC_ENABLE)
     /*******************************************************************************
-    * FUNCTION NAME:   CAN_ReceiveMsg6
+    * FUNCTION NAME:   CAN_ReceiveMsgMC_Command
     ********************************************************************************
     *
     * Summary:
@@ -942,15 +945,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     *  Depends on the Customer code.
     *
     *******************************************************************************/
-    void CAN_ReceiveMsg6(void) 
+    void CAN_ReceiveMsgMC_Command(void) 
     {
-        /* `#START MESSAGE_6_RECEIVED` */
-
+        /* `#START MESSAGE_MC_Command_RECEIVED` */
+        enable_commands = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Command);
         /* `#END` */
 
-        #ifdef CAN_RECEIVE_MSG_6_CALLBACK
-            CAN_ReceiveMsg_6_Callback();
-        #endif /* CAN_RECEIVE_MSG_6_CALLBACK */
+        #ifdef CAN_RECEIVE_MSG_MC_Command_CALLBACK
+            CAN_ReceiveMsg_MC_Command_Callback();
+        #endif /* CAN_RECEIVE_MSG_MC_Command_CALLBACK */
 
         CAN_RX[6u].rxcmd.byte[0u] |= CAN_RX_ACK_MSG;
     }

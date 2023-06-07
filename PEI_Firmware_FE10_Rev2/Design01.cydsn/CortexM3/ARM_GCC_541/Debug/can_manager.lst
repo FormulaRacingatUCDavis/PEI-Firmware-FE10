@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
   28:can_manager.c **** /* Used for debug purposes
   29:can_manager.c **** void can_send_interlock(uint8_t air_neg, uint8_t air_pos)
   30:can_manager.c **** {
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 2
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 2
 
 
   31:can_manager.c ****     uint8_t data[8] = {0};
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
   47:can_manager.c **** void can_send_CHARGER(uint8_t charge_start){
   66              		.loc 1 47 0
   67              		.cfi_startproc
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 3
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 3
 
 
   68              		@ args = 0, pretend = 0, frame = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
   62:can_manager.c ****     loops_since_bms_message++;
   63:can_manager.c ****     loops_since_charger_message++;
   64:can_manager.c ****     loops_since_mc_message++;
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 4
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 4
 
 
   65:can_manager.c ****     loops_since_vcu_message++;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  132              		.size	CAN_to_125KB, .-CAN_to_125KB
  133 0016 00BF     		.section	.text.CAN_to_500KB,"ax",%progbits
  134              		.align	2
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 5
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 5
 
 
  135              		.global	CAN_to_500KB
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  181              		.cfi_offset 14, -4
   81:can_manager.c ****         CAN_to_500KB();
  182              		.loc 1 81 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 6
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 6
 
 
  183 0002 074B     		ldr	r3, .L17
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  231 000a 1380     		strh	r3, [r2]	@ movhi
   62:can_manager.c ****     loops_since_charger_message++;
  232              		.loc 1 62 0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 7
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 7
 
 
  233 000c 0F49     		ldr	r1, .L22+4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  279 0058 00000000 		.word	loops_since_vcu_message
  280 005c 00000000 		.word	charger_attached
  281 0060 00000000 		.word	vcu_attached
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 8
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 8
 
 
  282              		.cfi_endproc
@@ -447,15 +447,15 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  305 000b 01       		.uleb128 0x1
  306 000c C0000000 		.4byte	.LASF56
  307 0010 0C       		.byte	0xc
- 308 0011 9E030000 		.4byte	.LASF57
- 309 0015 C6010000 		.4byte	.LASF58
+ 308 0011 94030000 		.4byte	.LASF57
+ 309 0015 22020000 		.4byte	.LASF58
  310 0019 00000000 		.4byte	.Ldebug_ranges0+0
  311 001d 00000000 		.4byte	0
  312 0021 00000000 		.4byte	.Ldebug_line0
  313 0025 02       		.uleb128 0x2
  314 0026 01       		.byte	0x1
  315 0027 06       		.byte	0x6
- 316 0028 7E030000 		.4byte	.LASF0
+ 316 0028 74030000 		.4byte	.LASF0
  317 002c 03       		.uleb128 0x3
  318 002d 13000000 		.4byte	.LASF2
  319 0031 02       		.byte	0x2
@@ -473,12 +473,12 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  331 0049 02       		.uleb128 0x2
  332 004a 02       		.byte	0x2
  333 004b 05       		.byte	0x5
- 334 004c 25030000 		.4byte	.LASF4
+ 334 004c 1B030000 		.4byte	.LASF4
  335 0050 03       		.uleb128 0x3
  336 0051 AB010000 		.4byte	.LASF5
  337 0055 02       		.byte	0x2
  338 0056 2B       		.byte	0x2b
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 9
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 9
 
 
  339 0057 5B000000 		.4byte	0x5b
@@ -494,7 +494,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  349 006d 02       		.uleb128 0x2
  350 006e 04       		.byte	0x4
  351 006f 05       		.byte	0x5
- 352 0070 5E030000 		.4byte	.LASF8
+ 352 0070 54030000 		.4byte	.LASF8
  353 0074 02       		.uleb128 0x2
  354 0075 04       		.byte	0x4
  355 0076 07       		.byte	0x7
@@ -502,11 +502,11 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  357 007b 02       		.uleb128 0x2
  358 007c 08       		.byte	0x8
  359 007d 05       		.byte	0x5
- 360 007e E2020000 		.4byte	.LASF10
+ 360 007e D8020000 		.4byte	.LASF10
  361 0082 02       		.uleb128 0x2
  362 0083 08       		.byte	0x8
  363 0084 07       		.byte	0x7
- 364 0085 4C020000 		.4byte	.LASF11
+ 364 0085 F4010000 		.4byte	.LASF11
  365 0089 04       		.uleb128 0x4
  366 008a 04       		.byte	0x4
  367 008b 05       		.byte	0x5
@@ -514,19 +514,19 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  369 0090 02       		.uleb128 0x2
  370 0091 04       		.byte	0x4
  371 0092 07       		.byte	0x7
- 372 0093 25020000 		.4byte	.LASF12
+ 372 0093 CD010000 		.4byte	.LASF12
  373 0097 03       		.uleb128 0x3
- 374 0098 DA020000 		.4byte	.LASF13
+ 374 0098 D0020000 		.4byte	.LASF13
  375 009c 03       		.byte	0x3
  376 009d 18       		.byte	0x18
  377 009e 2C000000 		.4byte	0x2c
  378 00a2 03       		.uleb128 0x3
- 379 00a3 92020000 		.4byte	.LASF14
+ 379 00a3 88020000 		.4byte	.LASF14
  380 00a7 03       		.byte	0x3
  381 00a8 20       		.byte	0x20
  382 00a9 3E000000 		.4byte	0x3e
  383 00ad 03       		.uleb128 0x3
- 384 00ae 2F030000 		.4byte	.LASF15
+ 384 00ae 25030000 		.4byte	.LASF15
  385 00b2 03       		.byte	0x3
  386 00b3 24       		.byte	0x24
  387 00b4 50000000 		.4byte	0x50
@@ -538,13 +538,13 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  393 00c3 05       		.uleb128 0x5
  394 00c4 0D000000 		.4byte	.LASF17
  395 00c8 04       		.byte	0x4
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 10
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 10
 
 
  396 00c9 E801     		.2byte	0x1e8
  397 00cb 37000000 		.4byte	0x37
  398 00cf 05       		.uleb128 0x5
- 399 00d0 1E020000 		.4byte	.LASF18
+ 399 00d0 C6010000 		.4byte	.LASF18
  400 00d4 04       		.byte	0x4
  401 00d5 E901     		.2byte	0x1e9
  402 00d7 5B000000 		.4byte	0x5b
@@ -559,7 +559,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  411 00e9 02       		.uleb128 0x2
  412 00ea 01       		.byte	0x1
  413 00eb 08       		.byte	0x8
- 414 00ec F9020000 		.4byte	.LASF21
+ 414 00ec EF020000 		.4byte	.LASF21
  415 00f0 05       		.uleb128 0x5
  416 00f1 4E010000 		.4byte	.LASF22
  417 00f5 04       		.byte	0x4
@@ -570,11 +570,11 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  422 0101 02       		.uleb128 0x2
  423 0102 08       		.byte	0x8
  424 0103 04       		.byte	0x4
- 425 0104 B6020000 		.4byte	.LASF23
+ 425 0104 AC020000 		.4byte	.LASF23
  426 0108 02       		.uleb128 0x2
  427 0109 04       		.byte	0x4
  428 010a 07       		.byte	0x7
- 429 010b F0020000 		.4byte	.LASF24
+ 429 010b E6020000 		.4byte	.LASF24
  430 010f 07       		.uleb128 0x7
  431 0110 08       		.byte	0x8
  432 0111 05       		.byte	0x5
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  450 0135 24010000 		.4byte	0x124
  451 0139 03       		.uleb128 0x3
  452 013a 7D000000 		.4byte	.LASF25
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 11
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 11
 
 
  453 013e 05       		.byte	0x5
@@ -648,7 +648,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  497 0194 6E010000 		.4byte	0x16e
  498 0198 04       		.byte	0x4
  499 0199 08       		.uleb128 0x8
- 500 019a 8A030000 		.4byte	.LASF30
+ 500 019a 80030000 		.4byte	.LASF30
  501 019e 05       		.byte	0x5
  502 019f B0       		.byte	0xb0
  503 01a0 39010000 		.4byte	0x139
@@ -658,12 +658,12 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  507 01a7 9D010000 		.4byte	.LASF31
  508 01ab 05       		.byte	0x5
  509 01ac B1       		.byte	0xb1
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 12
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 12
 
 
  510 01ad 79010000 		.4byte	0x179
  511 01b1 0B       		.uleb128 0xb
- 512 01b2 91030000 		.4byte	.LASF34
+ 512 01b2 87030000 		.4byte	.LASF34
  513 01b6 01       		.byte	0x1
  514 01b7 26       		.byte	0x26
  515 01b8 00000000 		.4byte	.LFB63
@@ -672,7 +672,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  518 01c1 9C       		.byte	0x9c
  519 01c2 EE010000 		.4byte	0x1ee
  520 01c6 0C       		.uleb128 0xc
- 521 01c7 38030000 		.4byte	.LASF32
+ 521 01c7 2E030000 		.4byte	.LASF32
  522 01cb 01       		.byte	0x1
  523 01cc 26       		.byte	0x26
  524 01cd A2000000 		.4byte	0xa2
@@ -697,7 +697,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  543 01fe 9C       		.byte	0x9c
  544 01ff 1C020000 		.4byte	0x21c
  545 0203 0C       		.uleb128 0xc
- 546 0204 32020000 		.4byte	.LASF36
+ 546 0204 DA010000 		.4byte	.LASF36
  547 0208 01       		.byte	0x1
  548 0209 2F       		.byte	0x2f
  549 020a 97000000 		.4byte	0x97
@@ -707,7 +707,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  553 0217 66030000 		.4byte	0x366
  554 021b 00       		.byte	0
  555 021c 0E       		.uleb128 0xe
- 556 021d 18030000 		.4byte	.LASF37
+ 556 021d 0E030000 		.4byte	.LASF37
  557 0221 01       		.byte	0x1
  558 0222 5A       		.byte	0x5a
  559 0223 00000000 		.4byte	.LFB67
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  564 0231 0D       		.uleb128 0xd
  565 0232 06000000 		.4byte	.LVL5
  566 0236 72030000 		.4byte	0x372
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 13
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 13
 
 
  567 023a 0D       		.uleb128 0xd
@@ -739,7 +739,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  582 025b 93030000 		.4byte	0x393
  583 025f 00       		.byte	0
  584 0260 0E       		.uleb128 0xe
- 585 0261 3F020000 		.4byte	.LASF38
+ 585 0261 E7010000 		.4byte	.LASF38
  586 0265 01       		.byte	0x1
  587 0266 61       		.byte	0x61
  588 0267 00000000 		.4byte	.LFB68
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  621 02b5 CC020000 		.4byte	0x2cc
  622 02b9 0D       		.uleb128 0xd
  623 02ba 0C000000 		.4byte	.LVL13
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 14
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 14
 
 
  624 02be 60020000 		.4byte	0x260
@@ -807,12 +807,12 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  647 02f7 06       		.uleb128 0x6
  648 02f8 B8000000 		.4byte	0xb8
  649 02fc 12       		.uleb128 0x12
- 650 02fd 51030000 		.4byte	.LASF42
+ 650 02fd 47030000 		.4byte	.LASF42
  651 0301 01       		.byte	0x1
  652 0302 11       		.byte	0x11
  653 0303 97000000 		.4byte	0x97
  654 0307 12       		.uleb128 0x12
- 655 0308 40030000 		.4byte	.LASF43
+ 655 0308 36030000 		.4byte	.LASF43
  656 030c 01       		.byte	0x1
  657 030d 12       		.byte	0x12
  658 030e 97000000 		.4byte	0x97
@@ -825,25 +825,25 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  665 031e 03       		.byte	0x3
  666 031f 00000000 		.4byte	baud
  667 0323 12       		.uleb128 0x12
- 668 0324 7A020000 		.4byte	.LASF45
+ 668 0324 70020000 		.4byte	.LASF45
  669 0328 01       		.byte	0x1
  670 0329 15       		.byte	0x15
  671 032a AD000000 		.4byte	0xad
  672 032e 12       		.uleb128 0x12
- 673 032f C2020000 		.4byte	.LASF46
+ 673 032f B8020000 		.4byte	.LASF46
  674 0333 01       		.byte	0x1
  675 0334 16       		.byte	0x16
  676 0335 AD000000 		.4byte	0xad
  677 0339 12       		.uleb128 0x12
- 678 033a 67030000 		.4byte	.LASF47
+ 678 033a 5D030000 		.4byte	.LASF47
  679 033e 01       		.byte	0x1
  680 033f 17       		.byte	0x17
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 15
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 15
 
 
  681 0340 AD000000 		.4byte	0xad
  682 0344 12       		.uleb128 0x12
- 683 0345 9A020000 		.4byte	.LASF48
+ 683 0345 90020000 		.4byte	.LASF48
  684 0349 01       		.byte	0x1
  685 034a 18       		.byte	0x18
  686 034b AD000000 		.4byte	0xad
@@ -853,8 +853,8 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  690 0355 19       		.byte	0x19
  691 0356 AD000000 		.4byte	0xad
  692 035a 14       		.uleb128 0x14
- 693 035b 63020000 		.4byte	.LASF50
- 694 035f 63020000 		.4byte	.LASF50
+ 693 035b 0B020000 		.4byte	.LASF50
+ 694 035f 0B020000 		.4byte	.LASF50
  695 0363 05       		.byte	0x5
  696 0364 2001     		.2byte	0x120
  697 0366 14       		.uleb128 0x14
@@ -863,8 +863,8 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  700 036f 05       		.byte	0x5
  701 0370 1D01     		.2byte	0x11d
  702 0372 15       		.uleb128 0x15
- 703 0373 0F030000 		.4byte	.LASF52
- 704 0377 0F030000 		.4byte	.LASF52
+ 703 0373 05030000 		.4byte	.LASF52
+ 704 0377 05030000 		.4byte	.LASF52
  705 037b 05       		.byte	0x5
  706 037c C6       		.byte	0xc6
  707 037d 15       		.uleb128 0x15
@@ -873,8 +873,8 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  710 0386 05       		.byte	0x5
  711 0387 C4       		.byte	0xc4
  712 0388 15       		.uleb128 0x15
- 713 0389 FE020000 		.4byte	.LASF54
- 714 038d FE020000 		.4byte	.LASF54
+ 713 0389 F4020000 		.4byte	.LASF54
+ 714 038d F4020000 		.4byte	.LASF54
  715 0391 05       		.byte	0x5
  716 0392 CA       		.byte	0xca
  717 0393 15       		.uleb128 0x15
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  735 000a 0E       		.uleb128 0xe
  736 000b 55       		.uleb128 0x55
  737 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 16
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 16
 
 
  738 000d 11       		.uleb128 0x11
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  792 0043 06       		.uleb128 0x6
  793 0044 35       		.uleb128 0x35
  794 0045 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 17
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 17
 
 
  795 0046 49       		.uleb128 0x49
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  849 007c 19       		.uleb128 0x19
  850 007d 03       		.uleb128 0x3
  851 007e 0E       		.uleb128 0xe
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 18
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 18
 
 
  852 007f 3A       		.uleb128 0x3a
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  906 00b8 01       		.uleb128 0x1
  907 00b9 12       		.uleb128 0x12
  908 00ba 06       		.uleb128 0x6
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 19
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 19
 
 
  909 00bb 40       		.uleb128 0x40
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  963 00f7 49       		.uleb128 0x49
  964 00f8 13       		.uleb128 0x13
  965 00f9 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 20
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 20
 
 
  966 00fa 19       		.uleb128 0x19
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  1020 0130 00       		.byte	0
  1021 0131 00       		.byte	0
  1022 0132 00       		.byte	0
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 21
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 21
 
 
  1023              		.section	.debug_loc,"",%progbits
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  1077 0018 00000000 		.4byte	.LFB64
  1078 001c 20000000 		.4byte	.LFE64-.LFB64
  1079 0020 00000000 		.4byte	.LFB67
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 22
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 22
 
 
  1080 0024 16000000 		.4byte	.LFE67-.LFB67
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  1119 0033 5F5F696E 		.ascii	"__int16_t\000"
  1119      7431365F 
  1119      7400
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 23
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 23
 
 
  1120              	.LASF55:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  1146 00f3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  1146      20726576 
  1146      6973696F 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 24
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 24
 
 
  1146      6E203233 
@@ -1433,72 +1433,72 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  1167      746F6767 
  1167      6C655F62 
  1167      61756400 
- 1168              	.LASF58:
- 1169 01c6 433A5C55 		.ascii	"C:\\Users\\leoja\\Documents\\GitHub\\PEI-Firmware-F"
- 1169      73657273 
- 1169      5C6C656F 
- 1169      6A615C44 
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 25
+ 1168              	.LASF18:
+ 1169 01c6 75696E74 		.ascii	"uint16\000"
+ 1169      313600
+ 1170              	.LASF12:
+ 1171 01cd 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 25
 
 
- 1169      6F63756D 
- 1170 01f4 4531305C 		.ascii	"E10\\PEI_Firmware_FE10_Rev2\\Design01.cydsn\000"
- 1170      5045495F 
- 1170      4669726D 
- 1170      77617265 
- 1170      5F464531 
- 1171              	.LASF18:
- 1172 021e 75696E74 		.ascii	"uint16\000"
- 1172      313600
- 1173              	.LASF12:
- 1174 0225 756E7369 		.ascii	"unsigned int\000"
- 1174      676E6564 
- 1174      20696E74 
- 1174      00
- 1175              	.LASF36:
- 1176 0232 63686172 		.ascii	"charge_start\000"
- 1176      67655F73 
- 1176      74617274 
- 1176      00
- 1177              	.LASF38:
- 1178 023f 43414E5F 		.ascii	"CAN_to_500KB\000"
- 1178      746F5F35 
- 1178      30304B42 
- 1178      00
- 1179              	.LASF11:
- 1180 024c 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1180      206C6F6E 
- 1180      6720756E 
- 1180      7369676E 
- 1180      65642069 
- 1181              	.LASF50:
- 1182 0263 43414E5F 		.ascii	"CAN_SendMsgPEI_CURRENT\000"
- 1182      53656E64 
- 1182      4D736750 
- 1182      45495F43 
- 1182      55525245 
+ 1171      676E6564 
+ 1171      20696E74 
+ 1171      00
+ 1172              	.LASF36:
+ 1173 01da 63686172 		.ascii	"charge_start\000"
+ 1173      67655F73 
+ 1173      74617274 
+ 1173      00
+ 1174              	.LASF38:
+ 1175 01e7 43414E5F 		.ascii	"CAN_to_500KB\000"
+ 1175      746F5F35 
+ 1175      30304B42 
+ 1175      00
+ 1176              	.LASF11:
+ 1177 01f4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1177      206C6F6E 
+ 1177      6720756E 
+ 1177      7369676E 
+ 1177      65642069 
+ 1178              	.LASF50:
+ 1179 020b 43414E5F 		.ascii	"CAN_SendMsgPEI_CURRENT\000"
+ 1179      53656E64 
+ 1179      4D736750 
+ 1179      45495F43 
+ 1179      55525245 
+ 1180              	.LASF58:
+ 1181 0222 433A5C55 		.ascii	"C:\\Users\\Justin Chang\\PEI-Firmware-FE10\\PEI_Fir"
+ 1181      73657273 
+ 1181      5C4A7573 
+ 1181      74696E20 
+ 1181      4368616E 
+ 1182 0251 6D776172 		.ascii	"mware_FE10_Rev2\\Design01.cydsn\000"
+ 1182      655F4645 
+ 1182      31305F52 
+ 1182      6576325C 
+ 1182      44657369 
  1183              	.LASF45:
- 1184 027a 6C6F6F70 		.ascii	"loops_since_vcu_message\000"
+ 1184 0270 6C6F6F70 		.ascii	"loops_since_vcu_message\000"
  1184      735F7369 
  1184      6E63655F 
  1184      7663755F 
  1184      6D657373 
  1185              	.LASF14:
- 1186 0292 696E7431 		.ascii	"int16_t\000"
+ 1186 0288 696E7431 		.ascii	"int16_t\000"
  1186      365F7400 
  1187              	.LASF48:
- 1188 029a 6C6F6F70 		.ascii	"loops_since_charger_message\000"
+ 1188 0290 6C6F6F70 		.ascii	"loops_since_charger_message\000"
  1188      735F7369 
  1188      6E63655F 
  1188      63686172 
  1188      6765725F 
  1189              	.LASF23:
- 1190 02b6 6C6F6E67 		.ascii	"long double\000"
+ 1190 02ac 6C6F6E67 		.ascii	"long double\000"
  1190      20646F75 
  1190      626C6500 
  1191              	.LASF46:
- 1192 02c2 6C6F6F70 		.ascii	"loops_since_bms_message\000"
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 26
+ 1192 02b8 6C6F6F70 		.ascii	"loops_since_bms_message\000"
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 26
 
 
  1192      735F7369 
@@ -1506,84 +1506,84 @@ ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 1
  1192      626D735F 
  1192      6D657373 
  1193              	.LASF13:
- 1194 02da 75696E74 		.ascii	"uint8_t\000"
+ 1194 02d0 75696E74 		.ascii	"uint8_t\000"
  1194      385F7400 
  1195              	.LASF10:
- 1196 02e2 6C6F6E67 		.ascii	"long long int\000"
+ 1196 02d8 6C6F6E67 		.ascii	"long long int\000"
  1196      206C6F6E 
  1196      6720696E 
  1196      7400
  1197              	.LASF24:
- 1198 02f0 73697A65 		.ascii	"sizetype\000"
+ 1198 02e6 73697A65 		.ascii	"sizetype\000"
  1198      74797065 
  1198      00
  1199              	.LASF21:
- 1200 02f9 63686172 		.ascii	"char\000"
+ 1200 02ef 63686172 		.ascii	"char\000"
  1200      00
  1201              	.LASF54:
- 1202 02fe 43414E5F 		.ascii	"CAN_SetPreScaler\000"
+ 1202 02f4 43414E5F 		.ascii	"CAN_SetPreScaler\000"
  1202      53657450 
  1202      72655363 
  1202      616C6572 
  1202      00
  1203              	.LASF52:
- 1204 030f 43414E5F 		.ascii	"CAN_Stop\000"
+ 1204 0305 43414E5F 		.ascii	"CAN_Stop\000"
  1204      53746F70 
  1204      00
  1205              	.LASF37:
- 1206 0318 43414E5F 		.ascii	"CAN_to_125KB\000"
+ 1206 030e 43414E5F 		.ascii	"CAN_to_125KB\000"
  1206      746F5F31 
  1206      32354B42 
  1206      00
  1207              	.LASF4:
- 1208 0325 73686F72 		.ascii	"short int\000"
+ 1208 031b 73686F72 		.ascii	"short int\000"
  1208      7420696E 
  1208      7400
  1209              	.LASF15:
- 1210 032f 75696E74 		.ascii	"uint16_t\000"
+ 1210 0325 75696E74 		.ascii	"uint16_t\000"
  1210      31365F74 
  1210      00
  1211              	.LASF32:
- 1212 0338 63757272 		.ascii	"current\000"
+ 1212 032e 63757272 		.ascii	"current\000"
  1212      656E7400 
  1213              	.LASF43:
- 1214 0340 63686172 		.ascii	"charger_attached\000"
+ 1214 0336 63686172 		.ascii	"charger_attached\000"
  1214      6765725F 
  1214      61747461 
  1214      63686564 
  1214      00
  1215              	.LASF42:
- 1216 0351 7663755F 		.ascii	"vcu_attached\000"
+ 1216 0347 7663755F 		.ascii	"vcu_attached\000"
  1216      61747461 
  1216      63686564 
  1216      00
  1217              	.LASF8:
-ARM GAS  C:\Users\leoja\AppData\Local\Temp\cczMSCAh.s 			page 27
+ARM GAS  C:\Users\JUSTIN~1\AppData\Local\Temp\ccIp0Tew.s 			page 27
 
 
- 1218 035e 6C6F6E67 		.ascii	"long int\000"
+ 1218 0354 6C6F6E67 		.ascii	"long int\000"
  1218      20696E74 
  1218      00
  1219              	.LASF47:
- 1220 0367 6C6F6F70 		.ascii	"loops_since_mc_message\000"
+ 1220 035d 6C6F6F70 		.ascii	"loops_since_mc_message\000"
  1220      735F7369 
  1220      6E63655F 
  1220      6D635F6D 
  1220      65737361 
  1221              	.LASF0:
- 1222 037e 7369676E 		.ascii	"signed char\000"
+ 1222 0374 7369676E 		.ascii	"signed char\000"
  1222      65642063 
  1222      68617200 
  1223              	.LASF30:
- 1224 038a 74786461 		.ascii	"txdata\000"
+ 1224 0380 74786461 		.ascii	"txdata\000"
  1224      746100
  1225              	.LASF34:
- 1226 0391 63616E5F 		.ascii	"can_send_PEI\000"
+ 1226 0387 63616E5F 		.ascii	"can_send_PEI\000"
  1226      73656E64 
  1226      5F504549 
  1226      00
  1227              	.LASF57:
- 1228 039e 63616E5F 		.ascii	"can_manager.c\000"
+ 1228 0394 63616E5F 		.ascii	"can_manager.c\000"
  1228      6D616E61 
  1228      6765722E 
  1228      6300

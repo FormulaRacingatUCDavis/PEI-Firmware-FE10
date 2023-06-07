@@ -20,5 +20,8 @@
 
 int16_t get_current();
 
+void printState(PEI_STATE_t state);
+#include <stdbool.h>
+void printHV(bool request);
 
 /* [] END OF FILE */

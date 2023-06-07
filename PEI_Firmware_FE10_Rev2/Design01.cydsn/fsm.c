@@ -42,7 +42,14 @@ extern uint16_t loops_since_bms_message;
 extern uint16_t loops_since_mc_message;
 extern uint16_t loops_since_charger_message;
 
+extern uint8_t enable_commands;
 
+uint8_t inverter_enable() {
+    LCD_Position(1, 0);
+    LCD_PrintInt8(enable_commands);
+    
+    return (enable_commands & 0x01) == 0x01;
+}
 
 uint8_t hv_request(){
     if(vcu_attached) return hv_requested;     
@@ -52,14 +59,15 @@ uint8_t hv_request(){
 } 
 
 uint8_t hv_allowed(){
-    if(pei_status & SHUTDOWN) return 0;  //shutdown circuit open
+    
+    //if(pei_status & SHUTDOWN) return 0;  //shutdown circuit open
     if(pei_status & BMS_TIMEOUT) return 0;
     if(pei_status & VCU_CHARGER_TIMEOUT) return 0;
     
     if(vcu_attached){
         if(pei_status & MC_FAULT) return 0;   //mc faults
         if(pei_status & MC_DISCHARGING) return 0;  //mc is trying to discharge
-        if(pei_status & MC_TIMEOUT) return 0;
+        //if(pei_status & MC_TIMEOUT) return 0;
         
         return 1;
         

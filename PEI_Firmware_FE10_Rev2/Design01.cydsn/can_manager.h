@@ -12,7 +12,7 @@
 #define CHARGER_MAX_VOLTAGE 5040   //504V
     
 #define CAN_BAUD_TOGGLE_LOOP_COUNT 5
-#define CAN_TIMEOUT_LOOP_COUNT 10
+#define CAN_TIMEOUT_LOOP_COUNT 30
 
 //Current flags, shutdown circuit
 void can_send_PEI(int16_t current, uint8_t shutdown_flags);

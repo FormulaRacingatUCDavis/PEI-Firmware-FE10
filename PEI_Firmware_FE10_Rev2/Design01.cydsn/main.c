@@ -83,7 +83,7 @@ int main(void)
                 case PEI_LV:
                     clear_interlock(); // clears interlock, send a message to open AIRs   
                     
-                    if(hv_request() && hv_allowed()) {
+                    if(inverter_enable() && hv_allowed()) {
                         if(vcu_attached && precharge_ready()){
                             pei_state = PEI_PRECHARGE;
                         } else if(charger_attached){
@@ -102,7 +102,7 @@ int main(void)
                         pei_state = PEI_HV;
                     }
 
-                    if(hv_request() == 0) {
+                    if(inverter_enable() == 0) {
                        pei_state = PEI_LV;
                     }
                     
@@ -111,7 +111,7 @@ int main(void)
                  case PEI_HV:
                     finish_precharge();
                     
-                    if(hv_request() == 0) {
+                    if(inverter_enable() == 0) {
                        pei_state = PEI_LV;
                     }
                     
@@ -121,22 +121,54 @@ int main(void)
                     clear_interlock();
                     pei_state = PEI_FAULT;
                     
-                    if (hv_request() == 0 && hv_allowed()) {
+                    if (inverter_enable() == 0 && hv_allowed()) {
                         pei_state = PEI_LV;
                     } 
             } //end switch
-
-            check_can();
-            
+            CyDelay(1);
         } //end for loop
-        
+        check_can();
         current = get_current();
-        update_display();
+        //update_display();
+        
+        printState(pei_state);
+        //printHV(inverter_enable());
+        
         can_send_PEI(current, shutdown_flags);
     }
 }
 
+void printHV(bool request) {
+    LCD_Position(1, 0);
+    if (request) {
+        LCD_PrintString("True");
+    }
+    else {
+        LCD_PrintString("False");
+    }
+}
 
+void printState(PEI_STATE_t state) {
+    LCD_Position(0,0);
+    
+    switch(state) {
+        case PEI_LV:
+            LCD_PrintString("State 0");
+            break;
+        case PEI_PRECHARGE:
+            LCD_PrintString("State 1");
+            break;
+        case PEI_HV:
+            LCD_PrintString("State 3");
+            break;
+        case PEI_FAULT:
+            LCD_PrintString("State 2");
+            break;
+        default:
+            LCD_PrintString("Fault");
+            break;
+    }
+}
 
 int16_t get_current(){
     double current_raw_mv = (double)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
