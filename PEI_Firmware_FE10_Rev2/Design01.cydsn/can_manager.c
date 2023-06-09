@@ -70,7 +70,7 @@ void check_can(){
     }
     
     if(loop_counter > CAN_BAUD_TOGGLE_LOOP_COUNT){
-        CAN_toggle_baud();
+        //CAN_toggle_baud();
         loop_counter = 0;
     }
 }

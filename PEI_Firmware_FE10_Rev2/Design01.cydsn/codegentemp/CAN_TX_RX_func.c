@@ -54,6 +54,9 @@ extern uint16_t loops_since_bms_message;
 extern uint16_t loops_since_mc_message;
 extern uint16_t loops_since_charger_message;
 
+//MC Command
+uint8_t enable_commands;
+
 /* `#END` */
 
 
@@ -945,7 +948,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_Command(void) 
     {
         /* `#START MESSAGE_MC_Command_RECEIVED` */
-
+        enable_commands = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Command);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_Command_CALLBACK

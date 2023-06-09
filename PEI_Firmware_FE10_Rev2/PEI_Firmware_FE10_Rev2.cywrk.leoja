@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PEI_Firmware_FE10_Rev2\Design01\Source Files">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PEI_Firmware_FE10_Rev2\Design01\TopDesign">
 <ExpandedNodeIds>
 <v>PEI_Firmware_FE10_Rev2</v>
 <v>PEI_Firmware_FE10_Rev2\Design01</v>
@@ -156,34 +156,6 @@
 <VisibleNodeIds>
 <v>PEI_Firmware_FE10_Rev2</v>
 <v>PEI_Firmware_FE10_Rev2\Design01</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\can_manager.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Analog.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -226,10 +198,10 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\Design01.cydwr" />
 <name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" />
+<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Design01.cydsn\can_manager.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -237,7 +209,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="2158, 989" SelectedTabbedMdiWindow="b4afa292-565c-4941-ae7b-4acf760dd80e"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="D:\Users\leoja\Documents\PSoC Creator\PEI_Firmware_FE10_Rev2\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="1847e632-63bc-44ca-94b8-e97a988b3499" /><DocumentWindow Key="D:\Users\leoja\Documents\PSoC Creator\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cydwr" Guid="b4afa292-565c-4941-ae7b-4acf760dd80e" /><DocumentWindow Key="D:\Users\leoja\Documents\PSoC Creator\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.c" Guid="6fae14f1-d4dd-4f38-9420-91e17fb21e56" /><DocumentWindow Key="D:\Users\leoja\Documents\PSoC Creator\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="b2ce62f8-cf7f-491d-8e1c-565b5feca91f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1271, 588" SelectedTabbedMdiWindow="3bdaad78-1a6d-471f-82f0-09ef445a7b50"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cydwr" Guid="b56839a6-d87b-4206-94ab-259495e36de5" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.c" Guid="8f3d8083-845c-4d44-b807-80cbc2938176" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="3bdaad78-1a6d-471f-82f0-09ef445a7b50" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\can_manager.c" Guid="bf213cdb-0019-41ac-8dd0-e885802807c9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
