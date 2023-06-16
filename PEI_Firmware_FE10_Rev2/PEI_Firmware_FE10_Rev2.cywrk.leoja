@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PEI_Firmware_FE10_Rev2\Design01\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>PEI_Firmware_FE10_Rev2</v>
 <v>PEI_Firmware_FE10_Rev2\Design01</v>
@@ -202,6 +202,12 @@
 <name v=".\Design01.cydsn\main.c" />
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\can_manager.c" />
+<name v=".\Design01.cydsn\display.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\LCD.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\LCD.h" />
+<name v=".\Design01.cydsn\fsm.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" />
+<name v=".\Design01.cydsn\main.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -209,7 +215,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1271, 588" SelectedTabbedMdiWindow="3bdaad78-1a6d-471f-82f0-09ef445a7b50"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cydwr" Guid="b56839a6-d87b-4206-94ab-259495e36de5" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.c" Guid="8f3d8083-845c-4d44-b807-80cbc2938176" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="3bdaad78-1a6d-471f-82f0-09ef445a7b50" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\can_manager.c" Guid="bf213cdb-0019-41ac-8dd0-e885802807c9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1271, 588" SelectedTabbedMdiWindow="3bdaad78-1a6d-471f-82f0-09ef445a7b50"><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cydwr" Guid="b56839a6-d87b-4206-94ab-259495e36de5" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.c" Guid="8f3d8083-845c-4d44-b807-80cbc2938176" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="3bdaad78-1a6d-471f-82f0-09ef445a7b50" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\can_manager.c" Guid="bf213cdb-0019-41ac-8dd0-e885802807c9" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\display.c" Guid="39507d28-8d9b-47b3-8e57-6adb37973d50" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\LCD.c" Guid="4477872c-83fa-4618-9d45-50156fcf3006" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\LCD.h" Guid="6f387525-38b4-4f70-b18e-0aa0f93c9882" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\fsm.c" Guid="eebda88c-6a45-48ef-b96e-36d7d3facfa1" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="31ff66f8-5c4e-45cd-8df3-bb03967f5f82" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.h" Guid="43efc395-aa7e-403a-8fb7-29e0dcd64c18" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

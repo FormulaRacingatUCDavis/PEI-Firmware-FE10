@@ -18,6 +18,7 @@ extern uint16_t bms_status;
 extern uint16_t bms_voltage;
 extern int16_t current;
 extern uint8_t pei_status;
+extern uint8_t pei_state;
 
 void update_display(){
     LCD_Position(0,0);
@@ -50,8 +51,14 @@ void update_display(){
         LCD_PrintString("SHUTDOWN OPEN");
     }else if(bms_status & CHARGEMODE){
         LCD_PrintString("CHARGE MODE  ");
+    }else if(pei_state == PEI_LV){
+        LCD_PrintString("LV           ");
+    }else if(pei_state == PEI_PRECHARGE){
+        LCD_PrintString("PRECHARGE    ");
+    }else if(pei_state == PEI_HV){
+        LCD_PrintString("HV           ");
     }else{
-        LCD_PrintString("NORMAL       ");
+        LCD_PrintString("YO WTF?      ");
     }
     
     

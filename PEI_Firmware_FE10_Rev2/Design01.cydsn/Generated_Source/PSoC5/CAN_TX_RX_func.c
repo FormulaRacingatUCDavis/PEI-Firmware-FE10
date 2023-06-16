@@ -40,7 +40,7 @@ extern uint16_t mc_post_faults;
 extern uint16_t mc_run_faults;
 
 //VCU variables
-extern uint8_t hv_requested;
+extern uint8_t enable_commands;
 extern uint8_t vcu_state;
 extern uint8_t vcu_attached;
 
@@ -54,8 +54,6 @@ extern uint16_t loops_since_bms_message;
 extern uint16_t loops_since_mc_message;
 extern uint16_t loops_since_charger_message;
 
-//MC Command
-uint8_t enable_commands;
 
 /* `#END` */
 
@@ -703,7 +701,6 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         vcu_attached = 1;
         
         vcu_state = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
-        hv_requested = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
 
         /* `#END` */
 
