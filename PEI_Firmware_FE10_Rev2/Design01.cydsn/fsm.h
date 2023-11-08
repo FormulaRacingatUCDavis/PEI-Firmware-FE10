@@ -61,6 +61,8 @@ typedef enum{
 #define MC_DISCHARGING 0x40
 #define CHARGER_FAULT 0x80
 
+#define PRECHARGE_RATIO 0.90
+
 uint8_t inverter_enable();
 uint8_t hv_request();
 uint8_t hv_allowed();

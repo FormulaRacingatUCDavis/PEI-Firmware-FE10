@@ -31,6 +31,7 @@ extern uint16_t mc_run_faults;
 extern uint8_t vcu_state;
 extern uint8_t vcu_attached;
 extern uint8_t enable_commands;
+extern uint8_t hv_requested;
 
 //charger variables
 extern uint8_t charger_attached;
@@ -45,7 +46,7 @@ extern uint16_t loops_since_charger_message;
 uint8_t hv_lockout = 1; 
 
 uint8_t hv_request(){
-    if(vcu_attached) return (enable_commands & 0x01) == 0x01;   
+    if(vcu_attached) return hv_requested;   
     else if(charger_attached) return !(pei_status & SHUTDOWN);
         
     return 0;
@@ -79,13 +80,15 @@ uint8_t hv_allowed(){
 }
 
 uint8_t precharge_ready(){
-    if(mc_vsm_state == PRECHARGE_INIT || mc_vsm_state == PRECHARGE_ACTIVE) return 1;
+    if(mc_vsm_state == PRECHARGE_INIT || 
+       mc_vsm_state == PRECHARGE_ACTIVE ||
+       mc_vsm_state == VSM_WAIT) return 1;
     
     return 0;                
 }
 
 uint8_t precharge_complete(){    
-    uint16_t threshold = (uint16_t)(((float)bms_voltage)*0.95);
+    uint16_t threshold = (uint16_t)(((float)(bms_voltage/10))*PRECHARGE_RATIO);
     return (mc_voltage > threshold);
 }
 

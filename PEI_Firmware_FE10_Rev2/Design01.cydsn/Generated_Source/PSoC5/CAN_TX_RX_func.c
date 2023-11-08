@@ -41,6 +41,7 @@ extern uint16_t mc_run_faults;
 
 //VCU variables
 extern uint8_t enable_commands;
+extern uint8_t hv_requested;
 extern uint8_t vcu_state;
 extern uint8_t vcu_attached;
 
@@ -700,6 +701,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         loops_since_vcu_message = 0;
         vcu_attached = 1;
         
+        hv_requested = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_vcu_torque_request);
         vcu_state = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_vcu_torque_request);
 
         /* `#END` */
@@ -782,6 +784,8 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         charger_attached = 1;
         loops_since_charger_message = 0;
         
+        volatile uint16_t charger_voltage = (CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_charger_status) << 8) + CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_charger_status);
+        volatile uint16_t charger_current = (CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_charger_status) << 8) + CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_charger_status);
         charger_status = CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_charger_status);
 
         /* `#END` */
@@ -861,15 +865,15 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         
         loops_since_mc_message = 0;
         
-        mc_post_faults = (CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_bms_status) << 24);
-        mc_post_faults += (CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_bms_status) << 16);
-        mc_post_faults += (CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_bms_status) << 8);
-        mc_post_faults += CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_bms_status);
+        mc_post_faults = (CAN_RX_DATA_BYTE4(CAN_RX_MAILBOX_MC_Fault) << 24);
+        mc_post_faults += (CAN_RX_DATA_BYTE3(CAN_RX_MAILBOX_MC_Fault) << 16);
+        mc_post_faults += (CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Fault) << 8);
+        mc_post_faults += CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Fault);
         
-        mc_run_faults = (CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_bms_status) << 24);
-        mc_run_faults += (CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_bms_status) << 16);
-        mc_run_faults += (CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_bms_status) << 8);
-        mc_run_faults += CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_bms_status);
+        mc_run_faults = (CAN_RX_DATA_BYTE8(CAN_RX_MAILBOX_MC_Fault) << 24);
+        mc_run_faults += (CAN_RX_DATA_BYTE7(CAN_RX_MAILBOX_MC_Fault) << 16);
+        mc_run_faults += (CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Fault) << 8);
+        mc_run_faults += CAN_RX_DATA_BYTE5(CAN_RX_MAILBOX_MC_Fault);
         
         /* `#END` */
 
@@ -908,8 +912,9 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
         
         loops_since_mc_message = 0;
         
-        mc_voltage = CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Voltage) << 8;
-        mc_voltage += CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Voltage);
+        mc_voltage = CAN_RX_DATA_BYTE1(CAN_RX_MAILBOX_MC_Voltage);
+        mc_voltage |= (CAN_RX_DATA_BYTE2(CAN_RX_MAILBOX_MC_Voltage) << 8);
+        
         
         /* `#END` */
 
@@ -945,7 +950,7 @@ void CAN_ReceiveMsg(uint8 rxMailbox)
     void CAN_ReceiveMsgMC_Command(void) 
     {
         /* `#START MESSAGE_MC_Command_RECEIVED` */
-        enable_commands = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Command);
+        //enable_commands = CAN_RX_DATA_BYTE6(CAN_RX_MAILBOX_MC_Command);
         /* `#END` */
 
         #ifdef CAN_RECEIVE_MSG_MC_Command_CALLBACK

@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="PEI_Firmware_FE10_Rev2\Design01\Source Files\can_manager.c">
 <ExpandedNodeIds>
 <v>PEI_Firmware_FE10_Rev2</v>
 <v>PEI_Firmware_FE10_Rev2\Design01</v>
@@ -43,18 +43,9 @@
 <v>PEI_Firmware_FE10_Rev2\Design01\Source Files\relays.c</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\CAN</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>PEI_Firmware_FE10_Rev2</v>
-<v>PEI_Firmware_FE10_Rev2\Design01</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\TopDesign</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\Pins</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\Analog</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\Clocks</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\Interrupts</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\DMA</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\System</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\Directives</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Design01.cydwr\Flash Security</v>
@@ -74,8 +65,13 @@
 <v>PEI_Firmware_FE10_Rev2\Design01\Source Files\relays.c</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_DelSig_1</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1.c</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1.h</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1_INT.c</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1\ADC_SAR_1_PM.c</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1_IRQ</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\Generated_Source\PSoC5\ADC_SAR_1_theACLK</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -100,13 +96,11 @@
 <v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
@@ -156,6 +150,30 @@
 <VisibleNodeIds>
 <v>PEI_Firmware_FE10_Rev2</v>
 <v>PEI_Firmware_FE10_Rev2\Design01</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_NEG.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AIR_POS.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BMS_Fault.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_INT.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\can_manager.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_PM.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CAN_TX_RX_func.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Current_Analog.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -171,7 +189,7 @@
 <v>PEI_Firmware_FE10_Rev2\Design01\CY8C58LP Family Datasheet</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\System Reference Guides</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\System Reference Guides\cy_boot_v6_0</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\ADC_DelSig_v3_30.pdf</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\ADC_SAR_v3_10.pdf</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CAN_v3_0.pdf</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CharLCD_v2_20.pdf</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\cy_pins_v2_20</v>
@@ -184,7 +202,7 @@
 <v>PEI_Firmware_FE10_Rev2\Design01\CY8C58LP Family Datasheet</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\System Reference Guides</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\System Reference Guides\cy_boot_v6_0</v>
-<v>PEI_Firmware_FE10_Rev2\Design01\ADC_DelSig_v3_30.pdf</v>
+<v>PEI_Firmware_FE10_Rev2\Design01\ADC_SAR_v3_10.pdf</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CAN_v3_0.pdf</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\CharLCD_v2_20.pdf</v>
 <v>PEI_Firmware_FE10_Rev2\Design01\cy_pins_v2_20</v>
@@ -198,16 +216,13 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Design01.cydsn\Design01.cydwr" />
-<name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Design01.cydsn\can_manager.c" />
-<name v=".\Design01.cydsn\display.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\LCD.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\LCD.h" />
-<name v=".\Design01.cydsn\fsm.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\ADC_SAR_1.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\ADC_SAR_1.h" />
 <name v=".\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" />
-<name v=".\Design01.cydsn\main.h" />
+<name v=".\Design01.cydsn\Design01.cydwr" />
+<name v=".\Design01.cydsn\can_manager.c" />
+<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Design01.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -215,7 +230,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1271, 588" SelectedTabbedMdiWindow="3bdaad78-1a6d-471f-82f0-09ef445a7b50"><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cydwr" Guid="b56839a6-d87b-4206-94ab-259495e36de5" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.c" Guid="8f3d8083-845c-4d44-b807-80cbc2938176" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="3bdaad78-1a6d-471f-82f0-09ef445a7b50" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\can_manager.c" Guid="bf213cdb-0019-41ac-8dd0-e885802807c9" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\display.c" Guid="39507d28-8d9b-47b3-8e57-6adb37973d50" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\LCD.c" Guid="4477872c-83fa-4618-9d45-50156fcf3006" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\LCD.h" Guid="6f387525-38b4-4f70-b18e-0aa0f93c9882" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\fsm.c" Guid="eebda88c-6a45-48ef-b96e-36d7d3facfa1" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="31ff66f8-5c4e-45cd-8df3-bb03967f5f82" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.h" Guid="43efc395-aa7e-403a-8fb7-29e0dcd64c18" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="797, 512" SelectedTabbedMdiWindow="ee71856b-74ea-4ded-bf38-8643ce99a433"><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\ADC_SAR_1.c" Guid="283001ff-c8d1-4543-b50f-0ab4d50bcd44" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\ADC_SAR_1.h" Guid="f47778a1-9f1d-4c8e-b85f-aab5d0bde107" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Generated_Source\PSoC5\CAN_TX_RX_func.c" Guid="9c55a436-516e-4521-9da2-0c56999487d2" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\Design01.cydwr" Guid="6ca1bddc-0c07-44f6-83c4-b6d13f25d286" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="e84d8946-d1df-4b77-9882-6c57a0679925" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\can_manager.c" Guid="ee71856b-74ea-4ded-bf38-8643ce99a433" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="b4cc8611-04c5-4697-874a-cd537844aefc" /><DocumentWindow Key="C:\Users\leoja\Documents\GitHub\PEI-Firmware-FE10\PEI_Firmware_FE10_Rev2\Design01.cydsn\main.c" Guid="73691f6c-12ee-4a1b-acc9-b8c1abf3f8e4" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

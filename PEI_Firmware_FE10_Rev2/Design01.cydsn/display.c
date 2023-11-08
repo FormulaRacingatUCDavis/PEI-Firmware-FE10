@@ -19,6 +19,8 @@ extern uint16_t bms_voltage;
 extern int16_t current;
 extern uint8_t pei_status;
 extern uint8_t pei_state;
+extern uint8_t charger_status;
+extern int16_t mc_voltage;
 
 void update_display(){
     LCD_Position(0,0);
@@ -49,14 +51,16 @@ void update_display(){
         LCD_PrintString("MC DISCHARGE ");
     }else if(pei_status & SHUTDOWN){
         LCD_PrintString("SHUTDOWN OPEN");
-    }else if(bms_status & CHARGEMODE){
-        LCD_PrintString("CHARGE MODE  ");
+    //}else if(bms_status & CHARGEMODE){
+    //    LCD_PrintString("CHARGE MODE  ");
     }else if(pei_state == PEI_LV){
         LCD_PrintString("LV           ");
     }else if(pei_state == PEI_PRECHARGE){
         LCD_PrintString("PRECHARGE    ");
     }else if(pei_state == PEI_HV){
         LCD_PrintString("HV           ");
+    }else if(pei_state == PEI_FAULT){
+        LCD_PrintString("FAULT        ");
     }else{
         LCD_PrintString("YO WTF?      ");
     }
@@ -65,7 +69,7 @@ void update_display(){
     char str[8];
     
     LCD_Position(1, 0);
-    sprintf(str, "%u%% ", bms_soc);
+    sprintf(str, "%uV ", bms_voltage/100);
     LCD_PrintString(str);
     
     LCD_Position(1, 5);
@@ -73,7 +77,7 @@ void update_display(){
     LCD_PrintString(str);
     
     LCD_Position(1, 10);
-    sprintf(str, "%dA  ", current/10);
+    sprintf(str, "%iA  ", current/10);
     LCD_PrintString(str);
 }
 

@@ -18,6 +18,9 @@
 
 #define CAN_MSG_INTERVAL 100
 
+#define CHARGE_STOP 1
+#define CHARGE_START 0
+
 int16_t get_current();
 
 void printState(PEI_STATE_t state);

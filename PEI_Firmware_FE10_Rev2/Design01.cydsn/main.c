@@ -21,6 +21,7 @@ uint8_t relay_flags = 0;
 //vcu parameters
 VCU_STATE vcu_state = LV;
 uint8_t enable_commands = 0;
+uint8_t hv_requested = 0;
 uint8_t vcu_attached = 0;
 
 //bms parameters 
@@ -48,29 +49,29 @@ uint16_t loops_since_mc_message = 0;
 uint16_t loops_since_charger_message = 0;
 
 int main(void)
-{
+  {
     CyGlobalIntEnable; /* Enable global interrupts. */
     
     //Initialize and start CAN
     CAN_GlobalIntEnable();
     CAN_Init();
     CAN_Start();
-    ADC_DelSig_1_Start();
+    ADC_SAR_1_Start();
     LCD_Start();
     
     uint8_t shutdown_flags = 0;
-    uint8_t charge_start = 0;
+    uint8_t charge_control = CHARGE_STOP;
     
     for(;;)
     {       
         for(uint8_t i = 0; i < CAN_MSG_INTERVAL; i++){
             // shutdown flags, current
-            charge_start = 0;
+            charge_control = CHARGE_STOP;
             shutdown_flags = 0;
             
             shutdown_flags = relay_flags & 0x07;
-            if (IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
-            if (BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
+            if (!IMD_Fault_Read()) shutdown_flags |= (1 << 5);       
+            if (!BMS_Fault_Read()) shutdown_flags |= (1 << 4);  
             if (SD_FINAL_Read()) shutdown_flags |= (1 << 3);
             
             
@@ -112,21 +113,25 @@ int main(void)
                     
                  case PEI_HV:
                     finish_precharge();
-                    charge_start = 1;
+                    charge_control = CHARGE_START;
                     
                     if(hv_request() == 0) {
                        pei_state = PEI_LV;
                     }
                     
                     break;
-                    
+                
+                case PEI_FAULT:
                 default:
                     clear_interlock();
                     pei_state = PEI_FAULT;
                     
-                    if (hv_request() == 0 && hv_allowed()) {
+                    if (hv_request() == 0) {
                         pei_state = PEI_LV;
                     } 
+                    
+                    break;
+                    
             } //end switch
             
             CyDelay(1);
@@ -142,7 +147,7 @@ int main(void)
         //printHV(inverter_enable());
         
         can_send_PEI(current, shutdown_flags);
-        if(charger_attached) can_send_CHARGER(charge_start);
+        if(charger_attached) can_send_CHARGER(charge_control);
         
     }
 }
@@ -182,8 +187,10 @@ void printState(PEI_STATE_t state) {
 */
 
 int16_t get_current(){
-    double current_raw_mv = (double)ADC_DelSig_1_CountsTo_mVolts(ADC_DelSig_1_Read32());
-    int16_t current = (int16_t)(((current_raw_mv*5.5/3.3) - 2500)/6.667)*10;
+    ADC_SAR_1_StartConvert();
+    ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+    double current_raw_mv = (double)ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
+    int16_t current = (int16_t)((((current_raw_mv*5.5/3.3) - 2542)/6.667)*10);
     return current;
 }
 
